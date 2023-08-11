@@ -268,24 +268,24 @@ namespace ET
                 }
                 int lv = 0;
                 userLevel.TryGetValue(entity.Id, out lv);
-                //if (lv >= 50)  //大于50级玩家补偿
-                //{
-                //    MailInfo mailInfo = new MailInfo();
-                //    mailInfo.Status = 0;
-                //    mailInfo.Context = "合区补偿";
-                //    mailInfo.Title = "合区补偿";
-                //    mailInfo.MailId = IdGenerater.Instance.GenerateId();
-                //    BagInfo reward = new BagInfo();
-                //    reward.ItemID = 10010036;
-                //    reward.ItemNum = 1;
-                //    reward.GetWay = $"{ItemGetWay.System}_{TimeHelper.ServerNow()}";
-                //    mailInfo.ItemList.Add(reward);
-                //    entity.MailInfoList.Add(mailInfo);
-                //}
+
+                List<BagInfo> rewardlist = ConfigHelper.GetHeQuReward(lv);
+                if (rewardlist!=null && rewardlist.Count > 0)
+                {
+                    MailInfo mailInfo = new MailInfo();
+                    mailInfo.Status = 0;
+                    mailInfo.Context = "合区补偿";
+                    mailInfo.Title = "合区补偿";
+                    mailInfo.MailId = IdGenerater.Instance.GenerateId();
+                    mailInfo.ItemList.AddRange(rewardlist);
+                    entity.MailInfoList.Add(mailInfo);
+                }
 
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
+
             Log.Console("DBMailInfo Complelte");
+
             //DBPaiMainInfo 拍卖，也合并过来，要着重测试
             List<DBPaiMainInfo> dBPaiMainInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBPaiMainInfo>(oldzone, d => d.Id > 0);
             List<DBPaiMainInfo> dBPaiMainInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBPaiMainInfo>(newzone, d => d.Id > 0);
@@ -496,6 +496,18 @@ namespace ET
             dbcount = 0;
             List<TitleComponent> titleComponents = await Game.Scene.GetComponent<DBComponent>().Query<TitleComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in titleComponents)
+            {
+                dbcount++;
+                if (dbcount % onecount == 0)
+                {
+                    await TimerComponent.Instance.WaitFrameAsync();
+                }
+                await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
+            }
+
+            dbcount = 0;
+            List<DataCollationComponent> datacollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(oldzone, d => d.Id > 0);
+            foreach (var entity in datacollationComponents)
             {
                 dbcount++;
                 if (dbcount % onecount == 0)
