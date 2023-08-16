@@ -30,7 +30,7 @@ namespace ET
                     for (int i = 0; i < listprogress.Count; i++)
                     {
                         List<StartSceneConfig> processScenes = StartSceneConfigCategory.Instance.GetByProcess(listprogress[i].Id);
-                        if (processScenes.Count == 0 || listprogress[i].Id == 203)
+                        if (processScenes.Count == 0)  // || listprogress[i].Id == 203)
                         {
                             continue;
                         }
