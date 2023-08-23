@@ -1,0 +1,1264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{56732BCB-5D4C-D646-4C67-CF4AC22D356A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\Bin\Debug\</OutputPath>
+    <DefineConstants>UNITY_2020_3_33;UNITY_2020_3;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;UNITY_UGP_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_IG;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_CLOUD_FEATURES;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.14</UnityProjectGeneratorVersion>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityVersion>2020.3.33f1c2</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="F:\VS2022\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\T4M\Scripts\T4MLodObjSC.cs" />
+    <Compile Include="Assets\T4M\Scripts\T4MObjSC.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\MissShaderHelper.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\EffectScale.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\WildArea.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\MovePathManager.cs" />
+    <Compile Include="Assets\T4M\Scripts\T4MPlantObjSC.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\PSStartRotation.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\WildManager.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\MovePathConner.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\ActorEffect.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\DeactiveSelf.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\LookAtCamera.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\EffectNode.cs" />
+    <Compile Include="Assets\T4M\Scripts\T4MBillBObjSC.cs" />
+    <Compile Include="Assets\T4M\Tutorial\Scripts\FlyCam.cs" />
+    <Compile Include="Assets\T4M\Scripts\T4MPartSC.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\VirtualLine.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\AreaHelper.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\GrassAreaPoint.cs" />
+    <Compile Include="Assets\TestSkillArea\SkillAreaEditor.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\MapEdge.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\SkillAreaHelper.cs" />
+    <Compile Include="Assets\TestSkillArea\TestSkillShake\SkillShakeHelper.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\AnimationEventListener.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\GrassArea.cs" />
+    <Compile Include="Assets\T4M\Tutorial\Scripts\WaypointCam.cs" />
+    <Compile Include="Assets\ArtResource\Effects\Scripts\GrassAreaManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Specular\T4M 2 TexturesSpec.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100503.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110210.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101215.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel1\T4M 2 Textures ManualAdd BeastLM_1DC.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700005.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110715.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110514.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101205.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700015.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101203.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100715.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100303.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\DirectionLM\T4M 2 TexturesBumped DLM mobile.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M 4 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101102.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\BumpSpec\T4M 3 TexturesBumpSpec.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110712.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101201.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\BumpSpec\T4M 2 TexturesBumpSpec Mobile.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101014.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110603.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Toon\T4M 4 Textures Toon.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110709.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101106.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100702.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110414.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100415.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Diffuse\T4M 2 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100904.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unified\T4M 4 TexturesUnified Linear.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110413.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100610.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110912.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110613.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110612.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110703.xml" />
+    <None Include="Assets\Shaders\Particle Multiply DetachAlpha Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700001.xml" />
+    <None Include="Assets\Shaders\Water.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100609.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100404.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100311.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110506.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100302.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100411.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110313.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110503.xml" />
+    <None Include="Assets\Shaders\Particle Alpha Blend.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200003.xml" />
+    <None Include="Assets\Shaders\Mobile-Particle-Multiply-Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101103.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110203.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101310.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110808.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100607.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\199999.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100401.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\300202.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100906.xml" />
+    <None Include="Assets\Shaders\Mobile-Particle-Multiply-DetachAlpha-Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100412.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100208.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100107.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110810.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\199998.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100314.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110908.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100307.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700003.xml" />
+    <None Include="Assets\Shaders\Particle Alpha Blend Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700011.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700002.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110101.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100801.xml" />
+    <None Include="Assets\Shaders\Particle Alpha Blend DetachAlpha.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Specular\T4M 4 Textures Spec.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100611.xml" />
+    <None Include="Assets\Shaders\Particle Add Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700013.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M 6 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110602.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100910.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101107.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110516.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200002.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100601.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200600.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110407.xml" />
+    <None Include="Assets\Shaders\Particle AddSmooth DetachAlpha.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101303.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101204.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Specular\T4M 3 TexturesSpec.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Specular\T4M 3 Textures Spec.shader" />
+    <None Include="Assets\Shaders\Toony-BasicOutline.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101208.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110905.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110415.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110504.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100916.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\4TexturesUnlit.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700012.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\6TexturesUnlit.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100204.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200300.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100305.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110215.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100104.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\BumpSpec\T4M 3 TexturesBumpSpec.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101213.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100616.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110412.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110501.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110402.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110802.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110711.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100809.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\6TexturesUnlitNoLM.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100812.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101012.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M 5 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100909.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100802.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Bump\T4M 3 TexturesBump.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110609.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\300101.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Toon\T4M 3 Textures Toon.shader" />
+    <None Include="Assets\RawResources\DependPrefabs\Depend.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110813.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100612.xml" />
+    <None Include="Assets\Shaders\Particle Alpha Blend DetachAlpha Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100709.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110201.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110311.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101302.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110204.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110911.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101207.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100210.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110806.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101110.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100406.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110902.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110305.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\DirectionLM\T4M 3 TexturesBumped DLM.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100505.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101309.xml" />
+    <None Include="Assets\Shaders\Mobile-Particle-Alpha-DetachAlpha-Top.shader" />
+    <None Include="Assets\Shaders\Particle Premultiply Blend Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110814.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110404.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110807.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110701.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100212.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101105.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Bump\T4M 3 TexturesBumped.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100416.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100807.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\300203.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100203.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101311.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100410.xml" />
+    <None Include="Assets\Shaders\Mobile-Particle-Add-DetachAlpha.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100202.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200100.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101015.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100304.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200800.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101312.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100213.xml" />
+    <None Include="Assets\Shaders\Toony-Basic.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\1000100.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101304.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100714.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110308.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110803.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110611.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100214.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\600002.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101113.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100902.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100815.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100713.xml" />
+    <None Include="Assets\Shaders\Toon.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100102.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100912.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100504.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\1000300.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110314.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101306.xml" />
+    <None Include="Assets\Shaders\Particle Premultiply Blend DetachAlpha.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100813.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101114.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M 4 Textures Linear.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110106.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100106.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101116.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101007.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101301.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101104.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100716.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110913.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100105.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100913.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\800101.xml" />
+    <None Include="Assets\Shaders\Alpha-Diffuse-DetachAlpha.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110302.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unified\T4M 3 TexturesUnified.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100507.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110815.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110713.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110512.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110610.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100309.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200001.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101009.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110704.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110211.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel1\T4M 2 Textures ManualAdd CustoLM 1DC.shader" />
+    <None Include="Assets\Shaders\Mobile-Particle-Multiply-DetachAlpha.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110107.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110607.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110904.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100501.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110515.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200200.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110608.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100703.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110804.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110416.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100502.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110103.xml" />
+    <None Include="Assets\Shaders\ToonOpaqueDissolve.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110615.xml" />
+    <None Include="Assets\Shaders\PlantTransparent.shader" />
+    <None Include="Assets\T4M\READMEFIRST.txt" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110511.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100901.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100414.xml" />
+    <None Include="Assets\Shaders\butterfly.shader" />
+    <None Include="Assets\Shaders\Normal-Diffuse-Fog-Off.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110105.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100409.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110616.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110508.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110605.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100514.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110104.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110303.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700004.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100511.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M World Projection Shader.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110410.xml" />
+    <None Include="Assets\Shaders\Alpha-Diffuse-Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100810.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700007.xml" />
+    <None Include="Assets\Shaders\Particle Multiply Top.shader" />
+    <None Include="Assets\Shaders\ParticleAlphaBlendNoZTest.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110205.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100710.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101115.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100804.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M 2 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100413.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100604.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Toon\T4M 2 Textures Toon.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101108.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110706.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200400.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700016.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100207.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110316.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110406.xml" />
+    <None Include="Assets\Shaders\Particle Multiply DetachAlpha.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101003.xml" />
+    <None Include="Assets\Shaders\Particle Premultiply Blend DetachAlpha Top.shader" />
+    <None Include="Assets\Shaders\AlphaTest-Diffuse-DetachAlpha-Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100313.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110614.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110206.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100512.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110411.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100101.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110409.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110914.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101211.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Specular\T4M 2 Textures Spec.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Bump\T4M 2 TexturesBumped.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Bump\T4M 4 TexturesBumped.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110216.xml" />
+    <None Include="Assets\Shaders\SkillArea.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100215.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101002.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110901.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100513.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110202.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101013.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100510.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101214.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Specular\T4M 4 TexturesSpec.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110601.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100509.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100312.xml" />
+    <None Include="Assets\Shaders\Mobile-Particle-Alpha-DetachAlpha.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101212.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101006.xml" />
+    <None Include="Assets\Shaders\Particle Add DetachAlpha Top.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\2TexturesUnlit.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100301.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101112.xml" />
+    <None Include="Assets\Shaders\Normal-Diffuse-Linear.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100316.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\5TexturesUnlit.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100707.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101206.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100705.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110212.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\BumpSpec\T4M 4 TexturesBumpSpec.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Bump\T4M 4 TexturesBump.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100603.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700006.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100708.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\1000200.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110809.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100903.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100306.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100602.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110906.xml" />
+    <None Include="Assets\Shaders\MADFINGER-Unlit-Scroll2Layers-Mul-skybox.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110702.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110708.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110903.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110102.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unified\T4M 4 TexturesUnified.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100711.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101216.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Diffuse\T4M 5 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101016.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101001.xml" />
+    <None Include="Assets\Shaders\AlphaTest-Diffuse-DetachAlpha.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Diffuse\T4M 6 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\600001.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100908.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100905.xml" />
+    <None Include="Assets\Shaders\Projector Light.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100911.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100914.xml" />
+    <None Include="Assets\Shaders\Alpha-Bumped.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100816.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100704.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100216.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100308.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100605.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\200500.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101202.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Bump\T4M 2 TexturesBumped Mobile.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110403.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Bump\T4M 2 TexturesBump.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110707.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101111.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\600101.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101004.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101101.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Bump\T4M 3 TexturesBumped Mobile.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100209.xml" />
+    <None Include="Assets\Shaders\Particle AddSmooth DetachAlpha Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110915.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110513.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110710.xml" />
+    <None Include="Assets\Shaders\Mobile-Particle-Add-DetachAlpha-Top.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel1\T4M 2 Textures Auto BeastLM 2DrawCall.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110207.xml" />
+    <None Include="Assets\Shaders\Particle AddSmooth Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100205.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100206.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110505.xml" />
+    <None Include="Assets\Shaders\Line.shader" />
+    <None Include="Assets\Shaders\Rim.shader" />
+    <None Include="Assets\Shaders\Projector Multiply.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Diffuse\T4M 3 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110209.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110307.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100310.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100803.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110604.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101308.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700017.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110310.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110401.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101305.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100516.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110213.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100814.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100606.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110405.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110811.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100405.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110910.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\700014.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110716.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\T4M World Projection Shader Unlit+LM.shader" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\Diffuse\T4M 4 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110909.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110502.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100614.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110312.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100515.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unified\T4M 2 TexturesUnified.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100915.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel3\BumpSpec\T4M 2 TexturesBumpSpec.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\300201.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M 3 Textures.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101210.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110507.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\DirectionLM\T4M 2 TexturesBumped DLM.shader" />
+    <None Include="Assets\Shaders\Illumin-Diffuse-Linear.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100402.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100201.xml" />
+    <None Include="Assets\Shaders\Mobile-Particle-Alpha-Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110315.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100403.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110816.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110509.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101008.xml" />
+    <None Include="Assets\Shaders\Particle Add DetachAlpha.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110606.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100907.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110801.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100701.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110510.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110208.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101109.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110301.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110408.xml" />
+    <None Include="Assets\Shaders\Water Heightmap.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100808.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110812.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110907.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101005.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101313.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110304.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110306.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100315.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\3TexturesUnlit.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100805.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101011.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110916.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110805.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101209.xml" />
+    <None Include="Assets\Shaders\AlphaTest-Diffuse-Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101010.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100712.xml" />
+    <None Include="Assets\T4M\Shaders\ShaderModel2\BumpSpec\T4M 2 TexturesBumpSpec.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110714.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100506.xml" />
+    <None Include="Assets\Shaders\Mobile-Particle-Add-Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100508.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100211.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110705.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100408.xml" />
+    <None Include="Assets\Shaders\Alpha-Diffuse-DetachAlpha-Top.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110309.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100806.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100811.xml" />
+    <None Include="Assets\Shaders\Alpha-Diffuse-Lowest.shader" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\101307.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100103.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100613.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100706.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100407.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100608.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\100615.xml" />
+    <None Include="Assets\RawResourcesExport\ScenesXml\110214.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CloudFoundationModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.CloudFoundationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.CoreModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GraphViewModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.PackageManagerUIModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.PackageManagerUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SceneTemplateModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsSamplesModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIServiceModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.UIServiceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UnityConnectModule">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="PureMVC.DotNET.35">
+      <HintPath>Assets\Plugins\PureMVC.DotNET.35.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="MPEngine">
+      <HintPath>Assets\Plugins\MPEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonFx.Json">
+      <HintPath>Assets\Plugins\JsonFx.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>Assets\Plugins\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.NonGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.EventBasedAsync.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.TypeConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Dynamic.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.Watcher.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.IsolatedStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.MemoryMappedFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.UnmanagedMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Queryable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.NameResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.NetworkInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Ping.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Requests.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebHeaderCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebSockets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.Writer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Handles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Claims.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Csp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Principal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.SecureString.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.Encoding.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Overlapped.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Tasks.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.ThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Timer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XmlSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\Extensions\2.0.0\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.ServiceModel.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Serialization">
+      <HintPath>D:\unityhub\2020.3.33f1c2\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Purchasing.Common">
+      <HintPath>Library\ScriptAssemblies\Purchasing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.SecurityStub">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Analytics">
+      <HintPath>Library\ScriptAssemblies\Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.SecurityCore">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.Codeless">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.Stores">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.Stores.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Monetization">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Monetization.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements.Editor">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{CBE07B89-8F05-99C0-066E-E7B72090A163}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
