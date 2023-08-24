@@ -595,8 +595,6 @@ namespace ET
                 }
                 if (newuserinfoList.ContainsKey(oldentity.UserInfo.Name))
                 {
-                    Log.Console("合区补偿改名卡ContainsKey");
-
                     //合服账号名称规则，A：流星 25级 B 流星 30级 则B流星 名字沿用，A自动发放一个改名卡 （规则 等级高 > 战力高 > id在前）
                     long renameId = 0;
                     UserInfoComponent newentity = newuserinfoList[oldentity.UserInfo.Name];
