@@ -1,0 +1,132 @@
+// 开服活动协议
+import "pb_common.proto";
+
+message pbActiveOp{
+	optional		int32		type	= 1; //1狂欢七天乐2英雄抢购3免费领钻石4等级礼包5战力礼包6段位礼包7VIP豪送
+	optional		int32		arg		= 2; // 天数1-7|英雄唯一id|等级lv|战力段(1-6)|段位(1-6)|vip等级 
+}
+
+message pbActiveLogin{
+	optional		int32		num		= 1; //登陆天数
+	repeated		int32		day		= 2; //已领取的天数列表
+	repeated		int32 	    hero_id	= 3; //已购买的英雄列表
+	repeated 		int32 		lv_list	= 4; //已领取的等级列表
+	repeated 		int32 		combat_list=5;//已领取的战力列表
+	repeated 		int32 		phase_list =6;//已领取的段位列表
+	optional 		int32 		end_time= 7; //活动截止时间
+	optional		int64		online_time	=8; //在线时长
+}
+message pbActiveChargeList{
+	repeated 		int32 		list7day = 1;//已领取的连续列表
+	repeated 		int32 		list_today = 2;//已领取的当天列表
+	optional 		int32		day7 = 3; //7天累计充值
+	optional 		int32		day1 = 4; //当天天累计充值
+}
+message pbActiveGrowFund{
+	optional 		int32 		buy_flag 		= 1; //0未购买1已购买
+	repeated 		int32 		lv_list 		= 2; //已领取的等级列表
+}
+
+message pbActiveOpen{
+	optional 		int32 		end_time 		= 1; //活动截止时间
+	optional 		int32      	dungeon_flag	= 2; //闯关奖励（0未领取1已领取）
+	optional 		int32 		combat_flag		= 3; //战力奖励
+	optional 		int32 		arena_flag		= 4; //竞技场奖励
+}
+
+// ========
+// 领取奖励或购买英雄
+// 协议号：29001
+// c >> s:
+//     pbActiveOp
+// s >> c:
+//    pbResult  // 1成功 失败返回错误提示
+
+// ========
+// 请求活动信息
+// 协议号：29002
+// c >> s:
+//     null
+// s >> c:
+//    pbActiveLogin
+
+// ========
+// 请求段位
+// 协议号：29003
+// c >> s:
+//     null
+// s >> c:
+//    pbId32 	//段位
+
+// ========
+// 请求钻石信息
+// 协议号：29004
+// c >> s:
+//     null
+// s >> c:
+//    pbResult 	// 0未领取1已领取
+
+// ========
+// 购买成长基金
+// 协议号：29005
+// c >> s:
+//     null
+// s >> c:
+//    pbResult 	//1成功 错误返回提示
+
+
+// ========
+// 请求成长基金信息
+// 协议号：29006
+// c >> s:
+//     null
+// s >> c:
+//    pbActiveGrowFund
+
+
+// ========
+// 领取成长基金信息
+// 协议号：29007
+// c >> s:
+//     pbId32 	//等级
+// s >> c:
+//    pbResult 	//1成功 错误返回提示
+
+// ========
+// 开服7天活动信息
+// 协议号：29008
+// c >> s:
+//     null 	
+// s >> c:
+//   	pbActiveOpen
+
+
+// ========
+// 开服7天奖励领取
+// 协议号：29009
+// c >> s:
+//     pbId32 		//1闯关2战力3竞技场 	
+// s >> c:
+//   	pbResult 	//1成功 错误返回提示
+
+// ========
+// 充值活动以领取列表
+// 协议号：29010
+// c >> s:
+//    null	
+// s >> c:
+//   	pbActiveChargeList 	//错误返回提示
+// ========
+// 充值活动领取当天累计奖励
+// 协议号：29011
+// c >> s:
+//     pbResult 		//领取哪个充值段的奖励	
+// s >> c:
+//   	pbResult 	//成功返回传过来的值 错误返回提示
+// ========
+// 充值活动领取7天累计奖励
+// 协议号：29012
+// c >> s:
+//     pbResult 		//领取哪个充值段的奖励	
+// s >> c:
+//   	pbResult 	//成功返回传过来的值 错误返回提示

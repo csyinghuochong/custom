@@ -1,0 +1,319 @@
+import "pb_45.proto";
+import "pb_base_fight.proto";
+message pbError{
+        optional int32   error_code = 1;
+        repeated string  args       = 2;
+}
+message pbPlayerBase{
+	optional int32 id = 1;
+	optional string account = 2;
+	optional string name = 3;
+	optional int32 z = 4;
+	optional int32 x = 5;
+	optional int32 y = 6;
+	optional int32 head = 7;			//头像
+	optional int32 model_skin = 8;		//模型皮肤
+	optional int32 level = 9;
+	optional int32 exp = 10;
+	optional int32 energy = 11;		//体力
+	optional int32 energy_buy = 12;		//购买体力次数
+	optional int32 family_id = 13;		//军团或家族或公会
+	optional string family_name = 14;	//军团或家族或公会名字
+	optional int32 skill_point = 15;	//暂时没有用到的字段
+	optional int32 skill_point_buy = 16;	//铸魂抽奖次数
+	optional int32 coin = 17;		//金币
+	optional int32 gold = 18;		//钻石
+	optional int32 vip = 19;
+	optional int32 coin_buy = 20;		//购买金币次数
+	optional int32 title = 21;		//称号
+	optional int32 exp_max = 22;
+	optional int32 status = 23;
+	optional int32 combat = 24;		//副本战力
+	optional int32 all_combat = 25;		//总战力
+	optional int32 arena_combat = 26;	//竞技场战力
+	optional int32 fight_coin = 27; 		//试炼币
+	optional int32 player_skill_level = 28;	//铜像等级
+	optional int32 player_skill_exp = 29;	//铜像经验
+	optional int32 player_skill_exp_max = 30;	//铜像最大经验
+	repeated pbMars mars_task = 31;	//铜像完成度列表
+	optional int32 player_skill_point = 32;	//召唤师技能点
+	optional int32 player_skill_buy = 33;	//以购买的技能次数
+	optional int32 charm = 34;		//魅力
+	optional int32 worship_num = 35;		//已经膜拜了的次数
+	optional int32 charm_energy = 36;		//送花获得的体力
+	optional int32 sex = 37;			//性别	0女1男
+	optional int32 hell_num = 38;			//地狱次数
+	optional int32 peerage	= 39;			//爵位
+	optional int32 money_1 = 40;			//铸魂碎片个数
+	optional int32 equip_star_num	= 41;		//铸魂是否免费
+	optional int32 today_still_online	= 42;	//当天累计在线 -1已经通过防沉迷验证不计算累计在线
+	optional int32 arena_coin	= 43;			//竞技币
+	optional int32 union_coin	= 44;		//联盟币
+	optional int32 first_charge	= 45;		//首充状态0未首充1已首充2已领取
+}
+
+message pbMars{
+		optional    	int32	id	= 1;    // 进度ID
+		optional	int32	num	= 2;    //进度完成度9999表示已完成
+}
+message pbOtherPlayerBase{
+	optional int32 id = 1;
+	optional string name = 2;			//名字
+	optional int32 head = 3;				//头像
+	optional int32 model_skin = 4;			//模型皮肤
+	optional int32 level = 5;				//等级
+	optional string union_name = 6;			//军团或家族或公会
+	optional int32 vip = 7;				//Vip
+	optional int32 title = 8;				//称号
+	optional int32 combat = 9;			//战力
+	optional int32 charm = 10;			//魅力	
+	optional int32 sex = 11;				//性别0女1男
+	optional pbPlayerBaseFight fight_attr = 12;	//对战力加成
+	repeated pbHero list = 13;
+	optional int32 peerage	= 14;			//爵位
+}
+message pbChangeName{
+		optional	string	name		= 1;
+}
+message pbCode{
+		optional	string	code		= 1;
+}
+message pbCodeGoodsOne{
+		optional	int32	goods_id		= 1;
+		optional	int32	goods_num		= 2;
+}
+message pbCodeGoods{
+		repeated	pbCodeGoodsOne	goods		= 1;
+}
+message pbGameSetting{
+		repeated	pbSetting   list	= 1;		// 设置列表
+}
+
+message pbSetting{
+		optional	int32	type		= 1;		//设置类型 1普通设置2推送设置
+		optional	int32	id			= 2;		//设置项id
+		optional	int32	state		= 3;		//状态 0关闭1开启
+}
+message pbVipBaseInfo{
+		optional	int32	exp			= 1;		//当前经验
+		repeated	int32	award		= 2;		//领取状态
+}
+
+message pbResCd{
+		repeated	pbEndTime		list	=1; //资源回复倒计时列表
+}
+
+message pbEndTime{
+		optional    int32   end_time	= 1;    //下次回复时间
+		optional	int32	end_time2	= 2;    //全部回复满时间
+}
+
+message pbResInfo{
+		optional    int64	arena_num	= 1;    // 竞技币数量
+		optional	int64	union_num	= 2;    //联盟币数量
+}
+
+message pbOtherBattleList{
+		optional	int32  id 			= 1;	 //角色id
+		repeated 	pbHero 	list        = 2;	 //出战英雄列表
+		optional    pbPlayerBaseFight  fight_attr= 3; //对方召唤师战斗相关属性
+}
+
+message pbRedNotice{
+		optional	pbRedLeftTimes		LeftTimes = 1;
+		optional	pbRedMaxTimes		MaxTimes  = 2;
+}
+
+message pbRedLeftTimes{
+		optional	int32	peerage_times = 1; //爵位
+		optional	int32	arena_time	  = 2; //竞技
+		optional	int32	jungle_times  = 3; //丛林追击(金币）
+		optional	int32	jungle_exp_times=4;//丛林追击(经验）
+		optional	int32	hell_times	  = 5; //血色地狱
+		optional	int32	tower_times	  = 6;//英雄试炼
+		optional	int32	escort_times  = 7;//征服之海护送次数
+		optional	int32	escort_rob_times=8;//征服之海抢夺次数
+}
+
+message pbRedMaxTimes{
+		optional	int32	peerage_times = 1; //爵位
+		optional	int32	arena_time	  = 2; //竞技
+		optional	int32	jungle_times  = 3; //丛林追击（金币）
+		optional	int32	jungle_exp_times=4;////丛林追击(经验）
+		optional	int32	hell_times	  = 5; //血色地狱
+		optional	int32	escort_times  = 6;//征服之海护送次数
+		optional	int32	escort_rob_times=7;//征服之海抢夺次数
+}
+message pbChangeGold{
+		optional	int32	type1		= 1;		//从哪个系统来
+		optional	int32	type2		= 2;		//1加钱2减钱
+		optional	int32	num		= 3;		//数量
+}
+
+//============9001错误返回==============
+//协议号：9001
+// c >> s:
+//       null
+// s >> c:
+//	pbError
+//============9002更新人物属性==============
+//协议号：9002
+// c >> s:
+//       null
+// s >> c:
+//	pbPlayerBase
+
+//============9003更新人物属性-新手状态==============
+//协议号：9003
+// c >> s:
+//      pbResult	//2完成副本通关
+// s >> c:
+//	null
+
+//============查看其他玩家信息==============
+//协议号：9004
+// c >> s:
+//      pbResult	//玩家ID
+// s >> c:
+//	pbOtherPlayerBase
+
+//============获取当前已领取过的VIP奖励==============
+//协议号：9005
+// c >> s:
+//      null	//
+// s >> c:
+//	pbVipBaseInfo	//返回已领取过的VIP奖励
+
+//============领取VIP奖励==============
+//协议号：9006
+// c >> s:
+//      pbResult	//领取VIP第N个奖励
+// s >> c:
+//	pbResult	//成功返回N
+
+//============更改昵称==============
+//协议号：9007
+// c >> s:
+//      pbChangeName	
+// s >> c:
+//		pbPlayerBase	//成功返回
+
+//============更改头像==============
+//协议号：9008
+// c >> s:
+//      pbId32	
+// s >> c:
+//	    pbPlayerBase	//成功返回
+
+//============游戏设置==============
+//协议号：9009
+// c >> s:
+//      pbGameSetting	
+// s >> c:
+//	    pbResult	//成功返回
+
+//============购买体力==============
+//协议号：9010
+// c >> s:
+//      pbResult	//购买几次体力
+// s >> c:
+//	pbResult	//成功返回
+
+//============修改昵称cd=============
+//协议号：9011
+// c >> s:
+//      null	
+// s >> c:
+//	    pbId32  //0为无cd
+
+//============资源回复倒计时=============
+//协议号：9012
+// c >> s:
+//      null	
+// s >> c:
+//	    pbResCd
+
+//============请求设置列表=============
+//协议号：9013
+// c >> s:
+//      null	
+// s >> c:
+//	    pbGameSetting
+
+//============购买金币==============
+//协议号：9014
+// c >> s:
+//      pbResult	//购买几次金币
+// s >> c:
+//	pbResult	//成功返回
+
+//============请求竞技币/联盟币资源信息==============
+//协议号：9015
+// c >> s:
+//      null
+// s >> c:
+//		pbResInfo
+//============购买技能点==============
+//协议号：9016
+// c >> s:
+//      pbResult	//购买几次金币
+// s >> c:
+//	pbResult
+//============购买技能点==============
+//协议号：9017
+// c >> s:
+//      pbMars	//1普通2中级3高级  第二个数量
+// s >> c:
+//	pbResult
+
+//============获取对方出战列表==============
+//协议号：9018
+// c >> s:
+//      pbId32  //玩家id
+// s >> c:
+//		pbOtherBattleList
+
+//============获取玩法次数==============
+//协议号：9019
+// c >> s:
+//      null
+// s >> c:
+//		pbRedNotice
+//============获取已领取的玩法开放奖励列表==============
+//协议号：9020
+// c >> s:
+//      null
+// s >> c:
+//      pbId32R
+//============领取的玩法开放奖励==============
+//协议号：9021
+// c >> s:
+//      pbResult
+// s >> c:
+//      pbResult 领取成功 错误返回错误码
+//============防沉迷通知==============
+//协议号：9022
+// c >> s:
+//      null
+// s >> c:
+//      pbResult 3 或者 5 
+//============设置防沉迷==============
+//协议号：9023
+// c >> s:
+//      pbResult
+// s >> c:
+//      pbResult
+
+//============领取激活码==============
+//协议号：9024
+// c >> s:
+//      pbCode
+// s >> c:
+//      pbCodeGoods
+
+//============通知前端数据变化==============
+//协议号：9025
+// c >> s:
+//      null
+// s >> c:
+//      pbChangeGold
