@@ -391,7 +391,7 @@ namespace ET
 
             //合并捐献总金额
             List<DBUnionManager> dBUnionManager_old = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionManager>(oldzone, d => d.Id == (long)oldzone);
-            List<DBUnionManager> dBUnionManager_new = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionManager>(oldzone, d => d.Id == (long)newzone);
+            List<DBUnionManager> dBUnionManager_new = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionManager>(newzone, d => d.Id == (long)newzone);
             if (dBUnionManager_old.Count > 0 && dBUnionManager_new.Count > 0)
             {
                 Log.Console($"合并家族捐献资金: {dBUnionManager_old[0].TotalDonation} {dBUnionManager_new[0].TotalDonation}");
