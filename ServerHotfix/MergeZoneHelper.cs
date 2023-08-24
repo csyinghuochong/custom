@@ -342,6 +342,7 @@ namespace ET
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
             Log.Console("DBPopularizeInfo Complelte");
+
             //DBRankInfo 排行榜  。 
             List<DBRankInfo> dBRankInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBRankInfo>(oldzone, d => d.Id > 0);
             List<DBRankInfo> dBRankInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBRankInfo>(newzone, d => d.Id > 0);
@@ -388,6 +389,30 @@ namespace ET
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
 
+            //合并捐献总金额
+            List<DBUnionManager> dBUnionManager_old = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionManager>(oldzone, d => d.Id == (long)oldzone);
+            List<DBUnionManager> dBUnionManager_new = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionManager>(oldzone, d => d.Id == (long)newzone);
+            if (dBUnionManager_old.Count > 0 && dBUnionManager_new.Count > 0)
+            {
+                Log.Console($"合并家族捐献资金: {dBUnionManager_old[0].TotalDonation} {dBUnionManager_new[0].TotalDonation}");
+
+                dBUnionManager_new[0].TotalDonation += dBUnionManager_old[0].TotalDonation;
+                await Game.Scene.GetComponent<DBComponent>().Save(newzone, dBUnionManager_new[0]);
+            }
+
+            dbcount = 0;
+            List<DataCollationComponent> datacollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(oldzone, d => d.Id > 0);
+            foreach (var entity in datacollationComponents)
+            {
+                dbcount++;
+                if (dbcount % onecount == 0)
+                {
+                    await TimerComponent.Instance.WaitFrameAsync();
+                }
+                await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
+            }
+            Log.Console("DataCollationComponent Complelte");
+
             //EnergyComponent 正能量组件
             dbcount = 0;
             List<EnergyComponent> db_energyComponents = await Game.Scene.GetComponent<DBComponent>().Query<EnergyComponent>(oldzone, d => d.Id > 0);
@@ -426,6 +451,7 @@ namespace ET
                 }
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
+            Log.Console("NumericComponent Complelte");
 
             //PetComponent  宠物组件
             dbcount = 0;
@@ -439,6 +465,7 @@ namespace ET
                 }
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
+            Log.Console("PetComponent Complelte");
 
             //RechargeComponent  充值记录组件
             dbcount = 0;
@@ -465,6 +492,8 @@ namespace ET
                 }
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
+            Log.Console("ReddotComponent Complelte");
+
 
             //ShoujiComponent  收集大厅
             dbcount = 0;
@@ -478,6 +507,7 @@ namespace ET
                 }
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
+            Log.Console("ShoujiComponent Complelte");
 
             //SkillSetComponent  技能
             dbcount = 0;
@@ -518,18 +548,7 @@ namespace ET
                 }
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
-
-            dbcount = 0;
-            List<DataCollationComponent> datacollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(oldzone, d => d.Id > 0);
-            foreach (var entity in datacollationComponents)
-            {
-                dbcount++;
-                if (dbcount % onecount == 0)
-                {
-                    await TimerComponent.Instance.WaitFrameAsync();
-                }
-                await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
-            }
+            Log.Console("TitleComponent Complelte");
 
             //UserInfoComponent  玩家信息
             dbcount = 0;
@@ -549,6 +568,7 @@ namespace ET
                     newuserinfoList.Add(entity.UserInfo.Name, entity);
                 }
             }
+            Log.Console("newuserinfoList Complelte");
 
             List<UserInfoComponent> olduserInfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(oldzone, d => d.Id > 0);
             foreach (var oldentity in olduserInfoComponents)
@@ -556,6 +576,7 @@ namespace ET
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
+                    Log.Console("合区补偿改名卡");
                     await TimerComponent.Instance.WaitFrameAsync();
                 }
 
@@ -565,6 +586,8 @@ namespace ET
                 }
                 if (newuserinfoList.ContainsKey(oldentity.UserInfo.Name))
                 {
+                    Log.Console("合区补偿改名卡ContainsKey");
+
                     //合服账号名称规则，A：流星 25级 B 流星 30级 则B流星 名字沿用，A自动发放一个改名卡 （规则 等级高 > 战力高 > id在前）
                     long renameId = 0;
                     UserInfoComponent newentity = newuserinfoList[oldentity.UserInfo.Name];
