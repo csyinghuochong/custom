@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpCompress.Common;
+using System;
 using System.Collections.Generic;
 
 namespace ET
@@ -165,7 +166,7 @@ namespace ET
             //ActivityComponent
             List<ActivityComponent> activityComponents = await Game.Scene.GetComponent<DBComponent>().Query<ActivityComponent>(oldzone, d => d.Id > 0);
             long dbcount = 0;
-            int onecount = 50;
+            int onecount = 1000;
             foreach (var entity in activityComponents)
             {
                 dbcount++;
@@ -385,9 +386,9 @@ namespace ET
             List<DBUnionInfo> dBUnionInfo_new = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionInfo>(oldzone, d => d.Id > 0);
             foreach (var entity in dBUnionInfo_new)
             {
-                Log.Console($"合并家族: {newzone} {entity.Id}");
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
+            Log.Console($"DBUnionInfo Complelte");
 
             //合并捐献总金额
             List<DBUnionManager> dBUnionManager_old = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionManager>(oldzone, d => d.Id == (long)oldzone);
@@ -401,15 +402,23 @@ namespace ET
             }
 
             dbcount = 0;
-            List<DataCollationComponent> datacollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(oldzone, d => d.Id > 0);
-            foreach (var entity in datacollationComponents)
+
+            try
             {
-                dbcount++;
-                if (dbcount % onecount == 0)
+                List<DataCollationComponent> datacollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(oldzone, d => d.Id > 0);
+                foreach (var entity in datacollationComponents)
                 {
-                    await TimerComponent.Instance.WaitFrameAsync();
+                    dbcount++;
+                    if (dbcount % onecount == 0)
+                    {
+                        await TimerComponent.Instance.WaitFrameAsync();
+                    }
+                    await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
                 }
-                await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString());
             }
             Log.Console("DataCollationComponent Complelte");
 

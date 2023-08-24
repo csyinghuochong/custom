@@ -1,4 +1,6 @@
-﻿namespace ET
+﻿using System;
+
+namespace ET
 {
 
     public class MergeZone_OnMergeZone : AEvent<EventType.MergeZone>
@@ -13,7 +15,15 @@
             int oldzone = args.oldzone;
             int newzone = args.newzone;
             Log.Console("合区开始！");
-            await MergeZoneHelper.MergeZone(oldzone, newzone);
+            try
+            {
+                await MergeZoneHelper.MergeZone(oldzone, newzone);
+            }
+            catch (Exception ex)
+            { 
+                Log.Error(ex.ToString());
+            }
+         
             Log.Console("合区完成！");
         }
     }
