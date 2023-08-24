@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9EF2CC37-0FB8-7638-DC82-41BD62874450}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityVersion>2020.3.33f1c2</UnityVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_2020_3_33;UNITY_2020_3;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;UNITY_UGP_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_IG;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_CLOUD_FEATURES;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_2020_3_33;UNITY_2020_3;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;UNITY_UGP_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_IG;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_CLOUD_FEATURES;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AutoStreamingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AutoStreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CloudFoundationModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.CloudFoundationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UIElementsNativeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.CoreModule">
+      <HintPath>Library\UnityAssemblies\UnityEditor.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GraphViewModule">
+      <HintPath>Library\UnityAssemblies\UnityEditor.GraphViewModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.PackageManagerUIModule">
+      <HintPath>Library\UnityAssemblies\UnityEditor.PackageManagerUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SceneTemplateModule">
+      <HintPath>Library\UnityAssemblies\UnityEditor.SceneTemplateModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsModule">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsSamplesModule">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIServiceModule">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UIServiceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UnityConnectModule">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>Library\UnityAssemblies\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>Library\UnityAssemblies\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>Library\UnityAssemblies\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>Library\UnityAssemblies\System.Collections.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>Library\UnityAssemblies\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>Library\UnityAssemblies\System.Collections.NonGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>Library\UnityAssemblies\System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>Library\UnityAssemblies\System.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>Library\UnityAssemblies\System.ComponentModel.EventBasedAsync.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>Library\UnityAssemblies\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>Library\UnityAssemblies\System.ComponentModel.TypeConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>Library\UnityAssemblies\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>Library\UnityAssemblies\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing">
+      <HintPath>Library\UnityAssemblies\System.Diagnostics.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>Library\UnityAssemblies\System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>Library\UnityAssemblies\System.Dynamic.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>Library\UnityAssemblies\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>Library\UnityAssemblies\System.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>Library\UnityAssemblies\System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>Library\UnityAssemblies\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>Library\UnityAssemblies\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>Library\UnityAssemblies\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>Library\UnityAssemblies\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>Library\UnityAssemblies\System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>Library\UnityAssemblies\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>Library\UnityAssemblies\System.IO.FileSystem.Watcher.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>Library\UnityAssemblies\System.IO.IsolatedStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>Library\UnityAssemblies\System.IO.MemoryMappedFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>Library\UnityAssemblies\System.IO.Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>Library\UnityAssemblies\System.IO.UnmanagedMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>Library\UnityAssemblies\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>Library\UnityAssemblies\System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>Library\UnityAssemblies\System.Linq.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>Library\UnityAssemblies\System.Linq.Queryable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>Library\UnityAssemblies\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>Library\UnityAssemblies\System.Net.NameResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>Library\UnityAssemblies\System.Net.NetworkInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>Library\UnityAssemblies\System.Net.Ping.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>Library\UnityAssemblies\System.Net.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>Library\UnityAssemblies\System.Net.Requests.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>Library\UnityAssemblies\System.Net.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>Library\UnityAssemblies\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>Library\UnityAssemblies\System.Net.WebHeaderCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>Library\UnityAssemblies\System.Net.WebSockets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>Library\UnityAssemblies\System.Net.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>Library\UnityAssemblies\System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>Library\UnityAssemblies\System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>Library\UnityAssemblies\System.Reflection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>Library\UnityAssemblies\System.Reflection.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>Library\UnityAssemblies\System.Resources.Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>Library\UnityAssemblies\System.Resources.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>Library\UnityAssemblies\System.Resources.Writer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>Library\UnityAssemblies\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>Library\UnityAssemblies\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>Library\UnityAssemblies\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>Library\UnityAssemblies\System.Runtime.Handles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>Library\UnityAssemblies\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>Library\UnityAssemblies\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>Library\UnityAssemblies\System.Runtime.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>Library\UnityAssemblies\System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>Library\UnityAssemblies\System.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>Library\UnityAssemblies\System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>Library\UnityAssemblies\System.Runtime.Serialization.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>Library\UnityAssemblies\System.Security.Claims.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>Library\UnityAssemblies\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>Library\UnityAssemblies\System.Security.Cryptography.Csp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>Library\UnityAssemblies\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>Library\UnityAssemblies\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>Library\UnityAssemblies\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>Library\UnityAssemblies\System.Security.Principal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>Library\UnityAssemblies\System.Security.SecureString.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>Library\UnityAssemblies\System.Text.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>Library\UnityAssemblies\System.Text.Encoding.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>Library\UnityAssemblies\System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>Library\UnityAssemblies\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>Library\UnityAssemblies\System.Threading.Overlapped.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>Library\UnityAssemblies\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>Library\UnityAssemblies\System.Threading.Tasks.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>Library\UnityAssemblies\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>Library\UnityAssemblies\System.Threading.ThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>Library\UnityAssemblies\System.Threading.Timer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>Library\UnityAssemblies\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>Library\UnityAssemblies\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>Library\UnityAssemblies\System.Xml.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>Library\UnityAssemblies\System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>Library\UnityAssemblies\System.Xml.XmlSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>Library\UnityAssemblies\System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>Library\UnityAssemblies\System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>Library\UnityAssemblies\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>Library\UnityAssemblies\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>Library\UnityAssemblies\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>Library\UnityAssemblies\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>Library\UnityAssemblies\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>Library\UnityAssemblies\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>Library\UnityAssemblies\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>Library\UnityAssemblies\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>Library\UnityAssemblies\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net">
+      <HintPath>Library\UnityAssemblies\System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>Library\UnityAssemblies\System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>Library\UnityAssemblies\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <HintPath>Library\UnityAssemblies\System.ServiceModel.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>Library\UnityAssemblies\System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>Library\UnityAssemblies\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows">
+      <HintPath>Library\UnityAssemblies\System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>Library\UnityAssemblies\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>Library\UnityAssemblies\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Serialization">
+      <HintPath>Library\UnityAssemblies\System.Xml.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>Assets\DOTween\DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets\DOTween\DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets\DOTween\DOTween50.dll</HintPath>
+    </Reference>
+    <Reference Include="CString">
+      <HintPath>Assets\Plugins\CString.dll</HintPath>
+    </Reference>
+    <Reference Include="Debugger">
+      <HintPath>Assets\Plugins\Debugger.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>Packages\com.unity.ext.nunit\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Plugins\BuglyPlugins\BuglyInit.cs" />
+    <Compile Include="Assets\Plugins\BuglyPlugins\BuglyCallback.cs" />
+    <Compile Include="Assets\Plugins\BuglyPlugins\BuglyAgent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AssetsLibrary\bundles_info\game_bundles_info.txt" />
+    <None Include="Assets\DOTween\DOTween.XML" />
+    <None Include="Assets\DOTween\DOTween43.xml" />
+    <None Include="Assets\DOTween\DOTween46.xml" />
+    <None Include="Assets\DOTween\DOTween50.xml" />
+    <None Include="Assets\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\DOTween\readme.txt" />
+    <None Include="Assets\ExceptionProbe.txt" />
+    <None Include="Assets\link.xml" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\RawResources\platform\apk_dev\config.txt" />
+    <None Include="Assets\RawResources\platform\apk_server1\config.txt" />
+    <None Include="Assets\RawResources\platform\ios_dev\config.txt" />
+    <None Include="Assets\RawResources\platform\ios_server1\config.txt" />
+    <None Include="Assets\ReadMe.txt" />
+    <None Include="Assets\Resources\Platform\config.txt" />
+    <None Include="Assets\Resources\Shader\DragonBones-Sprites-Default.shader" />
+    <None Include="Assets\Resources\Shader\DragonBones-Sprites-Default-Gray.shader" />
+    <None Include="Assets\Resources\Shader\DragonBones-Sprites-Default-Mask.shader" />
+    <None Include="Assets\Resources\Shader\UI-Default-Mask.shader" />
+    <None Include="Assets\Resources\Shader\UI-EmojiFont.shader" />
+    <None Include="Assets\Resources\Shader\UI-Gray.shader" />
+    <None Include="Assets\Warning.txt" />
+    <None Include="Assets\备忘录.txt" />
+    <None Include="Assets\模块自测.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\FileSystemWatcherLicense.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\basecommands.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\basecommands.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\basecommands.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\basecommands.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\basecommands.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\basecommands.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\binmergetool.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\binmergetool.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\binmergetool.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\binmergetool.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\binmergetool.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\binmergetool.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\clientcommon.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\clientcommon.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\clientcommon.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\clientcommon.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\clientcommon.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\clientcommon.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm-help.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm-help.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm-help.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm-help.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm-help.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\cm-help.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\commontypes.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\commontypes.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\commontypes.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\commontypes.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\commontypes.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\commontypes.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\configurehelper.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\configurehelper.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\configurehelper.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\configurehelper.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\configurehelper.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\configurehelper.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\differences.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\differences.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\differences.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\differences.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\differences.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\differences.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\guihelp.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\guihelp.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\guihelp.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\guihelp.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\i3.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\i3.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\i3.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\i3.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\i3.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\i3.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\images.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\images.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\images.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\images.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\images.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\mergetool.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\mergetool.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\mergetool.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\mergetool.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\mergetool.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\plastic-gui.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\plastic-gui.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\plastic-gui.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\plastic-gui.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\semantic.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\semantic.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\semantic.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\semantic.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\semantic.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\workspaceserver.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\workspaceserver.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\workspaceserver.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\workspaceserver.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\workspaceserver.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\workspaceserver.zh-Hant.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\xdiff.en.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\xdiff.es.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\xdiff.ja.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\xdiff.ko.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\xdiff.zh-Hans.txt" />
+    <None Include="Packages\com.unity.collab-proxy\Lib\Editor\PlasticSCM\localization\xdiff.zh-Hant.txt" />
+    <None Include="Packages\com.unity.textmeshpro\Editor Resources\Shaders\TMP_Properties.cginc" />
+    <None Include="Packages\com.unity.textmeshpro\Editor Resources\Shaders\TMP_SDF Internal Editor.shader" />
+    <None Include="Packages\com.unity.textmeshpro\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
+    <None Include="Packages\com.unity.timeline\Editor\StyleSheets\res\Timeline_DarkSkin.txt" />
+    <None Include="Packages\com.unity.timeline\Editor\StyleSheets\res\Timeline_LightSkin.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2012\UnityVS.CSharp.targets" />
+</Project>

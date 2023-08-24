@@ -1,0 +1,31 @@
+资源相关：
+1).增加，迁移资源时保持资源设置(Packing Tag,Compression)的正确性。
+
+界面相关：
+1).不同分辨率下界面显示的正确性(960x640，1136x640，2048x1536)。
+2).使用Frame Debug进行drawcall优化。
+3).界面细节与美术效果图的一致性。
+
+代码组织：
+1).命名尽量减少无效的简写。
+2).多界面系统有必要划分文件夹细分功能。
+
+界面参数设置：
+1).全屏界面禁止设置viewBgEnum。
+2).正确设置ParentLayer，避免简单粗暴式地直接使用mPopLayer。
+
+资源释放：
+1).释放GameTimer。
+2).释放LayoutController。
+3).释放CommonTabView。
+4).释放事件侦听。
+5).释放非UIManager:HandleUI创建的界面。
+
+功能相关：
+1).GameImage,GameGraphic动态设置Sprite方式修改为GameObjectUtil:SetImageSprite。
+2).中文通过LanguageUtil获取。
+3).尽量复用获得的服务器数据，减少向服务器请求数据的次数。
+4).检测战斗返回，账号切换后模块逻辑正确性。
+
+其它：
+1).关闭开发完成后调试Log打印。

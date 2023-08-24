@@ -1,0 +1,43 @@
+
+local ConfigSysmansion_servant={
+              [1] = {
+                      open_level = 1,
+                      income_add = 0,
+                      hire_money = 0,
+                      seven_house_coin = 0,
+                      hire_boom = 0,
+                      function_id = [[0.0]],
+                      function_intro = [[仆人功能：帮助小主照看府邸\n1、事件通知；\n2、开府设宴，增加礼金返还比例\n3、无需例银]],
+                      mini_icon = [[role_20024]],
+                      model = [[r_200241]],
+                      name = [[浣雪]],
+                      intro = [[冬日的雪夜，老爷在府前发现的弃婴，取名浣雪。从小便是小主的贴身玩伴，照顾小主起居，后跟随小主进宫。]],
+                    },
+              [2] = {
+                      open_level = 2,
+                      income_add = 0,
+                      hire_money = 50,
+                      seven_house_coin = 500,
+                      hire_boom = 0,
+                      function_id = [[3.0]],
+                      function_intro = [[仆人功能：帮助小主打扫府邸\n1、清洁收益加成；\n2、需要定期发放例银]],
+                      mini_icon = [[role_20134]],
+                      model = [[r_201341]],
+                      name = [[春光]],
+                      intro = [[在宫中多年了，原来一直在辛者库，也是小主开府，才终于寻了点关系，让内务府给拨了过来。]],
+                    },
+              [3] = {
+                      open_level = 3,
+                      income_add = 0,
+                      hire_money = 200,
+                      seven_house_coin = 2000,
+                      hire_boom = 0,
+                      function_id = [[4.0]],
+                      function_intro = [[仆人功能：帮助小主自动种植\n1、升级会减少自动收获延迟；\n2、需要定期发放例银]],
+                      mini_icon = [[role_20144]],
+                      model = [[r_201441]],
+                      name = [[宝澄]],
+                      intro = [[原是在御花园伺候花木的，因照顾得力，颇得赏识，皇上听说了，特意着内务府给小主您送了过来。]],
+                    },
+            }
+return ConfigSysmansion_servant;
