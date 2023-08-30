@@ -38,7 +38,7 @@ namespace ET
                 Chat2Mail_GetUnitList chat2G_EnterChat = (Chat2Mail_GetUnitList)await MessageHelper.CallActor(chatServerId, new Mail2Chat_GetUnitList()
                 {
                 });
-                if (chat2G_EnterChat.Error != ErrorCore.ERR_Success)
+                if (chat2G_EnterChat.Error != ErrorCode.ERR_Success)
                 {
                     return;
                 }
