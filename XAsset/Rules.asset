@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 836
+  version: 839
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -3796,6 +3796,8 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/PlayerIcon/1.png
   - bundle: 499293d30e2182a0b218542d2f0c560e.unity3d
     path: Assets/Bundles/Icon/PlayerIcon/2.png
+  - bundle: 499293d30e2182a0b218542d2f0c560e.unity3d
+    path: Assets/Bundles/Icon/PlayerIcon/3.png
   - bundle: 8c5cada16785f3141cabe257406c9326.unity3d
     path: Assets/Bundles/Icon/PropertyIcon/PetPro_1.png
   - bundle: 8c5cada16785f3141cabe257406c9326.unity3d
@@ -4511,6 +4513,8 @@ MonoBehaviour:
   - bundle: f53a1bf78f7a146659363581f1b291fe.unity3d
     path: Assets/Bundles/Icon/TiTleIcon/Img_UIRoleXiLian.png
   - bundle: f53a1bf78f7a146659363581f1b291fe.unity3d
+    path: Assets/Bundles/Icon/TiTleIcon/Img_UIRunRace.png
+  - bundle: f53a1bf78f7a146659363581f1b291fe.unity3d
     path: Assets/Bundles/Icon/TiTleIcon/Img_UISetting.png
   - bundle: f53a1bf78f7a146659363581f1b291fe.unity3d
     path: Assets/Bundles/Icon/TiTleIcon/Img_UIShenQiMake.png
@@ -4708,6 +4712,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/CreateRole/UICreateRoleSkillItem.prefab
   - bundle: 930be4cb1c309efa1e3a07492e0e8fd3.unity3d
     path: Assets/Bundles/UI/CreateRole/UILobby.prefab
+  - bundle: 01f6134b12a92f77da3c8cb801ecbb50.unity3d
+    path: Assets/Bundles/UI/Demon/UIDemonMain.prefab
   - bundle: 68e0a0d2a6ba0484a1e4d6ed7d161751.unity3d
     path: Assets/Bundles/UI/Dungeon/UIBossRefreshSettingItem.prefab
   - bundle: 5929f671bb102c64e4c0ded5336e6af8.unity3d
@@ -4930,6 +4936,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Common/UICommonCostItem.prefab
   - bundle: 3a11108c90ccd37cf5ca687780cac1f7.unity3d
     path: Assets/Bundles/UI/Main/Common/UICommonItem.prefab
+  - bundle: ca606e8a057e6dc03800cf016426a834.unity3d
+    path: Assets/Bundles/UI/Main/Common/UICommonProperty.prefab
   - bundle: c8e74b5e1c854ba7ea6f288a86989d97.unity3d
     path: Assets/Bundles/UI/Main/Common/UICommonReward.prefab
   - bundle: 03c3fa8b7812e700cd900a86324bb4be.unity3d
@@ -5878,6 +5886,10 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Monster/70009001.prefab
   - bundle: fbf28f9b4d113bbbcdf1bc088afe75d2.unity3d
     path: Assets/Bundles/Unit/Monster/70009002.prefab
+  - bundle: 37ed5622be10cf56d4ba9f3355d2e3ab.unity3d
+    path: Assets/Bundles/Unit/Monster/70009051.prefab
+  - bundle: aea8df883d8ee6ce36dd291a27283971.unity3d
+    path: Assets/Bundles/Unit/Monster/70009061.prefab
   - bundle: 4cd99a9d5bff614012ca3a7603692911.unity3d
     path: Assets/Bundles/Unit/Monster/70009303.prefab
   - bundle: 645c0d7b96a59fdff8b2f28eeee2c9fe.unity3d
@@ -6030,20 +6042,20 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Monster/90000013.prefab
   - bundle: 3eeb7d1b828c67ad772b1a3581ab02a4.unity3d
     path: Assets/Bundles/Unit/Monster/90000014.prefab
-  - bundle: eab716645846d3a5e5eb8abf902a0cdc.unity3d
-    path: Assets/Bundles/Unit/Monster/DongWu_1.prefab
-  - bundle: a2c4987a77d439b12af0da85a0a08bc0.unity3d
-    path: Assets/Bundles/Unit/Monster/DongWu_2.prefab
-  - bundle: 7ccbe8195ed7570bff36c1bf93d642f9.unity3d
-    path: Assets/Bundles/Unit/Monster/DongWu_3.prefab
-  - bundle: 1dc25c06b2b02162f9af16e2efed295a.unity3d
-    path: Assets/Bundles/Unit/Monster/DongWu_4.prefab
-  - bundle: b35c7af4878d4b6b5c60fd6928238453.unity3d
-    path: Assets/Bundles/Unit/Monster/DongWu_5.prefab
-  - bundle: 792ad2270ee1e91b0f34bb1597092eb2.unity3d
-    path: Assets/Bundles/Unit/Monster/DongWu_6.prefab
-  - bundle: df925db27b4465bec0dac6bdb3c97568.unity3d
-    path: Assets/Bundles/Unit/Monster/DongWu_7.prefab
+  - bundle: 6abc1127977d2e2a0bb0b628d931b9e5.unity3d
+    path: Assets/Bundles/Unit/Monster/90000021.prefab
+  - bundle: 2737254247270d20a8b8dfc4ffbeb8b6.unity3d
+    path: Assets/Bundles/Unit/Monster/90000022.prefab
+  - bundle: c68530b870e397fb69171ab96736448b.unity3d
+    path: Assets/Bundles/Unit/Monster/90000023.prefab
+  - bundle: 99b27bad401cbb522bd6b479a4c9121f.unity3d
+    path: Assets/Bundles/Unit/Monster/90000024.prefab
+  - bundle: a69bf848213563c9775b221cac48a8b8.unity3d
+    path: Assets/Bundles/Unit/Monster/90000025.prefab
+  - bundle: b1e815e9bbe900e7c1836d2cc58d9e66.unity3d
+    path: Assets/Bundles/Unit/Monster/90000026.prefab
+  - bundle: f4a78a0ca2d2b5aa9b5af999fd3e0109.unity3d
+    path: Assets/Bundles/Unit/Monster/90000027.prefab
   - bundle: 3189e1f8e73a80254d930fe7b57baf88.unity3d
     path: Assets/Bundles/Unit/Monster/DorrWay_1.prefab
   - bundle: b5b5f0c6acf061837fb8b18ca49b9f24.unity3d
@@ -7602,6 +7614,12 @@ MonoBehaviour:
   - name: fbf28f9b4d113bbbcdf1bc088afe75d2.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/70009002.prefab
+  - name: 37ed5622be10cf56d4ba9f3355d2e3ab.unity3d
+    assets:
+    - Assets/Bundles/Unit/Monster/70009051.prefab
+  - name: aea8df883d8ee6ce36dd291a27283971.unity3d
+    assets:
+    - Assets/Bundles/Unit/Monster/70009061.prefab
   - name: 4cd99a9d5bff614012ca3a7603692911.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/70009303.prefab
@@ -7830,27 +7848,27 @@ MonoBehaviour:
   - name: 3eeb7d1b828c67ad772b1a3581ab02a4.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/90000014.prefab
-  - name: eab716645846d3a5e5eb8abf902a0cdc.unity3d
+  - name: 6abc1127977d2e2a0bb0b628d931b9e5.unity3d
     assets:
-    - Assets/Bundles/Unit/Monster/DongWu_1.prefab
-  - name: a2c4987a77d439b12af0da85a0a08bc0.unity3d
+    - Assets/Bundles/Unit/Monster/90000021.prefab
+  - name: 2737254247270d20a8b8dfc4ffbeb8b6.unity3d
     assets:
-    - Assets/Bundles/Unit/Monster/DongWu_2.prefab
-  - name: 7ccbe8195ed7570bff36c1bf93d642f9.unity3d
+    - Assets/Bundles/Unit/Monster/90000022.prefab
+  - name: c68530b870e397fb69171ab96736448b.unity3d
     assets:
-    - Assets/Bundles/Unit/Monster/DongWu_3.prefab
-  - name: 1dc25c06b2b02162f9af16e2efed295a.unity3d
+    - Assets/Bundles/Unit/Monster/90000023.prefab
+  - name: 99b27bad401cbb522bd6b479a4c9121f.unity3d
     assets:
-    - Assets/Bundles/Unit/Monster/DongWu_4.prefab
-  - name: b35c7af4878d4b6b5c60fd6928238453.unity3d
+    - Assets/Bundles/Unit/Monster/90000024.prefab
+  - name: a69bf848213563c9775b221cac48a8b8.unity3d
     assets:
-    - Assets/Bundles/Unit/Monster/DongWu_5.prefab
-  - name: 792ad2270ee1e91b0f34bb1597092eb2.unity3d
+    - Assets/Bundles/Unit/Monster/90000025.prefab
+  - name: b1e815e9bbe900e7c1836d2cc58d9e66.unity3d
     assets:
-    - Assets/Bundles/Unit/Monster/DongWu_6.prefab
-  - name: df925db27b4465bec0dac6bdb3c97568.unity3d
+    - Assets/Bundles/Unit/Monster/90000026.prefab
+  - name: f4a78a0ca2d2b5aa9b5af999fd3e0109.unity3d
     assets:
-    - Assets/Bundles/Unit/Monster/DongWu_7.prefab
+    - Assets/Bundles/Unit/Monster/90000027.prefab
   - name: 3189e1f8e73a80254d930fe7b57baf88.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/DorrWay_1.prefab
@@ -8559,6 +8577,9 @@ MonoBehaviour:
   - name: 930be4cb1c309efa1e3a07492e0e8fd3.unity3d
     assets:
     - Assets/Bundles/UI/CreateRole/UILobby.prefab
+  - name: 01f6134b12a92f77da3c8cb801ecbb50.unity3d
+    assets:
+    - Assets/Bundles/UI/Demon/UIDemonMain.prefab
   - name: 68e0a0d2a6ba0484a1e4d6ed7d161751.unity3d
     assets:
     - Assets/Bundles/UI/Dungeon/UIBossRefreshSettingItem.prefab
@@ -8892,6 +8913,9 @@ MonoBehaviour:
   - name: 3a11108c90ccd37cf5ca687780cac1f7.unity3d
     assets:
     - Assets/Bundles/UI/Main/Common/UICommonItem.prefab
+  - name: ca606e8a057e6dc03800cf016426a834.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Common/UICommonProperty.prefab
   - name: c8e74b5e1c854ba7ea6f288a86989d97.unity3d
     assets:
     - Assets/Bundles/UI/Main/Common/UICommonReward.prefab
@@ -12284,6 +12308,7 @@ MonoBehaviour:
     assets:
     - Assets/Bundles/Icon/PlayerIcon/1.png
     - Assets/Bundles/Icon/PlayerIcon/2.png
+    - Assets/Bundles/Icon/PlayerIcon/3.png
   - name: 8c5cada16785f3141cabe257406c9326.unity3d
     assets:
     - Assets/Bundles/Icon/PropertyIcon/PetPro_1.png
@@ -12651,6 +12676,7 @@ MonoBehaviour:
     - Assets/Bundles/Icon/TiTleIcon/Img_UIRecharge.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIRole.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIRoleXiLian.png
+    - Assets/Bundles/Icon/TiTleIcon/Img_UIRunRace.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UISetting.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIShenQiMake.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIShouJi.png
@@ -13246,6 +13272,28 @@ MonoBehaviour:
   - name: 4430e3618b9d55af874bb86c5b2713b1.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Monster/Old/Lang/Lang_1.controller
+  - name: 180ed9833321f8ee529ecc603ce4d94b.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/model/100631_gtss_npc
+      #5237077.fbx
+  - name: 555ee4bb8340f8959896d4d2471cba4c.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/Materials/100630_gtss_npc_d_512.mat
+  - name: c586210c21ad0f5ba434f5a833a17fc9.unity3d
+    assets:
+    - Assets/Res/BossAnimator/YanShiBoss.controller
+  - name: e4ca96fbedca4597cc50ddaea0af070a.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/tex/100630_gtss_npc_d_512.png
+  - name: 1cd5e35e698562b1e6dbac3d135a45d3.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Monster/Normal/CRYSTAL.fbx
+  - name: c970bd8e2d0eb635f02dadeeda13dc0a.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Monster/Normal/Materials/palace_lightcolumn_02.mat
+  - name: 5e837b7c40a715b186d80f34e3217133.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Monster/Normal/Texture/CRYSTAL_BLUE.png
   - name: 9611445e9b86b7957c55929b7e900cee.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/tex/109420_axl_npc_Y_512.png
@@ -13665,19 +13713,6 @@ MonoBehaviour:
   - name: c95f8ea55fe0a9520cc76733ff481414.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/tex/103040_dcf_npc_d_256.png
-  - name: 180ed9833321f8ee529ecc603ce4d94b.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/model/100631_gtss_npc
-      #5237077.fbx
-  - name: 555ee4bb8340f8959896d4d2471cba4c.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/Materials/100630_gtss_npc_d_512.mat
-  - name: c586210c21ad0f5ba434f5a833a17fc9.unity3d
-    assets:
-    - Assets/Res/BossAnimator/YanShiBoss.controller
-  - name: e4ca96fbedca4597cc50ddaea0af070a.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/tex/100630_gtss_npc_d_512.png
   - name: e7846ba7c2a06a5a8dfeb3a11a2222ee.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/MonsterModel2/tex/104510_sy_npc_d_512.png
@@ -15016,15 +15051,15 @@ MonoBehaviour:
   - name: d58aea790d387b0c3c11e61fd28fc6ce.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_128.png
+  - name: 6616b626c03439ec238ee8180b055303.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Button/Btn_60.png
   - name: af89ce4bafb474c74f2f3b8662d7d8d7.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_118.png
   - name: 7cc8ceaf97a46e325db66a62b56900be.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_62.png
-  - name: 6616b626c03439ec238ee8180b055303.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Button/Btn_60.png
   - name: 93af8d8260129fee9473a577e455a553.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_247.png
@@ -15046,6 +15081,9 @@ MonoBehaviour:
   - name: 6b32a93398eaa44ebd61633a19c6cf91.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_243.Png
+  - name: 66b79c41bb658dcd9b14278171ee0bbb.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_78.png
   - name: c164012b8b9cb72a1b2eaf68403678c4.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_192.png
@@ -15082,9 +15120,6 @@ MonoBehaviour:
   - name: e92a2154877cc6a895631516bd18387a.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_33.png
-  - name: 66b79c41bb658dcd9b14278171ee0bbb.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_78.png
   - name: d40db5265fd16daa59f03ea45514bf97.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_61A.png
@@ -15280,9 +15315,6 @@ MonoBehaviour:
   - name: 1f21981b56277187351de2a1d0a6ee91.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_136.png
-  - name: 469045e1a7f7f440e51b1d30d55f3f95.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_10.png
   - name: 37b825214bf4eb952f1d21f517d2fda5.unity3d
     assets:
     - Assets/Mono/ThirdRes/GUI Pro Kit Fantasy RPG/Particles/Materials/fx_glow3.mat
@@ -15370,6 +15402,9 @@ MonoBehaviour:
   - name: 13b1449b32b2d477cf0e1602c2571d00.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_4A.png
+  - name: 469045e1a7f7f440e51b1d30d55f3f95.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_10.png
   - name: 3fee61081d4e30121bdc822a28dbf69f.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/EmojiOne.png
@@ -15451,6 +15486,9 @@ MonoBehaviour:
   - name: b2e3d4a9fc616b546361d2fdf544046f.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_378.png
+  - name: ab2984dfeed391b3e12a6ca05c30e7ba.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_389.png
   - name: cee6a9762cc8193575c7666734b5c7bf.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_335.png
@@ -15541,9 +15579,21 @@ MonoBehaviour:
   - name: 72cc504ad5cc073f4bdd657482c2820e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_6.png
+  - name: c84a4484f447457f3015c8bdedeec92d.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Atlas/MainUI/Img_98.png
+  - name: ea934ac5b5044e05b8ce0031f4837bb3.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Atlas/MainUI/Img_43.png
+  - name: 37a68634425dddfacbd33fb634bcdfe8.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_425.Png
   - name: 6f14a63952005396f439ff18e4fb84ae.unity3d
     assets:
     - Assets/Res/RenderTexture/MapRenderTexture.renderTexture
+  - name: 0c888a7bef304a5d9147618ff08e5d16.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Atlas/MainUI/c9.png
   - name: 00fc49dd1441325c40948558a790e250.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_6_2.png
@@ -15919,15 +15969,6 @@ MonoBehaviour:
   - name: f61f32b4f81a9396ab4b1e72cb8bae22.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_8_1.png
-  - name: 0c888a7bef304a5d9147618ff08e5d16.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Atlas/MainUI/c9.png
-  - name: ea934ac5b5044e05b8ce0031f4837bb3.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Atlas/MainUI/Img_43.png
-  - name: c84a4484f447457f3015c8bdedeec92d.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Atlas/MainUI/Img_98.png
   - name: 66caba2e92e733c49702a727b2413c7b.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_437.png

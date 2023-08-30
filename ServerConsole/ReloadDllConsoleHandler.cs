@@ -44,7 +44,7 @@ namespace ET
                             A2M_Reload createUnit = (A2M_Reload)await ActorMessageSenderComponent.Instance.Call(
                                 mapInstanceId, new M2A_Reload() { LoadType = 0, LoadValue = "0" });
 
-                            if (createUnit.Error != ErrorCore.ERR_Success)
+                            if (createUnit.Error != ErrorCode.ERR_Success)
                             {
                                 Log.Console("C2M_Reload_a: error " + startSceneConfig);
                             }
