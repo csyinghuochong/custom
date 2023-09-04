@@ -10,6 +10,7 @@ namespace ET
         {
             Log.Console("AppStart_Init_Custom");
             ComHelp.AccountOldLogic = true;
+            SkillHelp.CleanSkill = true;
         }
     }
 }
