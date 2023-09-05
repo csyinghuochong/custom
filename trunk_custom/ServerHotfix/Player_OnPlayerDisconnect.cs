@@ -11,6 +11,17 @@
 
             if (SceneConfigHelper.IsSingleFuben(sceneTypeEnum))
             {
+                if (sceneTypeEnum == SceneTypeEnum.LocalDungeon)
+                {
+                    long olddungeonid = args.DomainScene.GetComponent<LocalDungeonComponent>().LastDungeonId;
+                    Scene oldScene = Game.Scene.Get(olddungeonid);
+                    if (oldScene!=null)
+                    {
+                        TransferHelper.NoticeFubenCenter(oldScene, 2).Coroutine();
+                        oldScene.Dispose();
+                    }
+                }
+
                 //动态删除副本
                 TransferHelper.NoticeFubenCenter(scene, 2).Coroutine();
                 scene.Dispose();
