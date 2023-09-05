@@ -1,0 +1,1720 @@
+local bowlder1={
+                                      key = 1,
+                                      value = 90,
+                                    }
+local bowlder2={
+                                      key = 2,
+                                      value = 9,
+                                    }
+local bowlder3={
+                                      key = 3,
+                                      value = 9,
+                                    }
+local bowlder4={
+                                      key = 1,
+                                      value = 120,
+                                    }
+local bowlder5={
+                                      key = 2,
+                                      value = 12,
+                                    }
+local bowlder6={
+                                      key = 3,
+                                      value = 12,
+                                    }
+local bowlder7={
+                                      key = 1,
+                                      value = 150,
+                                    }
+local bowlder8={
+                                      key = 2,
+                                      value = 15,
+                                    }
+local bowlder9={
+                                      key = 3,
+                                      value = 15,
+                                    }
+
+local ConfigSysbowlder={
+              [1001111] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1001112] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1001113] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1001114] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1001115] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1001116] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1002111] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1002112] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1002113] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1002114] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1002115] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1002116] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1003111] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1003112] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1003113] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1003114] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1003115] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1003116] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1004111] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1004112] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1004113] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1004114] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1004115] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1004116] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1005111] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1005112] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1005113] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1005114] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder1,
+                            },
+                    },
+              [1005115] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder2,
+                            },
+                    },
+              [1005116] = {
+                      quality = 1,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder3,
+                            },
+                    },
+              [1001211] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1001212] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1001213] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1001214] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1001215] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1001216] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1002211] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1002212] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1002213] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1002214] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1002215] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1002216] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1003211] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1003212] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1003213] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1003214] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1003215] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1003216] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1004211] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1004212] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1004213] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1004214] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1004215] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1004216] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1005211] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1005212] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1005213] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1005214] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1005215] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1005216] = {
+                      quality = 2,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1001221] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1001222] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1001223] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1001224] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1001225] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1001226] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1002221] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1002222] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1002223] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1002224] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1002225] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1002226] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1003221] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1003222] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1003223] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1003224] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1003225] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1003226] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1004221] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1004222] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1004223] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1004224] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1004225] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1004226] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1005221] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1005222] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1005223] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1005224] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1005225] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1005226] = {
+                      quality = 2,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1001231] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1001232] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1001233] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1001234] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1001235] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1001236] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1002231] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1002232] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1002233] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1002234] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1002235] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1002236] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1003231] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1003232] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1003233] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1003234] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1003235] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1003236] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1004231] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1004232] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1004233] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1004234] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1004235] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1004236] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1005231] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1005232] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1005233] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1005234] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1005235] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1005236] = {
+                      quality = 2,
+                      suit_type = 3,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1001241] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1001242] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1001243] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1001244] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1001245] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1001246] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1002241] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1002242] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1002243] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1002244] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1002245] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1002246] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1003241] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1003242] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1003243] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1003244] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1003245] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1003246] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1004241] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1004242] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1004243] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1004244] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1004245] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1004246] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1005241] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1005242] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1005243] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1005244] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder4,
+                            },
+                    },
+              [1005245] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder5,
+                            },
+                    },
+              [1005246] = {
+                      quality = 2,
+                      suit_type = 4,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder6,
+                            },
+                    },
+              [1001311] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1001312] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1001313] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1001314] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1001315] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1001316] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1002311] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1002312] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1002313] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1002314] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1002315] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1002316] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1003311] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1003312] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1003313] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1003314] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1003315] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1003316] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1004311] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1004312] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1004313] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1004314] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1004315] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1004316] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1005311] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1005312] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1005313] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1005314] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1005315] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1005316] = {
+                      quality = 3,
+                      suit_type = 1,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1001321] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1001322] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1001323] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1001324] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1001325] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1001326] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1002321] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1002322] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1002323] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1002324] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1002325] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1002326] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1003321] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1003322] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1003323] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1003324] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1003325] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1003326] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1004321] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1004322] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1004323] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1004324] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1004325] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1004326] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1005321] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 1,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1005322] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 2,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1005323] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 3,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+              [1005324] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 4,
+                      addition_attri = {
+                              bowlder7,
+                            },
+                    },
+              [1005325] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 5,
+                      addition_attri = {
+                              bowlder8,
+                            },
+                    },
+              [1005326] = {
+                      quality = 3,
+                      suit_type = 2,
+                      equip_pos = 6,
+                      addition_attri = {
+                              bowlder9,
+                            },
+                    },
+            }
+return ConfigSysbowlder;

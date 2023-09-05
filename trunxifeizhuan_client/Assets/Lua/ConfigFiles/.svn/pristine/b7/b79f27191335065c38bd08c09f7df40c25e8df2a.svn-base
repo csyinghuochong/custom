@@ -1,0 +1,573 @@
+local skill_event1={
+                      type = 10701,
+                      parameters = {
+                              200161,
+                            },
+                    }
+
+local ConfigSysskill_event={
+              [1001] = {
+                      type = 0,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [1002] = {
+                      type = 0,
+                      parameters = {
+                              2,
+                            },
+                    },
+              [1010101] = {
+                      type = 1,
+                      parameters = {
+                              1,
+                              1,
+                            },
+                    },
+              [1010201] = {
+                      type = 1,
+                      parameters = {
+                              1,
+                              2,
+                            },
+                    },
+              [1020101] = {
+                      type = 1,
+                      parameters = {
+                              2,
+                              1,
+                            },
+                    },
+              [1030101] = {
+                      type = 1,
+                      parameters = {
+                              3,
+                              1,
+                            },
+                    },
+              [1030201] = {
+                      type = 1,
+                      parameters = {
+                              3,
+                              2,
+                            },
+                    },
+              [1030301] = {
+                      type = 1,
+                      parameters = {
+                              3,
+                              3,
+                            },
+                    },
+              [1040101] = {
+                      type = 1,
+                      parameters = {
+                              4,
+                              1,
+                            },
+                    },
+              [1050101] = {
+                      type = 1,
+                      parameters = {
+                              5,
+                              1,
+                            },
+                    },
+              [1060101] = {
+                      type = 1,
+                      parameters = {
+                              6,
+                              1,
+                              1,
+                            },
+                    },
+              [1060201] = {
+                      type = 1,
+                      parameters = {
+                              6,
+                              2,
+                              1,
+                            },
+                    },
+              [1060102] = {
+                      type = 1,
+                      parameters = {
+                              6,
+                              1,
+                              2,
+                            },
+                    },
+              [1060202] = {
+                      type = 1,
+                      parameters = {
+                              6,
+                              2,
+                              2,
+                            },
+                    },
+              [1070101] = {
+                      type = 1,
+                      parameters = {
+                              7,
+                              1,
+                            },
+                    },
+              [2001001] = {
+                      type = 2,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [2001002] = {
+                      type = 2,
+                      parameters = {
+                              2,
+                            },
+                    },
+              [3010101] = {
+                      type = 3,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10101001] = {
+                      type = 10101,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10101002] = {
+                      type = 10101,
+                      parameters = {
+                              2,
+                            },
+                    },
+              [10101003] = {
+                      type = 10101,
+                      parameters = {
+                              3,
+                            },
+                    },
+              [10101004] = {
+                      type = 10101,
+                      parameters = {
+                              4,
+                            },
+                    },
+              [10102100] = {
+                      type = 10102,
+                      parameters = {
+                              1,
+                              1000,
+                            },
+                    },
+              [10102101] = {
+                      type = 10102,
+                      parameters = {
+                              1,
+                              1,
+                            },
+                    },
+              [10102102] = {
+                      type = 10102,
+                      parameters = {
+                              1,
+                              2,
+                            },
+                    },
+              [10102200] = {
+                      type = 10102,
+                      parameters = {
+                              2,
+                              1000,
+                            },
+                    },
+              [10102201] = {
+                      type = 10102,
+                      parameters = {
+                              2,
+                              1,
+                            },
+                    },
+              [10102202] = {
+                      type = 10102,
+                      parameters = {
+                              2,
+                              2,
+                            },
+                    },
+              [10102300] = {
+                      type = 10102,
+                      parameters = {
+                              1,
+                              1000,
+                              1,
+                            },
+                    },
+              [10102301] = {
+                      type = 10102,
+                      parameters = {
+                              1,
+                              1,
+                              1,
+                            },
+                    },
+              [10201000] = {
+                      type = 10201,
+                      parameters = {
+                              1000,
+                            },
+                    },
+              [10201001] = {
+                      type = 10201,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10202000] = {
+                      type = 10202,
+                      parameters = {
+                              1000,
+                            },
+                    },
+              [10202001] = {
+                      type = 10202,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10301001] = {
+                      type = 10301,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10301002] = {
+                      type = 10301,
+                      parameters = {
+                              2,
+                            },
+                    },
+              [10302001] = {
+                      type = 10302,
+                      parameters = {
+                              100201,
+                            },
+                    },
+              [10302002] = {
+                      type = 10302,
+                      parameters = {
+                              208321,
+                            },
+                    },
+              [10401001] = {
+                      type = 10401,
+                      parameters = nil,
+                    },
+              [10402001] = {
+                      type = 10402,
+                      parameters = nil,
+                    },
+              [10501010] = {
+                      type = 10501,
+                      parameters = {
+                              10,
+                            },
+                    },
+              [10501020] = {
+                      type = 10501,
+                      parameters = {
+                              20,
+                            },
+                    },
+              [10501030] = {
+                      type = 10501,
+                      parameters = {
+                              30,
+                            },
+                    },
+              [10501050] = {
+                      type = 10501,
+                      parameters = {
+                              50,
+                            },
+                    },
+              [10501100] = {
+                      type = 10501,
+                      parameters = {
+                              100,
+                            },
+                    },
+              [10501000] = {
+                      type = 10501,
+                      parameters = {
+                              1000,
+                            },
+                    },
+              [10502015] = {
+                      type = 10502,
+                      parameters = {
+                              15,
+                            },
+                    },
+              [10502020] = {
+                      type = 10502,
+                      parameters = {
+                              20,
+                            },
+                    },
+              [10502025] = {
+                      type = 10502,
+                      parameters = {
+                              25,
+                            },
+                    },
+              [10502030] = {
+                      type = 10502,
+                      parameters = {
+                              30,
+                            },
+                    },
+              [10502050] = {
+                      type = 10502,
+                      parameters = {
+                              50,
+                            },
+                    },
+              [10502075] = {
+                      type = 10502,
+                      parameters = {
+                              75,
+                            },
+                    },
+              [10502100] = {
+                      type = 10502,
+                      parameters = {
+                              100,
+                            },
+                    },
+              [10503020] = {
+                      type = 10503,
+                      parameters = {
+                              20,
+                            },
+                    },
+              [10601001] = {
+                      type = 10601,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10602001] = {
+                      type = 10602,
+                      parameters = {
+                              202021,
+                            },
+                    },
+              [10602002] = {
+                      type = 10602,
+                      parameters = {
+                              204481,
+                            },
+                    },
+              [10603001] = {
+                      type = 10603,
+                      parameters = {
+                              100041,
+                            },
+                    },
+              [10603002] = {
+                      type = 10603,
+                      parameters = {
+                              200401,
+                            },
+                    },
+              [10603003] = {
+                      type = 10603,
+                      parameters = {
+                              200521,
+                            },
+                    },
+              [10603004] = {
+                      type = 10603,
+                      parameters = {
+                              201721,
+                            },
+                    },
+              [10603005] = {
+                      type = 10603,
+                      parameters = {
+                              204241,
+                            },
+                    },
+              [10603006] = {
+                      type = 10603,
+                      parameters = {
+                              208261,
+                            },
+                    },
+              [10603007] = {
+                      type = 10603,
+                      parameters = {
+                              208441,
+                            },
+                    },
+              [10603008] = {
+                      type = 10603,
+                      parameters = {
+                              202561,
+                            },
+                    },
+              [10603009] = {
+                      type = 10603,
+                      parameters = {
+                              205561,
+                            },
+                    },
+              [10603010] = {
+                      type = 10603,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10603011] = {
+                      type = 10603,
+                      parameters = {
+                              208381,
+                            },
+                    },
+              [10603012] = {
+                      type = 10603,
+                      parameters = {
+                              201301,
+                            },
+                    },
+              [10603013] = {
+                      type = 10603,
+                      parameters = {
+                              206761,
+                            },
+                    },
+              [10603014] = {
+                      type = 10603,
+                      parameters = {
+                              206821,
+                            },
+                    },
+              [10604001] = {
+                      type = 10604,
+                      parameters = {
+                              206641,
+                            },
+                    },
+              [10605001] = {
+                      type = 10605,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10605002] = {
+                      type = 10605,
+                      parameters = {
+                              2,
+                            },
+                    },
+              [10605003] = {
+                      type = 10605,
+                      parameters = {
+                              3,
+                            },
+                    },
+              [10606001] = {
+                      type = 10606,
+                      parameters = {
+                              100261,
+                            },
+                    },
+              [10607001] = {
+                      type = 10607,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10607002] = {
+                      type = 10607,
+                      parameters = {
+                              2,
+                            },
+                    },
+              [10607007] = {
+                      type = 10607,
+                      parameters = {
+                              7,
+                            },
+                    },
+              [10701001] = skill_event1,
+              [10701002] = skill_event1,
+              [10701003] = {
+                      type = 10701,
+                      parameters = {
+                              208312,
+                            },
+                    },
+              [10701004] = {
+                      type = 10701,
+                      parameters = {
+                              206872,
+                            },
+                    },
+              [10801001] = {
+                      type = 10801,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10802001] = {
+                      type = 10802,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [10901001] = {
+                      type = 10901,
+                      parameters = nil,
+                    },
+              [11001001] = {
+                      type = 11001,
+                      parameters = {
+                              208252,
+                            },
+                    },
+              [11101000] = {
+                      type = 11101,
+                      parameters = {
+                              1000,
+                            },
+                    },
+              [11101001] = {
+                      type = 11101,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [11101002] = {
+                      type = 11101,
+                      parameters = {
+                              2,
+                            },
+                    },
+              [11701001] = {
+                      type = 11701,
+                      parameters = {
+                              1,
+                            },
+                    },
+              [11802001] = {
+                      type = 11802,
+                      parameters = {
+                              1,
+                            },
+                    },
+            }
+return ConfigSysskill_event;

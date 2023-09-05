@@ -1,0 +1,198 @@
+
+local ConfigSysmansion_operation={
+              [100] = {
+                      name = [[雇佣新仆人]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [101] = {
+                      name = [[仆人升级]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [102] = {
+                      name = [[打赏仆人]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = {
+                              1,
+                              1000,
+                            },
+                    },
+              [103] = {
+                      name = [[打扫]],
+                      boom = 10,
+                      servant_exp = 10,
+                      child_exp = 0,
+                      trigger_event = {
+                              1,
+                              1000,
+                            },
+                    },
+              [104] = {
+                      name = [[种植]],
+                      boom = 0,
+                      servant_exp = 1,
+                      child_exp = 0,
+                      trigger_event = {
+                              1,
+                              1000,
+                            },
+                    },
+              [105] = {
+                      name = [[收获]],
+                      boom = 2,
+                      servant_exp = 1,
+                      child_exp = 0,
+                      trigger_event = {
+                              1,
+                              1000,
+                            },
+                    },
+              [106] = {
+                      name = [[给自己浇水]],
+                      boom = 1,
+                      servant_exp = 1,
+                      child_exp = 0,
+                      trigger_event = {
+                              1,
+                              1000,
+                            },
+                    },
+              [107] = {
+                      name = [[成功阻止负面(偷菜，捣乱)]],
+                      boom = 10,
+                      servant_exp = 20,
+                      child_exp = 0,
+                      trigger_event = {
+                              1,
+                              1000,
+                            },
+                    },
+              [108] = {
+                      name = [[购买种子]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [109] = {
+                      name = [[施肥]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [110] = {
+                      name = [[新开垦土地]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = {
+                              1,
+                              1000,
+                            },
+                    },
+              [111] = {
+                      name = [[暂时空着]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [112] = {
+                      name = [[子女拜访别人]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 100,
+                      trigger_event = {
+                              1,
+                              1000,
+                            },
+                    },
+              [113] = {
+                      name = [[卖出成品(花，食物，药)]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [114] = {
+                      name = [[开启初级宴会]],
+                      boom = 50,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = {
+                              2,
+                              600,
+                            },
+                    },
+              [115] = {
+                      name = [[开启中级宴会]],
+                      boom = 75,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = {
+                              2,
+                              2000,
+                            },
+                    },
+              [116] = {
+                      name = [[开启高级宴会]],
+                      boom = 100,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = {
+                              2,
+                              5000,
+                            },
+                    },
+              [200] = {
+                      name = [[偷菜]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [201] = {
+                      name = [[给别人浇水]],
+                      boom = 1,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [202] = {
+                      name = [[捣乱]],
+                      boom = 1,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [203] = {
+                      name = [[参加初级宴会]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [204] = {
+                      name = [[参加中级宴会]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+              [205] = {
+                      name = [[参加高级宴会]],
+                      boom = 0,
+                      servant_exp = 0,
+                      child_exp = 0,
+                      trigger_event = nil,
+                    },
+            }
+return ConfigSysmansion_operation;

@@ -1,0 +1,993 @@
+local npc1=[[r_200231]]
+local npc2=[[沁儿]]
+local npc3=[[r_202531]]
+local npc4=[[可岚]]
+local npc5=[[r_204011]]
+local npc6=[[管事嬷嬷]]
+local npc7=[[r_204041]]
+local npc8=[[r_200111]]
+local npc9=[[r_200251]]
+local npc10=[[r_204031]]
+local npc11=[[r_200121]]
+local npc12=[[太监]]
+local npc13=[[r_200222]]
+local npc14=[[皇后]]
+local npc15=[[纯妃]]
+local npc16=[[r_200211]]
+local npc17=[[宫女]]
+local npc18=[[r_202911]]
+local npc19=[[皇上]]
+local npc20=[[r_200131]]
+local npc21=[[小禄子]]
+local npc22=[[r_200851]]
+local npc23=[[高贵妃]]
+local npc24=[[r_202721]]
+local npc25=[[小宫女]]
+local npc26=[[侍卫]]
+
+local ConfigSysnpc={
+              [101] = {
+                      model = npc1,
+                      name = npc2,
+                      position = nil,
+                      scale = 0,
+                    },
+              [102] = {
+                      model = npc3,
+                      name = npc4,
+                      position = nil,
+                      scale = 0,
+                    },
+              [103] = {
+                      model = npc5,
+                      name = npc6,
+                      position = nil,
+                      scale = 0,
+                    },
+              [104] = {
+                      model = npc3,
+                      name = [[秀女们]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [105] = {
+                      model = npc3,
+                      name = [[金碧姝]],
+                      position = {
+                              -180,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [106] = {
+                      model = npc7,
+                      name = [[嬷嬷]],
+                      position = {
+                              -70,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [107] = {
+                      model = npc8,
+                      name = [[胆小秀女]],
+                      position = {
+                              60,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [108] = {
+                      model = npc9,
+                      name = [[小环]],
+                      position = {
+                              200,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [109] = {
+                      model = npc10,
+                      name = [[锦绣]],
+                      position = {
+                              280,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [110] = {
+                      model = npc11,
+                      name = npc12,
+                      position = {
+                              -108.6,
+                              161.6,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [111] = {
+                      model = npc8,
+                      name = [[众秀女]],
+                      position = nil,
+                      scale = 0,
+                    },
+              [112] = {
+                      model = npc13,
+                      name = npc14,
+                      position = nil,
+                      scale = 0,
+                    },
+              [113] = {
+                      model = npc13,
+                      name = npc15,
+                      position = nil,
+                      scale = 0,
+                    },
+              [114] = {
+                      model = npc16,
+                      name = npc17,
+                      position = nil,
+                      scale = 0,
+                    },
+              [115] = {
+                      model = npc18,
+                      name = npc19,
+                      position = nil,
+                      scale = 0,
+                    },
+              [116] = {
+                      model = npc20,
+                      name = npc21,
+                      position = nil,
+                      scale = 0,
+                    },
+              [117] = {
+                      model = npc22,
+                      name = npc23,
+                      position = nil,
+                      scale = 0,
+                    },
+              [118] = {
+                      model = npc24,
+                      name = [[低级嫔妃]],
+                      position = nil,
+                      scale = 0,
+                    },
+              [119] = {
+                      model = npc16,
+                      name = npc25,
+                      position = nil,
+                      scale = 0,
+                    },
+              [201] = {
+                      model = npc1,
+                      name = npc17,
+                      position = {
+                              -256,
+                              -304,
+                              0,
+                              0,
+                            },
+                      scale = 1,
+                    },
+              [202] = {
+                      model = npc3,
+                      name = npc12,
+                      position = {
+                              -152,
+                              -164,
+                              0,
+                              0,
+                            },
+                      scale = 0.8,
+                    },
+              [203] = {
+                      model = npc5,
+                      name = npc4,
+                      position = {
+                              -26,
+                              -304,
+                              0,
+                              0,
+                            },
+                      scale = 1,
+                    },
+              [204] = {
+                      model = npc3,
+                      name = npc21,
+                      position = {
+                              88,
+                              -164,
+                              0,
+                              0,
+                            },
+                      scale = 0.8,
+                    },
+              [205] = {
+                      model = npc3,
+                      name = npc15,
+                      position = {
+                              244,
+                              -304,
+                              0,
+                              0,
+                            },
+                      scale = 1,
+                    },
+              [206] = {
+                      model = npc7,
+                      name = npc14,
+                      position = {
+                              308,
+                              -164,
+                              0,
+                              0,
+                            },
+                      scale = 0.8,
+                    },
+              [100] = {
+                      model = npc8,
+                      name = npc19,
+                      position = {
+                              -208.6,
+                              -261.6,
+                              0,
+                              0,
+                            },
+                      scale = 54,
+                    },
+              [299] = {
+                      model = npc9,
+                      name = npc19,
+                      position = {
+                              -208.6,
+                              -261.6,
+                              0,
+                              0,
+                            },
+                      scale = 60,
+                    },
+              [1] = {
+                      model = [[r_201911]],
+                      name = [[魏莹莹]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [2] = {
+                      model = npc11,
+                      name = [[梁子枫]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [3] = {
+                      model = npc8,
+                      name = [[崇华]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [4] = {
+                      model = npc13,
+                      name = npc23,
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [5] = {
+                      model = npc13,
+                      name = [[富察皇后]],
+                      position = {
+                              -180,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [6] = {
+                      model = npc16,
+                      name = npc19,
+                      position = {
+                              -70,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [7] = {
+                      model = npc18,
+                      name = [[庆嫔]],
+                      position = {
+                              60,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [8] = {
+                      model = npc20,
+                      name = [[舒束儿]],
+                      position = {
+                              200,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [9] = {
+                      model = npc22,
+                      name = [[福康安]],
+                      position = {
+                              280,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [10] = {
+                      model = npc24,
+                      name = npc15,
+                      position = {
+                              -108.6,
+                              161.6,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [11] = {
+                      model = npc16,
+                      name = [[愉贵人]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [12] = {
+                      model = npc1,
+                      name = [[嘉嫔]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [13] = {
+                      model = npc3,
+                      name = [[小桂子]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [14] = {
+                      model = npc5,
+                      name = [[凌总管]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [15] = {
+                      model = npc3,
+                      name = [[青兰]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [16] = {
+                      model = npc3,
+                      name = [[蕊儿]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [17] = {
+                      model = npc7,
+                      name = [[素心]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [18] = {
+                      model = npc8,
+                      name = [[锦心]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [19] = {
+                      model = npc9,
+                      name = [[葵儿]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [20] = {
+                      model = npc10,
+                      name = npc2,
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [21] = {
+                      model = npc11,
+                      name = [[戴佳氏]],
+                      position = {
+                              -180,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [22] = {
+                      model = npc8,
+                      name = [[李太医]],
+                      position = {
+                              -70,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [23] = {
+                      model = npc13,
+                      name = [[江太医]],
+                      position = {
+                              60,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [24] = {
+                      model = npc13,
+                      name = [[侍卫统领]],
+                      position = {
+                              200,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [25] = {
+                      model = npc16,
+                      name = npc26,
+                      position = {
+                              280,
+                              -23,
+                              0,
+                              0,
+                            },
+                      scale = 30,
+                    },
+              [26] = {
+                      model = npc18,
+                      name = npc6,
+                      position = {
+                              -208.6,
+                              -261.6,
+                              0,
+                              0,
+                            },
+                      scale = 54,
+                    },
+              [27] = {
+                      model = npc20,
+                      name = [[太医]],
+                      position = {
+                              -208.6,
+                              -261.6,
+                              0,
+                              0,
+                            },
+                      scale = 60,
+                    },
+              [28] = {
+                      model = npc22,
+                      name = npc25,
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [29] = {
+                      model = npc24,
+                      name = [[小太监]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [30] = {
+                      model = npc16,
+                      name = [[稳婆]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [31] = {
+                      model = npc1,
+                      name = [[太后]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [32] = {
+                      model = npc3,
+                      name = [[愉嫔]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [33] = {
+                      model = [[r_201951]],
+                      name = [[小翠]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [34] = {
+                      model = npc3,
+                      name = [[庆嫔侍女]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [35] = {
+                      model = npc3,
+                      name = [[少年]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [36] = {
+                      model = npc7,
+                      name = [[少年福康安]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [37] = {
+                      model = npc8,
+                      name = [[嘉嫔侍女]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [38] = {
+                      model = npc9,
+                      name = [[宫女小福]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [39] = {
+                      model = npc10,
+                      name = [[宫女小球]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [40] = {
+                      model = npc11,
+                      name = [[女人]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [41] = {
+                      model = npc11,
+                      name = [[若彤]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [42] = {
+                      model = npc11,
+                      name = [[弘时]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [43] = {
+                      model = npc11,
+                      name = [[古塔王子]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [44] = {
+                      model = npc11,
+                      name = [[涵香郡主]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [45] = {
+                      model = npc11,
+                      name = [[容晴]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [46] = {
+                      model = npc11,
+                      name = [[魏贵人]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [47] = {
+                      model = npc11,
+                      name = [[和敬公主]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [48] = {
+                      model = npc11,
+                      name = [[大阿哥]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [49] = {
+                      model = npc11,
+                      name = [[老疯妇]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [50] = {
+                      model = npc11,
+                      name = [[九门提督]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [51] = {
+                      model = npc11,
+                      name = [[纪昀]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [52] = {
+                      model = npc11,
+                      name = [[富察瑶依]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [53] = {
+                      model = npc11,
+                      name = [[异族武士甲]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [54] = {
+                      model = npc11,
+                      name = [[异族武士乙]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [55] = {
+                      model = npc11,
+                      name = [[异族武士丙]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [56] = {
+                      model = npc11,
+                      name = [[公主侍女]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [57] = {
+                      model = npc11,
+                      name = [[户部尚书]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [58] = {
+                      model = npc11,
+                      name = [[军机大臣]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [59] = {
+                      model = npc11,
+                      name = [[血滴子暗卫]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [60] = {
+                      model = npc11,
+                      name = [[神秘人]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [61] = {
+                      model = npc11,
+                      name = [[果子]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [62] = {
+                      model = npc11,
+                      name = npc26,
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [63] = {
+                      model = npc11,
+                      name = [[考官]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [64] = {
+                      model = npc11,
+                      name = [[纨绔公子]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [65] = {
+                      model = npc11,
+                      name = [[景娴]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+              [66] = {
+                      model = npc11,
+                      name = [[富察大人]],
+                      position = {
+                              -300,
+                              -203,
+                              0,
+                              0,
+                            },
+                      scale = 42,
+                    },
+            }
+return ConfigSysnpc;

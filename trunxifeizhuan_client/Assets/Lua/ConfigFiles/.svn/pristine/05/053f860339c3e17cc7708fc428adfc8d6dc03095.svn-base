@@ -1,0 +1,1969 @@
+local task1=[[]]
+local task2={
+                                      goods_id = 1000002,
+                                      goods_number = 1000,
+                                    }
+local task3=[[EliteDungeonMainView]]
+local task4=[[CHAPTERLIST]]
+local task5=[[CampDungeonView]]
+local task6=[[CAMPDUNGEON]]
+local task7=[[EndlessMeirenxinjiView]]
+local task8=[[MEIREN]]
+local task9=[[ArenaMainView]]
+local task10=[[ARENAENTRY]]
+local task11=[[PromoteEntryView]]
+local task12=[[FollowerMainView]]
+local task13=[[FOLLOWER]]
+local task14=[[2]]
+local task15={
+                                      goods_id = 1000002,
+                                      goods_number = 1500,
+                                    }
+local task16=[[StoreView]]
+local task17=[[STORE]]
+local task18={
+                                      goods_id = 1000003,
+                                      goods_number = 5,
+                                    }
+local task19={
+                                      goods_id = 1000003,
+                                      goods_number = 10,
+                                    }
+local task20=[[DungeonStoryEntryView]]
+local task21={
+                                      goods_id = 1000002,
+                                      goods_number = 2000,
+                                    }
+local task22={
+                                      goods_id = 1000002,
+                                      goods_number = 3000,
+                                    }
+local task23={
+                                      goods_id = 1000002,
+                                      goods_number = 5000,
+                                    }
+local task24=[[ELITEDUNGEON]]
+local task25={
+                                      goods_id = 1010402,
+                                      goods_number = 1,
+                                    }
+local task26={
+                                      goods_id = 1010406,
+                                      goods_number = 1,
+                                    }
+local task27={
+                                      goods_id = 1000003,
+                                      goods_number = 20,
+                                    }
+local task28={
+                                      goods_id = 1000003,
+                                      goods_number = 50,
+                                    }
+local task29={
+                                      goods_id = 1000003,
+                                      goods_number = 100,
+                                    }
+local task30=[[JINFENG]]
+local task31={
+                                      goods_id = 1011103,
+                                      goods_number = 1,
+                                    }
+local task32={
+                                      goods_id = 1000002,
+                                      goods_number = 20000,
+                                    }
+local task33={
+                                      goods_id = 1000002,
+                                      goods_number = 30000,
+                                    }
+local task34={
+                                      goods_id = 1010202,
+                                      goods_number = 1,
+                                    }
+local task35=[[在挑战副本中，能获得各种各样的才艺，说不定就有你需要的哦，赶快去挑战副本获得才艺，强化自己的随从吧。]]
+local task36={
+                                      goods_id = 1010408,
+                                      goods_number = 5,
+                                    }
+local task37=[[招贤令不够用？直接买招贤诏书包吧]]
+local task38=[[DraftView]]
+local task39=[[ZHAOXIAN]]
+local task40={
+                                      goods_id = 1000002,
+                                      goods_number = 60000,
+                                    }
+
+local ConfigSystask={
+              [10001] = {
+                      type = 1,
+                      title = [[无惧挑战]],
+                      target = [[通关5次内务府副本]],
+                      desc = task1,
+                      times = 5,
+                      condition_finish_type = 2,
+                      condition_finish_value = nil,
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task4,
+                    },
+              [10002] = {
+                      type = 1,
+                      title = [[学富五车]],
+                      target = [[通关5次掖庭授礼副本。]],
+                      desc = task1,
+                      times = 5,
+                      condition_finish_type = 3,
+                      condition_finish_value = nil,
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [10003] = {
+                      type = 1,
+                      title = [[每日一计]],
+                      target = [[进行3次美人心计挑战]],
+                      desc = task1,
+                      times = 3,
+                      condition_finish_type = 20,
+                      condition_finish_value = nil,
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task7,
+                            },
+                      function_open_const = task8,
+                    },
+              [10004] = {
+                      type = 1,
+                      title = [[勇往直前]],
+                      target = [[进行3次竞技场挑战]],
+                      desc = task1,
+                      times = 3,
+                      condition_finish_type = 21,
+                      condition_finish_value = nil,
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task9,
+                            },
+                      function_open_const = task10,
+                    },
+              [10005] = {
+                      type = 1,
+                      title = [[巅峰之战]],
+                      target = [[挑战一次巅峰宫斗]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 22,
+                      condition_finish_value = nil,
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task11,
+                            },
+                      function_open_const = [[DIANFENG]],
+                    },
+              [10006] = {
+                      type = 1,
+                      title = [[自家班底]],
+                      target = [[进行任意类型的随从培养1次]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 9,
+                      condition_finish_value = nil,
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task12,
+                            },
+                      function_open_const = task13,
+                    },
+              [10007] = {
+                      type = 1,
+                      title = [[日省吾身]],
+                      target = [[强化任意才艺3次]],
+                      desc = task1,
+                      times = 3,
+                      condition_finish_type = 10,
+                      condition_finish_value = nil,
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task12,
+                              task14,
+                            },
+                      function_open_const = task13,
+                    },
+              [10008] = {
+                      type = 1,
+                      title = [[亲密无间]],
+                      target = [[送给好友体力5次]],
+                      desc = task1,
+                      times = 5,
+                      condition_finish_type = 11,
+                      condition_finish_value = nil,
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              [[FriendView]],
+                            },
+                      function_open_const = [[FRIEND]],
+                    },
+              [10010] = {
+                      type = 1,
+                      title = [[慧眼识珠]],
+                      target = [[在商城购买任意商品1次]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 12,
+                      condition_finish_value = nil,
+                      reward = {
+                              task15,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task16,
+                            },
+                      function_open_const = task17,
+                    },
+              [10011] = {
+                      type = 1,
+                      title = [[智者之选]],
+                      target = [[在商店购买体力1次]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 14,
+                      condition_finish_value = {
+                              1,
+                            },
+                      reward = {
+                              task15,
+                            },
+                      rate_surprise = 900,
+                      view_params = {
+                              task16,
+                              [[1]],
+                            },
+                      function_open_const = task17,
+                    },
+              [10012] = {
+                      type = 1,
+                      title = [[完成日常1]],
+                      target = [[完成9个日常任务]],
+                      desc = task1,
+                      times = 9,
+                      condition_finish_type = 17,
+                      condition_finish_value = nil,
+                      reward = {
+                              task18,
+                            },
+                      rate_surprise = 400,
+                      view_params = nil,
+                      function_open_const = task1,
+                    },
+              [10013] = {
+                      type = 1,
+                      title = [[完成日常2]],
+                      target = [[完成12个日常任务]],
+                      desc = task1,
+                      times = 12,
+                      condition_finish_type = 17,
+                      condition_finish_value = nil,
+                      reward = {
+                              task19,
+                            },
+                      rate_surprise = 400,
+                      view_params = nil,
+                      function_open_const = task1,
+                    },
+              [21101] = {
+                      type = 2,
+                      title = [[扶摇直上1]],
+                      target = [[通关第一章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1101007,
+                            },
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21102] = {
+                      type = 2,
+                      title = [[扶摇直上2]],
+                      target = [[通关第二章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1102007,
+                            },
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21103] = {
+                      type = 2,
+                      title = [[扶摇直上3]],
+                      target = [[通关第三章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1103007,
+                            },
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21104] = {
+                      type = 2,
+                      title = [[扶摇直上4]],
+                      target = [[通关第四章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1104007,
+                            },
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21105] = {
+                      type = 2,
+                      title = [[扶摇直上5]],
+                      target = [[通关第五章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1105007,
+                            },
+                      reward = {
+                              task21,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21106] = {
+                      type = 2,
+                      title = [[扶摇直上6]],
+                      target = [[通关第六章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1106007,
+                            },
+                      reward = {
+                              task21,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21107] = {
+                      type = 2,
+                      title = [[扶摇直上7]],
+                      target = [[通关第七章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1107007,
+                            },
+                      reward = {
+                              task21,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21108] = {
+                      type = 2,
+                      title = [[扶摇直上8]],
+                      target = [[通关第八章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1108007,
+                            },
+                      reward = {
+                              task21,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21109] = {
+                      type = 2,
+                      title = [[扶摇直上9]],
+                      target = [[通关第九章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1109007,
+                            },
+                      reward = {
+                              task21,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21110] = {
+                      type = 2,
+                      title = [[扶摇直上10]],
+                      target = [[通关第十章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1110007,
+                            },
+                      reward = {
+                              task22,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21111] = {
+                      type = 2,
+                      title = [[扶摇直上11]],
+                      target = [[通关第十一章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1111007,
+                            },
+                      reward = {
+                              task22,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21112] = {
+                      type = 2,
+                      title = [[扶摇直上12]],
+                      target = [[通关第十二章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1112007,
+                            },
+                      reward = {
+                              task22,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21113] = {
+                      type = 2,
+                      title = [[扶摇直上13]],
+                      target = [[通关第十三章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1113007,
+                            },
+                      reward = {
+                              task22,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21114] = {
+                      type = 2,
+                      title = [[扶摇直上14]],
+                      target = [[通关第十四章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1114007,
+                            },
+                      reward = {
+                              task22,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21115] = {
+                      type = 2,
+                      title = [[扶摇直上15]],
+                      target = [[通关第十五章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1115007,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21116] = {
+                      type = 2,
+                      title = [[扶摇直上16]],
+                      target = [[通关第十六章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1116007,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21117] = {
+                      type = 2,
+                      title = [[扶摇直上17]],
+                      target = [[通关第十七章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1117007,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21118] = {
+                      type = 2,
+                      title = [[扶摇直上18]],
+                      target = [[通关第十八章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1118007,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21119] = {
+                      type = 2,
+                      title = [[扶摇直上19]],
+                      target = [[通关第十九章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1119007,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21120] = {
+                      type = 2,
+                      title = [[扶摇直上20]],
+                      target = [[通关第二十章剧情]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1120007,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task20,
+                            },
+                      function_open_const = task4,
+                    },
+              [21201] = {
+                      type = 2,
+                      title = [[皇家内府1]],
+                      target = [[通关广储司副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1901005,
+                            },
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21202] = {
+                      type = 2,
+                      title = [[皇家内府2]],
+                      target = [[通关都虞司副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1902005,
+                            },
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21203] = {
+                      type = 2,
+                      title = [[皇家内府3]],
+                      target = [[通关掌仪司副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1903005,
+                            },
+                      reward = {
+                              task2,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21204] = {
+                      type = 2,
+                      title = [[皇家内府4]],
+                      target = [[通关会计司副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1904005,
+                            },
+                      reward = {
+                              task21,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21205] = {
+                      type = 2,
+                      title = [[皇家内府5]],
+                      target = [[通关营造司副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1905005,
+                            },
+                      reward = {
+                              task21,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21206] = {
+                      type = 2,
+                      title = [[皇家内府6]],
+                      target = [[通关慎刑司副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1906005,
+                            },
+                      reward = {
+                              task21,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21207] = {
+                      type = 2,
+                      title = [[皇家内府7]],
+                      target = [[通关庆丰司副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1907005,
+                            },
+                      reward = {
+                              task22,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21208] = {
+                      type = 2,
+                      title = [[皇家内府8]],
+                      target = [[通关织造局副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1908005,
+                            },
+                      reward = {
+                              task22,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21209] = {
+                      type = 2,
+                      title = [[皇家内府9]],
+                      target = [[通关织染局副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1909005,
+                            },
+                      reward = {
+                              task22,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21210] = {
+                      type = 2,
+                      title = [[皇家内府10]],
+                      target = [[通关上驷院副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1910005,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21211] = {
+                      type = 2,
+                      title = [[皇家内府11]],
+                      target = [[通关武备院副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1911005,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21212] = {
+                      type = 2,
+                      title = [[皇家内府12]],
+                      target = [[通关奉宸院副本]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1912005,
+                            },
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task24,
+                    },
+              [21301] = {
+                      type = 2,
+                      title = [[侍帝心得1]],
+                      target = [[通关侍帝心得第五课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1206005,
+                            },
+                      reward = {
+                              task19,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21302] = {
+                      type = 2,
+                      title = [[侍帝心得2]],
+                      target = [[通关侍帝心得第七课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1206007,
+                            },
+                      reward = {
+                              task25,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21303] = {
+                      type = 2,
+                      title = [[侍帝心得3]],
+                      target = [[通关侍帝心得第十课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1206010,
+                            },
+                      reward = {
+                              task26,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21304] = {
+                      type = 2,
+                      title = [[皇城秘闻1]],
+                      target = [[通关皇城秘闻第五课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1207005,
+                            },
+                      reward = {
+                              task19,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21305] = {
+                      type = 2,
+                      title = [[皇城秘闻2]],
+                      target = [[通关皇城秘闻第七课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1207007,
+                            },
+                      reward = {
+                              task25,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21306] = {
+                      type = 2,
+                      title = [[皇城秘闻3]],
+                      target = [[通关皇城秘闻第十课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1207010,
+                            },
+                      reward = {
+                              task26,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21307] = {
+                      type = 2,
+                      title = [[八旗宵禁1]],
+                      target = [[通关八旗宵禁第五课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1208005,
+                            },
+                      reward = {
+                              task19,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21308] = {
+                      type = 2,
+                      title = [[八旗宵禁2]],
+                      target = [[通关八旗宵禁第七课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1208007,
+                            },
+                      reward = {
+                              task25,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21309] = {
+                      type = 2,
+                      title = [[八旗宵禁3]],
+                      target = [[通关八旗宵禁第十课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1208010,
+                            },
+                      reward = {
+                              task26,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21310] = {
+                      type = 2,
+                      title = [[宗亲之礼1]],
+                      target = [[通关宗亲之礼第五课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1203005,
+                            },
+                      reward = {
+                              task27,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21311] = {
+                      type = 2,
+                      title = [[宗亲之礼2]],
+                      target = [[通关宗亲之礼第七课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1203007,
+                            },
+                      reward = {
+                              task28,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21312] = {
+                      type = 2,
+                      title = [[宗亲之礼3]],
+                      target = [[通关宗亲之礼第十课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1203010,
+                            },
+                      reward = {
+                              task29,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21313] = {
+                      type = 2,
+                      title = [[外戚之荣1]],
+                      target = [[通关外戚之荣第五课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1204005,
+                            },
+                      reward = {
+                              task27,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21314] = {
+                      type = 2,
+                      title = [[外戚之荣2]],
+                      target = [[通关外戚之荣第七课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1204007,
+                            },
+                      reward = {
+                              task28,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21315] = {
+                      type = 2,
+                      title = [[外戚之荣3]],
+                      target = [[通关外戚之荣第十课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1204010,
+                            },
+                      reward = {
+                              task29,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21316] = {
+                      type = 2,
+                      title = [[肱骨之臣1]],
+                      target = [[通关肱骨之臣第五课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1205005,
+                            },
+                      reward = {
+                              task27,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21317] = {
+                      type = 2,
+                      title = [[肱骨之臣2]],
+                      target = [[通关肱骨之臣第七课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1205007,
+                            },
+                      reward = {
+                              task28,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21318] = {
+                      type = 2,
+                      title = [[肱骨之臣3]],
+                      target = [[通关肱骨之臣第十课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1205010,
+                            },
+                      reward = {
+                              task29,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21319] = {
+                      type = 2,
+                      title = [[有凤来仪1]],
+                      target = [[通关有凤来仪第五课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1201005,
+                            },
+                      reward = {
+                              task27,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21320] = {
+                      type = 2,
+                      title = [[有凤来仪2]],
+                      target = [[通关有凤来仪第七课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1201007,
+                            },
+                      reward = {
+                              task28,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21321] = {
+                      type = 2,
+                      title = [[有凤来仪3]],
+                      target = [[通关有凤来仪第十课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1201010,
+                            },
+                      reward = {
+                              task29,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21322] = {
+                      type = 2,
+                      title = [[倾城气度1]],
+                      target = [[通关倾城气度第五课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1202005,
+                            },
+                      reward = {
+                              task27,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21323] = {
+                      type = 2,
+                      title = [[倾城气度2]],
+                      target = [[通关倾城气度第七课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1202007,
+                            },
+                      reward = {
+                              task28,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21324] = {
+                      type = 2,
+                      title = [[倾城气度3]],
+                      target = [[通关倾城气度第十课]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 1,
+                      condition_finish_value = {
+                              1202010,
+                            },
+                      reward = {
+                              task29,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [21401] = {
+                      type = 2,
+                      title = [[所向披靡1]],
+                      target = [[在竞技场击败100个对手]],
+                      desc = task1,
+                      times = 100,
+                      condition_finish_type = 7,
+                      condition_finish_value = nil,
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task9,
+                            },
+                      function_open_const = task10,
+                    },
+              [21402] = {
+                      type = 2,
+                      title = [[所向披靡2]],
+                      target = [[在竞技场击败1000个对手]],
+                      desc = task1,
+                      times = 1000,
+                      condition_finish_type = 7,
+                      condition_finish_value = nil,
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task9,
+                            },
+                      function_open_const = task10,
+                    },
+              [21403] = {
+                      type = 2,
+                      title = [[所向披靡3]],
+                      target = [[在竞技场击败10000个对手]],
+                      desc = task1,
+                      times = 10000,
+                      condition_finish_type = 7,
+                      condition_finish_value = nil,
+                      reward = {
+                              task23,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task9,
+                            },
+                      function_open_const = task10,
+                    },
+              [21501] = {
+                      type = 2,
+                      title = [[青云之路1]],
+                      target = [[官品升至五品]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 23,
+                      condition_finish_value = {
+                              6,
+                            },
+                      reward = {
+                              task25,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task11,
+                            },
+                      function_open_const = task30,
+                    },
+              [21502] = {
+                      type = 2,
+                      title = [[青云之路2]],
+                      target = [[官品升至二品]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 23,
+                      condition_finish_value = {
+                              9,
+                            },
+                      reward = {
+                              task26,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task11,
+                            },
+                      function_open_const = task30,
+                    },
+              [21503] = {
+                      type = 2,
+                      title = [[青云之路3]],
+                      target = [[官品升至一品]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 23,
+                      condition_finish_value = {
+                              10,
+                            },
+                      reward = {
+                              {
+                                      goods_id = 1010407,
+                                      goods_number = 1,
+                                    },
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task11,
+                            },
+                      function_open_const = task30,
+                    },
+              [22001] = {
+                      type = 2,
+                      title = [[天之骄子1]],
+                      target = [[培养任意一名随从至6星满级]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 18,
+                      condition_finish_value = {
+                              6,
+                            },
+                      reward = {
+                              task31,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                            },
+                      function_open_const = task13,
+                    },
+              [22002] = {
+                      type = 2,
+                      title = [[天之骄子2]],
+                      target = [[培养五个势力各一名随从至6星满级]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 24,
+                      condition_finish_value = {
+                              6,
+                            },
+                      reward = {
+                              task31,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                            },
+                      function_open_const = task13,
+                    },
+              [22003] = {
+                      type = 2,
+                      title = [[天子之师1]],
+                      target = [[任意一名随从升至最高官职]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 25,
+                      condition_finish_value = nil,
+                      reward = {
+                              task26,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                            },
+                      function_open_const = task13,
+                    },
+              [22004] = {
+                      type = 2,
+                      title = [[天子之师2]],
+                      target = [[五个势力各一名随从升至最高官职]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 26,
+                      condition_finish_value = nil,
+                      reward = {
+                              task26,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                            },
+                      function_open_const = task13,
+                    },
+              [22005] = {
+                      type = 2,
+                      title = [[国之栋梁]],
+                      target = [[将1个随从技能全部升级至满级]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 27,
+                      condition_finish_value = nil,
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                            },
+                      function_open_const = task13,
+                    },
+              [23001] = {
+                      type = 2,
+                      title = [[才高八斗1]],
+                      target = [[使某个随从的6个才艺位置均佩戴上4星才艺]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 28,
+                      condition_finish_value = {
+                              4,
+                            },
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                              task14,
+                            },
+                      function_open_const = task13,
+                    },
+              [23002] = {
+                      type = 2,
+                      title = [[才高八斗2]],
+                      target = [[使某个随从的6个才艺位置均佩戴上6星才艺]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 28,
+                      condition_finish_value = {
+                              6,
+                            },
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                              task14,
+                            },
+                      function_open_const = task13,
+                    },
+              [23003] = {
+                      type = 2,
+                      title = [[精于六艺1]],
+                      target = [[使某个随从的6个才艺位置均佩戴上强化+9的才艺]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 29,
+                      condition_finish_value = {
+                              9,
+                            },
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                              task14,
+                            },
+                      function_open_const = task13,
+                    },
+              [23004] = {
+                      type = 2,
+                      title = [[精于六艺2]],
+                      target = [[使某个随从的6个才艺位置均佩戴上强化+15的才艺]],
+                      desc = task1,
+                      times = 1,
+                      condition_finish_type = 29,
+                      condition_finish_value = {
+                              15,
+                            },
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task12,
+                              task14,
+                            },
+                      function_open_const = task13,
+                    },
+              [24001] = {
+                      type = 2,
+                      title = [[壕气冲天1]],
+                      target = [[花费超过10000元宝]],
+                      desc = task1,
+                      times = 10000,
+                      condition_finish_type = 15,
+                      condition_finish_value = nil,
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task16,
+                            },
+                      function_open_const = task17,
+                    },
+              [24002] = {
+                      type = 2,
+                      title = [[壕气冲天2]],
+                      target = [[花费超过100000元宝]],
+                      desc = task1,
+                      times = 100000,
+                      condition_finish_type = 15,
+                      condition_finish_value = nil,
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task16,
+                            },
+                      function_open_const = task17,
+                    },
+              [24003] = {
+                      type = 2,
+                      title = [[壕气冲天3]],
+                      target = [[花费超过1000000元宝]],
+                      desc = task1,
+                      times = 1000000,
+                      condition_finish_type = 15,
+                      condition_finish_value = nil,
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task16,
+                            },
+                      function_open_const = task17,
+                    },
+              [26001] = {
+                      type = 2,
+                      title = [[心计美人1]],
+                      target = [[在美人心计中胜利100次]],
+                      desc = task1,
+                      times = 100,
+                      condition_finish_type = 6,
+                      condition_finish_value = nil,
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task7,
+                            },
+                      function_open_const = task8,
+                    },
+              [26002] = {
+                      type = 2,
+                      title = [[心计美人2]],
+                      target = [[在美人心计中胜利1000次]],
+                      desc = task1,
+                      times = 1000,
+                      condition_finish_type = 6,
+                      condition_finish_value = nil,
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task7,
+                            },
+                      function_open_const = task8,
+                    },
+              [26003] = {
+                      type = 2,
+                      title = [[心计美人3]],
+                      target = [[在美人心计中胜利10000次]],
+                      desc = task1,
+                      times = 10000,
+                      condition_finish_type = 6,
+                      condition_finish_value = nil,
+                      reward = {
+                              task32,
+                            },
+                      rate_surprise = 200,
+                      view_params = {
+                              task7,
+                            },
+                      function_open_const = task8,
+                    },
+              [30001] = {
+                      type = 3,
+                      title = [[横扫千军]],
+                      target = [[扫荡30次剧情副本]],
+                      desc = [[虽然直接挑战过关也是可以的，但毕竟扫荡更方便，不是吗？]],
+                      times = 30,
+                      condition_finish_type = 1,
+                      condition_finish_value = nil,
+                      reward = {
+                              task33,
+                              task34,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              [[DungeonChapterListView]],
+                            },
+                      function_open_const = task4,
+                    },
+              [30002] = {
+                      type = 3,
+                      title = [[统御内府]],
+                      target = [[通关20次内务府副本]],
+                      desc = [[打打材料提升自己和随从吧]],
+                      times = 20,
+                      condition_finish_type = 2,
+                      condition_finish_value = nil,
+                      reward = {
+                              task33,
+                              task34,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              task3,
+                            },
+                      function_open_const = task4,
+                    },
+              [30003] = {
+                      type = 3,
+                      title = [[帝之近侍]],
+                      target = [[通关侍帝心得20次]],
+                      desc = task35,
+                      times = 20,
+                      condition_finish_type = 3,
+                      condition_finish_value = {
+                              1206001,
+                              1206002,
+                              1206003,
+                              1206004,
+                              1206005,
+                              1206006,
+                              1206007,
+                              1206008,
+                              1206009,
+                              1206010,
+                            },
+                      reward = {
+                              task33,
+                              task36,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [30004] = {
+                      type = 3,
+                      title = [[幕帘中人]],
+                      target = [[通关皇城秘闻20次]],
+                      desc = task35,
+                      times = 20,
+                      condition_finish_type = 3,
+                      condition_finish_value = {
+                              1207001,
+                              1207002,
+                              1207003,
+                              1207004,
+                              1207005,
+                              1207006,
+                              1207007,
+                              1207008,
+                              1207009,
+                              1207010,
+                            },
+                      reward = {
+                              task33,
+                              task36,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [30005] = {
+                      type = 3,
+                      title = [[禁军之勇]],
+                      target = [[通关八旗宵禁20次]],
+                      desc = task35,
+                      times = 20,
+                      condition_finish_type = 3,
+                      condition_finish_value = {
+                              1208001,
+                              1208002,
+                              1208003,
+                              1208004,
+                              1208005,
+                              1208006,
+                              1208007,
+                              1208008,
+                              1208009,
+                              1208010,
+                            },
+                      reward = {
+                              task33,
+                              task36,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              task5,
+                            },
+                      function_open_const = task6,
+                    },
+              [30006] = {
+                      type = 3,
+                      title = [[招贤纳士]],
+                      target = [[招贤获得5个3星以上随从]],
+                      desc = task37,
+                      times = 5,
+                      condition_finish_type = 30,
+                      condition_finish_value = {
+                              3,
+                            },
+                      reward = {
+                              task33,
+                              task25,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              task38,
+                            },
+                      function_open_const = task39,
+                    },
+              [30007] = {
+                      type = 3,
+                      title = [[天降贤才]],
+                      target = [[招贤获得1个4星以上随从]],
+                      desc = task37,
+                      times = 1,
+                      condition_finish_type = 30,
+                      condition_finish_value = {
+                              4,
+                            },
+                      reward = {
+                              task33,
+                              task25,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              task38,
+                            },
+                      function_open_const = task39,
+                    },
+              [30008] = {
+                      type = 3,
+                      title = [[所向披靡]],
+                      target = [[在竞技场击败10个对手]],
+                      desc = [[竞技场中都是弱肉强食的，打不过，挑个软柿子捏捏吧]],
+                      times = 10,
+                      condition_finish_type = 7,
+                      condition_finish_value = nil,
+                      reward = {
+                              task33,
+                              {
+                                      goods_id = 1000009,
+                                      goods_number = 30,
+                                    },
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              task9,
+                            },
+                      function_open_const = task10,
+                    },
+              [30009] = {
+                      type = 3,
+                      title = [[才华横溢]],
+                      target = [[强化才艺20次]],
+                      desc = [[才艺强才是后宫生存的必备技能]],
+                      times = 20,
+                      condition_finish_type = 10,
+                      condition_finish_value = nil,
+                      reward = {
+                              task40,
+                              task18,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              task12,
+                              task14,
+                            },
+                      function_open_const = task13,
+                    },
+              [30010] = {
+                      type = 3,
+                      title = [[锦衣玉带]],
+                      target = [[强化时装20次]],
+                      desc = [[时装不光要收集，强化也是很重要的]],
+                      times = 20,
+                      condition_finish_type = 31,
+                      condition_finish_value = nil,
+                      reward = {
+                              task40,
+                              task18,
+                            },
+                      rate_surprise = 0,
+                      view_params = {
+                              [[FashionUpGradeView]],
+                            },
+                      function_open_const = [[ROLE]],
+                    },
+            }
+return ConfigSystask;

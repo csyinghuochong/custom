@@ -1,0 +1,180 @@
+local dungeon_play1=[[剧情副本是最基础的副本系统。]]
+local dungeon_play2=[[竞技场是个验证实力的好地方。]]
+local dungeon_play3=[[想要提升实力，挑战副本会给你意外惊喜哦！]]
+local dungeon_play4=[[想要获得新的随从，就去招贤吧！]]
+local dungeon_play5=[[不知道做什么的时候，可以看看任务系统的任务。]]
+local dungeon_play6=[[记得时不时去查看一下邮件哦，很多奖励都通过邮件发送呢！]]
+local dungeon_play7=[[在商城可以快速方便的获取需要的物品。]]
+local dungeon_play8=[[培养主角、随从、玉石，是提升实力的必经之路。]]
+local dungeon_play9=[[实力到了的时候记得去晋封哦！]]
+local dungeon_play10={
+                              reset_cd = 1,
+                              remove_buff = 1,
+                              recover_hp = 0.2,
+                            }
+
+local ConfigSysdungeon_play={
+              [1] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10011,
+                              10021,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+              [2] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10012,
+                              10022,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+              [3] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10013,
+                              10023,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+              [4] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10011,
+                              10021,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+              [5] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10012,
+                              10022,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+              [6] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10013,
+                              10023,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+              [7] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10011,
+                              10021,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+              [8] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10012,
+                              10022,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+              [9] = {
+                      load_tips = {
+                              dungeon_play1,
+                              dungeon_play2,
+                              dungeon_play3,
+                              dungeon_play4,
+                              dungeon_play5,
+                              dungeon_play6,
+                              dungeon_play7,
+                              dungeon_play8,
+                              dungeon_play9,
+                            },
+                      king_skill = {
+                              10013,
+                              10023,
+                            },
+                      combat_setting = dungeon_play10,
+                    },
+            }
+return ConfigSysdungeon_play;

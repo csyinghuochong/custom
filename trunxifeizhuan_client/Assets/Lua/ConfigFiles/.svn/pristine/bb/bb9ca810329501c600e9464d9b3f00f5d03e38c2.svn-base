@@ -1,0 +1,36 @@
+local fashion_random_attribute1={
+                      add_min = 3,
+                      add_max = 20,
+                    }
+local fashion_random_attribute2={
+                      add_min = 0.04,
+                      add_max = 0.1,
+                    }
+local fashion_random_attribute3={
+                      add_min = 0.05,
+                      add_max = 0.25,
+                    }
+
+local ConfigSysfashion_random_attribute={
+              [1] = {
+                      add_min = 30,
+                      add_max = 200,
+                    },
+              [2] = fashion_random_attribute1,
+              [3] = fashion_random_attribute1,
+              [4] = fashion_random_attribute2,
+              [5] = {
+                      add_min = 0.1,
+                      add_max = 0.3,
+                    },
+              [6] = fashion_random_attribute2,
+              [7] = fashion_random_attribute2,
+              [8] = {
+                      add_min = 4,
+                      add_max = 20,
+                    },
+              [9] = fashion_random_attribute3,
+              [10] = fashion_random_attribute3,
+              [11] = fashion_random_attribute3,
+            }
+return ConfigSysfashion_random_attribute;

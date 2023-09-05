@@ -1,0 +1,56 @@
+
+local ConfigSysbowlder_burnish={
+              [1] = {
+                      burnish_cost = {
+                              {
+                                      goods_id = 1010901,
+                                      goods_number = 20,
+                                    },
+                            },
+                    },
+              [2] = {
+                      burnish_cost = {
+                              {
+                                      goods_id = 1010901,
+                                      goods_number = 40,
+                                    },
+                              {
+                                      goods_id = 1010902,
+                                      goods_number = 20,
+                                    },
+                            },
+                    },
+              [3] = {
+                      burnish_cost = {
+                              {
+                                      goods_id = 1010902,
+                                      goods_number = 40,
+                                    },
+                              {
+                                      goods_id = 1010903,
+                                      goods_number = 20,
+                                    },
+                            },
+                    },
+              [4] = {
+                      burnish_cost = {
+                              {
+                                      goods_id = 1010903,
+                                      goods_number = 40,
+                                    },
+                              {
+                                      goods_id = 1010904,
+                                      goods_number = 20,
+                                    },
+                            },
+                    },
+              [5] = {
+                      burnish_cost = {
+                              {
+                                      goods_id = 1010904,
+                                      goods_number = 80,
+                                    },
+                            },
+                    },
+            }
+return ConfigSysbowlder_burnish;

@@ -1,0 +1,224 @@
+local fashion_quality_up_cost1={
+                                      goods = 1010301,
+                                      number = 10,
+                                    }
+local fashion_quality_up_cost2={
+                                      goods = 1010301,
+                                      number = 20,
+                                    }
+local fashion_quality_up_cost3={
+                                      goods = 1010301,
+                                      number = 35,
+                                    }
+local fashion_quality_up_cost4={
+                                      goods = 1010301,
+                                      number = 50,
+                                    }
+local fashion_quality_up_cost5={
+                                      goods = 1010301,
+                                      number = 80,
+                                    }
+
+local ConfigSysfashion_quality_up_cost={
+              ["1_0"] = {
+                      quality = 0,
+                      cost = {
+                              fashion_quality_up_cost1,
+                              {
+                                      goods = 1010311,
+                                      number = 10,
+                                    },
+                            },
+                    },
+              ["1_1"] = {
+                      quality = 1,
+                      cost = {
+                              fashion_quality_up_cost2,
+                              {
+                                      goods = 1010312,
+                                      number = 20,
+                                    },
+                            },
+                    },
+              ["1_2"] = {
+                      quality = 2,
+                      cost = {
+                              fashion_quality_up_cost3,
+                              {
+                                      goods = 1010313,
+                                      number = 35,
+                                    },
+                            },
+                    },
+              ["1_3"] = {
+                      quality = 3,
+                      cost = {
+                              fashion_quality_up_cost4,
+                              {
+                                      goods = 1010314,
+                                      number = 50,
+                                    },
+                            },
+                    },
+              ["1_4"] = {
+                      quality = 4,
+                      cost = {
+                              fashion_quality_up_cost5,
+                              {
+                                      goods = 1010315,
+                                      number = 80,
+                                    },
+                            },
+                    },
+              ["2_0"] = {
+                      quality = 0,
+                      cost = {
+                              fashion_quality_up_cost1,
+                              {
+                                      goods = 1010321,
+                                      number = 10,
+                                    },
+                            },
+                    },
+              ["2_1"] = {
+                      quality = 1,
+                      cost = {
+                              fashion_quality_up_cost2,
+                              {
+                                      goods = 1010322,
+                                      number = 20,
+                                    },
+                            },
+                    },
+              ["2_2"] = {
+                      quality = 2,
+                      cost = {
+                              fashion_quality_up_cost3,
+                              {
+                                      goods = 1010323,
+                                      number = 35,
+                                    },
+                            },
+                    },
+              ["2_3"] = {
+                      quality = 3,
+                      cost = {
+                              fashion_quality_up_cost4,
+                              {
+                                      goods = 1010324,
+                                      number = 50,
+                                    },
+                            },
+                    },
+              ["2_4"] = {
+                      quality = 4,
+                      cost = {
+                              fashion_quality_up_cost5,
+                              {
+                                      goods = 1010325,
+                                      number = 80,
+                                    },
+                            },
+                    },
+              ["3_0"] = {
+                      quality = 0,
+                      cost = {
+                              fashion_quality_up_cost1,
+                              {
+                                      goods = 1010331,
+                                      number = 10,
+                                    },
+                            },
+                    },
+              ["3_1"] = {
+                      quality = 1,
+                      cost = {
+                              fashion_quality_up_cost2,
+                              {
+                                      goods = 1010332,
+                                      number = 20,
+                                    },
+                            },
+                    },
+              ["3_2"] = {
+                      quality = 2,
+                      cost = {
+                              fashion_quality_up_cost3,
+                              {
+                                      goods = 1010333,
+                                      number = 35,
+                                    },
+                            },
+                    },
+              ["3_3"] = {
+                      quality = 3,
+                      cost = {
+                              fashion_quality_up_cost4,
+                              {
+                                      goods = 1010334,
+                                      number = 50,
+                                    },
+                            },
+                    },
+              ["3_4"] = {
+                      quality = 4,
+                      cost = {
+                              fashion_quality_up_cost5,
+                              {
+                                      goods = 1010335,
+                                      number = 80,
+                                    },
+                            },
+                    },
+              ["4_0"] = {
+                      quality = 0,
+                      cost = {
+                              fashion_quality_up_cost1,
+                              {
+                                      goods = 1010341,
+                                      number = 10,
+                                    },
+                            },
+                    },
+              ["4_1"] = {
+                      quality = 1,
+                      cost = {
+                              fashion_quality_up_cost2,
+                              {
+                                      goods = 1010342,
+                                      number = 20,
+                                    },
+                            },
+                    },
+              ["4_2"] = {
+                      quality = 2,
+                      cost = {
+                              fashion_quality_up_cost3,
+                              {
+                                      goods = 1010343,
+                                      number = 35,
+                                    },
+                            },
+                    },
+              ["4_3"] = {
+                      quality = 3,
+                      cost = {
+                              fashion_quality_up_cost4,
+                              {
+                                      goods = 1010344,
+                                      number = 50,
+                                    },
+                            },
+                    },
+              ["4_4"] = {
+                      quality = 4,
+                      cost = {
+                              fashion_quality_up_cost5,
+                              {
+                                      goods = 1010345,
+                                      number = 80,
+                                    },
+                            },
+                    },
+            }
+return ConfigSysfashion_quality_up_cost;

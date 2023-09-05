@@ -1,0 +1,170 @@
+
+local ConfigSysdraft={
+              [1] = {
+                      type = 1,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010401,
+                                      goods_num = 1,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 1000,
+                      draft_name = [[招贤令召唤(1~3星)]],
+                      star = 3,
+                      show = 1,
+                      index = 2,
+                      icon = 1010401,
+                    },
+              [2] = {
+                      type = 2,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010402,
+                                      goods_num = 1,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 10000,
+                      draft_name = [[招贤诏书召唤(3~5星)]],
+                      star = 4,
+                      show = 1,
+                      index = 3,
+                      icon = 1010402,
+                    },
+              [3] = {
+                      type = 3,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010407,
+                                      goods_num = 1,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 50000,
+                      draft_name = [[求贤诏书召唤(4~5星)]],
+                      star = 4,
+                      show = 2,
+                      index = 4,
+                      icon = 1010407,
+                    },
+              [7] = {
+                      type = 7,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010406,
+                                      goods_num = 1,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 10000,
+                      draft_name = [[两宫招贤榜召唤(3~5星)]],
+                      star = 4,
+                      show = 2,
+                      index = 5,
+                      icon = 1010406,
+                    },
+              [4] = {
+                      type = 4,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010403,
+                                      goods_num = 1,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 10000,
+                      draft_name = [[皇亲招贤榜召唤(3~5星)]],
+                      star = 4,
+                      show = 2,
+                      index = 6,
+                      icon = 1010403,
+                    },
+              [5] = {
+                      type = 5,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010404,
+                                      goods_num = 1,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 10000,
+                      draft_name = [[外戚招贤榜召唤(3~5星)]],
+                      star = 4,
+                      show = 2,
+                      index = 7,
+                      icon = 1010404,
+                    },
+              [6] = {
+                      type = 6,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010405,
+                                      goods_num = 1,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 10000,
+                      draft_name = [[权臣招贤榜召唤(3~5星)]],
+                      star = 4,
+                      show = 2,
+                      index = 8,
+                      icon = 1010405,
+                    },
+              [9] = {
+                      type = 9,
+                      goods_cost = nil,
+                      gold_cost = 200,
+                      coin_cost = 0,
+                      draft_name = [[元宝召唤(3~5星)]],
+                      star = 4,
+                      show = 1,
+                      index = 1,
+                      icon = 1000003,
+                    },
+              [8] = {
+                      type = 8,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010408,
+                                      goods_num = 50,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 10000,
+                      draft_name = [[特殊召唤(3~5星)]],
+                      star = 4,
+                      show = 1,
+                      index = 10,
+                      icon = 1010408,
+                    },
+              [10] = {
+                      type = 10,
+                      goods_cost = nil,
+                      gold_cost = 0,
+                      coin_cost = 0,
+                      draft_name = [[碎片菜单]],
+                      star = 4,
+                      show = 1,
+                      index = 11,
+                      icon = 1100002,
+                    },
+              [11] = {
+                      type = 11,
+                      goods_cost = {
+                              {
+                                      goods_id = 1010409,
+                                      goods_num = 1,
+                                    },
+                            },
+                      gold_cost = 0,
+                      coin_cost = 2000,
+                      draft_name = [[两宫招贤令召唤(1~3星)]],
+                      star = 3,
+                      show = 2,
+                      index = 9,
+                      icon = 1010409,
+                    },
+            }
+return ConfigSysdraft;

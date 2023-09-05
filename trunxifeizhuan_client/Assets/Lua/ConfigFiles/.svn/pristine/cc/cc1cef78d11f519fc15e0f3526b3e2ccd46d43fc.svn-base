@@ -1,0 +1,1319 @@
+local ecode1=[[取消]]
+local ecode2=[[确定]]
+local ecode3=[[提示]]
+local ecode4=[[强化失败]]
+local ecode5=[[没有足够的如意石]]
+
+local ConfigSysecode={
+              [0] = {
+                      error_code = 0,
+                      error_tips = [[正确]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [1] = {
+                      error_code = 1,
+                      error_tips = [[参数错误]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [2] = {
+                      error_code = 2,
+                      error_tips = [[银两不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [3] = {
+                      error_code = 3,
+                      error_tips = [[元宝不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [4] = {
+                      error_code = 4,
+                      error_tips = [[等级不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [5] = {
+                      error_code = 5,
+                      error_tips = [[玩家不存在]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [6] = {
+                      error_code = 6,
+                      error_tips = [[精力不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [7] = {
+                      error_code = 7,
+                      error_tips = [[随从等级不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [8] = {
+                      error_code = 8,
+                      error_tips = [[体力不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10] = {
+                      error_code = 10,
+                      error_tips = [[等级达到上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11] = {
+                      error_code = 11,
+                      error_tips = [[技能点不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12] = {
+                      error_code = 12,
+                      error_tips = [[体力达到上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [13] = {
+                      error_code = 13,
+                      error_tips = [[背包已满，请先整理]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [17] = {
+                      error_code = 17,
+                      error_tips = [[充值金额不足，请继续充值]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [18] = {
+                      error_code = 18,
+                      error_tips = [[游戏出现错误，请重新登陆]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19] = {
+                      error_code = 19,
+                      error_tips = [[物品不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [20] = {
+                      error_code = 20,
+                      error_tips = [[阅历不足]],
+                      view = nil,
+                    },
+              [23] = {
+                      error_code = 23,
+                      error_tips = [[时装币不足]],
+                      view = nil,
+                    },
+              [24] = {
+                      error_code = 24,
+                      error_tips = [[贡献值不足]],
+                      view = nil,
+                    },
+              [25] = {
+                      error_code = 25,
+                      error_tips = [[府邸币不足]],
+                      view = nil,
+                    },
+              [26] = {
+                      error_code = 26,
+                      error_tips = [[美人令不足]],
+                      view = nil,
+                    },
+              [27] = {
+                      error_code = 27,
+                      error_tips = [[竞技币不足]],
+                      view = nil,
+                    },
+              [28] = {
+                      error_code = 28,
+                      error_tips = [[繁荣度不足]],
+                      view = nil,
+                    },
+              [9001] = {
+                      error_code = 9001,
+                      error_tips = [[改昵称冷却时间中]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [9002] = {
+                      error_code = 9002,
+                      error_tips = [[该头像不可用]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [9004] = {
+                      error_code = 9004,
+                      error_tips = [[数据包错误]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [9005] = {
+                      error_code = 9005,
+                      error_tips = [[激活码不存在]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [9006] = {
+                      error_code = 9006,
+                      error_tips = [[已领取过激活码]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [9007] = {
+                      error_code = 9007,
+                      error_tips = [[不是该激活码所属渠道下的用户]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [9008] = {
+                      error_code = 9008,
+                      error_tips = [[不是该激活码所属的服务器]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [9009] = {
+                      error_code = 9009,
+                      error_tips = [[领取该激活码活动已结束]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [9010] = {
+                      error_code = 9010,
+                      error_tips = [[激活码已被领取]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10001] = {
+                      error_code = 10001,
+                      error_tips = [[还没创建账号]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10002] = {
+                      error_code = 10002,
+                      error_tips = [[登录错误]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10003] = {
+                      error_code = 10003,
+                      error_tips = [[角色已存在，换一个试试吧]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10004] = {
+                      error_code = 10004,
+                      error_tips = [[创建角色错误]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10005] = {
+                      error_code = 10005,
+                      error_tips = [[账号于异地登陆，请重新登陆]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10007] = {
+                      error_code = 10007,
+                      error_tips = [[登陆了不同设备]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10008] = {
+                      error_code = 10008,
+                      error_tips = [[服务器爆满，请等候一会]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [10009] = {
+                      error_code = 10009,
+                      error_tips = [[网络不好，请稍后重试]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11001] = {
+                      error_code = 11001,
+                      error_tips = [[未升级满，无法突破]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11002] = {
+                      error_code = 11002,
+                      error_tips = [[没有技能可升级了]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11003] = {
+                      error_code = 11003,
+                      error_tips = [[请先提升职位等级]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11004] = {
+                      error_code = 11004,
+                      error_tips = [[晋封已达上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11005] = {
+                      error_code = 11005,
+                      error_tips = [[请先激活前置技能]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11006] = {
+                      error_code = 11006,
+                      error_tips = [[技能激活材料不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11007] = {
+                      error_code = 11007,
+                      error_tips = [[随从等级已达上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11008] = {
+                      error_code = 11008,
+                      error_tips = [[普通培养丹不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11009] = {
+                      error_code = 11009,
+                      error_tips = [[精华培养丹不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11010] = {
+                      error_code = 11010,
+                      error_tips = [[等级不足，该势力未开启，先提升等级再来]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11011] = {
+                      error_code = 11011,
+                      error_tips = [[传记只能通关一次]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11012] = {
+                      error_code = 11012,
+                      error_tips = [[请先通关前一传记]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11013] = {
+                      error_code = 11013,
+                      error_tips = [[四星以上随从不能删除]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11014] = {
+                      error_code = 11014,
+                      error_tips = [[锁定随从不能删除]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11015] = {
+                      error_code = 11015,
+                      error_tips = [[随从不存在]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11016] = {
+                      error_code = 11016,
+                      error_tips = [[需要使用相同形象的随从才能升级]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11017] = {
+                      error_code = 11017,
+                      error_tips = [[突破已达上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11018] = {
+                      error_code = 11018,
+                      error_tips = [[突破需要消耗的随从不满足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11019] = {
+                      error_code = 11019,
+                      error_tips = [[已点赞]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11020] = {
+                      error_code = 11020,
+                      error_tips = [[评价不存在]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11021] = {
+                      error_code = 11021,
+                      error_tips = [[今日评价已达上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11022] = {
+                      error_code = 11022,
+                      error_tips = [[随从数据不存在]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11023] = {
+                      error_code = 11023,
+                      error_tips = [[不能消耗六星随从]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11024] = {
+                      error_code = 11024,
+                      error_tips = [[培养属性已满]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [11025] = {
+                      error_code = 11025,
+                      error_tips = [[该随从在防守阵容，无法删除]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12001] = {
+                      error_code = 12001,
+                      error_tips = [[已达鉴定上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12002] = {
+                      error_code = 12002,
+                      error_tips = [[没有足够的重琢石（没有这个，如果出现了来ecode改）]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12003] = {
+                      error_code = 12003,
+                      error_tips = [[没有足够的精雕石（没有这个，如果出现了来ecode改）]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12004] = {
+                      error_code = 12004,
+                      error_tips = ecode4,
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12005] = {
+                      error_code = 12005,
+                      error_tips = [[没有足够的打磨石（没有这个，如果出现了来ecode改）]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12006] = {
+                      error_code = 12006,
+                      error_tips = ecode5,
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12007] = {
+                      error_code = 12007,
+                      error_tips = [[没有足够的抛光石（没有这个，如果出现了来ecode改）]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [12008] = {
+                      error_code = 12008,
+                      error_tips = [[已达强化上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [13001] = {
+                      error_code = 13001,
+                      error_tips = [[请先通关前一关卡]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [13002] = {
+                      error_code = 13002,
+                      error_tips = [[副本不存在]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16001] = {
+                      error_code = 16001,
+                      error_tips = [[已达体力上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16002] = {
+                      error_code = 16002,
+                      error_tips = [[今天已发送过体力]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16003] = {
+                      error_code = 16003,
+                      error_tips = [[不能加自己为好友]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16004] = {
+                      error_code = 16004,
+                      error_tips = [[已经是好友]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16005] = {
+                      error_code = 16005,
+                      error_tips = [[已达好友上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16006] = {
+                      error_code = 16006,
+                      error_tips = [[已经发送过申请]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16007] = {
+                      error_code = 16007,
+                      error_tips = [[不能加刚删除的好友]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16008] = {
+                      error_code = 16008,
+                      error_tips = [[对方已达好友上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [16009] = {
+                      error_code = 16009,
+                      error_tips = [[已屏蔽过该玩家]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [17001] = {
+                      error_code = 17001,
+                      error_tips = [[您的发言频率过快，请间隔3秒再发言。]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [17002] = {
+                      error_code = 17002,
+                      error_tips = [[对方已经将您加入黑名单。]],
+                      view = nil,
+                    },
+              [18001] = {
+                      error_code = 18001,
+                      error_tips = [[请先通关前一副本]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [18002] = {
+                      error_code = 18002,
+                      error_tips = [[副本次数已用完]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [18003] = {
+                      error_code = 18003,
+                      error_tips = [[没有达到星级要求]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [18004] = {
+                      error_code = 18004,
+                      error_tips = [[副本宝箱已领取]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [18005] = {
+                      error_code = 18005,
+                      error_tips = [[未通关，无法扫荡]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [18006] = {
+                      error_code = 18006,
+                      error_tips = [[章节未通关，副本无法扫荡]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [18007] = {
+                      error_code = 18007,
+                      error_tips = [[副本队伍设置失败]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19001] = {
+                      error_code = 19001,
+                      error_tips = [[道具不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19002] = {
+                      error_code = 19002,
+                      error_tips = [[已报考]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19003] = {
+                      error_code = 19003,
+                      error_tips = [[尚未报考]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19004] = {
+                      error_code = 19004,
+                      error_tips = [[考试中]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19005] = {
+                      error_code = 19005,
+                      error_tips = [[已考完]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19006] = {
+                      error_code = 19006,
+                      error_tips = [[考试未开始]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19007] = {
+                      error_code = 19007,
+                      error_tips = [[考试未结束]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19008] = {
+                      error_code = 19008,
+                      error_tips = [[尚未通过]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [19020] = {
+                      error_code = 19020,
+                      error_tips = [[没有次数]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [22001] = {
+                      error_code = 22001,
+                      error_tips = [[结竞技场算中]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27001] = {
+                      error_code = 27001,
+                      error_tips = [[府邸材料背包格子不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27002] = {
+                      error_code = 27002,
+                      error_tips = [[府邸装扮背包格子不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27003] = {
+                      error_code = 27003,
+                      error_tips = [[府邸种子背包格子不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27004] = {
+                      error_code = 27004,
+                      error_tips = [[您已经偷取过本株植物]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27005] = {
+                      error_code = 27005,
+                      error_tips = [[您已经捣乱过本株植物]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27006] = {
+                      error_code = 27006,
+                      error_tips = [[您已经浇水过本株植物]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27007] = {
+                      error_code = 27007,
+                      error_tips = [[已经被偷取得渣都不剩了，行行好留点吧]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27008] = {
+                      error_code = 27008,
+                      error_tips = [[已经被捣乱得渣都不剩了，行行好留点吧]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27009] = {
+                      error_code = 27009,
+                      error_tips = [[已经有故人/情敌给本株植物浇水(浇水上限)]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [27010] = {
+                      error_code = 27010,
+                      error_tips = [[今日偷菜次数上限%s次，已用完]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30001] = {
+                      error_code = 30001,
+                      error_tips = [[时装穿戴错误]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30002] = {
+                      error_code = 30002,
+                      error_tips = [[不可合成]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30003] = {
+                      error_code = 30003,
+                      error_tips = [[合成材料不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30004] = {
+                      error_code = 30004,
+                      error_tips = [[已达最高等级]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30005] = {
+                      error_code = 30005,
+                      error_tips = [[进阶材料不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30006] = {
+                      error_code = 30006,
+                      error_tips = [[升星材料不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30007] = {
+                      error_code = 30007,
+                      error_tips = [[渲光材料不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30008] = {
+                      error_code = 30008,
+                      error_tips = [[洗练材料不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30009] = {
+                      error_code = 30009,
+                      error_tips = ecode4,
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [30010] = {
+                      error_code = 30010,
+                      error_tips = [[渲光失败]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [31001] = {
+                      error_code = 31001,
+                      error_tips = [[祭拜先祖次数已达上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [31002] = {
+                      error_code = 31002,
+                      error_tips = [[祭拜先祖倒计时中]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [31003] = {
+                      error_code = 31003,
+                      error_tips = [[太后请安已达上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [31004] = {
+                      error_code = 31004,
+                      error_tips = [[太后献礼已达上限]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [32001] = {
+                      error_code = 32001,
+                      error_tips = ecode4,
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [32002] = {
+                      error_code = 32002,
+                      error_tips = ecode5,
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [32003] = {
+                      error_code = 32003,
+                      error_tips = [[没有对应的心得]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [32004] = {
+                      error_code = 32004,
+                      error_tips = [[没有对应的秘诀]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [32005] = {
+                      error_code = 32005,
+                      error_tips = [[只能改变一个属性]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [32006] = {
+                      error_code = 32006,
+                      error_tips = [[必须要相同属性的心得]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [32007] = {
+                      error_code = 32007,
+                      error_tips = [[强化等级不够]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+              [32008] = {
+                      error_code = 32008,
+                      error_tips = [[精研道具不足]],
+                      view = {
+                              index = 0,
+                              left_str = ecode1,
+                              right_str = ecode2,
+                              title = ecode3,
+                            },
+                    },
+            }
+return ConfigSysecode;

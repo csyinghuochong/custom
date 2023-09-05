@@ -1,0 +1,66 @@
+local bowlder_carve_fine1={
+                                      key = 1,
+                                      value_up = 100,
+                                      value_lower = 200,
+                                    }
+local bowlder_carve_fine2={
+                                      key = 2,
+                                      value_up = 50,
+                                      value_lower = 80,
+                                    }
+
+local ConfigSysbowlder_carve_fine={
+              [1] = {
+                      carve_level = 1,
+                      carve_cost = {
+                              {
+                                      goods_id = 1010801,
+                                      goods_number = 1,
+                                    },
+                            },
+                      addition_attri = {
+                              bowlder_carve_fine1,
+                              bowlder_carve_fine2,
+                            },
+                    },
+              [2] = {
+                      carve_level = 2,
+                      carve_cost = {
+                              {
+                                      goods_id = 1010802,
+                                      goods_number = 2,
+                                    },
+                            },
+                      addition_attri = {
+                              bowlder_carve_fine1,
+                              bowlder_carve_fine2,
+                            },
+                    },
+              [3] = {
+                      carve_level = 3,
+                      carve_cost = {
+                              {
+                                      goods_id = 1010803,
+                                      goods_number = 3,
+                                    },
+                            },
+                      addition_attri = {
+                              bowlder_carve_fine1,
+                              bowlder_carve_fine2,
+                            },
+                    },
+              [4] = {
+                      carve_level = 4,
+                      carve_cost = {
+                              {
+                                      goods_id = 1010804,
+                                      goods_number = 4,
+                                    },
+                            },
+                      addition_attri = {
+                              bowlder_carve_fine1,
+                              bowlder_carve_fine2,
+                            },
+                    },
+            }
+return ConfigSysbowlder_carve_fine;
