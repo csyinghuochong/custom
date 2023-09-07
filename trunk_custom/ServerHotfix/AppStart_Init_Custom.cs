@@ -9,8 +9,8 @@ namespace ET
         protected override void Run(EventType.AppStart args)
         {
             Log.Console("AppStart_Init_Custom");
-            ComHelp.AccountOldLogic = true;
-            SkillHelp.CleanSkill = true;
+            //ComHelp.AccountOldLogic = true;
+            //SkillHelp.CleanSkill = true;
         }
     }
 }
