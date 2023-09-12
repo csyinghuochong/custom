@@ -7,6 +7,11 @@
             Scene scene = args.DomainScene;
             long userId = args.UnitId;
 
+            if (scene.IsDisposed)
+            {
+                Log.Warning($"ReturnMainCity: scene.IsDisposed");
+                return;
+            }
             int sceneTypeEnum = scene.GetComponent<MapComponent>().SceneTypeEnum;
             if (SceneConfigHelper.IsSingleFuben(sceneTypeEnum))
             {
