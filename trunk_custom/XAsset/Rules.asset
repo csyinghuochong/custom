@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 873
+  version: 882
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -680,6 +680,12 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_8.prefab
   - bundle: 2109ddd1a85b5be915b4befb8ace186d.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_9.prefab
+  - bundle: bfecfb40addd9a8f79d8776d9dd1013d.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_GongJianAct_1.prefab
+  - bundle: cc43b0ea8b4a176dca68fa63be36af9b.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_GongJianAct_1_Fire.prefab
+  - bundle: 00c53783c5aca9bdaffd0c4a84366062.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_GongJian_Skill_1.prefab
   - bundle: a3c69dbb584f8360111cf00f6c54ef5c.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_GuangHuan.prefab
   - bundle: e31c451b57784d6045a51f84d8767f62.unity3d
@@ -938,6 +944,10 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillHitEffect/Eff_Hit_Red_1.prefab
   - bundle: b5b07ec490b65354b6a4e846c10fc8e2.unity3d
     path: Assets/Bundles/Effect/SkillHitEffect/Eff_Hit_ShiTou_1.prefab
+  - bundle: 21ebb74a127a94ed3d71cf27ae9898ca.unity3d
+    path: Assets/Bundles/Effect/SkillHitEffect/Eff_Skill_GongJianAct_1_Hit.prefab
+  - bundle: c6084e3c3786385263af90cf78213ae2.unity3d
+    path: Assets/Bundles/Effect/SkillHitEffect/Eff_Skill_GongJian_Skill_1_Hit.prefab
   - bundle: 296e5c4d667b7ccfc60186219fcd397a.unity3d
     path: Assets/Bundles/Effect/SkillHitEffect/Eff_Skill_Target_1.prefab
   - bundle: b230713a67978fa4c5f4b70d1787d47c.unity3d
@@ -4730,6 +4740,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Dungeon/UIBossRefreshTimeItem.prefab
   - bundle: aab2830762dcd5f6d12bd10113365ed3.unity3d
     path: Assets/Bundles/UI/Dungeon/UIDungeon.prefab
+  - bundle: 3a4296bcfe158271e674771d4c5e33cc.unity3d
+    path: Assets/Bundles/UI/Dungeon/UIDungeonHappyMain.prefab
   - bundle: 0c07d1c3a50670333624ecb4f94e1435.unity3d
     path: Assets/Bundles/UI/Dungeon/UIDungeonItem.prefab
   - bundle: 3c6953d58ece8f999df850ba9483b397.unity3d
@@ -5008,6 +5020,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Fashion/UIFashionSuitItem.prefab
   - bundle: 1aaee6401f553839ee5f3a5966c1d11b.unity3d
     path: Assets/Bundles/UI/Main/FenXiang/UIFenXiang.prefab
+  - bundle: a8463e06b120f724844db7fa85645ccc.unity3d
+    path: Assets/Bundles/UI/Main/FenXiang/UIFenXiangQQAddSet.prefab
   - bundle: 4c39b03ab23733f884e85a71c748d637.unity3d
     path: Assets/Bundles/UI/Main/FenXiang/UIFenXiangSet.prefab
   - bundle: 665233e91bd4ac889513998f0a17ce95.unity3d
@@ -5606,6 +5620,8 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/ItemModel/15710101.prefab
   - bundle: 18ec1d325248cd5ab2f9752919e71fdd.unity3d
     path: Assets/Bundles/Unit/ItemModel/15710102.prefab
+  - bundle: f1daaf6fc357e38bc13ed310c0d11b52.unity3d
+    path: Assets/Bundles/Unit/ItemModel/90000006.prefab
   - bundle: 267f3985f9e841192aaae51434d9f876.unity3d
     path: Assets/Bundles/Unit/JiaYuan/100101.prefab
   - bundle: 98fbc4af71ec422d8047bc61cd9b4f37.unity3d
@@ -6156,6 +6172,8 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Npc/NPC_ShangJin.prefab
   - bundle: f0f500277d826efdc0cd35b15bb295b6.unity3d
     path: Assets/Bundles/Unit/Npc/NPC_ShenMi.prefab
+  - bundle: 79c33d67eb0510bfdceec7adc169ca39.unity3d
+    path: Assets/Bundles/Unit/Npc/NPC_ShenMiZhiMen.prefab
   - bundle: 060afe19d1f031b598d9e30b7f123f6b.unity3d
     path: Assets/Bundles/Unit/Npc/NPC_ShenQi.prefab
   - bundle: 5c8b8f0674e025482f91382922360d05.unity3d
@@ -6194,44 +6212,34 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Parts/1/Hero_shangyi.prefab
   - bundle: ecff5eee9f7fab12fbe8b41539d0e92e.unity3d
     path: Assets/Bundles/Unit/Parts/1/Hero_toufa.prefab
-  - bundle: 237614121f22ddc87568a345fa574c69.unity3d
-    path: Assets/Bundles/Unit/Parts/1/Hero_toufa2.prefab
   - bundle: 30d54079cb84511c8a918b4430bac57b.unity3d
     path: Assets/Bundles/Unit/Parts/1/Hero_xiashen.prefab
   - bundle: f49f31ab868531641f3be8b8b53fba1f.unity3d
     path: Assets/Bundles/Unit/Parts/1/Hero_xiezi.prefab
   - bundle: 1a3a0f7513a35961b9406385417e10e6.unity3d
     path: Assets/Bundles/Unit/Parts/1/Hero_yanjing.prefab
-  - bundle: 4f426a4cd2259b8a144bbabe2a5a90ef.unity3d
-    path: Assets/Bundles/Unit/Parts/2/Hero_fashi1.prefab
-  - bundle: 33d196ff7efe13919d1ab64acb3225b2.unity3d
-    path: Assets/Bundles/Unit/Parts/2/Hero_fashi2.prefab
+  - bundle: fceac4c01ad29c5114931cd8e4413b23.unity3d
+    path: Assets/Bundles/Unit/Parts/2/Hero_fashi.prefab
   - bundle: a96568f88064cfbb915e456db4b9ccea.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_lian.prefab
-  - bundle: cd5606baeb0dce828b09e591085c9c49.unity3d
-    path: Assets/Bundles/Unit/Parts/2/Hero_lian_sima.prefab
   - bundle: 414ce8a9c78c4f162f52c8dd917d6ce1.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_meimao.prefab
-  - bundle: 790ce5d2497687e8cfc349bb7bd23f28.unity3d
-    path: Assets/Bundles/Unit/Parts/2/Hero_pifeng.prefab
   - bundle: a4615abde8857bc224f3c43cc6826f95.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_pifu1.prefab
   - bundle: 5021c3c9e46e1ff536605b2186468b53.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_pifu2.prefab
   - bundle: 47460a8404f632148d808978cc19b4cf.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_shangyi.prefab
-  - bundle: 186652ea60b68b29eb897035592c83a9.unity3d
-    path: Assets/Bundles/Unit/Parts/2/Hero_shangyi2.prefab
   - bundle: 25d5badb0621decd9c81eb8117275a68.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_toufa.prefab
   - bundle: 7336b80e36f0f164e8f2b81ee1249fab.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_xiashen.prefab
-  - bundle: 0bd35c4c2fddb4aee1cd79fdb2456caa.unity3d
-    path: Assets/Bundles/Unit/Parts/2/Hero_xiashen2.prefab
   - bundle: ee8ecbc1411b535894e1094c82426388.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_xiezi.prefab
   - bundle: 21358ef73c6f3af5d5e017190796f6ad.unity3d
     path: Assets/Bundles/Unit/Parts/2/Hero_yanjing.prefab
+  - bundle: debfd4f7e1b63bdd13b0a49c0ca1ba20.unity3d
+    path: Assets/Bundles/Unit/Parts/2/fashi_fashi2.prefab
   - bundle: 0e9ce7ea3d51f627e233e9aec465b6c6.unity3d
     path: Assets/Bundles/Unit/Parts/3/Hero_fashi.prefab
   - bundle: 8dc25de4fe612b918237e406aaa84879.unity3d
@@ -6404,8 +6412,8 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Player/Hero_2.prefab
   - bundle: 20332654599fae403fc8dc8c4a2a6836.unity3d
     path: Assets/Bundles/Unit/Player/Hero_2BeiFen.prefab
-  - bundle: 400a3239d23689b8d3eca1ad848a66f1.unity3d
-    path: Assets/Bundles/Unit/Player/Hero_2_1.prefab
+  - bundle: 947bd722dfe7d9693e40b3ab0a98f8d5.unity3d
+    path: Assets/Bundles/Unit/Player/Hero_2_2.prefab
   - bundle: ba8cafaebe1bebbcd02d77449772a0fd.unity3d
     path: Assets/Bundles/Unit/Player/Hero_3.prefab
   - bundle: c9d864381ac46e8099d91da5d42db33f.unity3d
@@ -7201,6 +7209,9 @@ MonoBehaviour:
   - name: 18ec1d325248cd5ab2f9752919e71fdd.unity3d
     assets:
     - Assets/Bundles/Unit/ItemModel/15710102.prefab
+  - name: f1daaf6fc357e38bc13ed310c0d11b52.unity3d
+    assets:
+    - Assets/Bundles/Unit/ItemModel/90000006.prefab
   - name: 267f3985f9e841192aaae51434d9f876.unity3d
     assets:
     - Assets/Bundles/Unit/JiaYuan/100101.prefab
@@ -8029,6 +8040,9 @@ MonoBehaviour:
   - name: f0f500277d826efdc0cd35b15bb295b6.unity3d
     assets:
     - Assets/Bundles/Unit/Npc/NPC_ShenMi.prefab
+  - name: 79c33d67eb0510bfdceec7adc169ca39.unity3d
+    assets:
+    - Assets/Bundles/Unit/Npc/NPC_ShenMiZhiMen.prefab
   - name: 060afe19d1f031b598d9e30b7f123f6b.unity3d
     assets:
     - Assets/Bundles/Unit/Npc/NPC_ShenQi.prefab
@@ -8083,9 +8097,6 @@ MonoBehaviour:
   - name: ecff5eee9f7fab12fbe8b41539d0e92e.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/1/Hero_toufa.prefab
-  - name: 237614121f22ddc87568a345fa574c69.unity3d
-    assets:
-    - Assets/Bundles/Unit/Parts/1/Hero_toufa2.prefab
   - name: 30d54079cb84511c8a918b4430bac57b.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/1/Hero_xiashen.prefab
@@ -8095,24 +8106,18 @@ MonoBehaviour:
   - name: 1a3a0f7513a35961b9406385417e10e6.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/1/Hero_yanjing.prefab
-  - name: 4f426a4cd2259b8a144bbabe2a5a90ef.unity3d
+  - name: debfd4f7e1b63bdd13b0a49c0ca1ba20.unity3d
     assets:
-    - Assets/Bundles/Unit/Parts/2/Hero_fashi1.prefab
-  - name: 33d196ff7efe13919d1ab64acb3225b2.unity3d
+    - Assets/Bundles/Unit/Parts/2/fashi_fashi2.prefab
+  - name: fceac4c01ad29c5114931cd8e4413b23.unity3d
     assets:
-    - Assets/Bundles/Unit/Parts/2/Hero_fashi2.prefab
+    - Assets/Bundles/Unit/Parts/2/Hero_fashi.prefab
   - name: a96568f88064cfbb915e456db4b9ccea.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/2/Hero_lian.prefab
-  - name: cd5606baeb0dce828b09e591085c9c49.unity3d
-    assets:
-    - Assets/Bundles/Unit/Parts/2/Hero_lian_sima.prefab
   - name: 414ce8a9c78c4f162f52c8dd917d6ce1.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/2/Hero_meimao.prefab
-  - name: 790ce5d2497687e8cfc349bb7bd23f28.unity3d
-    assets:
-    - Assets/Bundles/Unit/Parts/2/Hero_pifeng.prefab
   - name: a4615abde8857bc224f3c43cc6826f95.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/2/Hero_pifu1.prefab
@@ -8122,18 +8127,12 @@ MonoBehaviour:
   - name: 47460a8404f632148d808978cc19b4cf.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/2/Hero_shangyi.prefab
-  - name: 186652ea60b68b29eb897035592c83a9.unity3d
-    assets:
-    - Assets/Bundles/Unit/Parts/2/Hero_shangyi2.prefab
   - name: 25d5badb0621decd9c81eb8117275a68.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/2/Hero_toufa.prefab
   - name: 7336b80e36f0f164e8f2b81ee1249fab.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/2/Hero_xiashen.prefab
-  - name: 0bd35c4c2fddb4aee1cd79fdb2456caa.unity3d
-    assets:
-    - Assets/Bundles/Unit/Parts/2/Hero_xiashen2.prefab
   - name: ee8ecbc1411b535894e1094c82426388.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/2/Hero_xiezi.prefab
@@ -8398,9 +8397,9 @@ MonoBehaviour:
   - name: 20332654599fae403fc8dc8c4a2a6836.unity3d
     assets:
     - Assets/Bundles/Unit/Player/Hero_2BeiFen.prefab
-  - name: 400a3239d23689b8d3eca1ad848a66f1.unity3d
+  - name: 947bd722dfe7d9693e40b3ab0a98f8d5.unity3d
     assets:
-    - Assets/Bundles/Unit/Player/Hero_2_1.prefab
+    - Assets/Bundles/Unit/Player/Hero_2_2.prefab
   - name: ba8cafaebe1bebbcd02d77449772a0fd.unity3d
     assets:
     - Assets/Bundles/Unit/Player/Hero_3.prefab
@@ -8623,6 +8622,9 @@ MonoBehaviour:
   - name: aab2830762dcd5f6d12bd10113365ed3.unity3d
     assets:
     - Assets/Bundles/UI/Dungeon/UIDungeon.prefab
+  - name: 3a4296bcfe158271e674771d4c5e33cc.unity3d
+    assets:
+    - Assets/Bundles/UI/Dungeon/UIDungeonHappyMain.prefab
   - name: 0c07d1c3a50670333624ecb4f94e1435.unity3d
     assets:
     - Assets/Bundles/UI/Dungeon/UIDungeonItem.prefab
@@ -9040,6 +9042,9 @@ MonoBehaviour:
   - name: 1aaee6401f553839ee5f3a5966c1d11b.unity3d
     assets:
     - Assets/Bundles/UI/Main/FenXiang/UIFenXiang.prefab
+  - name: a8463e06b120f724844db7fa85645ccc.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/FenXiang/UIFenXiangQQAddSet.prefab
   - name: 4c39b03ab23733f884e85a71c748d637.unity3d
     assets:
     - Assets/Bundles/UI/Main/FenXiang/UIFenXiangSet.prefab
@@ -10279,6 +10284,15 @@ MonoBehaviour:
   - name: 9568fea57929df8d3c72ebca105deefc.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_FireWall_Size3.prefab
+  - name: bfecfb40addd9a8f79d8776d9dd1013d.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_GongJianAct_1.prefab
+  - name: cc43b0ea8b4a176dca68fa63be36af9b.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_GongJianAct_1_Fire.prefab
+  - name: 00c53783c5aca9bdaffd0c4a84366062.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_GongJian_Skill_1.prefab
   - name: a3c69dbb584f8360111cf00f6c54ef5c.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_GuangHuan.prefab
@@ -10648,6 +10662,12 @@ MonoBehaviour:
   - name: b5b07ec490b65354b6a4e846c10fc8e2.unity3d
     assets:
     - Assets/Bundles/Effect/SkillHitEffect/Eff_Hit_ShiTou_1.prefab
+  - name: 21ebb74a127a94ed3d71cf27ae9898ca.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillHitEffect/Eff_Skill_GongJianAct_1_Hit.prefab
+  - name: c6084e3c3786385263af90cf78213ae2.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillHitEffect/Eff_Skill_GongJian_Skill_1_Hit.prefab
   - name: 296e5c4d667b7ccfc60186219fcd397a.unity3d
     assets:
     - Assets/Bundles/Effect/SkillHitEffect/Eff_Skill_Target_1.prefab
@@ -14175,6 +14195,42 @@ MonoBehaviour:
   - name: b43929757762c6104fbe579f48d5ba50.unity3d
     assets:
     - Assets/Mono/GameDemo/OldResources/3DModel/ScenceItem/Scence_BuLiao/Props_C_1.jpg
+  - name: a2d490896b2872106cd8b6d2678400fe.unity3d
+    assets:
+    - Assets/Res/AnimatorSet/NPC_FuHua.controller
+  - name: 9d8578a1ff4c8a7e3b96651fb242d0ab.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Materials/Skin.mat
+  - name: 128395e31b48e68d8463f75f9a2c27cb.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Shion.fbx
+  - name: 0bcf06e5e22ea3b3440a785b05322864.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Textures/Body.png
+  - name: ce97eb3ef8fedd59fc4e077fae674894.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Materials/Body.mat
+  - name: efafe8c35f9582618acf3d623aebb776.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Textures/SkinShadow.png
+  - name: 01c45b2ff02967f548838a31729eb098.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Textures/HairHighLight.png
+  - name: 99b767de54afed397d903a934b88c238.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Textures/SkinOutline.png
+  - name: 80c688a216ac78d280dff089429f061f.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Textures/Hair.png
+  - name: a2817d2eeaab9935e29f0c507f62685e.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Materials/Hair.mat
+  - name: ab0bfb4a28e493611c959d02ac03d57d.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Textures/Skin.png
+  - name: b132566e053bf4724338904be88fa11c.unity3d
+    assets:
+    - Assets/Res/Models/Shion/Models/Textures/HairShadow.png
   - name: a6dc754197592d9b994a48e5dd20538f.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/dot3.png
@@ -14382,12 +14438,6 @@ MonoBehaviour:
   - name: ef2833953ada59ea70ace1d207fb4b85.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/RoleZhanShi/tga/zhanshi_yanjing.tga
-  - name: aabdfe8bb45d041db2afb8f49a1fb3de.unity3d
-    assets:
-    - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/sd_yanjing.png
-  - name: 36ab60de7e6f866c65e6f7ad6a2d5256.unity3d
-    assets:
-    - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/sd_yanjing.mat
   - name: 02fce2ec2114ad8c57870338a5d539eb.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/Hair_00_00.png
@@ -14403,12 +14453,18 @@ MonoBehaviour:
   - name: ed32e9390ef86ea8d3aef0d8a87b9fe5.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/Costume_01_00.png
-  - name: d91af2d3b6719ce536948e05134aa24f.unity3d
+  - name: aabdfe8bb45d041db2afb8f49a1fb3de.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/FaceSkin_00_00.png
+    - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/sd_yanjing.png
+  - name: 36ab60de7e6f866c65e6f7ad6a2d5256.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/sd_yanjing.mat
   - name: 294cbba965d5fff35c31e006bb01c715.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/Hair_00_00.mat
+  - name: d91af2d3b6719ce536948e05134aa24f.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/RoleFaShi/fentiModel/texture/FaceSkin_00_00.png
   - name: c6a8253037240ae3e475216caf19c138.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/RoleLieRen/tex/mz.png
@@ -14896,12 +14952,12 @@ MonoBehaviour:
   - name: 3b4ee9ee84e8616e76d3eeddd798eea3.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/RoleFaShi/Animtor/Girl_Act_3.fbx
-  - name: 3a449bbe805eebd7ce333ac9e574840b.unity3d
-    assets:
-    - Assets/Res/Models/RoleModelSet/RoleFaShi/Animtor/Girl_YinChang.fbx
   - name: 365328b5f052aae85f2f3b8cc1e8a006.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/RoleFaShi/Animtor/Girl_Rest2.fbx
+  - name: 3a449bbe805eebd7ce333ac9e574840b.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/RoleFaShi/Animtor/Girl_YinChang.fbx
   - name: 938ab5af0f80fd29827cf56ea2e5deef.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/RoleFaShi/Animtor/Girl_Skill_2.fbx
@@ -15267,6 +15323,9 @@ MonoBehaviour:
   - name: c0c32fd33fdd0bb0eaa4b2da41b5992e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_6.png
+  - name: 50252a38f6861313c929fe3056e798a6.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_3A.png
   - name: 254690b6326e19782f6b47056188bbfa.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_8.png
@@ -15294,9 +15353,12 @@ MonoBehaviour:
   - name: d40db5265fd16daa59f03ea45514bf97.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_61A.png
-  - name: 50252a38f6861313c929fe3056e798a6.unity3d
+  - name: 35c20488b8eea4437bd407166f47b601.unity3d
     assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_3A.png
+    - Assets/Res/UI/UIRes/Button/Btn_63.png
+  - name: 962348998c5f3000313112b30fe9eee4.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_297.Png
   - name: 472698f27cfdaa63f01ab01748c7aba1.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_257.png
@@ -15684,6 +15746,9 @@ MonoBehaviour:
   - name: c2d1dfb61cc45e93f284621c92fda1ba.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_375.png
+  - name: 72d356d87a42f472edab8b62a9f85f9c.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/UI_FenXiang_2.png
   - name: 2335720491e28ace0dc4da55f690cb56.unity3d
     assets:
     - Assets/Res/UI/UIRes/ImageBig/gongzhonghao.jpg
@@ -15744,6 +15809,9 @@ MonoBehaviour:
   - name: 1e9386fbeddf622bebe96f0bf28f9860.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_149.png
+  - name: 19d710edea7b8cdc1c9b0ab6016e7a4e.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Button/Btn_127.png
   - name: 00fc49dd1441325c40948558a790e250.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_6_2.png
@@ -16023,9 +16091,6 @@ MonoBehaviour:
   - name: d7ca1c1cc7eec10d0b332eec4ea4bd3a.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_440.png
-  - name: 962348998c5f3000313112b30fe9eee4.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_297.Png
   - name: b26643c78d2ec02ebad336fbec9a2dfa.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_407.png
@@ -16161,6 +16226,12 @@ MonoBehaviour:
   - name: 165565aba071a4e5616db74c7cb1ba8d.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_122.png
+  - name: f5899c3fa18c6866cc9b0b1f47a30b61.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/Portals/portalrays.mat
+  - name: 7e318b2f83d98f34796b9a317c235e97.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/portal_rays.png
   - name: ddfdfd719a45ca9eff95436076fa7a5e.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/sparkle_set.png
@@ -16941,9 +17012,24 @@ MonoBehaviour:
   - name: 62a7101a6fef2bba86a4e95bbf8e5cda.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Texture/Stretch_Hit01.png
+  - name: a5136d288de244948ea0a4bf8f918be4.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Noise/Noise02.png
   - name: 422ce642352d319d67df8634e1a3896b.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Materials/Stretch_Hit01.mat
+  - name: b4e299d431ffbd7cfd18dca26ff990bb.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Gradients/Gradient_blue.PNG
+  - name: ddb5a7d28c3dee34b832a6f0087d5d79.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Gradients/GradientCenter03.png
+  - name: 613311d53ab353c42b0d25e3b695cd1e.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Noise/Noise01.png
+  - name: 23ddf89aeb7a260d39510a157df87a13.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/UniqueProjectiles_Additive8x8.PNG
   - name: cb4c92c73afeba6dd1114b08c9bc5107.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Hovl Studio/Epic toon VFX 3/Textures/Crater63.png
@@ -17764,24 +17850,9 @@ MonoBehaviour:
   - name: 020c8be226b94d7e394d2ccc14c745ee.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Point/E3D-Point151.png
-  - name: a5136d288de244948ea0a4bf8f918be4.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Noise/Noise02.png
   - name: cfeee76cff5e0274422a4e11e8983dae.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Materials/UniqueProjectiles_AB_8x8.mat
-  - name: b4e299d431ffbd7cfd18dca26ff990bb.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Gradients/Gradient_blue.PNG
-  - name: ddb5a7d28c3dee34b832a6f0087d5d79.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Gradients/GradientCenter03.png
-  - name: 613311d53ab353c42b0d25e3b695cd1e.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Noise/Noise01.png
-  - name: 23ddf89aeb7a260d39510a157df87a13.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/UniqueProjectiles_Additive8x8.PNG
   - name: 32ae72b2d3b3ab2b1ec7d5a5db78593a.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Materials/UniqueProjectiles_Additive_8x8.mat
@@ -17969,6 +18040,54 @@ MonoBehaviour:
   - name: 61bd4638374cb5beb1ae3f267508a631.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/ShurikenMagic/ParticleMaterials/Arrows/simpleArrowAdd.mat
+  - name: d799e34e11887e3838686726372af69f.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/materials/generic/projectileGlow_additive.mat
+  - name: 03556f83edfe16aa9431b884af3dee17.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/models/cone.obj
+  - name: 8bc679ea33c12fe6409e476fd3ef680a.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/materials/fire/flarespark_additive.mat
+  - name: 658a21d8736e03cdf0ddef01f39608db.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/materials/bullet/bullet_line_additive.mat
+  - name: 55d15d3b6824bed5675bb1d5e6d34833.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/textures/flarespark.psd
+  - name: 8397515bbba5cc9b7f40ad60c9f315d6.unity3d
+    assets:
+    - Assets/Mono/GameDemo/OldResources/Projectors/Textures/Light.psd
+  - name: 01ed373a2f90c425c08b6e220d935db0.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/materials/sparks/hardBallSpark_additive.mat
+  - name: 14ca5f0f8a4914aeab1a48d8bef099a9.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/materials/decal/decal_explode_glow.mat
+  - name: bcb842a3001c95747995e4f247246a9b.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/materials/smoke/realisticSmokePuff_alphaBlended.mat
+  - name: 63703f1f70d6062d04d3b773f193613b.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/textures/realisticSmoke.psd
+  - name: 7d4bf276fc45c634b09dcf2b443b6d13.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/textures/glowSparks.psd
+  - name: 131ae6ecae2a556c883fe86a4efe4d8a.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/models/cone_closed.obj
+  - name: 3cf76adc745b1e5b9f1a22dc712d2cb2.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/textures/explodedecal.psd
+  - name: a8a459cfb62a8bc7258d5e8252a3ac83.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/materials/generic/impactGlow_additive.mat
+  - name: 04f439b23289acd79974a88a9037b37a.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/materials/decal/decal_explode_alphaBlend.mat
+  - name: 4d72d47f38f2cbc1581ba17f35ecb500.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/StylizedProjectilePack1/prefabs/Bullet/Bullet_DemonPurple/Bullet_Big_DemonPurple/Bullet_DemonPurple_Big_Impact.prefab
   - name: aa3593c9af0fd6bb89eede77b61ee850.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Ring51-1.mat
@@ -18986,12 +19105,6 @@ MonoBehaviour:
   - name: 2dfd9a33d8a07b22b1c6aa8bb34d6f6e.unity3d
     assets:
     - Assets/Res/Effect/SkillZhiShi/Effect/Textures/item/Materials/item_028_p_3_blue_AI.mat
-  - name: f5899c3fa18c6866cc9b0b1f47a30b61.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/Portals/portalrays.mat
-  - name: 7e318b2f83d98f34796b9a317c235e97.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/portal_rays.png
   - name: b6a5a623ab9fede55b530482ae788e73.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Models/Materials/03 - Default.mat
@@ -22437,9 +22550,6 @@ MonoBehaviour:
   - name: 5d419aea6b6f7fa7d2b4a788e5d34e83.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Models/Buildings_H2.FBX
-  - name: 39874405aaf2acdf67c27b7b9d9c3c9b.unity3d
-    assets:
-    - Assets/Bundles/Jpg/Back_9.png
   - name: bbb1785fb9a11ef598dd5adbb96b1a18.unity3d
     assets:
     - Assets/Res/UI/UIModule/Login/Login_7.png
