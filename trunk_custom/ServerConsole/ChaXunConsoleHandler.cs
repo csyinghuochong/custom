@@ -77,11 +77,11 @@ namespace ET
                         });
                         if (reqEnter.Error != ErrorCode.ERR_Success)
                         {
-                            LogHelper.LogDebug("玩家不在线！");
+                             Log.Console("玩家不在线！");
                         }
                         else
                         {
-                            LogHelper.LogDebug(reqEnter.Message);
+                             Log.Console(reqEnter.Message);
                         }
                     }
                     break;
