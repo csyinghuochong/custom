@@ -401,6 +401,7 @@ namespace ET
 
                 if(dBUnionManager_old[0].SignupUnions.Count > 0 && !dBUnionManager_new[0].SignupUnions.Contains(dBUnionManager_old[0].SignupUnions[0]))
                 {
+                    Log.Console($"合并家族战报名列表: {dBUnionManager_old[0].SignupUnions[0]}");
                     dBUnionManager_new[0].SignupUnions.AddRange(dBUnionManager_old[0].SignupUnions);
                 }
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, dBUnionManager_new[0]);
