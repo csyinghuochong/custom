@@ -1,6 +1,7 @@
 ﻿using SharpCompress.Common;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ET
 {
@@ -396,8 +397,12 @@ namespace ET
             if (dBUnionManager_old.Count > 0 && dBUnionManager_new.Count > 0)
             {
                 Log.Console($"合并家族捐献资金: {dBUnionManager_old[0].TotalDonation} {dBUnionManager_new[0].TotalDonation}");
-
                 dBUnionManager_new[0].TotalDonation += dBUnionManager_old[0].TotalDonation;
+
+                if(dBUnionManager_old[0].SignupUnions.Count > 0 && !dBUnionManager_new[0].SignupUnions.Contains(dBUnionManager_old[0].SignupUnions[0]))
+                {
+                    dBUnionManager_new[0].SignupUnions.AddRange(dBUnionManager_old[0].SignupUnions);
+                }
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, dBUnionManager_new[0]);
             }
 
