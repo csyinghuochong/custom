@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 910
+  version: 912
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -94,6 +94,8 @@ MonoBehaviour:
     path: Assets/Bundles/Audio/Skill/chongji.mp3
   - bundle: 2169fb3fa4358b96a5586198fd18dd07.unity3d
     path: Assets/Bundles/Audio/Skill/dao.mp3
+  - bundle: 8cfae1d32b0bd90c65bf1ed3ad6e59d6.unity3d
+    path: Assets/Bundles/Audio/Skill/dian.mp3
   - bundle: 68b6ca083bc87b8a066c8a6ec3df120d.unity3d
     path: Assets/Bundles/Audio/Skill/feng.mp3
   - bundle: 72e5d3a9504bc6cef531fb264ce730bf.unity3d
@@ -248,6 +250,8 @@ MonoBehaviour:
     path: Assets/Bundles/Config/LingDiConfigCategory.bytes
   - bundle: 4240358ebb8e0efc0bd4eb8b3e8e7583.unity3d
     path: Assets/Bundles/Config/LingDiRewardConfigCategory.bytes
+  - bundle: e1dfefbbac83782ed48b04f87138d819.unity3d
+    path: Assets/Bundles/Config/MineBattleConfigCategory.bytes
   - bundle: 80e6a2ddea6f8bda4e0a42de31c67f26.unity3d
     path: Assets/Bundles/Config/MonsterConfigCategory.bytes
   - bundle: 506f9f0f6d709c147493dca1f25fc39f.unity3d
@@ -5584,6 +5588,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Union/UIUnionDonationRecord.prefab
   - bundle: 029bca5c5911827306f670ea9ce936b1.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionDonationRecordItem.prefab
+  - bundle: e6c18809dba4f9860947d455182e7dac.unity3d
+    path: Assets/Bundles/UI/Main/Union/UIUnionJingXuan.prefab
   - bundle: 1ab9c609221a33d275684d27bb9ca568.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionListItem.prefab
   - bundle: c6112d7c2340de3814f69a18b15d38d0.unity3d
@@ -6807,6 +6813,9 @@ MonoBehaviour:
   - name: 2169fb3fa4358b96a5586198fd18dd07.unity3d
     assets:
     - Assets/Bundles/Audio/Skill/dao.mp3
+  - name: 8cfae1d32b0bd90c65bf1ed3ad6e59d6.unity3d
+    assets:
+    - Assets/Bundles/Audio/Skill/dian.mp3
   - name: 68b6ca083bc87b8a066c8a6ec3df120d.unity3d
     assets:
     - Assets/Bundles/Audio/Skill/feng.mp3
@@ -7101,6 +7110,9 @@ MonoBehaviour:
   - name: 4240358ebb8e0efc0bd4eb8b3e8e7583.unity3d
     assets:
     - Assets/Bundles/Config/LingDiRewardConfigCategory.bytes
+  - name: e1dfefbbac83782ed48b04f87138d819.unity3d
+    assets:
+    - Assets/Bundles/Config/MineBattleConfigCategory.bytes
   - name: 80e6a2ddea6f8bda4e0a42de31c67f26.unity3d
     assets:
     - Assets/Bundles/Config/MonsterConfigCategory.bytes
@@ -9912,6 +9924,9 @@ MonoBehaviour:
   - name: 029bca5c5911827306f670ea9ce936b1.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionDonationRecordItem.prefab
+  - name: e6c18809dba4f9860947d455182e7dac.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Union/UIUnionJingXuan.prefab
   - name: 1ab9c609221a33d275684d27bb9ca568.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionListItem.prefab
@@ -20744,9 +20759,6 @@ MonoBehaviour:
   - name: dc09e1aa2f9a2907e8ecd96f3416191d.unity3d
     assets:
     - Assets/Res/ScenceModel/Vermilion-BuiltIn/Textures/Flower_C_01_BaseColor.png
-  - name: 87f70dcbd97a6fc9d274c1c256b75254.unity3d
-    assets:
-    - Assets/Res/Models/Fantasy upgrade building/building/building_weapon_ground_lv3.FBX
   - name: 87cc170abea6fe94c14132da0a85b426.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_potion.png
@@ -20768,9 +20780,6 @@ MonoBehaviour:
   - name: 399f09fb4acdd8c7927a40915d54b671.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_Accessories_roof.mat
-  - name: c34d141e4ab935499285b341bf1bf001.unity3d
-    assets:
-    - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_weapon_ground_lv3.png
   - name: 0283640d65576819081ed6c94205ab54.unity3d
     assets:
     - Assets/Res/ScenceModel/Simple Dungeon Props - YP/Prefabs/Treasure/Treasure.003.prefab
@@ -20780,9 +20789,6 @@ MonoBehaviour:
   - name: 8932361af4f2d6c162ae50ac86d08c2c.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/building_weapon_lv1.FBX
-  - name: 7b83e729ee66ed84dc9b7a6e30170a80.unity3d
-    assets:
-    - Assets/Res/Models/Fantasy upgrade building/Prefab/building_potion_lv5.prefab
   - name: 4dce0aee589eb6fba052bc84be19e9f7.unity3d
     assets:
     - Assets/Res/ScenceModel/Simple Dungeon Props - YP/Prefabs/Coins/Coin.003.prefab
@@ -20829,9 +20835,6 @@ MonoBehaviour:
   - name: c1aaca187cb0ec030794f640e6d351c7.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/etc_Sword01.FBX
-  - name: 42a418995baa02dee8d3d6437ac918eb.unity3d
-    assets:
-    - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_weapon_ground_lv3.mat
   - name: 89cc21b3e72b36a751ae0aa29d0988f2.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Models/Props_C5_1.FBX
@@ -20880,9 +20883,6 @@ MonoBehaviour:
   - name: 2ae41e73c8548454c8fd380754d719de.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Models/Plants_Grass_C3.FBX
-  - name: 90a9cd62070576cbe5549cb062dcb326.unity3d
-    assets:
-    - Assets/Res/Models/Fantasy upgrade building/building/building_weapon_ground_lv5.FBX
   - name: 15b94bb04e99894a275d0d300a170a2e.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/etc_Sword02.FBX
@@ -20922,6 +20922,9 @@ MonoBehaviour:
   - name: 9c6b43975b8d0f416a944b2dfb9fc664.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_inn_roof.mat
+  - name: 87f70dcbd97a6fc9d274c1c256b75254.unity3d
+    assets:
+    - Assets/Res/Models/Fantasy upgrade building/building/building_weapon_ground_lv3.FBX
   - name: a7def754df4b766e3d5a4a2ea8e9b9bd.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Models/Props_A9.FBX
@@ -20931,9 +20934,6 @@ MonoBehaviour:
   - name: 1fa718d2f33f09110f898b019b6a9e32.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Models/Plants_Grass_D2.FBX
-  - name: 43bbcbe2e58c89266fed06545881dad5.unity3d
-    assets:
-    - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_weapon_ground_lv5.mat
   - name: 8991dd3ce231130fbe9a4c9c2ee44aff.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/building_garden01.FBX
@@ -21000,24 +21000,18 @@ MonoBehaviour:
   - name: 19d468704e3d457fbdb514ac2640112a.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/building_Lamp01.FBX
-  - name: 57514cd48d19a8b1af3b3f0c7efa7fca.unity3d
+  - name: c34d141e4ab935499285b341bf1bf001.unity3d
     assets:
-    - Assets/Res/Models/Fantasy upgrade building/Prefab/building_potion_lv3.prefab
+    - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_weapon_ground_lv3.png
   - name: 55a1cb512d0f6f796381160e74b341ca.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Models/Tree_A12.FBX
   - name: b5fd7b5d0fd636f16fccec9be378b6be.unity3d
     assets:
     - Assets/Res/Models/Fantasy upgrade building/building/building_spell_lv5.FBX
-  - name: f533a23158488e1fea78d21a7279a4d7.unity3d
-    assets:
-    - Assets/Res/Models/Fantasy upgrade building/Prefab/building_weapon_lv4.prefab
   - name: d37ea58060caac3f1a22e5c5d3d3e8e4.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Props_A9.prefab
-  - name: 853645985716b63f02bcccf923742f14.unity3d
-    assets:
-    - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_weapon_ground_lv5.png
   - name: 696694700b6e5474c08a78ae45edf4bc.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_wenli_00245_A.tga
@@ -21048,6 +21042,9 @@ MonoBehaviour:
   - name: 4dfb5b7a423bae2121b5804e9313292a.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Models/Plants_Flower_F3.FBX
+  - name: 42a418995baa02dee8d3d6437ac918eb.unity3d
+    assets:
+    - Assets/Res/Models/Fantasy upgrade building/building/Materials/building_weapon_ground_lv3.mat
   - name: dab6d8c52a4ee8e7f10e388e964982da.unity3d
     assets:
     - Assets/Res/TerrainTieTuSet/Textures/Ground/Ground24.png
