@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 918
+  version: 923
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -3593,6 +3593,14 @@ MonoBehaviour:
   - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
     path: Assets/Bundles/Icon/OtherIcon/Img_hole_105.png
   - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/Mine_1.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/Mine_2.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/Mine_3.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/Mine_4.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
     path: Assets/Bundles/Icon/OtherIcon/OccTwo_101.png
   - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
     path: Assets/Bundles/Icon/OtherIcon/OccTwo_102.png
@@ -5428,6 +5436,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/PetSet/UIPetMain.prefab
   - bundle: 172eca3f47a31970ca1f16e3e7616d0d.unity3d
     path: Assets/Bundles/UI/Main/PetSet/UIPetMining.prefab
+  - bundle: ad8e58faa1a5c5e91d6ff58776db3652.unity3d
+    path: Assets/Bundles/UI/Main/PetSet/UIPetMiningChallenge.prefab
   - bundle: 76c8d87dcdbdad5957d3efb7bd0100e7.unity3d
     path: Assets/Bundles/UI/Main/PetSet/UIPetMiningReward.prefab
   - bundle: 7eeb3bcb58b79bf1722cd6b33efd87a4.unity3d
@@ -6270,6 +6280,8 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Monster/72009021.prefab
   - bundle: 9ec0b9f41017957395bcbb32a1b419d2.unity3d
     path: Assets/Bundles/Unit/Monster/80000001.prefab
+  - bundle: 7fb7b2f2cb16781fce218612db7ee150.unity3d
+    path: Assets/Bundles/Unit/Monster/80000003.prefab
   - bundle: 2cad1df652f399a81800c2b7bdf79c9c.unity3d
     path: Assets/Bundles/Unit/Monster/80000101.prefab
   - bundle: 6461d9751814a20c21f23df7eee24381.unity3d
@@ -8134,6 +8146,9 @@ MonoBehaviour:
   - name: 9ec0b9f41017957395bcbb32a1b419d2.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/80000001.prefab
+  - name: 7fb7b2f2cb16781fce218612db7ee150.unity3d
+    assets:
+    - Assets/Bundles/Unit/Monster/80000003.prefab
   - name: 2cad1df652f399a81800c2b7bdf79c9c.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/80000101.prefab
@@ -9691,6 +9706,9 @@ MonoBehaviour:
   - name: 172eca3f47a31970ca1f16e3e7616d0d.unity3d
     assets:
     - Assets/Bundles/UI/Main/PetSet/UIPetMining.prefab
+  - name: ad8e58faa1a5c5e91d6ff58776db3652.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/PetSet/UIPetMiningChallenge.prefab
   - name: 76c8d87dcdbdad5957d3efb7bd0100e7.unity3d
     assets:
     - Assets/Bundles/UI/Main/PetSet/UIPetMiningReward.prefab
@@ -12653,6 +12671,10 @@ MonoBehaviour:
     - Assets/Bundles/Icon/OtherIcon/Img_hole_103.png
     - Assets/Bundles/Icon/OtherIcon/Img_hole_104.png
     - Assets/Bundles/Icon/OtherIcon/Img_hole_105.png
+    - Assets/Bundles/Icon/OtherIcon/Mine_1.png
+    - Assets/Bundles/Icon/OtherIcon/Mine_2.png
+    - Assets/Bundles/Icon/OtherIcon/Mine_3.png
+    - Assets/Bundles/Icon/OtherIcon/Mine_4.png
     - Assets/Bundles/Icon/OtherIcon/OccTwo_101.png
     - Assets/Bundles/Icon/OtherIcon/OccTwo_102.png
     - Assets/Bundles/Icon/OtherIcon/OccTwo_103.png
@@ -14416,27 +14438,15 @@ MonoBehaviour:
   - name: f13acd80941c79b442968e92c94c1b71.unity3d
     assets:
     - Assets/Res/Models/MonsterModel/ZhangJie_1/shuguai/Materials/_D.mat
-  - name: f1770889279080b30fc10df6b8d1514e.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/sparkle.png
   - name: 6c30e1502235fa4e68589ee8d204c1b0.unity3d
     assets:
     - Assets/Res/Models/MonsterModel/ZhangJie_1/shuguai/Materials/_D.jpg
-  - name: 8552b6ff659d596d0d9ac3bbc72ceada.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/treasure_ray.png
   - name: aa3bb7167b6333459448563ff41a6511.unity3d
     assets:
     - Assets/Res/Models/MonsterModel/ZhangJie_1/shuguai/Boss_Death.FBX
   - name: de4a1d57e763e9b3a12bdf8543163cb5.unity3d
     assets:
     - Assets/Res/Models/MonsterModel/ZhangJie_1/shuguai/Boss_Run.FBX
-  - name: 8c1741ae4da73d6768fd4c8248672456.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/Sparkles/sparkle.mat
-  - name: cd254e319c64ff2dd64b468abbd9cd2c.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/Misc/treasure_ray.mat
   - name: 7ba4d01c7085eda0f4ab1df3c1dd9bc1.unity3d
     assets:
     - Assets/Res/Models/MonsterModel/ZhangJie_1/shuguai/Boss_Act.FBX
@@ -14446,6 +14456,18 @@ MonoBehaviour:
   - name: 2ab1358fd4faf8effc456e2dba51dc9e.unity3d
     assets:
     - Assets/Res/Models/MonsterModel/ZhangJie_1/shuguai/Boss_Idle.FBX
+  - name: f1770889279080b30fc10df6b8d1514e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/sparkle.png
+  - name: 8552b6ff659d596d0d9ac3bbc72ceada.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/treasure_ray.png
+  - name: 8c1741ae4da73d6768fd4c8248672456.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/Sparkles/sparkle.mat
+  - name: cd254e319c64ff2dd64b468abbd9cd2c.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/Misc/treasure_ray.mat
   - name: c9861a69a108f84daa4aea255ed9edf8.unity3d
     assets:
     - Assets/Mono/GameDemo/OldResources/3DModel/Scene/Other/Model/Materials/props1.tif
@@ -14581,24 +14603,12 @@ MonoBehaviour:
   - name: 42df758bb822abe3b07b345c618547c1.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/CritterPack/AnimalModels/frog_green.jpg
-  - name: 744969c0fc4782ae06004f2882540714.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/3DModel_Cute/Cute Zoo/Animations_Cute_Animals/TypeA/Animal_TypeA@Idle.fbx
   - name: 9c483fba16fff3d20df25d34039ce8a9.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/CritterPack/AnimalModels/frog.FBX
-  - name: 7915793a21f8aa7f255251908d1ba7b0.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/3DModel_Cute/Cute Zoo/Animations_Cute_Animals/TypeA/Animal_TypeA@Run.fbx
-  - name: 6a6bca7e2b11ab2ba773f27c8034fcd6.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/Action_monster_bsj.FBX
   - name: a6dc754197592d9b994a48e5dd20538f.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/dot3.png
-  - name: cd82b24bea3b481aec017cac4977743e.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_shanguang_00125.tga
   - name: 4169bed4f58861eb43b0704cd7ed227c.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/Sparkles/sparkle_legendary.mat
@@ -14608,33 +14618,15 @@ MonoBehaviour:
   - name: 5b24991802429db2af10da9355d0f715.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/Misc/dot3.mat
-  - name: bebf9250d9d351e0eb2c4752e5229b5d.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/bushoujia_buff.controller
-  - name: 0102470d2937cadb923b18c1cd6f3780.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/attack.anim
-  - name: 46d3c275bbb3cf3c6cf6343c2babac4f.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/Texture/bushoujia_1.tga
   - name: cf8aba8c956af52f51008af02be9c319.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Models/Materials/No Name.mat
   - name: 15ebfded6051487ab9e068fb90eba304.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/questmarker_yellow.png
-  - name: 7d3b3ad71f8be0149307761c714ff058.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_yanhuo_00300.mat
   - name: 6e18e0e87897011c41aad21109a23d54.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/beamglow.png
-  - name: 9e6d5a02c9af5691b9218e25a6cf9f99.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/Materials/bushoujia_1.mat
-  - name: 9d78c2d32ba3b754fed7d1e39d377148.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_yanhuo_00300_A.tga
   - name: e59ed6d8ecab85c56bc9ba72443e2d24.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/sparkle_legendary.png
@@ -14644,6 +14636,30 @@ MonoBehaviour:
   - name: 610255075d0a79a9849bf62d52917631.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Materials/questmarker_yellow.mat
+  - name: 6a6bca7e2b11ab2ba773f27c8034fcd6.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/Action_monster_bsj.FBX
+  - name: cd82b24bea3b481aec017cac4977743e.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_shanguang_00125.tga
+  - name: bebf9250d9d351e0eb2c4752e5229b5d.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/bushoujia_buff.controller
+  - name: 0102470d2937cadb923b18c1cd6f3780.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/attack.anim
+  - name: 46d3c275bbb3cf3c6cf6343c2babac4f.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/Texture/bushoujia_1.tga
+  - name: 7d3b3ad71f8be0149307761c714ff058.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_yanhuo_00300.mat
+  - name: 9e6d5a02c9af5691b9218e25a6cf9f99.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/Role/RoleAct/Monster_bushoujia_01/Materials/bushoujia_1.mat
+  - name: 9d78c2d32ba3b754fed7d1e39d377148.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_yanhuo_00300_A.tga
   - name: b7827172c1951614d7b1f9b757289492.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_yanhuo_00300_C.tga
@@ -16505,6 +16521,9 @@ MonoBehaviour:
   - name: 26127c36397d1ec9808c54cd75f329ca.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_67.Png
+  - name: 1be4083a6414cf5e3c8e28f979facf25.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Button/tt.png
   - name: 552a8bfe79fb9097a7b8499e9191d415.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_28.png
@@ -19801,6 +19820,9 @@ MonoBehaviour:
   - name: b6a5a623ab9fede55b530482ae788e73.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Models/Materials/03 - Default.mat
+  - name: 17912dc84836b76c19be67a204a58d71.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/ARPG Effects/Models/Materials/SelfIllumYellow.mat
   - name: f98647c1e99d54fd6eaef5904c17b38c.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/Stone/Materials/Tree_bark.mat
@@ -21690,6 +21712,9 @@ MonoBehaviour:
   - name: 497a8f29226800f5ba9b071f5832a96e.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Box_A3.prefab
+  - name: aaba40265a906c7845c5ed0ea23839b2.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/ARPG Effects/Models/StarIcon.FBX
   - name: d8bcd70cc19d7556be5ec30727004b11.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/MaoXianDao2/Box_C4.prefab
