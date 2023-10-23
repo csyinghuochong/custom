@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 923
+  version: 929
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -304,6 +304,10 @@ MonoBehaviour:
     path: Assets/Bundles/Config/RobotConfigCategory.bytes
   - bundle: 51b07267e6349c76218950459b041f77.unity3d
     path: Assets/Bundles/Config/SceneConfigCategory.bytes
+  - bundle: 7ac364449053ebf3d7189f3ac2b5cbeb.unity3d
+    path: Assets/Bundles/Config/SeasonJingHeConfigCategory.bytes
+  - bundle: 219057f0cd7f7c3044f2848349b13007.unity3d
+    path: Assets/Bundles/Config/SeasonLevelConfigCategory.bytes
   - bundle: d33a6fa96ffd083a7f13964e5230c2fd.unity3d
     path: Assets/Bundles/Config/ServerDayConfigCategory.bytes
   - bundle: 74a685124624321959e253e03983e713.unity3d
@@ -4123,8 +4127,6 @@ MonoBehaviour:
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/60010400.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
-    path: Assets/Bundles/Icon/RoleSkillIcon/60010401.png
-  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/60010500.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/60010501.png
@@ -4381,8 +4383,6 @@ MonoBehaviour:
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/63002002.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
-    path: Assets/Bundles/Icon/RoleSkillIcon/63002002a.png
-  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/63002003.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/63003001.png
@@ -4541,6 +4541,8 @@ MonoBehaviour:
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/69060800.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/81000310.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/99001011.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/99001021.png
@@ -4548,6 +4550,8 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/RoleSkillIcon/99001031.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/99001041.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/99004006.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/BeiDong.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
@@ -4802,6 +4806,12 @@ MonoBehaviour:
     path: Assets/Bundles/Jpg/Back_14.jpg
   - bundle: a26e030a2464376f89f8b13c2f1a1d4c.unity3d
     path: Assets/Bundles/Jpg/Back_15.jpg
+  - bundle: 758be2b0d83605a060b53e4d97e172e9.unity3d
+    path: Assets/Bundles/Jpg/Back_22.jpg
+  - bundle: 39c3a1b01ec4010a86b9dc51b8f985c7.unity3d
+    path: Assets/Bundles/Jpg/Back_23.jpg
+  - bundle: 41e8e58485de7fd5fb4772721aa0e3fa.unity3d
+    path: Assets/Bundles/Jpg/Back_24.jpg
   - bundle: e0e09898e755094e47304d6f5d6b2a7e.unity3d
     path: Assets/Bundles/Jpg/Back_5.jpg
   - bundle: 87ff648ba581a4dbf8bf8b93e0a50251.unity3d
@@ -5430,6 +5440,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/PetSet/UIPetFormation.prefab
   - bundle: 19e0e0cd46eefc2fbf3122015e37c370.unity3d
     path: Assets/Bundles/UI/Main/PetSet/UIPetFormationItem.prefab
+  - bundle: 4b708d88a10ddde2bb6f00e53ba82c2a.unity3d
+    path: Assets/Bundles/UI/Main/PetSet/UIPetFormationItem_2.prefab
   - bundle: 0fff1f15613cd4cde4f4e71d68bcab51.unity3d
     path: Assets/Bundles/UI/Main/PetSet/UIPetFormationSet.prefab
   - bundle: 399bb571d39f848d349aa83269737cce.unity3d
@@ -5438,6 +5450,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/PetSet/UIPetMining.prefab
   - bundle: ad8e58faa1a5c5e91d6ff58776db3652.unity3d
     path: Assets/Bundles/UI/Main/PetSet/UIPetMiningChallenge.prefab
+  - bundle: 2b81aa935cb3f5ee26965de200f4e228.unity3d
+    path: Assets/Bundles/UI/Main/PetSet/UIPetMiningRecord.prefab
   - bundle: 76c8d87dcdbdad5957d3efb7bd0100e7.unity3d
     path: Assets/Bundles/UI/Main/PetSet/UIPetMiningReward.prefab
   - bundle: 7eeb3bcb58b79bf1722cd6b33efd87a4.unity3d
@@ -5638,6 +5652,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Union/UIUnionShow.prefab
   - bundle: ec0a4bf349a50a3e98e5d025c09f26c6.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionXiuLian.prefab
+  - bundle: 109d8f41ee500777ec347117c0449320.unity3d
+    path: Assets/Bundles/UI/Main/Watch/UIPetInfo.prefab
   - bundle: b66e908eef4f8b97fe1f030b17191741.unity3d
     path: Assets/Bundles/UI/Main/Watch/UIWatch.prefab
   - bundle: 86588249d2633856f0a505bf984b2cfe.unity3d
@@ -7237,6 +7253,12 @@ MonoBehaviour:
   - name: 51b07267e6349c76218950459b041f77.unity3d
     assets:
     - Assets/Bundles/Config/SceneConfigCategory.bytes
+  - name: 7ac364449053ebf3d7189f3ac2b5cbeb.unity3d
+    assets:
+    - Assets/Bundles/Config/SeasonJingHeConfigCategory.bytes
+  - name: 219057f0cd7f7c3044f2848349b13007.unity3d
+    assets:
+    - Assets/Bundles/Config/SeasonLevelConfigCategory.bytes
   - name: d33a6fa96ffd083a7f13964e5230c2fd.unity3d
     assets:
     - Assets/Bundles/Config/ServerDayConfigCategory.bytes
@@ -8812,6 +8834,15 @@ MonoBehaviour:
   - name: a26e030a2464376f89f8b13c2f1a1d4c.unity3d
     assets:
     - Assets/Bundles/Jpg/Back_15.jpg
+  - name: 758be2b0d83605a060b53e4d97e172e9.unity3d
+    assets:
+    - Assets/Bundles/Jpg/Back_22.jpg
+  - name: 39c3a1b01ec4010a86b9dc51b8f985c7.unity3d
+    assets:
+    - Assets/Bundles/Jpg/Back_23.jpg
+  - name: 41e8e58485de7fd5fb4772721aa0e3fa.unity3d
+    assets:
+    - Assets/Bundles/Jpg/Back_24.jpg
   - name: e0e09898e755094e47304d6f5d6b2a7e.unity3d
     assets:
     - Assets/Bundles/Jpg/Back_5.jpg
@@ -9697,6 +9728,9 @@ MonoBehaviour:
   - name: 19e0e0cd46eefc2fbf3122015e37c370.unity3d
     assets:
     - Assets/Bundles/UI/Main/PetSet/UIPetFormationItem.prefab
+  - name: 4b708d88a10ddde2bb6f00e53ba82c2a.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/PetSet/UIPetFormationItem_2.prefab
   - name: 0fff1f15613cd4cde4f4e71d68bcab51.unity3d
     assets:
     - Assets/Bundles/UI/Main/PetSet/UIPetFormationSet.prefab
@@ -9709,6 +9743,9 @@ MonoBehaviour:
   - name: ad8e58faa1a5c5e91d6ff58776db3652.unity3d
     assets:
     - Assets/Bundles/UI/Main/PetSet/UIPetMiningChallenge.prefab
+  - name: 2b81aa935cb3f5ee26965de200f4e228.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/PetSet/UIPetMiningRecord.prefab
   - name: 76c8d87dcdbdad5957d3efb7bd0100e7.unity3d
     assets:
     - Assets/Bundles/UI/Main/PetSet/UIPetMiningReward.prefab
@@ -10009,6 +10046,9 @@ MonoBehaviour:
   - name: ec0a4bf349a50a3e98e5d025c09f26c6.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionXiuLian.prefab
+  - name: 109d8f41ee500777ec347117c0449320.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Watch/UIPetInfo.prefab
   - name: b66e908eef4f8b97fe1f030b17191741.unity3d
     assets:
     - Assets/Bundles/UI/Main/Watch/UIWatch.prefab
@@ -12950,7 +12990,6 @@ MonoBehaviour:
     - Assets/Bundles/Icon/RoleSkillIcon/60010201.png
     - Assets/Bundles/Icon/RoleSkillIcon/60010300.png
     - Assets/Bundles/Icon/RoleSkillIcon/60010400.png
-    - Assets/Bundles/Icon/RoleSkillIcon/60010401.png
     - Assets/Bundles/Icon/RoleSkillIcon/60010500.png
     - Assets/Bundles/Icon/RoleSkillIcon/60010501.png
     - Assets/Bundles/Icon/RoleSkillIcon/60010600.png
@@ -13079,7 +13118,6 @@ MonoBehaviour:
     - Assets/Bundles/Icon/RoleSkillIcon/63001005.png
     - Assets/Bundles/Icon/RoleSkillIcon/63002001.png
     - Assets/Bundles/Icon/RoleSkillIcon/63002002.png
-    - Assets/Bundles/Icon/RoleSkillIcon/63002002a.png
     - Assets/Bundles/Icon/RoleSkillIcon/63002003.png
     - Assets/Bundles/Icon/RoleSkillIcon/63003001.png
     - Assets/Bundles/Icon/RoleSkillIcon/63003002.png
@@ -13159,10 +13197,12 @@ MonoBehaviour:
     - Assets/Bundles/Icon/RoleSkillIcon/69060600.png
     - Assets/Bundles/Icon/RoleSkillIcon/69060700.png
     - Assets/Bundles/Icon/RoleSkillIcon/69060800.png
+    - Assets/Bundles/Icon/RoleSkillIcon/81000310.png
     - Assets/Bundles/Icon/RoleSkillIcon/99001011.png
     - Assets/Bundles/Icon/RoleSkillIcon/99001021.png
     - Assets/Bundles/Icon/RoleSkillIcon/99001031.png
     - Assets/Bundles/Icon/RoleSkillIcon/99001041.png
+    - Assets/Bundles/Icon/RoleSkillIcon/99004006.png
     - Assets/Bundles/Icon/RoleSkillIcon/b001.png
     - Assets/Bundles/Icon/RoleSkillIcon/b1001.png
     - Assets/Bundles/Icon/RoleSkillIcon/b101.png
@@ -13325,9 +13365,9 @@ MonoBehaviour:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/JR1/Effects/Shaders/E/E3D/E3D_EF_31_ADD_Top.shader
     - Assets/Res/Effect/EffectResSet/Effect/E3D-RenderCore/E3D-Effect-Shader/UV/E3DVFX-3T-UV-VC-Add.shader
     - Assets/Res/Effect/EffectResSet/Hovl Studio/Epic toon VFX 2/Shaders/Add_Fresnel.shader
-    - Assets/Res/Effect/EffectResSet/Effect/E3D-RenderCore/Shader/ShaderB/E3DEffect-C1-AirWave.shader
     - Assets/Mono/GameDemo/ArtResource/Shaders/Particle-Alpha-Blend-DetachAlpha-Top.shader
     - Assets/Res/Effect/EffectResSet/Effect2/E3D-RenderCore/E3D-Effect-Shader/AirDistort/E3D-AirDistort-AutoNoise-Mask-Fre.shader
+    - Assets/Res/Effect/EffectResSet/Effect/E3D-RenderCore/Shader/ShaderB/E3DEffect-C1-AirWave.shader
     - Assets/Mono/GameDemo/ArtResource/Shaders/Particle-AddSmooth-DetachAlpha-Top.shader
     - Assets/Res/Effect/EffectResSet/Effect/E3D-RenderCore/Shader/ShaderB/E3DEffect-C2-Blend-Glow.shader
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/AlphaBlendedMobile_Scroll01.shader
@@ -16329,6 +16369,9 @@ MonoBehaviour:
   - name: dc05148f5cedf80af99d39f711322b16.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_356.png
+  - name: 356d0e872a3f800a5ed574015280208d.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_Fashion_1.png
   - name: e0700ca658b786b8da75e8df8ecf7041.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_84.png
@@ -16521,9 +16564,21 @@ MonoBehaviour:
   - name: 26127c36397d1ec9808c54cd75f329ca.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_67.Png
-  - name: 1be4083a6414cf5e3c8e28f979facf25.unity3d
+  - name: d86d5235f17e35a72aab759d9ae7aab2.unity3d
     assets:
-    - Assets/Res/UI/UIRes/Button/tt.png
+    - Assets/Res/UI/UIRes/Imgage/Img_374.png
+  - name: 17c8f0cf242fa448fcd5433a85864eac.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Button/Btn_84.Png
+  - name: d3eb54de92593a7e788a088b7a0cb20e.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_324.png
+  - name: 17aad3c480c8c4773d11dd3e42a2136b.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_420.png
+  - name: 89900cff8cc78dc124e368ede3a8384b.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/jx6.png
   - name: 552a8bfe79fb9097a7b8499e9191d415.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_28.png
@@ -16569,12 +16624,12 @@ MonoBehaviour:
   - name: c9d16c1c80ec8329630d0d27d61fe532.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_360.png
+  - name: 4f4e572624b1499f85a36263f9416739.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_13.png
   - name: ecdbbeb7ff54389c447e21f96307f403.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_123.png
-  - name: d86d5235f17e35a72aab759d9ae7aab2.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_374.png
   - name: b99bb50da9dad77f14fc0fed63ad2d94.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_14.png
@@ -16653,9 +16708,6 @@ MonoBehaviour:
   - name: 943c877c4180e2da832b099a278e640e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_18_1.png
-  - name: 17aad3c480c8c4773d11dd3e42a2136b.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_420.png
   - name: 18e7691838b2d9ee2323b18016d66d41.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/HintDian.png
@@ -16686,9 +16738,6 @@ MonoBehaviour:
   - name: 5f6d022f1ee907905736f7db80fddf5e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_43.png
-  - name: 17c8f0cf242fa448fcd5433a85864eac.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Button/Btn_84.Png
   - name: 26307fdd4256b6c818cd8dd18bcfb50a.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Img_272.Png
@@ -17071,18 +17120,6 @@ MonoBehaviour:
   - name: b0fb2186ba9ac04831ed77300bbf059b.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Cylinder24.FBX
-  - name: 0cbcf6266e8633fc4cb47ff9c386783b.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Direction185.png
-  - name: 2f54e4e57ac4ee3ddeec65fda8c809f1.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Point144.png
-  - name: 889ad05a1ad8519e4efee774fbdac6bb.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point144.mat
-  - name: 46f38374871f0d9884af140421796a0f.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Direction-Point1.mat
   - name: 4728e6459a82bb598ed3a7500898fc63.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/ARPG Effects/Textures/questmarker_green.png
@@ -17098,9 +17135,6 @@ MonoBehaviour:
   - name: 62a1416c273032fa41f1176e3a38b370.unity3d
     assets:
     - Assets/Res/Materials/Mat_LineRender2.mat
-  - name: 4c88284c61b1142abe7e678f3872ed2e.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction148.png
   - name: 9d2d6d54ccb2cd619054290a026634d8.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EScene/XWX-Effect-Dev/MaterialSample/E3D-Distort-Point1.mat
@@ -17113,15 +17147,6 @@ MonoBehaviour:
   - name: 5203f2fc1fcb529ab80fcce524c07a69.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-36.png
-  - name: d10a3ffb642b4efb1f9976a2c028afbf.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_xunhuanguang_00005_C.tga
-  - name: 39894ecce38267af0afe75f00eec4597.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_xunhuanguang_00005.mat
-  - name: 78b31fae264c8af2f9f1bd6d52b79bb4.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Import/jiutong_daoguang.FBX
   - name: ffdf1d6dc56e8941df4f970d01f40ee1.unity3d
     assets:
     - Assets/Res/Effect/SkillBaseAct/ErbGameArt/Sword slash FX/Materials/Point12cg.mat
@@ -17374,15 +17399,9 @@ MonoBehaviour:
   - name: 72b212c91cd26f10e3a1ca80c0af1316.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point31.png
-  - name: 793c820d55f5d362f81b2e611e50122c.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread48.fbx
   - name: e2b92c121f022da7fc29b38bea811a0d.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Object72.mat
-  - name: 1729886414000f32c5bfa54fe84bb9d5.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Loop4-39-1.mat
   - name: 9d865c06def3bdd632d9117831f5289e.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Direction146.mat
@@ -17393,39 +17412,24 @@ MonoBehaviour:
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
       38.mat
-  - name: 4b3089750dd44b3965e6ff4f595d156d.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Loop4-36-2-HDR.mat
-  - name: ac93674edc2132333d2771b87943c7f7.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/Materials/1efc_ring18.mat
   - name: e38ae9a41ec8e10edaa7edb411ddda57.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point120.mat
-  - name: a52ef5e43c3d984f780eb0e689de28ac.unity3d
+  - name: ac93674edc2132333d2771b87943c7f7.unity3d
     assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread59.FBX
-  - name: 89ad4f88cb7c3e7b5ac3295d476179f0.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-40.png
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/Materials/1efc_ring18.mat
   - name: 6a13a759c52d05d992a0f07ff6e7d48e.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Disk30.FBX
   - name: 1da2f26c6dccfbaf924bb37403105a7d.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/B1/Effect/Animations/E3D-D011.controller
-  - name: 65f1518f20cb91c88e086323b08fb847.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread51.fbx
   - name: 700502414f029ef498c8c7ad3f491f29.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction146.png
   - name: 5539bf2f94fe5d4e9f42973bc33ea7ed.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EScene/XWX-Effect-Dev/MaterialSample/E3D-Distort-Point13.mat
-  - name: b488d8af146f44fdaa8d0898f1670416.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point118.mat
   - name: 8b8738bb16b93b1a875e97b5df3695ce.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
@@ -17439,15 +17443,9 @@ MonoBehaviour:
   - name: 356f30f9a73693f9c93b628c57841aa1.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point32.png
-  - name: d6fabbeceb9efff9665bdccaed201416.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Loop4-40.mat
   - name: cc1a90bca2f53158e1154e737361b210.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Object72.png
-  - name: d1c64f2dba7cdd152ef43b6ab625f743.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-37.png
   - name: 9d55aeec47d55fe071602bce8d6e4a46.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Ring51-HDR.mat
@@ -17460,9 +17458,6 @@ MonoBehaviour:
   - name: bb8b94c79fb88dae812068dc72cda8b9.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Import/shitou01.FBX
-  - name: 001afd417e004c43d24921c684364d7c.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point142.png
   - name: e6f4245596c34d7b336f635800eb3c7d.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Sequence167.png
@@ -17568,6 +17563,9 @@ MonoBehaviour:
   - name: bf3b229b43c04ccbbb4ba6e7ede38d03.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point130.png
+  - name: 001afd417e004c43d24921c684364d7c.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point142.png
   - name: 07eb1cba2115d1f284a79496a768119b.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction114.png
@@ -17670,9 +17668,6 @@ MonoBehaviour:
   - name: a2843dec89f4e45e901323c5b28949de.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Hovl Studio/Epic toon VFX 3/Textures/Flare21.png
-  - name: 7720939cadacf9aae5728ef513e9a4df.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet49.fbx
   - name: 548fc838624c3576a51aea2eecf80195.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet44.fbx
@@ -17691,9 +17686,6 @@ MonoBehaviour:
   - name: 99cbd73f435449009881514c0d1c681e.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet51.fbx
-  - name: 2a267ebaef18f1e00a5652dfb17715c4.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Direction111-2.mat
   - name: 80da63f518680b76a26d16fa4841182b.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point120-22.mat
@@ -17738,9 +17730,6 @@ MonoBehaviour:
   - name: 64e9bb148d66f640f0a9b9298939ecc4.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Object94.tga
-  - name: 319e7428aa071da78a76f62b419a7886.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Direction111-3.mat
   - name: 19de929d0f420d957614fecd160ebdbb.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Object95.tga
@@ -17750,6 +17739,15 @@ MonoBehaviour:
   - name: f8323820e95ecef74085dac71ee0e8a9.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Texture/Light_Decal.PNG
+  - name: 7720939cadacf9aae5728ef513e9a4df.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet49.fbx
+  - name: 2a267ebaef18f1e00a5652dfb17715c4.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Direction111-2.mat
+  - name: 319e7428aa071da78a76f62b419a7886.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Direction111-3.mat
   - name: 0b9b83d8e73e4cb201e68f92d5bee91a.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Materials/Ice_Decal.mat
@@ -17795,10 +17793,6 @@ MonoBehaviour:
   - name: fa9a6f1b9ecfd49130a7940bcb1733e5.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_yanhuo_00115_M_1.mat
-  - name: 0826ebfa67c4e9a02e69a37129e637fb.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Direction48-bh
-      1.mat
   - name: f268a878a94b02c6f5dd94b1a983a6b4.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Ring/E3D-Ring8.tga
@@ -17814,19 +17808,9 @@ MonoBehaviour:
   - name: 6c101f40a6814944deb3ab2df4614fd7.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Loop2/E3D-Loop2-51.png
-  - name: 562dae8f33fbc8b06f7b1018e2514077.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Loop4-63-bh
-      1.mat
   - name: 72ff92b0db4523cbafffbc14f8b39217.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Ring187-bh.mat
-  - name: ec650a48901987ddb04e5fbdbbb5503d.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet69.FBX
-  - name: 7cbe2b9d9470dc6e827079fa7eb74b3b.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Viksepa/E3D-Viksepa8-bh31.png
   - name: e44ef7eed35582f53b28eb169c79fc75.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Direction115-bh.mat
@@ -17840,15 +17824,9 @@ MonoBehaviour:
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Point112-bh
       1.mat
-  - name: 149f6e00aabb1375b57bea49edadc772.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Direction/E3D-Direction48.png
   - name: 566ef6e56d514b2afa760fdaaffec48f.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Ring/E3D-Ring187-bh1.png
-  - name: fde31f9b5d67360801873384c52f2f99.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-63.png
   - name: ab482992722ca2dc5abb96b81325314f.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/BH/Effect/Animations/E3D-Skill-Blast-Orange1.anim
@@ -17882,9 +17860,6 @@ MonoBehaviour:
   - name: 20877f8145feaecc2f04b376ad5dba27.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point35.png
-  - name: 0217cd4ebb1b52dabec9bb9693cd8c60.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction160.png
   - name: 7ffddaefc54c6216081ffb24bf921038.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-65.png
@@ -17894,12 +17869,6 @@ MonoBehaviour:
   - name: 1ac65051aeb5dbb5cea6b3089d911614.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_xulie_fire0075_A.tga
-  - name: 9237fa3d98a44b7058e77f6ed7162e88.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet53.FBX
-  - name: 71a059654e43430c4382fc7477a3ea74.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point141.png
   - name: c66d14b24ab416d14375c9e139a72bcd.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TJEZTX_Textures_0027b_C.tga
@@ -17916,6 +17885,9 @@ MonoBehaviour:
   - name: 1e10aacb2d975c41d46ff09acdb64579.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TJEZTX_Textures_0027b_A.tga
+  - name: 71a059654e43430c4382fc7477a3ea74.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point141.png
   - name: bc2503f51ff5a63d2faa1274074c6c86.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
@@ -17929,10 +17901,6 @@ MonoBehaviour:
   - name: 7bf0c296ffbaf76548192ed81e88da70.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Ring16.png
-  - name: 48a637d4a289b3efe4a50441fefe2a8e.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
-      99.mat
   - name: e86a6daa1e6a702f5ee525136ca4496f.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Ring65.png
@@ -17945,15 +17913,9 @@ MonoBehaviour:
   - name: f3ee9c3e9cd7d1e416eae048609482fe.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Moon4.png
-  - name: 629cf271326132dfe968f404730f272a.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Point156.png
   - name: f94f39a9a22258616cb3d4cb72de4748.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Sequence-153.mat
-  - name: dcb8edf72f3e27f0ac3cc119ad2c9468.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Common_Buff_dalong/nengliang.anim
   - name: c31bfc83904364f734ebeb05eec74d60.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_glow_00216_A.png
@@ -17970,6 +17932,9 @@ MonoBehaviour:
   - name: d2d098a62944e1f32dc7bd5474d9ebe6.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/B1/Effect/Animations/E3D-Spell-Vertical-Orange2.controller
+  - name: 9237fa3d98a44b7058e77f6ed7162e88.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet53.FBX
   - name: c03e797a7d5b7ec2291f0ee0e9e36179.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Direction52.mat
@@ -17985,15 +17950,6 @@ MonoBehaviour:
   - name: 7e2e2c2a0cd744908184e00327ac2f65.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TJEZTX_Textures_0027b111.mat
-  - name: 966fcc8b1642e1e6c76c936ad3f7082e.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_xunhuanguang_00074_A.png
-  - name: 4e239314208f99469e5db7cd22b16395.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Common_Buff_dalong/qiliu1.controller
-  - name: 62c9d53e03af62520579d55665bc60d8.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_xunhuanguang_00074.mat
   - name: cedf5dc216d8db01aa3b96e990e31b02.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
@@ -18001,9 +17957,6 @@ MonoBehaviour:
   - name: 949f898d315a71ca93cb6e1158815407.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Sequence153.PNG
-  - name: 6884fe7bf0ebcb2b0dd43211a509fbe3.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Common_Buff_dalong/nengliang.controller
   - name: 0b62205b68a38effc2f197aca0e5e5b4.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Ring47.mat
@@ -18022,22 +17975,10 @@ MonoBehaviour:
   - name: 8b586c4c11bfd70ff3ee5c69ae1fbb0f.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Loop4-34.mat
-  - name: 6e0912138159b28cf9ad05ba802d012e.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_glow_00178_0001.mat
   - name: c9b3e05450a310459a4c5644db392a68.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
       30.mat
-  - name: a65a72a4631565213e778d33cfa1e9d3.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_glow_xin_guangyun_00001_A.png
-  - name: b130e1c69b34118258cd89b2dc39e2b2.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Common_Buff_dalong/qiliu1.anim
-  - name: 4c63d1bfaef524017d9f0274a667057f.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Import/qiliu.FBX
   - name: 9f0bc768450f20b064ccc48eb44e67bf.unity3d
     assets:
     - Assets/Res/Effect/Skill/Texture/D_Hit_05.tga
@@ -18071,27 +18012,27 @@ MonoBehaviour:
   - name: 689892cbf20d7eeca736201794e66321.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/lizi_00123.mat
-  - name: 8633d71d280f61d3c62416a2e1828ccb.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/lizi_00123.tga
-  - name: 569bb17d7d31438056c91f277bff8135.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Tanxianjia_Atk_Attack_4/wuqi.controller
-  - name: 5c5d11d0893f88884dc4a618851a504c.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_Tanxianjia_wuqi_C.png
-  - name: 667322f529cfcbe96777c307fd4f9885.unity3d
-    assets:
-    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_Tanxianjia_wuqi.mat
   - name: 843fa6b25fb033e6c677b412ff6c7d31.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/lizi_00016.tga
+  - name: 8633d71d280f61d3c62416a2e1828ccb.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/lizi_00123.tga
+  - name: 5c5d11d0893f88884dc4a618851a504c.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_Tanxianjia_wuqi_C.png
+  - name: 569bb17d7d31438056c91f277bff8135.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Tanxianjia_Atk_Attack_4/wuqi.controller
   - name: 616679ac6cd90dd948d9f7aaa98a5d1f.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Import/gong.FBX
   - name: 24c0e7be24428650d5ef24b945ddf14b.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_Tanxianjia_wuqi_A.png
+  - name: 667322f529cfcbe96777c307fd4f9885.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_Tanxianjia_wuqi.mat
   - name: a2dc647b8024a90720218cebe46130cf.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Tanxianjia_Atk_Attack_4/gong_UV.anim
@@ -18155,6 +18096,15 @@ MonoBehaviour:
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EScene/XWX-Effect-Dev/MaterialSample/E3D-Distort-Ring
       4.mat
+  - name: 53ad46fa5b0db6bb770030800625ad07.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Direction139.png
+  - name: dcb8edf72f3e27f0ac3cc119ad2c9468.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Common_Buff_dalong/nengliang.anim
+  - name: 6884fe7bf0ebcb2b0dd43211a509fbe3.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Common_Buff_dalong/nengliang.controller
   - name: 56e9e6fd4df96d464e01ef76d7646693.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
@@ -18162,34 +18112,33 @@ MonoBehaviour:
   - name: cb7b1925342de61dce27e579b720064f.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Direction139-3.mat
+  - name: f5072aa985ca31039a373c2b20a3a7a3.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction49.png
   - name: 8aa5d5345691c6958f8c45de49b51c97.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Direction49-3.mat
   - name: 8d4ebe2bd574ac96d1ea8e368b26b3aa.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread75.FBX
-  - name: 53ad46fa5b0db6bb770030800625ad07.unity3d
+  - name: 966fcc8b1642e1e6c76c936ad3f7082e.unity3d
     assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Direction139.png
-  - name: f5072aa985ca31039a373c2b20a3a7a3.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction49.png
-  - name: 35a5e5bb43b3337fe597b3af01117df3.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Shader46-HDR
-      10.mat
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_xunhuanguang_00074_A.png
   - name: 2856262832ed02a375b24e6e7fd1a34d.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point116-8.mat
-  - name: bfb527a68e5cbf82cd2bbf83346d7ba7.unity3d
+  - name: 4e239314208f99469e5db7cd22b16395.unity3d
     assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Object100.mat
-  - name: 3ecbc2a5d69ebb6e9f035d109b36acbb.unity3d
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Common_Buff_dalong/qiliu1.controller
+  - name: b130e1c69b34118258cd89b2dc39e2b2.unity3d
     assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Object100.tga
-  - name: ce89f90b3b01256fe957b535f38737af.unity3d
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Animator/Common_Buff_dalong/qiliu1.anim
+  - name: 4c63d1bfaef524017d9f0274a667057f.unity3d
     assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet63.fbx
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Import/qiliu.FBX
+  - name: 62c9d53e03af62520579d55665bc60d8.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_xunhuanguang_00074.mat
   - name: f86d53cb0f45728f4bb22bb49cb2a807.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Point119.tga
@@ -18205,9 +18154,6 @@ MonoBehaviour:
   - name: 32b8515acfae429ea61dfdac3831e5d7.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Sequence124.png
-  - name: 9881088ead90c511870fe10f5a81a6e8.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction137.png
   - name: 2db7db2c698632c0e06f4eaf2f7e005b.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Sequence163_h.mat
@@ -18265,6 +18211,9 @@ MonoBehaviour:
   - name: ab9f6077ca69e8d4b767e17affad1e57.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread82-bh11.fbx
+  - name: 9881088ead90c511870fe10f5a81a6e8.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction137.png
   - name: 6bb19e142217e1359db66087af4bbdc1.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Point/E3D-Point263-bh4.tga
@@ -18277,30 +18226,30 @@ MonoBehaviour:
   - name: 45143258ea0b74086b7944fcd582efd0.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Direction114-3.mat
+  - name: 4c88284c61b1142abe7e678f3872ed2e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction148.png
   - name: 3e9daf718da4f57cfdc4876e33031634.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop2-37.png
   - name: a025c41e86a09d11cfb686214449b6fa.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Brandish-Blade14.fbx
+  - name: 629cf271326132dfe968f404730f272a.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Point156.png
   - name: b7335e65d70027c9eb5e49c27b6d3d60.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction136.png
   - name: 2538a202f476ce832981b8c0a1f64c85.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-57.png
-  - name: 66551bcb1fefb58d192a525a035dc716.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet62.fbx
   - name: 7cc885f9d2e8aa1f9e2e9f9a43d5cf25.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point119-3.mat
   - name: 7cfcda178f56f46d9f846d04677e99f6.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EScene/XWX-Effect-Dev/MaterialSample/E3D-Distort-Point20.mat
-  - name: 919c99fb1105afe70fc0c5feb3095dbb.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-44.png
   - name: 2b6b893454d1bcff719f3be12386e2f1.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Object115.png
@@ -18349,16 +18298,9 @@ MonoBehaviour:
   - name: 7efb9880b1f30d04ddf08132e1996bfa.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet54.fbx
-  - name: ea15b5f65ea804325928f2f644ab744f.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Direction137-13.mat
   - name: f4c3742f89c17d22f28c5d64fd23f4f2.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point135-13.mat
-  - name: b86ae03336bd98c389b72c737c64ecb7.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
-      85.mat
   - name: 1a482a89840ed96d064261c8c1298c0a.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
@@ -18495,6 +18437,9 @@ MonoBehaviour:
   - name: 4861464d8739cba366e3306ea3b2be55.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Object86.png
+  - name: a65a72a4631565213e778d33cfa1e9d3.unity3d
+    assets:
+    - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_glow_xin_guangyun_00001_A.png
   - name: 6fb5ddcad57a6a64da44092d0b31d918.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Textures/TX_BRD_Lakesi_sj_mx03_002_A.png
@@ -18658,6 +18603,12 @@ MonoBehaviour:
   - name: 7509c642e20cb568c16a013433596f08.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-62.png
+  - name: 89ad4f88cb7c3e7b5ac3295d476179f0.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-40.png
+  - name: fde31f9b5d67360801873384c52f2f99.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-63.png
   - name: 59b2af4c92033be1a99e630e5216bf21.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point117.png
@@ -18694,18 +18645,9 @@ MonoBehaviour:
   - name: 6d0e74c868215afe5aefe5453ef33162.unity3d
     assets:
     - Assets/Res/Effect/Skill/Texture/fire_01.jpg
-  - name: 46758cd191b6c41c420a3456719152b3.unity3d
-    assets:
-    - Assets/Res/Effect/Skill/Model/Materials/Tx_Rock01.mat
   - name: f3858b2e9b8a61a3bfb5444ce0d85498.unity3d
     assets:
     - Assets/Res/Effect/Skill/Material/Eff_Skill_FireWall_02.mat
-  - name: ddaf0ba3a0f1c5f4e600cf19b9ce597a.unity3d
-    assets:
-    - Assets/Res/Effect/Skill/Model/modelRock08.fbx
-  - name: ccd0015c461637ce80c9e80b12839131.unity3d
-    assets:
-    - Assets/Res/Effect/Skill/Texture/Materials/glowblurry 1.mat
   - name: 9b84cb7c38913937e61c41b49bee6813.unity3d
     assets:
     - Assets/Res/Effect/Skill/Texture/energyring3teamcolor.png
@@ -18715,9 +18657,6 @@ MonoBehaviour:
   - name: 534dca11409d3d5a617e2baaf35529d5.unity3d
     assets:
     - Assets/Res/Effect/Skill/Texture/Materials/firecloud4.mat
-  - name: 3d16cfb461789bbeab20d0293b3a8d54.unity3d
-    assets:
-    - Assets/Res/Effect/Skill/Texture/Materials/emergytrailteamcolor.mat
   - name: 265c6bb07066c7f843687ae23f2bdd04.unity3d
     assets:
     - Assets/Res/Effect/Skill/Texture/Materials/energyring3teamcolor 1.mat
@@ -19018,6 +18957,12 @@ MonoBehaviour:
   - name: 124cea6d4f0f0bc966cbe51f29416314.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread45.fbx
+  - name: 66551bcb1fefb58d192a525a035dc716.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet62.fbx
+  - name: 919c99fb1105afe70fc0c5feb3095dbb.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-44.png
   - name: 99a1165589db4eca76934e866feca8af.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point120-20.mat
@@ -19030,6 +18975,9 @@ MonoBehaviour:
   - name: 553b53cd6887f524ad32defbbd7721cb.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Sequence158.png
+  - name: ea15b5f65ea804325928f2f644ab744f.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Direction137-13.mat
   - name: dacd96d306f3986aeb935386b98f171d.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
@@ -19037,6 +18985,10 @@ MonoBehaviour:
   - name: 511edc2c56aa05ebc6b64d0098c583b6.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Sequence159.tga
+  - name: b86ae03336bd98c389b72c737c64ecb7.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
+      85.mat
   - name: a5f8cb7e49e24985afa5cbf7dcf1b9c9.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Sequence157.png
@@ -19186,6 +19138,9 @@ MonoBehaviour:
   - name: 3e2fce675558872fd992d91b010ed1a3.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Loop4/E3D-Loop4-208-bh.png
+  - name: 7cbe2b9d9470dc6e827079fa7eb74b3b.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Viksepa/E3D-Viksepa8-bh31.png
   - name: 7c28002a693fa8dc2b3a95d8fe82eccd.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Direction115-bh
@@ -19231,12 +19186,24 @@ MonoBehaviour:
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
       69.mat
+  - name: 0cbcf6266e8633fc4cb47ff9c386783b.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Direction185.png
   - name: b7577a55b5f0729588cedc3fc8680b37.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Vein13.mat
+  - name: 2f54e4e57ac4ee3ddeec65fda8c809f1.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Point144.png
   - name: b37dbf7d04db8465e5a212bbe9552f49.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Vein13.png
+  - name: 889ad05a1ad8519e4efee774fbdac6bb.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point144.mat
+  - name: 46f38374871f0d9884af140421796a0f.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Direction-Point1.mat
   - name: e2ff1aeaa44cd024386f74e92818f3aa.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
@@ -19332,9 +19299,15 @@ MonoBehaviour:
   - name: 3644e57404b81d6942cc49784d22caf0.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Object91.png
+  - name: 0217cd4ebb1b52dabec9bb9693cd8c60.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Direction160.png
   - name: 7c3567c1fc164a631b419f2c4e53fcdd.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-61.png
+  - name: d1c64f2dba7cdd152ef43b6ab625f743.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-37.png
   - name: 362d5a88cdca42ebeb32274f3cd68397.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point120-25.mat
@@ -19380,12 +19353,12 @@ MonoBehaviour:
   - name: 64db670905dd9dddfc6c078855e71a68.unity3d
     assets:
     - Assets/Res/Effect/Skill/Epic Toon FX/Textures/grab2.png
-  - name: ed67c83483c8ac50d32be8241307d484.unity3d
-    assets:
-    - Assets/Res/Effect/Skill/Epic Toon FX/Materials/Geometric/circlecurve_add.mat
   - name: 9a3326d137b175d4050dfc84497c9764.unity3d
     assets:
     - Assets/Res/Effect/Skill/Epic Toon FX/Textures/wave2.png
+  - name: ed67c83483c8ac50d32be8241307d484.unity3d
+    assets:
+    - Assets/Res/Effect/Skill/Epic Toon FX/Materials/Geometric/circlecurve_add.mat
   - name: 950f1139d929574e0fdff9349bf38ffd.unity3d
     assets:
     - Assets/Res/Effect/Skill/Epic Toon FX/Materials/Geometric/circlecurve.mat
@@ -19437,12 +19410,33 @@ MonoBehaviour:
   - name: afa6f997a6165e76bd1505f12eea6b2c.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Materials/Trajectory_Blur.mat
+  - name: 793c820d55f5d362f81b2e611e50122c.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread48.fbx
   - name: d0bdb1ee771ea309db03c4a6464574a7.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Materials/Trajectory_Flame.mat
+  - name: 1729886414000f32c5bfa54fe84bb9d5.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Loop4-39-1.mat
+  - name: 4b3089750dd44b3965e6ff4f595d156d.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Loop4-36-2-HDR.mat
+  - name: 65f1518f20cb91c88e086323b08fb847.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread51.fbx
+  - name: b488d8af146f44fdaa8d0898f1670416.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Point118.mat
+  - name: a52ef5e43c3d984f780eb0e689de28ac.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread59.FBX
   - name: 1bd576701ed9c7e2c002988e0480dab7.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Texture/Trajectory_Blur.png
+  - name: d6fabbeceb9efff9665bdccaed201416.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Loop4-40.mat
   - name: f0bd8cc22f26c0b4752c30ff29ca7d2d.unity3d
     assets:
     - Assets/Res/Effect/SkillBaseAct/ErbGameArt/Sword slash FX/Materials/Smoke24bcg.mat
@@ -19934,6 +19928,10 @@ MonoBehaviour:
   - name: d9032b7781da333920201cf1ec029163.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Building/Old/Other/Texture/tent_stump_glow.tif
+  - name: 48a637d4a289b3efe4a50441fefe2a8e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
+      99.mat
   - name: 64b02f0fd6c94107e09601ca6a5977ba.unity3d
     assets:
     - Assets/Mono/GameDemo/OldResources/3DModel/Scene/Other/Model/Materials/tent_stump_winter.tif
