@@ -153,7 +153,6 @@ namespace ET
             Log.Console($"合并家族完成！:");
         }
 
-
         //Parameters=31_30   31区合并到30区
         public static async ETTask MergeZone(int oldzone, int newzone)
         {
@@ -164,12 +163,64 @@ namespace ET
                 Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
             }
 
+            //同时满足以下规则,数据将被清理
+            //1.未充值
+            //2.角色20级以内
+            //3.10天内未登陆游戏
+            long serverNow = TimeHelper.ServerNow();
+            List<long> invalidPlayers = new List<long>();
+
+            ///记录玩家等级
+            ///Parameters=31_30   31区合并到30区   oldzone合并到newzone
+            Dictionary<long, int> userLevel = new Dictionary<long, int>();
+            List<UserInfoComponent> olduserInfoComponents_0 = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(oldzone, d => d.Id > 0);
+            foreach (var oldentity in olduserInfoComponents_0)
+            {
+                if (!userLevel.ContainsKey(oldentity.Id))
+                {
+                    userLevel.Add(oldentity.Id, oldentity.UserInfo.Lv);
+                }
+
+                if (oldentity.UserInfo.RobotId > 0)
+                {
+                    invalidPlayers.Add(oldentity.Id);
+                    continue;
+                }
+
+                if (oldentity.UserInfo.Lv >= 20)
+                {
+                    continue;
+                }
+                List<NumericComponent> numericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(oldzone, d => d.Id == oldentity.Id);
+                if (numericComponentlist == null || numericComponentlist.Count == 0)
+                {
+                    continue;
+                }
+                if (numericComponentlist[0].GetAsLong(NumericType.RechargeNumber) > 0)
+                {
+                    continue;
+                }
+                if (serverNow - numericComponentlist[0].GetAsLong(NumericType.LastGameTime) < TimeHelper.OneDay * 10)
+                {
+                    continue;
+                }
+                invalidPlayers.Add( oldentity.Id );
+                //Log.Console($"移除玩家： {oldentity.UserInfo.Name}  {oldentity.UserInfo.Lv}   {numericComponentlist[0].GetAsLong(NumericType.RechargeNumber)}  {TimeInfo.Instance.ToDateTime(numericComponentlist[0].GetAsLong(NumericType.LastGameTime)).ToString()}");
+                //Log.Warning($"移除玩家： {oldentity.UserInfo.Name}  {oldentity.UserInfo.Lv}   {numericComponentlist[0].GetAsLong(NumericType.RechargeNumber)}  {TimeInfo.Instance.ToDateTime(numericComponentlist[0].GetAsLong(NumericType.LastGameTime)).ToString()}");
+            }
+            Log.Console($"不参与合区的玩家数量 {invalidPlayers.Count}");
+
             //ActivityComponent
             List<ActivityComponent> activityComponents = await Game.Scene.GetComponent<DBComponent>().Query<ActivityComponent>(oldzone, d => d.Id > 0);
             long dbcount = 0;
             int onecount = 1000;
             foreach (var entity in activityComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
+
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -178,11 +229,16 @@ namespace ET
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
             Log.Console("ActivityComponent Complelte");
+
             //BagComponent
             dbcount = 0;
             List<BagComponent> bagComponents = await Game.Scene.GetComponent<DBComponent>().Query<BagComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in bagComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -197,6 +253,10 @@ namespace ET
             List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in chengJiuComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -211,6 +271,25 @@ namespace ET
             List<DBAccountInfo> dBAccountInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(newzone, d => d.Id > 0);
             foreach (var entity in dBAccountInfos_old)
             {
+                if (entity.Password.Equals(ComHelp.RobotPassWord))
+                {
+                    continue;
+                }
+
+                bool allremove = true;
+                for (int i = 0; i < entity.UserList.Count; i++)
+                {
+                    if (!invalidPlayers.Contains(entity.UserList[i]))
+                    {
+                        allremove = false;
+                        break;
+                    }
+                }
+                if (allremove)
+                {
+                    continue;
+                }
+
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -250,6 +329,11 @@ namespace ET
             List<DBFriendInfo> dBFriendInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBFriendInfo>(oldzone, d => d.Id > 0);
             foreach (var entity in dBFriendInfos)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
+
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -259,24 +343,16 @@ namespace ET
             }
             Log.Console("DBFriendInfo Complelte");
 
-
-            ///记录玩家等级
-            ///Parameters=31_30   31区合并到30区   oldzone合并到newzone
-            Dictionary<long, int> userLevel = new Dictionary<long, int>();
-            List<UserInfoComponent> olduserInfoComponents_0 = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(oldzone, d => d.Id > 0);
-            foreach (var oldentity in olduserInfoComponents_0)
-            {
-                if (!userLevel.ContainsKey(oldentity.Id))
-                {
-                    userLevel.Add(oldentity.Id, oldentity.UserInfo.Lv);
-                }
-            }
-
             //DBMailInfo 邮件
             dbcount = 0;
             List<DBMailInfo> dBMailInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBMailInfo>(oldzone, d => d.Id > 0);
             foreach (var entity in dBMailInfos)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
+
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -336,6 +412,11 @@ namespace ET
             List<DBPopularizeInfo> dBPopularizeInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBPopularizeInfo>(oldzone, d => d.Id > 0);
             foreach (var entity in dBPopularizeInfos)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
+
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -346,27 +427,54 @@ namespace ET
             Log.Console("DBPopularizeInfo Complelte");
 
             //DBRankInfo 排行榜  。 
-            List<DBRankInfo> dBRankInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBRankInfo>(oldzone, d => d.Id > 0);
-            List<DBRankInfo> dBRankInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBRankInfo>(newzone, d => d.Id > 0);
-            foreach (var entity in dBRankInfos_new)
+            List<DBRankInfo> dBRankInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBRankInfo>(oldzone, d => d.Id == (long)oldzone);
+            List<DBRankInfo> dBRankInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBRankInfo>(newzone, d => d.Id == (long)newzone);
+            if(dBRankInfos_old.Count > 0 && dBRankInfos_new.Count > 0)
             {
-                if (entity.Id != newzone)
-                {
-                    continue;
-                }
+                DBRankInfo entity = dBRankInfos_new[0];
 
                 List<RankingInfo> rankingInfos_new = entity.rankingInfos;
                 List<RankingInfo> rankingInfos_old = dBRankInfos_old[0].rankingInfos;
-                rankingInfos_new.AddRange(rankingInfos_old);
-                rankingInfos_new.Sort(delegate (RankingInfo a, RankingInfo b)
-                {
-                    return (int)b.Combat - (int)a.Combat;
-                });
-                int maxnumber = Math.Min(500, rankingInfos_new.Count);
-                entity.rankingInfos = rankingInfos_new.GetRange(0, maxnumber);
 
-                //阵营相关的都要重置
-                await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
+                bool havemerge = false; 
+                for (int i = 0; i < rankingInfos_new.Count; i++)
+                {
+                    for (int j = 0; j < rankingInfos_old.Count; j++ )
+                    {
+                        if (rankingInfos_new[i].UserId == rankingInfos_old[j].UserId)
+                        {
+                            havemerge = true;
+                            break;
+                        }
+                    }
+                }
+                if (havemerge)
+                {
+                    Log.Console($"排行榜已合并！");
+                }
+                else
+                {
+                    rankingInfos_new.AddRange(rankingInfos_old);
+                    rankingInfos_new.Sort(delegate (RankingInfo a, RankingInfo b)
+                    {
+                        return (int)b.Combat - (int)a.Combat;
+                    });
+                    int maxnumber = Math.Min(500, rankingInfos_new.Count);
+                    entity.rankingInfos = rankingInfos_new.GetRange(0, maxnumber);
+
+                    List<KeyValuePairLong> rankingTrial_new = entity.rankingTrial;
+                    List<KeyValuePairLong> rankingTrial_old = dBRankInfos_old[0].rankingTrial;
+                    rankingTrial_new.AddRange(rankingTrial_old);
+                    rankingTrial_new.Sort(delegate (KeyValuePairLong a, KeyValuePairLong b)
+                    {
+                        return (int)b.Value - (int)a.Value;
+                    });
+                    maxnumber = Math.Min(rankingTrial_new.Count, 100);
+                    entity.rankingTrial = rankingTrial_new.GetRange(0, maxnumber);
+
+                    //阵营相关的都要重置
+                    await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
+                }
             }
 
             //DBServerInfo   服务器的一些公用内容
@@ -396,17 +504,32 @@ namespace ET
             List<DBUnionManager> dBUnionManager_new = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionManager>(newzone, d => d.Id == (long)newzone);
             if (dBUnionManager_old.Count > 0 && dBUnionManager_new.Count > 0)
             {
-                Log.Console($"合并家族捐献资金: {dBUnionManager_old[0].TotalDonation} {dBUnionManager_new[0].TotalDonation}");
-                dBUnionManager_new[0].TotalDonation += dBUnionManager_old[0].TotalDonation;
+                DBUnionManager oldentity = dBUnionManager_old[0];
+                DBUnionManager newentity = dBUnionManager_new[0];
 
-                if(dBUnionManager_old[0].SignupUnions.Count > 0 && !dBUnionManager_new[0].SignupUnions.Contains(dBUnionManager_old[0].SignupUnions[0]))
+                Log.Console($"合并家族捐献资金: {oldentity.TotalDonation} {newentity.TotalDonation}");
+                newentity.TotalDonation += oldentity.TotalDonation;
+
+                if(oldentity.SignupUnions.Count > 0 && !newentity.SignupUnions.Contains(oldentity.SignupUnions[0]))
                 {
-                    Log.Console($"合并家族战报名列表: {dBUnionManager_old[0].SignupUnions[0]}");
-                    dBUnionManager_new[0].SignupUnions.AddRange(dBUnionManager_old[0].SignupUnions);
-                }
-                await Game.Scene.GetComponent<DBComponent>().Save(newzone, dBUnionManager_new[0]);
-            }
+                    Log.Console($"合并家族战报名列表: {oldentity.SignupUnions[0]}");
+                    newentity.SignupUnions.AddRange(oldentity.SignupUnions);
 
+                    List<RankingInfo> rankingDonation_old = oldentity.rankingDonation;
+                    List<RankingInfo> rankingDonation_new = newentity.rankingDonation;
+
+                    rankingDonation_new.AddRange(rankingDonation_old);
+                    rankingDonation_new.Sort(delegate (RankingInfo a, RankingInfo b)
+                    {
+                        return (int)b.Combat - (int)a.Combat;
+                    });
+                    int number = Math.Min(rankingDonation_new.Count, 20);
+                    rankingDonation_new = rankingDonation_new.GetRange(0, number);
+                    newentity.rankingDonation = rankingDonation_new;
+                }
+
+                await Game.Scene.GetComponent<DBComponent>().Save(newzone, newentity);
+            }
             dbcount = 0;
 
             try
@@ -414,6 +537,11 @@ namespace ET
                 List<DataCollationComponent> datacollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(oldzone, d => d.Id > 0);
                 foreach (var entity in datacollationComponents)
                 {
+                    if (invalidPlayers.Contains(entity.Id))
+                    {
+                        continue;
+                    }
+
                     dbcount++;
                     if (dbcount % onecount == 0)
                     {
@@ -433,6 +561,11 @@ namespace ET
             List<EnergyComponent> db_energyComponents = await Game.Scene.GetComponent<DBComponent>().Query<EnergyComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in db_energyComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
+
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -445,6 +578,11 @@ namespace ET
             List<JiaYuanComponent> jiayuanComponents = await Game.Scene.GetComponent<DBComponent>().Query<JiaYuanComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in jiayuanComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
+
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -459,6 +597,10 @@ namespace ET
             List<NumericComponent> numericComponents = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in numericComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -473,6 +615,10 @@ namespace ET
             List<PetComponent> petComponents = await Game.Scene.GetComponent<DBComponent>().Query<PetComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in petComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -487,6 +633,10 @@ namespace ET
             List<RechargeComponent> rechargeComponents = await Game.Scene.GetComponent<DBComponent>().Query<RechargeComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in rechargeComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -500,6 +650,10 @@ namespace ET
             List<ReddotComponent> reddotComponents = await Game.Scene.GetComponent<DBComponent>().Query<ReddotComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in reddotComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -515,6 +669,10 @@ namespace ET
             List<ShoujiComponent> shoujiComponents = await Game.Scene.GetComponent<DBComponent>().Query<ShoujiComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in shoujiComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -529,6 +687,10 @@ namespace ET
             List<SkillSetComponent> skillSetComponents = await Game.Scene.GetComponent<DBComponent>().Query<SkillSetComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in skillSetComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -543,6 +705,10 @@ namespace ET
             List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in taskComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -556,6 +722,10 @@ namespace ET
             List<TitleComponent> titleComponents = await Game.Scene.GetComponent<DBComponent>().Query<TitleComponent>(oldzone, d => d.Id > 0);
             foreach (var entity in titleComponents)
             {
+                if (invalidPlayers.Contains(entity.Id))
+                {
+                    continue;
+                }
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
@@ -588,6 +758,11 @@ namespace ET
             List<UserInfoComponent> olduserInfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(oldzone, d => d.Id > 0);
             foreach (var oldentity in olduserInfoComponents)
             {
+                if (invalidPlayers.Contains(oldentity.Id))
+                {
+                    continue;
+                }
+
                 dbcount++;
                 if (dbcount % onecount == 0)
                 {
