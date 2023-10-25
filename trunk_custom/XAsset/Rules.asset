@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 929
+  version: 930
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -3656,6 +3656,10 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/OtherIcon/WuQi_4.png
   - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
     path: Assets/Bundles/Icon/OtherIcon/WuQi_5.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/c11.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/c12.png
   - bundle: 5c692073cbc7f873e0af5a667b79c88c.unity3d
     path: Assets/Bundles/Icon/PastureIcon/10001.png
   - bundle: 5c692073cbc7f873e0af5a667b79c88c.unity3d
@@ -4868,16 +4872,12 @@ MonoBehaviour:
     path: Assets/Bundles/UI/BattleDungeon/UIBattleMain.prefab
   - bundle: c89e1eb2fee616dff1d21711610e9569.unity3d
     path: Assets/Bundles/UI/BattleDungeon/UIBattleRecruit.prefab
-  - bundle: d26b2883bae0a65d958ae604bead73dd.unity3d
-    path: Assets/Bundles/UI/BattleDungeon/UIBattleRecruitItem.prefab
   - bundle: b0b02b69672f4d2e392acc6fe4242dbc.unity3d
     path: Assets/Bundles/UI/BattleDungeon/UIBattleShop.prefab
   - bundle: 838f43bae85f1e31964298da62aca508.unity3d
     path: Assets/Bundles/UI/BattleDungeon/UIBattleShopItem.prefab
   - bundle: ca407e3301d87ebe4dd5af8f6f13a1bf.unity3d
     path: Assets/Bundles/UI/BattleDungeon/UIBattleTask.prefab
-  - bundle: fcff96163cad98aab502b68502d1810d.unity3d
-    path: Assets/Bundles/UI/BattleDungeon/UIBattleTaskItem.prefab
   - bundle: c73066963606c6e010433a05cee6c4b6.unity3d
     path: Assets/Bundles/UI/Blood/UIBattleFly.prefab
   - bundle: 7ed899b1088ed76c8df1db9d138de705.unity3d
@@ -4954,10 +4954,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Demon/UIDemon.prefab
   - bundle: 01f6134b12a92f77da3c8cb801ecbb50.unity3d
     path: Assets/Bundles/UI/Demon/UIDemonMain.prefab
-  - bundle: 68e0a0d2a6ba0484a1e4d6ed7d161751.unity3d
-    path: Assets/Bundles/UI/Dungeon/UIBossRefreshSettingItem.prefab
-  - bundle: 5929f671bb102c64e4c0ded5336e6af8.unity3d
-    path: Assets/Bundles/UI/Dungeon/UIBossRefreshTimeItem.prefab
   - bundle: aab2830762dcd5f6d12bd10113365ed3.unity3d
     path: Assets/Bundles/UI/Dungeon/UIDungeon.prefab
   - bundle: 3a4296bcfe158271e674771d4c5e33cc.unity3d
@@ -4976,12 +4972,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Hunt/UIHunt.prefab
   - bundle: c0264ee63a57db5df2587c59cd6dc530.unity3d
     path: Assets/Bundles/UI/Hunt/UIHuntRanking.prefab
-  - bundle: d552db2a1b61ef78c5ed0fe62140c8a7.unity3d
-    path: Assets/Bundles/UI/Hunt/UIHuntRankingPlayerInfoItem.prefab
   - bundle: d2699a745d613ad213edf5578c5785da.unity3d
     path: Assets/Bundles/UI/Hunt/UIHuntTask.prefab
-  - bundle: 4ec38ad9e29815c83c84399ed6440d8f.unity3d
-    path: Assets/Bundles/UI/Hunt/UIHuntTaskItem.prefab
   - bundle: 03c8df8e4e7e7f51612c6295ab2f476e.unity3d
     path: Assets/Bundles/UI/JiaYuan/UIJiaYuanBag.prefab
   - bundle: 541f699aca5f53c3181cd733aa1c24e9.unity3d
@@ -5068,8 +5060,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Login/UIRelink.prefab
   - bundle: b3781f57d3ecdc192111a6f2754afea4.unity3d
     path: Assets/Bundles/UI/Login/UISelectServer.prefab
-  - bundle: 8da8935fb03590412b248d66eaabb765.unity3d
-    path: Assets/Bundles/UI/Login/UISelectServerItem.prefab
   - bundle: 5f1ecf6a36683c20eb389ee657a862aa.unity3d
     path: Assets/Bundles/UI/Login/UIThanks.prefab
   - bundle: be567b800accb03f966975844d81960f.unity3d
@@ -5082,8 +5072,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Activity/UIActivityLoginItem.prefab
   - bundle: ca3cccc6680701ebf10eeb23a03ee6b1.unity3d
     path: Assets/Bundles/UI/Main/Activity/UIActivityLvLiBao.prefab
-  - bundle: 75485b40cf6800a46cfd893354f78972.unity3d
-    path: Assets/Bundles/UI/Main/Activity/UIActivityLvLiBaoItem.prefab
   - bundle: 91b4beb3dff8034bfbd0a5273ba71ec8.unity3d
     path: Assets/Bundles/UI/Main/Activity/UIActivityMaoXian.prefab
   - bundle: e41c3413d56c903320e7926039719e0a.unity3d
@@ -5108,22 +5096,14 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Camp/UICampFuLi.prefab
   - bundle: 7bdd7fc69a0d1f914fdba4370834833a.unity3d
     path: Assets/Bundles/UI/Main/Camp/UICampReward.prefab
-  - bundle: 580881249139888047b5cab9e9f6c2de.unity3d
-    path: Assets/Bundles/UI/Main/Camp/UICampRewardItem.prefab
   - bundle: 6a75abb7ed718252a208199a28d00b6b.unity3d
     path: Assets/Bundles/UI/Main/Camp/UICampSelect.prefab
   - bundle: d0d5e7cb87e36786a52cbb00e936e3a3.unity3d
     path: Assets/Bundles/UI/Main/Camp/UICampShop.prefab
-  - bundle: cf696c72807e40537ab5d5caf7b49878.unity3d
-    path: Assets/Bundles/UI/Main/Camp/UICampShopItem.prefab
   - bundle: fc9a941c68306cdf078a74da2f1a16b8.unity3d
     path: Assets/Bundles/UI/Main/Camp/UICampShouLie.prefab
-  - bundle: 6d55f1de0b874591297cfdfbde6114c0.unity3d
-    path: Assets/Bundles/UI/Main/Camp/UICampShouLieItem.prefab
   - bundle: 42f66967e0392625bab90af096d7bcf5.unity3d
     path: Assets/Bundles/UI/Main/Camp/UICampStrength.prefab
-  - bundle: 8d44cf6d0e8c938725cd6f9dd489e5e2.unity3d
-    path: Assets/Bundles/UI/Main/Camp/UICampStrengthItem.prefab
   - bundle: 35b58a6c4185b322fae24eff0ffa5a63.unity3d
     path: Assets/Bundles/UI/Main/Chat/UIChat.prefab
   - bundle: 6b37d76431dcca58398d0dd0dac1b5d0.unity3d
@@ -5136,20 +5116,10 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuActivite.prefab
   - bundle: 3e00437dbfb30ee8b5c9c318891fe225.unity3d
     path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuJingling.prefab
-  - bundle: bb57a6ecbc8a6b8a5f18e93f70243213.unity3d
-    path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuJinglingItem.prefab
   - bundle: b7bcb7cdd9e57a26a13b2318481ecd94.unity3d
     path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuReward.prefab
-  - bundle: 3c75ed8158b8528ddab023b4fa43bd10.unity3d
-    path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuRewardItem.prefab
   - bundle: a222b1297f488fefd5930daacb95c9ab.unity3d
     path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuShow.prefab
-  - bundle: f7e8c584a27b15a7c8af4810d9192b65.unity3d
-    path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuShowItem.prefab
-  - bundle: ef62818d1eb71c80d3781ec776cec576.unity3d
-    path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuType.prefab
-  - bundle: b3df3c94577aa4dc187792a55a439ae6.unity3d
-    path: Assets/Bundles/UI/Main/ChengJiu/UIChengJiuTypeItem.prefab
   - bundle: 821026b825c274e775926b7beb396cb8.unity3d
     path: Assets/Bundles/UI/Main/ChengJiu/UIJingLingGet.prefab
   - bundle: 54744803f1af0b9bdc6471ad6e23c0e1.unity3d
@@ -5166,8 +5136,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/ChouKa/UIChouKaChapterSelect.prefab
   - bundle: 91f9d4fdfc3e5ef36a94ce365a89c7d0.unity3d
     path: Assets/Bundles/UI/Main/ChouKa/UIChouKaReward.prefab
-  - bundle: 4f8af8dd41c171ef25ff4d488212c439.unity3d
-    path: Assets/Bundles/UI/Main/ChouKa/UIChouKaRewardItem.prefab
   - bundle: 6ff8652cb401f6cb73058018928190cb.unity3d
     path: Assets/Bundles/UI/Main/ChouKa/UIChouKaShowItem.prefab
   - bundle: 5f1808514e28eb6d249e3f8c24d82d58.unity3d
@@ -5232,12 +5200,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Fashion/UIFashion.prefab
   - bundle: fd63c22e1c463e92de83296b003f8a05.unity3d
     path: Assets/Bundles/UI/Main/Fashion/UIFashionShow.prefab
-  - bundle: 3795a35f7b9a9a9bab69c61a53360321.unity3d
-    path: Assets/Bundles/UI/Main/Fashion/UIFashionShowItem.prefab
   - bundle: 17275c62b60a93f86917e8bf66b6f79f.unity3d
     path: Assets/Bundles/UI/Main/Fashion/UIFashionSuit.prefab
-  - bundle: 82c155e347d5cf9c402c01958cf2c5de.unity3d
-    path: Assets/Bundles/UI/Main/Fashion/UIFashionSuitItem.prefab
   - bundle: 1aaee6401f553839ee5f3a5966c1d11b.unity3d
     path: Assets/Bundles/UI/Main/FenXiang/UIFenXiang.prefab
   - bundle: a8463e06b120f724844db7fa85645ccc.unity3d
@@ -5248,8 +5212,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/FenXiang/UILunTan.prefab
   - bundle: 78259b9ffc79b0255ab8fe4ea2dce102.unity3d
     path: Assets/Bundles/UI/Main/FenXiang/UIPopularize.prefab
-  - bundle: 7397152f432513c2ee3378d6d38c6cd9.unity3d
-    path: Assets/Bundles/UI/Main/FenXiang/UIPopularizeItem.prefab
   - bundle: d8990cd918d8f7a86ef464b1fb15c290.unity3d
     path: Assets/Bundles/UI/Main/FenXiang/UISerial.prefab
   - bundle: 675c70d10eea0ad8c6434d2bc778929f.unity3d
@@ -5260,14 +5222,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Friend/UIFriendApplyItem.prefab
   - bundle: 3bf5817d253f67a17d5cd3ee5b3be9d8.unity3d
     path: Assets/Bundles/UI/Main/Friend/UIFriendBlack.prefab
-  - bundle: 2cec870a6ddd1a9a114b009dda45a4f1.unity3d
-    path: Assets/Bundles/UI/Main/Friend/UIFriendBlackItem.prefab
-  - bundle: bda55fb1b0c6714fbf02f19bbd12ebf7.unity3d
-    path: Assets/Bundles/UI/Main/Friend/UIFriendChatItem.prefab
   - bundle: 7a3257cd10a0265e3ca26d2de113bc95.unity3d
     path: Assets/Bundles/UI/Main/Friend/UIFriendList.prefab
-  - bundle: 4864d5881567af5e50977d28ca118cc6.unity3d
-    path: Assets/Bundles/UI/Main/Friend/UIFriendListItem.prefab
   - bundle: d668a08aef0582753de11abd60934811.unity3d
     path: Assets/Bundles/UI/Main/GM/UICommand.prefab
   - bundle: 147211c51c99e2e19c67b7f8134555c0.unity3d
@@ -5300,14 +5256,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/LingDi/UILingDi.prefab
   - bundle: 5abd40e3b6914b019ac0a8b362b0ff0d.unity3d
     path: Assets/Bundles/UI/Main/LingDi/UILingDiReward.prefab
-  - bundle: cb233a2e3a08d8475ce50791d31a22c1.unity3d
-    path: Assets/Bundles/UI/Main/LingDi/UILingDiRewardItem.prefab
-  - bundle: 23d6dabd69221bf11fad746f6f6923a5.unity3d
-    path: Assets/Bundles/UI/Main/LingDi/UILingDiRewardLevel.prefab
   - bundle: 4c221bfe9ae28647810882da59e672bf.unity3d
     path: Assets/Bundles/UI/Main/Mail/UIMail.prefab
-  - bundle: d5615c6b9a3b77bd8d42aacc0981ccca.unity3d
-    path: Assets/Bundles/UI/Main/Mail/UIMailItem.prefab
   - bundle: 6bbc3146657e5e49ac894dffe28dad1e.unity3d
     path: Assets/Bundles/UI/Main/Main/UIMain.prefab
   - bundle: 5519f66795acfe7640541395cfb180bc.unity3d
@@ -5324,8 +5274,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Make/UIShenQiMake.prefab
   - bundle: 56461143aa075c29d7a6429b68b8d07a.unity3d
     path: Assets/Bundles/UI/Main/MakeLearn/UIMakeLearn.prefab
-  - bundle: 2e8cac452c05a20b24e3500b9c46880d.unity3d
-    path: Assets/Bundles/UI/Main/MakeLearn/UIMakeLearnItem.prefab
   - bundle: 77328b65d3c297e52c740543d7be1d30.unity3d
     path: Assets/Bundles/UI/Main/MiniMap/UIMapBig.prefab
   - bundle: 86b465b997f4202bbb897a6fb5ded4b8.unity3d
@@ -5348,16 +5296,12 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/OccTwo/UIOccTwoShow.prefab
   - bundle: ecb4ca395e988454f072cf8d73db0b66.unity3d
     path: Assets/Bundles/UI/Main/PaiMai/UIAuctionRecord.prefab
-  - bundle: 5d8dee8676df938279c58ff7568fda0d.unity3d
-    path: Assets/Bundles/UI/Main/PaiMai/UIAuctionRecordItem.prefab
   - bundle: 794b5e7c77a78fc00ad3f57252ff3466.unity3d
     path: Assets/Bundles/UI/Main/PaiMai/UIPaiMai.prefab
   - bundle: a269cfc6b9ed6a25348f1b90b36d21ec.unity3d
     path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiAuction.prefab
   - bundle: c2a3ec75719ac9eeaa569828397e70da.unity3d
     path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiBuy.prefab
-  - bundle: 3029078e78a24bbfe3144739549306ce.unity3d
-    path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiBuyItem.prefab
   - bundle: a4ff444064ab1d14240d8e8e2e5b73f4.unity3d
     path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiDuiHuan.prefab
   - bundle: 6954241235f2086b6a120b9895599987.unity3d
@@ -5368,26 +5312,14 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiSellPrice.prefab
   - bundle: 444b0764a39c20068055c09029fcb4fd.unity3d
     path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiShop.prefab
-  - bundle: d3b9b6c50c1409ca2f90a3855d62133a.unity3d
-    path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiShopItem.prefab
-  - bundle: 3719a37fad018206e4395f71340c887f.unity3d
-    path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiShopType.prefab
-  - bundle: 0dff45dbfcbc788e9ec2c53c95b07eba.unity3d
-    path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiShopTypeItem.prefab
   - bundle: 42e940dd4a2d81b685bcf40a5319faec.unity3d
     path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiStall.prefab
   - bundle: b22990a61ae490d00beaee396725701e.unity3d
     path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiStallBuy.prefab
-  - bundle: 96737cd45ff6b1971abc2806f7b67536.unity3d
-    path: Assets/Bundles/UI/Main/PaiMai/UIPaiMaiStallItem.prefab
   - bundle: 7d4477e512911644b9e9362501c0348f.unity3d
     path: Assets/Bundles/UI/Main/Pet/UIPet.prefab
   - bundle: e28b2f133350ef8cba4301d96e6accea.unity3d
     path: Assets/Bundles/UI/Main/Pet/UIPetCangKu.prefab
-  - bundle: 833319afd696dec3023a8f1efaf91a37.unity3d
-    path: Assets/Bundles/UI/Main/Pet/UIPetCangKuDefend.prefab
-  - bundle: e257bf0832db329fa9d3b2bc7034518d.unity3d
-    path: Assets/Bundles/UI/Main/Pet/UIPetCangKuItem.prefab
   - bundle: 4a40bea7f3e1b042448982875c9d37c2.unity3d
     path: Assets/Bundles/UI/Main/Pet/UIPetHeCheng.prefab
   - bundle: 556a8ca44eb80863977674648ede716b.unity3d
@@ -5406,8 +5338,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Pet/UIPetSelectItem.prefab
   - bundle: 44406ae0a468c3267f4e0730b1e0a6d4.unity3d
     path: Assets/Bundles/UI/Main/Pet/UIPetShouHu.prefab
-  - bundle: 3312482378afb85248b0d97741917d88.unity3d
-    path: Assets/Bundles/UI/Main/Pet/UIPetShouHuItem.prefab
   - bundle: 5cdb8868fd89954fbf98d760c3eb5808.unity3d
     path: Assets/Bundles/UI/Main/Pet/UIPetSkinIcon.prefab
   - bundle: 903f348323d92347e9cb9c919f4cd9da.unity3d
@@ -5434,8 +5364,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/PetEgg/UIPetEggList.prefab
   - bundle: 9f119f16ef4768734bfc50476cd4251d.unity3d
     path: Assets/Bundles/UI/Main/PetSet/UIPetChallenge.prefab
-  - bundle: 1cd4ef437f17ddd1b2aebc80370ef088.unity3d
-    path: Assets/Bundles/UI/Main/PetSet/UIPetChallengeItem.prefab
   - bundle: a7b45d933dfcdb56f6416f73a62bfaa6.unity3d
     path: Assets/Bundles/UI/Main/PetSet/UIPetFormation.prefab
   - bundle: 19e0e0cd46eefc2fbf3122015e37c370.unity3d
@@ -5524,14 +5452,10 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianInherit.prefab
   - bundle: b80d56352ba0be8e0d8f681bd7a02f18.unity3d
     path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianLevel.prefab
-  - bundle: d0c7309212993bfe451b696643c213f7.unity3d
-    path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianLevelItem.prefab
   - bundle: eeaf12bffee7dc08cd563810e6086b5d.unity3d
     path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianShow.prefab
   - bundle: b9a003ed195a393203aa256c55e1d147.unity3d
     path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianSkill.prefab
-  - bundle: 4042c023ec796a6d0c6051b356879f6d.unity3d
-    path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianSkillItem.prefab
   - bundle: bcfeb3ac7553b0c998353d302ddf52d1.unity3d
     path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianTen.prefab
   - bundle: f2fc9e359f5877c932ad48ec049ff732.unity3d
@@ -5548,8 +5472,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Setting/UISettingPool.prefab
   - bundle: 0ee91e493544e25e44205f08ef3e062e.unity3d
     path: Assets/Bundles/UI/Main/Setting/UISettingTitle.prefab
-  - bundle: 27187cf0fa9099da256649bf7d5d3c95.unity3d
-    path: Assets/Bundles/UI/Main/Setting/UISettingTitleItem.prefab
   - bundle: 057e7c52e5f7f2c65545cc92fafe43a5.unity3d
     path: Assets/Bundles/UI/Main/ShouJi/UIShouJi.prefab
   - bundle: e50e0a294ccc145a13c7c4da9e921464.unity3d
@@ -5562,50 +5484,32 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/ShouJi/UIShouJiSelect.prefab
   - bundle: e13c7bff58500731b3a302683086ed93.unity3d
     path: Assets/Bundles/UI/Main/ShouJi/UIShouJiTreasure.prefab
-  - bundle: 0d7ee3e5cb1a8aacc4d9d01ed1b873e1.unity3d
-    path: Assets/Bundles/UI/Main/ShouJi/UIShouJiTreasureItem.prefab
-  - bundle: 2c7b3391cce3de22a4853a518f39d9a7.unity3d
-    path: Assets/Bundles/UI/Main/ShouJi/UIShouJiTreasureType.prefab
   - bundle: 2cc0d72dc6412d68cd786f7069923e07.unity3d
     path: Assets/Bundles/UI/Main/Skill/UIBuffTips.prefab
   - bundle: 1cd3d9cf8283aaf6e6daf76a50434e01.unity3d
     path: Assets/Bundles/UI/Main/Skill/UISkill.prefab
   - bundle: 00b7b53106dd001df6b0ffa9ff54cfc2.unity3d
     path: Assets/Bundles/UI/Main/Skill/UISkillLearn.prefab
-  - bundle: fb357705d91f7b16bf93233c73f3705f.unity3d
-    path: Assets/Bundles/UI/Main/Skill/UISkillLearnItem.prefab
-  - bundle: 6e780e4e42f552ed9a8e44fd24b8c36c.unity3d
-    path: Assets/Bundles/UI/Main/Skill/UISkillLearnSkillItem.prefab
   - bundle: b5638a582b5e35886fc1626b48660c36.unity3d
     path: Assets/Bundles/UI/Main/Skill/UISkillLifeShield.prefab
   - bundle: 7981176d986bb0c6cc85a6dcd020bb97.unity3d
     path: Assets/Bundles/UI/Main/Skill/UISkillMake.prefab
   - bundle: d492acf3c084435f1e1c335987338af0.unity3d
     path: Assets/Bundles/UI/Main/Skill/UISkillSet.prefab
-  - bundle: f9948bc0f3fa4f1f58a9167622a91aa3.unity3d
-    path: Assets/Bundles/UI/Main/Skill/UISkillSetItem.prefab
   - bundle: bd42675ff9aab0bae7f857fbde7729fd.unity3d
     path: Assets/Bundles/UI/Main/Skill/UISkillTianFu.prefab
-  - bundle: 31d8031950ea05ef799ac32aebfd96a6.unity3d
-    path: Assets/Bundles/UI/Main/Skill/UISkillTianFuItem.prefab
   - bundle: da601af780caaf208e3bc77c387f4cde.unity3d
     path: Assets/Bundles/UI/Main/Skill/UISkillTips.prefab
   - bundle: 3b7ad3f112b27b9ee9a9d911da56a572.unity3d
     path: Assets/Bundles/UI/Main/Store/UIStore.prefab
-  - bundle: 7909ab4f9c8ac9e12cfce742cc32148c.unity3d
-    path: Assets/Bundles/UI/Main/Store/UIStoreItem.prefab
   - bundle: 38d9e417786e36a709540b0f1526627b.unity3d
     path: Assets/Bundles/UI/Main/Task/UIGiveTask.prefab
   - bundle: 94e1a5a15bdbeaf5d5c464dcf11872f4.unity3d
     path: Assets/Bundles/UI/Main/Task/UITask.prefab
   - bundle: b03163f1f0b722f858d4683c79f7531d.unity3d
     path: Assets/Bundles/UI/Main/Task/UITaskGet.prefab
-  - bundle: d8a15160018c37821b34fadd82e6f7da.unity3d
-    path: Assets/Bundles/UI/Main/Task/UITaskGetItem.prefab
   - bundle: 0f3da07b7a84fb87eda9b29a02cf520a.unity3d
     path: Assets/Bundles/UI/Main/Task/UITaskType.prefab
-  - bundle: 4bdfcb2d8294f722b5dcb1c01446a822.unity3d
-    path: Assets/Bundles/UI/Main/Task/UITaskTypeItem.prefab
   - bundle: 3b79321910579b89fc71589a7d0814a0.unity3d
     path: Assets/Bundles/UI/Main/Team/UITeam.prefab
   - bundle: 48162944057168ea61aefda798a34178.unity3d
@@ -5628,24 +5532,18 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Union/UIUnion.prefab
   - bundle: f80090afbc0fd77497b4afb6b98d707e.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionApplyList.prefab
-  - bundle: aa384674665530a6664cdc784fb31f4e.unity3d
-    path: Assets/Bundles/UI/Main/Union/UIUnionApplyListItem.prefab
   - bundle: 4405002a3688de31f745d04c1b404500.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionCreate.prefab
   - bundle: 57ad4ee264e47a7c05936569f071a525.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionDonation.prefab
   - bundle: b369a672c0ee70af7622f82fc5bd660e.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionDonationRecord.prefab
-  - bundle: 029bca5c5911827306f670ea9ce936b1.unity3d
-    path: Assets/Bundles/UI/Main/Union/UIUnionDonationRecordItem.prefab
   - bundle: e6c18809dba4f9860947d455182e7dac.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionJingXuan.prefab
   - bundle: 1ab9c609221a33d275684d27bb9ca568.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionListItem.prefab
   - bundle: c6112d7c2340de3814f69a18b15d38d0.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionMy.prefab
-  - bundle: 600b842487970192dd23c4a250c1ee80.unity3d
-    path: Assets/Bundles/UI/Main/Union/UIUnionMyItem.prefab
   - bundle: 19a6bc6127769f8c986dd3189a0d0b82.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionMystery.prefab
   - bundle: 66e6437f7ae58b11e93098dfcf939f5e.unity3d
@@ -5700,8 +5598,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/TeamDungeon/UITeamDungeon.prefab
   - bundle: 5d6decaa56bda810034011a36afd3158.unity3d
     path: Assets/Bundles/UI/TeamDungeon/UITeamDungeonCreate.prefab
-  - bundle: 0b89f10a5a64f50706321c3488850519.unity3d
-    path: Assets/Bundles/UI/TeamDungeon/UITeamDungeonItem.prefab
   - bundle: 16b1aaea8c2c8062fdf6dd934f4ae1f0.unity3d
     path: Assets/Bundles/UI/TeamDungeon/UITeamDungeonPrepare.prefab
   - bundle: 5cb781f50875db49b69622ddcb376a3d.unity3d
@@ -5732,8 +5628,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/TrialDungeon/UITrial.prefab
   - bundle: e0a5d4a6823bc4bea2d4610d5af866cc.unity3d
     path: Assets/Bundles/UI/TrialDungeon/UITrialDungeon.prefab
-  - bundle: 6c5064b768dec79a2c796193489a86dd.unity3d
-    path: Assets/Bundles/UI/TrialDungeon/UITrialDungeonItem.prefab
   - bundle: 9115ce91d17b36d1ed07240becac9252.unity3d
     path: Assets/Bundles/UI/TrialDungeon/UITrialMain.prefab
   - bundle: c3d33f858cf4c1a3adc9e7bc10d0ffde.unity3d
@@ -5746,8 +5640,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/ZuoQi/UIZuoQi.prefab
   - bundle: 21649c867dc4efcc2ccd2e0440d8aae0.unity3d
     path: Assets/Bundles/UI/ZuoQi/UIZuoQiShow.prefab
-  - bundle: f62f8c977620797b30fe53ef5dfd297f.unity3d
-    path: Assets/Bundles/UI/ZuoQi/UIZuoQiShowItem.prefab
   - bundle: fcb592ef9cb6692e515fb238ae307bbd.unity3d
     path: Assets/Bundles/Unit/Component/Hero_copy_1.prefab
   - bundle: 2d08b91b79f0fd6e252d586efdcc42b0.unity3d
@@ -8870,9 +8762,6 @@ MonoBehaviour:
   - name: c89e1eb2fee616dff1d21711610e9569.unity3d
     assets:
     - Assets/Bundles/UI/BattleDungeon/UIBattleRecruit.prefab
-  - name: d26b2883bae0a65d958ae604bead73dd.unity3d
-    assets:
-    - Assets/Bundles/UI/BattleDungeon/UIBattleRecruitItem.prefab
   - name: b0b02b69672f4d2e392acc6fe4242dbc.unity3d
     assets:
     - Assets/Bundles/UI/BattleDungeon/UIBattleShop.prefab
@@ -8882,9 +8771,6 @@ MonoBehaviour:
   - name: ca407e3301d87ebe4dd5af8f6f13a1bf.unity3d
     assets:
     - Assets/Bundles/UI/BattleDungeon/UIBattleTask.prefab
-  - name: fcff96163cad98aab502b68502d1810d.unity3d
-    assets:
-    - Assets/Bundles/UI/BattleDungeon/UIBattleTaskItem.prefab
   - name: c73066963606c6e010433a05cee6c4b6.unity3d
     assets:
     - Assets/Bundles/UI/Blood/UIBattleFly.prefab
@@ -8999,12 +8885,6 @@ MonoBehaviour:
   - name: 01f6134b12a92f77da3c8cb801ecbb50.unity3d
     assets:
     - Assets/Bundles/UI/Demon/UIDemonMain.prefab
-  - name: 68e0a0d2a6ba0484a1e4d6ed7d161751.unity3d
-    assets:
-    - Assets/Bundles/UI/Dungeon/UIBossRefreshSettingItem.prefab
-  - name: 5929f671bb102c64e4c0ded5336e6af8.unity3d
-    assets:
-    - Assets/Bundles/UI/Dungeon/UIBossRefreshTimeItem.prefab
   - name: aab2830762dcd5f6d12bd10113365ed3.unity3d
     assets:
     - Assets/Bundles/UI/Dungeon/UIDungeon.prefab
@@ -9032,15 +8912,9 @@ MonoBehaviour:
   - name: c0264ee63a57db5df2587c59cd6dc530.unity3d
     assets:
     - Assets/Bundles/UI/Hunt/UIHuntRanking.prefab
-  - name: d552db2a1b61ef78c5ed0fe62140c8a7.unity3d
-    assets:
-    - Assets/Bundles/UI/Hunt/UIHuntRankingPlayerInfoItem.prefab
   - name: d2699a745d613ad213edf5578c5785da.unity3d
     assets:
     - Assets/Bundles/UI/Hunt/UIHuntTask.prefab
-  - name: 4ec38ad9e29815c83c84399ed6440d8f.unity3d
-    assets:
-    - Assets/Bundles/UI/Hunt/UIHuntTaskItem.prefab
   - name: 03c8df8e4e7e7f51612c6295ab2f476e.unity3d
     assets:
     - Assets/Bundles/UI/JiaYuan/UIJiaYuanBag.prefab
@@ -9170,9 +9044,6 @@ MonoBehaviour:
   - name: b3781f57d3ecdc192111a6f2754afea4.unity3d
     assets:
     - Assets/Bundles/UI/Login/UISelectServer.prefab
-  - name: 8da8935fb03590412b248d66eaabb765.unity3d
-    assets:
-    - Assets/Bundles/UI/Login/UISelectServerItem.prefab
   - name: 5f1ecf6a36683c20eb389ee657a862aa.unity3d
     assets:
     - Assets/Bundles/UI/Login/UIThanks.prefab
@@ -9191,9 +9062,6 @@ MonoBehaviour:
   - name: ca3cccc6680701ebf10eeb23a03ee6b1.unity3d
     assets:
     - Assets/Bundles/UI/Main/Activity/UIActivityLvLiBao.prefab
-  - name: 75485b40cf6800a46cfd893354f78972.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Activity/UIActivityLvLiBaoItem.prefab
   - name: 91b4beb3dff8034bfbd0a5273ba71ec8.unity3d
     assets:
     - Assets/Bundles/UI/Main/Activity/UIActivityMaoXian.prefab
@@ -9230,30 +9098,18 @@ MonoBehaviour:
   - name: 7bdd7fc69a0d1f914fdba4370834833a.unity3d
     assets:
     - Assets/Bundles/UI/Main/Camp/UICampReward.prefab
-  - name: 580881249139888047b5cab9e9f6c2de.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Camp/UICampRewardItem.prefab
   - name: 6a75abb7ed718252a208199a28d00b6b.unity3d
     assets:
     - Assets/Bundles/UI/Main/Camp/UICampSelect.prefab
   - name: d0d5e7cb87e36786a52cbb00e936e3a3.unity3d
     assets:
     - Assets/Bundles/UI/Main/Camp/UICampShop.prefab
-  - name: cf696c72807e40537ab5d5caf7b49878.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Camp/UICampShopItem.prefab
   - name: fc9a941c68306cdf078a74da2f1a16b8.unity3d
     assets:
     - Assets/Bundles/UI/Main/Camp/UICampShouLie.prefab
-  - name: 6d55f1de0b874591297cfdfbde6114c0.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Camp/UICampShouLieItem.prefab
   - name: 42f66967e0392625bab90af096d7bcf5.unity3d
     assets:
     - Assets/Bundles/UI/Main/Camp/UICampStrength.prefab
-  - name: 8d44cf6d0e8c938725cd6f9dd489e5e2.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Camp/UICampStrengthItem.prefab
   - name: 35b58a6c4185b322fae24eff0ffa5a63.unity3d
     assets:
     - Assets/Bundles/UI/Main/Chat/UIChat.prefab
@@ -9272,27 +9128,12 @@ MonoBehaviour:
   - name: 3e00437dbfb30ee8b5c9c318891fe225.unity3d
     assets:
     - Assets/Bundles/UI/Main/ChengJiu/UIChengJiuJingling.prefab
-  - name: bb57a6ecbc8a6b8a5f18e93f70243213.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/ChengJiu/UIChengJiuJinglingItem.prefab
   - name: b7bcb7cdd9e57a26a13b2318481ecd94.unity3d
     assets:
     - Assets/Bundles/UI/Main/ChengJiu/UIChengJiuReward.prefab
-  - name: 3c75ed8158b8528ddab023b4fa43bd10.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/ChengJiu/UIChengJiuRewardItem.prefab
   - name: a222b1297f488fefd5930daacb95c9ab.unity3d
     assets:
     - Assets/Bundles/UI/Main/ChengJiu/UIChengJiuShow.prefab
-  - name: f7e8c584a27b15a7c8af4810d9192b65.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/ChengJiu/UIChengJiuShowItem.prefab
-  - name: ef62818d1eb71c80d3781ec776cec576.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/ChengJiu/UIChengJiuType.prefab
-  - name: b3df3c94577aa4dc187792a55a439ae6.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/ChengJiu/UIChengJiuTypeItem.prefab
   - name: 821026b825c274e775926b7beb396cb8.unity3d
     assets:
     - Assets/Bundles/UI/Main/ChengJiu/UIJingLingGet.prefab
@@ -9317,9 +9158,6 @@ MonoBehaviour:
   - name: 91f9d4fdfc3e5ef36a94ce365a89c7d0.unity3d
     assets:
     - Assets/Bundles/UI/Main/ChouKa/UIChouKaReward.prefab
-  - name: 4f8af8dd41c171ef25ff4d488212c439.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/ChouKa/UIChouKaRewardItem.prefab
   - name: 6ff8652cb401f6cb73058018928190cb.unity3d
     assets:
     - Assets/Bundles/UI/Main/ChouKa/UIChouKaShowItem.prefab
@@ -9416,15 +9254,9 @@ MonoBehaviour:
   - name: fd63c22e1c463e92de83296b003f8a05.unity3d
     assets:
     - Assets/Bundles/UI/Main/Fashion/UIFashionShow.prefab
-  - name: 3795a35f7b9a9a9bab69c61a53360321.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Fashion/UIFashionShowItem.prefab
   - name: 17275c62b60a93f86917e8bf66b6f79f.unity3d
     assets:
     - Assets/Bundles/UI/Main/Fashion/UIFashionSuit.prefab
-  - name: 82c155e347d5cf9c402c01958cf2c5de.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Fashion/UIFashionSuitItem.prefab
   - name: 1aaee6401f553839ee5f3a5966c1d11b.unity3d
     assets:
     - Assets/Bundles/UI/Main/FenXiang/UIFenXiang.prefab
@@ -9440,9 +9272,6 @@ MonoBehaviour:
   - name: 78259b9ffc79b0255ab8fe4ea2dce102.unity3d
     assets:
     - Assets/Bundles/UI/Main/FenXiang/UIPopularize.prefab
-  - name: 7397152f432513c2ee3378d6d38c6cd9.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/FenXiang/UIPopularizeItem.prefab
   - name: d8990cd918d8f7a86ef464b1fb15c290.unity3d
     assets:
     - Assets/Bundles/UI/Main/FenXiang/UISerial.prefab
@@ -9458,18 +9287,9 @@ MonoBehaviour:
   - name: 3bf5817d253f67a17d5cd3ee5b3be9d8.unity3d
     assets:
     - Assets/Bundles/UI/Main/Friend/UIFriendBlack.prefab
-  - name: 2cec870a6ddd1a9a114b009dda45a4f1.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Friend/UIFriendBlackItem.prefab
-  - name: bda55fb1b0c6714fbf02f19bbd12ebf7.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Friend/UIFriendChatItem.prefab
   - name: 7a3257cd10a0265e3ca26d2de113bc95.unity3d
     assets:
     - Assets/Bundles/UI/Main/Friend/UIFriendList.prefab
-  - name: 4864d5881567af5e50977d28ca118cc6.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Friend/UIFriendListItem.prefab
   - name: d668a08aef0582753de11abd60934811.unity3d
     assets:
     - Assets/Bundles/UI/Main/GM/UICommand.prefab
@@ -9518,18 +9338,9 @@ MonoBehaviour:
   - name: 5abd40e3b6914b019ac0a8b362b0ff0d.unity3d
     assets:
     - Assets/Bundles/UI/Main/LingDi/UILingDiReward.prefab
-  - name: cb233a2e3a08d8475ce50791d31a22c1.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/LingDi/UILingDiRewardItem.prefab
-  - name: 23d6dabd69221bf11fad746f6f6923a5.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/LingDi/UILingDiRewardLevel.prefab
   - name: 4c221bfe9ae28647810882da59e672bf.unity3d
     assets:
     - Assets/Bundles/UI/Main/Mail/UIMail.prefab
-  - name: d5615c6b9a3b77bd8d42aacc0981ccca.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Mail/UIMailItem.prefab
   - name: 6bbc3146657e5e49ac894dffe28dad1e.unity3d
     assets:
     - Assets/Bundles/UI/Main/Main/UIMain.prefab
@@ -9554,9 +9365,6 @@ MonoBehaviour:
   - name: 56461143aa075c29d7a6429b68b8d07a.unity3d
     assets:
     - Assets/Bundles/UI/Main/MakeLearn/UIMakeLearn.prefab
-  - name: 2e8cac452c05a20b24e3500b9c46880d.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/MakeLearn/UIMakeLearnItem.prefab
   - name: 77328b65d3c297e52c740543d7be1d30.unity3d
     assets:
     - Assets/Bundles/UI/Main/MiniMap/UIMapBig.prefab
@@ -9590,9 +9398,6 @@ MonoBehaviour:
   - name: ecb4ca395e988454f072cf8d73db0b66.unity3d
     assets:
     - Assets/Bundles/UI/Main/PaiMai/UIAuctionRecord.prefab
-  - name: 5d8dee8676df938279c58ff7568fda0d.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/PaiMai/UIAuctionRecordItem.prefab
   - name: 794b5e7c77a78fc00ad3f57252ff3466.unity3d
     assets:
     - Assets/Bundles/UI/Main/PaiMai/UIPaiMai.prefab
@@ -9602,9 +9407,6 @@ MonoBehaviour:
   - name: c2a3ec75719ac9eeaa569828397e70da.unity3d
     assets:
     - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiBuy.prefab
-  - name: 3029078e78a24bbfe3144739549306ce.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiBuyItem.prefab
   - name: a4ff444064ab1d14240d8e8e2e5b73f4.unity3d
     assets:
     - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiDuiHuan.prefab
@@ -9620,36 +9422,18 @@ MonoBehaviour:
   - name: 444b0764a39c20068055c09029fcb4fd.unity3d
     assets:
     - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiShop.prefab
-  - name: d3b9b6c50c1409ca2f90a3855d62133a.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiShopItem.prefab
-  - name: 3719a37fad018206e4395f71340c887f.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiShopType.prefab
-  - name: 0dff45dbfcbc788e9ec2c53c95b07eba.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiShopTypeItem.prefab
   - name: 42e940dd4a2d81b685bcf40a5319faec.unity3d
     assets:
     - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiStall.prefab
   - name: b22990a61ae490d00beaee396725701e.unity3d
     assets:
     - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiStallBuy.prefab
-  - name: 96737cd45ff6b1971abc2806f7b67536.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/PaiMai/UIPaiMaiStallItem.prefab
   - name: 7d4477e512911644b9e9362501c0348f.unity3d
     assets:
     - Assets/Bundles/UI/Main/Pet/UIPet.prefab
   - name: e28b2f133350ef8cba4301d96e6accea.unity3d
     assets:
     - Assets/Bundles/UI/Main/Pet/UIPetCangKu.prefab
-  - name: 833319afd696dec3023a8f1efaf91a37.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Pet/UIPetCangKuDefend.prefab
-  - name: e257bf0832db329fa9d3b2bc7034518d.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Pet/UIPetCangKuItem.prefab
   - name: 4a40bea7f3e1b042448982875c9d37c2.unity3d
     assets:
     - Assets/Bundles/UI/Main/Pet/UIPetHeCheng.prefab
@@ -9677,9 +9461,6 @@ MonoBehaviour:
   - name: 44406ae0a468c3267f4e0730b1e0a6d4.unity3d
     assets:
     - Assets/Bundles/UI/Main/Pet/UIPetShouHu.prefab
-  - name: 3312482378afb85248b0d97741917d88.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Pet/UIPetShouHuItem.prefab
   - name: 5cdb8868fd89954fbf98d760c3eb5808.unity3d
     assets:
     - Assets/Bundles/UI/Main/Pet/UIPetSkinIcon.prefab
@@ -9719,9 +9500,6 @@ MonoBehaviour:
   - name: 9f119f16ef4768734bfc50476cd4251d.unity3d
     assets:
     - Assets/Bundles/UI/Main/PetSet/UIPetChallenge.prefab
-  - name: 1cd4ef437f17ddd1b2aebc80370ef088.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/PetSet/UIPetChallengeItem.prefab
   - name: a7b45d933dfcdb56f6416f73a62bfaa6.unity3d
     assets:
     - Assets/Bundles/UI/Main/PetSet/UIPetFormation.prefab
@@ -9854,18 +9632,12 @@ MonoBehaviour:
   - name: b80d56352ba0be8e0d8f681bd7a02f18.unity3d
     assets:
     - Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianLevel.prefab
-  - name: d0c7309212993bfe451b696643c213f7.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianLevelItem.prefab
   - name: eeaf12bffee7dc08cd563810e6086b5d.unity3d
     assets:
     - Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianShow.prefab
   - name: b9a003ed195a393203aa256c55e1d147.unity3d
     assets:
     - Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianSkill.prefab
-  - name: 4042c023ec796a6d0c6051b356879f6d.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianSkillItem.prefab
   - name: bcfeb3ac7553b0c998353d302ddf52d1.unity3d
     assets:
     - Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianTen.prefab
@@ -9890,9 +9662,6 @@ MonoBehaviour:
   - name: 0ee91e493544e25e44205f08ef3e062e.unity3d
     assets:
     - Assets/Bundles/UI/Main/Setting/UISettingTitle.prefab
-  - name: 27187cf0fa9099da256649bf7d5d3c95.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Setting/UISettingTitleItem.prefab
   - name: 057e7c52e5f7f2c65545cc92fafe43a5.unity3d
     assets:
     - Assets/Bundles/UI/Main/ShouJi/UIShouJi.prefab
@@ -9911,12 +9680,6 @@ MonoBehaviour:
   - name: e13c7bff58500731b3a302683086ed93.unity3d
     assets:
     - Assets/Bundles/UI/Main/ShouJi/UIShouJiTreasure.prefab
-  - name: 0d7ee3e5cb1a8aacc4d9d01ed1b873e1.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/ShouJi/UIShouJiTreasureItem.prefab
-  - name: 2c7b3391cce3de22a4853a518f39d9a7.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/ShouJi/UIShouJiTreasureType.prefab
   - name: 2cc0d72dc6412d68cd786f7069923e07.unity3d
     assets:
     - Assets/Bundles/UI/Main/Skill/UIBuffTips.prefab
@@ -9926,12 +9689,6 @@ MonoBehaviour:
   - name: 00b7b53106dd001df6b0ffa9ff54cfc2.unity3d
     assets:
     - Assets/Bundles/UI/Main/Skill/UISkillLearn.prefab
-  - name: fb357705d91f7b16bf93233c73f3705f.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Skill/UISkillLearnItem.prefab
-  - name: 6e780e4e42f552ed9a8e44fd24b8c36c.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Skill/UISkillLearnSkillItem.prefab
   - name: b5638a582b5e35886fc1626b48660c36.unity3d
     assets:
     - Assets/Bundles/UI/Main/Skill/UISkillLifeShield.prefab
@@ -9941,24 +9698,15 @@ MonoBehaviour:
   - name: d492acf3c084435f1e1c335987338af0.unity3d
     assets:
     - Assets/Bundles/UI/Main/Skill/UISkillSet.prefab
-  - name: f9948bc0f3fa4f1f58a9167622a91aa3.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Skill/UISkillSetItem.prefab
   - name: bd42675ff9aab0bae7f857fbde7729fd.unity3d
     assets:
     - Assets/Bundles/UI/Main/Skill/UISkillTianFu.prefab
-  - name: 31d8031950ea05ef799ac32aebfd96a6.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Skill/UISkillTianFuItem.prefab
   - name: da601af780caaf208e3bc77c387f4cde.unity3d
     assets:
     - Assets/Bundles/UI/Main/Skill/UISkillTips.prefab
   - name: 3b7ad3f112b27b9ee9a9d911da56a572.unity3d
     assets:
     - Assets/Bundles/UI/Main/Store/UIStore.prefab
-  - name: 7909ab4f9c8ac9e12cfce742cc32148c.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Store/UIStoreItem.prefab
   - name: 38d9e417786e36a709540b0f1526627b.unity3d
     assets:
     - Assets/Bundles/UI/Main/Task/UIGiveTask.prefab
@@ -9968,15 +9716,9 @@ MonoBehaviour:
   - name: b03163f1f0b722f858d4683c79f7531d.unity3d
     assets:
     - Assets/Bundles/UI/Main/Task/UITaskGet.prefab
-  - name: d8a15160018c37821b34fadd82e6f7da.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Task/UITaskGetItem.prefab
   - name: 0f3da07b7a84fb87eda9b29a02cf520a.unity3d
     assets:
     - Assets/Bundles/UI/Main/Task/UITaskType.prefab
-  - name: 4bdfcb2d8294f722b5dcb1c01446a822.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Task/UITaskTypeItem.prefab
   - name: 3b79321910579b89fc71589a7d0814a0.unity3d
     assets:
     - Assets/Bundles/UI/Main/Team/UITeam.prefab
@@ -10010,9 +9752,6 @@ MonoBehaviour:
   - name: f80090afbc0fd77497b4afb6b98d707e.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionApplyList.prefab
-  - name: aa384674665530a6664cdc784fb31f4e.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Union/UIUnionApplyListItem.prefab
   - name: 4405002a3688de31f745d04c1b404500.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionCreate.prefab
@@ -10022,9 +9761,6 @@ MonoBehaviour:
   - name: b369a672c0ee70af7622f82fc5bd660e.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionDonationRecord.prefab
-  - name: 029bca5c5911827306f670ea9ce936b1.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Union/UIUnionDonationRecordItem.prefab
   - name: e6c18809dba4f9860947d455182e7dac.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionJingXuan.prefab
@@ -10034,9 +9770,6 @@ MonoBehaviour:
   - name: c6112d7c2340de3814f69a18b15d38d0.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionMy.prefab
-  - name: 600b842487970192dd23c4a250c1ee80.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Union/UIUnionMyItem.prefab
   - name: 19a6bc6127769f8c986dd3189a0d0b82.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionMystery.prefab
@@ -10118,9 +9851,6 @@ MonoBehaviour:
   - name: 5d6decaa56bda810034011a36afd3158.unity3d
     assets:
     - Assets/Bundles/UI/TeamDungeon/UITeamDungeonCreate.prefab
-  - name: 0b89f10a5a64f50706321c3488850519.unity3d
-    assets:
-    - Assets/Bundles/UI/TeamDungeon/UITeamDungeonItem.prefab
   - name: 16b1aaea8c2c8062fdf6dd934f4ae1f0.unity3d
     assets:
     - Assets/Bundles/UI/TeamDungeon/UITeamDungeonPrepare.prefab
@@ -10166,9 +9896,6 @@ MonoBehaviour:
   - name: e0a5d4a6823bc4bea2d4610d5af866cc.unity3d
     assets:
     - Assets/Bundles/UI/TrialDungeon/UITrialDungeon.prefab
-  - name: 6c5064b768dec79a2c796193489a86dd.unity3d
-    assets:
-    - Assets/Bundles/UI/TrialDungeon/UITrialDungeonItem.prefab
   - name: 9115ce91d17b36d1ed07240becac9252.unity3d
     assets:
     - Assets/Bundles/UI/TrialDungeon/UITrialMain.prefab
@@ -10184,9 +9911,6 @@ MonoBehaviour:
   - name: 21649c867dc4efcc2ccd2e0440d8aae0.unity3d
     assets:
     - Assets/Bundles/UI/ZuoQi/UIZuoQiShow.prefab
-  - name: f62f8c977620797b30fe53ef5dfd297f.unity3d
-    assets:
-    - Assets/Bundles/UI/ZuoQi/UIZuoQiShowItem.prefab
   - name: 55ef7382f5a509040b488a114573722e.unity3d
     assets:
     - Assets/Bundles/Independent/Code.prefab
@@ -12691,6 +12415,8 @@ MonoBehaviour:
     - Assets/Bundles/Icon/MonsterIcon/81000022.png
   - name: dd8c93c2c97a4003265ecdd911235731.unity3d
     assets:
+    - Assets/Bundles/Icon/OtherIcon/c11.png
+    - Assets/Bundles/Icon/OtherIcon/c12.png
     - Assets/Bundles/Icon/OtherIcon/HuJia_11.png
     - Assets/Bundles/Icon/OtherIcon/HuJia_12.png
     - Assets/Bundles/Icon/OtherIcon/HuJia_13.png
@@ -15814,12 +15540,12 @@ MonoBehaviour:
   - name: 435ee93597681794575b3411e8e9f7f3.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_415.png
-  - name: 6a0d7ca8b85a44f67b9e145654bdb29f.unity3d
-    assets:
-    - Assets/Res/Effect/BackBlur/BackBlur.mat
   - name: 49ed80e4bb550602ea1e1c6f27ad5c2e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_58.png
+  - name: 6a0d7ca8b85a44f67b9e145654bdb29f.unity3d
+    assets:
+    - Assets/Res/Effect/BackBlur/BackBlur.mat
   - name: bafe0aa0cceaa9bda64986680cac9b20.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_371.png
@@ -15937,18 +15663,15 @@ MonoBehaviour:
   - name: 66b79c41bb658dcd9b14278171ee0bbb.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_78.png
+  - name: 6430467bfbf0d2869ce06401b8c47085.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_83.png
   - name: c164012b8b9cb72a1b2eaf68403678c4.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_192.png
   - name: cf8c5f43a507552f9219ae405fa8baa3.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_63.png
-  - name: 6430467bfbf0d2869ce06401b8c47085.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_83.png
-  - name: c0c32fd33fdd0bb0eaa4b2da41b5992e.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_6.png
   - name: 50252a38f6861313c929fe3056e798a6.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_3A.png
@@ -16168,6 +15891,9 @@ MonoBehaviour:
   - name: 3adefeef541aa505daa687dedb3d4439.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_98.png
+  - name: c0c32fd33fdd0bb0eaa4b2da41b5992e.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_6.png
   - name: 3e8bdbb5ba10325f0a9c4a0849a59eec.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_74.png
@@ -16198,9 +15924,6 @@ MonoBehaviour:
   - name: 5c8ab17af442f2c668dc3fd5a2da2dab.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_129.png
-  - name: a1e76783f53066d05f3a85c70269952e.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_82.png
   - name: 3ea2a44fda902de60e76da69316e7777.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_26.png
@@ -16210,6 +15933,9 @@ MonoBehaviour:
   - name: 3348d778abc06d222a53fa68b3a85731.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_206.png
+  - name: a1e76783f53066d05f3a85c70269952e.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_82.png
   - name: 0b3455359ae18ee6f5b4287b89451c77.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_87.png
@@ -16372,12 +16098,12 @@ MonoBehaviour:
   - name: 356d0e872a3f800a5ed574015280208d.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_Fashion_1.png
-  - name: e0700ca658b786b8da75e8df8ecf7041.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_84.png
   - name: c2d1dfb61cc45e93f284621c92fda1ba.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_375.png
+  - name: e0700ca658b786b8da75e8df8ecf7041.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_84.png
   - name: 72d356d87a42f472edab8b62a9f85f9c.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/UI_FenXiang_2.png
@@ -16402,6 +16128,9 @@ MonoBehaviour:
   - name: 2b9b517de779fed583e5745eeb117064.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_302_2.png
+  - name: e00872e46d05386ffa3d9fbe95301fcf.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_269.png
   - name: 5a18fe696277b55d06139cc32ec583b5.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_29.png
@@ -16429,12 +16158,12 @@ MonoBehaviour:
   - name: f25e51964a7bb491d9951230a8744ddc.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_283.png
-  - name: 5f6abd24902b28b8bf2db96cd38e4437.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/GameUI/Old/Image/UI_Image_114.png
   - name: 72cc504ad5cc073f4bdd657482c2820e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_6.png
+  - name: 5f6abd24902b28b8bf2db96cd38e4437.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/GameUI/Old/Image/UI_Image_114.png
   - name: 37a68634425dddfacbd33fb634bcdfe8.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_425.Png
@@ -16486,12 +16215,12 @@ MonoBehaviour:
   - name: 48367e4dbef9a89c1ded1e76d4f6004c.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_198.png
-  - name: eaa3897b6fe44faac1ebdb280e3f832c.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_265.png
   - name: 66f2251e863661a8ae420a57ffc2bcd8.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_114.png
+  - name: eaa3897b6fe44faac1ebdb280e3f832c.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_265.png
   - name: b4e94c18f169b7f51a7c2530a1757902.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_81.Png
@@ -16570,6 +16299,9 @@ MonoBehaviour:
   - name: 17c8f0cf242fa448fcd5433a85864eac.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_84.Png
+  - name: 18e7691838b2d9ee2323b18016d66d41.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/HintDian.png
   - name: d3eb54de92593a7e788a088b7a0cb20e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_324.png
@@ -16708,9 +16440,6 @@ MonoBehaviour:
   - name: 943c877c4180e2da832b099a278e640e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_18_1.png
-  - name: 18e7691838b2d9ee2323b18016d66d41.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/HintDian.png
   - name: 028b19a5562314ac3f8ad342af7eb057.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_288.png
@@ -16849,9 +16578,6 @@ MonoBehaviour:
   - name: 32dc36e5e66a3560a21175edceae8948.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_106.png
-  - name: e00872e46d05386ffa3d9fbe95301fcf.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_269.png
   - name: b88b07e83d709f2711682433b420b801.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_292.png
