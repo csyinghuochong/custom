@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 930
+  version: 931
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -4433,6 +4433,10 @@ MonoBehaviour:
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/63023401.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/63200101.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/63200201.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/66001001.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/66001002.png
@@ -4598,8 +4602,6 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/RoleSkillIcon/jx5.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/jx6.png
-  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
-    path: Assets/Bundles/Icon/RoleSkillIcon/nature_40.png
   - bundle: 318426cdf69782fa1a9b0dfbc8fe42d0.unity3d
     path: Assets/Bundles/Icon/TaskIcon/100001.png
   - bundle: 318426cdf69782fa1a9b0dfbc8fe42d0.unity3d
@@ -4782,6 +4784,8 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/TiTleIcon/Img_UIWarehouse.png
   - bundle: f53a1bf78f7a146659363581f1b291fe.unity3d
     path: Assets/Bundles/Icon/TiTleIcon/Img_UIWatch.png
+  - bundle: f53a1bf78f7a146659363581f1b291fe.unity3d
+    path: Assets/Bundles/Icon/TiTleIcon/Img_UIWelfare.png
   - bundle: f53a1bf78f7a146659363581f1b291fe.unity3d
     path: Assets/Bundles/Icon/TiTleIcon/Img_UIXiLian.png
   - bundle: f53a1bf78f7a146659363581f1b291fe.unity3d
@@ -5460,6 +5464,12 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianTen.prefab
   - bundle: f2fc9e359f5877c932ad48ec049ff732.unity3d
     path: Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianTransfer.prefab
+  - bundle: 353c67a630166a241e1d4ac619be4176.unity3d
+    path: Assets/Bundles/UI/Main/Season/UISeason.prefab
+  - bundle: 3b91bd695a9c8cc2cf0439de6d699192.unity3d
+    path: Assets/Bundles/UI/Main/Season/UISeasonHome.prefab
+  - bundle: 2cf136e3b8759536fb3070398223d4cb.unity3d
+    path: Assets/Bundles/UI/Main/Season/UISeasonLordDetail.prefab
   - bundle: b92270eac3fc2bae5abdf2b880f4f54c.unity3d
     path: Assets/Bundles/UI/Main/Setting/UISetting.prefab
   - bundle: 3d8f44236d615030d5a3460c5a60ffe1.unity3d
@@ -5540,8 +5550,6 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Union/UIUnionDonationRecord.prefab
   - bundle: e6c18809dba4f9860947d455182e7dac.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionJingXuan.prefab
-  - bundle: 1ab9c609221a33d275684d27bb9ca568.unity3d
-    path: Assets/Bundles/UI/Main/Union/UIUnionListItem.prefab
   - bundle: c6112d7c2340de3814f69a18b15d38d0.unity3d
     path: Assets/Bundles/UI/Main/Union/UIUnionMy.prefab
   - bundle: 19a6bc6127769f8c986dd3189a0d0b82.unity3d
@@ -5560,6 +5568,14 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Watch/UIWatchMenu.prefab
   - bundle: 2dda786f6035c26d151323d4ebcd2335.unity3d
     path: Assets/Bundles/UI/Main/Watch/UIWatchPaiMai.prefab
+  - bundle: 584169de27fa3067fd2f07498f6cb94b.unity3d
+    path: Assets/Bundles/UI/Main/Welfare/UIWelfare.prefab
+  - bundle: b159f3f588f198f2c017423a9e968c45.unity3d
+    path: Assets/Bundles/UI/Main/Welfare/UIWelfareDraw.prefab
+  - bundle: 0dcf0a4a9dce71860eccbe8621451a7d.unity3d
+    path: Assets/Bundles/UI/Main/Welfare/UIWelfareInvest.prefab
+  - bundle: d48e698baadbb51cc353f2535c8f36aa.unity3d
+    path: Assets/Bundles/UI/Main/Welfare/UIWelfareTask.prefab
   - bundle: ee5fab25ac768f6718ae0667eab3b476.unity3d
     path: Assets/Bundles/UI/Main/WorldLv/UIWorldLv.prefab
   - bundle: 26c3a0124df95fb8687c6a2d9dbf2dd2.unity3d
@@ -9644,6 +9660,15 @@ MonoBehaviour:
   - name: f2fc9e359f5877c932ad48ec049ff732.unity3d
     assets:
     - Assets/Bundles/UI/Main/RoleXiLian/UIRoleXiLianTransfer.prefab
+  - name: 353c67a630166a241e1d4ac619be4176.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Season/UISeason.prefab
+  - name: 3b91bd695a9c8cc2cf0439de6d699192.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Season/UISeasonHome.prefab
+  - name: 2cf136e3b8759536fb3070398223d4cb.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Season/UISeasonLordDetail.prefab
   - name: b92270eac3fc2bae5abdf2b880f4f54c.unity3d
     assets:
     - Assets/Bundles/UI/Main/Setting/UISetting.prefab
@@ -9764,9 +9789,6 @@ MonoBehaviour:
   - name: e6c18809dba4f9860947d455182e7dac.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionJingXuan.prefab
-  - name: 1ab9c609221a33d275684d27bb9ca568.unity3d
-    assets:
-    - Assets/Bundles/UI/Main/Union/UIUnionListItem.prefab
   - name: c6112d7c2340de3814f69a18b15d38d0.unity3d
     assets:
     - Assets/Bundles/UI/Main/Union/UIUnionMy.prefab
@@ -9794,6 +9816,18 @@ MonoBehaviour:
   - name: 2dda786f6035c26d151323d4ebcd2335.unity3d
     assets:
     - Assets/Bundles/UI/Main/Watch/UIWatchPaiMai.prefab
+  - name: 584169de27fa3067fd2f07498f6cb94b.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Welfare/UIWelfare.prefab
+  - name: b159f3f588f198f2c017423a9e968c45.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Welfare/UIWelfareDraw.prefab
+  - name: 0dcf0a4a9dce71860eccbe8621451a7d.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Welfare/UIWelfareInvest.prefab
+  - name: d48e698baadbb51cc353f2535c8f36aa.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Welfare/UIWelfareTask.prefab
   - name: ee5fab25ac768f6718ae0667eab3b476.unity3d
     assets:
     - Assets/Bundles/UI/Main/WorldLv/UIWorldLv.prefab
@@ -12867,6 +12901,8 @@ MonoBehaviour:
     - Assets/Bundles/Icon/RoleSkillIcon/63023201.png
     - Assets/Bundles/Icon/RoleSkillIcon/63023301.png
     - Assets/Bundles/Icon/RoleSkillIcon/63023401.png
+    - Assets/Bundles/Icon/RoleSkillIcon/63200101.png
+    - Assets/Bundles/Icon/RoleSkillIcon/63200201.png
     - Assets/Bundles/Icon/RoleSkillIcon/66001001.png
     - Assets/Bundles/Icon/RoleSkillIcon/66001002.png
     - Assets/Bundles/Icon/RoleSkillIcon/66001003.png
@@ -12950,7 +12986,6 @@ MonoBehaviour:
     - Assets/Bundles/Icon/RoleSkillIcon/jx4.png
     - Assets/Bundles/Icon/RoleSkillIcon/jx5.png
     - Assets/Bundles/Icon/RoleSkillIcon/jx6.png
-    - Assets/Bundles/Icon/RoleSkillIcon/nature_40.png
   - name: 318426cdf69782fa1a9b0dfbc8fe42d0.unity3d
     assets:
     - Assets/Bundles/Icon/TaskIcon/100001.png
@@ -13046,6 +13081,7 @@ MonoBehaviour:
     - Assets/Bundles/Icon/TiTleIcon/Img_UIUnionXiuLian.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIWarehouse.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIWatch.png
+    - Assets/Bundles/Icon/TiTleIcon/Img_UIWelfare.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIXiLian.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIXiuLian.png
     - Assets/Bundles/Icon/TiTleIcon/Img_UIZhanQu.png
@@ -16425,6 +16461,9 @@ MonoBehaviour:
   - name: b2f11d84fa0268c1cfe40cb6e18e597c.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_401.png
+  - name: 004eb541b328cfbc78626bec513d9e01.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Atlas/MainUI/Pro_17.png
   - name: 9632ccae9ce221be623aeffb752985ff.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_64.png
@@ -16521,9 +16560,18 @@ MonoBehaviour:
   - name: 93457eda8c5563d01487c04f4f1d6a9d.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_253.png
+  - name: 1854bb584d99b77033db148412993017.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_354_1.png
+  - name: b0374b0db4e4c876dab403f7187802e5.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_355.png
   - name: 9f4b84031ece4f039df50511db9671b9.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_397.png
+  - name: d29c07a21113dd6300e9413a5dea34ff.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_396.png
   - name: b86e2b799d5ef05767c524f44f9feaa1.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_238.png
