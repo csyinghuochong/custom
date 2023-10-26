@@ -16,8 +16,6 @@ namespace ET
         {
             if (self.AccountSessionsDictionary.ContainsKey(accountId))
             {
-                Log.Console($"Remove: {accountId}");
-
                 self.AccountSessionsDictionary.Remove(accountId);
             }
         }

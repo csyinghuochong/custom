@@ -14,7 +14,7 @@ namespace ET
         {
             int oldzone = args.oldzone;
             int newzone = args.newzone;
-            Log.Console("合区开始！");
+            Log.Console($"合区开始！: {oldzone} {newzone}");
             try
             {
                 await MergeZoneHelper.MergeZone(oldzone, newzone);
