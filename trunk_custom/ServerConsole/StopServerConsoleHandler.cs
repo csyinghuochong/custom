@@ -56,10 +56,12 @@ namespace ET
                             {
                                 continue;
                             }
+                           
                             if (!StartSceneConfigCategory.Instance.Gates.ContainsKey(listprogress[i].Id))
                             {
                                 continue;
                             }
+
                             zoneList.Add(listprogress[i].Id);
                         }
                     }
