@@ -2,7 +2,6 @@
 using MongoDB.Bson.Serialization;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
@@ -10,9 +9,8 @@ namespace ET
 {
     public static class FangChenMiHelper
     {
-
         public const string FangChenMi_appid = "764a47910a4a4cce8aa957f6e1b4a535";
-        public const string FangChenMi_secretkey = "bf902ebf01c41453f0d70a61db655765";
+        public const string FangChenMi_secretkey = "609ea8bf36f89c9b85b371f8fff5628b";
         public const string FangChenMi_bizid = "1199015682";
         public static string[] normalUrls = { "https://api.wlc.nppa.gov.cn/idcard/authentication/check"
             , "http://api2.wlc.nppa.gov.cn/idcard/authentication/query"
