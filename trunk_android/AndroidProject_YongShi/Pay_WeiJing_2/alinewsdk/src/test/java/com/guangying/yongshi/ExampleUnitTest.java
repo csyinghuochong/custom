@@ -1,4 +1,4 @@
-package com.example.weijinggame.;
+package com.guangying.yongshi;
 
 import org.junit.Test;
 

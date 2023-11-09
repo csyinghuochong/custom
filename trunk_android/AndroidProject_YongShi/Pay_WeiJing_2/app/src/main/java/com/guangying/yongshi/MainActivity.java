@@ -1,35 +1,35 @@
 package com.guangying.yongshi;
 
-        import android.Manifest;
-        import android.app.Activity;
-        import android.content.Context;
-        import android.content.Intent;
-        import android.content.pm.PackageInfo;
-        import android.content.pm.PackageManager;
-        import android.os.Build;
-        import android.os.Bundle;
-        import android.support.annotation.NonNull;
-        import android.text.TextUtils;
-        import android.util.Log;
-        import android.widget.Toast;
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
+import android.util.Log;
+import android.widget.Toast;
 
-        import com.guangying.yongshi.wxapi.WXPayEntryActivity;
-        import com.tencent.mm.sdk.modelpay.PayReq;
-        import com.tencent.mm.sdk.openapi.IWXAPI;
-        import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.guangying.yongshi.wxapi.WXPayEntryActivity;
+import com.tencent.mm.sdk.modelpay.PayReq;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
-        import com.unity3d.player.UnityPlayer;
+import com.unity3d.player.UnityPlayer;
 
-        import java.io.BufferedReader;
-        import java.io.File;
-        import java.io.InputStreamReader;
-        import java.util.ArrayList;
-        import java.util.List;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
-        import android.content.IntentFilter;
+import android.content.IntentFilter;
 
-        import com.quicksdk.Sdk;
-        import com.quicksdk.utility.AppConfig;
+import com.quicksdk.Sdk;
+import com.quicksdk.utility.AppConfig;
 
 
 public class MainActivity extends UnityPlayerActivity {

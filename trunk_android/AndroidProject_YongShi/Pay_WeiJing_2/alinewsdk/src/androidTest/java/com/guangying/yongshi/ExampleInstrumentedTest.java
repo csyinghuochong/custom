@@ -1,4 +1,4 @@
-package com.example.weijinggame;
+package com.guangying.yongshi;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
