@@ -66,6 +66,12 @@ public class MyEditorScript
         BulidTarget("Platform3", "Android");
     }
 
+    [MenuItem("Custom/Build Android TikTok5")]
+    static void PerformAndroidTikTok5Build()
+    {
+        BulidTarget("TikTok5", "Android");
+    }
+
     [MenuItem("Custom/Build Android ALL")]
     static void PerformAndroidALLBuild()
     {
@@ -164,7 +170,12 @@ public class MyEditorScript
 			File.Delete(mainfestFile);
 		}
 		string app_name = "危境";
-		if (name == "MuBao")
+		if (name == "TikTok5")
+		{
+            CopyLibs("tiktok");
+            app_name = "抖音";
+        }
+		else if (name == "MuBao")
 		{
 			CopyLibs("mubao");
 			app_name = "危境渠道母包";
@@ -212,18 +223,21 @@ public class MyEditorScript
 		}
 
 		PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroup, ";" + name);
-
-		//PlayerSettings.applicationIdentifier = "com.game.uc";
-		//PlayerSettings.bundleVersion = "v0.0.1";
-		//PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroup, "SUBSTANCE_PLUGIN_ENABLED;UC");
-		//==================�����ǱȽ���Ҫ�Ķ���=======================
-
 		PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroup, "NET452;DISABLE_ILRUNTIME_DEBUG;" + name);
 
 		string[] scenes = new string[] { SCENES[0] };
 		PlayerSettings.Android.keystorePass = "829475";
 		PlayerSettings.Android.keyaliasPass = "829475";
-        //PlayerSettings.companyName	= name;
+
+        //PlayerSettings.bundleVersion = "v0.0.1";
+        if (name == "TikTok5")
+		{
+            PlayerSettings.applicationIdentifier = "com.example.weijinggame.bytedance.gamecenter";
+        }
+		else
+		{
+            PlayerSettings.applicationIdentifier = "com.example.weijinggame";
+        }
         GenericBuild(scenes, target_dir + "/" + target_name, buildTarget, targetGroup, BuildOptions.None);
 	}
 
