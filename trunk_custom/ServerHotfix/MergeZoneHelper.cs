@@ -467,7 +467,14 @@ namespace ET
                     rankingTrial_new.AddRange(rankingTrial_old);
                     rankingTrial_new.Sort(delegate (KeyValuePairLong a, KeyValuePairLong b)
                     {
-                        return (int)b.Value - (int)a.Value;
+                        if (b.Value2 == a.Value2)
+                        {
+                            return (int)b.Value2 - (int)a.Value2;
+                        }
+                        else
+                        {
+                            return (int)b.Value - (int)a.Value;
+                        }
                     });
                     maxnumber = Math.Min(rankingTrial_new.Count, 100);
                     entity.rankingTrial = rankingTrial_new.GetRange(0, maxnumber);
