@@ -1,13 +1,14 @@
 //apply plugin: 'com.android.application'
 apply plugin: 'com.android.library'
+apply plugin: 'gbsdk.helper'
 //application是以APK的形式进行打包,最终可以在安卓上直接运行 plugin以插件的形式进行编译打包,最终为aar格式,与jar包一样都可以嵌入到Unity中
 
 android {
-    compileSdkVersion 26//定义应用程序编译选择哪个Android SDK版本
+    compileSdkVersion 28//定义应用程序编译选择哪个Android SDK版本
     defaultConfig {
         //applicationId "com.mafeng.mfcomponents"
             minSdkVersion 16 //最低兼容的API版本
-        targetSdkVersion 26 //目标API作用：不同版本有不同的API接口，越高的版本使用的接口越多，但是兼容的设备就越少
+        targetSdkVersion 28 //目标API作用：不同版本有不同的API接口，越高的版本使用的接口越多，但是兼容的设备就越少
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -22,6 +23,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    //解决so冲突
+    packagingOptions {
+        pickFirst 'okhttp3/internal/publicsuffix/publicsuffixes.gz'
+        pickFirst '**/libc++_shared.so'
+        pickFirst '**/libweibosdkcore.so'
     }
 }
 
@@ -43,4 +51,11 @@ dependencies {
 afterEvaluate {
     generateReleaseBuildConfig.enabled = false
     generateDebugBuildConfig.enabled = false
+}
+
+gbsdk {
+    appId '554726'     // 抖音游戏开放平台创建应用分配的 appId，格式为6位数字
+    version '2.2.3.0'  // OSDK 的版本，如 2.2.3.0
+    plugin true        // 固定填 true，使用插件版本的SDK组件
+    optionals (['applog', 'aweme', 'union'] as String[]) // 组件列表，这里以流水分账为示例
 }

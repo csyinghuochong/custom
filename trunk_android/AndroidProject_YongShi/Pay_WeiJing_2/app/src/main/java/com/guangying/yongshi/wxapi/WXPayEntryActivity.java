@@ -7,6 +7,7 @@ package com.guangying.yongshi.wxapi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.guangying.yongshi.MainActivity;
@@ -32,6 +33,8 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
         api = WXAPIFactory.createWXAPI(this, MainActivity.APP_ID);
         //把接受到的Intent给wxapi这个对象，它会解析回调结果，通过我们实现的IWXAPIEventHandler接口回调给我们
         api.handleIntent(getIntent(), this);
+
+        Log.i( "WXPayEntryActivity2:  ", " " + MainActivity.APP_ID );
     }
 
     @Override

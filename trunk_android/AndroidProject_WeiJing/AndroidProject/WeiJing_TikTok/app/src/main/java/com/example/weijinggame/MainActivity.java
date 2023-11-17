@@ -4,39 +4,59 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.bytedance.ttgame.tob.common.host.api.GBCommonSDK;
+import com.bytedance.ttgame.tob.common.host.api.callback.InitCallback;
+import com.bytedance.ttgame.tob.optional.union.api.IUnionService;
+import com.bytedance.ttgame.tob.optional.union.api.account.IAccountCallback;
+import com.bytedance.ttgame.tob.optional.union.api.account.ISwitchCallback;
+import com.bytedance.ttgame.tob.optional.union.api.account.UserInfoResult;
+import com.bytedance.ttgame.tob.optional.union.api.pay.IPayCallback;
+import com.bytedance.ttgame.tob.optional.union.api.pay.PayInfo;
+import com.bytedance.ttgame.tob.optional.union.api.pay.PayResult;
 import com.example.weijinggame.wxapi.WXPayEntryActivity;
+import com.quicksdk.Sdk;
+import com.quicksdk.utility.AppConfig;
+import com.ss.android.download.api.clean.IJsonable;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
-
 import com.unity3d.player.UnityPlayer;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
-import android.content.IntentFilter;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 
-import com.quicksdk.Sdk;
-import com.quicksdk.utility.AppConfig;
+import gbsdk.android.support.annotation.Nullable;
+import gbsdk.android.support.graphics.drawable.VectorDrawableCompat;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.gson.Gson;
+
 
 public class MainActivity extends UnityPlayerActivity {
 
@@ -63,6 +83,13 @@ public class MainActivity extends UnityPlayerActivity {
         activity = this;
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Log.i("MainActivity", "onCreateMain");
+
+        // 请对齐游戏的application的onCreate时机，不要延后调用
+        Log.i("GBCommonSDK", "GBCommonSDK.onCreate0");
+        GBCommonSDK.onCreate(this);
+        Log.i("GBCommonSDK", "GBCommonSDK.onCreate1");
+
+        GBCommonSDK.setGameActivity(activity);
     }
 
     public static MainActivity GetInstance() {
@@ -77,6 +104,223 @@ public class MainActivity extends UnityPlayerActivity {
             wxAPI.registerApp(appid);
         }
         Log.i("WechatInit", appid);
+    }
+
+    public  void TikTokInit(String appid) {
+        Log.i("GBCommonSDK", "GBCommonSDK.CallNative0");
+        //一般游戏也会弹自己的隐私协议及申请必要的权限，建议先完成游戏自己的隐私协议展示及权限申请后再调SDK的初始化(即GBCommonSDK.init)。
+        GBCommonSDK.init(activity, new InitCallback() {
+            @Override
+            public void onSuccess() {
+                Toast.makeText(activity, "初始化成功", Toast.LENGTH_SHORT).show();
+
+                //test
+                //keyValuePairs.Add("app_id", "1234");
+                //keyValuePairs.Add("access_token", "q3fafa33sHFU+V9h32h0v8weVEH/04hgsrHFHOHNNQOBC9fnwejasubw==");
+                //keyValuePairs.Add("ts", "1555912969");
+                Map<String, Object> map = new HashMap<>();
+                map.put("app_id", "554726");
+                map.put("access_token", "q3fafa33sHFU+V9h32h0v8weVEH/04hgsrHFHOHNNQOBC9fnwejasubw==");
+                map.put("ts", "1555912969");
+                String sign = TikTokGetSign(map, "gacT8bvbGb9X3f52j8bZDtjvkAkhrOZy");
+                Log.i("GBCommonSDKString", sign);
+                //test
+            }
+
+            @Override
+            public void onFailed(int code, String msg) {
+                Toast.makeText(activity, "初始化失败: " + code + ", " + msg, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Log.i("GBCommonSDK", "GBCommonSDK.CallNative1");
+    }
+
+    public void  TikTokIsLogin(String appid) {
+        boolean islogin = GBCommonSDK.getService(IUnionService.class).isLogin();
+        if(islogin)
+        {
+            Log.i("GBCommonSDK", "islogin. true");
+        }
+        else
+        {
+            Log.i("GBCommonSDK", "islogin. false");
+        }
+    }
+
+    public  void TikTokSwitchLogin()
+    {
+        GBCommonSDK.getService(IUnionService.class).switchLogin(this, new ISwitchCallback<UserInfoResult>() {
+            @Override
+            public void onSuccess(@Nullable UserInfoResult userInfoResult) {
+                // 由接入方实现，通过游戏服务端向抖音游戏服务端校验用户登录态、获取sdk_open_id，参考服务端接入登录验证部分
+                // verifyGameUser(userInfoResult);
+            }
+
+            @Override
+            public void onFailed(@Nullable UserInfoResult userInfoResult) {
+                Toast.makeText(activity, "切换登录失败", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLogout(@Nullable UserInfoResult userInfoResult) {
+                Toast.makeText(activity, "账号登出", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public  void TikTokLogout()
+    {
+        GBCommonSDK.getService(IUnionService.class).logout( this,new IAccountCallback<UserInfoResult>() {
+            @Override
+            public void onSuccess(@Nullable UserInfoResult userInfoResult) {
+                // 由接入方实现，通过游戏服务端向抖音游戏服务端校验用户登录态、获取sdk_open_id，参考服务端接入登录验证部分
+                // verifyGameUser(userInfoResult);
+                Log.i("GBCommonSDK", "Loginout 1: "+  userInfoResult.toString());
+
+            }
+
+            @Override
+            public void onFailed(@Nullable UserInfoResult userInfoResult) {
+                Toast.makeText(activity, "Loginout2 faild", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void  TikTokLogin(String appid) {
+
+        GBCommonSDK.getService(IUnionService.class).login(this, new IAccountCallback<UserInfoResult>() {
+            @Override
+            public void onSuccess(@Nullable UserInfoResult userInfoResult) {
+                // 由接入方实现，通过游戏服务端向抖音游戏服务端校验用户登录态、获取sdk_open_id，参考服务端接入登录验证部分
+                // verifyGameUser(userInfoResult);
+                Log.i("GBCommonSDK", "Login1: "+  userInfoResult.toString());
+
+                // 创建Gson对象
+                Gson gson = new Gson();
+
+                // 将学生对象转换为JSON字符串
+                String jsonString = gson.toJson(userInfoResult);
+                Log.i("GBCommonSDK", "Login2:" + jsonString);
+
+                //登录之后可以通过以下接口查询年龄段的枚举值(IUnionService类)。如果游戏需要针对用户年龄做额外限制，
+                // 可通过该接口获取年龄段并自行限制登录，即在SDK登录完成回调之后在游戏侧进行限制。
+                //防沉迷功能无需额外调接口，SDK在登录时、游戏中会自动触发。
+
+                int age = GBCommonSDK.getService(IUnionService.class).getAgeType();
+                Log.i("GBCommonSDK", "Login3 age:" + age);
+                //// access_token，用于换取 sdk_open_id
+                UnityPlayer.UnitySendMessage("Global", "OnRecvTikTokAccesstoken", userInfoResult.data.getToken());
+            }
+
+            @Override
+            public void onFailed(@Nullable UserInfoResult userInfoResult) {
+                Toast.makeText(activity, "login faild", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public static String TikTokGetSign(Map<String, Object> params, String secretKey){
+        //给参数进行排序，游戏方自己实现排序算法，通过各种方式都可以，只要实现key按字母从小到大排序即可
+        Map<String, Object> sortMap = new TreeMap<>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        });
+        sortMap.putAll(params);
+
+        //拼接成字符串
+        StringBuilder sb = new StringBuilder();
+        Iterator<String> iterator = sortMap.keySet().iterator();
+        while (iterator.hasNext()) {
+            String key = iterator.next();
+            String value = String.valueOf(sortMap.get(key));
+            sb.append(key).append("=").append(value);
+            if(iterator.hasNext()){
+                sb.append("&");
+            }
+        }
+
+        //使用密钥进行Hmac-sha1加密
+        Mac mac;
+        try {
+            mac = Mac.getInstance("HmacSHA1");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+        SecretKeySpec spec = new SecretKeySpec(secretKey.getBytes(), "HmacSHA1");
+        try {
+            mac.init(spec);
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        }
+        mac.update(sb.toString().getBytes());
+
+        //Sample A (using org.apache.commons.codec.binary.Base64):
+        //Base64.encodeBase64("foobar".getBytes());
+        //Sample B (using android.util.Base64):
+        //Base64.encode("foobar".getBytes(), Base64.DEFAULT);
+
+        //base64编码获得最终的sign  import org.apache.commons.codec.binary.Base64;
+        // return Base64.encodeBase64String(mac.doFinal());
+        return   Base64.encodeToString(mac.doFinal(), Base64.DEFAULT);
+    }
+
+    /**
+     * IUnionService
+     * 获取预下单所需要的风控信息，服务端预下单时需要携带当前参数
+     * 服务端每次预下单前获取，下单时携带
+     */
+    public  void GetTikTokRiskControlInfo(String appid) {
+        String riskControlInfo = GBCommonSDK.getService(IUnionService.class).getRiskControlInfo();
+        UnityPlayer.UnitySendMessage("Global", "OnRecvRiskControlInfo", riskControlInfo);
+    }
+
+    /**
+     * IUnionService
+     * 支付
+     * cpOrderId      string  订单id，长度限制为80字节
+     * amountInCent   int32    商品金额，单位：分
+     * productId      string    商品id，长度限制为80字节
+     * productName    string  商品名称，长度限制为100字节，注：需体现所购买商品名称和数量
+     *productType     string   商品类型，例如："coins"
+     * productNumber  int32   商品数量
+     * sdkParam       string  预下单时返回的参数
+     */
+    public  void  TikTokPay(String cpOrderId, int amountInCent, String productId, String productName, String sdkParam)
+    {
+        PayInfo payInfo = new PayInfo();
+
+        payInfo.setCpOrderId(cpOrderId);
+        payInfo.setAmountInCent(amountInCent);
+        payInfo.setProductId(productId);
+        payInfo.setProductName(productName);
+        payInfo.setProductNumber(1);
+        payInfo.setSdkParam(sdkParam);  // 服务端预下单成功返回的 sdk_param
+
+        // 支付完成后 抖音游戏server 会将结果回调给 厂商游戏server
+        // 请在客户端收到SDK的支付回调后（onSuccess and onFail 都需要）去 厂商游戏server 进行查单
+        // 最终的支付结果以 厂商游戏server 为准
+        GBCommonSDK.getService(IUnionService.class).pay(MainActivity.this, payInfo, new IPayCallback<PayResult>() {
+            @Override
+            public void onSuccess(@Nullable PayResult result) {
+                Toast.makeText(MainActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
+                // 前往 server 查单
+            }
+
+            @Override
+            public void onFailed(@Nullable PayResult exception) {
+                Toast.makeText(MainActivity.this, "支付失败", Toast.LENGTH_SHORT).show();
+                // 前往 server 查单
+            }
+        });
+    }
+
+    ///测试通讯
+    public void CallNative(String str) {
+        Log.i("CallNative_11", str);
     }
 
     public String getProductCode() {
@@ -247,10 +491,6 @@ public class MainActivity extends UnityPlayerActivity {
         }
     }
 
-    //检测root 和 包名
-    public void CallNative(String str) {
-        Log.i("CallNative_11", str);
-    }
     final int REQUEST_CODE_ADDRESS = 100;
 
     public  void GetPhoneNum(String zone) {

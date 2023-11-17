@@ -67,6 +67,8 @@ public class MainActivity extends UnityPlayerActivity {
             this.APP_ID=appid;
             wxAPI = WXAPIFactory.createWXAPI(this, appid);
             wxAPI.registerApp(appid);
+
+            Log.i( "WXPayEntryActivity1:  ", " " + MainActivity.APP_ID );
         }
     }
 
