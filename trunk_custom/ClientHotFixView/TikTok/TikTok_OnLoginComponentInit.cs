@@ -33,7 +33,7 @@ namespace ET
         {
             EventType.TikTokRiskControlInfo args = a as EventType.TikTokRiskControlInfo;
 
-            Log.ILog.Debug("uilogincomponent.OnTikTokAccesstokenHandler");
+            Log.ILog.Debug("TikTokRiskControlInfo");
             GameObject.Find("Global").GetComponent<Init>().OnRiskControlInfoHandler = args.RiskControlInfoHandler;
 
             GameObject.Find("Global").GetComponent<Init>().TikTokRiskControlInfo();
@@ -46,8 +46,8 @@ namespace ET
         protected override void Run(object a)
         {
             EventType.TikTokPayRequest args = a as EventType.TikTokPayRequest;
-
-            GameObject.Find("Global").GetComponent<Init>().TikTokPay(args.PayMessage);
+            //TikTokPay(String cpOrderId, int amountInCent, String productId, String productName, String sdkParam)
+            GameObject.Find("Global").GetComponent<Init>().TikTokPay("", 1, "1", "6钻石", "");
         }
     }
 
