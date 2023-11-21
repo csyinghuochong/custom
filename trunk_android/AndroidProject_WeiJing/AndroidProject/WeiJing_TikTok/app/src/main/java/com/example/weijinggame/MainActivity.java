@@ -118,12 +118,6 @@ public class MainActivity extends UnityPlayerActivity {
                 //keyValuePairs.Add("app_id", "1234");
                 //keyValuePairs.Add("access_token", "q3fafa33sHFU+V9h32h0v8weVEH/04hgsrHFHOHNNQOBC9fnwejasubw==");
                 //keyValuePairs.Add("ts", "1555912969");
-                Map<String, Object> map = new HashMap<>();
-                map.put("app_id", "554726");
-                map.put("access_token", "q3fafa33sHFU+V9h32h0v8weVEH/04hgsrHFHOHNNQOBC9fnwejasubw==");
-                map.put("ts", "1555912969");
-                String sign = TikTokGetSign(map, "gacT8bvbGb9X3f52j8bZDtjvkAkhrOZy");
-                Log.i("GBCommonSDKString", sign);
                 //test
             }
 
@@ -210,11 +204,30 @@ public class MainActivity extends UnityPlayerActivity {
                 int age = GBCommonSDK.getService(IUnionService.class).getAgeType();
                 Log.i("GBCommonSDK", "Login3 age:" + age);
                 //// access_token，用于换取 sdk_open_id
+
+                long timestamp = System.currentTimeMillis() / 1000;
+                Map<String, Object> map = new HashMap<>();
+                map.put("app_id", "554726");
+                map.put("access_token", userInfoResult.data.getToken());
+                map.put("ts", timestamp);
+                String sign = TikTokGetSign(map, "gacT8bvbGb9X3f52j8bZDtjvkAkhrOZy");
+                Log.i("GBCommonSDK", "GBCommonSDKapp_id: " + "554726");
+                Log.i("GBCommonSDK", "GBCommonSDKaccess_token: " + userInfoResult.data.getToken());
+                Log.i("GBCommonSDK", "GBCommonSDKts: " + timestamp);
+                Log.i("GBCommonSDK", "GBCommonSDKsign: " + sign);
+
                 UnityPlayer.UnitySendMessage("Global", "OnRecvTikTokAccesstoken", userInfoResult.data.getToken());
             }
 
             @Override
             public void onFailed(@Nullable UserInfoResult userInfoResult) {
+                // 创建Gson对象
+                Gson gson = new Gson();
+                // 将学生对象转换为JSON字符串
+                String jsonString = gson.toJson(userInfoResult);
+                Log.i("GBCommonSDK", "Login2:" + jsonString);
+
+                Log.i("GBCommonSDK", "Login3 onFailed:" + jsonString);
                 Toast.makeText(activity, "login faild", Toast.LENGTH_SHORT).show();
             }
         });

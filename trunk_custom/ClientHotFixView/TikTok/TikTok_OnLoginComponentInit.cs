@@ -34,7 +34,7 @@ namespace ET
             EventType.TikTokRiskControlInfo args = a as EventType.TikTokRiskControlInfo;
 
             Log.ILog.Debug("uilogincomponent.OnTikTokAccesstokenHandler");
-            GameObject.Find("Global").GetComponent<Init>().OnTikTokAccesstokenHandler = args.RiskControlInfoHandler;
+            GameObject.Find("Global").GetComponent<Init>().OnRiskControlInfoHandler = args.RiskControlInfoHandler;
 
             GameObject.Find("Global").GetComponent<Init>().TikTokRiskControlInfo();
         }
