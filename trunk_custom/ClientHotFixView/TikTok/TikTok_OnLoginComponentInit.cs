@@ -46,11 +46,16 @@ namespace ET
         protected override void Run(object a)
         {
             EventType.TikTokPayRequest args = a as EventType.TikTokPayRequest;
-            TikTokPay tikTokPay = JsonHelper.FromJson<TikTokPay>(args.PayMessage);
+
+            string[] parminfolist = args.PayMessage.Split('&');
+            string dinghaoid = parminfolist[0];
+
+            Log.Debug($"TikTokPayMessage: {args.PayMessage}");
+            TikTokPay tikTokPay = JsonHelper.FromJson<TikTokPay>(parminfolist[0]);
             if (tikTokPay.code == 0 && tikTokPay.message.Equals("success"))
             {
                 //TikTokPay(String cpOrderId, int amountInCent, String productId, String productName, String sdkParam)
-                GameObject.Find("Global").GetComponent<Init>().TikTokPay("", 1, "1", "6钻石", tikTokPay.sdk_param);
+                GameObject.Find("Global").GetComponent<Init>().TikTokPay(dinghaoid, 1, "6", "钻石", tikTokPay.sdk_param);
             }
             else
             {
