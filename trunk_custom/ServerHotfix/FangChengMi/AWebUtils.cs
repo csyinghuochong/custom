@@ -48,7 +48,7 @@ namespace ET
 			}
 		}
 
-		public static string OnWebRequestPost_2(string url, string body, string ContentType, Dictionary<string, string> dic)
+		public static string OnWebRequestPost_FangChenMi(string url, string body, string ContentType, Dictionary<string, string> dic)
 		{
 			ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
 

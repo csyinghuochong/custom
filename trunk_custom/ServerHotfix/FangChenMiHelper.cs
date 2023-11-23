@@ -53,7 +53,7 @@ namespace ET
                 });
             }
             else
-                res = AWebUtils.OnWebRequestPost_2(url, data, "application/json; charset=utf-8", new Dictionary<string, string>()
+                res = AWebUtils.OnWebRequestPost_FangChenMi(url, data, "application/json; charset=utf-8", new Dictionary<string, string>()
             {
                 { "appId", FangChenMi_appid },
                 { "bizId", FangChenMi_bizid},
