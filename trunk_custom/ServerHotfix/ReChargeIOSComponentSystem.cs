@@ -9,6 +9,7 @@ namespace ET
     {
         public override void Awake(ReChargeIOSComponent self)
         {
+            Log.Console($"ReChargeIOSComponent.Awake");
             self.PayLoadList.Clear();   
         }
     }

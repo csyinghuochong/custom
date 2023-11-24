@@ -17,6 +17,7 @@ namespace ET
     {
         public override void Awake(ReChargeWXComponent self)
         {
+            Log.Console($"ReChargeWXComponent.Awake");
             self.WeChatPayResultListener();
         }
     }
