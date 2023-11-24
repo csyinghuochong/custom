@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 978
+  version: 980
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -5478,6 +5478,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Role/UIItem.prefab
   - bundle: fa7921a210fd1bc8d31696439dfab329.unity3d
     path: Assets/Bundles/UI/Main/Role/UIOneSellSet.prefab
+  - bundle: f918898318891374d7a5fca2ce4fd263.unity3d
+    path: Assets/Bundles/UI/Main/Role/UIPropertyHint.prefab
   - bundle: 22bb40921f3f61ed7699caf23a60e47c.unity3d
     path: Assets/Bundles/UI/Main/Role/UIRole.prefab
   - bundle: af8b3a68e91a8af9c27b14147e465ab8.unity3d
@@ -5524,6 +5526,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Season/UISeasonHome.prefab
   - bundle: 39bf6d59a4cdf48003693b741b6d3e03.unity3d
     path: Assets/Bundles/UI/Main/Season/UISeasonJingHe.prefab
+  - bundle: 1f28b444f1d6257aa05a17b0eabb52c4.unity3d
+    path: Assets/Bundles/UI/Main/Season/UISeasonJingHeZhuru.prefab
   - bundle: 2cf136e3b8759536fb3070398223d4cb.unity3d
     path: Assets/Bundles/UI/Main/Season/UISeasonLordDetail.prefab
   - bundle: 35f2cc510b009266e07e9e76e3d1fb5c.unity3d
@@ -6116,6 +6120,10 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Monster/70003012.prefab
   - bundle: b3670f378c7db8f300542d4212d160d3.unity3d
     path: Assets/Bundles/Unit/Monster/70003016.prefab
+  - bundle: 4a1df1bc537778a66ee56e226ae8be74.unity3d
+    path: Assets/Bundles/Unit/Monster/70003019.prefab
+  - bundle: d47ec70dd45aca5dfcba098d4d565b29.unity3d
+    path: Assets/Bundles/Unit/Monster/70003020.prefab
   - bundle: 2cc5acef42111e3e56235dff81bc3d5f.unity3d
     path: Assets/Bundles/Unit/Monster/70004003.prefab
   - bundle: 3c1c144e7915a312ba06512d255fcadc.unity3d
@@ -7943,6 +7951,12 @@ MonoBehaviour:
   - name: b3670f378c7db8f300542d4212d160d3.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/70003016.prefab
+  - name: 4a1df1bc537778a66ee56e226ae8be74.unity3d
+    assets:
+    - Assets/Bundles/Unit/Monster/70003019.prefab
+  - name: d47ec70dd45aca5dfcba098d4d565b29.unity3d
+    assets:
+    - Assets/Bundles/Unit/Monster/70003020.prefab
   - name: 2cc5acef42111e3e56235dff81bc3d5f.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/70004003.prefab
@@ -9743,6 +9757,9 @@ MonoBehaviour:
   - name: fa7921a210fd1bc8d31696439dfab329.unity3d
     assets:
     - Assets/Bundles/UI/Main/Role/UIOneSellSet.prefab
+  - name: f918898318891374d7a5fca2ce4fd263.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Role/UIPropertyHint.prefab
   - name: 22bb40921f3f61ed7699caf23a60e47c.unity3d
     assets:
     - Assets/Bundles/UI/Main/Role/UIRole.prefab
@@ -9812,6 +9829,9 @@ MonoBehaviour:
   - name: 39bf6d59a4cdf48003693b741b6d3e03.unity3d
     assets:
     - Assets/Bundles/UI/Main/Season/UISeasonJingHe.prefab
+  - name: 1f28b444f1d6257aa05a17b0eabb52c4.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Season/UISeasonJingHeZhuru.prefab
   - name: 2cf136e3b8759536fb3070398223d4cb.unity3d
     assets:
     - Assets/Bundles/UI/Main/Season/UISeasonLordDetail.prefab
@@ -13281,13 +13301,13 @@ MonoBehaviour:
     - Assets/Res/Effect/EffectsSharde/ToonShading/Shaders/ToonLitOutline.shader
     - Assets/Res/Effect/EffectsSharde/ToonShading/Shaders/ToonLit.shader
     - Assets/Res/Models/Warrior/Suriyun/UnityChanShader/Shader/Unitychan_chara_hada.shader
+    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/JR1/Effects/Shaders/Builtin/Particle
+      Add.shader
     - Assets/Mono/GameDemo/ArtResource/Shaders/Mobile-Particle-Add-Top.shader
     - Assets/Mono/GameDemo/ArtResource/Shaders/Mobile-Particle-Alpha-DetachAlpha-Top.shader
     - Assets/Mono/GameDemo/Editor Default Resources/Simple Character Pack/Shader/ToonTransparent.shader
     - Assets/Res/Effect/BackBlur/BackBlur.shader
     - Assets/Res/Shader/SimpleAlpha.shader
-    - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/JR1/Effects/Shaders/Builtin/Particle
-      Add.shader
     - Assets/Res/Effect/EffectResSet/Effect/E3D-RenderCore/Shader/ShaderB/E3DEffect-C1-Add.shader
     - Assets/Res/Effect/EffectResSet/Effect/E3D-RenderCore/Shader/ShaderB/E3DEffect-C2-Add-Glow.shader
     - Assets/Res/Effect/EffectResSet/Effect/E3D-RenderCore/Shader/ShaderB/E3DEffect-C1-Add-Disslove.shader
@@ -13793,6 +13813,102 @@ MonoBehaviour:
   - name: 2a9e3c1ea91176f39d47c5ec8ae2515c.unity3d
     assets:
     - Assets/Res/Models/MonsterModel/ZhangJie_5/HuoZhiZhu/TARANTULA.png
+  - name: 1794fee726b7159e59c914e94b14f0d4.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Die.FBX
+  - name: 82bab33146fec75e3b40b45d125b53bf.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf.FBX
+  - name: ac7e0bec876b135e1d8008d5027171b3.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Walk
+      Forward In Place.FBX
+  - name: 55432850e319cec875eb95eb28b86d6f.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Look
+      Left Right.FBX
+  - name: caf248c90fed30c2a10194f95594a73c.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Bite
+      Attack.FBX
+  - name: 75371eee23329505ad2dbc857e4e137a.unity3d
+    assets:
+    - Assets/Res/Models/MonsterModel/Animator/70004020.controller
+  - name: 4081971223aef1ac32cf6ba8b9d9a403.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf.controller
+  - name: 508c6392a1c7ee2b01858d616b36f034.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Sniff.FBX
+  - name: 0649245979143ae5b45006cceda7939f.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Run
+      Forward In Place.FBX
+  - name: 69818858a6445b173b9bc758287cb2f0.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Pounce
+      Attack In Place.FBX
+  - name: 25012b114c9fdcaafa3f7499f69d8807.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/Textures/Wolf.psd
+  - name: d31a39305eed36c5ce3c89ab36300c1e.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Turn
+      Left.FBX
+  - name: 3575b07074d60464f59b9a638bad1bd7.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Walk
+      Forward W Root.FBX
+  - name: 5af217339d8c464891795ea7419ddfec.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Jump
+      In Place.FBX
+  - name: 76a72561df3bcc70d6fba3f251bad321.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Jump
+      W Root.FBX
+  - name: b7ca4287bdcbe40f36b840a0e48153d8.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Run
+      Forward W Root.FBX
+  - name: d3f62b733ed186baf29722bee31079a2.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Cast
+      Spell.FBX
+  - name: cb2e911df59d69b0e653986d1036029b.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Turn
+      Right.FBX
+  - name: d0655651d15eeeea17dbd16b657d13ff.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Happy.FBX
+  - name: 8c3295cfb19178f945c74b109b60a938.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Pounce
+      Attack W Root.FBX
+  - name: 78405d6495701f63da79e9c021d8a3c6.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Idle.FBX
+  - name: 72066a5ada85572890942ac0aeff41a2.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Take
+      Damage.FBX
+  - name: df465e1bdbb93443d3e7178eb4e20376.unity3d
+    assets:
+    - Assets/Res/MonsterSet/Monsters Ultimate Pack 02 Cute Series/Wolf Cute Series/FBX/Wolf@Projectile
+      Attack.FBX
+  - name: 18c3fe2b607ed9b89d6044ebdabe548c.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Monster/Old/Ice/Boss_LangShouLing.fbx
+  - name: c45b6896451755d215e91a91288a8a22.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Monster/Old/Ice/Texture/MIRKA1.png
+  - name: 11b383413c9fbe119759b93f13aed666.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Monster/Old/Ice/Materials/Mirka__Mirka_Base_Mat.mat
+  - name: c60ccafdeccc7bb8fc220be17afeb92d.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Monster/Old/Ice/Boss_LangShouLing.controller
   - name: 8313c30cc2c329cd84060e18c1804e4c.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Monster/Old/KuangDong/LaoShu_1.controller
@@ -16646,6 +16762,12 @@ MonoBehaviour:
   - name: 004eb541b328cfbc78626bec513d9e01.unity3d
     assets:
     - Assets/Res/UI/UIRes/Atlas/MainUI/Pro_17.png
+  - name: 26307fdd4256b6c818cd8dd18bcfb50a.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Button/Img_272.Png
+  - name: 5f6d022f1ee907905736f7db80fddf5e.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_43.png
   - name: d7ca1c1cc7eec10d0b332eec4ea4bd3a.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_440.png
@@ -16685,12 +16807,6 @@ MonoBehaviour:
   - name: 680b6c0e3f613f2b3b5785bd9ec71057.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_423.png
-  - name: 5f6d022f1ee907905736f7db80fddf5e.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_43.png
-  - name: 26307fdd4256b6c818cd8dd18bcfb50a.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Button/Img_272.Png
   - name: 591f54e8ea8d58a8230f42c1f99b2722.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_191.png
@@ -16751,6 +16867,9 @@ MonoBehaviour:
   - name: d29c07a21113dd6300e9413a5dea34ff.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_396.png
+  - name: 4c1fd29731397b71c84fc1618725e8f3.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Pro/Pro_19.png
   - name: b86e2b799d5ef05767c524f44f9feaa1.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_238.png
