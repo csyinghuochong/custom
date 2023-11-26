@@ -152,6 +152,10 @@ namespace ET
                 {
                     return;
                 }
+                if (!aliPayResultDic.ContainsKey("cp_order_id"))
+                {
+                    return;
+                }
                
                 string orderId = aliPayResultDic["cp_order_id"];
                 if (aliPayResultDic["status"] == "2" && !self.OrderDic.ContainsKey(orderId))
