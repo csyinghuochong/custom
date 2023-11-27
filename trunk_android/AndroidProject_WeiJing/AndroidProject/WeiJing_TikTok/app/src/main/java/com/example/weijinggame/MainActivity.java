@@ -20,6 +20,12 @@ import android.widget.Toast;
 
 import com.bytedance.ttgame.tob.common.host.api.GBCommonSDK;
 import com.bytedance.ttgame.tob.common.host.api.callback.InitCallback;
+import com.bytedance.ttgame.tob.optional.share.api.IShareService;
+import com.bytedance.ttgame.tob.optional.share.api.TTShareContentType;
+import com.bytedance.ttgame.tob.optional.share.api.TTShareItemType;
+import com.bytedance.ttgame.tob.optional.share.api.TTShareModel;
+import com.bytedance.ttgame.tob.optional.share.api.TTShareResult;
+import com.bytedance.ttgame.tob.optional.share.api.callback.TTShareEventCallback;
 import com.bytedance.ttgame.tob.optional.union.api.IUnionService;
 import com.bytedance.ttgame.tob.optional.union.api.account.IAccountCallback;
 import com.bytedance.ttgame.tob.optional.union.api.account.ISwitchCallback;
@@ -56,6 +62,8 @@ import gbsdk.android.support.annotation.Nullable;
 import gbsdk.android.support.graphics.drawable.VectorDrawableCompat;
 
 import com.google.gson.Gson;
+
+import org.json.JSONObject;
 
 
 public class MainActivity extends UnityPlayerActivity {
@@ -233,7 +241,25 @@ public class MainActivity extends UnityPlayerActivity {
         });
     }
 
-    public static String TikTokGetSign(Map<String, Object> params, String secretKey){
+    //分享图片
+    public void TikTokShareImage( ArrayList<String> imageList)  {
+        Log.i("GBCommonSDK", "TikTokShareImage" );
+        // 抖音图片分享
+        TTShareModel model = new TTShareModel.Builder()
+                .setImageList(imageList)
+                .setShareType(TTShareItemType.DY)
+                .setShareContentType(TTShareContentType.IMAGE)
+                .setEventCallBack(new TTShareEventCallback() {
+                    @Override
+                    public void onShareResultEvent(TTShareResult ttShareResult) {
+                        Toast.makeText(activity,ttShareResult.toString(),Toast.LENGTH_LONG).show();
+                    }
+                })
+                .build();
+        GBCommonSDK.getService(IShareService.class).share(activity, model);
+    }
+
+    public String TikTokGetSign(Map<String, Object> params, String secretKey){
         //给参数进行排序，游戏方自己实现排序算法，通过各种方式都可以，只要实现key按字母从小到大排序即可
         Map<String, Object> sortMap = new TreeMap<>(new Comparator<String>() {
             @Override
