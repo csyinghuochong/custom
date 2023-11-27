@@ -7,8 +7,9 @@ namespace ET
     {
         protected override void Run(EventType.AppStart args)
         {
-            Log.ILog.Debug("AppStart_Init_Custom");
-
+            int packetSize = TimeHelper.GetRandomNumber();
+            Log.ILog.Debug($"AppStart_Init_Custom: {packetSize}");
+            PacketParser.OuterPacketSizeLengthC = packetSize;
             ///技能按钮事件
         }
     }
