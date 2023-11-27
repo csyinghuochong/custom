@@ -147,6 +147,7 @@ namespace ET
                     return;
                 }
 
+                //pay_notice:  actual_amount=1&amount=1&app_id=554726&coupon_amount=0&cp_order_id=17010753398140_57_6&create_time=1701075340&extra_info=0&log_id=202311271656098315D39CC54AF2033169&order_extra_info={"order_id":"7306062664285838134","union_mode":1}&pay_time=1701075370&product_id=6&product_name=钻石&sdk_open_id=7303474616922905355&sign=TBYuLPAgegHZp2TYqsx/3mvLPmo=&status=2
                 Dictionary<string, string> aliPayResultDic = self.StringToDictionary(pay_notice);
                 if (aliPayResultDic == null)
                 {
@@ -158,7 +159,7 @@ namespace ET
                 }
                
                 string orderId = aliPayResultDic["cp_order_id"];
-                if (aliPayResultDic["status"] == "2" && !self.OrderDic.ContainsKey(orderId))
+                if (aliPayResultDic["status"] == "2" && self.OrderDic.ContainsKey(orderId))
                 {
                     string userInfo = self.OrderDic[orderId];
                     long userId = long.Parse(userInfo.Split('_')[0]);

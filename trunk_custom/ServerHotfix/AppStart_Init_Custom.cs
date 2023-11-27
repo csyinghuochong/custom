@@ -9,9 +9,11 @@ namespace ET
         protected override void Run(EventType.AppStart args)
         {
             //服务器列表移过来
-            Log.Console("AppStart_Init_Custom");
-            //ComHelp.AccountOldLogic = true;
-            //SkillHelp.CleanSkill = true;
+            ComHelp.AccountOldLogic = true;
+            SkillHelp.CleanSkill = true;
+            int packetSize = TimeHelper.GetRandomNumber();
+            Log.Console($"AppStart_Init_Custom: {packetSize}");
+            PacketParser.OuterPacketSizeLengthS = packetSize;
         }
     }
 }
