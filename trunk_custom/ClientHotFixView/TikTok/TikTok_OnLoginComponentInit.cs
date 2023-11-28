@@ -41,6 +41,19 @@ namespace ET
     }
 
     [Event]
+    public class TikTok_OnTikTokShare : AEventClass<EventType.TikTokShare>
+    {
+        protected override void Run(object a)
+        {
+            EventType.TikTokShare args = a as EventType.TikTokShare;
+
+            Log.ILog.Debug("TikTokShare");
+            GameObject.Find("Global").GetComponent<Init>().OnShareHandler = args.ShareHandler;
+            GameObject.Find("Global").GetComponent<Init>().TikTokShareImage(args.ShareMessage);
+        }
+    }
+
+    [Event]
     public class TikTok_OnTikTokPayRequest : AEventClass<EventType.TikTokPayRequest>
     {
         protected override void Run(object a)

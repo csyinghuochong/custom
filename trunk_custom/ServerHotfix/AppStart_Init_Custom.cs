@@ -11,9 +11,9 @@ namespace ET
             //服务器列表移过来
             ComHelp.AccountOldLogic = true;
             SkillHelp.CleanSkill = true;
-            int packetSize = TimeHelper.GetRandomNumber();
-            Log.Console($"AppStart_Init_Custom: {packetSize}");
-            PacketParser.OuterPacketSizeLengthS = packetSize;
+            //int packetSize = GMHelp.GetRandomNumber();
+            //Log.Console($"AppStart_Init_Custom: {packetSize}");
+            //PacketParser.OuterPacketSizeLengthS = packetSize;
         }
     }
 }
