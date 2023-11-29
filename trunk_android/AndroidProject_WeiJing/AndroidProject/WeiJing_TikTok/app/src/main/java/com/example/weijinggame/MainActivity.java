@@ -1,12 +1,15 @@
 package com.example.weijinggame;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -44,6 +47,9 @@ import com.unity3d.player.UnityPlayer;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -54,12 +60,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.TimeUnit;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 import gbsdk.android.support.annotation.Nullable;
 import gbsdk.android.support.graphics.drawable.VectorDrawableCompat;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 import com.google.gson.Gson;
 
@@ -241,6 +251,51 @@ public class MainActivity extends UnityPlayerActivity {
         });
     }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    public  void UpLoadWeiJingImage( String imageurl ) {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .build();
+
+        if (imageurl.isEmpty())
+        {
+            imageurl =  "https://img.71acg.net/kbdev/opensj/20230109/15243214265";
+        }
+        Request request = new Request.Builder()
+                .url(imageurl)
+                .build();
+
+        try (Response response = client.newCall(request).execute()) {
+            if (response.isSuccessful()) {
+                InputStream inputStream = response.body().byteStream();
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                inputStream.close();
+                Log.i("GBCommonSDK", "response.isSuccessful1:");
+
+                File file = new File(this.getCacheDir(), "weijing2023.jpg");
+                try (FileOutputStream fos = new FileOutputStream(file)) {
+
+                    Log.i("GBCommonSDK", "response.isSuccessful2:");
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                    fos.flush();
+                } catch (IOException e) {
+                    Log.i("GBCommonSDK", "response.处理异常1:");
+                    // TODO: 处理异常
+                }
+            } else {
+                Log.i("GBCommonSDK", "response.处理异常2:");
+                // TODO: 处理失败响应
+            }
+        } catch (IOException e) {
+            Log.i("GBCommonSDK", "response.处理异常3:");
+            // TODO: 处理异常
+        }
+
+    }
+
+    public  int shareTimes = 0;
     //分享图片
     public void TikTokShareImage( String imageinfo, String vedioInfo )  {
 
@@ -248,15 +303,35 @@ public class MainActivity extends UnityPlayerActivity {
 
         String[] string1List = imageinfo.split("&");
 
+       String imageUrl = string1List[0];
+       UpLoadWeiJingImage(imageUrl);
+
+       String link = string1List[1];
+
         ArrayList<String> imageList = new ArrayList<String>();
-        for(int i = 0; i < string1List.length; i++)
+
+        if(shareTimes == 0)
         {
-            imageList.add( string1List[i] );
-            Log.i("GBCommonSDK", "TikTokSImage:" + string1List[i]);
+            imageList.add(this.getCacheDir() + "weijing2023.jpg");
+            Log.i("GBCommonSDK", "shareTimes1:");
         }
+        if(shareTimes == 1)
+        {
+            imageList.add(this.getCacheDir() + "./weijing2023.jpg");
+            Log.i("GBCommonSDK", "shareTimes2:");
+        }
+        if(shareTimes == 2)
+        {
+            imageList.add("weijing2023.jpg");
+            Log.i("GBCommonSDK", "shareTimes3:");
+        }
+
+
 
         // 抖音图片分享
         TTShareModel model = new TTShareModel.Builder()
+                .setTitle("危境")
+                .setLinkUrl(link)
                 .setImageList(imageList)
                 .setShareType(TTShareItemType.DY)   //抖音发布页(DY)  //抖音好友(DY_IM)
                 .setShareContentType(TTShareContentType.IMAGE)    //片分享(IMAGE)
@@ -272,9 +347,7 @@ public class MainActivity extends UnityPlayerActivity {
 
     //分享图片
     public void TikTokShareFriend( String imageinfo, String vedioInfo )  {
-
         Log.i("GBCommonSDK", "TikTokShareImage1:" + imageinfo);
-
         String[] string1List = imageinfo.split("&");
 
         ArrayList<String> imageList = new ArrayList<String>();
