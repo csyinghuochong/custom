@@ -4,12 +4,12 @@ using System.Linq;
 namespace ET
 {
 #if SERVER
-        [ConsoleHandler(ConsoleMode.Level)]
+    [ConsoleHandler(ConsoleMode.Level)]
 
-        public class LevelConsoleHandler : IConsoleHandler
+    public class LevelConsoleHandler : IConsoleHandler
+    {
+        public async ETTask Run(ModeContex contex, string content)
         {
-            public async ETTask Run(ModeContex contex, string content)
-            {
             switch (content)
             {
                 case ConsoleMode.ChaXun:
@@ -32,7 +32,7 @@ namespace ET
 
                     int zone = int.Parse(chaxunInfo[1]);
 
-                    List<int> zonlist = new  List<int> {  };
+                    List<int> zonlist = new List<int> { };
 
                     if (zone == 0)
                     {
@@ -55,13 +55,13 @@ namespace ET
                         zonlist.Add(zone);
                     }
 
-                    for( int i = 0; i < zonlist.Count; i++ )
+                    for (int i = 0; i < zonlist.Count; i++)
                     {
                         int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
 
                         long dbCacheId = DBHelper.GetDbCacheId(pyzone);
 
-                        Dictionary<int,int> levelPlayerCount = new Dictionary<int, int>();  
+                        Dictionary<int, int> levelPlayerCount = new Dictionary<int, int>();
 
                         List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
                         for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
@@ -80,11 +80,11 @@ namespace ET
                             {
                                 levelPlayerCount[userInfoComponent.UserInfo.Lv]++;
                             }
-                            
+
                         }
 
                         string levelInfo = $"{pyzone}区玩家等级列表： \n";
-                        for(int level = 1; level <= 65; level++)
+                        for (int level = 1; level <= 65; level++)
                         {
                             int levelnumber = 0;
                             levelPlayerCount.TryGetValue(level, out levelnumber);
@@ -99,6 +99,6 @@ namespace ET
             await ETTask.CompletedTask;
 
         }
-        }
+    }
 #endif
 }
