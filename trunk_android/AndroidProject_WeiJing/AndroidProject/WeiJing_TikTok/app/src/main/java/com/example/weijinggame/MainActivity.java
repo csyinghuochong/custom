@@ -242,7 +242,19 @@ public class MainActivity extends UnityPlayerActivity {
     }
 
     //分享图片
-    public void TikTokShareImage( ArrayList<String> imageList)  {
+    public void TikTokShareImage( String imageinfo, String vedioInfo )  {
+
+        Log.i("GBCommonSDK", "TikTokShareImage1:" + imageinfo);
+        Log.i("GBCommonSDK", "TikTokShareImage2" + vedioInfo);
+
+        String[] string1List = imageinfo.split("&");
+
+        ArrayList<String> imageList = new ArrayList<String>();
+        for(int i = 0; i < string1List.length; i++)
+        {
+            imageList.add( string1List[i] );
+        }
+
         Log.i("GBCommonSDK", "TikTokShareImage" );
         // 抖音图片分享
         TTShareModel model = new TTShareModel.Builder()
