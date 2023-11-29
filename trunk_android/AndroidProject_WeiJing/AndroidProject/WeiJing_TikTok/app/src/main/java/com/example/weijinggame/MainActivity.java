@@ -245,7 +245,6 @@ public class MainActivity extends UnityPlayerActivity {
     public void TikTokShareImage( String imageinfo, String vedioInfo )  {
 
         Log.i("GBCommonSDK", "TikTokShareImage1:" + imageinfo);
-        Log.i("GBCommonSDK", "TikTokShareImage2" + vedioInfo);
 
         String[] string1List = imageinfo.split("&");
 
@@ -253,14 +252,43 @@ public class MainActivity extends UnityPlayerActivity {
         for(int i = 0; i < string1List.length; i++)
         {
             imageList.add( string1List[i] );
+            Log.i("GBCommonSDK", "TikTokSImage:" + string1List[i]);
         }
 
-        Log.i("GBCommonSDK", "TikTokShareImage" );
         // 抖音图片分享
         TTShareModel model = new TTShareModel.Builder()
                 .setImageList(imageList)
-                .setShareType(TTShareItemType.DY)
-                .setShareContentType(TTShareContentType.IMAGE)
+                .setShareType(TTShareItemType.DY)   //抖音发布页(DY)  //抖音好友(DY_IM)
+                .setShareContentType(TTShareContentType.IMAGE)    //片分享(IMAGE)
+                .setEventCallBack(new TTShareEventCallback() {
+                    @Override
+                    public void onShareResultEvent(TTShareResult ttShareResult) {
+                        Toast.makeText(activity,ttShareResult.toString(),Toast.LENGTH_LONG).show();
+                    }
+                })
+                .build();
+        GBCommonSDK.getService(IShareService.class).share(activity, model);
+    }
+
+    //分享图片
+    public void TikTokShareFriend( String imageinfo, String vedioInfo )  {
+
+        Log.i("GBCommonSDK", "TikTokShareImage1:" + imageinfo);
+
+        String[] string1List = imageinfo.split("&");
+
+        ArrayList<String> imageList = new ArrayList<String>();
+        for(int i = 0; i < string1List.length; i++)
+        {
+            imageList.add( string1List[i] );
+            Log.i("GBCommonSDK", "TikTokSImage:" + string1List[i]);
+        }
+
+        // 抖音图片分享
+        TTShareModel model = new TTShareModel.Builder()
+                .setImageList(imageList)
+                .setShareType(TTShareItemType.DY_IM)   //抖音发布页(DY)  //抖音好友(DY_IM)
+                .setShareContentType(TTShareContentType.IMAGE)    //片分享(IMAGE)
                 .setEventCallBack(new TTShareEventCallback() {
                     @Override
                     public void onShareResultEvent(TTShareResult ttShareResult) {
