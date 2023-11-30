@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
@@ -301,6 +302,8 @@ public class MainActivity extends UnityPlayerActivity {
     public void TikTokShareImage( String imageinfo, String vedioInfo )  {
 
         Log.i("GBCommonSDK", "TikTokShareImage1:" + imageinfo);
+        Log.i("GBCommonSDK", "TikTokShareImage2:" + Environment.getExternalStorageDirectory().getPath());
+
 
         String[] string1List = imageinfo.split("&");
 
@@ -310,6 +313,16 @@ public class MainActivity extends UnityPlayerActivity {
        String link = string1List[1];
 
         ArrayList<String> imageList = new ArrayList<String>();
+
+
+        File file = new File(this.getCacheDir() + "/weijing2023.jpg");
+        if (file.exists()) {
+            // 文件存在
+            Log.i("GBCommonSDK", "TikTokShareImage1:文件存在" );
+        } else {
+            // 文件不存在
+            Log.i("GBCommonSDK", "TikTokShareImage1:文件不存在" );
+        }
 
         if(shareTimes == 0)
         {
