@@ -274,10 +274,11 @@ public class MainActivity extends UnityPlayerActivity {
                 inputStream.close();
                 Log.i("GBCommonSDK", "response.isSuccessful1:");
 
-                File file = new File(this.getCacheDir(), "weijing2023.jpg");
-                try (FileOutputStream fos = new FileOutputStream(file)) {
+                File file = new File(this.getCacheDir() + "/weijing2023.jpg");
+                String imgPath = this.getCacheDir() + "/weijing2023.jpg";
 
-                    Log.i("GBCommonSDK", "response.isSuccessful2:");
+                try (FileOutputStream fos = new FileOutputStream(file)) {
+                    Log.i("GBCommonSDK", "response.isSuccessful2:" +  imgPath);
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
                     fos.flush();
                 } catch (IOException e) {
@@ -312,22 +313,20 @@ public class MainActivity extends UnityPlayerActivity {
 
         if(shareTimes == 0)
         {
-            imageList.add(this.getCacheDir() + "weijing2023.jpg");
+            imageList.add(this.getCacheDir() + "/weijing2023.jpg");
             Log.i("GBCommonSDK", "shareTimes1:");
         }
         if(shareTimes == 1)
         {
-            imageList.add(this.getCacheDir() + "./weijing2023.jpg");
+            imageList.add("weijing2023.jpg");
             Log.i("GBCommonSDK", "shareTimes2:");
         }
-        if(shareTimes == 2)
+        Log.i("GBCommonSDK",  imageList.get(0));
+        shareTimes++;
+        if(shareTimes > 1)
         {
-            imageList.add("weijing2023.jpg");
-            Log.i("GBCommonSDK", "shareTimes3:");
+            shareTimes = 0;
         }
-
-
-
         // 抖音图片分享
         TTShareModel model = new TTShareModel.Builder()
                 .setTitle("危境")
