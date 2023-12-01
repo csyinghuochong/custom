@@ -254,6 +254,9 @@ public class MainActivity extends UnityPlayerActivity {
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public  void UpLoadWeiJingImage( String imageurl ) {
+
+        //先申请存储权限
+
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
@@ -275,8 +278,22 @@ public class MainActivity extends UnityPlayerActivity {
                 inputStream.close();
                 Log.i("GBCommonSDK", "response.isSuccessful1:");
 
-                File file = new File(this.getCacheDir() + "/weijing2023.jpg");
-                String imgPath = this.getCacheDir() + "/weijing2023.jpg";
+                String folderPath = activity.getExternalFilesDir("").getAbsolutePath() + "/download";
+                Log.i("GBCommonSDK。folderPath", folderPath);
+                File folderdownload = new File(folderPath);
+                if (!folderdownload.exists()) {
+                    boolean success = folderdownload.mkdir();
+                    if (success) {
+                        Log.i("GBCommonSDK", "创建文件夹成功" );
+                    } else {
+                        Log.i("GBCommonSDK", "创建文件夹失败:" );
+                    }
+                } else {
+                    Log.i("GBCommonSDK", "文件夹已存在" );
+                }
+
+                File file = new File(activity.getExternalFilesDir("").getAbsolutePath() +  "/download/weijing2023.jpg");
+                String imgPath = GetImagePath_2();
 
                 try (FileOutputStream fos = new FileOutputStream(file)) {
                     Log.i("GBCommonSDK", "response.isSuccessful2:" +  imgPath);
@@ -294,7 +311,14 @@ public class MainActivity extends UnityPlayerActivity {
             Log.i("GBCommonSDK", "response.处理异常3:");
             // TODO: 处理异常
         }
+    }
 
+    public String GetImagePath_2() {
+        return activity.getExternalFilesDir("").getAbsolutePath() +  "/download/weijing2023.jpg";
+    }
+
+    public  String GetImagePath() {
+        return  Environment.getExternalStorageDirectory() + File.separator  + "weijing2023.jpg";
     }
 
     public  int shareTimes = 0;
@@ -302,8 +326,7 @@ public class MainActivity extends UnityPlayerActivity {
     public void TikTokShareImage( String imageinfo, String vedioInfo )  {
 
         Log.i("GBCommonSDK", "TikTokShareImage1:" + imageinfo);
-        Log.i("GBCommonSDK", "TikTokShareImage2:" + Environment.getExternalStorageDirectory().getPath());
-
+        Log.i("GBCommonSDK", "TikTokShareImagegetExternalStorageDirectory2:" + GetImagePath_2());
 
         String[] string1List = imageinfo.split("&");
 
@@ -315,7 +338,7 @@ public class MainActivity extends UnityPlayerActivity {
         ArrayList<String> imageList = new ArrayList<String>();
 
 
-        File file = new File(this.getCacheDir() + "/weijing2023.jpg");
+        File file = new File(GetImagePath_2());
         if (file.exists()) {
             // 文件存在
             Log.i("GBCommonSDK", "TikTokShareImage1:文件存在" );
@@ -326,12 +349,12 @@ public class MainActivity extends UnityPlayerActivity {
 
         if(shareTimes == 0)
         {
-            imageList.add(this.getCacheDir() + "/weijing2023.jpg");
+            imageList.add(GetImagePath_2());
             Log.i("GBCommonSDK", "shareTimes1:");
         }
         if(shareTimes == 1)
         {
-            imageList.add("weijing2023.jpg");
+            imageList.add("download/weijing2023.jpg");
             Log.i("GBCommonSDK", "shareTimes2:");
         }
         Log.i("GBCommonSDK",  imageList.get(0));
