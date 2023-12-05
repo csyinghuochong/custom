@@ -255,8 +255,7 @@ public class MainActivity extends UnityPlayerActivity {
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public  void UpLoadWeiJingImage( String imageurl ) {
 
-        //先申请存储权限
-
+        //先申请存储权限WRITE_EXTERNAL_STORAGE
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
@@ -270,13 +269,8 @@ public class MainActivity extends UnityPlayerActivity {
         Request request = new Request.Builder()
                 .url(imageurl)
                 .build();
-
         try (Response response = client.newCall(request).execute()) {
             if (response.isSuccessful()) {
-                InputStream inputStream = response.body().byteStream();
-                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                inputStream.close();
-                Log.i("GBCommonSDK", "response.isSuccessful1:");
 
                 String folderPath = activity.getExternalFilesDir("").getAbsolutePath() + "/download";
                 Log.i("GBCommonSDK。folderPath", folderPath);
@@ -284,25 +278,30 @@ public class MainActivity extends UnityPlayerActivity {
                 if (!folderdownload.exists()) {
                     boolean success = folderdownload.mkdir();
                     if (success) {
-                        Log.i("GBCommonSDK", "创建文件夹成功" );
+                        Log.i("GBCommonSDK", "创建文件夹成功");
                     } else {
-                        Log.i("GBCommonSDK", "创建文件夹失败:" );
+                        Log.i("GBCommonSDK", "创建文件夹失败:");
                     }
                 } else {
-                    Log.i("GBCommonSDK", "文件夹已存在" );
+                    Log.i("GBCommonSDK", "文件夹已存在");
                 }
 
-                File file = new File(activity.getExternalFilesDir("").getAbsolutePath() +  "/download/weijing2023.jpg");
-                String imgPath = GetImagePath_2();
+                File file2 = new File(GetImagePath_2());
 
-                try (FileOutputStream fos = new FileOutputStream(file)) {
-                    Log.i("GBCommonSDK", "response.isSuccessful2:" +  imgPath);
+                InputStream inputStream = response.body().byteStream();
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                inputStream.close();
+                Log.i("GBCommonSDK", "response.isSuccessful1:");
+
+                try (FileOutputStream fos = new FileOutputStream(file2)) {
+                    Log.i("GBCommonSDK", "response.isSuccessful2:" );
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
                     fos.flush();
                 } catch (IOException e) {
                     Log.i("GBCommonSDK", "response.处理异常1:");
                     // TODO: 处理异常
                 }
+
             } else {
                 Log.i("GBCommonSDK", "response.处理异常2:");
                 // TODO: 处理失败响应
@@ -321,48 +320,21 @@ public class MainActivity extends UnityPlayerActivity {
         return  Environment.getExternalStorageDirectory() + File.separator  + "weijing2023.jpg";
     }
 
-    public  int shareTimes = 0;
     //分享图片
     public void TikTokShareImage( String imageinfo, String vedioInfo )  {
 
         Log.i("GBCommonSDK", "TikTokShareImage1:" + imageinfo);
-        Log.i("GBCommonSDK", "TikTokShareImagegetExternalStorageDirectory2:" + GetImagePath_2());
-
         String[] string1List = imageinfo.split("&");
 
-       String imageUrl = string1List[0];
-       UpLoadWeiJingImage(imageUrl);
+        String imageUrl = string1List[0];
+        UpLoadWeiJingImage(imageUrl);
 
-       String link = string1List[1];
-
+        String link = string1List[1];
         ArrayList<String> imageList = new ArrayList<String>();
 
+        imageList.add(GetImagePath_2());
+        Log.i("GBCommonSDK", "shareTimes1:");
 
-        File file = new File(GetImagePath_2());
-        if (file.exists()) {
-            // 文件存在
-            Log.i("GBCommonSDK", "TikTokShareImage1:文件存在" );
-        } else {
-            // 文件不存在
-            Log.i("GBCommonSDK", "TikTokShareImage1:文件不存在" );
-        }
-
-        if(shareTimes == 0)
-        {
-            imageList.add(GetImagePath_2());
-            Log.i("GBCommonSDK", "shareTimes1:");
-        }
-        if(shareTimes == 1)
-        {
-            imageList.add("download/weijing2023.jpg");
-            Log.i("GBCommonSDK", "shareTimes2:");
-        }
-        Log.i("GBCommonSDK",  imageList.get(0));
-        shareTimes++;
-        if(shareTimes > 1)
-        {
-            shareTimes = 0;
-        }
         // 抖音图片分享
         TTShareModel model = new TTShareModel.Builder()
                 .setTitle("危境")
@@ -599,19 +571,19 @@ public class MainActivity extends UnityPlayerActivity {
 
            // if (this.mContext.checkSelfPermission(Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED)
             {
-                Log.i("Permissions", "Permissions INTERNET 0");
+                Log.i("GBCommonSDK", "Permissions INTERNET 0");
                 permissionList.add(Manifest.permission.INTERNET);
             }
            // if (this.mContext.checkSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED)
             {
-                Log.i("Permissions", "Permissions ACCESS_NETWORK_STATE 0");
+                Log.i("GBCommonSDK", "unity Permissions ACCESS_NETWORK_STATE 0");
                 permissionList.add(Manifest.permission.ACCESS_NETWORK_STATE);
             }
 
             //WRITE_EXTERNAL_STORAGE权限是用于授予应用程序对外部存储(即SD卡)进行读写操作的权限
             //if (this.mContext.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
             {
-                Log.i("Permissions", "Permissions WRITE_EXTERNAL_STORAGE 0");
+                Log.i("GBCommonSDK", "Permissions WRITE_EXTERNAL_STORAGE 0");
                 permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
             }
 
@@ -632,11 +604,13 @@ public class MainActivity extends UnityPlayerActivity {
             }
 
             if (!permissionList.isEmpty()) {
+
                 String[] permissions = permissionList.toArray(new String[permissionList.size()]);
+                Log.i("GBCommonSDK", "unity permissions.length  "+  permissions.length);
                 this.activity.requestPermissions(permissions, 1);
             }
             else {
-                Log.i("Permissions2", "Permissions 1_1");
+                Log.i("Permissions2", "unity Permissions 1_1");
                 UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", "1_1");
             }
         } else {
@@ -651,10 +625,10 @@ public class MainActivity extends UnityPlayerActivity {
         switch (requestCode) {
             case 1:
                 for (int result : grantResults) {
-                    Log.i("Permissions111", result + "");
+                    Log.i("GBCommonSDK", "unity:  " + result );
                 }
                 for (String result : permissions) {
-                    Log.i("Permissions222", result + "");
+                    Log.i("GBCommonSDK", "unity:  " + result);
                 }
 
                 if (grantResults.length > 0) {
@@ -703,7 +677,6 @@ public class MainActivity extends UnityPlayerActivity {
                     };
             ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_ADDRESS);
             Log.i("GetPhoneNum_2b", "222");
-            return;
         }
         Log.i("GetPhoneNum_2c", "333");
 
