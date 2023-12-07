@@ -47,9 +47,23 @@ namespace ET
         {
             EventType.TikTokShare args = a as EventType.TikTokShare;
 
-            Log.ILog.Debug("TikTokShare");
             GameObject.Find("Global").GetComponent<Init>().OnShareHandler = args.ShareHandler;
-            GameObject.Find("Global").GetComponent<Init>().TikTokShareImage(args.ShareMessage);
+
+            string string_1 = string.Empty;
+            for (int i = 0; i < args.ShareMessage.Count; i++)
+            {
+                if (i == args.ShareMessage.Count - 1)
+                {
+                    string_1 = string_1 + $"{args.ShareMessage[i]}";
+                }
+                else
+                {
+                    string_1 = string_1 + $"{args.ShareMessage[i]}&";
+                }
+            }
+            string string_2 = string.Empty;
+            Log.ILog.Debug($"TikTokShare: {string_1} \n {string_2}");
+            GameObject.Find("Global").GetComponent<Init>().TikTokShareImage(string_1, string_2);
         }
     }
 
