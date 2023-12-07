@@ -47,7 +47,7 @@ namespace ET
             paramlist.Add("product_amount", (request.RechargeNumber * 100).ToString());  //正式要*100
             paramlist.Add("sdk_open_id", request.Account);
             paramlist.Add("callback_url", @"http://weijinggameservertestpay.weijinggame.com:20005/");
-            paramlist.Add("actual_amount", "1");
+            paramlist.Add("actual_amount", (request.RechargeNumber * 100).ToString());
             //paramlist.Add("coupon_id", "0");
             paramlist.Add("risk_control_info", request.payMessage);
             paramlist.Add("trade_type", "2");

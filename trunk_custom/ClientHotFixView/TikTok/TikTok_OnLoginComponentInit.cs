@@ -77,7 +77,7 @@ namespace ET
             string[] parminfolist = args.PayMessage.Split('&');
             string dinghaoid = parminfolist[0];
 
-            Log.Debug($"TikTokPayMessage: {args.PayMessage}");
+            Log.ILog.Debug($"TikTokPayMessage:  {args.RechargeNumber}   {args.PayMessage}");
             TikTokPay tikTokPay = JsonHelper.FromJson<TikTokPay>(parminfolist[0]);
             if (tikTokPay.code == 0 && tikTokPay.message.Equals("success"))
             {
