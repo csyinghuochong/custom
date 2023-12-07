@@ -44,7 +44,7 @@ namespace ET
             paramlist.Add("product_id", request.RechargeNumber.ToString());
             paramlist.Add("product_name", "钻石");
             paramlist.Add("product_desc", "钻石");
-            paramlist.Add("product_amount", (request.RechargeNumber).ToString());  //正式要*100
+            paramlist.Add("product_amount", (request.RechargeNumber * 100).ToString());  //正式要*100
             paramlist.Add("sdk_open_id", request.Account);
             paramlist.Add("callback_url", @"http://weijinggameservertestpay.weijinggame.com:20005/");
             paramlist.Add("actual_amount", "1");
