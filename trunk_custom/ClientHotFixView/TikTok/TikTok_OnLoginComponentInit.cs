@@ -82,7 +82,7 @@ namespace ET
             if (tikTokPay.code == 0 && tikTokPay.message.Equals("success"))
             {
                 //TikTokPay(String cpOrderId, int amountInCent, String productId, String productName, String sdkParam)
-                GameObject.Find("Global").GetComponent<Init>().TikTokPay(dinghaoid, 1, "6", "钻石", tikTokPay.sdk_param);
+                GameObject.Find("Global").GetComponent<Init>().TikTokPay(dinghaoid, (args.RechargeNumber * 100), args.RechargeNumber.ToString(), "钻石", tikTokPay.sdk_param);
             }
             else
             {
