@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 980
+  version: 1009
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -588,6 +588,8 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_BaoZha_5.prefab
   - bundle: dee3c2d5fcff5918da64d9c4ff581d0e.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_BaoZha_50.prefab
+  - bundle: e69afc1ea1b30df0e7f4a825d34ff99b.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_BaoZha_51.prefab
   - bundle: 2f0429fc7392c2f6db96c93fb3d50315.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_BaoZha_6.prefab
   - bundle: 4f08061983a53019cd399649490d1d68.unity3d
@@ -626,6 +628,8 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_19.prefab
   - bundle: 29275c0547d9a09dda85ce9606fb2426.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_2.prefab
+  - bundle: d0483a90e5f9d72724f52b68faac3bed.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_20.prefab
   - bundle: 75fdf890474fa115941d2f19ce0debb5.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_3.prefab
   - bundle: a6c0b5bd77b27a617d292e90209fd2c0.unity3d
@@ -658,6 +662,8 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChuanSong_3.prefab
   - bundle: 9af55d71c07aa45e6a7c39946ac934d3.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_DianRan.prefab
+  - bundle: 892aeb5017872f9b6f80e4d3f1aaf26f.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_FengBao_1.prefab
   - bundle: 96b93aafdcba5b8e3aa0f4e40867c563.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_FireRain.prefab
   - bundle: f3496463437ba57464fe9358f67361ab.unity3d
@@ -778,6 +784,8 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_MoGuZhaDan.prefab
   - bundle: 6fe1eb5a26b92e5f918734852c267e3d.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_PenHuo_1.prefab
+  - bundle: 1e7607bc34ee9ba53f2b4f01a7bcfd73.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_PenHuo_2.prefab
   - bundle: 0bb8851a8cd70918866b73fbab06c783.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QianChong_1.prefab
   - bundle: c0eb1cc9d0cf07efa6b8a5c8f4e2d7e3.unity3d
@@ -800,6 +808,8 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QunLiao_3.prefab
   - bundle: 45bc90014dd74699914b75f37e606eef.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QunLiao_4.prefab
+  - bundle: 94013951852fd5c245c987296d06fa0f.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QunLiao_5.prefab
   - bundle: bd6cd2ed20a857d4d5d14f4b68ce558f.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_RangeChiXu_1.prefab
   - bundle: 64d0e66dc77a6da94a2f266bb7235252.unity3d
@@ -1823,9 +1833,19 @@ MonoBehaviour:
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/10010093.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/10010096.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/10010097.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/10010098.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/10010099.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/10010101.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/10010102.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/10010103.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/10011001.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
@@ -1964,6 +1984,8 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/ItemIcon/10030018.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/10030019.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/10031002.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/10031014.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
@@ -3393,6 +3415,16 @@ MonoBehaviour:
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/17.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/17001001.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/17002001.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/17003001.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/17004001.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/17005001.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/2.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/3.png
@@ -3680,6 +3712,12 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/OtherIcon/c11.png
   - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
     path: Assets/Bundles/Icon/OtherIcon/c12.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/hexin1.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/hexin2.png
+  - bundle: dd8c93c2c97a4003265ecdd911235731.unity3d
+    path: Assets/Bundles/Icon/OtherIcon/hexin3.png
   - bundle: 5c692073cbc7f873e0af5a667b79c88c.unity3d
     path: Assets/Bundles/Icon/PastureIcon/10001.png
   - bundle: 5c692073cbc7f873e0af5a667b79c88c.unity3d
@@ -3951,21 +3989,41 @@ MonoBehaviour:
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
     path: Assets/Bundles/Icon/PetSkillIcon/80003005.png
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
-    path: Assets/Bundles/Icon/PetSkillIcon/80003101.png
+    path: Assets/Bundles/Icon/PetSkillIcon/80003006.png
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
-    path: Assets/Bundles/Icon/PetSkillIcon/80003102.png
+    path: Assets/Bundles/Icon/PetSkillIcon/80003007.png
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
-    path: Assets/Bundles/Icon/PetSkillIcon/80003103.png
+    path: Assets/Bundles/Icon/PetSkillIcon/80003008.png
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
-    path: Assets/Bundles/Icon/PetSkillIcon/80003104.png
+    path: Assets/Bundles/Icon/PetSkillIcon/80003201.png
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
-    path: Assets/Bundles/Icon/PetSkillIcon/80003105.png
+    path: Assets/Bundles/Icon/PetSkillIcon/80003202.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80003203.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80003204.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80003205.png
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
     path: Assets/Bundles/Icon/PetSkillIcon/80004001.png
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
     path: Assets/Bundles/Icon/PetSkillIcon/80004002.png
   - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
     path: Assets/Bundles/Icon/PetSkillIcon/80004003.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80004004.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80004005.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80004006.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80004008.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80004009.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80004010.png
+  - bundle: a8b509e015f91cdefae806627391e7c7.unity3d
+    path: Assets/Bundles/Icon/PetSkillIcon/80004013.png
   - bundle: 499293d30e2182a0b218542d2f0c560e.unity3d
     path: Assets/Bundles/Icon/PlayerIcon/1.png
   - bundle: 499293d30e2182a0b218542d2f0c560e.unity3d
@@ -4593,6 +4651,8 @@ MonoBehaviour:
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/69060800.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/80001023.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/81000310.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/99001011.png
@@ -4634,6 +4694,8 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/RoleSkillIcon/b602.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/b901.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/b902.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/b9101.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
@@ -5012,6 +5074,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Dungeon/UIDungeonLevel.prefab
   - bundle: ff11229611034a565e883098321eb7fb.unity3d
     path: Assets/Bundles/UI/Dungeon/UIDungeonLevelItem.prefab
+  - bundle: dee5382dc5fa3b92bb075a70ca0c5bbe.unity3d
+    path: Assets/Bundles/UI/Dungeon/UIDungeonMapTransfer.prefab
   - bundle: 9e820d1083ee8329229a777f6d97c02e.unity3d
     path: Assets/Bundles/UI/Dungeon/UIEnterMapHint.prefab
   - bundle: fa4b8a14990afba72bf7a58c80a46c0d.unity3d
@@ -5310,8 +5374,14 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/LingDi/UILingDiReward.prefab
   - bundle: 4c221bfe9ae28647810882da59e672bf.unity3d
     path: Assets/Bundles/UI/Main/Mail/UIMail.prefab
+  - bundle: 685750ab1dab2e51fb8acb17c3291c28.unity3d
+    path: Assets/Bundles/UI/Main/Main/UIGuideEquip.prefab
   - bundle: 6bbc3146657e5e49ac894dffe28dad1e.unity3d
     path: Assets/Bundles/UI/Main/Main/UIMain.prefab
+  - bundle: d0b9da76231a315130fffc26d6f5329d.unity3d
+    path: Assets/Bundles/UI/Main/Main/UIOpenChest.prefab
+  - bundle: 9edb5180aacd6ffb09babcb354aff56d.unity3d
+    path: Assets/Bundles/UI/Main/Main/UISelectReward.prefab
   - bundle: 5519f66795acfe7640541395cfb180bc.unity3d
     path: Assets/Bundles/UI/Main/Main/UIZhuaPu.prefab
   - bundle: 8779e88dd6a911c59d6074b0f4bcfe91.unity3d
@@ -5374,6 +5444,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Pet/UIPetHeCheng.prefab
   - bundle: 556a8ca44eb80863977674648ede716b.unity3d
     path: Assets/Bundles/UI/Main/Pet/UIPetHeXinHeCheng.prefab
+  - bundle: d2f574aa952ba7e8ecfc2862c0872eab.unity3d
+    path: Assets/Bundles/UI/Main/Pet/UIPetHeXinSuit.prefab
   - bundle: d780b04588079c93d7e022d8f74f50d9.unity3d
     path: Assets/Bundles/UI/Main/Pet/UIPetInfoShow.prefab
   - bundle: 98950d6688fa215f82bd5607533c7536.unity3d
@@ -9058,6 +9130,9 @@ MonoBehaviour:
   - name: ff11229611034a565e883098321eb7fb.unity3d
     assets:
     - Assets/Bundles/UI/Dungeon/UIDungeonLevelItem.prefab
+  - name: dee5382dc5fa3b92bb075a70ca0c5bbe.unity3d
+    assets:
+    - Assets/Bundles/UI/Dungeon/UIDungeonMapTransfer.prefab
   - name: 9e820d1083ee8329229a777f6d97c02e.unity3d
     assets:
     - Assets/Bundles/UI/Dungeon/UIEnterMapHint.prefab
@@ -9505,9 +9580,18 @@ MonoBehaviour:
   - name: 4c221bfe9ae28647810882da59e672bf.unity3d
     assets:
     - Assets/Bundles/UI/Main/Mail/UIMail.prefab
+  - name: 685750ab1dab2e51fb8acb17c3291c28.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Main/UIGuideEquip.prefab
   - name: 6bbc3146657e5e49ac894dffe28dad1e.unity3d
     assets:
     - Assets/Bundles/UI/Main/Main/UIMain.prefab
+  - name: d0b9da76231a315130fffc26d6f5329d.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Main/UIOpenChest.prefab
+  - name: 9edb5180aacd6ffb09babcb354aff56d.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Main/UISelectReward.prefab
   - name: 5519f66795acfe7640541395cfb180bc.unity3d
     assets:
     - Assets/Bundles/UI/Main/Main/UIZhuaPu.prefab
@@ -9601,6 +9685,9 @@ MonoBehaviour:
   - name: 556a8ca44eb80863977674648ede716b.unity3d
     assets:
     - Assets/Bundles/UI/Main/Pet/UIPetHeXinHeCheng.prefab
+  - name: d2f574aa952ba7e8ecfc2862c0872eab.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Pet/UIPetHeXinSuit.prefab
   - name: d780b04588079c93d7e022d8f74f50d9.unity3d
     assets:
     - Assets/Bundles/UI/Main/Pet/UIPetInfoShow.prefab
@@ -10483,6 +10570,9 @@ MonoBehaviour:
   - name: dee3c2d5fcff5918da64d9c4ff581d0e.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_BaoZha_50.prefab
+  - name: e69afc1ea1b30df0e7f4a825d34ff99b.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_BaoZha_51.prefab
   - name: 2f0429fc7392c2f6db96c93fb3d50315.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_BaoZha_6.prefab
@@ -10540,6 +10630,9 @@ MonoBehaviour:
   - name: 29275c0547d9a09dda85ce9606fb2426.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_2.prefab
+  - name: d0483a90e5f9d72724f52b68faac3bed.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_20.prefab
   - name: 75fdf890474fa115941d2f19ce0debb5.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_3.prefab
@@ -10588,6 +10681,9 @@ MonoBehaviour:
   - name: 9af55d71c07aa45e6a7c39946ac934d3.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_DianRan.prefab
+  - name: 892aeb5017872f9b6f80e4d3f1aaf26f.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_FengBao_1.prefab
   - name: 118f4ab0a52f8f25cafcbcdb6c7c24c7.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_1.prefab
@@ -10768,6 +10864,9 @@ MonoBehaviour:
   - name: 6fe1eb5a26b92e5f918734852c267e3d.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_PenHuo_1.prefab
+  - name: 1e7607bc34ee9ba53f2b4f01a7bcfd73.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_PenHuo_2.prefab
   - name: 0bb8851a8cd70918866b73fbab06c783.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_QianChong_1.prefab
@@ -10801,6 +10900,9 @@ MonoBehaviour:
   - name: 45bc90014dd74699914b75f37e606eef.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_QunLiao_4.prefab
+  - name: 94013951852fd5c245c987296d06fa0f.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_QunLiao_5.prefab
   - name: bd6cd2ed20a857d4d5d14f4b68ce558f.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_RangeChiXu_1.prefab
@@ -11756,8 +11858,13 @@ MonoBehaviour:
     - Assets/Bundles/Icon/ItemIcon/10010091.png
     - Assets/Bundles/Icon/ItemIcon/10010092.png
     - Assets/Bundles/Icon/ItemIcon/10010093.png
+    - Assets/Bundles/Icon/ItemIcon/10010096.png
+    - Assets/Bundles/Icon/ItemIcon/10010097.png
     - Assets/Bundles/Icon/ItemIcon/10010098.png
     - Assets/Bundles/Icon/ItemIcon/10010099.png
+    - Assets/Bundles/Icon/ItemIcon/10010101.png
+    - Assets/Bundles/Icon/ItemIcon/10010102.png
+    - Assets/Bundles/Icon/ItemIcon/10010103.png
     - Assets/Bundles/Icon/ItemIcon/10011001.png
     - Assets/Bundles/Icon/ItemIcon/10012001.png
     - Assets/Bundles/Icon/ItemIcon/10020001.png
@@ -11827,6 +11934,7 @@ MonoBehaviour:
     - Assets/Bundles/Icon/ItemIcon/10030017.png
     - Assets/Bundles/Icon/ItemIcon/10030018.png
     - Assets/Bundles/Icon/ItemIcon/10030019.png
+    - Assets/Bundles/Icon/ItemIcon/10031002.png
     - Assets/Bundles/Icon/ItemIcon/10031014.png
     - Assets/Bundles/Icon/ItemIcon/10032003.png
     - Assets/Bundles/Icon/ItemIcon/10032006.png
@@ -12541,6 +12649,11 @@ MonoBehaviour:
     - Assets/Bundles/Icon/ItemIcon/16000311.png
     - Assets/Bundles/Icon/ItemIcon/16000312.png
     - Assets/Bundles/Icon/ItemIcon/17.png
+    - Assets/Bundles/Icon/ItemIcon/17001001.png
+    - Assets/Bundles/Icon/ItemIcon/17002001.png
+    - Assets/Bundles/Icon/ItemIcon/17003001.png
+    - Assets/Bundles/Icon/ItemIcon/17004001.png
+    - Assets/Bundles/Icon/ItemIcon/17005001.png
     - Assets/Bundles/Icon/ItemIcon/2.png
     - Assets/Bundles/Icon/ItemIcon/3.png
     - Assets/Bundles/Icon/ItemIcon/4.png
@@ -12640,6 +12753,9 @@ MonoBehaviour:
     assets:
     - Assets/Bundles/Icon/OtherIcon/c11.png
     - Assets/Bundles/Icon/OtherIcon/c12.png
+    - Assets/Bundles/Icon/OtherIcon/hexin1.png
+    - Assets/Bundles/Icon/OtherIcon/hexin2.png
+    - Assets/Bundles/Icon/OtherIcon/hexin3.png
     - Assets/Bundles/Icon/OtherIcon/HuJia_11.png
     - Assets/Bundles/Icon/OtherIcon/HuJia_12.png
     - Assets/Bundles/Icon/OtherIcon/HuJia_13.png
@@ -12832,14 +12948,24 @@ MonoBehaviour:
     - Assets/Bundles/Icon/PetSkillIcon/80003003.png
     - Assets/Bundles/Icon/PetSkillIcon/80003004.png
     - Assets/Bundles/Icon/PetSkillIcon/80003005.png
-    - Assets/Bundles/Icon/PetSkillIcon/80003101.png
-    - Assets/Bundles/Icon/PetSkillIcon/80003102.png
-    - Assets/Bundles/Icon/PetSkillIcon/80003103.png
-    - Assets/Bundles/Icon/PetSkillIcon/80003104.png
-    - Assets/Bundles/Icon/PetSkillIcon/80003105.png
+    - Assets/Bundles/Icon/PetSkillIcon/80003006.png
+    - Assets/Bundles/Icon/PetSkillIcon/80003007.png
+    - Assets/Bundles/Icon/PetSkillIcon/80003008.png
+    - Assets/Bundles/Icon/PetSkillIcon/80003201.png
+    - Assets/Bundles/Icon/PetSkillIcon/80003202.png
+    - Assets/Bundles/Icon/PetSkillIcon/80003203.png
+    - Assets/Bundles/Icon/PetSkillIcon/80003204.png
+    - Assets/Bundles/Icon/PetSkillIcon/80003205.png
     - Assets/Bundles/Icon/PetSkillIcon/80004001.png
     - Assets/Bundles/Icon/PetSkillIcon/80004002.png
     - Assets/Bundles/Icon/PetSkillIcon/80004003.png
+    - Assets/Bundles/Icon/PetSkillIcon/80004004.png
+    - Assets/Bundles/Icon/PetSkillIcon/80004005.png
+    - Assets/Bundles/Icon/PetSkillIcon/80004006.png
+    - Assets/Bundles/Icon/PetSkillIcon/80004008.png
+    - Assets/Bundles/Icon/PetSkillIcon/80004009.png
+    - Assets/Bundles/Icon/PetSkillIcon/80004010.png
+    - Assets/Bundles/Icon/PetSkillIcon/80004013.png
   - name: 499293d30e2182a0b218542d2f0c560e.unity3d
     assets:
     - Assets/Bundles/Icon/PlayerIcon/1.png
@@ -13161,6 +13287,7 @@ MonoBehaviour:
     - Assets/Bundles/Icon/RoleSkillIcon/69060600.png
     - Assets/Bundles/Icon/RoleSkillIcon/69060700.png
     - Assets/Bundles/Icon/RoleSkillIcon/69060800.png
+    - Assets/Bundles/Icon/RoleSkillIcon/80001023.png
     - Assets/Bundles/Icon/RoleSkillIcon/81000310.png
     - Assets/Bundles/Icon/RoleSkillIcon/99001011.png
     - Assets/Bundles/Icon/RoleSkillIcon/99001021.png
@@ -13181,6 +13308,7 @@ MonoBehaviour:
     - Assets/Bundles/Icon/RoleSkillIcon/b601.png
     - Assets/Bundles/Icon/RoleSkillIcon/b602.png
     - Assets/Bundles/Icon/RoleSkillIcon/b901.png
+    - Assets/Bundles/Icon/RoleSkillIcon/b902.png
     - Assets/Bundles/Icon/RoleSkillIcon/b9101.png
     - Assets/Bundles/Icon/RoleSkillIcon/BeiDong.png
     - Assets/Bundles/Icon/RoleSkillIcon/jx1.png
@@ -16003,6 +16131,21 @@ MonoBehaviour:
   - name: c70bf2473f526d1f8e398a9a22e11327.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_78.png
+  - name: a1334ecbf2ad0d5cf27bbf31fbd82131.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_295.Png
+  - name: c0c32fd33fdd0bb0eaa4b2da41b5992e.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_6.png
+  - name: 04d5a88a6cecff0f2bcf30b16334a460.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_244.Png
+  - name: 4ae5aaf3daa83076c64a20ec23b2368d.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/ImageBig/Img_104.png
+  - name: 7c875e9529cc161174053c4f769d3292.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_94.png
   - name: 7db5112b76945e3fe7923185edb82149.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_132.png
@@ -16087,9 +16230,6 @@ MonoBehaviour:
   - name: ec6bc52bd2ed3d5a058a5e3b6000742b.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_71.png
-  - name: a1334ecbf2ad0d5cf27bbf31fbd82131.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_295.Png
   - name: b6fcb1729941a464ea84beb35542434e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_134.png
@@ -16126,9 +16266,6 @@ MonoBehaviour:
   - name: 205b68b81852f2f93ef18a9b43898881.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_77.png
-  - name: 04d5a88a6cecff0f2bcf30b16334a460.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_244.Png
   - name: 0ae43d3e675a3134f1c24b56053098cf.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_70.png
@@ -16213,9 +16350,6 @@ MonoBehaviour:
   - name: 3adefeef541aa505daa687dedb3d4439.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_98.png
-  - name: c0c32fd33fdd0bb0eaa4b2da41b5992e.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_6.png
   - name: 3e8bdbb5ba10325f0a9c4a0849a59eec.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_74.png
@@ -16486,6 +16620,9 @@ MonoBehaviour:
   - name: 19d710edea7b8cdc1c9b0ab6016e7a4e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_127.png
+  - name: d3eb54de92593a7e788a088b7a0cb20e.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_324.png
   - name: 00fc49dd1441325c40948558a790e250.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_6_2.png
@@ -16558,6 +16695,9 @@ MonoBehaviour:
   - name: 378003f0aae41977900722226b5511da.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_85.png
+  - name: 3936eb04267c4859d984ab5a146ae883.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_461.png
   - name: c6fc4c296c9f95f77aec39de9a8b13b4.unity3d
     assets:
     - Assets/Res/RenderTexture/RoleRenderTexture2.renderTexture
@@ -16615,9 +16755,6 @@ MonoBehaviour:
   - name: 18e7691838b2d9ee2323b18016d66d41.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/HintDian.png
-  - name: d3eb54de92593a7e788a088b7a0cb20e.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_324.png
   - name: 17aad3c480c8c4773d11dd3e42a2136b.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_420.png
@@ -16720,6 +16857,9 @@ MonoBehaviour:
   - name: d01f7c89078b78b7265062fb4a740677.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_14.png
+  - name: c08c26f8ed7efdefe74b073753ecf5f8.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_468.png
   - name: b99bb50da9dad77f14fc0fed63ad2d94.unity3d
     assets:
     - Assets/Res/UI/UIRes/Pro/Pro_14.png
@@ -16768,12 +16908,9 @@ MonoBehaviour:
   - name: 5f6d022f1ee907905736f7db80fddf5e.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_43.png
-  - name: d7ca1c1cc7eec10d0b332eec4ea4bd3a.unity3d
+  - name: 6176dbe66bfa1f8c3b7e3b1f1651cf13.unity3d
     assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_440.png
-  - name: b26643c78d2ec02ebad336fbec9a2dfa.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_407.png
+    - Assets/Res/UI/UIRes/Imgage/ItemQuality_5.png
   - name: 9632ccae9ce221be623aeffb752985ff.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_64.png
@@ -16804,9 +16941,15 @@ MonoBehaviour:
   - name: 22e32649998028efdbc71895f4d0bfc7.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_441.png
+  - name: d7ca1c1cc7eec10d0b332eec4ea4bd3a.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_440.png
   - name: 680b6c0e3f613f2b3b5785bd9ec71057.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_423.png
+  - name: b26643c78d2ec02ebad336fbec9a2dfa.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_407.png
   - name: 591f54e8ea8d58a8230f42c1f99b2722.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_191.png
@@ -16849,9 +16992,6 @@ MonoBehaviour:
   - name: 8b16dc3e94685c356e1854ac62538dea.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_460.png
-  - name: 3936eb04267c4859d984ab5a146ae883.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_461.png
   - name: 2c03824fe34bb4a2245100cb0dd956b1.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_459.png
@@ -16882,9 +17022,6 @@ MonoBehaviour:
   - name: a7ebaedb38a9f1736deb432ac49dc697.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_430.png
-  - name: 6176dbe66bfa1f8c3b7e3b1f1651cf13.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/ItemQuality_5.png
   - name: d6a754252e7e5b14e10f8e815c53cd5b.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_403.png
@@ -18126,6 +18263,19 @@ MonoBehaviour:
   - name: 65d9a1a0b5620eda13e735cf45ec1209.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_path_00441_2_M_1.mat
+  - name: 4205e5552508e26e060c7708557de6fd.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Model/tonado.FBX
+  - name: 7f433caae76f8cd7dfa87e82dc733f05.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Materials/Trajectory_Flame_Add.mat
+  - name: 0604fa70a6021d93cbf77f4ea9d3b3a9.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Model/Materials/02
+      - Default.mat
+  - name: 6a196b2fd5fc776322e02287d6943aca.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Texture/Trajectory_Flame.png
   - name: c1104d46b4d9a812c2f2803408c99d44.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Hovl Studio/Epic toon VFX 2/Textures/Noise53.png
@@ -19125,6 +19275,12 @@ MonoBehaviour:
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Shader46-HDR
       1.mat
+  - name: c986d26dd2bae7ee225c38bbc7e34ea4.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/ShurikenMagic/ParticleMaterials/Lights/thickFlashAdd.mat
+  - name: ab5355d129490efadbec201c38747e31.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/ShurikenMagic/ParticleMaterials/Lights/thickFlash.png
   - name: 10a2f0ccb5ddc03090268493a8875591.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectResources/Effects/Materials/E3D-Direction157-bh3-urp.mat
@@ -19182,6 +19338,75 @@ MonoBehaviour:
   - name: e9ca9b33aab083c854dfedd82eb6671a.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Textures-E3D/E3D-Point7.png
+  - name: f38d7bb62c8ded375d6f78ff2282729d.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Direction/E3D-Direction351-bh2.png
+  - name: 55334e1f249474b43a7a8082a23da5e8.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Point267-bh.mat
+  - name: 9d59d5cf8844bcbbc9c38046d3c699fc.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Direction/E3D-Direction354-d12.png
+  - name: a8a89052f415773c73a5e34a87ed43ee.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Point266-bh.mat
+  - name: 7d6757fb327dd0699353c3179de77319.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Vein/E3D-Vein29-bh.png
+  - name: 62581e8dcfdb6cd55f7686f071ea6cd1.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Direction/E3D-Direction355-d14.png
+  - name: 8f36a7ac85fecf9d4c50cc3644802a15.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Direction/E3D-Direction354-bh69.png
+  - name: 290a1735a82eecc6371f1c1da87e6800.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Direction/E3D-Direction24.png
+  - name: 93811a890e84b13bfae7d3df2c682b8f.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Direction354-bh70.mat
+  - name: fb12b8454a8b2dd448a5f29f05a05055.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Point/E3d-blast-58-Allen
+      1.png
+  - name: b52cc37abc83c875a7ee8de4b5c59c47.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Vein29-bh3.mat
+  - name: 5dcb8b243d362b2e87441aaaf9dac2d8.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Direction356-bh.mat
+  - name: 29521aaf24ae1755d81989e41807229e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Model-E3D/Spell-9004-shangsheng-03.FBX
+  - name: 14684281990306e53fd35dd4738c0c85.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Point/E3D-Point265-bh60.png
+  - name: c9f93916613a021995e8986892ae9a85.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/SkillEditor/E3D-Skill-Slow-Vertical-Up.controller
+  - name: 4bf60df13255753981f8e99db898c283.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Model-E3D/E3D-Curve-Surround55-bh.FBX
+  - name: e6ed0fa7ed537af9117c743fbf66f626.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/SkillEditor/E3D-Skill-Slow-Vertical-Up.anim
+  - name: 6bc0044deec19d6ec30521bcde5629e7.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Direction355-bh.mat
+  - name: 6a21476b67cd9a17aa5d6cd165612832.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Point1-HDR
+      3.mat
+  - name: 656e082229012fc098922e871107f446.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Direction358-bh.mat
+  - name: a5631d4ec6afc47686efdb2b134a5cab.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Model-E3D/E3D-Cylinder-Spread87-bh.FBX
+  - name: 3351644d207d6ef80afa7c045dc1bf50.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Materials-E3D/E3D-Point266-bh
+      1.mat
   - name: 7442f8415c3c93377e86b424d9354847.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectResources/Effects/Materials/E3D-Direction49-bh59.mat
@@ -19219,6 +19444,53 @@ MonoBehaviour:
   - name: 3afee04781114c525534e047f6f9f2b9.unity3d
     assets:
     - Assets/Mono/GameDemo/ArtResource/ArtEffects/Materials/TX_path_00193.mat
+  - name: 7a1671ba84fb5038fe0a75de55644226.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Moon17.mat
+  - name: b56f627128834f1ab28f8fa8d0b7196d.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point120-66.mat
+  - name: ba379a92dcaa2e5cee83b026faf58c86.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Direction111-13.mat
+  - name: e4db1e4d8093f5e8a094054cb1748bce.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Ring72.png
+  - name: 4a0c5d3f4daa86e59a87389ab3435276.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
+      71.mat
+  - name: 5ddc84d03394a9894bbe120455b9a54e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Ring72.mat
+  - name: 7267a362f544962a04ba9dae6f1ab1da.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Squaresheet55.FBX
+  - name: b15ab6585798957162d60b481186a18d.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/B1/Effect/Animations/E3D-Spell-Cure-Green2.controller
+  - name: f5f4138efe72ffb5c4373528581dfb61.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Moon17.png
+  - name: 59bad42a7874207aa22cda7f99cc9250.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/B1/Effect/Animations/E3D-Spell-Cure-Green2.anim
+  - name: c0de1b4ab00c9bd532a9133209a7096f.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Curve-Surround44.FBX
+  - name: 6875af90b6d57b4df78c90e837d40cf9.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point118-33.mat
+  - name: 6b0a82b878937e8f5ccc01e752bb56ca.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Materials-E3D/E3D-Point48-HDR
+      72.mat
+  - name: baed776fb3bb1907a40bf9ddf9b541ae.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Model-E3D/E3D-Curve-Surround40.fbm/eye_lwy_t_ptc_20_single.png
+  - name: 96d9eb52a30735ffd8881aa3832a9e04.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Direction188.png
   - name: 3e2fce675558872fd992d91b010ed1a3.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect_4/EffectPackage/ArtData/Textures-E3D/Loop4/E3D-Loop4-208-bh.png
@@ -19362,9 +19634,6 @@ MonoBehaviour:
   - name: 0f5383e0fca1e2c0d12681f055d4a78c.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Loop4-74.png
-  - name: f5f4138efe72ffb5c4373528581dfb61.unity3d
-    assets:
-    - Assets/Res/Effect/EffectResSet/Effect2/EffectPackage/ArtData/Textures-E3D/E3D-Moon17.png
   - name: 45a969328629514d066c96e03fa96f4b.unity3d
     assets:
     - Assets/Res/Effect/Skill/Model/Eff_Skill_XuanFengZhan/Swing_Ground.png
@@ -19485,9 +19754,6 @@ MonoBehaviour:
   - name: eff2a2b58728733ccdbeae349c095488.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Texture/Blood_Splat.png
-  - name: 6a196b2fd5fc776322e02287d6943aca.unity3d
-    assets:
-    - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Texture/Trajectory_Flame.png
   - name: 265cb03f49b683679c4b99bb88265c3e.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/GameEffect/All/RFX_Resources/Materials/Blood_Splat.mat
