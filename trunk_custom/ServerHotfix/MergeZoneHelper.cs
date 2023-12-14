@@ -479,6 +479,23 @@ namespace ET
                     maxnumber = Math.Min(rankingTrial_new.Count, 100);
                     entity.rankingTrial = rankingTrial_new.GetRange(0, maxnumber);
 
+                    List<KeyValuePairLong> rankSeasonTower_new = entity.rankSeasonTower;
+                    List<KeyValuePairLong> rankSeasonTower_old = dBRankInfos_old[0].rankSeasonTower;
+                    rankSeasonTower_new.AddRange(rankSeasonTower_old);
+                    rankSeasonTower_new.Sort(delegate (KeyValuePairLong a, KeyValuePairLong b)
+                    {
+                        if (b.Value2 == a.Value2)
+                        {
+                            return (int)a.Value - (int)b.Value;
+                        }
+                        else
+                        {
+                            return (int)b.Value2 - (int)a.Value2;
+                        }
+                    });
+                    maxnumber = Math.Min(rankSeasonTower_new.Count, 100);
+                    entity.rankSeasonTower = rankSeasonTower_new.GetRange(0, maxnumber);
+
                     //阵营相关的都要重置
                     await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
                 }
