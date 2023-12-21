@@ -583,8 +583,8 @@ public class MainActivity extends UnityPlayerActivity {
             //WRITE_EXTERNAL_STORAGE权限是用于授予应用程序对外部存储(即SD卡)进行读写操作的权限
             //if (this.mContext.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
             {
-                Log.i("GBCommonSDK", "Permissions WRITE_EXTERNAL_STORAGE 0");
-                permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                //Log.i("GBCommonSDK", "Permissions WRITE_EXTERNAL_STORAGE 0");
+                //permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
             }
 
             //if (this.mContext.checkSelfPermission(Manifest.permission.REQUEST_INSTALL_PACKAGES) != PackageManager.PERMISSION_GRANTED)
