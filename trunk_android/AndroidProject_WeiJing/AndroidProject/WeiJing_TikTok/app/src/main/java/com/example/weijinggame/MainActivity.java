@@ -508,23 +508,6 @@ public class MainActivity extends UnityPlayerActivity {
 
     }
 
-    //微信登录的接口
-    /*
-    public  void LoginWechat(String appid,String state,String ObjName,String funName) {
-        wxAPI.registerApp(APP_ID);
-        Log.d("Unity","进入登录环节");
-        WXEntryActivity.GameObjectName=ObjName;
-        WXEntryActivity.CallBackFuncName=funName;
-        // 发送授权登录信息，来获取code
-        SendAuth.Req req = new SendAuth.Req();
-        // 设置应用的作用域，获取个人信息msgApi  api
-
-        req.scope = "snsapi_userinfo";
-        req.state = state;
-        wxAPI.sendReq(req);
-    }
-    */
-
     //微信充值的接口（Unity调用到此方法）
     public void WeChatPayReq(String APP_ID, String MCH_ID, String prepayid, String noncestr, String timestamp, String sign, String callBackBackObjectName, String CallBackFuncName) {
         Log.i("unity: ", "拉起微信支付！！");
@@ -655,6 +638,8 @@ public class MainActivity extends UnityPlayerActivity {
     final int REQUEST_CODE_ADDRESS = 100;
 
     public  void GetPhoneNum(String zone) {
+
+        /*
         Log.i("GetPhoneNum_2a", "111");
         String phoneNum = "";
 
@@ -703,6 +688,8 @@ public class MainActivity extends UnityPlayerActivity {
         }
 
         UnityPlayer.UnitySendMessage("Global", "OnRecvPhoneNum", phoneNum);
+
+        */
     }
 
     public  void GetPhoneNum_3(String zone) {
@@ -710,6 +697,7 @@ public class MainActivity extends UnityPlayerActivity {
     }
 
     public void GetPhoneNum_2(String zone) {
+        /*
         Log.i("GetPhoneNum", "111");
         String phoneNum = "";
         //READ_PHONE_STATE唯一标识符、手机号码以及SIM卡状态等信息
@@ -745,191 +733,6 @@ public class MainActivity extends UnityPlayerActivity {
             phoneNum =  ret;
         }
         UnityPlayer.UnitySendMessage("Global", "OnRecvPhoneNum", phoneNum);
-    }
-
-    //微信文字分享的接口
-    /*
-    public  void WXShareText(int shareType, String text,String objName,String funName) {
-
-        WXEntryActivity.GameObjectName = objName;
-        WXEntryActivity.CallBackFuncName = funName;//Unity层的回调
-
-        WXTextObject textObj = new WXTextObject();
-        textObj.text = text;
-
-        WXMediaMessage msg = new WXMediaMessage();
-        msg.mediaObject = textObj;
-        msg.description = text;
-
-        SendMessageToWX.Req req = new SendMessageToWX.Req();
-
-        req.transaction = BuildTransaction("text");
-        req.message = msg;
-
-        req.scene = shareType;
-        wxAPI.sendReq(req);
-    }
-    */
-
-    //微信图片分享的接口
-    /*
-    public  void WXShareImage(int scene, byte[] imgData, byte[] thumbData,String objName,String funName) {
-
-        WXEntryActivity.GameObjectName = objName;
-        WXEntryActivity.CallBackFuncName = funName;//分享的物体名称和方法
-
-        WXImageObject imgObj = new WXImageObject(imgData);
-        WXMediaMessage msg = new WXMediaMessage();
-        msg.mediaObject = imgObj;
-        msg.thumbData = thumbData;
-
-        SendMessageToWX.Req req = new SendMessageToWX.Req();
-        req.transaction = BuildTransaction("img");
-        req.message = msg;
-        req.scene = scene;
-        wxAPI.sendReq(req);
-    }
-    */
-
-    //微信网页分享的接口
-    /*
-    public  void WXShareWebPage(int shareType, String url, String title, String content, byte[] thumb,String objName,String funName) {
-        WXEntryActivity.GameObjectName = objName;
-        WXEntryActivity.CallBackFuncName = funName;//Unity层的回调
-
-        WXWebpageObject webpage = new WXWebpageObject();
-        webpage.webpageUrl = url;
-        WXMediaMessage msg = new WXMediaMessage(webpage);
-        msg.title = title;
-        msg.description = content;
-        msg.thumbData = thumb;
-
-        SendMessageToWX.Req req = new SendMessageToWX.Req();
-        req.transaction = BuildTransaction("webpage");
-        req.message = msg;
-        req.scene = shareType;
-        wxAPI.sendReq(req);
-    }
-    */
-
-    /**
-     * 是否root
-     *
-     * @return the boolean
-     */
-    public static boolean isRooted() {
-        // nexus 5x "/su/bin/"
-        String[] paths = {"/system/xbin/", "/system/bin/", "/system/sbin/", "/sbin/", "/vendor/bin/", "/su/bin/"};
-        try {
-            for (int i = 0; i < paths.length; i++) {
-                String path = paths[i] + "su";
-                if (new File(path).exists()) {
-                    String execResult = exec(new String[]{"ls", "-l", path});
-                    Log.d("cyb", "isRooted=" + execResult);
-                    if (TextUtils.isEmpty(execResult) || execResult.indexOf("root") == execResult.lastIndexOf("root")) {
-                        return false;
-                    }
-                    return true;
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    private static String exec(String[] exec)
-    {
-        String ret = "";
-        ProcessBuilder processBuilder = new ProcessBuilder(exec);
-        try {
-            Process process = processBuilder.start();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                ret += line;
-            }
-            process.getInputStream().close();
-            process.destroy();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return ret;
-    }
-
-    public boolean isDeviceRooted() {
-        if (checkRootMethod1()){return true;}
-        if (checkRootMethod2()){return true;}
-        if (checkRootMethod3()){return true;}
-        return false;
-    }
-
-    public boolean checkRootMethod1(){
-        String buildTags = android.os.Build.TAGS;
-
-        if (buildTags != null && buildTags.contains("test-keys")) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean checkRootMethod2(){
-        try {
-            File file = new File("/system/app/Superuser.apk");            if (file.exists()) {
-                return true;
-            }
-        } catch (Exception e) { }
-
-        return false;
-    }
-
-    public boolean checkRootMethod3() {
-        if (new ExecShell().executeCommand(ExecShell.SHELL_CMD.check_su_binary) != null){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    private boolean executeShellCommand(String command){
-        Process process = null;
-        try{
-            process = Runtime.getRuntime().exec(command);
-            return true;
-        } catch (Exception e) {
-            return false;
-        } finally{
-            if(process != null){
-                try{
-                    process.destroy();
-                }catch (Exception e) {
-                }
-            }
-        }
-    }
-
-     /**
-     * 检查手机上是否安装了指定的软件
-     * @param context
-     * @param packageNam
-     * @return
-     */
-    public static boolean isAvilible(Context context, String packageName) {
-        final PackageManager packageManager = context.getPackageManager();
-        List<PackageInfo> packageInfos = packageManager.getInstalledPackages(0);
-        List<String> packageNames = new ArrayList<String>();
-
-        if (packageInfos != null) {
-            for (int i = 0; i < packageInfos.size(); i++) {
-                String packName = packageInfos.get(i).packageName;
-                packageNames.add(packName);
-            }
-        }
-        // 判断packageNames中是否有目标程序的包名，有TRUE，没有FALSE
-        return packageNames.contains(packageName);
-    }
-
-    static String BuildTransaction(final String type) {
-        return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
+        */
     }
 }
