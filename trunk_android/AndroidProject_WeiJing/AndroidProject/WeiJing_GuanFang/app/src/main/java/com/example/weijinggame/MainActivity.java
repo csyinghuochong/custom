@@ -257,8 +257,8 @@ public class MainActivity extends UnityPlayerActivity {
         Log.i("GetPhoneNum_2a", "111");
         String phoneNum = "";
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
-                this.mContext.checkSelfPermission(Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                //&& this.mContext.checkSelfPermission(Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
                 && this.mContext.checkSelfPermission(Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
                 && this.mContext.checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
         {
@@ -272,7 +272,7 @@ public class MainActivity extends UnityPlayerActivity {
             //申请权限，permissions是要申请的权限数组
             String[] permissions = new  String[]
                     {
-                            Manifest.permission.READ_SMS, Manifest.permission.READ_PHONE_NUMBERS, Manifest.permission.READ_PHONE_STATE
+                            Manifest.permission.READ_PHONE_NUMBERS, Manifest.permission.READ_PHONE_STATE  //. Manifest.permission.READ_SMS,
                     };
             ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_ADDRESS);
             Log.i("GetPhoneNum_2b", "222");
