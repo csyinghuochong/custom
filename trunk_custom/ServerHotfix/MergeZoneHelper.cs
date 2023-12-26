@@ -27,7 +27,6 @@ namespace ET
 
         public static async ETTask QueryCard(string card)
         {
-           
             var startZoneConfig = StartZoneConfigCategory.Instance.Get(202);
             Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
             List<DBCenterAccountInfo> dBAccountInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, d => d.Id > 0);

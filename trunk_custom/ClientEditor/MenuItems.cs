@@ -71,7 +71,7 @@ namespace libx
             UnityEngine.Debug.LogError("BuildAssetBundles in: " + watch.ElapsedMilliseconds + " ms.");
         }
 
-        [MenuItem(KBuildAssetBundlesNoHash)]
+        //[MenuItem(KBuildAssetBundlesNoHash)]
         public static void BuildAssetListNoHash()
         {
             var watch = new Stopwatch();
