@@ -214,7 +214,7 @@ public class MainActivity extends UnityPlayerActivity {
         }
     }
 
-    //多个权限同时获取
+    //多个权限同时获取 this.activity.requestPermissions 的第二个参数为此处返回的requestCode  case100->GetPhoneNum
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -242,6 +242,9 @@ public class MainActivity extends UnityPlayerActivity {
                     Toast.makeText(this, "发生权限请求错误,程序关闭", Toast.LENGTH_SHORT).show();
                     finish();
                 }
+                break;
+            case 100:
+                //
                 break;
             default:
         }
