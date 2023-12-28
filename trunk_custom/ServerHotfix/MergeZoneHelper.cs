@@ -301,7 +301,9 @@ namespace ET
                     if (entity.UserList.Count > 0 && !dBAccountInfos[0].UserList.Contains(entity.UserList[0]))
                     {
                         dBAccountInfos[0].UserList.AddRange(entity.UserList);
+                        dBAccountInfos[0].BagInfoList.AddRange(entity.BagInfoList);
                     }
+
                     await Game.Scene.GetComponent<DBComponent>().Save(newzone, dBAccountInfos[0]);
                 }
                 else
@@ -310,6 +312,7 @@ namespace ET
                 }
             }
             Log.Console("DBAccountInfo Complelte");
+
             //DBDayActivityInfo  活动相关也要特殊处理
             List<DBDayActivityInfo> dBDayActivityInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBDayActivityInfo>(oldzone, d => d.Id > 0);
             List<DBDayActivityInfo> dBDayActivityInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBDayActivityInfo>(newzone, d => d.Id > 0);
