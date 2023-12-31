@@ -72,6 +72,12 @@ public class MyEditorScript
         BulidTarget("TikTok5", "Android");
     }
 
+    [MenuItem("Custom/Build Android TikTokMuBao6")]
+    static void PerformAndroidTikTokMuBao6Build()
+    {
+        BulidTarget("TikTokMuBao6", "Android");
+    }
+
     [MenuItem("Custom/Build Android ALL")]
     static void PerformAndroidALLBuild()
     {
@@ -79,10 +85,10 @@ public class MyEditorScript
         BulidTarget("QQ2", "Android");
     }
 
-    [MenuItem("Custom/Build Android MuBao")]
+    [MenuItem("Custom/Build Android QuDao")]
 	static void PerformAndroidHuaWeiBuild()
 	{
-		BulidTarget("MuBao", "Android");
+		BulidTarget("QuDao", "Android");
 	}
 
 	private static string targetPath = Application.dataPath + @"\Plugins\Android\libs_alipay"; //目标路径   ../表示当前项目文件的父路径
@@ -175,14 +181,15 @@ public class MyEditorScript
             CopyLibs("tiktok");
             app_name = "抖音";
         }
-		else if (name == "MuBao")
+		else if (name == "QuDao")
 		{
-			CopyLibs("mubao");
+			CopyLibs("qudao");
 			app_name = "危境渠道母包";
 		}
 		else
 		{
-			CopyLibs("guanfang"); 
+            //TikTokMuBao6 
+            CopyLibs("guanfang"); 
 			app_name = "危境";
 		}
 		int version = EditorRuntimeInitializeOnLoad.GetVersion();
