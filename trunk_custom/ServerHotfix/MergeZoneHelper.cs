@@ -316,14 +316,16 @@ namespace ET
             //DBDayActivityInfo  活动相关也要特殊处理
             List<DBDayActivityInfo> dBDayActivityInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBDayActivityInfo>(oldzone, d => d.Id > 0);
             List<DBDayActivityInfo> dBDayActivityInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBDayActivityInfo>(newzone, d => d.Id > 0);
-            foreach (var entity in dBDayActivityInfos_new)
+            foreach (var newentity in dBDayActivityInfos_new)
             {
-                if (entity.Id != newzone)
+                if (newentity.Id != newzone)
                 {
                     continue;
                 }
-                //entity.ZhanQuReveives.AddRange(dBDayActivityInfos_old[0].ZhanQuReveives);
-                await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
+
+                newentity.AddGuessPlayerList(dBDayActivityInfos_old[0].GuessPlayerList);
+                newentity.AddGuessRewardList(dBDayActivityInfos_old[0].GuessRewardList);
+                await Game.Scene.GetComponent<DBComponent>().Save(newzone, newentity);
             }
 
             //DBFriendInfo
