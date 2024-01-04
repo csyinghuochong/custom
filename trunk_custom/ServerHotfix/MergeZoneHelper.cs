@@ -518,11 +518,11 @@ namespace ET
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
 
-            ///全服邮件
+            ///全服邮件(不需要处理)
             ///DBServerMailInfo
 
-            List<DBUnionInfo> dBUnionInfo_new = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionInfo>(oldzone, d => d.Id > 0);
-            foreach (var entity in dBUnionInfo_new)
+            List<DBUnionInfo> dBUnionInfo_old = await Game.Scene.GetComponent<DBComponent>().Query<DBUnionInfo>(oldzone, d => d.Id > 0);
+            foreach (var entity in dBUnionInfo_old)
             {
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
             }
