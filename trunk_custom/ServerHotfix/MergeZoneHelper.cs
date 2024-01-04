@@ -407,6 +407,7 @@ namespace ET
                 if (!have)
                 {
                     entity.PaiMaiItemInfos.AddRange(oldlist_0);
+                    entity.StallItemInfos.AddRange(dBPaiMainInfos_old[0].StallItemInfos);
                 }
 
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
