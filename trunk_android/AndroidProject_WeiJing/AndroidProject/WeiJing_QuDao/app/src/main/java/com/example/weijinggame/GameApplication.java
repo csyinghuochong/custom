@@ -1,4 +1,4 @@
-package com.guangying.weijing2;
+package com.example.weijinggame;
 import com.quicksdk.QuickSdkApplication;
 
 public class GameApplication extends QuickSdkApplication {
