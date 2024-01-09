@@ -28,6 +28,7 @@ namespace ET
             self.dBServerMailInfo.ServerMailList.Add(mailid, serverMailItem);
 
             self.SendAllOnLineMail(serverMailItem).Coroutine();
+            self.SaveDB().Coroutine();
         }
 
         public static async ETTask SendAllOnLineMail(this MailSceneComponent self, ServerMailItem serverMailItem)
@@ -49,6 +50,7 @@ namespace ET
                     //旧的邮件不发给玩家了，但是需要做记录
                     if (!string.IsNullOrEmpty(serverMailItem.ParasmNew))
                     {
+                        Log.Console($"新邮件: {serverMailItem.ServerMailIId}");
                         MailHelp.ServerMailItem(zone, chat2G_EnterChat.OnlineUnitIdList[i], serverMailItem).Coroutine();
                     }
                     else
