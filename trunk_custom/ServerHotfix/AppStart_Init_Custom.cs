@@ -11,9 +11,11 @@ namespace ET
             //服务器列表移过来
             ComHelp.AccountOldLogic = true;
             SkillHelp.CleanSkill = true;
+            PopularizeHelper.PopularizeZone = 10;
             //int packetSize = GMHelp.GetRandomNumber();
             //Log.Console($"AppStart_Init_Custom: {packetSize}");
             //PacketParser.OuterPacketSizeLengthS = packetSize;
+            Log.Console($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
         }
     }
 }

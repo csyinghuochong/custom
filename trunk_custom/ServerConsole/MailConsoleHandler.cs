@@ -84,7 +84,6 @@ namespace ET
                                     Title = mailInfo[5],
                                     ActorId = zoneList[i],
                                     MailType = int.Parse(mailInfo[4]),
-                                    Param = int.Parse(mailInfo[5]),
                                 });
                             if (g2M_UpdateUnitResponse.Error == ErrorCode.ERR_Success)
                             {

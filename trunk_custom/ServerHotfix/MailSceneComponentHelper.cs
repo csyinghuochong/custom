@@ -23,12 +23,11 @@ namespace ET
                 serverMailItem.ItemList.Add(new BagInfo() { ItemID = int.Parse(rewardList[0]), ItemNum = int.Parse(rewardList[1]), GetWay = $"{ItemGetWay.ReceieMail}_{TimeHelper.ServerNow()}" });
             }
 
-            serverMailItem.Parasm = request.Param;
+            serverMailItem.ParasmNew = request.Title;
             serverMailItem.ServerMailIId = mailid;
             self.dBServerMailInfo.ServerMailList.Add(mailid, serverMailItem);
 
             self.SendAllOnLineMail(serverMailItem).Coroutine();
-            ;
         }
 
         public static async ETTask SendAllOnLineMail(this MailSceneComponent self, ServerMailItem serverMailItem)
@@ -47,7 +46,16 @@ namespace ET
 
                 for (int i = 0; i < chat2G_EnterChat.OnlineUnitIdList.Count; i++)
                 {
-                    MailHelp.ServerMailItem(zone, chat2G_EnterChat.OnlineUnitIdList[i], serverMailItem).Coroutine();
+                    //旧的邮件不发给玩家了，但是需要做记录
+                    if (!string.IsNullOrEmpty(serverMailItem.ParasmNew))
+                    {
+                        MailHelp.ServerMailItem(zone, chat2G_EnterChat.OnlineUnitIdList[i], serverMailItem).Coroutine();
+                    }
+                    else
+                    {
+                        Log.Console($"旧邮件: {serverMailItem.ServerMailIId}");
+                    }
+
                     MailHelp.SendServerMail(zone, chat2G_EnterChat.OnlineUnitIdList[i], serverMailItem);
                 }
             }

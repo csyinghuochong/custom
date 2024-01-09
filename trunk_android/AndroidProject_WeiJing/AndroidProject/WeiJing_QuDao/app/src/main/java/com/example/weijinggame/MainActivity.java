@@ -135,50 +135,66 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
 
     public  void QuDaoRequestPermissions()
     {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //多个权限同时获取
-            List<String> permissionList=new ArrayList<>();
-            if (this.mContext.checkSelfPermission(Manifest.permission.READ_PHONE_STATE)!=PackageManager.PERMISSION_GRANTED){
-                permissionList.add(Manifest.permission.READ_PHONE_STATE);
+            List<String> permissionList = new ArrayList<>();
+
+            // if (this.mContext.checkSelfPermission(Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED)
+            {
+                Log.i("Permissions", "Permissions INTERNET 0");
+                permissionList.add(Manifest.permission.INTERNET);
             }
-            if (this.mContext.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)!=PackageManager.PERMISSION_GRANTED){
-                permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            }
-            if (this.mContext.checkSelfPermission(Manifest.permission.REQUEST_INSTALL_PACKAGES)!=PackageManager.PERMISSION_GRANTED){
-                permissionList.add(Manifest.permission.REQUEST_INSTALL_PACKAGES);
+            // if (this.mContext.checkSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED)
+            {
+                Log.i("Permissions", "Permissions ACCESS_NETWORK_STATE 0");
+                permissionList.add(Manifest.permission.ACCESS_NETWORK_STATE);
             }
 
-            if (!permissionList.isEmpty()){
-                String [] permissions=permissionList.toArray(new String [permissionList.size()]);
-                this.activity.requestPermissions( permissions, 1);
+            if (!permissionList.isEmpty()) {
+                String[] permissions = permissionList.toArray(new String[permissionList.size()]);
+                this.activity.requestPermissions(permissions, 1);
             }
-        }
-        else
-        {
-            UnityPlayer.UnitySendMessage("Global","onRecvPermissionsResult",  "1");
+            else {
+                Log.i("Permissions2", "Permissions 1_1");
+                UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", "1_1");
+            }
+        } else {
+            Log.i("Permissions1", "Permissions 1_1");
+            UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", "1_1");
         }
     }
 
     //多个权限同时获取
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
+        switch (requestCode) {
             case 1:
-                if (grantResults.length>0){
-                    for (int result:grantResults){
-                        if (result!=PackageManager.PERMISSION_GRANTED){
-                            Toast.makeText(this,"请同意所以请求才能运行程序",Toast.LENGTH_SHORT).show();
-                            doSomething_Ex("0");
-                            finish();
+                for (int result : grantResults) {
+                    Log.i("Permissions111", result + "");
+                }
+                for (String result : permissions) {
+                    Log.i("Permissions222", result + "");
+                }
+
+                if (grantResults.length > 0) {
+                    int i = 0;
+                    for (int result : grantResults) {
+                        if (result != PackageManager.PERMISSION_GRANTED) {
+                            Toast.makeText(this, "请同意所以请求才能运行程序", Toast.LENGTH_SHORT).show();
+                            UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", permissions[i] + "_0");
+                            //finish();
                             return;
                         }
-                        doSomething_Ex("1");
+                        UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", permissions[i] + "_1");
+                        i++;
                     }
-                }else {
-                    Toast.makeText(this,"发生权限请求错误,程序关闭",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "发生权限请求错误,程序关闭", Toast.LENGTH_SHORT).show();
                     finish();
                 }
+                break;
+            case 100:
+                //
                 break;
             default:
         }
