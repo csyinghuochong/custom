@@ -10,7 +10,7 @@ namespace ET
         /// </summary>
         public static void OnServerMail(this MailSceneComponent self, M2E_GMEMailSendRequest request)
         {
-            Log.Console($"OnServerMail");
+            Log.Console($"OnServerMail: {request.MailType}  {request.Title}");
 
             int mailid = self.dBServerMailInfo.ServerMailList.Count + 1;
             ServerMailItem serverMailItem = new ServerMailItem();
