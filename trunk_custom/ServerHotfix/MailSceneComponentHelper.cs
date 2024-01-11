@@ -51,7 +51,7 @@ namespace ET
                     if (!string.IsNullOrEmpty(serverMailItem.ParasmNew))
                     {
                         Log.Console($"新邮件: {serverMailItem.ServerMailIId}");
-                        MailHelp.ServerMailItem(zone, chat2G_EnterChat.OnlineUnitIdList[i], serverMailItem).Coroutine();
+                        await  MailHelp.ServerMailItem(zone, chat2G_EnterChat.OnlineUnitIdList[i], serverMailItem);
                     }
                     else
                     {
