@@ -86,7 +86,7 @@ public class MyEditorScript
     }
 
     [MenuItem("Custom/Build Android QuDao")]
-	static void PerformAndroidHuaWeiBuild()
+	static void PerformAndroidQuDaoBuild()
 	{
 		BulidTarget("QuDao", "Android");
 	}
@@ -188,7 +188,7 @@ public class MyEditorScript
 		}
 		else
 		{
-            //TikTokMuBao6 
+            //TikTokMuBao6 也是用的官方的安卓库
             CopyLibs("guanfang"); 
 			app_name = "危境";
 		}
