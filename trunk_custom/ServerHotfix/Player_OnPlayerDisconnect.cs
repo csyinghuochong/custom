@@ -11,7 +11,6 @@
 
             if (SceneConfigHelper.IsSingleFuben(sceneTypeEnum))
             {
-               
                 //动态删除副本
                 TransferHelper.NoticeFubenCenter(scene, 2).Coroutine();
                 scene.Dispose();
@@ -29,6 +28,11 @@
             if (sceneTypeEnum == (int)SceneTypeEnum.JiaYuan)
             {
                 JiaYuanSceneComponent jiayuanSceneComponent = scene.GetParent<JiaYuanSceneComponent>();
+                jiayuanSceneComponent.OnUnitLeave(scene);
+            }
+            if (sceneTypeEnum == (int)SceneTypeEnum.OneChallenge)
+            {
+                OneChallengeDungeonComponent jiayuanSceneComponent = scene.GetParent<OneChallengeDungeonComponent>();
                 jiayuanSceneComponent.OnUnitLeave(scene);
             }
         }
