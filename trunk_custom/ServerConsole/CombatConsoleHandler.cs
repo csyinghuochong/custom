@@ -17,6 +17,7 @@ namespace ET
                 case ConsoleMode.Combat:
                     contex.Parent.RemoveComponent<ModeContex>();
                     Log.Console($"C must have zone id");
+                    Log.Warning($"C must have zone id");
                     break;
                 default:
                     await ConsoleHelper.CombatConsoleHandler(content);

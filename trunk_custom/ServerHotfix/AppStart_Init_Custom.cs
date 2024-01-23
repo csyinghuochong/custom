@@ -15,7 +15,7 @@ namespace ET
             //int packetSize = GMHelp.GetRandomNumber();
             //Log.Console($"AppStart_Init_Custom: {packetSize}");
             //PacketParser.OuterPacketSizeLengthS = packetSize;
-            Log.Console($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
+            Log.Warning($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
         }
     }
 }

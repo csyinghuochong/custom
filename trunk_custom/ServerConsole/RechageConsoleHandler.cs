@@ -11,6 +11,7 @@
                 case ConsoleMode.Rechage:
                     contex.Parent.RemoveComponent<ModeContex>();
                     Log.Console($"C must have mail zone userid items title");
+                    Log.Warning($"C must have mail zone userid items title");
                     break;
                 default:
                     //recharge 区服(0所有区服  1指定区服)  玩家ID(0所有玩家)  充值数量

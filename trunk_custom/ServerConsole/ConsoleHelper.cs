@@ -27,6 +27,7 @@ namespace ET
                 }
             }
 #endif
+            Log.Warning("数据落地！");
             Log.Console("数据落地！");
         }
 
@@ -203,11 +204,13 @@ namespace ET
             if (chaxunInfo[0] != "level")
             {
                 Log.Console($"C must have level zone");
+                Log.Warning($"C must have level zone");
                 return;
             }
             if (chaxunInfo.Length != 2)
             {
                 Log.Console($"C must have level zone");
+                Log.Warning($"C must have level zone");
                 return;
             }
 #if SERVER
@@ -448,6 +451,7 @@ namespace ET
             if (mailInfo[0] != "mail" && mailInfo.Length < 6)
             {
                 Log.Console("邮件发送失败！");
+                Log.Warning("邮件发送失败！");
                 return ErrorCode.ERR_Parameter;
             }
             try
@@ -457,6 +461,7 @@ namespace ET
             catch (Exception ex)
             {
                 Log.Console("邮件发送失败！" + ex.ToString());
+                Log.Warning("邮件发送失败！" + ex.ToString());
                 return ErrorCode.ERR_Parameter;
             }
 

@@ -14,6 +14,7 @@ namespace ET
                 case ConsoleMode.OnLineNumer:
                     contex.Parent.RemoveComponent<ModeContex>();
                     Log.Console($"C must have zone id");
+                    Log.Warning($"C must have zone id");
                     break;
                 default:
                     string[] ss = content.Split(" ");
@@ -55,6 +56,7 @@ namespace ET
                     }
                     string zonestr = zoneid == "0" ? "全部" : zoneid;
                     Log.Console($"{zonestr}区 在线人数: 玩家：{number}  机器人：{robot} 压测:{yace}");
+                    Log.Warning($"{zonestr}区 在线人数: 玩家：{number}  机器人：{robot} 压测:{yace}");
                     break;
             }
 

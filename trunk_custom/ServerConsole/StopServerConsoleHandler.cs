@@ -15,6 +15,7 @@ namespace ET
                 case ConsoleMode.StopServer:
                     contex.Parent.RemoveComponent<ModeContex>();
                     Log.Console($"C must zone");
+                    Log.Warning($"C must zone");
                     break;
                 default:
                     await ConsoleHelper.StopServerConsoleHandler(content);

@@ -26,6 +26,10 @@ namespace ET
             {
                 ConsoleHelper.LevelConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == ConsoleMode.Mail)
+            {
+                ConsoleHelper.MailConsoleHandler(request.Context).Coroutine();
+            }
             if (infoList[0] == ConsoleMode.Rechage)
             {
 #if SERVER
@@ -36,6 +40,10 @@ namespace ET
                 }
                 RechargeHelp.OnPaySucessToGate(int.Parse(mailInfo[1]), long.Parse(mailInfo[2]), int.Parse(mailInfo[3]), "补偿").Coroutine();
 #endif
+            }
+            if (infoList[0] == ConsoleMode.ReloadDll)
+            {
+                ConsoleHelper.ReloadDllConsoleHandler(request.Context).Coroutine();
             }
             if (infoList[0] == ConsoleMode.ServerRank)
             {

@@ -10,7 +10,7 @@ namespace ET
         /// </summary>
         public static void OnServerMail(this MailSceneComponent self, M2E_GMEMailSendRequest request)
         {
-            Log.Console($"OnServerMail: {request.MailType}  {request.Title}");
+            Log.Warning($"OnServerMail: {request.MailType}  {request.Title}");
 
             int mailid = self.dBServerMailInfo.ServerMailList.Count + 1;
             ServerMailItem serverMailItem = new ServerMailItem();
@@ -50,12 +50,12 @@ namespace ET
                     //旧的邮件不发给玩家了，但是需要做记录
                     if (!string.IsNullOrEmpty(serverMailItem.ParasmNew))
                     {
-                        Log.Console($"新邮件: {serverMailItem.ServerMailIId}");
+                        Log.Warning($"新邮件: {serverMailItem.ServerMailIId}");
                         await  MailHelp.ServerMailItem(zone, chat2G_EnterChat.OnlineUnitIdList[i], serverMailItem);
                     }
                     else
                     {
-                        Log.Console($"旧邮件: {serverMailItem.ServerMailIId}");
+                        Log.Warning($"旧邮件: {serverMailItem.ServerMailIId}");
                     }
 
                     MailHelp.SendServerMail(zone, chat2G_EnterChat.OnlineUnitIdList[i], serverMailItem);

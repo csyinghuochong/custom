@@ -17,12 +17,12 @@ namespace ET
             {
                 if (dBCenterSerialInfo.SerialList[i].KeyId == sindex)
                 {
-                    Log.Console("生成序列号: 重复");
+                    Log.Warning("生成序列号: 重复");
                     return;
                 }
             }
 
-            Log.Console($"生成序列号{sindex}: start");
+            Log.Warning($"生成序列号{sindex}: start");
             string codelist = string.Empty;
             self.DBCenterSerialInfo.SerialIndex = sindex;
             SerialHelper serialHelper = new SerialHelper();
@@ -35,7 +35,7 @@ namespace ET
                 codelist += "\r\n";
             }
             Log.Debug(codelist);
-            Log.Console($"生成序列号{sindex}: end");
+            Log.Warning($"生成序列号{sindex}: end");
         }
 
     }

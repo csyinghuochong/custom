@@ -17,7 +17,7 @@ namespace ET
     {
         public override void Awake(ReChargeAliComponent self)
         {
-            Log.Console($"ReChargeAliComponent.Awake");
+            Log.Warning($"ReChargeAliComponent.Awake");
 
             //1.启动监听支付结果的服务器
             self.ListenerAliPayResult();
@@ -101,7 +101,7 @@ namespace ET
             }
             if (ComHelp.IsBanHaoZone())
             {
-                Log.Console("内测去屏蔽充值！");
+                Log.Warning("内测去屏蔽充值！");
                 return;
             }
 
@@ -157,7 +157,7 @@ namespace ET
                     int zone = int.Parse(orderId.Split('_')[1]);
                     int amount = int.Parse(orderId.Split('_')[2]);
                     string serverName = ServerHelper.GetGetServerItem(false, zone).ServerName;
-                    Log.Console($"支付成功[支付宝]: 区：{serverName}     玩家名字：{userInfo.Split('_')[1]}   充值额度：{amount}  时间:{TimeHelper.DateTimeNow().ToString()}");
+                    Log.Warning($"支付成功[支付宝]: 区：{serverName}     玩家名字：{userInfo.Split('_')[1]}   充值额度：{amount}  时间:{TimeHelper.DateTimeNow().ToString()}");
                    
                     RechargeHelp.OnPaySucessToGate(zone, userId, amount, orderId).Coroutine();
                     self.OrderDic.Remove(aliPayResultDic["out_trade_no"]);
