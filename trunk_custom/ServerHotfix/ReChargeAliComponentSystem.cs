@@ -142,7 +142,7 @@ namespace ET
 
                 //设置支付结果打印颜色并输出结果
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                Log.Warning("支付宝支付结果来了：" + pay_notice);
+                //Log.Warning("支付宝支付结果来了：" + pay_notice);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 //根据加密算法 验签 API 

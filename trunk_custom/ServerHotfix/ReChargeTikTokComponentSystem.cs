@@ -128,7 +128,7 @@ namespace ET
         {
             try
             {
-                Log.Console($"CheckTikTokPayResult: 1");
+                //Log.Console($"CheckTikTokPayResult: 1");
                 self.HttpListener.BeginGetContext(self.CheckTikTokPayResult, null);
 
                 //异步传入值后进行调用
@@ -140,8 +140,8 @@ namespace ET
                 //将传入的数据进行解码
                 string pay_notice = HttpUtility.UrlDecode(body.ReadToEnd(), Encoding.UTF8);//HttpUtility.UrlDecode：解码 url编码，将字符串格式为%的形式，解码就是将%转化为字符串信息
 
-                Log.Console($"pay_notice:  {pay_notice}");
-                Log.Warning($"pay_notice:  {pay_notice}");
+                //Log.Console($"pay_notice:  {pay_notice}");
+                //Log.Warning($"pay_notice:  {pay_notice}");
                 if (string.IsNullOrEmpty(pay_notice))
                 {
                     return;

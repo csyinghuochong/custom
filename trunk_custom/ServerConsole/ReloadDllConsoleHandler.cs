@@ -12,15 +12,19 @@ namespace ET
             switch (content)
             {
                 case ConsoleMode.ReloadDll:
+                    break;
+                default:
                     contex.Parent.RemoveComponent<ModeContex>();
 
-#if SERVER
                     string[] ss = content.Split(" ");
-                    if (ss.Length >= 2 && ss[1] != DllHelper.Admin)
+
+                    if (ss.Length != 3)
                     {
                         return;
                     }
-#endif
+
+                    int loadType = int.Parse(ss[1]);    
+                    string LoadValue = ss[2];   
 
                     //Game.EventSystem.Add(DllHelper.GetHotfixAssembly());
                     //Game.EventSystem.Load();
@@ -42,7 +46,7 @@ namespace ET
                         {
                             long mapInstanceId = StartSceneConfigCategory.Instance.GetBySceneName(startSceneConfig.Zone, startSceneConfig.Name).InstanceId;
                             A2M_Reload createUnit = (A2M_Reload)await ActorMessageSenderComponent.Instance.Call(
-                                mapInstanceId, new M2A_Reload() { LoadType = 0, LoadValue = "0" });
+                                mapInstanceId, new M2A_Reload() { LoadType = loadType, LoadValue = LoadValue });
 
                             if (createUnit.Error != ErrorCode.ERR_Success)
                             {

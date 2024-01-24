@@ -207,7 +207,7 @@ namespace ET
                 //将支付的回调结果转换成字符串
                 StreamReader body = new StreamReader(request.InputStream, Encoding.UTF8);       //读取流，用来获取微信请求的数据
                 string pay_notice = HttpUtility.UrlDecode(body.ReadToEnd(), Encoding.UTF8);     //HttpUtility.UrlDecode：解码                                                  //打印看看支付宝给我们发了什么
-                LogHelper.LogWarning("微信支付通知结果来了:" + pay_notice);
+                //LogHelper.LogWarning("微信支付通知结果来了:" + pay_notice);
                 if (string.IsNullOrEmpty(pay_notice))
                 {
                     return;
