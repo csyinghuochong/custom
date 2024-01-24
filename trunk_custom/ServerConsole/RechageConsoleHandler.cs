@@ -16,7 +16,7 @@
                     //recharge 区服(0所有区服  1指定区服)  玩家ID(0所有玩家)  充值数量
                     //recharge  1 11111 6
                     string[] mailInfo = content.Split(" ");
-                    if (mailInfo[0] != "mail" && mailInfo.Length < 4)
+                    if (mailInfo[0] != "rechage" && mailInfo.Length < 4)
                     {
                         return;
                     }

@@ -1,0 +1,530 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ET
+{
+    public static class ConsoleHelper
+    {
+
+        public static async ETTask OnStopServer(List<int> zoneList)
+        {
+            await TimerComponent.Instance.WaitAsync(10 * TimeHelper.Minute);
+#if SERVER
+            for (int i = 0; i < zoneList.Count; i++)
+            {
+                List<long> mapids = new List<long>()
+                            {
+                                 StartSceneConfigCategory.Instance.GetBySceneName(zoneList[i], "PaiMai").InstanceId,
+                                 StartSceneConfigCategory.Instance.GetBySceneName(zoneList[i], "Rank").InstanceId,
+                                 StartSceneConfigCategory.Instance.GetBySceneName(zoneList[i], "Union").InstanceId,
+                            };
+
+                for (int map = 0; map < mapids.Count; map++)
+                {
+                    A2A_ServerMessageRResponse m2m_TrasferUnitResponse = (A2A_ServerMessageRResponse)await ActorMessageSenderComponent.Instance.Call
+                            (mapids[map], new A2A_ServerMessageRequest() { MessageType = NoticeType.StopSever });
+                }
+            }
+#endif
+            Log.Console("数据落地！");
+        }
+
+
+        public static async ETTask StopServerConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+#if SERVER
+
+            string[] ss = content.Split(" ");
+            if (ss.Length < 4)
+            {
+                Log.Console($"C must zone");
+                return;
+            }
+            //stopserver 0 0 tcg452241 0 
+            //stopserver 0 /  0[停] 0[开] 0[序] 0
+            List<int> zoneList = new List<int> { };
+            if (ss[1] == "0")
+            {
+                List<StartZoneConfig> listprogress = StartZoneConfigCategory.Instance.GetAll().Values.ToList();
+                for (int i = 0; i < listprogress.Count; i++)
+                {
+                    if (listprogress[i].Id >= ComHelp.MaxZone)
+                    {
+                        continue;
+                    }
+
+                    if (!StartSceneConfigCategory.Instance.Gates.ContainsKey(listprogress[i].Id))
+                    {
+                        continue;
+                    }
+
+                    zoneList.Add(listprogress[i].Id);
+                }
+            }
+            else
+            {
+                zoneList.Add(int.Parse(ss[1]));
+            }
+
+            if (ss[2] == "0")  //0全部广播停服维护 1开服  2序列号 
+            {
+                for (int i = 0; i < zoneList.Count; i++)
+                {
+                    Log.Console($"zoneList111: {zoneList[i]} ");
+
+                    long chatServerId = StartSceneConfigCategory.Instance.GetBySceneName(zoneList[i], "Chat").InstanceId;
+                    A2A_ServerMessageRResponse g_SendChatRequest = (A2A_ServerMessageRResponse)await ActorMessageSenderComponent.Instance.Call
+                        (chatServerId, new A2A_ServerMessageRequest()
+                        {
+                            MessageType = NoticeType.StopSever,
+                            MessageValue = "停服维护"
+                        });
+                }
+            }
+
+            long accountServerId = StartSceneConfigCategory.Instance.AccountCenterConfig.InstanceId;
+            A2A_ServerMessageRResponse response = (A2A_ServerMessageRResponse)await ActorMessageSenderComponent.Instance.Call
+                (accountServerId, new A2A_ServerMessageRequest()
+                {
+                    MessageType = NoticeType.StopSever,
+                    MessageValue = $"{ss[2]}_{ss[3]}"
+                });
+
+            if (ss[2] == "0")  //0全部广播停服维护 十分钟后数据落地
+            {
+                OnStopServer(zoneList).Coroutine();
+            }
+
+#endif
+        }
+
+        public static Dictionary<long, int> ShaiCha(Dictionary<long, int> dic, int showNum, out int minValue)
+        {
+
+            //排序
+            dic = dic.OrderByDescending(o => o.Value).ToDictionary(p => p.Key, o => o.Value);
+            int num = 0;
+            int minValueNum = 0;
+            foreach (long unitID in dic.Keys)
+            {
+                num++;
+
+                if (num == dic.Count || num == showNum)
+                {
+                    minValueNum = dic[unitID];
+                }
+
+                if (num > showNum)
+                {
+                    dic.Remove(unitID);
+                }
+            }
+            minValue = minValueNum;
+            return dic;
+
+        }
+
+        public static async ETTask ServerRankConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo[0] != "serverrank")
+            {
+                return;
+            }
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            int pyzone = StartZoneConfigCategory.Instance.Get(zone).PhysicZone;
+            long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+            Dictionary<long, int> dic = new Dictionary<long, int>();
+            int lowCombat = 0;
+
+            //查询全部玩家
+            List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+            for (int i = 0; i < userinfoComponentList.Count; i++)
+            {
+                UserInfoComponent userInfoComponent = userinfoComponentList[i];
+                if (userInfoComponent.UserInfo.RobotId != 0)
+                {
+                    //continue;
+                }
+
+
+                if (userInfoComponent.UserInfo.Lv < 1)
+                {
+                    continue;
+                }
+
+                int combatFight = userInfoComponent.UserInfo.Combat;
+                if (combatFight < lowCombat)
+                {
+                    continue;
+                }
+
+                dic.Add(userInfoComponent.UserInfo.UserId, combatFight);
+
+                if (dic.Count >= 100)
+                {
+
+                    //开始筛查
+                    dic = ShaiCha(dic, 10, out lowCombat);
+
+                }
+            }
+
+            //开始筛查
+            dic = ShaiCha(dic, 10, out lowCombat);
+
+            Log.Debug($"服务器注册人数: {userinfoComponentList.Count}");
+
+            foreach (long unitID in dic.Keys)
+            {
+                List<UserInfoComponent> userinfoComponentSing = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0 && d.UserInfo.UserId == unitID);
+                if (userinfoComponentSing.Count > 0)
+                {
+
+                    //获取充值的数值组件
+                    List<NumericComponent> numericComponent = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id > 0 && d.Id == unitID);
+                    string showStr = $"{userinfoComponentSing[0].UserInfo.Name} 战力:{userinfoComponentSing[0].UserInfo.Combat}金币:{userinfoComponentSing[0].UserInfo.Gold} 钻石:{userinfoComponentSing[0].UserInfo.Diamond} 职业{userinfoComponentSing[0].UserInfo.Occ}-{userinfoComponentSing[0].UserInfo.OccTwo} 充值:{numericComponent[0].GetAsInt(NumericType.RechargeNumber)}";
+                    Log.Debug($"{showStr}");
+                }
+            }
+
+#endif
+        }
+
+        public static async ETTask LevelConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo[0] != "level")
+            {
+                Log.Console($"C must have level zone");
+                return;
+            }
+            if (chaxunInfo.Length != 2)
+            {
+                Log.Console($"C must have level zone");
+                return;
+            }
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                List<StartZoneConfig> listprogress = StartZoneConfigCategory.Instance.GetAll().Values.ToList();
+                for (int i = 0; i < listprogress.Count; i++)
+                {
+                    if (listprogress[i].Id >= ComHelp.MaxZone)
+                    {
+                        continue;
+                    }
+                    if (!StartSceneConfigCategory.Instance.Gates.ContainsKey(listprogress[i].Id))
+                    {
+                        continue;
+                    }
+                    zonlist.Add(listprogress[i].Id);
+                }
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+                Dictionary<int, int> levelPlayerCount = new Dictionary<int, int>();
+
+                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+                {
+                    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
+                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    {
+                        continue;
+                    }
+
+                    if (!levelPlayerCount.ContainsKey(userInfoComponent.UserInfo.Lv))
+                    {
+                        levelPlayerCount.Add(userInfoComponent.UserInfo.Lv, 1);
+                    }
+                    else
+                    {
+                        levelPlayerCount[userInfoComponent.UserInfo.Lv]++;
+                    }
+
+                }
+
+                string levelInfo = $"{pyzone}区玩家等级列表： \n";
+                for (int level = 1; level <= 65; level++)
+                {
+                    int levelnumber = 0;
+                    levelPlayerCount.TryGetValue(level, out levelnumber);
+                    levelInfo = levelInfo + $"等级:{level}  人数:{levelnumber}  \n";
+                }
+
+                LogHelper.LogWarning(levelInfo, true);
+            }
+#endif
+        }
+
+        public static void KickOutConsoleHandler(string content)
+        {
+            //kickout 1    1
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo[0] != "kickout")
+            {
+                return;
+            }
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            int pyzone = StartZoneConfigCategory.Instance.Get(zone).PhysicZone;
+            long unitid = long.Parse(chaxunInfo[2]);
+
+            DisconnectHelper.KickPlayer(pyzone, unitid).Coroutine();
+#endif
+        }
+
+        public static async ETTask CombatConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            string[] ss = content.Split(" ");
+            string zoneid = ss[1];
+#if SERVER
+            List<int> zoneList = ServerMessageHelper.GetAllZone();
+            for (int i = 0; i < zoneList.Count; i++)
+            {
+                long rankServerId = StartSceneConfigCategory.Instance.GetBySceneName(zoneList[i], "Rank").InstanceId;
+                await ServerMessageHelper.SendServerMessage(rankServerId, NoticeType.RankRefresh, String.Empty);
+                await TimerComponent.Instance.WaitAsync(10000);
+            }
+#endif
+        }
+        
+        public static async ETTask<string> ChaXunConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            //chaxun 1 ""
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo[0] != "chaxun")
+            {
+                return string.Empty;
+            }
+
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            int pyzone = StartZoneConfigCategory.Instance.Get(zone).PhysicZone;
+            long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+            //查询全区金币异常
+            if (chaxunInfo.Length == 2)
+            {
+                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+                for (int i = 0; i < userinfoComponentList.Count; i++)
+                {
+                    UserInfoComponent userInfoComponent = userinfoComponentList[i];
+                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    {
+                        continue;
+                    }
+                    long gold = userInfoComponent.UserInfo.Gold;
+                    long diamond = userInfoComponent.UserInfo.Diamond;
+
+                    if (gold > 1000000 || diamond > 10000)
+                    {
+                        long unitId = userinfoComponentList[0].Id;
+
+                        List<BagComponent> baginfoInfoList = await Game.Scene.GetComponent<DBComponent>().Query<BagComponent>(pyzone, d => d.Id == unitId);
+                        List<BagInfo> bagInfosAll = baginfoInfoList[0].GetAllItems();
+
+                        string infolist = $"{userInfoComponent.UserInfo.Name}:  \n";
+                        infolist = infolist + $"金币： {gold} \n";
+                        infolist = infolist + $"钻石： {diamond} \n";
+
+                        for (int b = 0; b < bagInfosAll.Count; b++)
+                        {
+                            infolist = infolist + $"{bagInfosAll[b].ItemID};{bagInfosAll[b].ItemNum}\n";
+                        }
+                        LogHelper.LogWarning(infolist);
+                    }
+                }
+            }
+
+            //查询单个玩家
+            if (chaxunInfo.Length == 3)
+            {
+                LogHelper.LogDebug($"name: {chaxunInfo[2]}");
+                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0 && d.UserInfo.Name == chaxunInfo[2]);
+                if (userinfoComponentList.Count == 0)
+                {
+                    return string.Empty;
+                }
+                long unitId = userinfoComponentList[0].Id;
+                IActorResponse reqEnter = (M2G_RequestEnterGameState)await MessageHelper.CallLocationActor(unitId, new G2M_RequestEnterGameState()
+                {
+                    GateSessionActorId = -1
+                });
+                if (reqEnter.Error != ErrorCode.ERR_Success)
+                {
+                    Log.Console("玩家不在线！");
+                    return "玩家不在线！";
+                }
+                else
+                {
+                    Log.Console(reqEnter.Message);
+                    return reqEnter.Message;
+                }
+            }
+
+#endif
+            return string.Empty;
+        }
+
+        public static async ETTask<int> ReloadDllConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            string[] ss = content.Split(" ");
+
+            if (ss.Length != 3)
+            {
+                return ErrorCode.ERR_Parameter;
+            }
+
+            int loadType = int.Parse(ss[1]);
+            string LoadValue = ss[2];
+#if SERVER
+            //Game.EventSystem.Add(DllHelper.GetHotfixAssembly());
+            //Game.EventSystem.Load();
+
+            List<StartProcessConfig> listprogress = StartProcessConfigCategory.Instance.GetAll().Values.ToList();
+            Log.Console("C2M_Reload_a: listprogress " + listprogress.Count);
+            Log.Warning("C2M_Reload_a: listprogress " + listprogress.Count);
+            for (int i = 0; i < listprogress.Count; i++)
+            {
+                List<StartSceneConfig> processScenes = StartSceneConfigCategory.Instance.GetByProcess(listprogress[i].Id);
+                if (processScenes.Count == 0)  // || listprogress[i].Id == 203)
+                {
+                    continue;
+                }
+
+                StartSceneConfig startSceneConfig = processScenes[0];
+                Log.Console("C2M_Reload_a: processScenes " + startSceneConfig);
+                Log.Warning("C2M_Reload_a: processScenes " + startSceneConfig);
+                try
+                {
+                    long mapInstanceId = StartSceneConfigCategory.Instance.GetBySceneName(startSceneConfig.Zone, startSceneConfig.Name).InstanceId;
+                    A2G_Reload createUnit = (A2G_Reload)await ActorMessageSenderComponent.Instance.Call(
+                        mapInstanceId, new G2A_Reload() { LoadType = loadType, LoadValue = LoadValue });
+
+                    if (createUnit.Error != ErrorCode.ERR_Success)
+                    {
+                        Log.Console("C2M_Reload_a: error " + startSceneConfig);
+                        Log.Warning("C2M_Reload_a: error " + startSceneConfig);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex);
+                }
+            }
+#endif
+            return ErrorCode.ERR_Success;
+        }
+
+
+        public static async ETTask<int> MailConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            //mail 区服(0所有区服  1指定区服)  玩家ID(0所有玩家)  道具 邮件类型 参数 管理员
+            //mail 0 0 1;1 2 “6” tt
+            string[] mailInfo = content.Split(" ");
+            if (mailInfo[0] != "mail" && mailInfo.Length < 6)
+            {
+                Log.Console("邮件发送失败！");
+                return ErrorCode.ERR_Parameter;
+            }
+            try
+            {
+                int mailtype = int.Parse(mailInfo[4]);
+            }
+            catch (Exception ex)
+            {
+                Log.Console("邮件发送失败！" + ex.ToString());
+                return ErrorCode.ERR_Parameter;
+            }
+
+#if SERVER
+            //全服邮件
+            if (mailInfo[1] == "0")
+            {
+                if (mailInfo.Length < 7 && mailInfo[6] != DllHelper.Admin)
+                {
+                    Log.Console("发送全服邮件0！");
+                    return ErrorCode.ERR_Parameter;
+                }
+                Log.Console("发送全服邮件1！");
+            }
+            List<int> zoneList = new List<int> { };
+            if (mailInfo[1] == "0")
+            {
+                List<StartZoneConfig> listprogress = StartZoneConfigCategory.Instance.GetAll().Values.ToList();
+                for (int i = 0; i < listprogress.Count; i++)
+                {
+                    if (listprogress[i].Id >= ComHelp.MaxZone)
+                    {
+                        continue;
+                    }
+                    if (!StartSceneConfigCategory.Instance.Gates.ContainsKey(listprogress[i].Id))
+                    {
+                        continue;
+                    }
+                    zoneList.Add(listprogress[i].Id);
+                }
+            }
+            else
+            {
+                zoneList.Add(int.Parse(mailInfo[1]));
+            }
+
+            for (int i = 0; i < zoneList.Count; i++)
+            {
+                try
+                {
+                    int pyzone = StartZoneConfigCategory.Instance.Get(zoneList[i]).PhysicZone;
+                    long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "EMail").InstanceId;
+                    E2M_GMEMailSendResponse g2M_UpdateUnitResponse = (E2M_GMEMailSendResponse)await ActorMessageSenderComponent.Instance.Call
+                        (gateServerId, new M2E_GMEMailSendRequest()
+                        {
+                            UserName = mailInfo[2],
+                            Itemlist = mailInfo[3],
+                            Title = mailInfo[5],
+                            ActorId = zoneList[i],
+                            MailType = int.Parse(mailInfo[4]),
+                        });
+                    if (g2M_UpdateUnitResponse.Error == ErrorCode.ERR_Success)
+                    {
+                        Log.Console($"邮件发送成功！：{pyzone}区");
+                    }
+                    else
+                    {
+                        Log.Console($"邮件发送失败！：{pyzone}区：" + g2M_UpdateUnitResponse.Message);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Console("邮件发送异常！： " + ex.ToString());
+                }
+            }
+#endif
+
+            return ErrorCode.ERR_Success;
+        }
+    }
+}
