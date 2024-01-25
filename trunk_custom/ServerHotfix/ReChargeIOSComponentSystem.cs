@@ -39,7 +39,7 @@ namespace ET
             string sendStr = "{\"receipt-data\":\"" + payLoad + "\"}";
             string postReturnStr = await HttpHelper.GetIosPayParameter(verifyURL, sendStr);
             Root rt = null;
-            Log.Warning($"IOS充值回调11 {postReturnStr}");
+            //Log.Warning($"IOS充值回调11 {postReturnStr}");
             try
             {
                 rt = JsonHelper.FromJson<Root>(postReturnStr);

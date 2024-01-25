@@ -48,21 +48,7 @@ namespace ET
             List<int> zoneList = new List<int> { };
             if (ss[1] == "0")
             {
-                List<StartZoneConfig> listprogress = StartZoneConfigCategory.Instance.GetAll().Values.ToList();
-                for (int i = 0; i < listprogress.Count; i++)
-                {
-                    if (listprogress[i].Id >= ComHelp.MaxZone)
-                    {
-                        continue;
-                    }
-
-                    if (!StartSceneConfigCategory.Instance.Gates.ContainsKey(listprogress[i].Id))
-                    {
-                        continue;
-                    }
-
-                    zoneList.Add(listprogress[i].Id);
-                }
+                zoneList = ServerMessageHelper.GetAllZone();
             }
             else
             {
@@ -218,19 +204,7 @@ namespace ET
             List<int> zonlist = new List<int> { };
             if (zone == 0)
             {
-                List<StartZoneConfig> listprogress = StartZoneConfigCategory.Instance.GetAll().Values.ToList();
-                for (int i = 0; i < listprogress.Count; i++)
-                {
-                    if (listprogress[i].Id >= ComHelp.MaxZone)
-                    {
-                        continue;
-                    }
-                    if (!StartSceneConfigCategory.Instance.Gates.ContainsKey(listprogress[i].Id))
-                    {
-                        continue;
-                    }
-                    zonlist.Add(listprogress[i].Id);
-                }
+                zonlist = ServerMessageHelper.GetAllZone();
             }
             else
             {
@@ -479,19 +453,7 @@ namespace ET
             List<int> zoneList = new List<int> { };
             if (mailInfo[1] == "0")
             {
-                List<StartZoneConfig> listprogress = StartZoneConfigCategory.Instance.GetAll().Values.ToList();
-                for (int i = 0; i < listprogress.Count; i++)
-                {
-                    if (listprogress[i].Id >= ComHelp.MaxZone)
-                    {
-                        continue;
-                    }
-                    if (!StartSceneConfigCategory.Instance.Gates.ContainsKey(listprogress[i].Id))
-                    {
-                        continue;
-                    }
-                    zoneList.Add(listprogress[i].Id);
-                }
+                zoneList = ServerMessageHelper.GetAllZone();
             }
             else
             {
@@ -503,6 +465,7 @@ namespace ET
                 try
                 {
                     int pyzone = StartZoneConfigCategory.Instance.Get(zoneList[i]).PhysicZone;
+                    Console.WriteLine($"全服邮件； {zoneList[i]} {pyzone}");
                     long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "EMail").InstanceId;
                     E2M_GMEMailSendResponse g2M_UpdateUnitResponse = (E2M_GMEMailSendResponse)await ActorMessageSenderComponent.Instance.Call
                         (gateServerId, new M2E_GMEMailSendRequest()
