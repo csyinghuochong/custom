@@ -383,21 +383,33 @@ namespace ET
             Log.Console("DBMailInfo Complelte");
 
             //DBPaiMainInfo 拍卖，也合并过来，要着重测试
-            List<DBPaiMainInfo> dBPaiMainInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBPaiMainInfo>(oldzone, d => d.Id > 0);
+            //List<DBPaiMainInfo> dBPaiMainInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBPaiMainInfo>(oldzone, d => d.Id > 0);
             List<DBPaiMainInfo> dBPaiMainInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBPaiMainInfo>(newzone, d => d.Id > 0);
-            foreach (var entity in dBPaiMainInfos_new)
+            List<long> paimaishangjiaIds = new List<long>() 
             {
-                if (entity.Id != newzone)
+                PaiMaiHelper.Instance.GetPaiMaiId(1),
+                PaiMaiHelper.Instance.GetPaiMaiId(2),
+                PaiMaiHelper.Instance.GetPaiMaiId(3),
+                PaiMaiHelper.Instance.GetPaiMaiId(4),
+            };
+            foreach (var entityNew in dBPaiMainInfos_new)
+            {
+                if (!paimaishangjiaIds.Contains( entityNew.Id) )
                 {
                     continue;
                 }
                 bool have = false;
+                List<DBPaiMainInfo> dBPaiMainInfos_old = await Game.Scene.GetComponent<DBComponent>().Query<DBPaiMainInfo>(oldzone, d => d.Id == entityNew.Id);
+                if (dBPaiMainInfos_old == null || dBPaiMainInfos_old.Count == 0)
+                {
+                    continue;
+                }
                 List<PaiMaiItemInfo> oldlist_0 = dBPaiMainInfos_old[0].PaiMaiItemInfos;
                 if (oldlist_0.Count > 0)
                 {
-                    for (int i = 0; i < entity.PaiMaiItemInfos.Count; i++)
+                    for (int i = 0; i < entityNew.PaiMaiItemInfos.Count; i++)
                     {
-                        if (entity.PaiMaiItemInfos[i].Id == oldlist_0[0].Id)
+                        if (entityNew.PaiMaiItemInfos[i].Id == oldlist_0[0].Id)
                         {
                             have = true;
                             break;
@@ -406,11 +418,10 @@ namespace ET
                 }
                 if (!have)
                 {
-                    entity.PaiMaiItemInfos.AddRange(oldlist_0);
-                    entity.StallItemInfos.AddRange(dBPaiMainInfos_old[0].StallItemInfos);
+                    entityNew.PaiMaiItemInfos.AddRange(oldlist_0);
                 }
 
-                await Game.Scene.GetComponent<DBComponent>().Save(newzone, entity);
+                await Game.Scene.GetComponent<DBComponent>().Save(newzone, entityNew);
             }
 
             dbcount = 0;
