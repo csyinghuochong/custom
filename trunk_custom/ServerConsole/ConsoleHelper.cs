@@ -55,7 +55,7 @@ namespace ET
                 zoneList.Add(int.Parse(ss[1]));
             }
 
-            if (ss[2] == "0")  //0全部广播停服维护 1开服  2序列号 
+            if (ss[2] == "0")  
             {
                 for (int i = 0; i < zoneList.Count; i++)
                 {
@@ -185,17 +185,18 @@ namespace ET
 
         public static async ETTask GoldConsoleHandler(string content)
         {
+            Console.WriteLine($"request.Context:  GoldConsoleHandler: {content}");
             await ETTask.CompletedTask;
             string[] chaxunInfo = content.Split(" ");
             if (chaxunInfo[0] != "gold")
             {
-                Log.Console($"C must have gold zone");
+                Console.WriteLine($"C must have gold zone");
                 Log.Warning($"C must have gold zone");
                 return;
             }
-            if (chaxunInfo.Length != 2)
+            if (chaxunInfo.Length != 3)
             {
-                Log.Console($"C must have gold zone");
+                Console.WriteLine($"C must have gold zone");
                 Log.Warning($"C must have gold zone");
                 return;
             }
@@ -210,29 +211,42 @@ namespace ET
             {
                 zonlist.Add(zone);
             }
-
+            long maxGold = long.Parse(chaxunInfo[2]);
             for (int i = 0; i < zonlist.Count; i++)
             {
                 int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
 
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
 
-                string levelInfo = $"{pyzone}区玩家>100000000列表： \n";
+                string levelInfo = $"{pyzone}区玩家金币>100000000列表： \n";
                 List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
                 for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
                 {
                     UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
-                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    if (userInfoComponent.UserInfo.RobotId != 0 )
                     {
                         continue;
                     }
 
-                    if (userInfoComponent.UserInfo.Gold >= 100000000)
+                    if (userInfoComponent.UserInfo.Gold < maxGold)
                     {
-                        levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name}  金币:{userInfoComponent.UserInfo.Gold}  \n";
+                        continue;
                     }
+                    if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
+                    {
+                        continue;
+                    }
+
+                    List<NumericComponent> NumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (NumericComponentlist == null || NumericComponentlist.Count == 0)
+                    {
+                        continue;
+                    }
+                    int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+
+                    levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 金币:{userInfoComponent.UserInfo.Gold} 充值:{recharge} \n";
                 }
-                LogHelper.LogWarning(levelInfo, true);
+                Log.Warning(levelInfo);
             }
 #endif
         }
