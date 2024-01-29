@@ -183,6 +183,60 @@ namespace ET
 #endif
         }
 
+        public static async ETTask GoldConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo[0] != "gold")
+            {
+                Log.Console($"C must have gold zone");
+                Log.Warning($"C must have gold zone");
+                return;
+            }
+            if (chaxunInfo.Length != 2)
+            {
+                Log.Console($"C must have gold zone");
+                Log.Warning($"C must have gold zone");
+                return;
+            }
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                zonlist = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+                string levelInfo = $"{pyzone}区玩家>100000000列表： \n";
+                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+                {
+                    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
+                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    {
+                        continue;
+                    }
+
+                    if (userInfoComponent.UserInfo.Gold >= 100000000)
+                    {
+                        levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name}  金币:{userInfoComponent.UserInfo.Gold}  \n";
+                    }
+                }
+                LogHelper.LogWarning(levelInfo, true);
+            }
+#endif
+        }
+
         public static async ETTask LevelConsoleHandler(string content)
         {
             await ETTask.CompletedTask;
