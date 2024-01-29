@@ -53,6 +53,10 @@ namespace ET
             {
                 ConsoleHelper.StopServerConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "gold")
+            {
+                ConsoleHelper.GoldConsoleHandler(request.Context).Coroutine();
+            }
         }
     }
 }
