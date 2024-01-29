@@ -55,7 +55,7 @@ namespace ET
                 zoneList.Add(int.Parse(ss[1]));
             }
 
-            if (ss[2] == "0")  
+            if (ss[2] == "0")  //0全部广播停服维护 1开服  2序列号 
             {
                 for (int i = 0; i < zoneList.Count; i++)
                 {
