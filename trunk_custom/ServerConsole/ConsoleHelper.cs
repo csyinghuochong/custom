@@ -9,8 +9,9 @@ namespace ET
 
         public static async ETTask OnStopServer(List<int> zoneList)
         {
-            await TimerComponent.Instance.WaitAsync(10 * TimeHelper.Minute);
+
 #if SERVER
+            await TimerComponent.Instance.WaitAsync(1 * TimeHelper.Minute);
             for (int i = 0; i < zoneList.Count; i++)
             {
                 List<long> mapids = new List<long>()
@@ -26,9 +27,28 @@ namespace ET
                             (mapids[map], new A2A_ServerMessageRequest() { MessageType = NoticeType.StopSever });
                 }
             }
-#endif
+
+            await TimerComponent.Instance.WaitAsync(10 * TimeHelper.Minute);
+            for (int i = 0; i < zoneList.Count; i++)
+            {
+                List<long> mapids = new List<long>()
+                            {
+                                 StartSceneConfigCategory.Instance.GetBySceneName(zoneList[i], "PaiMai").InstanceId,
+                                 StartSceneConfigCategory.Instance.GetBySceneName(zoneList[i], "Rank").InstanceId,
+                                 StartSceneConfigCategory.Instance.GetBySceneName(zoneList[i], "Union").InstanceId,
+                            };
+
+                for (int map = 0; map < mapids.Count; map++)
+                {
+                    A2A_ServerMessageRResponse m2m_TrasferUnitResponse = (A2A_ServerMessageRResponse)await ActorMessageSenderComponent.Instance.Call
+                            (mapids[map], new A2A_ServerMessageRequest() { MessageType = NoticeType.StopSever });
+                }
+            }
+
             Log.Warning("数据落地！");
             Log.Console("数据落地！");
+            Console.WriteLine("数据落地！");
+#endif
         }
 
 
