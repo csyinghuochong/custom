@@ -57,6 +57,10 @@ namespace ET
             {
                 ConsoleHelper.GoldConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "black")
+            {
+                ConsoleHelper.BlackConsoleHandler(request.Context).Coroutine();
+            }
         }
     }
 }

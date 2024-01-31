@@ -9,7 +9,7 @@ namespace ET
 
         public static async ETTask OnStopServer(List<int> zoneList)
         {
-
+            await ETTask.CompletedTask;
 #if SERVER
             await TimerComponent.Instance.WaitAsync(1 * TimeHelper.Minute);
             for (int i = 0; i < zoneList.Count; i++)
@@ -503,6 +503,30 @@ namespace ET
             return ErrorCode.ERR_Success;
         }
 
+        public static async ETTask<int> BlackConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+
+#if SERVER
+            string[] chaxunInfo = content.Split(" ");
+            int zone = int.Parse(chaxunInfo[1]);
+            int pyzone = StartZoneConfigCategory.Instance.Get(zone).PhysicZone;
+            string userName = chaxunInfo[2];
+            List<UserInfoComponent> accountInfoList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.UserInfo.Name == userName);
+            if (accountInfoList == null || accountInfoList.Count == 0)
+            {
+                return ErrorCode.ERR_NotFindAccount;
+            }
+            List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Id == accountInfoList[0].UserInfo.AccInfoID);
+            if (accoutResult == null || accoutResult.Count == 0)
+            {
+                return ErrorCode.ERR_NotFindAccount;
+            }
+            accoutResult[0].AccountType = 2;
+            Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
+#endif
+            return ErrorCode.ERR_Success;
+        }
 
         public static async ETTask<int> MailConsoleHandler(string content)
         {
