@@ -19,7 +19,8 @@ namespace ET
                 {
                     Zone = zone,
                     UnitId = request.UnitId,
-                    payMessage = request.payMessage
+                    payMessage = request.payMessage,
+                    UnitName = request.UnitName
                 });
             }
               
