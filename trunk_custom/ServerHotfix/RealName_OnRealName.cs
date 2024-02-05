@@ -11,7 +11,7 @@ namespace ET
 
         private async ETTask RunAsync(EventType.RealName args)
         {
-            await TimerComponent.Instance.WaitFrameAsync();
+            //await TimerComponent.Instance.WaitFrameAsync();
             //RealNameCode result_check = FangChenMiHelper.OnDoFangchenmi(new
             //{
             //    ai = args.ai,
