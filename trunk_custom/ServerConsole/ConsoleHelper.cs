@@ -577,7 +577,7 @@ namespace ET
                 try
                 {
                     int pyzone = StartZoneConfigCategory.Instance.Get(zoneList[i]).PhysicZone;
-                    Console.WriteLine($"全服邮件； {zoneList[i]} {pyzone}");
+                    Console.WriteLine($"全服邮件； {zoneList[i]} {pyzone} {content}");
                     long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "EMail").InstanceId;
                     E2M_GMEMailSendResponse g2M_UpdateUnitResponse = (E2M_GMEMailSendResponse)await ActorMessageSenderComponent.Instance.Call
                         (gateServerId, new M2E_GMEMailSendRequest()
