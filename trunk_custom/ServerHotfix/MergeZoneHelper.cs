@@ -20,7 +20,10 @@ namespace ET
             {
                 for (int i = 0; i < entity.PlayerInfo.RechargeInfos.Count; i++)
                 {
-                    number += entity.PlayerInfo.RechargeInfos[i].Amount;
+                    if (entity.PlayerInfo.RechargeInfos[i].Time >= 1706716800000)//2024/2/1
+                    {
+                        number += entity.PlayerInfo.RechargeInfos[i].Amount;
+                    }
                 }
             }
         }
@@ -55,12 +58,17 @@ namespace ET
                 UserinfoComponetDict.Add(entity.Id, entity as UserInfoComponent);
                 if ((entity.UserInfo.Gold > 1000000 || entity.UserInfo.Diamond > 10000) && entity.UserInfo.RobotId == 0)
                 {
-                    Log.Warning($"Gold:{entity.UserInfo.Gold}  Diamond:{entity.UserInfo.Diamond}  ID:{entity.Id}  Account:{entity.Account} Name: {entity.UserInfo.Name}  Lv:{entity.UserInfo.Lv} ");
+                   // Log.Warning($"Gold:{entity.UserInfo.Gold}  Diamond:{entity.UserInfo.Diamond}  ID:{entity.Id}  Account:{entity.Account} Name: {entity.UserInfo.Name}  Lv:{entity.UserInfo.Lv} ");
                 }
 
                 if (entity.RemoteAddress != null && entity.RemoteAddress.Contains("39.153.233.46"))
                 {
                     //Log.Warning($"Gold:{entity.Id} ");
+                }
+                if (entity.DeviceName != null && entity.DeviceName.Contains("960:540"))
+                {
+                    Console.WriteLine($"960:540:{entity.Id} {entity.DeviceName}");
+                    Log.Warning($"960:540:   {entity.Id}  {entity.UserInfo.Lv}\t  {entity.UserInfo.Name}\t   {entity.DeviceName}");
                 }
             }
 

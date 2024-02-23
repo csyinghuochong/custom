@@ -16,7 +16,7 @@ namespace ET
             //Log.Console($"AppStart_Init_Custom: {packetSize}");
             //PacketParser.OuterPacketSizeLengthS = packetSize;
             Log.Warning($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
-            Console.WriteLine($"PopularizeZone.27: {PopularizeHelper.PopularizeZone}");
+            Console.WriteLine($"PopularizeZone.23: {PopularizeHelper.PopularizeZone}");
         }
     }
 }
