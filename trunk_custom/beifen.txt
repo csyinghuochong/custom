@@ -1,0 +1,12 @@
+ if (key.Contains("EffectConfig"))
+ {
+     string path111 = "H:\\GitWeiJing\\Config\\EffectConfigCategory.bytes";
+     string path222 = "H:\\GitWeiJing\\Config\\EffectConfigCategoryDe.bytes";
+     ByteHelper.DecryptFile(path111, path222, "1111111");
+
+
+     File.Delete(path111);
+     File.Move(path222, path111);
+
+     output[key] = File.ReadAllBytes(file);
+ }
