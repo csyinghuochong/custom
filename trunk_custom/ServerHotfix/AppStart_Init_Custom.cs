@@ -12,6 +12,7 @@ namespace ET
             ComHelp.AccountOldLogic = true;
             SkillHelp.CleanSkill = true;
             PopularizeHelper.PopularizeZone = 10;
+            ConfigHelper.PackageLimit = 500;
             ConfigHelper.FunctionOpenIds.Remove(2000);
             Log.Warning($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
             Console.WriteLine($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
