@@ -12,11 +12,9 @@ namespace ET
             ComHelp.AccountOldLogic = true;
             SkillHelp.CleanSkill = true;
             PopularizeHelper.PopularizeZone = 10;
-            //int packetSize = GMHelp.GetRandomNumber();
-            //Log.Console($"AppStart_Init_Custom: {packetSize}");
-            //PacketParser.OuterPacketSizeLengthS = packetSize;
+            ConfigHelper.FunctionOpenIds.Remove(2000);
             Log.Warning($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
-            Console.WriteLine($"PopularizeZone.23: {PopularizeHelper.PopularizeZone}");
+            Console.WriteLine($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
         }
     }
 }
