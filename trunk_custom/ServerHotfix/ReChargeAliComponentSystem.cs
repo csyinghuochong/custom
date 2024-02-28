@@ -99,11 +99,6 @@ namespace ET
             {
                 self.HttpListenerUrl = @"http://127.0.0.1:20002/";
             }
-            if (ComHelp.IsBanHaoZone())
-            {
-                Log.Warning("内测去屏蔽充值！");
-                return;
-            }
 
             //http监听器
             self.HttpListener = new HttpListener();

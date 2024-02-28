@@ -255,10 +255,8 @@ namespace libx
                     path = "DLCAlpha";
                     break;
                 case VersionMode.Beta:
-                    path = "DLCBeta";
-                    break;
                 case VersionMode.BanHao:
-                    path = "DLCBanHao";
+                    path = "DLCBeta";
                     break;
             }
             ET.FileHelper.CleanDirectory(Directory.GetParent(Application.dataPath) + $"/../Release/{path}");
