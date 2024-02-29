@@ -250,10 +250,13 @@ public class MainActivity extends UnityPlayerActivity {
         }
     }
 
+    //qwertyuioptgbuytr
     //检测root 和 包名
-    public void CallNative(String str) {
+    public void CallNative(String str)
+    {
         Log.i("CallNative_11", str);
     }
+
     final int REQUEST_CODE_ADDRESS = 100;
 
     public  void GetPhoneNum(String zone) {
