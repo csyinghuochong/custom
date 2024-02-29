@@ -3,7 +3,7 @@ namespace ET
 {
     public static class InitHelper
     {
-        public static string InitKey = "weijing";
+        public static string InitKey = "qwertyuioptgbuytr";
 
         public static string TikTokInitFunc = "TikTokInit";
         public static string TikTokInitParam = "weijing";
