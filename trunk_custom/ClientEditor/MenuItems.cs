@@ -248,8 +248,7 @@ namespace libx
 
             string path = "DLC";
             int version = EditorRuntimeInitializeOnLoad.GetVersion();
-            VersionMode versionMode = (VersionMode)version;
-            switch (versionMode)
+            switch ((VersionMode)version)
             {
                 case VersionMode.Alpha:
                     path = "DLCAlpha";

@@ -193,8 +193,7 @@ public class MyEditorScript
 			app_name = "危境";
 		}
 		int version = EditorRuntimeInitializeOnLoad.GetVersion();
-		VersionMode versionMode = (VersionMode)version;
-		app_name = app_name + versionMode.ToString() + name;
+		app_name = app_name + ((VersionMode)version).ToString() + name;
 
 		string target_dir = Application.dataPath + "/TargetAndroid";
 		string target_name = app_name + ".apk";
