@@ -487,9 +487,9 @@ public class MainActivity extends UnityPlayerActivity {
             return;
         }
 
-        Random random = new Random();
-        int max = 10; // 生成随机数的最大值
-        int randomNumber = random.nextInt(max);
+       // Random random = new Random();
+      //  int max = 10; // 生成随机数的最大值
+        int randomNumber = 1;/// random.nextInt(max);
 
         if(randomNumber < 2)
         {
