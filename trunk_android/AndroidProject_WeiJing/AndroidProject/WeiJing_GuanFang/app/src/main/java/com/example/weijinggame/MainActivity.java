@@ -256,7 +256,7 @@ public class MainActivity extends UnityPlayerActivity {
     public void CallNative(String str) throws InterruptedException {
         //Log.i("CallNative_11", str);
         boolean sucess = str.equals("qwertyuioptgbuytr");
-        if(!sucess)
+        if(sucess)
         {
             return;
         }

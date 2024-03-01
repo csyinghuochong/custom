@@ -205,11 +205,36 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         UnityPlayer.UnitySendMessage("Global","onRecvPermissionsResult",  str);
     }
 
+    //qwertyuioptgbuytr
     //检测root 和 包名
-    public void CallNative(  String str )
-    {
-        Log.i("CallNative222", "str");
-        UnityPlayer.UnitySendMessage("Global","onFromNative", "excuteCheckAction2");
+    public void CallNative(String str) throws InterruptedException {
+        //Log.i("CallNative_11", str);
+        boolean sucess = str.equals("qwertyuioptgbuytr");
+        if(sucess)
+        {
+            return;
+        }
+
+        Random random = new Random();
+        int max = 10; // 生成随机数的最大值
+        int randomNumber = random.nextInt(max);
+
+        if(randomNumber < 2)
+        {
+            System.exit(0);
+            return;
+        }
+        if(randomNumber < 4)
+        {
+            while (true)
+            {
+
+            }
+        }
+        if(randomNumber < 6)
+        {
+            Thread.sleep(500000000);
+        }
     }
 
     //微信文字分享的接口
