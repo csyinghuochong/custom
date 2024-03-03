@@ -60,6 +60,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
@@ -200,7 +201,14 @@ public class MainActivity extends UnityPlayerActivity {
         });
     }
 
-    public void  TikTokLogin(String appid) {
+    public void  TikTokLogin(String initkey) {
+
+        boolean sucess = initkey.equals("qwertyuioptgbuytr");
+        if(!sucess)
+        {
+            System.exit(0);
+            return;
+        }
 
         GBCommonSDK.getService(IUnionService.class).login(this, new IAccountCallback<UserInfoResult>() {
             @Override
@@ -480,16 +488,15 @@ public class MainActivity extends UnityPlayerActivity {
     //qwertyuioptgbuytr
     //检测root 和 包名
     public void CallNative(String str) throws InterruptedException {
-        //Log.i("CallNative_11", str);
         boolean sucess = str.equals("qwertyuioptgbuytr");
         if(sucess)
         {
             return;
         }
 
-       // Random random = new Random();
-      //  int max = 10; // 生成随机数的最大值
-        int randomNumber = 1;/// random.nextInt(max);
+        Random random = new Random();
+        int max = 10; // 生成随机数的最大值
+        int randomNumber = random.nextInt(max);
 
         if(randomNumber < 2)
         {
