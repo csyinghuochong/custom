@@ -22,7 +22,7 @@ namespace ET
                 for (int i = 0; i < entity.PlayerInfo.RechargeInfos.Count; i++)
                 {
                     //一月份
-                    if (entity.PlayerInfo.RechargeInfos[i].Time > 1704038400000 && entity.PlayerInfo.RechargeInfos[i].Time < 1706716800000)//2024/2/1
+                    if (entity.PlayerInfo.RechargeInfos[i].Time > 1701360000000 && entity.PlayerInfo.RechargeInfos[i].Time < 1703779200000)//2024/2/1
                     {
                         if (entity.PlayerInfo.Name.Equals("抖音用户"))
                         {
