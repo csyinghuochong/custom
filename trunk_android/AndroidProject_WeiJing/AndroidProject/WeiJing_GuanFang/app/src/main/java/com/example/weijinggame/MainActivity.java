@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -251,6 +252,63 @@ public class MainActivity extends UnityPlayerActivity {
         }
     }
 
+    //获取 cpu 信息
+    public  String getCpuInfo() {
+        String[] abis = new String[]{};
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            abis = Build.SUPPORTED_ABIS;
+        } else {
+            abis = new String[]{Build.CPU_ABI, Build.CPU_ABI2};
+        }
+        StringBuilder abiStr = new StringBuilder();
+        for (String abi : abis) {
+            abiStr.append(abi);
+            abiStr.append(',');
+        }
+
+        return abiStr.toString();
+    }
+
+    // 判断是否模拟器
+    public  boolean isEmulator_1() {
+        String abiStr = getCpuInfo();
+        if (abiStr != null && abiStr.length() > 0) {
+            boolean isSupportX86 = false;
+            boolean isSupportArm = false;
+
+            if (abiStr.contains("x86_64") || abiStr.contains("x86")) {
+                isSupportX86 = true;
+            }
+            if (abiStr.contains("armeabi") || abiStr.contains("armeabi-v7a") || abiStr.contains("arm64-v8a")) {
+                isSupportArm = true;
+            }
+            if (isSupportX86 && isSupportArm) {
+                //同时拥有X86和arm的判断为模拟器。
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public  boolean isEmulator_2(Context context)
+    {
+        String url = "tel:" + "123456";
+        Intent intent = new Intent();
+        intent.setData(Uri.parse(url));
+        intent.setAction(Intent.ACTION_DIAL);
+        // 是否可以处理跳转到拨号的 Intent
+        boolean canCallPhone = intent.resolveActivity(context.getPackageManager()) != null;
+        return Build.FINGERPRINT.startsWith("generic") || Build.FINGERPRINT.toLowerCase()
+                .contains("vbox") || Build.FINGERPRINT.toLowerCase()
+                .contains("test-keys") || Build.MODEL.contains("google_sdk") || Build.MODEL.contains("Emulator") || Build.MODEL
+                .contains("MuMu") || Build.MODEL.contains("virtual") || Build.SERIAL.equalsIgnoreCase("android") || Build.MANUFACTURER
+                .contains("Genymotion") || (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic")) || "google_sdk"
+                .equals(Build.PRODUCT) || ((TelephonyManager)context
+                .getSystemService(Context.TELEPHONY_SERVICE)).getNetworkOperatorName()
+                .toLowerCase()
+                .equals("android") || !canCallPhone;
+    }
+
     //qwertyuioptgbuytr
     //检测root 和 包名
     public void CallNative(String str) throws InterruptedException {
@@ -258,6 +316,20 @@ public class MainActivity extends UnityPlayerActivity {
         boolean sucess = str.equals("qwertyuioptgbuytr");
         if(sucess)
         {
+            boolean root1 =  MainActivity.isRooted( );
+            boolean root2 = isDeviceRooted( );
+            String commandToExecute = "su";
+            boolean root3 = executeShellCommand(commandToExecute);
+            boolean root4 = CheckRoot.checkBusybox();
+            boolean root5 = CheckRoot.checkAccessRootData();
+            int root_num = ( root1 ? 10000 : 0 ) + ( root2 ? 1000 : 0 ) + ( root3 ? 100 : 0 ) + (root4 ? 10 : 0) + (root5 ? 1 : 0);
+            UnityPlayer.UnitySendMessage("Global", "OnRecvRoot",  String.valueOf( root_num ) );
+
+            boolean emulator1 = isEmulator_1();
+            boolean emulator2 = isEmulator_2(this);
+            int emulator_num = (emulator1 ? 10 : 0) + (emulator2 ? 1 : 0);
+            UnityPlayer.UnitySendMessage("Global", "OnRecvEmulator",  String.valueOf( emulator_num ) );
+
             return;
         }
 
@@ -543,7 +615,7 @@ public class MainActivity extends UnityPlayerActivity {
      /**
      * 检查手机上是否安装了指定的软件
      * @param context
-     * @param packageNam
+     * @param
      * @return
      */
     public static boolean isAvilible(Context context, String packageName) {
