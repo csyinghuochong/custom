@@ -53,9 +53,9 @@ namespace ET
             {
                 ConsoleHelper.StopServerConsoleHandler(request.Context).Coroutine();
             }
-            if (infoList[0] == "gold")
+            if (infoList[0] == "gold" || infoList[0] == "diamond")
             {
-                ConsoleHelper.GoldConsoleHandler(request.Context).Coroutine();
+                ConsoleHelper.GoldConsoleHandler(request.Context, infoList[0]).Coroutine();
             }
             if (infoList[0] == "black")
             {

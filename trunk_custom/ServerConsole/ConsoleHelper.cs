@@ -203,12 +203,13 @@ namespace ET
 #endif
         }
 
-        public static async ETTask GoldConsoleHandler(string content)
+        //gold  diamond
+        public static async ETTask GoldConsoleHandler(string content, string chaxun)
         {
             Console.WriteLine($"request.Context:  GoldConsoleHandler: {content}");
             await ETTask.CompletedTask;
             string[] chaxunInfo = content.Split(" ");
-            if (chaxunInfo[0] != "gold")
+            if (chaxunInfo[0] != chaxun)
             {
                 Console.WriteLine($"C must have gold zone");
                 Log.Warning($"C must have gold zone");
@@ -238,7 +239,7 @@ namespace ET
 
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
 
-                string levelInfo = $"{pyzone}区玩家金币>100000000列表： \n";
+                string levelInfo = $"{pyzone}区玩家{chaxun}>{maxGold}列表： \n";
                 List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
                 for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
                 {
@@ -248,24 +249,45 @@ namespace ET
                         continue;
                     }
 
-                    if (userInfoComponent.UserInfo.Gold < maxGold)
-                    {
-                        continue;
-                    }
                     if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
                     {
                         continue;
                     }
 
-                    List<NumericComponent> NumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                    if (NumericComponentlist == null || NumericComponentlist.Count == 0)
+                    if (chaxun == "gold")
                     {
-                        continue;
-                    }
-                    int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+                        if (userInfoComponent.UserInfo.Gold < maxGold)
+                        {
+                            continue;
+                        }
 
-                    levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 金币:{userInfoComponent.UserInfo.Gold} 充值:{recharge} \n";
+                        List<NumericComponent> NumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                        if (NumericComponentlist == null || NumericComponentlist.Count == 0)
+                        {
+                            continue;
+                        }
+                        int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+
+                        levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 金币:{userInfoComponent.UserInfo.Gold} 充值:{recharge} \n";
+                    }
+                    if (chaxun == "diamond")
+                    {
+                        if (userInfoComponent.UserInfo.Diamond < maxGold)
+                        {
+                            continue;
+                        }
+
+                        List<NumericComponent> NumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                        if (NumericComponentlist == null || NumericComponentlist.Count == 0)
+                        {
+                            continue;
+                        }
+                        int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+
+                        levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 钻石:{userInfoComponent.UserInfo.Diamond} 充值:{recharge} \n";
+                    }
                 }
+
                 Log.Warning(levelInfo);
             }
 #endif

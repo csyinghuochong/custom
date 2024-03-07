@@ -51,6 +51,77 @@ namespace ET
             }
         }
 
+        public static async ETTask QueryOrderInfo(string dingdan)
+        {
+            var startZoneConfig = StartZoneConfigCategory.Instance.Get(202);
+            Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
+            List<DBCenterAccountInfo> dBAccountInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, d => d.Id > 0);
+            foreach (var entity in dBAccountInfos_new)
+            {
+                if (entity.PlayerInfo == null)
+                {
+                    continue;
+                }
+                List<RechargeInfo> rechargeInfos = entity.PlayerInfo.RechargeInfos;
+                for (int i = 0; i < rechargeInfos.Count; i++)
+                {
+                    if (string.IsNullOrEmpty(rechargeInfos[i].OrderInfo))
+                    {
+                        continue;
+                    }
+                    if (rechargeInfos[i].OrderInfo.Equals(dingdan))
+                    {
+                        Console.WriteLine($"{entity.Account}");
+                        Log.Warning($"{dingdan}   {entity.Account}");
+                    }
+                }
+            }
+        }
+
+        public static async ETTask QueryGongzuoshi(int zone)
+        {
+            ListComponent<int> mergezones = new ListComponent<int>() { zone };
+            for (int i = 0; i < mergezones.Count; i++)
+            {
+                var startZoneConfig = StartZoneConfigCategory.Instance.Get(mergezones[i]);
+                Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
+            }
+
+            Dictionary<string, List<long>> accountGold = new Dictionary<string, List<long>>();
+            List<DBAccountInfo> dBAccountInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(zone, d => d.Id > 0);
+
+            for(  int i = 0; i < dBAccountInfos.Count; i++ )
+            {
+                if (dBAccountInfos[i].UserList.Count < 8)
+                {
+                    continue;
+                }
+                if (dBAccountInfos[i].Account[0] != '1')
+                {
+                    continue;
+                }
+
+                accountGold.Add(dBAccountInfos[i].Account, new List<long>());
+
+                string gold = string.Empty;
+                for (int user = 0; user < dBAccountInfos[i].UserList.Count; user++)
+                {
+
+                    List< UserInfoComponent> userInfoComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(zone, d => d.Id == dBAccountInfos[i].UserList[user]);
+                    if (userInfoComponentlist.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    accountGold[dBAccountInfos[i].Account].Add(userInfoComponentlist[0].UserInfo.Gold);
+
+                    gold += $"{userInfoComponentlist[0].UserInfo.Gold}_";
+                }
+
+                Log.Warning($"    {zone}   \t{dBAccountInfos[i].Account}    \t{gold}");
+            }
+        }
+
         public static async ETTask QueryGold(int zone)
         {
             ListComponent<int> mergezones = new ListComponent<int>() { zone };
