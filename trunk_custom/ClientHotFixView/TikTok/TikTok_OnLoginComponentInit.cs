@@ -68,6 +68,21 @@ namespace ET
     }
 
     [Event]
+    public class Login_LoginCheckRoot : AEventClass<EventType.LoginCheckRoot>
+    {
+        protected override void Run(object a)
+        {
+            EventType.LoginCheckRoot args = a as EventType.LoginCheckRoot;
+            
+            Init init = GameObject.Find("Global").GetComponent<Init>();
+            AccountInfoComponent accountInfoComponent = args.ZoneScene.GetComponent<AccountInfoComponent>();
+            accountInfoComponent.Simulator = init.IsEmulator;
+            accountInfoComponent.Root = init.IsRoot;
+            Log.ILog.Debug($"LoginCheckRoot: {init.IsRoot} {init.IsEmulator}");
+        }
+    }
+
+    [Event]
     public class TikTok_OnTikTokPayRequest : AEventClass<EventType.TikTokPayRequest>
     {
         protected override void Run(object a)
