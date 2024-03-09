@@ -9,13 +9,13 @@ namespace ET
         protected override void Run(EventType.AppStart args)
         {
             //服务器列表移过来
-            //ComHelp.AccountOldLogic = true;
-            //SkillHelp.CleanSkill = true;
-            //PopularizeHelper.PopularizeZone = 10;
-            //ConfigHelper.PackageLimit = 500;
-            //ConfigHelper.FunctionOpenIds.Remove(2000);
-            //Log.Warning($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
-            //Console.WriteLine($"PopularizeZone: {PopularizeHelper.PopularizeZone}");
+            ConfigData.AccountOldLogic = true;
+            ConfigData.CleanSkill = true;
+            ConfigData.PopularizeZone = 10;
+            ConfigData.PackageLimit = 500;
+            ConfigData.FunctionOpenIds.Remove(2000);
+       
+            Console.WriteLine($"CSkill: {ConfigData.CleanSkill}");
         }
     }
 }
