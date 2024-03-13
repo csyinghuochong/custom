@@ -19,6 +19,8 @@ namespace ET
             List<DBCenterAccountInfo> dBAccountInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, d => d.Id > 0);
             foreach (var entity in dBAccountInfos_new)
             {
+                long sigleRecharge = 0;
+
                 for (int i = 0; i < entity.PlayerInfo.RechargeInfos.Count; i++)
                 {
                     //一月份
@@ -32,7 +34,13 @@ namespace ET
                         {
                             number_1 += entity.PlayerInfo.RechargeInfos[i].Amount;
                         }
+                        sigleRecharge += entity.PlayerInfo.RechargeInfos[i].Amount;
                     }
+                }
+
+                if (sigleRecharge > 30000)
+                {
+                    Log.Warning($"sigleRecharge > 50000: {sigleRecharge}");
                 }
             }
         }

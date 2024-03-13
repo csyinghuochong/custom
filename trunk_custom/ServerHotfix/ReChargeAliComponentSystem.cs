@@ -154,7 +154,7 @@ namespace ET
                     string serverName = ServerHelper.GetGetServerItem(false, zone).ServerName;
                     Log.Warning($"支付成功[支付宝]: 区：{serverName}   玩家名字：{userInfo.Split('_')[1]}   充值额度：{amount}  时间:{TimeHelper.DateTimeNow().ToString()}");
                    
-                    RechargeHelp.OnPaySucessToGate(zone, userId, amount, orderId).Coroutine();
+                    RechargeHelp.OnPaySucessToGate(zone, userId, amount, orderId, PayTypeEnum.AliPay).Coroutine();
                     self.OrderDic.Remove(aliPayResultDic["out_trade_no"]);
                 }
                 else

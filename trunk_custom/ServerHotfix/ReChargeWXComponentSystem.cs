@@ -250,7 +250,7 @@ namespace ET
 
                         string serverName = ServerHelper.GetGetServerItem(false, zone).ServerName;
                         Log.Warning($"支付成功[微信]:  区：{serverName}     玩家名字：{userinfo.Split('_')[2]}   充值额度：{amount}  时间:{TimeHelper.DateTimeNow().ToString()}");
-                        RechargeHelp.OnPaySucessToGate( zone, userId, amount, dingdanStr).Coroutine();
+                        RechargeHelp.OnPaySucessToGate( zone, userId, amount, dingdanStr, PayTypeEnum.WeiXinPay).Coroutine();
                         //删除本地缓存的订单
                         self.orderDic.Remove(dingdanStr);
                     }

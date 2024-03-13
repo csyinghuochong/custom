@@ -38,7 +38,7 @@ namespace ET
                 {
                     return;
                 }
-                RechargeHelp.OnPaySucessToGate(int.Parse(mailInfo[1]), long.Parse(mailInfo[2]), int.Parse(mailInfo[3]), "补偿").Coroutine();
+                RechargeHelp.OnPaySucessToGate(int.Parse(mailInfo[1]), long.Parse(mailInfo[2]), int.Parse(mailInfo[3]), "补偿", 0).Coroutine();
 #endif
             }
             if (infoList[0] == ConsoleMode.ReloadDll)
