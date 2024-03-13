@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 1107
+  version: 1109
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -6928,10 +6928,10 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Parts/Fashion/fashi_1_xiezi.prefab
   - bundle: e2b98bd17683490577b3bc6be07f55ce.unity3d
     path: Assets/Bundles/Unit/Parts/Fashion/fashi_1_yanjing.prefab
+  - bundle: 12f4fbab4fa2ddb4cb8abccc6bf576dc.unity3d
+    path: Assets/Bundles/Unit/Parts/Fashion/fashi_2_fash2.prefab
   - bundle: 981dab3762b0b752691c811339340d73.unity3d
     path: Assets/Bundles/Unit/Parts/Fashion/fashi_2_fashi.prefab
-  - bundle: 99e53649415dc4b6d15e7b945104f7b0.unity3d
-    path: Assets/Bundles/Unit/Parts/Fashion/fashi_2_fashi2.prefab
   - bundle: 5b939e15daa22c4c59be667dd096e065.unity3d
     path: Assets/Bundles/Unit/Parts/Fashion/fashi_2_lian.prefab
   - bundle: a39ea98cbb908454b77b1fe812b87bb4.unity3d
@@ -9063,12 +9063,12 @@ MonoBehaviour:
   - name: e2b98bd17683490577b3bc6be07f55ce.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/Fashion/fashi_1_yanjing.prefab
+  - name: 12f4fbab4fa2ddb4cb8abccc6bf576dc.unity3d
+    assets:
+    - Assets/Bundles/Unit/Parts/Fashion/fashi_2_fash2.prefab
   - name: 981dab3762b0b752691c811339340d73.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/Fashion/fashi_2_fashi.prefab
-  - name: 99e53649415dc4b6d15e7b945104f7b0.unity3d
-    assets:
-    - Assets/Bundles/Unit/Parts/Fashion/fashi_2_fashi2.prefab
   - name: 5b939e15daa22c4c59be667dd096e065.unity3d
     assets:
     - Assets/Bundles/Unit/Parts/Fashion/fashi_2_lian.prefab
@@ -16054,6 +16054,9 @@ MonoBehaviour:
   - name: 04ef3de641612556ed2c4e8e12e7aa47.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_1/texture/fashi_shangyi.png
+  - name: acf8bfa79e440fb2fd934464104db1d3.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_1/texture/fashi.mat
   - name: 802e030b99fab4b8ec82bd9d294cba7a.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_1/texture/fashi_xiezi.png
@@ -16072,6 +16075,9 @@ MonoBehaviour:
   - name: 5a02e4b5e4c4f75dd865db069faa87ad.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_1/texture/fashi_xiayi.png
+  - name: 716aea5224261b84af73e54c25e4c7fe.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_1/texture/yanjing.mat
   - name: 192e7cbb57f058b607506761e124a4e8.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_2/texture/fashi_yanjing.png
@@ -16096,33 +16102,39 @@ MonoBehaviour:
   - name: 1675386214ff23baf7f3a5fd2abe267f.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_2/texture/fashi_xiayi.png
-  - name: cde0fe82f82156f29411f89be3f83c69.unity3d
+  - name: 65b3942825cda85c9eed61c4972630d8.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/texture/zhanshi_xiashen.png
-  - name: 27b12bad1de7e1fafa62cb85c58dd8ce.unity3d
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_2/texture/fashi.mat
+  - name: 61756595b4a4342611660f55ea40abc4.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/texture/zhanshi_shangyi.png
-  - name: ce769c73bc30b4c348ef65ce6ed6209a.unity3d
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/fashi_2/texture/yanjing.mat
+  - name: 1fac54bd5a41dab91be36ea5c2b0ee2d.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/zhanshi.FBX
-  - name: 86e036cbd280161300870072adc821ea.unity3d
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/texture/zhanshi_xiashen.png
+  - name: 8d46e256114b2485f1ab6798ba738ace.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/texture/zhanshi_xiezi.png
-  - name: 7ecf776dd267451ab8be2e762588c5f4.unity3d
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/texture/zhanshi_shangyi.png
+  - name: 33a7f842be0555d49a01e850b2532683.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/texture/zhanshi_meimao.png
-  - name: 58f8c6f2f0aa85c9469427e4ceb98466.unity3d
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/zhanshi.FBX
+  - name: a3e09192d64d8903da54ee833263d48a.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/texture/zhanshi_yanjing.png
-  - name: 36501265dd62bafa217d225812543f6d.unity3d
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/texture/zhanshi_xiezi.png
+  - name: 4f592d099a9c7bb560c607fa49f11b6d.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/texture/zhanshi_pifeng.png
-  - name: 4c1b35233af11ed4e53771656a4349f7.unity3d
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/texture/zhanshi_meimao.png
+  - name: dd16e265e87bde2d30af51e2bc7754d1.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/texture/zhanshi_toufa.png
-  - name: be13e830a153960ecb7021e85818ddd0.unity3d
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/texture/zhanshi_yanjing.png
+  - name: 42c6e00846f6232b12855b4dd05e3262.unity3d
     assets:
-    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_11/texture/zhanshi_lian.png
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/texture/zhanshi_pifeng.png
+  - name: f198a7ee472d81923182d443a670150b.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/texture/zhanshi_toufa.png
+  - name: 7ebdefc58e2ff8aed3cfb835aa7ca348.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_1/texture/zhanshi_lian.png
   - name: dab0676f70b2aeb947b2460a9be60d6b.unity3d
     assets:
     - Assets/Res/Models/RoleModelSet/ShiZhuang/zhanshi_2/texture/zhanshi_xiashen.png
@@ -17876,6 +17888,9 @@ MonoBehaviour:
   - name: 054de3cfba17c760ec9d1fc67debcb92.unity3d
     assets:
     - Assets/Res/RenderTexture/RoleRenderTexture3.renderTexture
+  - name: b88b07e83d709f2711682433b420b801.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_292.png
   - name: c7f6214437d2e64abc88546da0e9b30d.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_178.png
@@ -17987,9 +18002,6 @@ MonoBehaviour:
   - name: b8f0cb3420e256cff561b5674c6e27e4.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_363.png
-  - name: b88b07e83d709f2711682433b420b801.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_292.png
   - name: 85a35a265cd67ccca1790fc34f54a324.unity3d
     assets:
     - Assets/Mono/ThirdRes/GUI Pro Kit Fantasy RPG/Particles/Textures/fx_star1.png
