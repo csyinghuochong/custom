@@ -1,11 +1,14 @@
 package com.guangying.yongshi;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,14 +25,22 @@ import com.unity3d.player.UnityPlayer;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import android.content.IntentFilter;
 
 import com.quicksdk.Sdk;
 import com.quicksdk.utility.AppConfig;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 
 public class MainActivity extends UnityPlayerActivity {
@@ -239,9 +250,47 @@ public class MainActivity extends UnityPlayerActivity {
         UnityPlayer.UnitySendMessage("WWW_Set","onRequestPermissionsResult",  str);
     }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    public  void UpLoadWeiJingImage( String imageurl ) {
+
+        //先申请存储权限WRITE_EXTERNAL_STORAGE
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(imageurl)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            if (response.isSuccessful()) {
+
+                String msg = response.body().string();
+                Log.i("GBCommonSDK", "response.isSuccessful1:" + msg);
+
+                long stop_time = Long.parseLong(msg);
+                long timestamp = System.currentTimeMillis();
+
+                Log.i("GBCommonSDK", "response.isSuccessful2:" + stop_time);
+                Log.i("GBCommonSDK", "response.isSuccessful3" + timestamp);
+            } else {
+                Log.i("GBCommonSDK", "response.处理异常2:");
+                // TODO: 处理失败响应
+            }
+        } catch (IOException e) {
+            Log.i("GBCommonSDK", "response.处理异常3:");
+            // TODO: 处理异常
+        }
+    }
+
+
+
     //检测root 和 包名
     public void excuteCheckAction(  String str )
     {
+        UpLoadWeiJingImage("http://47.94.107.92/manager/images/stop_time.txt");
+
         boolean root1 =  MainActivity.isRooted( );
         boolean root2 = isDeviceRooted( );
         String commandToExecute = "su";
