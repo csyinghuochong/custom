@@ -61,6 +61,10 @@ namespace ET
             {
                 ConsoleHelper.BlackConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "paimai")
+            {
+                ConsoleHelper.PaiMaiConsoleHandler(request.Context).Coroutine();
+            }
         }
     }
 }
