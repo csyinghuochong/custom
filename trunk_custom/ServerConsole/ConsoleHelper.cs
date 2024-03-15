@@ -266,7 +266,7 @@ namespace ET
                         return;
                     }
                     UserInfoComponent userInfoComponent = userinfoComponentlist[0]; 
-                    levelInfo += $"{userInfoComponent.UserInfo.Name}   拍卖获得金币:{pairLong.Value}   账号:{userInfoComponent.Account}   钻石:{userInfoComponent.UserInfo.Diamond}  金币:{userInfoComponent.UserInfo.Gold}";
+                    levelInfo += $"{userInfoComponent.UserInfo.Name}   \t拍卖获得金币:{pairLong.Value}   \t账号:{userInfoComponent.Account}   \t钻石:{userInfoComponent.UserInfo.Diamond}  \t金币:{userInfoComponent.UserInfo.Gold} \n";
                 }
 
                 LogHelper.PaiMaiInfo(levelInfo);
