@@ -25,6 +25,8 @@ namespace ET
 
         public static string TikTokPay(this ReChargeTikTokComponent self, M2R_RechargeRequest request)
         {
+           // Console.WriteLine($"TikTokPay； {request.ToString()} ");
+
             Dictionary<string, string> paramlist = new Dictionary<string, string>();
             string nowTime = TimeHelper.ServerNow().ToString();
             if (self.DingdanlastTime != nowTime)
@@ -154,6 +156,8 @@ namespace ET
                 }
                
                 string orderId = aliPayResultDic["cp_order_id"];
+
+                //Console.WriteLine($"orderId:  {orderId}");
                 if (aliPayResultDic["status"] == "2" && self.OrderDic.ContainsKey(orderId))
                 {
                     string userInfo = self.OrderDic[orderId];
@@ -162,6 +166,7 @@ namespace ET
 
                     int zone = int.Parse(orderId.Split('_')[1]);
                     int amount = int.Parse(orderId.Split('_')[2]);
+
                     string serverName = ServerHelper.GetGetServerItem(false, zone).ServerName;
                     Log.Warning($"支付成功[抖音]: 区：{serverName}     玩家名字：{userInfo.Split('_')[1]}   充值额度：{amount}  时间:{TimeHelper.DateTimeNow().ToString()}");
 

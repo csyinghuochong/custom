@@ -95,28 +95,31 @@ namespace ET
                 Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
             }
 
+
             Dictionary<string, List<long>> accountGold = new Dictionary<string, List<long>>();
             List<DBAccountInfo> dBAccountInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(zone, d => d.Id > 0);
 
             for(  int i = 0; i < dBAccountInfos.Count; i++ )
             {
-                if (dBAccountInfos[i].UserList.Count < 8)
+                if (dBAccountInfos[i].UserList.Count < 2)
                 {
                     continue;
                 }
-                if (dBAccountInfos[i].Account[0] != '1')
-                {
-                    continue;
-                }
-
                 accountGold.Add(dBAccountInfos[i].Account, new List<long>());
 
                 string gold = string.Empty;
+                string level = string.Empty;
+                string task = string.Empty;
                 for (int user = 0; user < dBAccountInfos[i].UserList.Count; user++)
                 {
-
                     List< UserInfoComponent> userInfoComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(zone, d => d.Id == dBAccountInfos[i].UserList[user]);
                     if (userInfoComponentlist.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    List<DataCollationComponent> dataCollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(zone, d => d.Id == dBAccountInfos[i].UserList[user]);
+                    if (dataCollationComponents.Count == 0)
                     {
                         continue;
                     }
@@ -124,9 +127,16 @@ namespace ET
                     accountGold[dBAccountInfos[i].Account].Add(userInfoComponentlist[0].UserInfo.Gold);
 
                     gold += $"{userInfoComponentlist[0].UserInfo.Gold}_";
+                    level += $"{userInfoComponentlist[0].UserInfo.Lv}_";
+                    task += $"{dataCollationComponents[0].MainTask}_";
                 }
 
-                Log.Warning($"    {zone}   \t{dBAccountInfos[i].Account}    \t{gold}");
+                if (gold == string.Empty || accountGold[dBAccountInfos[i].Account].Count < 2)
+                {
+                    continue;
+                }
+
+                Log.Warning($"区：{zone}  \t账号：{dBAccountInfos[i].Account}       \t等级：{level}   \t金币：{gold}   \t任务:{task}");
             }
         }
 
