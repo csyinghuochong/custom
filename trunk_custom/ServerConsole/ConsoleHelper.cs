@@ -700,5 +700,83 @@ namespace ET
 
             return ErrorCode.ERR_Success;
         }
+
+        public static async ETTask<int> Mail2ConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            //mail 区服(0所有区服  1指定区服)  玩家ID(0所有玩家)  道具 邮件类型 参数 管理员
+            //mail 0 0 1;1 2 “6” tt
+            string[] mailInfo = content.Split(" ");
+            if (mailInfo[0] != "mail" && mailInfo.Length < 6)
+            {
+                Log.Console("邮件发送失败！");
+                Log.Warning("邮件发送失败！");
+                return ErrorCode.ERR_Parameter;
+            }
+            try
+            {
+                int mailtype = int.Parse(mailInfo[4]);
+            }
+            catch (Exception ex)
+            {
+                Log.Console("邮件发送失败！" + ex.ToString());
+                Log.Warning("邮件发送失败！" + ex.ToString());
+                return ErrorCode.ERR_Parameter;
+            }
+
+#if SERVER
+            //全服邮件
+            if (mailInfo[1] == "0")
+            {
+                if (mailInfo.Length < 7 && mailInfo[6] != DllHelper.Admin)
+                {
+                    Log.Console("发送全服邮件0！");
+                    return ErrorCode.ERR_Parameter;
+                }
+                Log.Console("发送全服邮件1！");
+            }
+            List<int> zoneList = new List<int> { };
+            if (mailInfo[1] == "0")
+            {
+                zoneList = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zoneList.Add(int.Parse(mailInfo[1]));
+            }
+
+            for (int i = 0; i < zoneList.Count; i++)
+            {
+                try
+                {
+                    int pyzone = StartZoneConfigCategory.Instance.Get(zoneList[i]).PhysicZone;
+                    long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "EMail").InstanceId;
+                    E2M_GMEMailSendResponse g2M_UpdateUnitResponse = (E2M_GMEMailSendResponse)await ActorMessageSenderComponent.Instance.Call
+                        (gateServerId, new M2E_GMEMailSendRequest()
+                        {
+                            UserName = mailInfo[2],
+                            Itemlist = mailInfo[3],
+                            Title = mailInfo[5],
+                            ActorId = zoneList[i],
+                            MailType = int.Parse(mailInfo[4]),
+                        });
+                    if (g2M_UpdateUnitResponse.Error == ErrorCode.ERR_Success)
+                    {
+                        Log.Console($"邮件发送成功！：{pyzone}区");
+                    }
+                    else
+                    {
+                        Log.Console($"邮件发送失败！：{pyzone}区：" + g2M_UpdateUnitResponse.Message);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Console("邮件发送异常！： " + ex.ToString());
+                }
+            }
+#endif
+
+            return ErrorCode.ERR_Success;
+        }
     }
 }
