@@ -482,7 +482,7 @@ namespace ET
                     //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
                     gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
                         $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
-                        $"\t当前主线:{dataCollations[0].MainTask}  \n";
+                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()} \n";
                 }
 
                 Log.Warning(gongzuoshiInfo);
