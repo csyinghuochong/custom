@@ -69,6 +69,10 @@ namespace ET
             {
                 ConsoleHelper.PaiMaiConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "gongzuoshi")
+            {
+                ConsoleHelper.GongZuoShiConsoleHandler(request.Context).Coroutine();
+            }
         }
     }
 }

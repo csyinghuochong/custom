@@ -361,7 +361,7 @@ namespace ET
                     }
 
                     //拍卖行收益总小于100万返回
-                    if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiSell) < 1000000)
+                    if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy) < 1000000)
                     {
                         continue;
                     }
@@ -388,7 +388,7 @@ namespace ET
                         continue;
                     }
 
-                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}";
+                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}";
                 }
 
                 Log.Warning(gongzuoshiInfo);
