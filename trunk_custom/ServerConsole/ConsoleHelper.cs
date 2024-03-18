@@ -503,7 +503,7 @@ namespace ET
                         List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
                         if (accoutResult != null && accoutResult.Count > 0)
                         {
-                            accoutResult[0].AccountType = 1;
+                            accoutResult[0].AccountType = 2;
                             Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
                         }
                     }
