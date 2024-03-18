@@ -479,7 +479,7 @@ namespace ET
                         continue;
                     }
 
-                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}";
+                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}  \n";
                 }
 
                 Log.Warning(gongzuoshiInfo);
