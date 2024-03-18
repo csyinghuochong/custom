@@ -432,7 +432,7 @@ namespace ET
                         continue;
                     }
                     //非手机登录返回
-                    if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
+                    if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] == '1')
                     {
                         continue;
                     }
@@ -479,7 +479,10 @@ namespace ET
                         continue;
                     }
 
-                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}  \n";
+                    //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
+                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
+                        $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
+                        $"\t当前主线:{dataCollations[0].MainTask}  \n";
                 }
 
                 Log.Warning(gongzuoshiInfo);
