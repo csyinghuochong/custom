@@ -275,6 +275,127 @@ namespace ET
         }
 
 
+        //gongzuoshi
+        public static async ETTask GongZuoShiConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  GongZuoShiConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo.Length != 2)
+            {
+                Console.WriteLine($"C must have gongzuoshi zone");
+                Log.Warning($"C must have gongzuoshi zone");
+                return;
+            }
+
+#if SERVER
+
+            int zone = int.Parse(chaxunInfo[1]);
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                zonlist = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+
+            //1.游戏总时长超过180分钟
+            //2.击败BOSS数量小于3
+            //3.游戏内成就点数小于50点
+            //4.手机登录
+            //5.当前体力小于50
+            //6.今日在线时间超过120分钟
+            //7.主线任务完成不超过10个
+            //8.拍卖行收益总共超过100万
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表： \n";
+                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+                {
+                    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
+                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    {
+                        continue;
+                    }
+
+                    if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
+                    {
+                        continue;
+                    }
+
+                    //击败boss>3返回
+                    if (userInfoComponent.UserInfo.MonsterRevives.Count > 3)
+                    {
+                        continue;
+                    }
+                    //当前体力>50返回
+                    if (userInfoComponent.UserInfo.PiLao > 50)
+                    {
+                        continue;
+                    }
+                    //非手机登录返回
+                    if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
+                    {
+                        continue;
+                    }
+
+                    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (dataCollations == null || dataCollations.Count == 0)
+                    {
+                        continue;
+                    }
+                    //游戏总时长超过180分钟返回
+                    //暂时不写
+
+                    //今日在线时间超过120分钟返回
+                    if (dataCollations[0].TodayOnLine < 120)
+                    {
+                        continue;
+                    }
+
+                    //拍卖行收益总小于100万返回
+                    if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiSell) < 1000000)
+                    {
+                        continue;
+                    }
+
+                    List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (chengJiuComponents == null || chengJiuComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    //游戏内成就点数>50点返回
+                    if (chengJiuComponents[0].TotalChengJiuPoint > 50)
+                    {
+                        continue;
+                    }
+
+                    List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (taskComponents == null || taskComponents.Count == 0)
+                    {
+                        continue;
+                    }
+                    if (taskComponents[0].GetMainTaskNumber() > 10)
+                    {
+                        continue;
+                    }
+
+                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}";
+                }
+
+                Log.Warning(gongzuoshiInfo);
+            }
+#endif
+        }
+
         //gold  diamond
         public static async ETTask GoldConsoleHandler(string content, string chaxun)
         {
