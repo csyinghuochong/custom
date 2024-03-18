@@ -400,6 +400,9 @@ namespace ET
             //6.今日在线时间超过120分钟
             //7.主线任务完成不超过10个
             //8.拍卖行收益总共超过100万
+
+            Dictionary<string, int> accountNumber = new Dictionary<string, int>();  
+
             for (int i = 0; i < zonlist.Count; i++)
             {
                 int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
@@ -483,6 +486,27 @@ namespace ET
                     gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
                         $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
                         $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()} \n";
+
+
+                    if(!accountNumber.ContainsKey(userInfoComponent.Account))
+                    {
+                        accountNumber.Add(userInfoComponent.Account, 0);
+                    }
+                    accountNumber[userInfoComponent.Account]++;
+                }
+
+                
+                foreach ( (string account, int number) in accountNumber )
+                {
+                    if (number >= 3)
+                    {
+                        List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
+                        if (accoutResult != null && accoutResult.Count > 0)
+                        {
+                            accoutResult[0].AccountType = 1;
+                            Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
+                        }
+                    }
                 }
 
                 Log.Warning(gongzuoshiInfo);
