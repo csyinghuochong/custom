@@ -73,6 +73,10 @@ namespace ET
             {
                 ConsoleHelper.GongZuoShiConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "gongzuoshi2")
+            {
+                ConsoleHelper.GongZuoShi2_ConsoleHandler(request.Context).Coroutine();
+            }
             if (infoList[0] == "allonline")
             {
                 ConsoleHelper.AllOnLineConsoleHandler(request.Context).Coroutine();
