@@ -409,7 +409,7 @@ namespace ET
 
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
 
-                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表： \n";
+                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表1： \n";
                 List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
                 for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
                 {
@@ -482,6 +482,17 @@ namespace ET
                         continue;
                     }
 
+                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                    if (accoutResult == null || accoutResult.Count == 0)
+                    {
+                        continue;
+                    }
+                    if (accoutResult[0].AccountType == 2)
+                    {
+                        continue;
+                    }
+
+
                     //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
                     gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
                         $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
@@ -495,21 +506,20 @@ namespace ET
                     accountNumber[userInfoComponent.Account]++;
                 }
 
-                
-                foreach ( (string account, int number) in accountNumber )
-                {
-                    if (number >= 3)
-                    {
-                        List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
-                        if (accoutResult != null && accoutResult.Count > 0)
-                        {
-                            accoutResult[0].AccountType = 2;
-                            Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
-                        }
-                    }
-                }
+                //foreach ( (string account, int number) in accountNumber )
+                //{
+                //    if (number >= 3)
+                //    {
+                //        List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
+                //        if (accoutResult != null && accoutResult.Count > 0)
+                //        {
+                //            accoutResult[0].AccountType = 2;
+                //            Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
+                //        }
+                //    }
+                //}
 
-                Log.Warning(gongzuoshiInfo);
+                LogHelper.PaiMaiInfo(gongzuoshiInfo); 
             }
 #endif
         }
@@ -558,7 +568,7 @@ namespace ET
 
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
 
-                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表： \n";
+                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表2： \n";
                 List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
                 for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
                 {
@@ -635,6 +645,17 @@ namespace ET
                         continue;
                     }
 
+
+                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                    if (accoutResult == null || accoutResult.Count == 0)
+                    {
+                        continue;
+                    }
+                    if (accoutResult[0].AccountType == 2)
+                    {
+                        continue;
+                    }
+
                     //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
                     gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
                         $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
@@ -660,7 +681,7 @@ namespace ET
                 //        }
                 //    }
                 //}
-                Log.Warning(gongzuoshiInfo);
+                LogHelper.PaiMaiInfo(gongzuoshiInfo);
             }
 #endif
         }
