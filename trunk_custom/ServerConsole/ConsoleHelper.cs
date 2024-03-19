@@ -401,6 +401,9 @@ namespace ET
             //7.主线任务完成不超过10个
             //8.拍卖行收益总共超过100万
 
+            long serverNow = TimeHelper.ServerNow();
+            int curDate = ComHelp.GetDayByTime(serverNow);
+           
             Dictionary<string, int> accountNumber = new Dictionary<string, int>();  
 
             for (int i = 0; i < zonlist.Count; i++)
@@ -434,13 +437,20 @@ namespace ET
                     {
                         continue;
                     }
+
+                    if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
+                    {
+                        continue;
+                    }
+
+
                     //非手机登录返回
                     //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
                     //{
                     //    continue;
                     //}
 
-                    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                        List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
                     if (dataCollations == null || dataCollations.Count == 0)
                     {
                         continue;
@@ -559,6 +569,8 @@ namespace ET
             //6.今日在线时间超过120分钟
             //7.主线任务完成不超过10个
             //8.拍卖行收益总共超过100万
+            long serverNow = TimeHelper.ServerNow();
+            int curDate = ComHelp.GetDayByTime(serverNow);
 
             Dictionary<string, int> accountNumber = new Dictionary<string, int>();
 
@@ -593,6 +605,13 @@ namespace ET
                     {
                         continue;
                     }
+
+                    if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
+                    {
+                        continue;
+                    }
+
+
                     //非手机登录返回
                     //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
                     //{
