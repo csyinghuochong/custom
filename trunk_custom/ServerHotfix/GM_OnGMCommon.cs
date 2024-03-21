@@ -77,9 +77,9 @@ namespace ET
             {
                 ConsoleHelper.GongZuoShi2_ConsoleHandler(request.Context).Coroutine();
             }
-            if (infoList[0] == "allonline")
+            if (infoList[0] == "gongzuoshi3")
             {
-                ConsoleHelper.AllOnLineConsoleHandler(request.Context).Coroutine();
+                ConsoleHelper.GongZuoshi3_ConsoleHandler(request.Context).Coroutine();
             }
         }
     }

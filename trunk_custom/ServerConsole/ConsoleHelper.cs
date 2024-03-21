@@ -274,8 +274,8 @@ namespace ET
 #endif
         }
 
-        //allonline
-        public static async ETTask AllOnLineConsoleHandler(string content)
+        //allonline   
+        public static async ETTask GongZuoshi3_ConsoleHandler(string content)
         {
             Console.WriteLine($"request.Context:  AllOnLineConsoleHandler: {content}");
             await ETTask.CompletedTask;
@@ -300,6 +300,10 @@ namespace ET
                 zonlist.Add(zone);
             }
 
+            long serverNow = TimeHelper.ServerNow();
+            int curDate = ComHelp.GetDayByTime(serverNow);
+            Dictionary<string, int> accountNumber = new Dictionary<string, int>();
+
             for (int i = 0; i < zonlist.Count; i++)
             {
                 int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
@@ -307,66 +311,118 @@ namespace ET
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
                 long gateServerId = DBHelper.GetGateServerId(pyzone);
 
-                //string gongzuoshiInfo = $"{pyzone}区所有在线玩家列表： \n";
-                //List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
-                //for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
-                //{
-                //    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
-                //    if (userInfoComponent.UserInfo.RobotId != 0)
-                //    {
-                //        continue;
-                //    }
+                string gongzuoshiInfo = $"{pyzone}区工作室玩家列表3： \n";
+                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+                {
+                    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
+                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    {
+                        continue;
+                    }
+                    if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
+                    {
+                        continue;
+                    }
 
-                //    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                //    if (dataCollations == null || dataCollations.Count == 0)
-                //    {
-                //        continue;
-                //    }
 
-                //    List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                //    if (chengJiuComponents == null || chengJiuComponents.Count == 0)
-                //    {
-                //        continue;
-                //    }
+                    //击败boss>3返回
+                    if (userInfoComponent.UserInfo.MonsterRevives.Count > 3)
+                    {
+                        continue;
+                    }
 
-                //    List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                //    if (taskComponents == null || taskComponents.Count == 0)
-                //    {
-                //        continue;
-                //    }
+                    //当前体力>50返回
+                    if (userInfoComponent.UserInfo.PiLao > 50)
+                    {
+                        continue;
+                    }
 
-                //    G2T_GateUnitInfoResponse g2M_UpdateUnitResponse = (G2T_GateUnitInfoResponse)await ActorMessageSenderComponent.Instance.Call
-                //(gateServerId, new T2G_GateUnitInfoRequest()
-                //{
-                //    UserID = userInfoComponent.Id
-                //});
+                    //if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
+                    //{
+                    //    continue;
+                    //}
 
-                //    if (g2M_UpdateUnitResponse.SessionInstanceId == 0 || g2M_UpdateUnitResponse.PlayerState != (int)PlayerState.Game)
-                //    {
-                //        continue;
-                //    }
+                    //非手机登录返回
+                    //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
+                    //{
+                    //    continue;
+                    //}
 
-                //    //名称 等级 账号 金币 钻石 充值额度  当前体力 成就值  击败BOSS数量 今日在线时间 总游戏在线时间 拍卖行收益  主线任务ID
+                    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (dataCollations == null || dataCollations.Count == 0)
+                    {
+                        continue;
+                    }
+                    //游戏总时长超过180分钟返回
+                    //暂时不写
 
-                //    gongzuoshiInfo += $"账号: {userInfoComponent.Account} 名称:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} " +
-                //    $"金币:{userInfoComponent.UserInfo.Gold} 钻石:{userInfoComponent.UserInfo.Diamond} 充值额度:{dataCollations[0].Recharge} 当前体力:{userInfoComponent.UserInfo.PiLao}" +
-                //    $"成就值:{chengJiuComponents[0].TotalChengJiuPoint} 击败boss数量:{userInfoComponent.UserInfo.MonsterRevives.Count} 今日在线时间:{dataCollations[0].TodayOnLine}" +
-                //    $"拍卖收益:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiSell)}  主线任务:{dataCollations[0].MainTask}";
-                //}
+                    //今日在线时间超过120分钟返回
+                    if (dataCollations[0].TodayOnLine < 120)
+                    {
+                        continue;
+                    }
 
-                //Log.Warning(gongzuoshiInfo);
-                int numeber = 0;
-                G2G_UnitListResponse g2M_UpdateUnitResponse = (G2G_UnitListResponse)await ActorMessageSenderComponent.Instance.Call
-                    (gateServerId, new G2G_UnitListRequest() { });
-                numeber += g2M_UpdateUnitResponse.OnLinePlayer;
+                    //拍卖行收益总小于100万返回
+                    //if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy) < 1000000)
+                    //{
+                    //    continue;
+                    //}
 
-                Console.WriteLine($"区： {pyzone}    在线人数: {numeber}");
+                    List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (chengJiuComponents == null || chengJiuComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    //游戏内成就点数>50点返回
+                    if (chengJiuComponents[0].TotalChengJiuPoint > 50)
+                    {
+                        continue;
+                    }
+
+                    List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (taskComponents == null || taskComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    if (taskComponents[0].GetMainTaskNumber() > 10)
+                    {
+                        continue;
+                    }
+
+                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                    if (accoutResult == null || accoutResult.Count == 0)
+                    {
+                        continue;
+                    }
+                    if (accoutResult[0].AccountType == 2)
+                    {
+                        continue;
+                    }
+
+                    //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
+                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
+                        $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
+                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t设备:{dataCollations[0].GetDeviceID()} \n";
+
+
+                    if (!accountNumber.ContainsKey(userInfoComponent.Account))
+                    {
+                        accountNumber.Add(userInfoComponent.Account, 0);
+                    }
+                    accountNumber[userInfoComponent.Account]++;
+
+                }
+
+                Log.Warning(gongzuoshiInfo);
             }
 #endif
         }
 
 
-        //gongzuoshi
+        //gongzuoshi(成就《50)
         public static async ETTask GongZuoShiConsoleHandler(string content)
         {
             Console.WriteLine($"request.Context:  GongZuoShiConsoleHandler: {content}");
@@ -552,7 +608,7 @@ namespace ET
         }
 
 
-        //gongzuoshi
+        //gongzuoshi（成就4任务）
         public static async ETTask GongZuoShi2_ConsoleHandler(string content)
         {
             Console.WriteLine($"request.Context:  GongZuoShiConsoleHandler: {content}");
