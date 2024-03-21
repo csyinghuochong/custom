@@ -598,14 +598,23 @@ namespace ET
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
 
                 string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表2： \n";
-                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
-                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+
+
+                long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "Gate1").InstanceId;
+                G2G_UnitListResponse g2M_UpdateUnitResponse = (G2G_UnitListResponse)await ActorMessageSenderComponent.Instance.Call
+                    (gateServerId, new G2G_UnitListRequest() { });
+
+                Console.WriteLine($"{pyzone}区 在线人数:{g2M_UpdateUnitResponse.UnitList.Count}");
+                for (int userinfo = 0; userinfo < g2M_UpdateUnitResponse.UnitList.Count; userinfo++)
                 {
-                    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
-                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    long unitId = g2M_UpdateUnitResponse.UnitList[userinfo];
+
+                    List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == unitId);
+                    if (userinfoComponentList == null || userinfoComponentList.Count == 0)
                     {
                         continue;
                     }
+                    UserInfoComponent userInfoComponent = userinfoComponentList[0];
 
                     if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
                     {
@@ -695,7 +704,7 @@ namespace ET
                     //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
                     gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
                         $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
-                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()} \n";
+                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t设备:{dataCollations[0].GetDeviceID()} \n";
 
 
                     if (!accountNumber.ContainsKey(userInfoComponent.Account))
