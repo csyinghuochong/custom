@@ -882,7 +882,7 @@ namespace ET
 
                         int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
                       
-                        levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 金币:{userInfoComponent.UserInfo.Gold} 充值:{recharge} \n";
+                        levelInfo = levelInfo + $"区:{pyzone}   账号：{userInfoComponent.Account}  玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 金币:{userInfoComponent.UserInfo.Gold} 充值:{recharge} \n";
                     }
                     if (chaxun == "diamond")
                     {
@@ -908,11 +908,11 @@ namespace ET
                         }
                         int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
 
-                        levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 钻石:{userInfoComponent.UserInfo.Diamond} 充值:{recharge} \n";
+                        levelInfo = levelInfo + $"区:{pyzone}   账号：{userInfoComponent.Account} 玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 钻石:{userInfoComponent.UserInfo.Diamond} 充值:{recharge} \n";
                     }
                 }
 
-                Log.Warning(levelInfo);
+                LogHelper.PaiMaiInfo(levelInfo);
             }
 #endif
         }
