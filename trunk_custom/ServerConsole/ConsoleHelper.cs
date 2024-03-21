@@ -413,10 +413,24 @@ namespace ET
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
 
                 string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表1： \n";
-                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
-                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+
+
+                long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "Gate1").InstanceId;
+                G2G_UnitListResponse g2M_UpdateUnitResponse = (G2G_UnitListResponse)await ActorMessageSenderComponent.Instance.Call
+                    (gateServerId, new G2G_UnitListRequest() { });
+
+                Console.WriteLine($"{pyzone}区 在线人数:{g2M_UpdateUnitResponse.UnitList.Count}");
+                for (int userinfo = 0; userinfo < g2M_UpdateUnitResponse.UnitList.Count; userinfo++)
                 {
-                    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
+                    long unitId = g2M_UpdateUnitResponse.UnitList[userinfo];
+
+                    List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == unitId);
+                    if(userinfoComponentList == null || userinfoComponentList.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    UserInfoComponent userInfoComponent = userinfoComponentList[0];
                     if (userInfoComponent.UserInfo.RobotId != 0)
                     {
                         continue;
@@ -432,17 +446,17 @@ namespace ET
                     {
                         continue;
                     }
+
                     //当前体力>50返回
                     if (userInfoComponent.UserInfo.PiLao > 50)
                     {
                         continue;
                     }
 
-                    if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
-                    {
-                        continue;
-                    }
-
+                    //if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
+                    //{
+                    //    continue;
+                    //}
 
                     //非手机登录返回
                     //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
@@ -450,7 +464,7 @@ namespace ET
                     //    continue;
                     //}
 
-                        List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
                     if (dataCollations == null || dataCollations.Count == 0)
                     {
                         continue;
@@ -487,6 +501,7 @@ namespace ET
                     {
                         continue;
                     }
+
                     if (taskComponents[0].GetMainTaskNumber() > 10)
                     {
                         continue;
