@@ -416,8 +416,24 @@ namespace ET
 
                 }
 
-                Log.Warning(gongzuoshiInfo);
+                LogHelper.PaiMaiInfo(gongzuoshiInfo);
             }
+
+            string fenhaoTip = string.Empty;
+            foreach ((string account, int number) in accountNumber)
+            {
+                if (number >= 3)  //三次以上封账号封设备id
+                {
+                    fenhaoTip+=($"封号： {account}");
+                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
+                    if (accoutResult != null && accoutResult.Count > 0)
+                    {
+                        accoutResult[0].AccountType = 2;
+                        Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
+                    }
+                }
+            }
+            LogHelper.PaiMaiInfo(fenhaoTip);
 #endif
         }
 
@@ -769,21 +785,24 @@ namespace ET
                     }
                     accountNumber[userInfoComponent.Account]++;
                 }
-
-                //foreach ((string account, int number) in accountNumber)
-                //{
-                //    if (number >= 3)
-                //    {
-                //        List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
-                //        if (accoutResult != null && accoutResult.Count > 0)
-                //        {
-                //            accoutResult[0].AccountType = 2;
-                //            Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
-                //        }
-                //    }
-                //}
                 LogHelper.PaiMaiInfo(gongzuoshiInfo);
             }
+
+            string fenhaoTip = string.Empty;
+            foreach ((string account, int number) in accountNumber)
+            {
+                if (number >= 3)  //三次以上封账号封设备id
+                {
+                    fenhaoTip += ($"封号： {account}");
+                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
+                    if (accoutResult != null && accoutResult.Count > 0)
+                    {
+                        accoutResult[0].AccountType = 2;
+                        Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
+                    }
+                }
+            }
+            LogHelper.PaiMaiInfo(fenhaoTip);
 #endif
         }
 
@@ -850,13 +869,34 @@ namespace ET
                         {
                             continue;
                         }
-                        int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
 
+                        List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                        if (accoutResult == null || accoutResult.Count == 0)
+                        {
+                            continue;
+                        }
+                        if (accoutResult[0].AccountType == 2)
+                        {
+                            continue;
+                        }
+
+                        int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+                      
                         levelInfo = levelInfo + $"区: {pyzone} 玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 金币:{userInfoComponent.UserInfo.Gold} 充值:{recharge} \n";
                     }
                     if (chaxun == "diamond")
                     {
                         if (userInfoComponent.UserInfo.Diamond < maxGold)
+                        {
+                            continue;
+                        }
+
+                        List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                        if (accoutResult == null || accoutResult.Count == 0)
+                        {
+                            continue;
+                        }
+                        if (accoutResult[0].AccountType == 2)
                         {
                             continue;
                         }
