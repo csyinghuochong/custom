@@ -851,6 +851,10 @@ namespace ET
                     {
                         continue;
                     }
+                    if (userInfoComponent.UserInfo.Lv > 40)
+                    {
+                        continue;
+                    }
 
                     if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
                     {
@@ -881,8 +885,12 @@ namespace ET
                         }
 
                         int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+                        if (recharge > 200)
+                        { 
+                            continue; 
+                        }
                       
-                        levelInfo = levelInfo + $"区:{pyzone}   账号：{userInfoComponent.Account}  玩家:{userInfoComponent.UserInfo.Name} 等级:{userInfoComponent.UserInfo.Lv} 金币:{userInfoComponent.UserInfo.Gold} 充值:{recharge} \n";
+                        levelInfo = levelInfo + $"区:{pyzone}   账号：{userInfoComponent.Account}  \t玩家:{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}  \t金币:{userInfoComponent.UserInfo.Gold}  \t充值:{recharge} \n";
                     }
                     if (chaxun == "diamond")
                     {
