@@ -288,7 +288,14 @@ namespace ET
             }
 
 #if SERVER
-
+            //1.游戏总时长超过180分钟
+            //2.击败BOSS数量小于3
+            //3.游戏内成就点数小于50点  改成游戏内成就点数小于100点 且 4个成就=0
+            //4.手机登录
+            //5.当前体力小于50
+            //6.今日在线时间超过120分钟
+            //7.主线任务完成不超过10个
+            //8.拍卖行收益总共超过100万
             int zone = int.Parse(chaxunInfo[1]);
             List<int> zonlist = new List<int> { };
             if (zone == 0)
@@ -337,12 +344,10 @@ namespace ET
                     {
                         continue;
                     }
-
                     //if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
                     //{
                     //    continue;
                     //}
-
                     //非手机登录返回
                     //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
                     //{
@@ -375,8 +380,16 @@ namespace ET
                         continue;
                     }
 
-                    //游戏内成就点数>50点返回
-                    if (chengJiuComponents[0].TotalChengJiuPoint > 50)
+                    ////游戏内成就点数>50点返回
+                    //if (chengJiuComponents[0].TotalChengJiuPoint > 50)
+                    //{
+                    //    continue;
+                    //}
+                    //3.游戏内成就4個擊殺boss都沒完成 10000002 - 10000005
+                    if (chengJiuComponents[0].ChengJiuCompleteList.Contains(10000002)
+                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000003)
+                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000004)
+                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000005))
                     {
                         continue;
                     }
@@ -405,7 +418,7 @@ namespace ET
                     //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
                     gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
                         $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
-                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t设备:{dataCollations[0].GetDeviceID()} \n";
+                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t设备:{dataCollations[0].GetDeviceID()}  金币获取:{dataCollations[0].GoldGet} \n";
 
 
                     if (!accountNumber.ContainsKey(userInfoComponent.Account))
@@ -466,7 +479,7 @@ namespace ET
 
             //1.游戏总时长超过180分钟
             //2.击败BOSS数量小于3
-            //3.游戏内成就点数小于50点
+            //3.游戏内成就点数小于50点  改成游戏内成就点数小于100点 且 4个成就=0
             //4.手机登录
             //5.当前体力小于50
             //6.今日在线时间超过120分钟
