@@ -71,7 +71,7 @@ namespace ET
             }
             if (infoList[0] == "gongzuoshi")
             {
-                ConsoleHelper.GongZuoShiConsoleHandler(request.Context).Coroutine();
+                ConsoleHelper.GongZuoShi1_ConsoleHandler(request.Context).Coroutine();
             }
             if (infoList[0] == "gongzuoshi2")
             {
