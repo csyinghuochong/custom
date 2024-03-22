@@ -274,6 +274,409 @@ namespace ET
 #endif
         }
 
+        //gongzuoshi所有在线
+        public static async ETTask GongZuoShi1_ConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  GongZuoShiConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo.Length != 2)
+            {
+                Console.WriteLine($"C must have gongzuoshi zone");
+                Log.Warning($"C must have gongzuoshi zone");
+                return;
+            }
+
+#if SERVER
+
+            int zone = int.Parse(chaxunInfo[1]);
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                zonlist = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+
+            //1.游戏总时长超过180分钟
+            //2.击败BOSS数量小于3
+            //3.游戏内成就4個擊殺boss都沒完成 10000002-10000005
+            //4.手机登录
+            //5.当前体力小于50
+            //6.今日在线时间超过120分钟
+            //7.主线任务完成不超过10个
+            //8.拍卖行收益总共超过100万
+            long serverNow = TimeHelper.ServerNow();
+            int curDate = ComHelp.GetDayByTime(serverNow);
+
+            Dictionary<string, int> accountNumber = new Dictionary<string, int>();
+
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表2： \n";
+
+
+                long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "Gate1").InstanceId;
+                G2G_UnitListResponse g2M_UpdateUnitResponse = (G2G_UnitListResponse)await ActorMessageSenderComponent.Instance.Call
+                    (gateServerId, new G2G_UnitListRequest() { });
+
+                Console.WriteLine($"{pyzone}区 在线人数:{g2M_UpdateUnitResponse.UnitList.Count}");
+                for (int userinfo = 0; userinfo < g2M_UpdateUnitResponse.UnitList.Count; userinfo++)
+                {
+                    long unitId = g2M_UpdateUnitResponse.UnitList[userinfo];
+
+                    List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == unitId);
+                    if (userinfoComponentList == null || userinfoComponentList.Count == 0)
+                    {
+                        continue;
+                    }
+                    UserInfoComponent userInfoComponent = userinfoComponentList[0];
+
+                    if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
+                    {
+                        continue;
+                    }
+
+                    //击败boss>3返回
+                    //if (userInfoComponent.UserInfo.MonsterRevives.Count > 3)
+                    //{
+                    //    continue;
+                    //}
+                    //当前体力>50返回
+                    //if (userInfoComponent.UserInfo.PiLao > 50)
+                    //{
+                    //    continue;
+                    //}
+
+                    //if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
+                    //{
+                    //    continue;
+                    //}
+
+
+                    //非手机登录返回
+                    //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
+                    //{
+                    //    continue;
+                    //}
+
+                    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (dataCollations == null || dataCollations.Count == 0)
+                    {
+                        continue;
+                    }
+                    //游戏总时长超过180分钟返回
+                    //暂时不写
+
+                    //今日在线时间超过120分钟返回
+                    //if (dataCollations[0].TodayOnLine < 120)
+                    //{
+                    //    continue;
+                    //}
+
+                    //拍卖行收益总小于100万返回
+                    //if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy) < 1000000)
+                    //{
+                    //    continue;
+                    //}
+
+                    List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (chengJiuComponents == null || chengJiuComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    //3.游戏内成就4個擊殺boss都沒完成 10000002 - 10000005
+                    //if (chengJiuComponents[0].ChengJiuCompleteList.Contains(10000002)
+                    //    || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000003)
+                    //    || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000004)
+                    //    || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000005))
+                    //{
+                    //    continue;
+                    //}
+
+
+                    List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (taskComponents == null || taskComponents.Count == 0)
+                    {
+                        continue;
+                    }
+                    //if (taskComponents[0].GetMainTaskNumber() > 10)
+                    //{
+                    //    continue;
+                    //}
+
+
+                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                    if (accoutResult == null || accoutResult.Count == 0)
+                    {
+                        continue;
+                    }
+                    if (accoutResult[0].AccountType == 2)
+                    {
+                        continue;
+                    }
+
+                    //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
+                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
+                        $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
+                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t金币获取:{dataCollations[0].GoldGet}  \t金币消耗:{dataCollations[0].GoldCost} " +
+                        $"\t金币获取总值:{dataCollations[0].GetGoldGetTotal()}  \t金币消耗总值:{dataCollations[0].GetGoldCostTotal()} \t设备:{dataCollations[0].GetDeviceID()} \n";
+
+
+                    if (!accountNumber.ContainsKey(userInfoComponent.Account))
+                    {
+                        accountNumber.Add(userInfoComponent.Account, 0);
+                    }
+                    accountNumber[userInfoComponent.Account]++;
+                }
+                LogHelper.PaiMaiInfo(gongzuoshiInfo);
+            }
+
+            //string fenhaoTip = string.Empty;
+            //foreach ((string account, int number) in accountNumber)
+            //{
+            //    if (number >= 3)  //三次以上封账号封设备id
+            //    {
+            //        fenhaoTip += ($"封号： {account}");
+            //        List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
+            //        if (accoutResult != null && accoutResult.Count > 0)
+            //        {
+            //            accoutResult[0].AccountType = 2;
+            //            Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
+            //        }
+            //    }
+            //}
+            //LogHelper.PaiMaiInfo(fenhaoTip);
+#endif
+        }
+
+
+        //gongzuoshi2 踢所有在线（成就4任务）
+        public static async ETTask GongZuoShi2_ConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  GongZuoShiConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo.Length != 2)
+            {
+                Console.WriteLine($"C must have gongzuoshi zone");
+                Log.Warning($"C must have gongzuoshi zone");
+                return;
+            }
+
+#if SERVER
+
+            int zone = int.Parse(chaxunInfo[1]);
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                zonlist = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+
+            //1.游戏总时长超过180分钟
+            //2.击败BOSS数量小于3
+            //3.游戏内成就点数小于50点  改成游戏内成就点数小于100点 且 4个成就=0
+            //4.手机登录
+            //5.当前体力小于50
+            //6.今日在线时间超过120分钟
+            //7.主线任务完成不超过10个
+            //8.拍卖行收益总共超过100万
+
+            long serverNow = TimeHelper.ServerNow();
+            int curDate = ComHelp.GetDayByTime(serverNow);
+           
+            Dictionary<string, List<long>> accountNumber = new Dictionary<string, List<long>>();  
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表1： \n";
+
+
+                long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "Gate1").InstanceId;
+                G2G_UnitListResponse g2M_UpdateUnitResponse = (G2G_UnitListResponse)await ActorMessageSenderComponent.Instance.Call
+                    (gateServerId, new G2G_UnitListRequest() { });
+
+                Console.WriteLine($"{pyzone}区 在线人数:{g2M_UpdateUnitResponse.UnitList.Count}");
+                for (int userinfo = 0; userinfo < g2M_UpdateUnitResponse.UnitList.Count; userinfo++)
+                {
+                    long unitId = g2M_UpdateUnitResponse.UnitList[userinfo];
+
+                    List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == unitId);
+                    if(userinfoComponentList == null || userinfoComponentList.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    UserInfoComponent userInfoComponent = userinfoComponentList[0];
+                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    {
+                        continue;
+                    }
+
+                    if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
+                    {
+                        continue;
+                    }
+
+                    //击败boss>3返回
+                    if (userInfoComponent.UserInfo.MonsterRevives.Count > 3)
+                    {
+                        continue;
+                    }
+
+                    //当前体力>50返回
+                    if (userInfoComponent.UserInfo.PiLao > 50)
+                    {
+                        continue;
+                    }
+
+                    //if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
+                    //{
+                    //    continue;
+                    //}
+
+                    //非手机登录返回
+                    //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
+                    //{
+                    //    continue;
+                    //}
+
+                    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (dataCollations == null || dataCollations.Count == 0)
+                    {
+                        continue;
+                    }
+                    //游戏总时长超过180分钟返回
+                    //暂时不写
+
+                    //今日在线时间超过120分钟返回
+                    if (dataCollations[0].TodayOnLine < 120)
+                    {
+                        continue;
+                    }
+
+                    //拍卖行收益总小于100万返回
+                    //if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy) < 1000000)
+                    //{
+                    //    continue;
+                    //}
+
+                    List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (chengJiuComponents == null || chengJiuComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    //游戏内成就点数>50点返回
+                    //if (chengJiuComponents[0].TotalChengJiuPoint > 50)
+                    //{
+                    //    continue;
+                    //}
+                    //3.游戏内成就4個擊殺boss都沒完成 10000002 - 10000005
+                    if (chengJiuComponents[0].ChengJiuCompleteList.Contains(10000002)
+                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000003)
+                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000004)
+                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000005))
+                    {
+                        continue;
+                    }
+
+
+                    List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (taskComponents == null || taskComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    if (taskComponents[0].GetMainTaskNumber() > 10)
+                    {
+                        continue;
+                    }
+
+                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                    if (accoutResult == null || accoutResult.Count == 0)
+                    {
+                        continue;
+                    }
+                    if (accoutResult[0].AccountType == 2)
+                    {
+                        continue;
+                    }
+
+                    //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
+                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
+                       $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
+                       $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t金币获取:{dataCollations[0].GoldGet}  \t金币消耗:{dataCollations[0].GoldCost} " +
+                       $"\t金币获取总值:{dataCollations[0].GetGoldGetTotal()}  \t金币消耗总值:{dataCollations[0].GetGoldCostTotal()} \t设备:{dataCollations[0].GetDeviceID()} \n";
+
+
+                    if (!accountNumber.ContainsKey(userInfoComponent.Account))
+                    {
+                        accountNumber.Add(userInfoComponent.Account, new List<long>());
+                    }
+                    accountNumber[userInfoComponent.Account].Add(userInfoComponent.Id);
+                }
+
+            }
+
+
+            string fenhaoTip = string.Empty;
+            foreach ((string account, List<long> unitids) in accountNumber)
+            {
+                if (unitids.Count >= 3)  //三次以上封账号封设备id
+                {
+                    fenhaoTip += ($"封号： {account}");
+                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
+                    if (accoutResult != null && accoutResult.Count > 0)
+                    {
+                        accoutResult[0].AccountType = 2;
+                        Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
+                    }
+                    continue;
+                }
+
+                if (unitids.Count == 0)
+                {
+                    continue;
+                }
+
+                for (int i = 0; i < unitids.Count; i++)
+                {
+                    int unitzone = UnitIdStruct.GetUnitZone(unitids[i]);
+                    int pyzone = StartZoneConfigCategory.Instance.Get(unitzone).PhysicZone;
+                    fenhaoTip += $"封角色:{pyzone}   {account}   {unitids[i]}";
+                    List<DBAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(pyzone, _account => _account.Account == account);
+                    if (accoutResult != null && accoutResult.Count > 0)
+                    {
+                        if (!accoutResult[0].BanUserList.Contains(unitids[i]))
+                        {
+                            accoutResult[0].BanUserList.Add(unitids[i]);
+                            Game.Scene.GetComponent<DBComponent>().Save<DBAccountInfo>(202, accoutResult[0]).Coroutine();
+                        }
+                    }
+
+                    DisconnectHelper.KickPlayer(pyzone, unitids[i]).Coroutine();
+                }
+            }
+            LogHelper.PaiMaiInfo(fenhaoTip);
+#endif
+        }
+
+
         //allonline   
         public static async ETTask GongZuoshi3_ConsoleHandler(string content)
         {
@@ -309,7 +712,7 @@ namespace ET
 
             long serverNow = TimeHelper.ServerNow();
             int curDate = ComHelp.GetDayByTime(serverNow);
-            Dictionary<string, int> accountNumber = new Dictionary<string, int>();
+            Dictionary<string, List<long>> accountNumber = new Dictionary<string, List<long>>();
 
             for (int i = 0; i < zonlist.Count; i++)
             {
@@ -417,394 +820,25 @@ namespace ET
 
                     //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
                     gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
-                        $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
-                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t设备:{dataCollations[0].GetDeviceID()}  金币获取:{dataCollations[0].GoldGet} \n";
+                      $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
+                      $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t金币获取:{dataCollations[0].GoldGet}  \t金币消耗:{dataCollations[0].GoldCost} " +
+                      $"\t金币获取总值:{dataCollations[0].GetGoldGetTotal()}  \t金币消耗总值:{dataCollations[0].GetGoldCostTotal()} \t设备:{dataCollations[0].GetDeviceID()} \n";
 
 
                     if (!accountNumber.ContainsKey(userInfoComponent.Account))
                     {
-                        accountNumber.Add(userInfoComponent.Account, 0);
+                        accountNumber.Add(userInfoComponent.Account, new List<long>());
                     }
-                    accountNumber[userInfoComponent.Account]++;
-
+                    accountNumber[userInfoComponent.Account].Add(userInfoComponent.Id);
                 }
 
                 LogHelper.PaiMaiInfo(gongzuoshiInfo);
             }
 
             string fenhaoTip = string.Empty;
-            foreach ((string account, int number) in accountNumber)
+            foreach ((string account, List<long> unitids) in accountNumber)
             {
-                if (number >= 3)  //三次以上封账号封设备id
-                {
-                    fenhaoTip+=($"封号： {account}");
-                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
-                    if (accoutResult != null && accoutResult.Count > 0)
-                    {
-                        accoutResult[0].AccountType = 2;
-                        Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
-                    }
-                }
-            }
-            LogHelper.PaiMaiInfo(fenhaoTip);
-#endif
-        }
-
-
-        //gongzuoshi(成就《50)
-        public static async ETTask GongZuoShiConsoleHandler(string content)
-        {
-            Console.WriteLine($"request.Context:  GongZuoShiConsoleHandler: {content}");
-            await ETTask.CompletedTask;
-            string[] chaxunInfo = content.Split(" ");
-            if (chaxunInfo.Length != 2)
-            {
-                Console.WriteLine($"C must have gongzuoshi zone");
-                Log.Warning($"C must have gongzuoshi zone");
-                return;
-            }
-
-#if SERVER
-
-            int zone = int.Parse(chaxunInfo[1]);
-            List<int> zonlist = new List<int> { };
-            if (zone == 0)
-            {
-                zonlist = ServerMessageHelper.GetAllZone();
-            }
-            else
-            {
-                zonlist.Add(zone);
-            }
-
-            //1.游戏总时长超过180分钟
-            //2.击败BOSS数量小于3
-            //3.游戏内成就点数小于50点  改成游戏内成就点数小于100点 且 4个成就=0
-            //4.手机登录
-            //5.当前体力小于50
-            //6.今日在线时间超过120分钟
-            //7.主线任务完成不超过10个
-            //8.拍卖行收益总共超过100万
-
-            long serverNow = TimeHelper.ServerNow();
-            int curDate = ComHelp.GetDayByTime(serverNow);
-           
-            Dictionary<string, int> accountNumber = new Dictionary<string, int>();  
-
-            for (int i = 0; i < zonlist.Count; i++)
-            {
-                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
-
-                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
-
-                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表1： \n";
-
-
-                long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "Gate1").InstanceId;
-                G2G_UnitListResponse g2M_UpdateUnitResponse = (G2G_UnitListResponse)await ActorMessageSenderComponent.Instance.Call
-                    (gateServerId, new G2G_UnitListRequest() { });
-
-                Console.WriteLine($"{pyzone}区 在线人数:{g2M_UpdateUnitResponse.UnitList.Count}");
-                for (int userinfo = 0; userinfo < g2M_UpdateUnitResponse.UnitList.Count; userinfo++)
-                {
-                    long unitId = g2M_UpdateUnitResponse.UnitList[userinfo];
-
-                    List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == unitId);
-                    if(userinfoComponentList == null || userinfoComponentList.Count == 0)
-                    {
-                        continue;
-                    }
-
-                    UserInfoComponent userInfoComponent = userinfoComponentList[0];
-                    if (userInfoComponent.UserInfo.RobotId != 0)
-                    {
-                        continue;
-                    }
-
-                    if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
-                    {
-                        continue;
-                    }
-
-                    //击败boss>3返回
-                    if (userInfoComponent.UserInfo.MonsterRevives.Count > 3)
-                    {
-                        continue;
-                    }
-
-                    //当前体力>50返回
-                    if (userInfoComponent.UserInfo.PiLao > 50)
-                    {
-                        continue;
-                    }
-
-                    //if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
-                    //{
-                    //    continue;
-                    //}
-
-                    //非手机登录返回
-                    //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
-                    //{
-                    //    continue;
-                    //}
-
-                    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                    if (dataCollations == null || dataCollations.Count == 0)
-                    {
-                        continue;
-                    }
-                    //游戏总时长超过180分钟返回
-                    //暂时不写
-
-                    //今日在线时间超过120分钟返回
-                    if (dataCollations[0].TodayOnLine < 120)
-                    {
-                        continue;
-                    }
-
-                    //拍卖行收益总小于100万返回
-                    //if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy) < 1000000)
-                    //{
-                    //    continue;
-                    //}
-
-                    List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                    if (chengJiuComponents == null || chengJiuComponents.Count == 0)
-                    {
-                        continue;
-                    }
-
-                    //游戏内成就点数>50点返回
-                    if (chengJiuComponents[0].TotalChengJiuPoint > 50)
-                    {
-                        continue;
-                    }
-
-                    List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                    if (taskComponents == null || taskComponents.Count == 0)
-                    {
-                        continue;
-                    }
-
-                    if (taskComponents[0].GetMainTaskNumber() > 10)
-                    {
-                        continue;
-                    }
-
-                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
-                    if (accoutResult == null || accoutResult.Count == 0)
-                    {
-                        continue;
-                    }
-                    if (accoutResult[0].AccountType == 2)
-                    {
-                        continue;
-                    }
-
-                    //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
-                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
-                        $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
-                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t设备:{dataCollations[0].GetDeviceID()} \n";
-
-
-                    if(!accountNumber.ContainsKey(userInfoComponent.Account))
-                    {
-                        accountNumber.Add(userInfoComponent.Account, 0);
-                    }
-                    accountNumber[userInfoComponent.Account]++;
-                }
-
-                //foreach ( (string account, int number) in accountNumber )
-                //{
-                //     if (number >= 1) 一次以上封账号封角色id
-                //{ 
-                //}
-                //    if (number >= 3)  //三次以上封账号封设备id
-                //    {
-                //        List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
-                //        if (accoutResult != null && accoutResult.Count > 0)
-                //        {
-                //            accoutResult[0].AccountType = 2;
-                //            Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
-                //        }
-                //    }
-                //}
-
-                LogHelper.PaiMaiInfo(gongzuoshiInfo); 
-            }
-#endif
-        }
-
-
-        //gongzuoshi（成就4任务）
-        public static async ETTask GongZuoShi2_ConsoleHandler(string content)
-        {
-            Console.WriteLine($"request.Context:  GongZuoShiConsoleHandler: {content}");
-            await ETTask.CompletedTask;
-            string[] chaxunInfo = content.Split(" ");
-            if (chaxunInfo.Length != 2)
-            {
-                Console.WriteLine($"C must have gongzuoshi zone");
-                Log.Warning($"C must have gongzuoshi zone");
-                return;
-            }
-
-#if SERVER
-
-            int zone = int.Parse(chaxunInfo[1]);
-            List<int> zonlist = new List<int> { };
-            if (zone == 0)
-            {
-                zonlist = ServerMessageHelper.GetAllZone();
-            }
-            else
-            {
-                zonlist.Add(zone);
-            }
-
-            //1.游戏总时长超过180分钟
-            //2.击败BOSS数量小于3
-            //3.游戏内成就4個擊殺boss都沒完成 10000002-10000005
-            //4.手机登录
-            //5.当前体力小于50
-            //6.今日在线时间超过120分钟
-            //7.主线任务完成不超过10个
-            //8.拍卖行收益总共超过100万
-            long serverNow = TimeHelper.ServerNow();
-            int curDate = ComHelp.GetDayByTime(serverNow);
-
-            Dictionary<string, int> accountNumber = new Dictionary<string, int>();
-
-            for (int i = 0; i < zonlist.Count; i++)
-            {
-                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
-
-                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
-
-                string gongzuoshiInfo = $"{pyzone}区疑似工作室账号列表2： \n";
-
-
-                long gateServerId = StartSceneConfigCategory.Instance.GetBySceneName(pyzone, "Gate1").InstanceId;
-                G2G_UnitListResponse g2M_UpdateUnitResponse = (G2G_UnitListResponse)await ActorMessageSenderComponent.Instance.Call
-                    (gateServerId, new G2G_UnitListRequest() { });
-
-                Console.WriteLine($"{pyzone}区 在线人数:{g2M_UpdateUnitResponse.UnitList.Count}");
-                for (int userinfo = 0; userinfo < g2M_UpdateUnitResponse.UnitList.Count; userinfo++)
-                {
-                    long unitId = g2M_UpdateUnitResponse.UnitList[userinfo];
-
-                    List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == unitId);
-                    if (userinfoComponentList == null || userinfoComponentList.Count == 0)
-                    {
-                        continue;
-                    }
-                    UserInfoComponent userInfoComponent = userinfoComponentList[0];
-
-                    if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
-                    {
-                        continue;
-                    }
-
-                    //击败boss>3返回
-                    if (userInfoComponent.UserInfo.MonsterRevives.Count > 3)
-                    {
-                        continue;
-                    }
-                    //当前体力>50返回
-                    if (userInfoComponent.UserInfo.PiLao > 50)
-                    {
-                        continue;
-                    }
-
-                    if (curDate != ComHelp.GetDayByTime(userInfoComponent.LastLoginTime))
-                    {
-                        continue;
-                    }
-
-
-                    //非手机登录返回
-                    //if (string.IsNullOrEmpty(userInfoComponent.Account) || userInfoComponent.Account[0] != '1')
-                    //{
-                    //    continue;
-                    //}
-
-                    List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                    if (dataCollations == null || dataCollations.Count == 0)
-                    {
-                        continue;
-                    }
-                    //游戏总时长超过180分钟返回
-                    //暂时不写
-
-                    //今日在线时间超过120分钟返回
-                    if (dataCollations[0].TodayOnLine < 120)
-                    {
-                        continue;
-                    }
-
-                    //拍卖行收益总小于100万返回
-                    //if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy) < 1000000)
-                    //{
-                    //    continue;
-                    //}
-
-                    List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                    if (chengJiuComponents == null || chengJiuComponents.Count == 0)
-                    {
-                        continue;
-                    }
-
-                    //3.游戏内成就4個擊殺boss都沒完成 10000002 - 10000005
-                    if (chengJiuComponents[0].ChengJiuCompleteList.Contains(10000002)
-                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000003)
-                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000004)
-                        || chengJiuComponents[0].ChengJiuCompleteList.Contains(10000005))
-                    {
-                        continue;
-                    }
-
-
-                    List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                    if (taskComponents == null || taskComponents.Count == 0)
-                    {
-                        continue;
-                    }
-                    if (taskComponents[0].GetMainTaskNumber() > 10)
-                    {
-                        continue;
-                    }
-
-
-                    List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
-                    if (accoutResult == null || accoutResult.Count == 0)
-                    {
-                        continue;
-                    }
-                    if (accoutResult[0].AccountType == 2)
-                    {
-                        continue;
-                    }
-
-                    //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
-                    gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
-                        $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
-                        $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t设备:{dataCollations[0].GetDeviceID()} \n";
-
-
-                    if (!accountNumber.ContainsKey(userInfoComponent.Account))
-                    {
-                        accountNumber.Add(userInfoComponent.Account, 0);
-                    }
-                    accountNumber[userInfoComponent.Account]++;
-                }
-                LogHelper.PaiMaiInfo(gongzuoshiInfo);
-            }
-
-            string fenhaoTip = string.Empty;
-            foreach ((string account, int number) in accountNumber)
-            {
-                if (number >= 3)  //三次以上封账号封设备id
+                if (unitids.Count >= 3)  //三次以上封账号封设备id
                 {
                     fenhaoTip += ($"封号： {account}");
                     List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
@@ -813,11 +847,36 @@ namespace ET
                         accoutResult[0].AccountType = 2;
                         Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
                     }
+                    continue;
+                }
+
+                if (unitids.Count == 0)
+                {
+                    continue;
+                }
+
+                for (int i = 0; i < unitids.Count; i++)
+                {
+                    int unitzone = UnitIdStruct.GetUnitZone(unitids[i]);
+                    int pyzone = StartZoneConfigCategory.Instance.Get(unitzone).PhysicZone;
+                    fenhaoTip += $"封角色:{pyzone}   {account}   {unitids[i]}";
+                    List<DBAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(pyzone, _account => _account.Account == account);
+                    if (accoutResult != null && accoutResult.Count > 0)
+                    {
+                        if (!accoutResult[0].BanUserList.Contains(unitids[i]))
+                        {
+                            accoutResult[0].BanUserList.Add(unitids[i]);
+                            Game.Scene.GetComponent<DBComponent>().Save<DBAccountInfo>(202, accoutResult[0]).Coroutine();
+                        }
+                    }
+
+                    DisconnectHelper.KickPlayer(pyzone, unitids[i]).Coroutine();
                 }
             }
             LogHelper.PaiMaiInfo(fenhaoTip);
 #endif
         }
+
 
         //gold  diamond
         public static async ETTask GoldConsoleHandler(string content, string chaxun)
