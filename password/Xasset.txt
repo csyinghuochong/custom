@@ -1,0 +1,156 @@
+资源打包：
+   
+   要打包的Asset
+    public class AssetRef
+    {
+        public int bundle;                   bundle索引
+        public int dir;                          dir索引    	
+        public string name;                Bundle目录下的名字
+    }
+	
+    //所有依赖到的Bundle
+    public class BundleRef
+    {
+        public int[] deps;			
+        public string hash;		//资源引用
+        public int id;
+        public long len;			
+        public string name;		//资源名字
+    }
+
+    public class Manifest : ScriptableObject
+    {
+        public string[] activeVariants = new string[0];
+        public AssetRef[] assets = new AssetRef[0];
+        public BundleRef[] bundles = new BundleRef[0];
+        public string[] dirs = new string[0];
+    }
+
+_tracker.Add(asset, assets);
+如何被两个资源引用 。并且不在基础中bunlde，则单独打包
+prefab的资源没有被引用  会把这个pefab锁包含的资源全部打包在一起
+
+
+遍历所有要打包的资源
+找到对应的依赖资源
+if (dependencies.Length > 0)
+                    foreach (var asset in dependencies)
+                        if (ValidateAsset(asset))
+                            Track(asset, bundle);
+
+
+
+更新资源：
+RequestCopy()
+读取 C:/Users/Admin/AppData/LocalLow/yinghuochong/梦境传说/DLC/ver
+
+再读取本地 "file:///D:/weijingHot/trunk_2021_0808/Unity/Assets/StreamingAssets/ver"
+
+再读取tmp  var path = _savePath + Versions.Filename + ".tmp";
+
+_step = hasFile && steamFileThenSave ? Step.Coping : Step.Versions;
+如果streamAssets  并且版本比可读写目录的要高。   有文件则直接拷贝到 可读写目录。 
+
+没有则远程下载ver.   再和本地的tmp 对比，看看是不是要断点续传
+
+
+启动：
+Initialize
+var request = new ManifestRequest {url = ManifestAsset};
+            AddAssetRequest(request);
+
+先加载  mainfest
+
+AssetRequest: Reference, IEnumerator
+
+ManifestRequest : AssetRequest
+ BundleRequest : AssetRequest
+BundleAssetRequest : AssetRequest
+
+
+BundleAssetAsyncRequest : BundleAssetRequest
+
+加载资源：：：：
+
+LoadAsset(string path, Type type, bool async) 
+ if (_assets.TryGetValue(path, out request))    如果是已经加载的。 直接返回
+
+request = async ？ BundleAssetAsyncRequest： BundleAssetRequest
+
+
+async True:
+ AssetRequest request = new BundleAssetAsyncRequest(assetBundleName)
+BundleRequest LoadBundle{   LoadDependencies(bundle, assetBundleName, asyncMode); }
+
+
+async false:
+BundleAssetRequest
+ _assets.Add(request.url, request);
+  _loadingAssets.Add(request);
+  bundle = Assets.LoadBundle(assetBundleName);
+            var assetName = Path.GetFileName(url);
+            asset = bundle.assetBundle.LoadAsset(assetName, assetType);
+同步加载会直接把依赖加载上
+
+
+加载场景：  
+SceneAssetRequest : AssetRequest
+SceneAssetAsyncRequest : SceneAssetRequest
+
+public static SceneAssetRequest LoadSceneAsync(string path, bool additive)
+var asset = new SceneAssetAsyncRequest(path, additive);
+
+最底层的加载api
+AssetBundle.LoadFromFile
+
+AssetRequest 
+ManifestRequest : AssetRequest	清单文件
+BundleAssetRequest : AssetRequest
+SceneAssetRequest : AssetRequest
+WebAssetRequest : AssetRequest
+BundleRequest : AssetRequest
+
+加载资源：
+AssetRequest LoadAssetAsync
+
+AssetRequest request))
+if (_assets.TryGetValue(path, out request))
+            {
+                request.Retain();
+                _loadingAssets.Add(request);		//第一手的assetbundle预制件
+                return request;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

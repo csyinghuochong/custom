@@ -1,0 +1,156 @@
+关闭客户端进程socket会立即断开
+关闭客户端网络socket不会理解断开
+
+Player 不动如山
+
+Session
+SessionIdleCheckerComponent 心跳组件，60秒收不到消息，销毁seseion
+
+
+ case SceneType.Account:
+	scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
+                    scene.AddComponent<TokenComponent>();
+                    scene.AddComponent<FangChenMiComponent>();
+                    scene.AddComponent<AccountSessionsComponent>();
+                    break;
+ case SceneType.LoginCenter:
+                    scene.AddComponent<LoginInfoRecordComponent>();
+                    break;
+ case SceneType.AccountCenter:
+                    scene.AddComponent<AccountCenterComponent>();
+                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
+                    break;
+case SceneType.Realm:
+                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
+                    scene.AddComponent<TokenComponent>();
+                    break;
+case SceneType.Queue:
+                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
+                    scene.AddComponent<QueueSessionsComponent>();
+                    break;
+case SceneType.Gate:
+                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
+                    scene.AddComponent<PlayerComponent>();
+                    scene.AddComponent<GateSessionKeyComponent>();
+                    break;
+case SceneType.GateMap:
+                    scene.AddComponent<UnitComponent>();
+                    break;
+case SceneType.Location:
+                    scene.AddComponent<LocationComponent>();
+                    break;
+
+
+
+AccountServer                                         
+session.RemoveComponent<SessionAcceptTimeoutComponent>();   五秒之后销毁session  
+new A2Center_CheckAccount() { AccountName = request.AccountName, Password = request.Password }     检测账号
+session.AddComponent<AccountCheckOutTimeComponent, long>(account.Id);			
+		
+LoginCenterServer       
+scene.Add( LoginInfoRecordComponent[] )  
+
+
+C2A_ServerList 获取服务器列表{代码配置，可以动态重载}
+
+1.  【点击登录按钮】
+ C2A_LoginAccount  {  
+	A2Center_CheckAccount【获取账号】
+	是否需要排队判断  【】
+	session.DomainScene().GetComponent<TokenComponent>().Remove(account.Id）	
+	登录中心服，找到同账号玩家所在的区， 踢玩家下线	【登录gate的时候才把自己的account zone记录在登录中心服】
+	A2L_LoginAccountRequest    【】		LoginAccount
+	     L2G_DisconnectGateUnit
+		Player player = playerComponent.Get(accountId);   	Gate
+	 	Session gateSession = player.ClientSession;
+		gateSession.Send(new A2C_Disconnect() { Error = ErrorCore.ERR_OtherAccountLogin });   //客户端断线
+		player.AddComponent<PlayerOfflineOutTimeComponent>();   player组件依旧保留
+
+	踢accout服的玩家下线【】
+	long accountSessionInstanceId = session.DomainScene().GetComponent<AccountSessionsComponent>().Get(account.Id);
+	Session otherSession = Game.EventSystem.Get(accountSessionInstanceId) as Session;
+	otherSession?.Send(new A2C_Disconnect() { Error = ErrorCore.ERR_OtherAccountLogin });    
+
+
+	session.DomainScene().GetComponent<AccountSessionsComponent>().Add(account.Id, session.InstanceId); 账号ID映射sessionId。 【可用于踢其他玩家下线，session销毁的时候没移除 十分钟后移除/ 玩家下线的时候会移除】
+	session.DomainScene().GetComponent<TokenComponent>().Add(account.Id, Token);     账号ID映射Token也是保留十分钟  用于后续获取网关地址
+
+	session.AddComponent<AccountCheckOutTimeComponent, long>(account.Id);   //Session连接在账号服只能停留600秒
+
+	
+    }
+ 登录账号服，获取PlayerInfo。 如果是未注册的账号【三方账号登录的】，则直接注册。    客户端进入到创角界面
+
+
+2    【点击进入游戏按钮】
+loginHelper:
+
+此时AccountSession还没有断开
+此时还在账号服操作 想账号服请求负载均衡服的地址和key
+C2A_GetRealmKey    
+
+string token = (Account)secene.GetComponent<TokenComponent>().Get(request.AccountId);   		//C2ALoginAccount添加进来的
+向Realm负载均衡服请求一个key
+R2A_GetRealmKey r2AGetRealmKey = (R2A_GetRealmKey)await MessageHelper.CallActor(realmStartSceneConfig.InstanceId, new A2R_GetRealmKey() { AccountId = request.AccountId });
+
+ response.RealmKey = r2AGetRealmKey.RealmKey;    			返回负载均衡服的秘钥
+ response.RealmAddress = realmStartSceneConfig.OuterIPPort.ToString();		返回负载均衡服的地址【确定的】
+
+连接Realm，获取分配的Gate
+(G2R_GetLoginGateKey)await MessageHelper.CallActor(config.InstanceId, new R2G_GetLoginGateKey() { AccountId = request.AccountId });
+string key = RandomHelper.RandInt64().ToString() + TimeHelper.ServerNow().ToString();
+gatescene.GetComponent<GateSessionKeyComponent>().Remove(request.AccountId);	gate服生成key，   连接gate服的时候会验证
+gatescene.GetComponent<GateSessionKeyComponent>().Add(request.AccountId, key);	
+  response.GateAddress = config.OuterIPPort.ToString();				返回网关服的地址
+C2R_LoginRealm ->  r2CLogin.GateAddress
+
+开始连接Gate
+(G2C_LoginGameGate)await gateSession.Call(new C2G_LoginGameGate() { Key = r2CLogin.GateSessionKey, Account = accountId, RoleId = currentRoleId });
+
+//key 验证成功会移除
+gatescene.GetComponent<GateSessionKeyComponent>().Remove(request.Account);
+
+//通知登录中心服 记录本次登录的服务器Zone
+new G2L_AddLoginRecord() { AccountId = request.Account, ServerId = scene.Zone });
+
+
+SessionStateComponent SessionStateComponent = gatesession./Get/AddComponent<SessionStateComponent>();   玩家会长链网关服， 该组件会一直存在
+SessionStateComponent.State = SessionState.Normal;
+
+//游戏客户端在Gate上的一个映射
+Player player = scene.GetComponent<PlayerComponent>().Get(request.Account);   下线的时候才移除player
+player = scene.GetComponent<PlayerComponent>().AddChildWithId<Player, long, long>(request.RoleId, request.Account, request.RoleId);
+scene.GetComponent<PlayerComponent>().Add(player);
+session.AddComponent<SessionPlayerComponent>().PlayerId = player.Id;
+session.GetComponent<SessionPlayerComponent>().PlayerInstanceId = player.InstanceId;
+session销毁触发SessionPlayerComponentDestory; 
+
+请求进入游戏
+C2G_EnterGameHandler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

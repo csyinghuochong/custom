@@ -1,0 +1,28 @@
+1判断是否在前方 30度 范围
+angle = Vector3.Angle(player.forward, target.position - player.position)>30
+
+严格点：
+
+Vector3 dir = target.position - transform.position; //位置差，方向
+
+Vector3.Dot(transform.forward, dir);
+
+返回值为正时,目标在自己的前方,反之在自己的后方
+
+2 断目标在机子的左右方位可以使用下面的方法:
+
+Vector3.Cross(transform.forward, target.position).y
+
+返回值为正时,目标在自己的右方,反之在自己的左方
+
+注意 unity 是左手坐标系 这里要遵循左手法则
+
+Vector3.Dot 点乘
+
+Vector3.Cross 叉乘
+
+Vector3.Distance 距离
+
+Vector3.Lerp 插值
+
+Vector3.Normalize 规范化

@@ -1,0 +1,26 @@
+SkillID = Game_PublicClassVar.Get_function_DataSet.DataSet_ReadData("MainSkillUI_" + SkillSpace, "ID", Game_PublicClassVar.Get_wwwSet.RoseID, "RoseConfig");
+
+
+RoseSkill_Sing_1
+skillOpen
+
+技能特效
+ GameObject SkillObject_p = (GameObject)MonoBehaviour.Instantiate(SkillObj);
+        if (targetType == "1") {
+            SkillObject_p.GetComponent<SkillObjBase>().SkillTargetObj = MonsterObj.GetComponent<AI_1>().AI_Target;
+        }
+        if (targetType == "2") {
+            SkillObject_p.GetComponent<SkillObjBase>().SkillTargetObj = MonsterObj.GetComponent<Rose_Status>().Obj_ActTarget;
+ }
+
+ Game_PublicClassVar.Get_fight_Formult.PetActMonster(this.GetComponent<SkillObjBase>().MonsterSkillObj, this.GetComponent<SkillObjBase>().SkillID, actObj, false);
+
+Fight_Formult 计算伤害血量
+
+
+UI_RoseSkill 技能界面右边的按钮
+右边的  UI_RoseSkill /SkillIconSet/UI_RoseSkillIconShow(Clone)
+左边的  RoseSkillSet/SkillMask/SkillList(Clone)
+
+UI_RoseSkillIconShow--- Game_PublicClassVar.Get_function_UI.UI_MoveToMainSkill("1");
+UI_MoveToMainSkill

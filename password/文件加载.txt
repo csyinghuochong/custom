@@ -1,0 +1,95 @@
+
+启动游戏加载：
+
+ WWW_Item_Template = new WWW("file://" + Application.dataPath + "/Raw/GameData/" + Assets_XmlFileName + "/Get_Xml/" + "Item_Template.xml");
+            yield return WWW_Item_Template;
+  updataNumSum = updataNumSum + 1;
+
+Game_PublicClassVar.Get_xmlScript.Xml_Create(Get_XmlPath + "Item_Template.xml", WWW_Item_Template);
+
+ if (!File.Exists(FilePath))【缓存目录】
+
+
+先解密
+ string destFile = filePath.Replace(".xml", "_JieMi.xml");
+using (FileStream fs = new FileStream(destFile, FileMode.Create, FileAccess.Write))
+原xml 文件
+
+
+"_JieMi.xml"           ".xml"
+ Game_PublicClassVar.Get_xmlScript.setKey(string sourceFile, string FilePath;
+再加密存储
+using (FileStream fs = new FileStream(destFile, FileMode.Create, FileAccess.Write))
+
+
+
+游戏过程中存档
+
+
+170  写 DataSet_SetXml
+
+
+
+
+
+
+
+
+805
+ Game_PublicClassVar.Get_function_DataSet.DataSet_AllReadXml();
+
+
+
+
+
+
+
+
+ this.StartCoroutine(LoadMonster_Template());
+
+ WWW_Monster_Template = new WWW("jar:file://" + Application.dataPath + "!/assets/GameData/"+ Assets_XmlFileName + "/Get_Xml/" + "Monster_Template.xml");
+ Apk包读取原始存档  
+
+
+Game_PublicClassVar.Get_xmlScript.Xml_Create(Get_XmlPath + "Monster_Template.xml", WWW_Monster_Template);
+ if (!File.Exists(FilePath))   { 
+
+       if (File.Exists(tmepFile))有临时文件用临时文件  
+        string xmlPath = Game_PublicClassVar.Get_xmlScript.CostKey_2(FilePath, www);   Game_PublicClassVar.Get_xmlScript.setKey(destFile, filePath);   没有临时文件直接把apk内的文件写入到缓存目录
+	
+
+ }
+
+全部写入到缓存目录之后：
+
+ if (updataNumSum >= updataNum)
+
+ Game_PublicClassVar.Get_function_DataSet.DataSet_AllReadXml();
+//缓存道具表
+dataTable = Game_PublicClassVar.Get_function_DataSet.DataSet_ReadXml(Game_PublicClassVar.Get_wwwSet.Get_XmlPath + "Item_Template.xml", "Item_Template");
+
+MemoryStream newms = Game_PublicClassVar.Get_xmlScript.CostKeyEx(xmlPath, datatableName);
+DataSet dateSet = new DataSet();
+dateSet.ReadXml(ms);
+直接从磁盘文件读到内存缓存
+
+
+
+ //单独将xml缓存的写入对应的XML文档
+ public bool DataSet_SetXml(string xmlName)
+MemoryStream ss = new MemoryStream();
+Game_PublicClassVar.Get_wwwSet.DataWriteXml.Tables[xmlName].WriteXml(ss);
+
+Game_PublicClassVar.Get_xmlScript.setKeyEx(ss.ToArray(), Game_PublicClassVar.Get_wwwSet.Set_XmlPath + xmlName + ".xml");
+
+string tmepFile = FilePath.Replace(".xml", "_temp.xml");
+File.Move(tmepFile, FilePath);
+File.Delete(tmepFile);
+
+写入到缓存目录
+
+
+
+
+
+
