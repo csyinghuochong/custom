@@ -698,12 +698,7 @@ namespace ET
                         if (!accoutResult[0].BanUserList.Contains(unitids[i]))
                         {
                             accoutResult[0].BanUserList.Add(unitids[i]);
-
-                            if (accoutResult[0].BanUserTime.ContainsKey(unitids[i]))
-                            {
-                                accoutResult[0].BanUserTime.Remove(unitids[i]);
-                            }
-                            accoutResult[0].BanUserTime.Add( unitids[i], serverNow );
+                            accoutResult[0].BanUserTime[unitids[i]] = serverNow;
                             
                             Game.Scene.GetComponent<DBComponent>().Save<DBAccountInfo>(pyzone, accoutResult[0]).Coroutine();
                         }
@@ -921,12 +916,7 @@ namespace ET
                         if (!accoutResult[0].BanUserList.Contains(unitids[i]))
                         {
                             accoutResult[0].BanUserList.Add(unitids[i]);
-                            
-                            if (accoutResult[0].BanUserTime.ContainsKey(unitids[i]))
-                            {
-                                accoutResult[0].BanUserTime.Remove(unitids[i]);
-                            }
-                            accoutResult[0].BanUserTime.Add( unitids[i], serverNow );
+                            accoutResult[0].BanUserTime[unitids[i]] = serverNow;
                             
                             Game.Scene.GetComponent<DBComponent>().Save<DBAccountInfo>(pyzone, accoutResult[0]).Coroutine();
                         }
