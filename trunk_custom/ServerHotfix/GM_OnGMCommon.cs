@@ -81,6 +81,10 @@ namespace ET
             {
                 ConsoleHelper.GongZuoshi3_ConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "gongzuoshi4")
+            {
+                ConsoleHelper.GongZuoshi4_ConsoleHandler(request.Context).Coroutine();
+            }
         }
     }
 }
