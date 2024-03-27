@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace ET
@@ -68,6 +69,10 @@ namespace ET
             if (infoList[0] == "paimai")
             {
                 ConsoleHelper.PaiMaiConsoleHandler(request.Context).Coroutine();
+            }
+            if (infoList[0] == "paimai2")
+            {
+                ConsoleHelper.PaiMai2_ConsoleHandler(request.Context).Coroutine();
             }
             if (infoList[0] == "gongzuoshi")
             {

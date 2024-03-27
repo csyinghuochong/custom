@@ -203,6 +203,12 @@ namespace ET
 #endif
         }
 
+
+        /// <summary>
+        /// 全部玩家拍卖所得金币列表
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
         public static async ETTask PaiMaiConsoleHandler(string content)
         {
             Console.WriteLine($"request.Context:  PaiMaiConsoleHandler: {content}");
@@ -271,6 +277,87 @@ namespace ET
 
                 LogHelper.GongZuoShi(levelInfo);
             }
+#endif
+        }
+
+
+        /// <summary>
+        /// 今日拍卖所得金币列表
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static async ETTask PaiMai2_ConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  PaiMaiConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo[0] != "paimai2")
+            {
+                Console.WriteLine($"C must have paimai zone");
+                Log.Warning($"C must have paimai zone");
+                return;
+            }
+            if (chaxunInfo.Length != 3)
+            {
+                Console.WriteLine($"C must have paimai zone");
+                Log.Warning($"C must have paimai zone");
+                return;
+            }
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                zonlist = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+            long maxGold = long.Parse(chaxunInfo[2]);
+            string levelInfo = string.Empty;
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+                List<KeyValuePairLong> allpaimai = new List<KeyValuePairLong>();
+                levelInfo  +=  $"{pyzone}区玩家拍卖金币>{maxGold}列表： \n";
+                List<DataCollationComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.PaiMaiGold > maxGold);
+                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+                {
+                    DataCollationComponent dataComponent = userinfoComponentList[userinfo];
+                    //if (GMHelp.GmAccount.Contains(dataComponent.Account))
+                    //{
+                    //    continue;
+                    //}
+                    if (dataComponent.PaiMaiTodayGold < maxGold)
+                    {
+                        continue;
+                    }
+
+                    allpaimai.Add(new KeyValuePairLong() { KeyId = dataComponent.Id, Value = dataComponent.PaiMaiGold });
+                }
+
+                allpaimai.Sort(delegate (KeyValuePairLong a, KeyValuePairLong b)
+                {
+                    return (int)(a.Value - b.Value);
+                });
+
+                for (int paimaigold = 0; paimaigold < allpaimai.Count; paimaigold++)
+                {
+                    KeyValuePairLong pairLong = allpaimai[paimaigold];
+
+                    List<UserInfoComponent> userinfoComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == pairLong.KeyId);
+                    if (userinfoComponentlist == null || userinfoComponentlist.Count == 0)
+                    {
+                        return;
+                    }
+                    UserInfoComponent userInfoComponent = userinfoComponentlist[0];
+                    levelInfo += $"{userInfoComponent.UserInfo.Name}   \t拍卖获得金币:{pairLong.Value}   \t账号:{userInfoComponent.Account}   \t钻石:{userInfoComponent.UserInfo.Diamond}  \t金币:{userInfoComponent.UserInfo.Gold} \n";
+                }
+            }
+            LogHelper.PaiMai2Info(levelInfo);
 #endif
         }
 
