@@ -269,7 +269,7 @@ namespace ET
                     levelInfo += $"{userInfoComponent.UserInfo.Name}   \t拍卖获得金币:{pairLong.Value}   \t账号:{userInfoComponent.Account}   \t钻石:{userInfoComponent.UserInfo.Diamond}  \t金币:{userInfoComponent.UserInfo.Gold} \n";
                 }
 
-                LogHelper.PaiMaiInfo(levelInfo);
+                LogHelper.GongZuoShi(levelInfo);
             }
 #endif
         }
@@ -452,7 +452,7 @@ namespace ET
                     //等级 充值  活跃度 体力 当前金币   成就点数  当前主线任务
                     gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
                             $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
-                            $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t金币获取:{dataCollations[0].GoldGet}  \t金币消耗:{dataCollations[0].GoldCost} " +
+                            $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t金币获取:{dataCollations[0].GoldGet}  \t金币消耗:{dataCollations[0].GoldCost}   \t成就任务:{chengjiuTask}" + 
                             $"\t金币获取总值:{dataCollations[0].GetGoldGetTotal()}  \t金币消耗总值:{dataCollations[0].GetGoldCostTotal()} 今日在线:{dataCollations[0].TodayOnLine}  \t击杀boos:{killmonsterNumber} \t设备:{dataCollations[0].GetDeviceID()}" +
                             $"\tIP:{userInfoComponent.RemoteAddress}  身份证:{idcard} \n";
                     
@@ -462,7 +462,7 @@ namespace ET
                     }
                     accountNumber[userInfoComponent.Account]++;
                 }
-                LogHelper.PaiMaiInfo(gongzuoshiInfo);
+                LogHelper.GongZuoShi(gongzuoshiInfo);
             }
 
             //string fenhaoTip = string.Empty;
@@ -674,7 +674,7 @@ namespace ET
                     }
                     accountNumber[userInfoComponent.Account].Add(userInfoComponent.Id);
                 }
-                LogHelper.PaiMaiInfo(gongzuoshiInfo);
+                LogHelper.GongZuoShi(gongzuoshiInfo);
             }
 
 
@@ -719,12 +719,11 @@ namespace ET
                     DisconnectHelper.KickPlayer(pyzone, unitids[i]).Coroutine();
                 }
             }
-            LogHelper.PaiMaiInfo(fenhaoTip);
+            LogHelper.GongZuoShi(fenhaoTip);
 #endif
         }
 
-
-        //allonline   
+        //检测全服数据 + 封号   
         public static async ETTask GongZuoshi3_ConsoleHandler(string content)
         {
             Console.WriteLine($"request.Context:  AllOnLineConsoleHandler: {content}");
@@ -899,7 +898,7 @@ namespace ET
                     accountNumber[userInfoComponent.Account].Add(userInfoComponent.Id);
                 }
 
-                LogHelper.PaiMaiInfo(gongzuoshiInfo);
+                LogHelper.GongZuoShi(gongzuoshiInfo);
             }
 
             string fenhaoTip = string.Empty;
@@ -943,12 +942,12 @@ namespace ET
                     DisconnectHelper.KickPlayer(pyzone, unitids[i]).Coroutine();
                 }
             }
-            LogHelper.PaiMaiInfo(fenhaoTip);
+            LogHelper.GongZuoShi(fenhaoTip);
 #endif
         }
-        
+
         //封号-拍卖自己的玩家列表
-         public static async ETTask GongZuoshi4_ConsoleHandler(string content)
+        public static async ETTask GongZuoshi4_ConsoleHandler(string content)
         {
             Console.WriteLine($"request.Context:  GongZuoshi4_ConsoleHandler: {content}");
             await ETTask.CompletedTask;
@@ -1101,7 +1100,7 @@ namespace ET
                         $"\t金币获取总值:{dataCollations[0].GetGoldGetTotal()}  \t金币消耗总值:{dataCollations[0].GetGoldCostTotal()} 今日在线:{dataCollations[0].TodayOnLine}  \t击杀boos:{taskNumber} \t设备:{dataCollations[0].GetDeviceID()}" +
                         $"\tIP:{userInfoComponent.RemoteAddress}  \n";
                
-                LogHelper.PaiMaiInfo($"封号: {gongzuoshiInfo}");
+                LogHelper.GongZuoShi($"封号: {gongzuoshiInfo}");
                 
                 if (accoutResult != null && accoutResult.Count > 0)
                 {
@@ -1112,7 +1111,7 @@ namespace ET
             }
 #endif
         }
-        
+
         //gold  diamond
         public static async ETTask GoldConsoleHandler(string content, string chaxun)
         {
@@ -1227,7 +1226,7 @@ namespace ET
                     }
                 }
 
-                LogHelper.PaiMaiInfo(levelInfo);
+                LogHelper.GongZuoShi(levelInfo);
             }
 #endif
         }
