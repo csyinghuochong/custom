@@ -1318,7 +1318,7 @@ namespace ET
                         continue;
                     }
 
-                    if (!userInfoComponent.RemoteAddress.Contains(chaxunip))
+                    if (chaxunip!= "0" && !userInfoComponent.RemoteAddress.Contains(chaxunip))
                     {
                         continue;
                     }
