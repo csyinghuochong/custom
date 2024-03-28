@@ -1261,7 +1261,7 @@ namespace ET
                     continue;
                 }
 
-                gongzuoshiInfo += $"账号最大等级: \t区：{maxZone}  \t角色：{maxName}   \t:等级：{maxLv}  \n";
+                gongzuoshiInfo += $"账号最大等级:{accout} \t区：{maxZone}  \t角色：{maxName}   \t:等级：{maxLv}  \n";
             }
 
             LogHelper.PaiMaiInfo(gongzuoshiInfo);
