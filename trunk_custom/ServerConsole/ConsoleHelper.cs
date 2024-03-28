@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace ET
 {
@@ -569,7 +570,6 @@ namespace ET
             //LogHelper.PaiMaiInfo(fenhaoTip);
 #endif
         }
-
 
         //gongzuoshi2 踢所有在线（成就4任务）
         public static async ETTask GongZuoShi2_ConsoleHandler(string content)
@@ -1705,25 +1705,126 @@ namespace ET
             return ErrorCode.ERR_Success;
         }
 
+        /// <summary>
+        /// 服务器黑名单. 全服有大于40级的不封号
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
         public static async ETTask<int> BlackConsoleHandler(string content)
         {
             await ETTask.CompletedTask;
-
 #if SERVER
             string[] chaxunInfo = content.Split(" ");
             int zone = int.Parse(chaxunInfo[1]);
             int pyzone = StartZoneConfigCategory.Instance.Get(zone).PhysicZone;
-            string userName = chaxunInfo[2];
-            List<UserInfoComponent> accountInfoList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.UserInfo.Name == userName);
+            string userName = chaxunInfo[2];  //角色名或者账号
+            List<UserInfoComponent> accountInfoList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.UserInfo.Name == userName || d.Account == userName);
             if (accountInfoList == null || accountInfoList.Count == 0)
             {
                 return ErrorCode.ERR_NotFindAccount;
             }
+
             List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Id == accountInfoList[0].UserInfo.AccInfoID);
             if (accoutResult == null || accoutResult.Count == 0)
             {
                 return ErrorCode.ERR_NotFindAccount;
             }
+            if (accoutResult[0].AccountType == 2)
+            {
+                return ErrorCode.ERR_NotFindAccount;
+            }
+
+            string accout = accountInfoList[0].Account;
+            List<int> zonlist = ServerMessageHelper.GetAllZone();
+            for (int zoneindex = 0; zoneindex < zonlist.Count; zoneindex++)
+            {
+                int pyzoneid = zonlist[zoneindex];
+
+                List<DBAccountInfo> dBAccountInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(pyzoneid, _account => _account.Account == accout);
+                if (dBAccountInfos == null || dBAccountInfos.Count == 0)
+                {
+                    continue;
+                }
+
+                List<long> userlist = dBAccountInfos[0].UserList;
+
+                for (int userindex = 0; userindex < userlist.Count; userindex++)
+                {
+                    long userid = userlist[userindex];
+                    List<UserInfoComponent> userInfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzoneid, d => d.Id == userid);
+                    if (userInfoComponents == null || userInfoComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    if (userInfoComponents[0].UserInfo.Lv > 40)
+                    {
+                       return ErrorCode.ERR_Success;
+                    }
+                }
+            }
+
+
+            accoutResult[0].AccountType = 2;
+            accoutResult[0].BanTime = TimeHelper.ServerNow();
+            Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
+#endif
+            return ErrorCode.ERR_Success;
+        }
+
+
+        /// <summary>
+        /// 服务器黑名单. 全服有大于40级的不封号
+        /// </summary>  black2 tcg
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static async ETTask<int> Black2_ConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+#if SERVER
+            string[] chaxunInfo = content.Split(" ");
+            string accout = chaxunInfo[1];  //者账号
+            
+            List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == accout);
+            if (accoutResult == null || accoutResult.Count == 0)
+            {
+                return ErrorCode.ERR_NotFindAccount;
+            }
+            if (accoutResult[0].AccountType == 2)
+            {
+                return ErrorCode.ERR_NotFindAccount;
+            }
+
+            List<int> zonlist = ServerMessageHelper.GetAllZone();
+            for (int zoneindex = 0; zoneindex < zonlist.Count; zoneindex++)
+            {
+                int pyzoneid = zonlist[zoneindex];
+
+                List<DBAccountInfo> dBAccountInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(pyzoneid, _account => _account.Account == accout);
+                if (dBAccountInfos == null || dBAccountInfos.Count == 0)
+                {
+                    continue;
+                }
+
+                List<long> userlist = dBAccountInfos[0].UserList;
+
+                for (int userindex = 0; userindex < userlist.Count; userindex++)
+                {
+                    long userid = userlist[userindex];
+                    List<UserInfoComponent> userInfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzoneid, d => d.Id == userid);
+                    if (userInfoComponents == null || userInfoComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    if (userInfoComponents[0].UserInfo.Lv > 40)
+                    {
+                        return ErrorCode.ERR_Success;
+                    }
+                }
+            }
+
+
             accoutResult[0].AccountType = 2;
             accoutResult[0].BanTime = TimeHelper.ServerNow();
             Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
