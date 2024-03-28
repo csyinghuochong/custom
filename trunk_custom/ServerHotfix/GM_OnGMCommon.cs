@@ -94,7 +94,10 @@ namespace ET
             {
                 ConsoleHelper.GongZuoshi5_ConsoleHandler(request.Context).Coroutine();
             }
-            
+            if (infoList[0] == "gongzuoshi6")
+            {
+                ConsoleHelper.GongZuoshi6_ConsoleHandler(request.Context).Coroutine();
+            }
         }
     }
 }

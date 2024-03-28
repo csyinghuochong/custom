@@ -1269,6 +1269,80 @@ namespace ET
 
         }
 
+
+        /// <summary>
+        /// 通过ip和设备号查询
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static async ETTask GongZuoshi6_ConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo[0] != "gongzuoshi5")
+            {
+                Console.WriteLine($"C must have gold zone");
+                Log.Warning($"C must have gold zone");
+                return;
+            }
+            if (chaxunInfo.Length != 3)
+            {
+                Console.WriteLine($"C must have gold zone");
+                Log.Warning($"C must have gold zone");
+                return;
+            }
+#if SERVER
+
+            List<int> zonlist = ServerMessageHelper.GetAllZone();
+            string chaxunip = chaxunInfo[1];
+            string deviceid = chaxunInfo[2];
+
+            string gongzuoshiInfo = "查询相同Ip和设备:   \n";
+
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+                {
+                    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
+                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    {
+                        continue;
+                    }
+                    if (string.IsNullOrEmpty(userInfoComponent.RemoteAddress))
+                    {
+                        continue;
+                    }
+
+                    if (!userInfoComponent.RemoteAddress.Contains(chaxunip))
+                    {
+                        continue;
+                    }
+
+                    List<DataCollationComponent> dataCollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                    if (dataCollationComponents == null || dataCollationComponents.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    if (dataCollationComponents[0].DeviceID!= deviceid)
+                    {
+                        continue;
+                    }
+
+                    gongzuoshiInfo += $"区:{pyzone}   \t账号:{userInfoComponent.Account}  \t角色:{userInfoComponent.UserInfo.Name}  \n";
+                }
+
+                LogHelper.GongZuoShi(gongzuoshiInfo);
+            }
+
+#endif
+        }
+
         //gold  diamond
         public static async ETTask GoldConsoleHandler(string content, string chaxun)
         {
