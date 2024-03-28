@@ -1061,6 +1061,7 @@ namespace ET
             List<DataCollationComponent> dataCollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(zone, d => d.Id == unitId);
             if (dataCollationComponents == null || dataCollationComponents.Count == 0)
             {
+                Console.WriteLine($"查询为空:{content}");
                 return;
             }
 
@@ -1078,6 +1079,7 @@ namespace ET
                 List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(zone, d => d.Id  == userid);
                 if (userinfoComponentList == null || userinfoComponentList.Count == 0)
                 {
+                    Console.WriteLine($"查询为空1:{userid}");
                     continue;
                 }
 
@@ -1092,12 +1094,14 @@ namespace ET
                 }
                 if(userInfoComponent.UserInfo.Lv < 10 || userInfoComponent.UserInfo.Lv > 40)
                 {
+                    Console.WriteLine($"查询为空2:{userid}");
                     continue;
                 }
                 
                 List<DataCollationComponent> dataCollations = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(zone, d => d.Id == userInfoComponent.Id);
                 if (dataCollations == null || dataCollations.Count == 0)
                 {
+                    Console.WriteLine($"查询为空3:{userid}");
                     continue;
                 }
                 //游戏总时长超过180分钟返回
@@ -1106,6 +1110,7 @@ namespace ET
                
                 if (dataCollations[0].TotalOnLine < 180)
                 {
+                    Console.WriteLine($"查询为空4:{userid}");
                     continue;
                 }
 
@@ -1118,6 +1123,7 @@ namespace ET
                 List<ChengJiuComponent> chengJiuComponents = await Game.Scene.GetComponent<DBComponent>().Query<ChengJiuComponent>(zone, d => d.Id == userInfoComponent.Id);
                 if (chengJiuComponents == null || chengJiuComponents.Count == 0)
                 {
+                    Console.WriteLine($"查询为空5:{userid}");
                     continue;
                 }
 
@@ -1146,38 +1152,44 @@ namespace ET
 
                 if (taskNumber > 2)
                 {
+                    Console.WriteLine($"查询为空6:{userid}");
                     continue;
                 }
 
                 List<TaskComponent> taskComponents = await Game.Scene.GetComponent<DBComponent>().Query<TaskComponent>(zone, d => d.Id == userInfoComponent.Id);
                 if (taskComponents == null || taskComponents.Count == 0)
                 {
+                    Console.WriteLine($"查询为空7:{userid}");
                     continue;
                 }
 
                 if (taskComponents[0].GetMainTaskNumber() > 40)
                 {
+                    Console.WriteLine($"查询为空8:{userid}");
                     continue;
                 }
 
                 List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
                 if (accoutResult == null || accoutResult.Count == 0)
                 {
+                    Console.WriteLine($"查询为空9:{userid}");
                     continue;
                 }
                 if (accoutResult[0].AccountType == 2 || accoutResult[0].GetTotalRecharge() > 30)
                 {
+                    Console.WriteLine($"查询为空10:{userid}");
                     continue;
                 }
 
-                if (accoutResult[0].Password != "3" || accoutResult[0].Password != "4")
-                {
-                    continue;
-                }
+                //if (accoutResult[0].Password != "3" || accoutResult[0].Password != "4")
+                //{
+                //    continue;
+                //}
 
                 List<DBAccountInfo> accoutResult_2 = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(zone, _account => _account.Account == userInfoComponent.Account);
                 if (accoutResult_2 != null && accoutResult_2.Count > 0 && accoutResult_2[0].BanUserList!=null && accoutResult_2[0].BanUserList.Contains(userInfoComponent.Id))
                 {
+                    Console.WriteLine($"查询为空11:{userid}");
                     continue;
                 }
                 
