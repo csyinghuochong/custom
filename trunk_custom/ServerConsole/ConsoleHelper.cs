@@ -1199,6 +1199,76 @@ namespace ET
 #endif
         }
 
+
+        //检测所有被封的账号
+        public static async ETTask GongZuoshi5_ConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+#if SERVER
+
+
+            string gongzuoshiInfo = string.Empty;
+
+            List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Id > 0);
+            for ( int i = 0; i < accoutResult.Count; i++ )
+            {
+                if (accoutResult[i].AccountType != 2)
+                {
+                    continue;
+                }
+
+                string accout = accoutResult[i].Account;
+
+                int maxLv = 0;
+                int maxZone = 0;
+                string maxName = string.Empty;
+
+
+                List<int> zonlist = ServerMessageHelper.GetAllZone();
+                for ( int zoneindex = 0; zoneindex < zonlist.Count; zoneindex++  )
+                { 
+                    int pyzoneid = zonlist[zoneindex]; 
+
+                    List<DBAccountInfo> dBAccountInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(pyzoneid, _account => _account.Account == accout);
+                    if (dBAccountInfos == null || dBAccountInfos.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    List<long> userlist = dBAccountInfos[0].UserList;
+                   
+                    for ( int userindex = 0; userindex < userlist.Count; userindex++ )
+                    { 
+                        long userid = userlist[userindex];   
+                        List<UserInfoComponent> userInfoComponents  = await  Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzoneid, d => d.Id == userid);
+                        if (userInfoComponents == null || userInfoComponents.Count == 0)
+                        {
+                            continue;
+                        }
+
+                        if (userInfoComponents[0].UserInfo.Lv > maxLv)
+                        {
+                            maxLv = userInfoComponents[0].UserInfo.Lv;
+                            maxName = userInfoComponents[0].UserInfo.Name;
+                            maxZone = pyzoneid;
+                        }
+                    }
+                }
+
+
+                if (string.IsNullOrEmpty(maxName))
+                {
+                    continue;
+                }
+
+                gongzuoshiInfo += $"账号最大等级: \t区：{maxZone}  \t角色：{maxName}   \t:等级：{maxLv}  \n";
+            }
+
+            LogHelper.PaiMaiInfo(gongzuoshiInfo);
+#endif
+
+        }
+
         //gold  diamond
         public static async ETTask GoldConsoleHandler(string content, string chaxun)
         {
