@@ -1279,7 +1279,7 @@ namespace ET
         {
             await ETTask.CompletedTask;
             string[] chaxunInfo = content.Split(" ");
-            if (chaxunInfo[0] != "gongzuoshi5")
+            if (chaxunInfo[0] != "gongzuoshi6")
             {
                 Console.WriteLine($"C must have gold zone");
                 Log.Warning($"C must have gold zone");
