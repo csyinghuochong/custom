@@ -1048,17 +1048,17 @@ namespace ET
 
 #if SERVER
             int zone = int.Parse(chaxunInfo[1]);
-            List<int> zonlist = new List<int> { };
-            if (zone == 0)
-            {
-                zonlist = ServerMessageHelper.GetAllZone();
-            }
-            else
-            {
-                zonlist.Add(zone);
-            }
+            //List<int> zonlist = new List<int> { };
+            //if (zone == 0)
+            //{
+            //    zonlist = ServerMessageHelper.GetAllZone();
+            //}
+            //else
+            //{
+            //    zonlist.Add(zone);
+            //}
             long unitId = long.Parse(chaxunInfo[2]);
-            List<DataCollationComponent> dataCollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(zone, d => d.Id > 0);
+            List<DataCollationComponent> dataCollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(zone, d => d.Id == unitId);
             if (dataCollationComponents == null || dataCollationComponents.Count == 0)
             {
                 return;
