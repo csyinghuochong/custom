@@ -1329,7 +1329,7 @@ namespace ET
                         continue;
                     }
 
-                    if (dataCollationComponents[0].DeviceID!= deviceid)
+                    if (deviceid!= "0" &&  dataCollationComponents[0].DeviceID!= deviceid)
                     {
                         continue;
                     }
@@ -1337,9 +1337,8 @@ namespace ET
                     gongzuoshiInfo += $"区:{pyzone}   \t账号:{userInfoComponent.Account}  \t角色:{userInfoComponent.UserInfo.Name}  \n";
                 }
 
-                LogHelper.GongZuoShi(gongzuoshiInfo);
             }
-
+            LogHelper.GongZuoShi(gongzuoshiInfo);
 #endif
         }
 
