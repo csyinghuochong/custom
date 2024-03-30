@@ -10,6 +10,45 @@ namespace ET
     public static class MergeZoneHelper
     {
 
+
+        public static async ETTask QueryTodayAccount()
+        {
+            var startZoneConfig = StartZoneConfigCategory.Instance.Get(202);
+            Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
+
+            long serverNow = TimeHelper.ServerNow();
+            int todayNumber = ComHelp.GetDayByTime(serverNow);  
+            string tipinfo = string.Empty;  
+            List<DBCenterAccountInfo> dBAccountInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, d => d.Id > 0);
+            foreach (var entity in dBAccountInfos_new)
+            {
+                if (entity.CreateTime == 0)
+                {
+                    continue;
+                }
+
+                int accountDay = ComHelp.GetDayByTime(entity.CreateTime);
+                if (todayNumber!= accountDay)
+                {
+                    continue;
+                }
+
+                if(entity.Password!="3" && entity.Password != "4")
+                {
+                    continue;
+
+                }
+
+                string head = entity.Account.Substring(0, 3);
+                if (head == "170" || head == "171" || head == "162" || head == "165" || head == "167" || head == "192")
+                {
+                    tipinfo += $"{entity.Account} \n";
+                }
+            }
+            LogHelper.PaiMaiInfo(tipinfo);
+
+        }
+
         public static async ETTask QueryRecharge()
         {
             int number_1 = 0;

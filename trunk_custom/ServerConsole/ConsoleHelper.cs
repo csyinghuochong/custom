@@ -1783,7 +1783,14 @@ namespace ET
             await ETTask.CompletedTask;
 #if SERVER
             string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo.Length != 3)
+            {
+                Console.WriteLine($"Error: {content}");
+                return ErrorCode.ERR_NetWorkError;
+            }
+
             string accout = chaxunInfo[1];  //者账号
+            int lelimit = int.Parse(chaxunInfo[2]);
             
             List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == accout);
             if (accoutResult == null || accoutResult.Count == 0)
