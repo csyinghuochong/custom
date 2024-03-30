@@ -1824,7 +1824,7 @@ namespace ET
                         continue;
                     }
 
-                    if (userInfoComponents[0].UserInfo.Lv > 40)
+                    if (userInfoComponents[0].UserInfo.Lv > lelimit)
                     {
                         return ErrorCode.ERR_Success;
                     }
