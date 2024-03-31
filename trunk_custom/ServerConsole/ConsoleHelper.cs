@@ -1775,7 +1775,7 @@ namespace ET
 
         /// <summary>
         /// 服务器黑名单. 全服有大于40级的不封号
-        /// </summary>  black2 tcg
+        /// </summary>  black2 tcg 10
         /// <param name="content"></param>
         /// <returns></returns>
         public static async ETTask<int> Black2_ConsoleHandler(string content)
