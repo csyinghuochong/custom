@@ -1386,6 +1386,7 @@ namespace ET
             //    zonlist.Add(zone);
             //}
             long serverTime = TimeHelper.ServerNow();
+            string tipInfo = string.Empty;
             List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Id > 0);
             for(int i = 0; i < accoutResult.Count; i++)
             {
@@ -1401,9 +1402,14 @@ namespace ET
                 {
                     accoutResult[i].AccountType = 2;
                     accoutResult[i].BanTime = serverTime;
+
+                    tipInfo += $"封号: {accoutResult[i].Account} \n";
+
                     await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[i]);
                 }
             }
+
+            LogHelper.ZuobiInfo(tipInfo);
 #endif
         }
 
