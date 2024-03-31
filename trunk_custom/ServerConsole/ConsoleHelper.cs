@@ -1354,6 +1354,59 @@ namespace ET
 #endif
         }
 
+
+        /// <summary>
+        /// 通过身份证号封号
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="chaxun"></param>
+        /// <returns></returns>
+        public static async ETTask GongZuoshi7_ConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  GongZuoshi4_ConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo.Length != 3)
+            {
+                Console.WriteLine($"C must have allonline zone");
+                Log.Warning($"C must have allonline zone");
+                return;
+            }
+
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            string idcard = chaxunInfo[2];
+            //List<int> zonlist = new List<int> { };
+            //if (zone == 0)
+            //{
+            //    zonlist = ServerMessageHelper.GetAllZone();
+            //}
+            //else
+            //{
+            //    zonlist.Add(zone);
+            //}
+            long serverTime = TimeHelper.ServerNow();
+            List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Id > 0);
+            for(int i = 0; i < accoutResult.Count; i++)
+            {
+                if (accoutResult[i].AccountType == 2)
+                {
+                    continue;
+                }
+                if (accoutResult[i].PlayerInfo==null)
+                {
+                    continue;
+                }
+                if (accoutResult[i].PlayerInfo.IdCardNo == idcard)
+                {
+                    accoutResult[i].AccountType = 2;
+                    accoutResult[i].BanTime = serverTime;
+                    await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[i]);
+                }
+            }
+#endif
+        }
+
         //gold  diamond
         public static async ETTask GoldConsoleHandler(string content, string chaxun)
         {
