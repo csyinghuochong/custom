@@ -1067,6 +1067,9 @@ namespace ET
 
             long serverNow = TimeHelper.ServerNow();
             List<KeyValuePairLong> buyselflist = dataCollationComponents[0].BuySelfPlayerList;
+
+            string gongzuoshiInfo = string.Empty;
+            string allpaimaiInfo = string.Empty;    
             for ( int i = 0; i < buyselflist.Count; i++ )
             {
                 // 1 手机登录
@@ -1080,6 +1083,7 @@ namespace ET
                 if (userinfoComponentList == null || userinfoComponentList.Count == 0)
                 {
                     Console.WriteLine($"查询为空1:{userid}");
+                    allpaimaiInfo += $" {userid}已删除  \n";
                     continue;
                 }
 
@@ -1092,9 +1096,10 @@ namespace ET
                 {
                     continue;
                 }
-                if(userInfoComponent.UserInfo.Lv < 10 || userInfoComponent.UserInfo.Lv > 40)
+                if(userInfoComponent.UserInfo.Lv > 40)
                 {
                     Console.WriteLine($"查询为空2:{userid}");
+                    allpaimaiInfo += $"{userInfoComponent.Account}  {userInfoComponent.UserInfo.Name}    等级>40  \n";
                     continue;
                 }
                 
@@ -1111,6 +1116,7 @@ namespace ET
                 if (dataCollations[0].TotalOnLine < 180)
                 {
                     Console.WriteLine($"查询为空4:{userid}");
+                    allpaimaiInfo += $"{userInfoComponent.Account}  {userInfoComponent.UserInfo.Name}    TotalOnLine<180  \n";
                     continue;
                 }
 
@@ -1153,6 +1159,7 @@ namespace ET
                 if (taskNumber > 2)
                 {
                     Console.WriteLine($"查询为空6:{userid}");
+                    allpaimaiInfo += $"{userInfoComponent.Account}  {userInfoComponent.UserInfo.Name}   taskNumber>2  \n";
                     continue;
                 }
 
@@ -1166,6 +1173,7 @@ namespace ET
                 if (taskComponents[0].GetMainTaskNumber() > 40)
                 {
                     Console.WriteLine($"查询为空8:{userid}");
+                    allpaimaiInfo += $"{userInfoComponent.Account}  {userInfoComponent.UserInfo.Name}   ainTask>40  \n";
                     continue;
                 }
 
@@ -1178,6 +1186,7 @@ namespace ET
                 if (accoutResult[0].AccountType == 2 || accoutResult[0].GetTotalRecharge() > 30)
                 {
                     Console.WriteLine($"查询为空10:{userid}");
+                    allpaimaiInfo += $"{userInfoComponent.Account}  {userInfoComponent.UserInfo.Name}   已封号  \n";
                     continue;
                 }
 
@@ -1193,14 +1202,12 @@ namespace ET
                     continue;
                 }
 
-               string  gongzuoshiInfo = $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
+                gongzuoshiInfo += $"账号: {userInfoComponent.Account}  \t名称：{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}   \t充值:{dataCollations[0].Recharge}" +
                         $"\t体力:{userInfoComponent.UserInfo.PiLao}  \t金币:{userInfoComponent.UserInfo.Gold}   \t成就值:{chengJiuComponents[0].TotalChengJiuPoint}   \t拍卖消耗:{dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy)}" +
                         $"\t当前主线:{dataCollations[0].MainTask}  \t角色天数:{userInfoComponent.GetCrateDay()}  \t金币获取:{dataCollations[0].GoldGet}  \t金币消耗:{dataCollations[0].GoldCost} " +
                         $"\t金币获取总值:{dataCollations[0].GetGoldGetTotal()}  \t金币消耗总值:{dataCollations[0].GetGoldCostTotal()} 今日在线:{dataCollations[0].TodayOnLine}  \t击杀boos:{taskNumber} \t设备:{dataCollations[0].GetDeviceID()}" +
                         $"\tIP:{userInfoComponent.RemoteAddress}  \n";
                
-                LogHelper.GongZuoShi($"封号: {gongzuoshiInfo}");
-                
                 if (accoutResult != null && accoutResult.Count > 0)
                 {
                     accoutResult[0].AccountType = 2;
@@ -1208,6 +1215,8 @@ namespace ET
                     Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]).Coroutine();
                 }
             }
+            LogHelper.GongZuoShi($"列表: {allpaimaiInfo}");
+            LogHelper.GongZuoShi($"封号: {gongzuoshiInfo}");
 #endif
         }
 
