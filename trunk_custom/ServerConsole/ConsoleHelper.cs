@@ -332,7 +332,7 @@ namespace ET
                     //{
                     //    continue;
                     //}
-                    if (dataComponent.PaiMaiTodayGold < maxGold)
+                    if (dataComponent.PaiMaiGold < maxGold)
                     {
                         continue;
                     }
@@ -1113,12 +1113,12 @@ namespace ET
                 //暂时不写
                 //今日在线时间超过120分钟返回
                
-                if (dataCollations[0].TotalOnLine < 180)
-                {
-                    Console.WriteLine($"查询为空4:{userid}");
-                    allpaimaiInfo += $"{userInfoComponent.Account}  {userInfoComponent.UserInfo.Name}    TotalOnLine<180  \n";
-                    continue;
-                }
+                //if (dataCollations[0].TotalOnLine < 180)
+                //{
+                //    Console.WriteLine($"查询为空4:{userid}");
+                //    allpaimaiInfo += $"{userInfoComponent.Account}  {userInfoComponent.UserInfo.Name}    TotalOnLine<180  \n";
+                //    continue;
+                //}
 
                 //拍卖行收益总小于100万返回
                 //if (dataCollations[0].GetCostByType(ItemGetWay.PaiMaiBuy) < 1000000)
