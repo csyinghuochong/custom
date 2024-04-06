@@ -5,6 +5,33 @@ using System.Text;
 
 namespace ET
 {
+   
+    public class ExcelExporter_Event : AEvent<EventType.ExcelExporter>
+    {
+        protected override void Run(EventType.ExcelExporter args)
+        {
+            if (args.StartConfig == "")
+            {
+                ExcelExporter.Export();
+            }
+            else
+            {
+                string[] excels = args.StartConfig.Split('#');
+                ExcelExporter.ExcelSingle(excels, false);
+            }
+        }
+    }
+
+    public class Proto2CS_Event : AEvent<EventType.Proto2CS>
+    {
+        protected override void Run(EventType.Proto2CS args)
+        {
+            Proto2CS.Export();
+        }
+    }
+
+
+
     internal class OpcodeInfo
     {
         public string Name;

@@ -10,3 +10,13 @@
 
      output[key] = File.ReadAllBytes(file);
  }
+
+ await ETTask.CompletedTask;
+
+ string inputPath = string.Format(serverProtoDir, "StartConfig\\Localhost\\StartSceneConfigCategory.bytes");
+ string outputPath = string.Format(serverProtoDir, "StartConfig\\Localhost\\StartSceneConfigCategoryDe.bytes");
+ string password = "tcg452241";
+ ByteHelper.EncryptFile(inputPath, outputPath, password);
+
+ File.Delete(inputPath);
+ File.Move(outputPath, inputPath);

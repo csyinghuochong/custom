@@ -1,16 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Emit;
 using MongoDB.Bson.Serialization;
 using OfficeOpenXml;
 using ProtoBuf;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading;
 using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace ET
@@ -178,7 +179,7 @@ namespace ET
                         ExportExcel(subStartConfig.FullName);
                     }
                 }
-                Log.Console("Export Excel Sucess!");
+                //Log.Console("Export Excel Sucess!");
             }
             catch (Exception e)
             {
@@ -196,7 +197,7 @@ namespace ET
             }
         }
 
-        public static void Export()
+        public static  void Export()
         {
             //if (Directory.Exists(ClientClassDir))
             //{
@@ -209,8 +210,69 @@ namespace ET
             }
 
             ExcelSingle(Directory.GetFiles(excelDir), true);
-
+            //Beta   Localhost
+            EncryptBytes("..\\Config\\StartConfig\\Beta\\StartMachineConfigCategory");
+            EncryptBytes("..\\Config\\StartConfig\\Beta\\StartProcessConfigCategory");
+            EncryptBytes("..\\Config\\StartConfig\\Beta\\StartSceneConfigCategory");
+            EncryptBytes("..\\Config\\StartConfig\\Beta\\StartZoneConfigCategory");
+            Log.Console("Export Excel Sucess!");
         }
+
+        private static void EncryptBytes(string path)
+        {
+            string inputPath = path + ".bytes";
+            string outputPath = path + "De.bytes";
+
+            Encrypt(inputPath, outputPath);
+
+            File.Delete(inputPath);
+            File.Move(outputPath, inputPath);
+            File.Delete(outputPath);
+        }
+
+        public static void Encrypt(string inputFilePath, string outputFilePath)
+        { 
+            byte[] Key = Encoding.UTF8.GetBytes("tcg4522410000000"); // 16字节密钥
+            byte[] IV = Encoding.UTF8.GetBytes("tcg4522410000000");  // 16字节初始化向量
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Key;
+                aes.IV = IV;
+
+                using (FileStream fileInput = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read))
+                using (FileStream fileOutput = new FileStream(outputFilePath, FileMode.Create, FileAccess.Write))
+                using (CryptoStream cryptoStream = new CryptoStream(fileOutput, aes.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    fileInput.CopyTo(cryptoStream);
+                    cryptoStream.FlushFinalBlock();
+                }
+            }
+        }
+
+
+        public static void EncryptFile(string inputFile, string outputFile, string password)
+        {
+            byte[] key = new Rfc2898DeriveBytes(password, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 }).GetBytes(32);
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = key;
+                aes.GenerateIV();
+
+                using (FileStream fsRead = new FileStream(inputFile, FileMode.Open, FileAccess.Read))
+                using (FileStream fsWrite = new FileStream(outputFile, FileMode.Create, FileAccess.Write))
+                using (CryptoStream cryptoStream = new CryptoStream(fsWrite, aes.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    fsRead.CopyTo(cryptoStream);
+                    cryptoStream.FlushFinalBlock();
+
+                    // 写入初始化向量
+                    fsWrite.Write(aes.IV, 0, aes.IV.Length);
+                }
+            }
+        }
+
 
         private static void ExportExcel(string path)
         {
