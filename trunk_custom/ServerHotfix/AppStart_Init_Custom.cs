@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Collections.Generic;
 
 namespace ET
 {
@@ -14,7 +15,8 @@ namespace ET
             ConfigData.PopularizeZone = 10;
             ConfigData.PackageLimit = 500;
             ConfigData.FunctionOpenIds.Remove(2000);
-       
+
+            StartProcessConfig.ProcessList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             Console.WriteLine($"CSkill: {ConfigData.CleanSkill}");
         }
     }

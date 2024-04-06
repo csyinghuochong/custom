@@ -63,7 +63,7 @@ namespace ET
                 for (int i = 0; i < entity.PlayerInfo.RechargeInfos.Count; i++)
                 {
                     //一月份
-                    if (entity.PlayerInfo.RechargeInfos[i].Time > 1706716800000 && entity.PlayerInfo.RechargeInfos[i].Time < 1709107200000)//2024/2/1
+                    if (entity.PlayerInfo.RechargeInfos[i].Time > 1709222400000 && entity.PlayerInfo.RechargeInfos[i].Time < 1711728000000)//2024/2/1
                     {
                         if (entity.PlayerInfo.Name.Equals("抖音用户"))
                         {
@@ -177,6 +177,34 @@ namespace ET
 
                 Log.Warning($"区：{zone}  \t账号：{dBAccountInfos[i].Account}       \t等级：{level}   \t金币：{gold}   \t任务:{task}");
             }
+        }
+
+
+        //查询被那个id购买过的记录
+        public static async ETTask QueryGongzuoshi_2(int zone, long buyId)
+        {
+            ListComponent<int> mergezones = new ListComponent<int>() { zone };
+            for (int i = 0; i < mergezones.Count; i++)
+            {
+                var startZoneConfig = StartZoneConfigCategory.Instance.Get(mergezones[i]);
+                Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
+            }
+
+
+            List<DataCollationComponent> dataCollationComponents = await Game.Scene.GetComponent<DBComponent>().Query<DataCollationComponent>(zone, d => d.Id > 0);
+            for (int i = 0; i < dataCollationComponents.Count; i++)
+            {
+                for (int buyindex = 0; buyindex < dataCollationComponents[i].BuySelfPlayerList.Count; buyindex++)
+                {
+
+                    if (dataCollationComponents[i].BuySelfPlayerList[buyindex].KeyId == buyId)
+                    {
+                        Log.Warning($"{dataCollationComponents[i].Account}  {dataCollationComponents[i].Id}  {dataCollationComponents[i].Name}");
+                    }
+                }
+
+            }
+
         }
 
         public static async ETTask QueryGold(int zone)
