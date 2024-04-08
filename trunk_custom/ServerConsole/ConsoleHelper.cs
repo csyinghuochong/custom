@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Driver.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -1421,6 +1422,81 @@ namespace ET
             LogHelper.ZuobiInfo(tipInfo);
 #endif
         }
+
+
+        //检测冒险家积分是否作弊
+        public static async ETTask GongZuoshi8_ConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+#if SERVER
+
+            Dictionary<long, long> roleRecharge = new Dictionary<long, long>();
+
+            List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Id > 0);
+            for (int i = 0; i < accoutResult.Count; i++)
+            {
+                if (accoutResult[i].AccountType == 2)
+                {
+                    continue;
+                }
+                if (accoutResult[i].PlayerInfo == null)
+                {
+                    continue;
+                }
+
+                List<RechargeInfo> rechargeInfoList = accoutResult[i].PlayerInfo.RechargeInfos;
+
+                for (int recharge = 0; recharge < rechargeInfoList.Count; recharge++)
+                {
+                    RechargeInfo rechargeInfo = rechargeInfoList[recharge];
+
+                    if (!roleRecharge.ContainsKey(rechargeInfo.UserId))
+                    {
+                        roleRecharge.Add(rechargeInfo.UserId,0);
+                    }
+
+                    roleRecharge[rechargeInfo.UserId] += rechargeInfo.Amount;
+                }
+            }
+
+            List<int> zonlist = ServerMessageHelper.GetAllZone();
+
+            string gongzuoshiInfo = "冒险家积分异常列表： \n";
+            for (int zoneindex = 0; zoneindex < zonlist.Count; zoneindex++)
+            {
+                int pyzoneid = zonlist[zoneindex];
+
+                List<NumericComponent> numericComponents = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzoneid, _account => _account.Id > 0);
+                for (int numIndex = 0; numIndex < numericComponents.Count; numIndex++)
+                {
+                    NumericComponent numericComponent = numericComponents[numIndex];
+                    long rechargetNumber = 0;
+                    roleRecharge.TryGetValue(numericComponent.Id, out rechargetNumber);
+
+                    long rechargeExp = numericComponent.GetAsLong(NumericType.RechargeNumber);
+                    long maoxianTotal = rechargeExp * 10 + numericComponent.GetAsLong(NumericType.MaoXianExp);
+
+                    if ( rechargeExp > 1000 && rechargeExp > rechargetNumber * 2)
+                    { 
+                        
+                        List<UserInfoComponent> userInfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzoneid, _account => _account.Id == numericComponent.Id);
+                        if (userInfoComponents == null || userInfoComponents.Count == 0)
+                        {
+                            continue;
+                        }
+
+                      
+                        //服务器名称  角色名称 等级  充值积分总数 充值记录总数  当前金币
+                        gongzuoshiInfo += $"区:{pyzoneid}  \t角色名称:{userInfoComponents[0].UserName}  \t等级:{userInfoComponents[0].UserInfo.Lv}   \t充值积分总数:{maoxianTotal} \t充值记录总数:{rechargetNumber}  当前金币：{userInfoComponents[0].UserInfo.Gold}  \n";
+                    }
+                }
+            }
+
+            LogHelper.PaiMaiInfo(gongzuoshiInfo);
+#endif
+
+        }
+
 
         //gold  diamond
         public static async ETTask GoldConsoleHandler(string content, string chaxun)

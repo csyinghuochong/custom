@@ -84,6 +84,52 @@ namespace ET
             }
         }
 
+
+        public static async ETTask QueryRecharge_2()
+        {
+
+            ListComponent<int> mergezones = new ListComponent<int>() { 81, 202 };
+            for (int i = 0; i < mergezones.Count; i++)
+            {
+                var startZoneConfig = StartZoneConfigCategory.Instance.Get(mergezones[i]);
+                Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
+            }
+
+            List<DBAccountInfo> dBAccountInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBAccountInfo>(81, d => d.Id > 0);
+            for (int i = 0; i < dBAccountInfos.Count; i++)
+            {
+                if (dBAccountInfos[i].UserList.Contains(2283301304216387584)
+                    || dBAccountInfos[i].UserList.Contains(2291096446520328192)
+                    || dBAccountInfos[i].DeleteUserList.Contains(2283301304216387584)
+                    || dBAccountInfos[i].DeleteUserList.Contains(2291096446520328192))
+                {
+                    Log.Warning($"sigleRecharge > 50000: {dBAccountInfos[i].Account}");
+                }
+            }
+
+
+            List<DBCenterAccountInfo> dBAccountInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, d => d.Id > 0);
+            foreach (var entity in dBAccountInfos_new)
+            {
+                long sigleRecharge = 0;
+
+                for (int i = 0; i < entity.PlayerInfo.RechargeInfos.Count; i++)
+                {
+                    //一月份
+                    if (entity.PlayerInfo.RechargeInfos[i].UserId == 2283301304216387584
+                        || entity.PlayerInfo.RechargeInfos[i].UserId == 2291096446520328192)
+                    {
+                        Log.Warning($"sigleRecharge > 50000: {entity.Account}");
+                    }
+                }
+
+                if (sigleRecharge > 30000)
+                {
+                    Log.Warning($"sigleRecharge > 50000: {sigleRecharge}");
+                }
+            }
+        }
+
         public static async ETTask QueryCard(string card)
         {
             var startZoneConfig = StartZoneConfigCategory.Instance.Get(202);
