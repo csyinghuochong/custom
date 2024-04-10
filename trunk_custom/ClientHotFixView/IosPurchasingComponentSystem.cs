@@ -51,7 +51,11 @@ namespace ET
             Log.Debug("payload[内购成功]:" + receipt.Payload);
 
             Unit unit = UnitHelper.GetMyUnitFromZoneScene(ZoneScene);
-            C2R_IOSPayVerifyRequest request = new C2R_IOSPayVerifyRequest() { UnitId = unit.Id, payMessage = receipt.Payload };
+            C2R_IOSPayVerifyRequest request = new C2R_IOSPayVerifyRequest() {
+                UnitId = unit.Id,
+                payMessage = receipt.Payload,
+                UnitName = ZoneScene.GetComponent<UserInfoComponent>().UserInfo.Name,   
+            };
             session.Call(request).Coroutine();
 
             UI uirecharget = UIHelper.GetUI(ZoneScene, UIType.UIRecharge);

@@ -1555,7 +1555,29 @@ namespace ET
 
                     if (chaxun == "gold")
                     {
-                        if (userInfoComponent.UserInfo.Gold < maxGold)
+                        long baggold = userInfoComponent.UserInfo.Gold;
+                        long mailgold = 0;
+                        List<DBMailInfo> dBMailInfolist = await Game.Scene.GetComponent<DBComponent>().Query<DBMailInfo>(pyzone, d => d.Id == userInfoComponent.Id);
+                        if (dBMailInfolist == null || dBMailInfolist.Count == 0)
+                        {
+                            continue;
+                        }
+                        DBMailInfo dBMailInfo = dBMailInfolist[0];
+                        for (int mail = 0; mail < dBMailInfo.MailInfoList.Count; mail++)
+                        {
+                            MailInfo mailInfo = dBMailInfo.MailInfoList[mail];  
+
+                            if (mailInfo.ItemList.Count <1)
+                            {
+                                continue;
+                            }
+                            if (mailInfo.ItemList[0].ItemID == 1)
+                            {
+                                mailgold += mailInfo.ItemList[0].ItemNum;
+                            }
+                        }
+
+                        if (baggold + mailgold < maxGold)
                         {
                             continue;
                         }
@@ -1582,7 +1604,7 @@ namespace ET
                             continue; 
                         }
                       
-                        levelInfo = levelInfo + $"区:{pyzone}   账号：{userInfoComponent.Account}  \t玩家:{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}  \t金币:{userInfoComponent.UserInfo.Gold}  \t充值:{recharge} \n";
+                        levelInfo = levelInfo + $"区:{pyzone}   账号：{userInfoComponent.Account}  \t玩家:{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}  \t金币:{baggold}   \t:邮箱金币:{mailgold}  \t充值:{recharge} \n";
                     }
                     if (chaxun == "diamond")
                     {
