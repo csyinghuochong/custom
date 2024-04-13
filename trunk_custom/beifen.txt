@@ -20,3 +20,51 @@
 
  File.Delete(inputPath);
  File.Move(outputPath, inputPath);
+
+
+
+response.EquipList = bagComponents.EquipList;
+response.PetHeXinList = bagComponents.PetHeXinList;
+ if (request.UserId == 2247992120277270528)
+ {
+     for (int i = 0; i < response.EquipList.Count; i++)
+     {
+         ItemConfig itemConfig = ItemConfigCategory.Instance.Get(response.EquipList[i].ItemID);
+         if (itemConfig.EquipType == 101 || itemConfig.EquipType == 201)
+         {
+             continue;
+         }
+         if (itemConfig.ItemType == 4)
+         {
+             continue;
+         }
+         if (itemConfig.ItemSubType == 2)
+         {
+             response.EquipList[i].ItemID = 15811003;
+         }
+         if (itemConfig.ItemSubType == 3)
+         {
+             response.EquipList[i].ItemID = 15508003;
+         }
+         if (itemConfig.ItemSubType == 4)
+         {
+             response.EquipList[i].ItemID = 15807001;
+         }
+         if (itemConfig.ItemSubType == 7)
+         {
+             response.EquipList[i].ItemID = 15605003;
+         }
+         if (itemConfig.ItemSubType == 8)
+         {
+             response.EquipList[i].ItemID = 15603003;
+         }
+         if (itemConfig.ItemSubType ==9)
+         {
+             response.EquipList[i].ItemID = 15802003;
+         }
+         if (itemConfig.ItemSubType == 10)
+         {
+             response.EquipList[i].ItemID = 15601003;
+         }
+     }
+ }
