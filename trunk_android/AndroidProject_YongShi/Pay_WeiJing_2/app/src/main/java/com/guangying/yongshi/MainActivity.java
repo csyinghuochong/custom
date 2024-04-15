@@ -173,29 +173,29 @@ public class MainActivity extends UnityPlayerActivity {
             //
             // if (this.mContext.checkSelfPermission(Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED)
             {
-                Log.i("Permissions", "Permissions INTERNET 0");
+                Log.i("Permissions", "QuDaoRequestPermissions INTERNET ");
                 permissionList.add(Manifest.permission.INTERNET);
             }
 
             //ACCESS_NETWORK_STATE允许应用程序访问有关网络的信息
             // if (this.mContext.checkSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED)
             {
-                Log.i("Permissions", "Permissions ACCESS_NETWORK_STATE 0");
+                Log.i("Permissions", "QuDaoRequestPermissions ACCESS_NETWORK_STATE");
                 permissionList.add(Manifest.permission.ACCESS_NETWORK_STATE);
             }
 
             //WRITE_EXTERNAL_STORAGE权限是用于授予应用程序对外部存储(即SD卡)进行读写操作的权限
             //if (this.mContext.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
             {
-                Log.i("Permissions", "Permissions WRITE_EXTERNAL_STORAGE 0");
-                permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                //Log.i("Permissions", "Permissions WRITE_EXTERNAL_STORAGE 0");
+                //permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
             }
 
             //READ_PHONE_STATE唯一标识符、手机号码以及SIM卡状态等信息
             //if (this.mContext.checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
             {
-                Log.i("Permissions", "Permissions READ_PHONE_STATE 0");
-                permissionList.add(Manifest.permission.READ_PHONE_STATE);
+                //Log.i("Permissions", "Permissions READ_PHONE_STATE 0");
+                //permissionList.add(Manifest.permission.READ_PHONE_STATE);
             }
 
             if (!permissionList.isEmpty()) {
@@ -228,10 +228,11 @@ public class MainActivity extends UnityPlayerActivity {
                     int i = 0;
                     for (int result : grantResults) {
                         if (result != PackageManager.PERMISSION_GRANTED) {
-                            //Toast.makeText(this, "请同意所有请求才能运行程序", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "请同意所有请求才能正常运行程序", Toast.LENGTH_SHORT).show();
                             UnityPlayer.UnitySendMessage("WWW_Set", "onRequestPermissionsResult", permissions[i] + "_0");
                             //finish();
-                            return;
+                            //return;
+                            continue;
                         }
                         UnityPlayer.UnitySendMessage("WWW_Set", "onRequestPermissionsResult", permissions[i] + "_1");
                         i++;
