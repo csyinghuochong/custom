@@ -228,7 +228,7 @@ public class MainActivity extends UnityPlayerActivity {
                     int i = 0;
                     for (int result : grantResults) {
                         if (result != PackageManager.PERMISSION_GRANTED) {
-                            Toast.makeText(this, "请同意所以请求才能运行程序", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(this, "请同意所有请求才能运行程序", Toast.LENGTH_SHORT).show();
                             UnityPlayer.UnitySendMessage("WWW_Set", "onRequestPermissionsResult", permissions[i] + "_0");
                             //finish();
                             return;
