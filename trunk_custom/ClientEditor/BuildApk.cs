@@ -98,11 +98,12 @@ public class MyEditorScript
 	{
 		isNull = false;
 
-		//"D:/weijingHot/trunk_2022_0213/Unity/Assets"
-		//D:\weijingHot\trunk_2022_0213\Unity\Android
-		string formPath = Application.dataPath;
-		formPath = formPath.Replace("Assets", "Android/");
-		CopyDirectory(formPath + path, Application.dataPath + @"\Plugins\Android");
+        //"D:/weijingHot/trunk_2022_0213/Unity/Assets"
+        //D:\weijingHot\trunk_2022_0213\Unity\Android
+        //string formPath = Application.dataPath;
+        //formPath = formPath.Replace("Assets", "Android/");
+        string formPath = "F:/gitcustom/trunk_android/AndroidProject_YongShi/Android";
+        CopyDirectory(formPath + path, Application.dataPath + @"\Plugins\Android");
 		if (!isNull)
 		{
 			Debug.Log("目录文件导入成功！！");
