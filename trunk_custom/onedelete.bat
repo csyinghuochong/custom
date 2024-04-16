@@ -7,4 +7,4 @@ del/s /q "H:\GitWeiJing\Unity\Assets\Editor\Custom\*.*"
 del/s /q "H:\GitWeiJing\Unity\Assets\HotfixView\Custom\*.*"
 
 
-del/s /q "G:\gitcustom\*.*"
+del/s /q "F:\gitcustom\*.*"
