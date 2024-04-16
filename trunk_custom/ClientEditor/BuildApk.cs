@@ -102,7 +102,7 @@ public class MyEditorScript
         //D:\weijingHot\trunk_2022_0213\Unity\Android
         //string formPath = Application.dataPath;
         //formPath = formPath.Replace("Assets", "Android/");
-        string formPath = @"F:\gitcustom\trunk_android\AndroidProject_YongShi\Android\";
+        string formPath = @"F:\gitcustom\trunk_android\AndroidProject_WeiJing\Android\";
         CopyDirectory(formPath + path, Application.dataPath + @"\Plugins\Android");
 		if (!isNull)
 		{
@@ -193,6 +193,7 @@ public class MyEditorScript
             CopyLibs("guanfang"); 
 			app_name = "危境";
 		}
+
 		int version = EditorRuntimeInitializeOnLoad.GetVersion();
 		app_name = app_name + ((VersionMode)version).ToString() + name;
 
