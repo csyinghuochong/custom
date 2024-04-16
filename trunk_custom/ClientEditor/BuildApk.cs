@@ -102,7 +102,7 @@ public class MyEditorScript
         //D:\weijingHot\trunk_2022_0213\Unity\Android
         //string formPath = Application.dataPath;
         //formPath = formPath.Replace("Assets", "Android/");
-        string formPath = "F:/gitcustom/trunk_android/AndroidProject_YongShi/Android";
+        string formPath = @"F:\gitcustom\trunk_android\AndroidProject_YongShi\Android\";
         CopyDirectory(formPath + path, Application.dataPath + @"\Plugins\Android");
 		if (!isNull)
 		{
