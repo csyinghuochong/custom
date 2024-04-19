@@ -211,10 +211,10 @@ namespace ET
 
             ExcelSingle(Directory.GetFiles(excelDir), true);
             //Beta   Localhost
-            EncryptBytes("..\\Config\\StartConfig\\Beta\\StartMachineConfigCategory");
-            EncryptBytes("..\\Config\\StartConfig\\Beta\\StartProcessConfigCategory");
-            EncryptBytes("..\\Config\\StartConfig\\Beta\\StartSceneConfigCategory");
-            EncryptBytes("..\\Config\\StartConfig\\Beta\\StartZoneConfigCategory");
+            //EncryptBytes("..\\Config\\StartConfig\\Beta\\StartMachineConfigCategory");
+            //EncryptBytes("..\\Config\\StartConfig\\Beta\\StartProcessConfigCategory");
+            //EncryptBytes("..\\Config\\StartConfig\\Beta\\StartSceneConfigCategory");
+            //EncryptBytes("..\\Config\\StartConfig\\Beta\\StartZoneConfigCategory");
             Log.Console("Export Excel Sucess!");
         }
 
@@ -231,9 +231,11 @@ namespace ET
         }
 
         public static void Encrypt(string inputFilePath, string outputFilePath)
-        { 
-            byte[] Key = Encoding.UTF8.GetBytes("tcg4522410000000"); // 16字节密钥
-            byte[] IV = Encoding.UTF8.GetBytes("tcg4522410000000");  // 16字节初始化向量
+        {
+
+            
+            byte[] Key = Encoding.UTF8.GetBytes("SampleClass00000"); // 16字节密钥
+            byte[] IV = Encoding.UTF8.GetBytes("SampleClass00000");  // 16字节初始化向量
 
             using (Aes aes = Aes.Create())
             {
