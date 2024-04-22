@@ -203,12 +203,12 @@ public class MainActivity extends UnityPlayerActivity {
                 this.activity.requestPermissions(permissions, 1);
             }
             else {
-                Log.i("Permissions", "Permissions 1_1.InitGame");
-                UnityPlayer.UnitySendMessage("InitGame","onRequestPermissionsResult",  "1_1");
+                Log.i("Permissions", "Permissions 1_1.WWW_Set");
+                UnityPlayer.UnitySendMessage("WWW_Set","onRequestPermissionsResult",  "1_1");
             }
         } else {
-            Log.i("Permissions", "Permissions 1_1.InitGame");
-            UnityPlayer.UnitySendMessage("InitGame","onRequestPermissionsResult",  "1_1");
+            Log.i("Permissions", "Permissions 1_1.WWW_Set");
+            UnityPlayer.UnitySendMessage("WWW_Set","onRequestPermissionsResult",  "1_1");
         }
     }
 
@@ -218,10 +218,10 @@ public class MainActivity extends UnityPlayerActivity {
         switch (requestCode) {
             case 1:
                 for (int result : grantResults) {
-                    Log.i("Permissions", result + "  InitGame.result");
+                    Log.i("Permissions", result + "  WWW_Set.result");
                 }
                 for (String result : permissions) {
-                    Log.i("Permissions", result + "  InitGame.result");
+                    Log.i("Permissions", result + "  WWW_Set.result");
                 }
 
                 if (grantResults.length > 0) {
@@ -229,12 +229,12 @@ public class MainActivity extends UnityPlayerActivity {
                     for (int result : grantResults) {
                         if (result != PackageManager.PERMISSION_GRANTED) {
                             Toast.makeText(this, "请同意所有请求才能正常运行程序", Toast.LENGTH_SHORT).show();
-                            UnityPlayer.UnitySendMessage("InitGame", "onRequestPermissionsResult", permissions[i] + "_0");
+                            UnityPlayer.UnitySendMessage("WWW_Set", "onRequestPermissionsResult", permissions[i] + "_0");
                             //finish();
                             //return;
                             continue;
                         }
-                        UnityPlayer.UnitySendMessage("InitGame", "onRequestPermissionsResult", permissions[i] + "_1");
+                        UnityPlayer.UnitySendMessage("WWW_Set", "onRequestPermissionsResult", permissions[i] + "_1");
                         i++;
                     }
                 } else {
