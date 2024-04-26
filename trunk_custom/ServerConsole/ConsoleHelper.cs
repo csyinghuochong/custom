@@ -1497,9 +1497,85 @@ namespace ET
 
         }
 
+        //shenshou 0
+        public static async ETTask ShenshouConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  GoldConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
 
-        //gold  diamond
-        public static async ETTask GoldConsoleHandler(string content, string chaxun)
+            if (chaxunInfo.Length != 2)
+            {
+                Console.WriteLine($"C must have shenshou zone");
+                Log.Warning($"C must have shenshou zone");
+                return;
+            }
+
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                zonlist = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+
+            string levelInfo = string.Empty;
+
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+                List<PetComponent> petComponents = await Game.Scene.GetComponent<DBComponent>().Query<PetComponent>(pyzone, d => d.Id > 0);
+                if (petComponents.Count == 0 || petComponents == null)
+                {
+                    continue;
+                }
+
+                int shenshouNumber = petComponents[0].GetShenShouNumber();
+                if (shenshouNumber <= 0)
+                {
+                    continue;
+                }
+
+                List<UserInfoComponent> userinfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == petComponents[0].Id);
+                if (userinfoComponents.Count == 0 || userinfoComponents == null)
+                { 
+                    continue; 
+                }
+                UserInfoComponent userInfoComponent = userinfoComponents[0];    
+
+                List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                if (accoutResult == null || accoutResult.Count == 0)
+                {
+                    continue;
+                }
+                //if (accoutResult[0].AccountType == 2)
+                //{
+                //    continue;
+                //}
+
+                List<NumericComponent> NumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == userInfoComponent.Id);
+                if (NumericComponentlist == null || NumericComponentlist.Count == 0)
+                {
+                    continue;
+                }
+                int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+
+                levelInfo = levelInfo + $"区:{pyzone}   \t账号：{userInfoComponent.Account}  \t玩家:{userInfoComponent.UserInfo.Name}  \t神兽数量:{shenshouNumber}   \t等级:{userInfoComponent.UserInfo.Lv} \t钻石:{userInfoComponent.UserInfo.Diamond}  \t充值:{recharge} \n";
+            }
+
+
+            LogHelper.GongZuoShi(levelInfo);
+#endif
+        }
+
+            //gold  diamond
+            public static async ETTask GoldConsoleHandler(string content, string chaxun)
         {
             Console.WriteLine($"request.Context:  GoldConsoleHandler: {content}");
             await ETTask.CompletedTask;
