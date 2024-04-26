@@ -64,7 +64,7 @@ namespace ET
             }
             if (infoList[0] == "shenshou" )
             {
-                ConsoleHelper.ShenshouConsoleHandler(request.Context, infoList[0]).Coroutine();
+                ConsoleHelper.ShenshouConsoleHandler(request.Context).Coroutine();
             }
             if (infoList[0] == "black")
             {
