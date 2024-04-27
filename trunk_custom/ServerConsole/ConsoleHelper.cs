@@ -1500,7 +1500,7 @@ namespace ET
         //shenshou 0
         public static async ETTask ShenshouConsoleHandler(string content)
         {
-            Console.WriteLine($"request.Context:  GoldConsoleHandler: {content}");
+            Console.WriteLine($"request.Context:  ShenshouConsoleHandler: {content}");
             await ETTask.CompletedTask;
             string[] chaxunInfo = content.Split(" ");
 
@@ -1536,37 +1536,43 @@ namespace ET
                     continue;
                 }
 
-                int shenshouNumber = petComponents[0].GetShenShouNumber();
-                if (shenshouNumber <= 0)
+                for ( int pet = 0; pet < petComponents.Count; pet++ )
                 {
-                    continue;
+                    PetComponent petComponent = petComponents[pet]; 
+                    int shenshouNumber = petComponent.GetShenShouNumber();
+                    if (shenshouNumber <= 0)
+                    {
+                        continue;
+                    }
+
+                    List<UserInfoComponent> userinfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == petComponent.Id);
+                    if (userinfoComponents.Count == 0 || userinfoComponents == null)
+                    {
+                        continue;
+                    }
+                    UserInfoComponent userInfoComponent = userinfoComponents[0];
+
+                    //List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
+                    //if (accoutResult == null || accoutResult.Count == 0)
+                    //{
+                    //    continue;
+                    //}
+                    //if (accoutResult[0].AccountType == 2)
+                    //{
+                    //    continue;
+                    //}
+
+                    List<NumericComponent> NumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == petComponent.Id);
+                    if (NumericComponentlist == null || NumericComponentlist.Count == 0)
+                    {
+                        continue;
+                    }
+                    int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+
+                    levelInfo = levelInfo + $"区:{pyzone}   \t账号：{userInfoComponent.Account}  \t玩家:{userInfoComponent.UserInfo.Name}  \t神兽数量:{shenshouNumber}   \t等级:{userInfoComponent.UserInfo.Lv} \t钻石:{userInfoComponent.UserInfo.Diamond}  \t充值:{recharge} \n";
+
                 }
 
-                List<UserInfoComponent> userinfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == petComponents[0].Id);
-                if (userinfoComponents.Count == 0 || userinfoComponents == null)
-                { 
-                    continue; 
-                }
-                UserInfoComponent userInfoComponent = userinfoComponents[0];    
-
-                List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == userInfoComponent.Account);
-                if (accoutResult == null || accoutResult.Count == 0)
-                {
-                    continue;
-                }
-                //if (accoutResult[0].AccountType == 2)
-                //{
-                //    continue;
-                //}
-
-                List<NumericComponent> NumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == userInfoComponent.Id);
-                if (NumericComponentlist == null || NumericComponentlist.Count == 0)
-                {
-                    continue;
-                }
-                int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
-
-                levelInfo = levelInfo + $"区:{pyzone}   \t账号：{userInfoComponent.Account}  \t玩家:{userInfoComponent.UserInfo.Name}  \t神兽数量:{shenshouNumber}   \t等级:{userInfoComponent.UserInfo.Lv} \t钻石:{userInfoComponent.UserInfo.Diamond}  \t充值:{recharge} \n";
             }
 
 
@@ -1619,10 +1625,10 @@ namespace ET
                     {
                         continue;
                     }
-                    if (userInfoComponent.UserInfo.Lv > 40)
-                    {
-                        continue;
-                    }
+                    //if (userInfoComponent.UserInfo.Lv > 40)
+                    //{
+                    //    continue;
+                    //}
 
                     if (GMHelp.GmAccount.Contains(userInfoComponent.Account))
                     {
@@ -1674,11 +1680,11 @@ namespace ET
                             continue;
                         }
 
-                        int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
-                        if (recharge > 200)
-                        { 
-                            continue; 
-                        }
+                        //int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+                        //if (recharge > 200)
+                        //{ 
+                        //    continue; 
+                        //}
                       
                         levelInfo = levelInfo + $"区:{pyzone}   账号：{userInfoComponent.Account}  \t玩家:{userInfoComponent.UserInfo.Name}  \t等级:{userInfoComponent.UserInfo.Lv}  \t金币:{baggold}   \t:邮箱金币:{mailgold}  \t充值:{recharge} \n";
                     }
