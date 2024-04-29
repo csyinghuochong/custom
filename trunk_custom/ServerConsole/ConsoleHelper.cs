@@ -1680,7 +1680,7 @@ namespace ET
                             continue;
                         }
 
-                        //int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
+                        int recharge = NumericComponentlist[0].GetAsInt(NumericType.RechargeNumber);
                         //if (recharge > 200)
                         //{ 
                         //    continue; 
