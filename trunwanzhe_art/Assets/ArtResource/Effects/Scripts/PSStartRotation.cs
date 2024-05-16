@@ -9,9 +9,9 @@ namespace Assets.Scripts.Com.Game.Mono
         void LateUpdate()
         {
 
-            if (this.GetComponent<ParticleSystem>() && this.rotationTrans)
+            if (this.particleSystem && this.rotationTrans)
             {
-                this.GetComponent<ParticleSystem>().startRotation = -Mathf.PI / 2 + this.rotationTrans.localEulerAngles.y * Mathf.PI / 180.0f;
+                this.particleSystem.startRotation = -Mathf.PI / 2 + this.rotationTrans.localEulerAngles.y * Mathf.PI / 180.0f;
             }
         }
 

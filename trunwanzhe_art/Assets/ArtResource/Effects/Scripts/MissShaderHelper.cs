@@ -31,9 +31,9 @@ namespace Assets.Scripts.Com.Game.Mono
             }
             else
             {
-                if (this.GetComponent<Renderer>())
+                if (this.renderer)
                 {
-                    foreach (Material mtl in this.GetComponent<Renderer>().materials)
+                    foreach (Material mtl in this.renderer.materials)
                     {
                         this.ResetMaterial(mtl);
                     }
