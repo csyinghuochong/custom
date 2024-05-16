@@ -10,7 +10,7 @@ namespace Assets.Scripts.Com.Game.Mono
         // Use this for initialization
         void Start()
         {
-            this.mMaterial = this.renderer.material;
+            this.mMaterial = this.GetComponent<Renderer>().material;
         }
 
         void Update()
@@ -23,7 +23,7 @@ namespace Assets.Scripts.Com.Game.Mono
                 }
                 else
                 {
-                    this.mMaterial = this.renderer.material;
+                    this.mMaterial = this.GetComponent<Renderer>().material;
                 }
             }
 

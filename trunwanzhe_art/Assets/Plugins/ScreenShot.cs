@@ -37,7 +37,7 @@ public class ScreenShot : MonoBehaviour
                     System.IO.Directory.CreateDirectory("Capture");
                 }
                 string file = string.Format("Capture/{0}_{1}.png", fileName, this.mFrameCount++);
-                ScreenCapture.CaptureScreenshot(file);
+                //ScreenCapture.CaptureScreenshot(file);
                 this.mLastCaptureTime = Time.time;
             }
         }

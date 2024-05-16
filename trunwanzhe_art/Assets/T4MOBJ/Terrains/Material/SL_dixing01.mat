@@ -2,50 +2,78 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: SL_dixing01
   m_Shader: {fileID: 4800000, guid: 4bdbc729bd554f14a95326d3db2d6eaa, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_ShaderKeywords: []
   m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 3
+    serializedVersion: 2
     m_TexEnvs:
-    - _Control:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Splat0:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 12, y: 12}
-        m_Offset: {x: 0, y: 0}
-    - _Splat1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 12, y: 12}
-        m_Offset: {x: 0, y: 0}
-    - _Splat2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 11, y: 11}
-        m_Offset: {x: 0, y: 0}
-    - _Splat3:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 14, y: 14}
-        m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Control
+        second:
+          m_Texture: {fileID: 2800000, guid: 205b8845edf0b4d46b063a7aae6edb6f, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Splat0
+        second:
+          m_Texture: {fileID: 2800000, guid: 3908d49f73e3e994b8c76fa42a8837b2, type: 3}
+          m_Scale: {x: 12, y: 12}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Splat1
+        second:
+          m_Texture: {fileID: 2800000, guid: 82fbc75b4892b2649a31e6247a1adca7, type: 3}
+          m_Scale: {x: 12, y: 12}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Splat2
+        second:
+          m_Texture: {fileID: 2800000, guid: 5948e870e96e2834d8327a681b9f8e64, type: 3}
+          m_Scale: {x: 11, y: 11}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Splat3
+        second:
+          m_Texture: {fileID: 2800000, guid: e9ee76fc03b31e04e8da50ac0ad8b5f4, type: 3}
+          m_Scale: {x: 14, y: 14}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _ShininessL0: 0.078125
-    - _ShininessL1: 0.078125
-    - _ShininessL2: 0.078125
-    - _ShininessL3: 0.078125
+      data:
+        first:
+          name: _ShininessL0
+        second: .078125
+      data:
+        first:
+          name: _ShininessL1
+        second: .078125
+      data:
+        first:
+          name: _ShininessL2
+        second: .078125
+      data:
+        first:
+          name: _ShininessL3
+        second: .078125
     m_Colors:
-    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 0, g: 0, b: 0, a: 1}

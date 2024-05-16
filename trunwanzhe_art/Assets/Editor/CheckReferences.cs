@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 namespace ET
 {
@@ -142,8 +141,6 @@ namespace ET
                     //if (assetPath[assetPath.Length-1] == fongPath)
                     if (path == fontPath)
                     {
-                        UnityEngine.Debug.Log($"以下文件有引用： {itemPath} ");
-
                         GameObject tmpObj = AssetDatabase.LoadAssetAtPath(itemPath, typeof(GameObject)) as GameObject;
                         //tmpObj = GameObject.Instantiate(tmpObj) as GameObject;
                         Text[] tmpAr = tmpObj.GetComponentsInChildren<Text>();
@@ -158,25 +155,10 @@ namespace ET
                             string assetName = fontTemp.name;
                             if (fontAssetName == assetName)
                             {
-                                UnityEngine.Debug.Log($" {textTemp.name}");
+                                UnityEngine.Debug.Log(" {textTemp.name}");
                             }
                         }
 
-                        TextMeshPro[] tmpProAr = tmpObj.GetComponentsInChildren<TextMeshPro>();
-                        for (int t = 0; t < tmpProAr.Length; t++)
-                        {
-                            TextMeshPro textTemp = tmpProAr[t];
-                            TMP_FontAsset fontTemp = textTemp.font;
-                            if (fontTemp == null)
-                            {
-                                continue;
-                            }
-                            string assetName = fontTemp.name;
-                            if (fontAssetName == assetName)
-                            {
-                                UnityEngine.Debug.Log($" {textTemp.name}");
-                            }
-                        }
                     }
                 }
             }
@@ -250,7 +232,7 @@ namespace ET
                 {
                     if (path == shaderPath)
                     {
-                        UnityEngine.Debug.Log($"以下文件引用了该Shader： {itemPath} ");
+                        UnityEngine.Debug.Log("以下文件引用了该Shader：  " + itemPath);
                     }
                 }
             }
@@ -293,7 +275,7 @@ namespace ET
                     //if (assetPath[assetPath.Length-1] == fongPath)
                     if (path == fontPath)
                     {
-                        UnityEngine.Debug.Log($"以下文件有引用： {itemPath} ");
+                        UnityEngine.Debug.Log("以下文件有引用：  " + itemPath);
 
 
                         //GameObject tmpObj = AssetDatabase.LoadAssetAtPath(itemPath, typeof(GameObject)) as GameObject;
@@ -370,7 +352,7 @@ namespace ET
                 {
                     if (path == fontPath)
                     {
-                        UnityEngine.Debug.Log($"以下文件有引用： {itemPath} ");
+                        UnityEngine.Debug.Log("以下文件有引用：  " + itemPath);
                     }
                 }
             }
@@ -457,7 +439,7 @@ namespace ET
                 {
                     if (uiList.Contains(path))
                     {
-                        UnityEngine.Debug.Log($"以下文件有引用： {itemPath} ");
+                        UnityEngine.Debug.Log("以下文件有引用：  " + itemPath);
                     }
                 }
             }
