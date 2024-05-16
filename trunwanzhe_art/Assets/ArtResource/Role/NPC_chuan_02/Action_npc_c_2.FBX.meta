@@ -1,269 +1,114 @@
 fileFormatVersion: 2
 guid: 6ff48dff9b5bd2d4b922e5d5468eec7b
 ModelImporter:
-  serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: //RootNode
-  - first:
-      1: 100002
-    second: Bone001
-  - first:
-      1: 100004
-    second: Bone003
-  - first:
-      1: 100006
-    second: Bone005
-  - first:
-      1: 100008
-    second: Bone007
-  - first:
-      1: 100010
-    second: Bone009
-  - first:
-      1: 100012
-    second: Bone011
-  - first:
-      1: 100014
-    second: Bone012
-  - first:
-      1: 100016
-    second: Bone013
-  - first:
-      1: 100018
-    second: Bone014
-  - first:
-      1: 100020
-    second: Bone016
-  - first:
-      1: 100022
-    second: Bone017
-  - first:
-      1: 100024
-    second: Bone018
-  - first:
-      1: 100026
-    second: Bone018(mirrored)
-  - first:
-      1: 100028
-    second: Bone020
-  - first:
-      1: 100030
-    second: Bone020(mirrored)
-  - first:
-      1: 100032
-    second: Bone021
-  - first:
-      1: 100034
-    second: Bone021(mirrored)
-  - first:
-      1: 100036
-    second: Bone022
-  - first:
-      1: 100038
-    second: Bone022(mirrored)
-  - first:
-      1: 100040
-    second: Bone023
-  - first:
-      1: 100042
-    second: Bone023(mirrored)
-  - first:
-      1: 100044
-    second: Dummy001
-  - first:
-      1: 100046
-    second: Dummy002
-  - first:
-      1: 100048
-    second: Dummy003
-  - first:
-      1: 100050
-    second: System_gj_hjcfh
-  - first:
-      4: 400000
-    second: //RootNode
-  - first:
-      4: 400002
-    second: Bone001
-  - first:
-      4: 400004
-    second: Bone003
-  - first:
-      4: 400006
-    second: Bone005
-  - first:
-      4: 400008
-    second: Bone007
-  - first:
-      4: 400010
-    second: Bone009
-  - first:
-      4: 400012
-    second: Bone011
-  - first:
-      4: 400014
-    second: Bone012
-  - first:
-      4: 400016
-    second: Bone013
-  - first:
-      4: 400018
-    second: Bone014
-  - first:
-      4: 400020
-    second: Bone016
-  - first:
-      4: 400022
-    second: Bone017
-  - first:
-      4: 400024
-    second: Bone018
-  - first:
-      4: 400026
-    second: Bone018(mirrored)
-  - first:
-      4: 400028
-    second: Bone020
-  - first:
-      4: 400030
-    second: Bone020(mirrored)
-  - first:
-      4: 400032
-    second: Bone021
-  - first:
-      4: 400034
-    second: Bone021(mirrored)
-  - first:
-      4: 400036
-    second: Bone022
-  - first:
-      4: 400038
-    second: Bone022(mirrored)
-  - first:
-      4: 400040
-    second: Bone023
-  - first:
-      4: 400042
-    second: Bone023(mirrored)
-  - first:
-      4: 400044
-    second: Dummy001
-  - first:
-      4: 400046
-    second: Dummy002
-  - first:
-      4: 400048
-    second: Dummy003
-  - first:
-      4: 400050
-    second: System_gj_hjcfh
-  - first:
-      43: 4300000
-    second: System_gj_hjcfh
-  - first:
-      95: 9500000
-    second: //RootNode
-  - first:
-      137: 13700000
-    second: System_gj_hjcfh
-  externalObjects: {}
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bone001
+    100004: Bone003
+    100006: Bone005
+    100008: Bone007
+    100010: Bone009
+    100012: Bone011
+    100014: Bone012
+    100016: Bone013
+    100018: Bone014
+    100020: Bone016
+    100022: Bone017
+    100024: Bone018
+    100026: Bone018(mirrored)
+    100028: Bone020
+    100030: Bone020(mirrored)
+    100032: Bone021
+    100034: Bone021(mirrored)
+    100036: Bone022
+    100038: Bone022(mirrored)
+    100040: Bone023
+    100042: Bone023(mirrored)
+    100044: Dummy001
+    100046: Dummy002
+    100048: Dummy003
+    100050: System_gj_hjcfh
+    400000: //RootNode
+    400002: Bone001
+    400004: Bone003
+    400006: Bone005
+    400008: Bone007
+    400010: Bone009
+    400012: Bone011
+    400014: Bone012
+    400016: Bone013
+    400018: Bone014
+    400020: Bone016
+    400022: Bone017
+    400024: Bone018
+    400026: Bone018(mirrored)
+    400028: Bone020
+    400030: Bone020(mirrored)
+    400032: Bone021
+    400034: Bone021(mirrored)
+    400036: Bone022
+    400038: Bone022(mirrored)
+    400040: Bone023
+    400042: Bone023(mirrored)
+    400044: Dummy001
+    400046: Dummy002
+    400048: Dummy003
+    400050: System_gj_hjcfh
+    4300000: System_gj_hjcfh
+    9500000: //RootNode
+    13700000: System_gj_hjcfh
   materials:
-    materialImportMode: 0
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
-    animationImportErrors: 
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
-    importConstraints: 0
     animationCompression: 1
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.01
+    globalScale: .00999999978
     meshCompression: 3
     addColliders: 0
-    useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
-    importVisibility: 0
     importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
-    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    keepQuads: 0
+    optimizeMeshForGPU: 1
     weldVertices: 1
-    bakeAxisConversion: 0
-    preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
-    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
-    secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
-    blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
-  referencedClips:
-  - 2607610e2e9d40b4692262724bbbab91
-  - 4d0145c2ad2bf6e4faa54256e229b630
+    tangentImportMode: 1
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
     human: []
     skeleton: []
-    armTwist: 0.5
-    foreArmTwist: 0.5
-    upperLegTwist: 0.5
-    legTwist: 0.5
-    armStretch: 0.05
-    legStretch: 0.05
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
     feetSpacing: 0
-    globalScale: 0.01
     rootMotionBoneName: Bone001
-    hasTranslationDoF: 0
-    hasExtraRoot: 0
-    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
-  humanoidOversampling: 1
-  avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
