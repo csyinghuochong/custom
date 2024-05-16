@@ -62,8 +62,8 @@ namespace ET
 
                 for (int i = 0; i < entity.PlayerInfo.RechargeInfos.Count; i++)
                 {
-                    //一月份
-                    if (entity.PlayerInfo.RechargeInfos[i].Time > 1711900800000 && entity.PlayerInfo.RechargeInfos[i].Time < 1714406400000)//2024/4/1
+                    //5月份
+                    if (entity.PlayerInfo.RechargeInfos[i].Time > 1714492800000 && entity.PlayerInfo.RechargeInfos[i].Time < 1716998400000)
                     {
                         if (entity.PlayerInfo.Name.Equals("抖音用户"))
                         {
