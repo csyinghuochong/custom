@@ -5,12 +5,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 433922}
-  - component: {fileID: 3333936}
-  - component: {fileID: 2333936}
-  - component: {fileID: 9533936}
+  - 4: {fileID: 433922}
+  - 33: {fileID: 3333936}
+  - 23: {fileID: 2333936}
+  - 95: {fileID: 9533936}
   m_Layer: 0
   m_Name: jiutong_daoguang
   m_TagString: Untagged
@@ -23,9 +23,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 433930}
+  - 4: {fileID: 433930}
   m_Layer: 0
   m_Name: Jiutong_Atk_Attack_4
   m_TagString: Untagged
@@ -38,11 +38,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 433934}
-  - component: {fileID: 11433936}
-  - component: {fileID: 11433934}
+  - 4: {fileID: 433934}
+  - 114: {fileID: 11433936}
+  - 114: {fileID: 11433934}
   m_Layer: 0
   m_Name: MainEffect
   m_TagString: Untagged
@@ -55,9 +55,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 433936}
+  - 4: {fileID: 433936}
   m_Layer: 0
   m_Name: Mon_Chuidunzhanshi_Atk_Attack
   m_TagString: Untagged
@@ -71,27 +71,25 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133922}
-  m_LocalRotation: {x: 0, y: -0.34202012, z: 0, w: 0.9396926}
+  m_LocalRotation: {x: 0, y: -.342020124, z: 0, w: .939692616}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.1124265, z: 1.5}
+  m_LocalScale: {x: 1.5, y: 1.11242652, z: 1.5}
   m_Children: []
   m_Father: {fileID: 433930}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &433930
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133924}
-  m_LocalRotation: {x: 0.23585398, y: -0.9148938, z: -0.12950276, w: -0.30095074}
-  m_LocalPosition: {x: -0.425, y: 0.525, z: 0.24}
+  m_LocalRotation: {x: .235853985, y: -.914893806, z: -.129502758, w: -.300950736}
+  m_LocalPosition: {x: -.425000012, y: .524999976, z: .239999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433922}
   m_Father: {fileID: 433934}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &433934
 Transform:
   m_ObjectHideFlags: 1
@@ -105,7 +103,6 @@ Transform:
   - {fileID: 433930}
   m_Father: {fileID: 433936}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &433936
 Transform:
   m_ObjectHideFlags: 1
@@ -119,9 +116,8 @@ Transform:
   - {fileID: 433934}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2333936
-MeshRenderer:
+Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -129,30 +125,16 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 16f338ecd2b42d7418cc90daa5bbd0b2, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &3333936
 MeshFilter:
@@ -174,8 +156,6 @@ Animator:
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11433934
@@ -192,7 +172,7 @@ MonoBehaviour:
   updateMode: 1
   node: 1
   activateByAnimationEvent: 0
-  activateTime: 0.37
+  activateTime: .370000005
   duration: 5
   isBullet: 0
   flyHeight: 0
@@ -222,3 +202,4 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133936}
   m_IsPrefabParent: 1
+  m_IsExploded: 1

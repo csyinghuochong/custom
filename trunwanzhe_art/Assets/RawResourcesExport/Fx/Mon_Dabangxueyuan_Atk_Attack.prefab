@@ -5,9 +5,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 409720}
+  - 4: {fileID: 409720}
   m_Layer: 0
   m_Name: Jiutong_Atk_Attack_4
   m_TagString: Untagged
@@ -20,12 +20,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 409722}
-  - component: {fileID: 3309720}
-  - component: {fileID: 2309720}
-  - component: {fileID: 9509720}
+  - 4: {fileID: 409722}
+  - 33: {fileID: 3309720}
+  - 23: {fileID: 2309720}
+  - 95: {fileID: 9509720}
   m_Layer: 0
   m_Name: jiutong_daoguang
   m_TagString: Untagged
@@ -38,9 +38,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 491046}
+  - 4: {fileID: 491046}
   m_Layer: 0
   m_Name: Mon_Dabangxueyuan_Atk_Attack
   m_TagString: Untagged
@@ -53,11 +53,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 491048}
-  - component: {fileID: 11491046}
-  - component: {fileID: 11491048}
+  - 4: {fileID: 491048}
+  - 114: {fileID: 11491046}
+  - 114: {fileID: 11491048}
   m_Layer: 0
   m_Name: MainEffect
   m_TagString: Untagged
@@ -70,9 +70,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 491052}
+  - 4: {fileID: 491052}
   m_Layer: 0
   m_Name: Jiutong_Atk_Attack_4
   m_TagString: Untagged
@@ -85,12 +85,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 491056}
-  - component: {fileID: 3391046}
-  - component: {fileID: 2391046}
-  - component: {fileID: 9591046}
+  - 4: {fileID: 491056}
+  - 33: {fileID: 3391046}
+  - 23: {fileID: 2391046}
+  - 95: {fileID: 9591046}
   m_Layer: 0
   m_Name: jiutong_daoguang2
   m_TagString: Untagged
@@ -104,14 +104,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109720}
-  m_LocalRotation: {x: 0.5407136, y: -0.44610777, z: -0.6351226, w: -0.32440114}
-  m_LocalPosition: {x: 0.09, y: 1.57, z: 0.5}
-  m_LocalScale: {x: 1.635031, y: 1.6350315, z: 1.4072144}
+  m_LocalRotation: {x: .540713608, y: -.446107775, z: -.635122597, w: -.32440114}
+  m_LocalPosition: {x: .0900000036, y: 1.57000005, z: .5}
+  m_LocalScale: {x: 1.63503098, y: 1.63503146, z: 1.4072144}
   m_Children:
   - {fileID: 409722}
   m_Father: {fileID: 491048}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &409722
 Transform:
   m_ObjectHideFlags: 1
@@ -124,7 +123,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 409720}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491046
 Transform:
   m_ObjectHideFlags: 1
@@ -138,7 +136,6 @@ Transform:
   - {fileID: 491048}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491048
 Transform:
   m_ObjectHideFlags: 1
@@ -153,36 +150,33 @@ Transform:
   - {fileID: 491052}
   m_Father: {fileID: 491046}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491052
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191052}
-  m_LocalRotation: {x: 0.018543875, y: -0.7917469, z: 0.5941296, w: 0.14072324}
-  m_LocalPosition: {x: -0.28, y: 1.19, z: -0.23}
-  m_LocalScale: {x: 1.635032, y: 1.635032, z: 1.407215}
+  m_LocalRotation: {x: .0185438748, y: -.791746914, z: .594129622, w: .140723243}
+  m_LocalPosition: {x: -.280000001, y: 1.19000006, z: -.230000004}
+  m_LocalScale: {x: 1.63503206, y: 1.63503206, z: 1.407215}
   m_Children:
   - {fileID: 491056}
   m_Father: {fileID: 491048}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491056
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191054}
-  m_LocalRotation: {x: 0, y: 0, z: -0.40911758, w: 0.91248167}
-  m_LocalPosition: {x: -0.2831508, y: 0.17263106, z: -0.000003046919}
+  m_LocalRotation: {x: 0, y: 0, z: -.409117579, w: .912481666}
+  m_LocalPosition: {x: -.283150792, y: .172631055, z: -3.04691889e-06}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 491052}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2309720
-MeshRenderer:
+Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -190,33 +184,19 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 54ed3ffeb7a7ebb4d884cda3092bdbb4, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &2391046
-MeshRenderer:
+Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -224,30 +204,16 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 54ed3ffeb7a7ebb4d884cda3092bdbb4, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &3309720
 MeshFilter:
@@ -276,8 +242,6 @@ Animator:
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &9591046
@@ -293,8 +257,6 @@ Animator:
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11491046
@@ -311,7 +273,7 @@ MonoBehaviour:
   updateMode: 1
   node: 1
   activateByAnimationEvent: 0
-  activateTime: 0.28
+  activateTime: .280000001
   duration: 5
   isBullet: 0
   flyHeight: 0
@@ -341,3 +303,4 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191046}
   m_IsPrefabParent: 1
+  m_IsExploded: 1
