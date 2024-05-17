@@ -35,14 +35,15 @@ mail 0 0 10000164;1@1;300000@10010088;2@10010083;10 1 0 tcg452241
 实时更新binET
 ///检测
 先开启1进程        先合区
+合区的时候千万不要开其他进程    刷新cdn
 0 StartZoneConfig@s 如果要合区 一定要配置新的物理区  被和掉的区ip同步 show = 0 serverid  不要配错了 不要重复 
 1  检查一下控制台 核对一下custom   客户端热更 服务器config  更新机器人服务 ， 看一下zone的数量                                    
 2. 检测服务器进程配置                     StartSceneConfig           
 3  检测区配置                                 StartZoneConfig
-4  ServerHelper 开服时间   刷新cdn
+4  ServerHelper 开服时间 
 5   注意config不要拷贝错了
 6  合区。 先备份要合的区，用bson的export.    
-    执行    1_merge_zone， 传入要合并的两个区   合区的时候千万不要开其他进程
+    执行    1_merge_zone， 传入要合并的两个区  
 7   删档，  先备份要合的区，用bson的export.      重启一下mongindb.exe
 8 修改comhelp. version
 9 检测公告
