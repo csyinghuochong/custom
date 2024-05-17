@@ -207,6 +207,86 @@ namespace ET
 
 
         /// <summary>
+        /// 查询排名前几的玩家充值   rechargechaXun 0 3  (所有区前三的玩家充值)
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static async ETTask RechargeChaXunConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  RechargeChaXunConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+            if (chaxunInfo[0] != "rechargechaXun")
+            {
+                Console.WriteLine($"C must have recharge zone");
+                Log.Warning($"C must have recharge zone");
+                return;
+            }
+            if (chaxunInfo.Length != 3)
+            {
+                Console.WriteLine($"C must have have zone");
+                Log.Warning($"C must have have zone");
+                return;
+            }
+
+#if SERVER
+            int zone = int.Parse(chaxunInfo[1]);
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                zonlist = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+            long rankNumber = long.Parse(chaxunInfo[2]);
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+                
+                List<DBRankInfo> dBRankInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBRankInfo>(pyzone, d => d.Id == pyzone);
+
+                if (dBRankInfos == null || dBRankInfos.Count == 0)
+                {
+                    continue;
+                }
+
+                string levelInfo = $"{pyzone} 区排名前{rankNumber} 玩家充值：";
+
+                List<RankingInfo> rankingList = dBRankInfos[0].rankingInfos;
+                
+
+                for (int rank = 0; rank < rankNumber; rank++)
+                {
+                    if (rank >= rankingList.Count)
+                    {
+                        break;
+                    }
+
+                    long unitid = rankingList[rank].UserId;
+
+                    List<UserInfoComponent> userinfoComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == unitid);
+                    if (userinfoComponentlist.Count == 0)
+                    {
+                        continue;
+                    }
+                    List<NumericComponent> unumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == unitid);
+                    if (userinfoComponentlist.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    levelInfo += $"排名: {rank+1}    \t玩家：{userinfoComponentlist[0].UserName}   \t充值：{unumericComponentlist[0].GetAsInt(NumericType.RechargeNumber)} ";
+                }
+
+
+                LogHelper.GongZuoShi(levelInfo);
+            }
+#endif
+        }
+
+        /// <summary>
         /// 全部玩家拍卖所得金币列表
         /// </summary>
         /// <param name="content"></param>

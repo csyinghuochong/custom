@@ -114,6 +114,10 @@ namespace ET
             {
                 ConsoleHelper.GongZuoshi8_ConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "rechargechaXun")
+            {
+                ConsoleHelper.RechargeChaXunConsoleHandler(request.Context).Coroutine();        
+            }
         }
     }
 }
