@@ -114,7 +114,7 @@ namespace ET
             {
                 ConsoleHelper.GongZuoshi8_ConsoleHandler(request.Context).Coroutine();
             }
-            if (infoList[0] == "rechargechaXun")
+            if (infoList[0] == ConsoleMode.RechargeChaXun)
             {
                 ConsoleHelper.RechargeChaXunConsoleHandler(request.Context).Coroutine();        
             }

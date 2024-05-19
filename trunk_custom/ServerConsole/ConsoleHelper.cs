@@ -277,7 +277,7 @@ namespace ET
                         continue;
                     }
 
-                    levelInfo += $"排名: {rank+1}    \t玩家：{userinfoComponentlist[0].UserName}   \t充值：{unumericComponentlist[0].GetAsInt(NumericType.RechargeNumber)} ";
+                    levelInfo += $"排名: {rank+1}   \t玩家：{userinfoComponentlist[0].UserName}   \t充值：{unumericComponentlist[0].GetAsInt(NumericType.RechargeNumber)}      \t";
                 }
 
 
