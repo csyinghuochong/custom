@@ -16,6 +16,7 @@ namespace ET
                 case PayTypeEnum.AliPay:
                     if (!ConfigHelper.RechargeGive.ContainsKey(request.RechargeNumber))
                     {
+                        Log.Error($"M2R_RechargeRequest 1");
                         response.Error = ErrorCode.ERR_ModifyData;
                         reply();
                         return;
