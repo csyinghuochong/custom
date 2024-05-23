@@ -1,0 +1,108 @@
+childof( parent )
+public class son   //实体必须指明父实体
+
+
+[componentof(typeof(scene))]
+public class com   组件必须指明父实体的类型//
+
+
+[entitysystemof(typeof(com))]  //扩展方法
+
+friendof(com) 访问该类的方法
+
+
+init.start.  CodeLoader开始分发（客户端。服务器）
+
+Entry.Start  (前后端公用)
+
+
+World.Instance.AddSingleton<ObjectPool>();
+
+ // 创建需要reload的code singleton
+ CodeTypes.Instance.CreateCode();
+
+Fiber.Scene(Robot)  组件都是挂到scene上的
+
+Fiber 是因为多线程多进程的原因  可以有很多个fiber
+
+Fiber的public EntitySystem EntitySystem { get; }  驱动所有组件和子实体的生命周期函数
+
+ public enum SchedulerType
+ {
+     Main,                //主线程就是队列循环调用
+     Thread,            //固定线程调用 ，每个线程一个Fiber
+     ThreadPool,    //线程池调用， 同一个Fiber只会在同一个时间段随机被某一个线程调用
+ }
+Fiber 生命周期的三种调用方式
+Fiber和Fiber之间完全隔壁， 多个cpu驱动多个线程，多个线程驱动多个fiber
+
+Fiber 和 Scene 相互引用
+
+客户端一般只有两个Fiber(业务逻辑) Fiber(网络消息)
+
+Scene是最近的Scene, robot是根Scene.
+
+
+ET 公用  ET.Server 服务器用 ET.client 客户端用  EventType 必须放在allmodel
+
+
+
+ [Event(SceneType.Demo)]    传入sceneType  只有处理该scenetype
+
+
+#if DOTNET  服务器
+
+研究一下 Fiber.Update 的三种调度方式 
+
+LS开头的是帧同步
+
+事件的处理不涉及到任何显示层 则放在hotfix下面
+
+ActorId 指明了actor所在的进程和fider
+
+
+DBComponent 加入到对应的scene
+
+返回一个四元数，该四元数表示绕单位轴旋转一个以弧度为单位的角度。
+quaternion.AxisAngle(math.up() , skillcmd.TargetAngle / 57.3f );
+
+math.degrees()                                 弧度转角度
+math.radians(skillcmd.TargetAngle)   角度转弧度
+
+
+
+UI系统框架, 以uipet举例
+ModelView   	 DlgPet                                             	View{ public DlgPetViewComponent View }
+UIBehaviour              DlgPetViewComponent                    	public Transform uiTransform = null;   
+
+HotfixView                DlgPetSystem   			RegisterUIEvent   ShowWindow   {  self.View.ES_PetHeCheng.OnHeChengReturn(); }   逻辑全部写在这
+                                 DlgPetEventHandler  		OnInitWindowCoreData / OnInitComponent / OnShowWindow / uiBaseWindow.AddComponent<DlgMain>().AddComponent<DlgPetViewComponent>(); 只有几个生命周期函数
+UIBehaviour              DlgPetViewComponentSystem		self.DestroyWidget(); self.Awake 只有几个生命周期函数
+
+
+//UIComponent.ShowWindow
+ if (self.IScene is Room)
+            {
+                go = await self.Scene<Room>().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<GameObject>(value.StringToAB());
+            }
+            else
+            {
+                go = await self.Scene<Scene>().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<GameObject>(value.StringToAB());
+            }
+            baseWindow.UIPrefabGameObject      = UnityEngine.Object.Instantiate(go);
+            baseWindow.UIPrefabGameObject.name = go.name;
+            
+            UIEventComponent.Instance.GetUIEventHandler(baseWindow.WindowID).OnInitWindowCoreData(baseWindow);
+            
+            baseWindow?.SetRoot(EUIRootHelper.GetTargetRoot(self.Root(),baseWindow.windowType));
+            baseWindow.uiTransform.SetAsLastSibling();
+            
+            UIEventComponent.Instance.GetUIEventHandler(baseWindow.WindowID).OnInitComponent(baseWindow);
+            UIEventComponent.Instance.GetUIEventHandler(baseWindow.WindowID).OnRegisterUIEvent(baseWindow);
+
+
+Entity contextData = showData == null ? null : showData;
+baseWindow.UIPrefabGameObject?.SetActive(true);
+UIEventComponent.Instance.GetUIEventHandler(id).OnShowWindow(baseWindow,contextData);
+
+
