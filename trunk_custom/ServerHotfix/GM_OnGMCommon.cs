@@ -108,11 +108,15 @@ namespace ET
             }
             if (infoList[0] == "gongzuoshi7")
             {
-                ConsoleHelper.GongZuoshi7_ConsoleHandler(request.Context).Coroutine();
+                ConsoleHelper.GongZuoshi7_ConsoleHandler(request.Context).Coroutine();  //身份证 封号
             }
             if (infoList[0] == "gongzuoshi8")
             {
                 ConsoleHelper.GongZuoshi8_ConsoleHandler(request.Context).Coroutine();
+            }
+            if (infoList[0] == "gongzuoshi9")
+            {
+                ConsoleHelper.GongZuoshi9_ConsoleHandler(request.Context).Coroutine();   //ip 封号
             }
             if (infoList[0] == ConsoleMode.RechargeChaXun)
             {

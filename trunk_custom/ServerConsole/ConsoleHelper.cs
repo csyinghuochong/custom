@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Xml.Linq;
 
 namespace ET
@@ -1447,7 +1448,7 @@ namespace ET
 
         /// <summary>
         /// 通过身份证号封号
-        /// </summary>
+        /// </summary>  gongzuoshi7 127&128
         /// <param name="content"></param>
         /// <param name="chaxun"></param>
         /// <returns></returns>
@@ -1465,7 +1466,8 @@ namespace ET
 
 #if SERVER
             int zone = int.Parse(chaxunInfo[1]);
-            string idcard = chaxunInfo[2];
+            List<string> idcardList = chaxunInfo[2].Split('&').ToList();
+
             //List<int> zonlist = new List<int> { };
             //if (zone == 0)
             //{
@@ -1488,7 +1490,8 @@ namespace ET
                 {
                     continue;
                 }
-                if (accoutResult[i].PlayerInfo.IdCardNo == idcard)
+                if (!string.IsNullOrEmpty(accoutResult[i].PlayerInfo.IdCardNo) 
+                    && idcardList.Contains(accoutResult[i].PlayerInfo.IdCardNo))
                 {
                     accoutResult[i].AccountType = 2;
                     accoutResult[i].BanTime = serverTime;
@@ -1576,6 +1579,97 @@ namespace ET
 #endif
 
         }
+
+
+        /// <summary>
+        /// 通过ip实现封号功能  目前只封在线玩家
+        /// </summary> gongzuoshi9 0 128&127
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static async ETTask GongZuoshi9_ConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  GongZuoshi9_ConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+
+
+            if (chaxunInfo.Length != 3)
+            {
+                Console.WriteLine($"C must have allonline zone");
+                Log.Warning($"C must have allonline zone");
+                return;
+            }
+
+#if SERVER
+            List<int> zonlist = ServerMessageHelper.GetAllZone();
+            List<string> idcardList = chaxunInfo[2].Split('&').ToList();
+            List<long> accountIdlist = new List<long>();
+
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+
+                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+                for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
+                {
+                    UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
+                    if (userInfoComponent.UserInfo.RobotId != 0)
+                    {
+                        continue;
+                    }
+                    if (string.IsNullOrEmpty(userInfoComponent.RemoteAddress))
+                    {
+                        continue;
+                    }
+                    //220.202.201.103:32361
+                    string[] ipaddres = userInfoComponent.RemoteAddress.Split(':');
+                    if (ipaddres.Length != 2 || string.IsNullOrEmpty(ipaddres[0]))
+                    {
+                        continue;
+                    }
+                    if (idcardList.Contains(ipaddres[0]) && !accountIdlist.Contains(userInfoComponent.UserInfo.AccInfoID))
+                    {
+                        accountIdlist.Add(userInfoComponent.UserInfo.AccInfoID);
+                    }
+                }
+
+            }
+
+            string gongzuoshiInfo = "封号:   \n";
+            long serverTime = TimeHelper.ServerNow();
+
+            for (int i = 0; i < accountIdlist.Count; i++)
+            {
+                List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Id == accountIdlist[i]);
+
+                if(accoutResult ==null || accoutResult.Count  == 0) 
+                {
+                    continue;
+                }
+
+                if (accoutResult[0].AccountType == 2)
+                {
+                    continue;
+                }
+                if (accoutResult[0].PlayerInfo == null)
+                {
+                    continue;
+                }
+
+                accoutResult[0].AccountType = 2;
+                accoutResult[0].BanTime = serverTime;
+
+                gongzuoshiInfo += $"封号: {accoutResult[0].Account} \n";
+
+                await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]);
+            }
+
+            LogHelper.ZuobiInfo(gongzuoshiInfo);
+#endif 
+        }
+
 
         //shenshou 0
         public static async ETTask ShenshouConsoleHandler(string content)
