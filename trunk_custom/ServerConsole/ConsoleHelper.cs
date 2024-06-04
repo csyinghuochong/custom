@@ -1502,7 +1502,7 @@ namespace ET
                 }
             }
 
-            LogHelper.ZuobiInfo(tipInfo);
+            LogHelper.GongZuoShi(tipInfo);
 #endif
         }
 
@@ -1610,8 +1610,9 @@ namespace ET
                 int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
 
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
+                Console.WriteLine($"检测: {pyzone}  ");
 
-                List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
+                List <UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id > 0);
                 for (int userinfo = 0; userinfo < userinfoComponentList.Count; userinfo++)
                 {
                     UserInfoComponent userInfoComponent = userinfoComponentList[userinfo];
@@ -1667,7 +1668,7 @@ namespace ET
                 await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[0]);
             }
 
-            LogHelper.ZuobiInfo(gongzuoshiInfo);
+            LogHelper.GongZuoShi(gongzuoshiInfo);
 #endif 
         }
 
