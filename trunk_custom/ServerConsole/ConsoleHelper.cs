@@ -1632,6 +1632,7 @@ namespace ET
                     if (idcardList.Contains(ipaddres[0]) && !accountIdlist.Contains(userInfoComponent.UserInfo.AccInfoID))
                     {
                         accountIdlist.Add(userInfoComponent.UserInfo.AccInfoID);
+                        Console.WriteLine($"封ip: {pyzone}  {userInfoComponent.UserInfo.AccInfoID}");
                     }
                 }
 
