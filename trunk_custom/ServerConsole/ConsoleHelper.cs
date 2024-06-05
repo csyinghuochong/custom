@@ -1497,7 +1497,6 @@ namespace ET
                     accoutResult[i].BanTime = serverTime;
 
                     tipInfo += $"封号: {accoutResult[i].Account} \n";
-
                     await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, accoutResult[i]);
                 }
             }
