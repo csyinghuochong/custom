@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 1162
+  version: 1165
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -4112,6 +4112,8 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/PlayerIcon/2.png
   - bundle: 499293d30e2182a0b218542d2f0c560e.unity3d
     path: Assets/Bundles/Icon/PlayerIcon/3.png
+  - bundle: 499293d30e2182a0b218542d2f0c560e.unity3d
+    path: Assets/Bundles/Icon/PlayerIcon/4.png
   - bundle: 8c5cada16785f3141cabe257406c9326.unity3d
     path: Assets/Bundles/Icon/PropertyIcon/PetPro_1.png
   - bundle: 8c5cada16785f3141cabe257406c9326.unity3d
@@ -7102,6 +7104,8 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Player/Hero_2_2.prefab
   - bundle: ba8cafaebe1bebbcd02d77449772a0fd.unity3d
     path: Assets/Bundles/Unit/Player/Hero_3.prefab
+  - bundle: fc9053af56d5f36d428096062ec37618.unity3d
+    path: Assets/Bundles/Unit/Player/Hero_4.prefab
   - bundle: c9d864381ac46e8099d91da5d42db33f.unity3d
     path: Assets/Bundles/Unit/Player/Hero_copy_1.prefab
   - bundle: c72dd49d39e997a37f25e65b716ad045.unity3d
@@ -9393,6 +9397,9 @@ MonoBehaviour:
   - name: ba8cafaebe1bebbcd02d77449772a0fd.unity3d
     assets:
     - Assets/Bundles/Unit/Player/Hero_3.prefab
+  - name: fc9053af56d5f36d428096062ec37618.unity3d
+    assets:
+    - Assets/Bundles/Unit/Player/Hero_4.prefab
   - name: c9d864381ac46e8099d91da5d42db33f.unity3d
     assets:
     - Assets/Bundles/Unit/Player/Hero_copy_1.prefab
@@ -13672,6 +13679,7 @@ MonoBehaviour:
     - Assets/Bundles/Icon/PlayerIcon/1.png
     - Assets/Bundles/Icon/PlayerIcon/2.png
     - Assets/Bundles/Icon/PlayerIcon/3.png
+    - Assets/Bundles/Icon/PlayerIcon/4.png
   - name: 8c5cada16785f3141cabe257406c9326.unity3d
     assets:
     - Assets/Bundles/Icon/PropertyIcon/PetPro_1.png
@@ -16641,6 +16649,12 @@ MonoBehaviour:
   - name: 6d98b66c0849d225b4cd46a1a855481b.unity3d
     assets:
     - Assets/Res/Models/Warrior/Role_FaShi.controller
+  - name: 985b9df7c70da377dcf292cc734a4421.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/RoleFaShi/zongsd8.fbx
+  - name: 88e45ad6573477493e605b5493e176fc.unity3d
+    assets:
+    - Assets/Res/Models/RoleModelSet/RoleFaShi/Materials/sd_c.mat
   - name: aba1dca0359e5249a6807c7616930c81.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/3DModel_Cute/Cute Zoo/Cute Zoo
