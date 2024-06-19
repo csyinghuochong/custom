@@ -106,3 +106,12 @@ baseWindow.UIPrefabGameObject?.SetActive(true);
 UIEventComponent.Instance.GetUIEventHandler(id).OnShowWindow(baseWindow,contextData);
 
 
+LoopScrollRectBase : UIBehaviour, IInitializePotentialDragHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IScrollHandler, ICanvasElement, ILayoutElement, ILayoutGroup
+
+LoopScrollRect : LoopScrollRectBase
+LoopVerticalScrollRect : LoopScrollRect
+LoopHorizontalScrollRect : LoopScrollRect
+
+LoopScrollRectMulti : LoopScrollRectBase
+LoopHorizontalScrollRectMulti : LoopScrollRectMulti   （UI/Loop Horizontal Scroll Rect(MultiPrefab)）
+LoopVerticalScrollRectMulti : LoopScrollRectMulti
