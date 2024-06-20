@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 1165
+  version: 1167
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -638,6 +638,8 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_2.prefab
   - bundle: d0483a90e5f9d72724f52b68faac3bed.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_20.prefab
+  - bundle: 910baba40ab0122a59b6007a58ae42b7.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_21.prefab
   - bundle: 75fdf890474fa115941d2f19ce0debb5.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_3.prefab
   - bundle: a6c0b5bd77b27a617d292e90209fd2c0.unity3d
@@ -714,6 +716,12 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_1.prefab
   - bundle: 3792ba4d516b6d935eead1ee517144ad.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_10.prefab
+  - bundle: 7a2a6360f982386df850c428179e680c.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_11.prefab
+  - bundle: 49aed9346ca4da82a7c2b737de832068.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_12.prefab
+  - bundle: 9bf44189058f24f74dfa5976858e6de8.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_13.prefab
   - bundle: 28810a1dadc2ff9c73f2084858c7900b.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_2.prefab
   - bundle: 2e48fdd4b88a6580dede654e6a98f9d5.unity3d
@@ -870,6 +878,8 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_XuanFengZhan_5a.prefab
   - bundle: ccaa88d2bec45294f2b8a47e6144af57.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_XuanFengZhan_6.prefab
+  - bundle: 31b6ce263591858eed5b45ce666bc7e5.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_XuanFengZhan_7.prefab
   - bundle: 773b81752e847216af9479b27d82bf28.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_YouLingFly.prefab
   - bundle: fba90dbfeb5b715913ec07b02d4d2c69.unity3d
@@ -900,6 +910,8 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ZhanShi_BaseAct_3.prefab
   - bundle: 9cbf2be29d744ea007245af3619b694b.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ZhaoHuan_1.prefab
+  - bundle: d5ba5fef4cf0a3615177c424b5c22855.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ZhaoHuan_2.prefab
   - bundle: 5f969dbb50f7e19c182a7f901ccbfe3d.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_ZuZhou_1.prefab
   - bundle: 7cdde48e3f158773c9f9e2379666d87c.unity3d
@@ -11299,6 +11311,9 @@ MonoBehaviour:
   - name: d0483a90e5f9d72724f52b68faac3bed.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_20.prefab
+  - name: 910baba40ab0122a59b6007a58ae42b7.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_21.prefab
   - name: 75fdf890474fa115941d2f19ce0debb5.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ChiXu_3.prefab
@@ -11356,6 +11371,15 @@ MonoBehaviour:
   - name: 3792ba4d516b6d935eead1ee517144ad.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_10.prefab
+  - name: 7a2a6360f982386df850c428179e680c.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_11.prefab
+  - name: 49aed9346ca4da82a7c2b737de832068.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_12.prefab
+  - name: 9bf44189058f24f74dfa5976858e6de8.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_13.prefab
   - name: 28810a1dadc2ff9c73f2084858c7900b.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_2.prefab
@@ -11647,6 +11671,9 @@ MonoBehaviour:
   - name: ccaa88d2bec45294f2b8a47e6144af57.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_XuanFengZhan_6.prefab
+  - name: 31b6ce263591858eed5b45ce666bc7e5.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_XuanFengZhan_7.prefab
   - name: 773b81752e847216af9479b27d82bf28.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_YouLingFly.prefab
@@ -11692,6 +11719,9 @@ MonoBehaviour:
   - name: 9cbf2be29d744ea007245af3619b694b.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ZhaoHuan_1.prefab
+  - name: d5ba5fef4cf0a3615177c424b5c22855.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ZhaoHuan_2.prefab
   - name: 5f969dbb50f7e19c182a7f901ccbfe3d.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_ZuZhou_1.prefab
@@ -19821,6 +19851,33 @@ MonoBehaviour:
   - name: 32ae72b2d3b3ab2b1ec7d5a5db78593a.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Materials/UniqueProjectiles_Additive_8x8.mat
+  - name: 380fd3a465e04dec70e9788c74f82d78.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/1AB_mat.mat
+  - name: a228f8f37fc5292bdbcb2adf992eeabe.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/1Add_mat.mat
+  - name: 27245e712c76543f8c190183963f61ad.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/circle_soft02.png
+  - name: 94de60701d58bb43510bf146fd01b439.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/spikes02.png
+  - name: 3c0b71cb713a4a82504909d5af72bbd5.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/electric01.png
+  - name: 5d12df20185c09449224c52b48160b90.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/t_trail01.png
+  - name: 776eea7e323129c03f9df876bff14069.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/AB_01.mat
+  - name: b940b708796a66ede448c211e0457618.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/circle_soft03.png
+  - name: 89baae4f9d7b81498fefad56f5d0b9dc.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/line03.png
   - name: 8c04be82bdd58db14825abe02f4171b8.unity3d
     assets:
     - Assets/Res/Effect/Skill/Texture/Materials/dust10.mat
@@ -20903,6 +20960,9 @@ MonoBehaviour:
   - name: 79d70b7036e8ddc820a025f120839dd8.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Effect/EffectPackage/ArtData/Materials-E3D/E3D-Shader45-2.mat
+  - name: 8d8dde124fc1957c2273dd58bce0c75e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/circle_boke01.png
   - name: 0c4c67f4b69e2df3257ce3c22b4c0272.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/Effect_BeiYong/Effects_01/Skill_Sword/Model/Materials/No
