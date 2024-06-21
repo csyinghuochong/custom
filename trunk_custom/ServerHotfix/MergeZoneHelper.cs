@@ -407,6 +407,13 @@ namespace ET
             ///Parameters=31_30   31区合并到30区   oldzone合并到newzone
             Dictionary<long, int> userLevel = new Dictionary<long, int>();
             List<UserInfoComponent> olduserInfoComponents_0 = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(oldzone, d => d.Id > 0);
+
+            int validLv = 20;
+            if (olduserInfoComponents_0.Count > 40000)
+            {
+                validLv = 25;
+            }
+
             foreach (var oldentity in olduserInfoComponents_0)
             {
                 if (!userLevel.ContainsKey(oldentity.Id))
@@ -420,7 +427,7 @@ namespace ET
                     continue;
                 }
 
-                if (oldentity.UserInfo.Lv >= 20)
+                if (oldentity.UserInfo.Lv >= validLv)
                 {
                     continue;
                 }
@@ -1029,6 +1036,20 @@ namespace ET
             }
             Log.Console("newuserinfoList Complelte");
 
+            int maxServerId = 0;
+            List<DBServerMailInfo> dBServerMailInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBServerMailInfo>(newzone, d => d.Id == newzone);
+            if (dBServerMailInfos.Count > 0)
+            {
+                foreach ((int id, ServerMailItem ServerItem) in dBServerMailInfos[0].ServerMailList)
+                {
+                    if (id >= maxServerId)
+                    {
+                        maxServerId = id;
+                    }
+                }
+            }
+            Log.Console($"maxServerId {maxServerId}");
+
             List<UserInfoComponent> olduserInfoComponents = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(oldzone, d => d.Id > 0);
             foreach (var oldentity in olduserInfoComponents)
             {
@@ -1082,6 +1103,11 @@ namespace ET
 
                         await Game.Scene.GetComponent<DBComponent>().Save(newzone, renamedBMailInfos[0]);
                     }
+                }
+
+                if (maxServerId > 0 && maxServerId > oldentity.UserInfo.ServerMailIdCur)
+                {
+                    oldentity.UserInfo.ServerMailIdCur = maxServerId;
                 }
                 await Game.Scene.GetComponent<DBComponent>().Save(newzone, oldentity);
             }
