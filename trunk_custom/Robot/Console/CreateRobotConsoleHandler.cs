@@ -39,12 +39,13 @@ namespace ET
                         if (options.Num == -1)
                         {
                             Log.Debug("真实玩家");
-                            string playerinfolist = "18319670288_3&18407228910_3";
+                            string playerinfolist = "65f2c631a48919957f8fcc3c_5";
                             string[] playerlist = playerinfolist.Split('&');
                             for (int i = 0; i < playerlist.Length; ++i)
                             {
                                 try
                                 {
+                                    //宝藏之地11001
                                     string[] playerinfo = playerlist[i].Split('_');
 
                                     int index = i % thisProcessRobotScenes.Count;

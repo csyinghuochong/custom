@@ -99,11 +99,15 @@ namespace ET
                     self.NewBehaviour = BehaviourType.Behaviour_RunRace;
                     break;
                 case 10:
-                    self.Behaviours.Add(new KeyValuePair() { KeyId = BehaviourType.Behaviour_YeWaiBoss, Value = "Behaviour_Demon" });
+                    self.Behaviours.Add(new KeyValuePair() { KeyId = BehaviourType.Behaviour_Demon, Value = "Behaviour_Demon" });
                     self.Behaviours.Add(new KeyValuePair() { KeyId = BehaviourType.Behaviour_Target, Value = "Behaviour_Target" });
                     self.Behaviours.Add(new KeyValuePair() { KeyId = BehaviourType.Behaviour_ZhuiJi, Value = "Behaviour_ZhuiJi" });
                     self.Behaviours.Add(new KeyValuePair() { KeyId = BehaviourType.Behaviour_Attack, Value = "Behaviour_Attack" });
                     self.NewBehaviour = BehaviourType.Behaviour_Demon;
+                    break;
+                case 11:
+                    self.Behaviours.Add(new KeyValuePair() { KeyId = BehaviourType.Behaviour_BaoZang, Value = "Behaviour_BaoZang" });
+                    self.NewBehaviour = BehaviourType.Behaviour_BaoZang;
                     break;
                 default:
                     break;
