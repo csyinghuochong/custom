@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 1176
+  version: 1181
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -1076,10 +1076,14 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillZhishi/Yujing_Dir.prefab
   - bundle: 1bfe3a13763e5601edf9ca5c551278ad.unity3d
     path: Assets/Bundles/Effect/SkillZhishi/Yujing_Position.prefab
+  - bundle: 483d3dc1c6b3a0fd3c57160aacaef036.unity3d
+    path: Assets/Bundles/Effect/UIEffect/Effect_BaoZha.prefab
   - bundle: f08ca1ba522f6b14188df5266ff254ab.unity3d
     path: Assets/Bundles/Effect/UIEffect/Effect_ComTask.prefab
   - bundle: 4736f5b797c74562e4dd7530df937c99.unity3d
     path: Assets/Bundles/Effect/UIEffect/Effect_GetTask.prefab
+  - bundle: e275486dc494d084019a856e39eebefd.unity3d
+    path: Assets/Bundles/Effect/UIEffect/Effect_ShanShuo.prefab
   - bundle: 058bb59d92c7555e202a1ff9dfee47d6.unity3d
     path: Assets/Bundles/Effect/UIFightHintEffect.prefab
   - bundle: 8696270bb1cfca10301adb502c5322cd.unity3d
@@ -5762,6 +5766,8 @@ MonoBehaviour:
     path: Assets/Bundles/UI/Main/Role/UIRoleProperty.prefab
   - bundle: c0aa2261803ca7212b935e5cf6ef9b8a.unity3d
     path: Assets/Bundles/UI/Main/Role/UIRoleQiangHua.prefab
+  - bundle: dcee6da8031389f7d793d4f73c65b2a6.unity3d
+    path: Assets/Bundles/UI/Main/Role/UIRoleQiangHuaTip.prefab
   - bundle: 366d0a29e6c3dcab32a2542e03b1c448.unity3d
     path: Assets/Bundles/UI/Main/Role/UIRoleZodiac.prefab
   - bundle: f6687628d0fc055efd915e1d1c59e35b.unity3d
@@ -10479,6 +10485,9 @@ MonoBehaviour:
   - name: c0aa2261803ca7212b935e5cf6ef9b8a.unity3d
     assets:
     - Assets/Bundles/UI/Main/Role/UIRoleQiangHua.prefab
+  - name: dcee6da8031389f7d793d4f73c65b2a6.unity3d
+    assets:
+    - Assets/Bundles/UI/Main/Role/UIRoleQiangHuaTip.prefab
   - name: 366d0a29e6c3dcab32a2542e03b1c448.unity3d
     assets:
     - Assets/Bundles/UI/Main/Role/UIRoleZodiac.prefab
@@ -11949,12 +11958,18 @@ MonoBehaviour:
   - name: 1bfe3a13763e5601edf9ca5c551278ad.unity3d
     assets:
     - Assets/Bundles/Effect/SkillZhishi/Yujing_Position.prefab
+  - name: 483d3dc1c6b3a0fd3c57160aacaef036.unity3d
+    assets:
+    - Assets/Bundles/Effect/UIEffect/Effect_BaoZha.prefab
   - name: f08ca1ba522f6b14188df5266ff254ab.unity3d
     assets:
     - Assets/Bundles/Effect/UIEffect/Effect_ComTask.prefab
   - name: 4736f5b797c74562e4dd7530df937c99.unity3d
     assets:
     - Assets/Bundles/Effect/UIEffect/Effect_GetTask.prefab
+  - name: e275486dc494d084019a856e39eebefd.unity3d
+    assets:
+    - Assets/Bundles/Effect/UIEffect/Effect_ShanShuo.prefab
   - name: 95ad2e210435acba112984e5c8f2ca10.unity3d
     assets:
     - Assets/Scenes/1000001.unity
@@ -17854,6 +17869,9 @@ MonoBehaviour:
   - name: bc0dcfe4abaf95ed45dd0a05b22e8c40.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_262.png
+  - name: e25d622f1baca1bb66c77e201fd32c17.unity3d
+    assets:
+    - Assets/Res/UI/UIRes/Imgage/Img_379.png
   - name: d2ccbb97ffe77d600199d30a131cd99d.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Link_2.png
@@ -17869,9 +17887,6 @@ MonoBehaviour:
   - name: e25578b2acfcb360260cba355da558be.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_311_1.png
-  - name: e25d622f1baca1bb66c77e201fd32c17.unity3d
-    assets:
-    - Assets/Res/UI/UIRes/Imgage/Img_379.png
   - name: 2e597a19f89fa05a0ec4da82bf92127c.unity3d
     assets:
     - Assets/Res/UI/UIRes/Button/Btn_91.Png
