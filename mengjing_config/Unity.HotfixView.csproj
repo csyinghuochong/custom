@@ -1,0 +1,1882 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace>ET</RootNamespace>
+    <ProjectGuid>{D31345DE-9B88-525C-8E9C-744C99AE7509}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Unity.HotfixView</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_IG;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITY;ENABLE_VIEW;TapTap1;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169;USG0001</NoWarn>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169;USG0001</NoWarn>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.22</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorStyle>Legacy</UnityProjectGeneratorStyle>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>2021.3.29f1c1</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="F:\soft\vs\ide\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="H:\GitMengJing\Unity\Assets\Plugins\Share.SourceGenerator.dll" />
+    <Analyzer Include="H:\GitMengJing\Unity\Library\PackageCache\com.cysharp.memorypack@286a8caeac\Runtime\MemoryPack.Generator\MemoryPack.Generator.Roslyn3.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetMain\DlgPetMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWatch\DlgWatchViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDonation\ES_RankUnionViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_FangunSkillViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetFubenResult\DlgPetFubenResultViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeason\DlgSeasonSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLobby\Event\LoginFinish_CreateLobbyUI.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanMysteryItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgEquipDuiBiTips\Event\DlgEquipDuiBiTipsEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWeiJingShop\Event\DlgWeiJingShopEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDonation\ES_DonationUnionViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleXiLianNumReward\DlgRoleXiLianNumRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPaiMaiAuction\Event\DlgPaiMaiAuctionEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\ChangeRotation_SyncGameObjectRotation.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanFood\DlgJiaYuanFoodViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSkillTips\Event\DlgSkillTipsEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgLoading\DlgLoadingViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIShouJiTreasureItemComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMain\DlgPetMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\MonsterActRangeComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ChatItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRunRaceMain\DlgRunRaceMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIChengJiuShowChapterItemSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChat\DlgChatViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgNewYear\DlgNewYearSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\MiJing_SyncMiJingDamage.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEggChouKaProbExplain\DlgPetEggChouKaProbExplainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMJLobby\Event\DlgMJLobbyEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetSelect\DlgPetSelectViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetCangKuDefendViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanUpLv\DlgJiaYuanUpLvSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChouKaWarehouse\DlgChouKaWarehouseSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeamMain\Event\DlgTeamMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPopupTip\Event\DlgPopupTipEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPaiMaiAuction\DlgPaiMaiAuctionViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSUnitViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgHappyMain\DlgHappyMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningFormation\Event\DlgPetMiningFormationEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_EquipSetItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMJLobby\DlgMJLobbyViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTowerFightReward\DlgTowerFightRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSkillTips\DlgSkillTipsViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgHelper\Event\SceneChangeFinishEvent_CreateUIHelp.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgHongBao\DlgHongBaoSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChengJiu\ES_ChengJiuShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgCountry\ES_ActivitySingInViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLogin\Event\LoginFinish_RemoveLoginUI.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningTeam\DlgPetMiningTeamSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDonation\Event\DlgDonationEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeasonLordDetail\Event\DlgSeasonLordDetailEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgShouJi\ES_ShouJiTreasureViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanCookbookItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanMystery\DlgJiaYuanMysterySystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgProtect\ES_ProtectPetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRank\ES_RankPetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSettingSkill\DlgSettingSkillSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPaiMai\ES_PaiMaiBuyViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgZhanQu\DlgZhanQuSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFriend\ES_FriendBlackViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianLevelItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeason\Event\DlgSeasonEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgBattle\DlgBattleSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPet\ES_ShouhuInfoViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MailItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningRecord\Event\DlgPetMiningRecordEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPaiMai\ES_PaiMaiDuiHuanViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetTuJianItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeamDungeonCreate\DlgTeamDungeonCreateViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetSet\ES_PetMiningItemSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgUnionDonationRecord\DlgUnionDonationRecordViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgHunt\Event\DlgHuntEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetFormation\Event\DlgPetFormationEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MakeLearnItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgOccTwoShow\DlgOccTwoShowSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\HeroTransformComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanBag\DlgJiaYuanBagSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Effect\EffectViewComponnetSytstem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\EntryEvent3_InitClient.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRandomOpen\DlgRandomOpenViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\SkillIndicatorComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgItemTips\DlgItemTipsSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\RunRaceInfoInfo_OnRunRaceInfo.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\FallingFontComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSSceneChangeStart_AddComponent.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeam\DlgTeamViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgZhanQu\ES_FirstWinViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgFashionExplain\DlgFashionExplainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_StoreItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgBattle\ES_BattleTaskViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgBattleMain\Event\DlgBattleMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonStoreViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWatch\Event\DlgWatchEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Unit\Event\UnitNowHP_ONUpdate.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFriend\ES_UnionShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSLogin\DlgLSLoginSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMiJingMain\DlgMiJingMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\Example\HotfixView.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\RedDotHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgZuoQi\DlgZuoQiSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgCellDungeonRevive\DlgCellDungeonReviveViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeamDungeon\Event\DlgTeamDungeonEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWelfare\Event\DlgWelfareEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_EquipTipsViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetShouHuItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgAppraisalSelect\Event\DlgAppraisalSelectEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetFubenResult\DlgPetFubenResultSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPet\Event\DlgPetEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\IPHoneHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWatch\ES_WatchPetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\GameObjectLoadHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCountry\Event\DlgCountryEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_TaskFubenItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDungeon\DlgDungeonSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Effect\ChainLightningComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SettingTitleItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRank\ES_RankPetRewardViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\FunctionEffect.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeasonJingHeZhuru\Event\DlgSeasonJingHeZhuruEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\ChangeEquip\FashionHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningReward\Event\DlgPetMiningRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSetting\ES_FashionShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningChallenge\Event\DlgPetMiningChallengeEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWelfare\ES_WelfareInvestViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanPet\Event\DlgJiaYuanPetEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_SerialViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSkill\DlgSkillSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWarehouse\DlgWarehouseViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_MainActivityTipViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanPet\DlgJiaYuanPetSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTrial\Event\DlgTrialEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgFriend\Event\DlgFriendEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMakeLearn\Event\DlgMakeLearnEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_BossRefreshSettingItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPaiMaiAuction\DlgPaiMaiAuctionSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgShenQiMake\DlgShenQiMakeViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgZuoQi\Event\DlgZuoQiEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTowerFightReward\DlgTowerFightRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSetting\DlgSettingViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RolePropertyBaseItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDungeon\DlgDungeonViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChengJiu\ES_ChengJiuRewardViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UnitGuaJiComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTowerOpen\DlgTowerOpenViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMJLogin\DlgMJLoginSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSolo\DlgSoloSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDonation\ES_DonationShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianTransferViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetChouKaGet\DlgPetChouKaGetSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SkillTianFuItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_ItemAppraisalTipsViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRolePetBag\DlgRolePetBagSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetChallengeItemSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgUnionRecords\DlgUnionRecordsViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIShouJiChapterComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMail\Event\DlgMailEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTask\ES_TaskTypeViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTowerOpen\DlgTowerOpenSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIPaiMaiShopTypeItemComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSettingFrame\Event\DlgSettingFrameEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RoleXiLianSkillItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\ChangePosition_SyncGameObjectPos.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTrialReward\Event\DlgTrialRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTower\DlgTowerSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_MainHpBarViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_SingingViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionRecords\Event\DlgUnionRecordsEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTrial\ES_TrialRankViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\RunRaceRewardInfo_ShowReward.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_TaskTypeItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MakeItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetEgg\DlgPetEggSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleZodiac\Event\DlgRoleZodiacEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTower\ES_TowerDungeonViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UINpcHpComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSelectReward\DlgSelectRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgNewYear\ES_NewYearCollectionWordViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeasonMain\Event\DlgSeasonMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgNewYear\ES_NewYearMonsterViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgHunt\DlgHuntSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleHuiShouViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeamApplyList\DlgTeamApplyListViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RolePetBagItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRole\DlgRoleSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_UnionListItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTrial\DlgTrialSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanMystery\Event\DlgJiaYuanMysteryEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanUpLv\Event\DlgJiaYuanUpLvEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionDonation\Event\DlgUnionDonationEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\Team_TeamPickNotice.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgHunt\DlgHuntViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetEgg\Event\DlgPetEggEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetFormationItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgAuctionRecord\DlgAuctionRecordSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgArenaMain\Event\DlgArenaMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeamDungeon\ES_TeamDungeonShopViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetSkinIconItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChengJiu\ES_PetTuJianViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_PopularizeViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPaiMai\Event\DlgPaiMaiEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgGM\Event\DlgGMEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPhoneCode\Event\DlgPhoneCodeEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgHelper\DlgHelperSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeamDungeon\DlgTeamDungeonViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgUnionKeJi\DlgUnionKeJiViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetEggLucklyExplain\Event\DlgPetEggLucklyExplainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ActivityLoginItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMapBig\Event\DlgMapBigEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPet\ES_PetXiLianViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Unit\Event\UnitDead_PlayDeadAnimate.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleXiLianExplain\Event\DlgRoleXiLianExplainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDungeonLevel\DlgDungeonLevelSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTowerOfSeal\Event\DlgTowerOfSealEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanPasture_BViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgCountry\DlgCountryViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMiJingMain\Event\DlgMiJingMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJingLingGet\DlgJingLingGetViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFriend\ES_FriendListViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTask\Event\DlgTaskEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgHelper\Event\DlgHelperEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetSelect\DlgPetSelectSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEggLucklyExplain\DlgPetEggLucklyExplainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTask\ES_TaskDetailViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSkillTips\DlgSkillTipsSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDungeon\Event\DlgDungeonEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_TaskGetItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSOperaComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetSelect\Event\DlgPetSelectEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgArenaMain\DlgArenaMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTower\ES_TowerShopViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDonation\DlgDonationViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RolePropertyTeShuItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDemonMain\Event\DlgDemonMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeasonMain\DlgSeasonMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\AIViewHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionDonation\DlgUnionDonationSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanTreasureMapStorage\Event\DlgJiaYuanTreasureMapStorageEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanMystery_AViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMJLobby\DlgMJLobbySystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEggChouKaReward\DlgPetEggChouKaRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetMiningFormation\DlgPetMiningFormationViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_UnionKeJiLearnViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPet\ES_PetFormationSetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRank\ES_RankRewardViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\DlgMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UIBehaviour\DlgLSLogin\DlgLSLoginViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLianNumReward\DlgRoleXiLianNumRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanPetFeed\DlgJiaYuanPetFeedViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\RedDotComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMJLogin\DlgMJLoginViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_WelfareTaskItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanBag\DlgJiaYuanBagViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeamApplyList\DlgTeamApplyListSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\IconHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMystery\Event\DlgMysteryEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSLogin\Event\LoginFinish_RemoveUILSLogin.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_UnionRecordsItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetInfo\Event\DlgPetInfoEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeamMain\DlgTeamMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetSet\ES_PetChallengeSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanDaShiProItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetHeChengExplain\DlgPetHeChengExplainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgBattleMain\DlgBattleMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTowerOfSeal\DlgTowerOfSealViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgLoading\DlgLoadingSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSettingSkill\Event\DlgSettingSkillEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFriend\DlgFriendViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSRoom\DlgLSRoomSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MainTaskViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChouKa\ES_ChouKaChapterSelectViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_UnionMystery_AViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_TrialDungeonItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPet\DlgPetViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSLobby\Event\DlgLSLobbyEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgLoading\Event\DlgLoadingEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanFood\DlgJiaYuanFoodSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPet\ES_PetShouHuViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgActivity\Event\DlgActivityEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\FallingFontShowComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetChouKaGet\DlgPetChouKaGetViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgEquipDuiBiTips\DlgEquipDuiBiTipsSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanMenu\DlgJiaYuanMenuSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanPetFeed\Event\DlgJiaYuanPetFeedEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetSet\DlgPetSetSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UIJingLingHpComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMain\DlgMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\FunctionUI.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJingLingGet\DlgJingLingGetSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetHeChengPreview\DlgPetHeChengPreviewViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanMain\Event\DlgJiaYuanMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\UIBaseWindowSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMakeLearn\DlgMakeLearnViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWelfare\DlgWelfareViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_RewardListViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWelfare\ES_WelfareTaskViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDemonMain\DlgDemonMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_CountryTaskItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillLifeShieldViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDungeonHappyMain\DlgDungeonHappyMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UIBehaviour\DlgLogin\DlgLoginViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChouKaReward\DlgChouKaRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChengJiu\Event\DlgChengJiuEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgShouJi\DlgShouJiViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgCountryTips\DlgCountryTipsViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSkill\DlgSkillViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetHeChengExplain\Event\DlgPetHeChengExplainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgStore\Event\DlgStoreEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWeiJingShop\DlgWeiJingShopViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgShenQiMake\Event\DlgShenQiMakeEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgHongBao\Event\DlgHongBaoEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ChengJiuJinglingItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgFirstWinReward\DlgFirstWinRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\HoreseHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_UnionKeJiResearchViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\GameObjectComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetHeXinSuit\Event\DlgPetHeXinSuitEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanPurchaseViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PaiMaiSellItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCountryTips\DlgCountryTipsSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCellDungeonRevive\Event\DlgCellDungeonReviveEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_CreateRoleItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_FriendListItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTrialMain\DlgTrialMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCreateRole\Event\DlgCreateRoleEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_FriendApplyItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Unit\Event\Unit_OnNumericUpdate.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_BossRefreshTimeItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChat\Event\DlgChatEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgBuffTips\DlgBuffTipsSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\TaskViewHelp.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLianTen\DlgRoleXiLianTenViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMapBig\DlgMapBigViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgHuoBiSet\DlgHuoBiSetSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanChouKa\Event\DlgJiaYuanChouKaEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRunRace\Event\DlgRunRaceEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetHeChengPreview\Event\DlgPetHeChengPreviewEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanDaShi\DlgJiaYuanDaShiSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeasonTowerReward\DlgSeasonTowerRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTaskGet\DlgTaskGetSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgNewYear\DlgNewYearViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRole\Event\DlgRoleEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgStore\DlgStoreSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChouKa\DlgChouKaSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\Camera\LSCameraComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanMain\DlgJiaYuanMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UITypeViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgOccTwo\Event\DlgOccTwoEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTask\DlgTaskSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChouKaProbExplain\Event\DlgChouKaProbExplainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDemonMain\DlgDemonMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPet\ES_PetListViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgItemTips\Event\DlgItemTipsEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_AttackGridViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgProtect\ES_ProtectEquipViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\ItemViewHelp.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSLogin\Event\DlgLSLoginEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RechargeItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RoleXiLianNumRewardItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\Fuben_OnFubenSettlement.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgBattle\DlgBattleViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetFormation\DlgPetFormationViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MysteryItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgCountryHuoDongJieShao\DlgCountryHuoDongJieShaoViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSSceneInitFinish_Finish.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeamDungeonCreate\Event\DlgTeamDungeonCreateEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFriend\ES_UnionMyViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgShouJi\ES_ShouJiListViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgGemMake\DlgGemMakeViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_OpenBoxViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_DungeonItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTaskGet\DlgTaskGetViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanChouKa\DlgJiaYuanChouKaViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFenXiang\DlgFenXiangViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UITransferHpComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_MainBuffViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillTianFuViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRolePetBag\Event\DlgRolePetBagEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgZhanQu\DlgZhanQuViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSelectReward\DlgSelectRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetMiningTeam\DlgPetMiningTeamViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanMain\DlgJiaYuanMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\CommonUI\ESReuseUI.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetSet\Event\DlgPetSetEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWarehouse\DlgWarehouseSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLogin\Event\AppStartInitFinish_CreateLoginUI.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetEggChouKaReward\Event\DlgPetEggChouKaRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLian\DlgRoleXiLianViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanDaShi\DlgJiaYuanDaShiViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRank\ES_RankPetItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDungeonMapTransfer\DlgDungeonMapTransferSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ActivityTokenItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetHeXinHeCheng\DlgPetHeXinHeChengViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Scene\AfterCreateClientScene_AddComponent.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetEggChouKaProbExplain\Event\DlgPetEggChouKaProbExplainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChengJiu\DlgChengJiuViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanMystery\DlgJiaYuanMysteryViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Opera\Task_OnTaskNpcDialog.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_MainSkillGridSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTowerOfSeal\DlgTowerOfSealSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgUnionDonation\DlgUnionDonationViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSetting\Event\DlgSettingEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MakeNeedItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgCountry\ES_CountryHuoDongViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Module\Resource\GameObjectHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RankShowItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\AnimatorComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWatchPaiMai\DlgWatchPaiMaiSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanVisitItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleGemHoleViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgShouJiSelect\Event\DlgShouJiSelectEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanPurchaseItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgHuoBiSet\DlgHuoBiSetViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Fsm\Event\Fsm_OnFsmChange.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\UISkillDragComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDungeonLevel\DlgDungeonLevelViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgItemSellTip\DlgItemSellTipSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetCangKuItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRandomOpen\Event\DlgRandomOpenEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleXiLianTen\Event\DlgRoleXiLianTenEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Scene\SceneManagerComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFriend\ES_FriendApplyViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningTeam\Event\DlgPetMiningTeamEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCellDungeonRevive\DlgCellDungeonReviveSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWarehouse\ES_WarehouseRoleViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionMystery\Event\DlgUnionMysteryEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\Login_OnReturnLogin.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTrialReward\DlgTrialRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWatch\DlgWatchSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\Arena_OnAreneInfo.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ZuoQiShowItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SkillLearnSkillItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDungeonHappyMain\Event\DlgDungeonHappyMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPaiMai\DlgPaiMaiSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_TaskGrowUpItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Effect\EffectSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPaiMaiBuyTip\DlgPaiMaiBuyTipViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeasonJingHeZhuru\DlgSeasonJingHeZhuruSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgHongBao\DlgHongBaoViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgHunt\ES_HuntRankingViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChouKaWarehouse\Event\DlgChouKaWarehouseEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMiJingMain\DlgMiJingMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMJLogin\Event\DlgMJLoginEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetFubenResult\Event\DlgPetFubenResultEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCommonReward\Event\DlgCommonRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleXiLianNumReward\Event\DlgRoleXiLianNumRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeamDungeonCreate\DlgTeamDungeonCreateSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRank\DlgRankViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTrialReward\DlgTrialRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_FriendBlackItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWarehouse\ES_WarehouseAccountViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgBattle\Event\DlgBattleEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSolo\DlgSoloViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MainChatItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMain\Event\EnterMapFinish_CreateUIMain.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPopupTip\DlgPopupTipViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeasonJingHeZhuru\DlgSeasonJingHeZhuruViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RunRaceItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWelfare\ES_WelfareDraw2ViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSettingFrame\DlgSettingFrameSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTask\ES_TaskGrowUpViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRandomOpen\DlgRandomOpenSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UIBehaviour\DlgLSLobby\DlgLSLobbyViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_CostListViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_RoleHeadViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_BattleTaskItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDungeonHappyMain\DlgDungeonHappyMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSUnitViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetEggListViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPhoneCode\DlgPhoneCodeViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillMakeViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgGemMake\DlgGemMakeSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgCommonReward\DlgCommonRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLogin\DlgLoginSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgOccTwoShow\DlgOccTwoShowViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSRoom\Event\DlgLSRoomEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgBuffTips\Event\DlgBuffTipsEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionKeJi\Event\DlgUnionKeJiEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Module\TrueSync\TrueSyncExtensions.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivityTeHuiViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UIPetHpComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChouKa\Event\DlgChouKaEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanMystery_BViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SeasonJingHeItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgShenQiMake\DlgShenQiMakeSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTower\Event\DlgTowerEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanPetWalkItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_PetCangKuViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMail\DlgMailSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIRoleXiLianTenItemSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\DlgRoleViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgShouJiSelect\DlgShouJiSelectSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ChengJiuTypeItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPet\ES_PetInfoShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgShouJi\Event\DlgShouJiEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanChouKa\DlgJiaYuanChouKaSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFriend\DlgFriendBlackSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChouKaReward\DlgChouKaRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleBagSplit\DlgRoleBagSplitSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgDungeonMapTransfer\DlgDungeonMapTransferViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MainTeamItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgAppraisalSelect\DlgAppraisalSelectViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SkillSetItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanPasture\DlgJiaYuanPastureSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIChengJiuShowTypeSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWarehouse\ES_WarehouseGemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonTowerViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ZhanQuCombatItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanTreasureMapStorage\DlgJiaYuanTreasureMapStorageSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RankRewardItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonTaskViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanCookbookViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanCookingViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UIMonsterHpComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanDaShi\Event\DlgJiaYuanDaShiEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RankItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLogin\Event\DlgLoginEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgShouJiSelect\DlgShouJiSelectViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLobby\DlgLobbySystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanRecord\Event\DlgJiaYuanRecordEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UIItemBehaviour\Item_testViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PaiMaiShopItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_UnionMysteryItem_AViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UIXuLieZhenComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleXiLian\Event\DlgRoleXiLianEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\EUIRootHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningReward\DlgPetMiningRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetEggLucklyExplain\DlgPetEggLucklyExplainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\ReddotViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetEggDuiHuanViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_MainSkillFangunSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFriend\DlgFriendListSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSettingFrame\DlgSettingFrameViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_MainSkillViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_DonationShowItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\Reddot_OnReddotChange.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChengJiu\ES_ChengJiuJinglingViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRechargeReward\DlgRechargeRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPaiMai\ES_PaiMaiSellViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgItemTips\Event\ShowItemTips_CreateItemTips.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChouKaProbExplain\DlgChouKaProbExplainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\UIMainBuffItemComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgNewYear\Event\DlgNewYearEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPaiMai\DlgPaiMaiViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleXiLianTen\DlgRoleXiLianTenSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetListItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSLobby\Event\LoginFinish_CreateUILSLobby.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgZhanQu\ES_ZhanQuLevelViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeasonMain\DlgSeasonMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ChengJiuTypeItemItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgBuffTips\DlgBuffTipsViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeamDungeon\ES_TeamDungeonMyViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMystery\DlgMysteryViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWorldLv\DlgWorldLvViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPaiMaiSellPrice\Event\DlgPaiMaiSellPriceEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\PlayerPrefsHelp.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanPetFeed\DlgJiaYuanPetFeedSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_JoystickMoveViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgHunt\ES_HuntTaskViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRolePetBag\DlgRolePetBagViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSettingSkill\DlgSettingSkillViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIShenQiChapterComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRank\DlgRankSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\EUIHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_RankUnionTaskItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleGemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_FenXiangSetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ChengJiuShowItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivityTokenViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPet\DlgPetSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_FashionShowItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMystery\DlgMysterySystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeason\DlgSeasonViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_ButtonPositionSetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgActivity\DlgActivityViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\RunRace_OnRunRaceBattleInfo.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\Battle_OnBattleInfo.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeasonTowerReward\DlgSeasonTowerRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRunRaceMain\DlgRunRaceMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgEnterMapHint\Event\DlgEnterMapHintEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgHappyMain\Event\DlgHappyMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWatchPaiMai\Event\DlgWatchPaiMaiEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_WelfareInvestItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanUpLv\DlgJiaYuanUpLvViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRunRace\DlgRunRaceViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDonation\DlgDonationSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgHappyMain\DlgHappyMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgAuctionRecord\Event\DlgAuctionRecordEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Sound\SoundComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgFashionExplain\Event\DlgFashionExplainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPaiMaiSellPrice\DlgPaiMaiSellPriceViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionMystery\DlgUnionMysterySystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetMiningReward\DlgPetMiningRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_RolePropertyViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPaiMai\ES_PaiMaiShopViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanPasture\DlgJiaYuanPastureViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningFormation\DlgPetMiningFormationSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCountryHuoDongJieShao\Event\DlgCountryHuoDongJieShaoEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeasonLordDetail\DlgSeasonLordDetailViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\SkillYujingComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UIBehaviour\DlgLobby\DlgLobbyViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianSkillViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgBattle\ES_BattleShopViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Skill\Event\Skill_OnSkillEffect.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetMiningRewardItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSetting\ES_SettingTitleViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleBagSplit\Event\DlgRoleBagSplitEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\Scene\AfterCreateClientScene_LSAddComponent.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSetting\ES_SettingGuaJiViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMakeLearn\DlgMakeLearnSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgGM\DlgGMViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWarehouse\Event\DlgWarehouseEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleBagViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFashionExplain\DlgFashionExplainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeamApplyList\Event\DlgTeamApplyListEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_MapBigNpcItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_WeiJingShopItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgZhuaPu\DlgZhuaPuSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionRecords\DlgUnionRecordsSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTrial\ES_TrialDungeonViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetEggChouKaProbExplain\DlgPetEggChouKaProbExplainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionDonationRecord\Event\DlgUnionDonationRecordEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgItemSellTip\DlgItemSellTipViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetInfo\DlgPetInfoSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCountryTips\Event\DlgCountryTipsEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgGM\DlgGMSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTaskGet\Event\DlgTaskGetEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPhoneCode\DlgPhoneCodeSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetInfo\DlgPetInfoViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanMenu\Event\DlgJiaYuanMenuEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgFirstWinReward\Event\DlgFirstWinRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_FriendChatItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetSet\ES_PetMiningSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\HappyInfo_OnHappyInfo.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDungeonLevel\Event\DlgDungeonLevelEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMain\Event\DlgPetMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTowerOpen\Event\DlgTowerOpenEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSLobby\DlgLSLobbySystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChouKaWarehouse\DlgChouKaWarehouseViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanMysteryItem_AViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivityMaoXianViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChouKaProbExplain\DlgChouKaProbExplainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Scene\AfterCreateCurrentScene_AddComponent.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRank\ES_RankShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPaiMaiBuyTip\DlgPaiMaiBuyTipSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ActivityTeHuiItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Unit\Event\UnitRevive_PlayIdleAnimate.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgAuctionRecord\DlgAuctionRecordViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgProtect\DlgProtectViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionDonationRecord\DlgUnionDonationRecordSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Unit\Event\RoleDataBroadcase_OnBroadcast.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetHeXinSuit\DlgPetHeXinSuitViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCountryHuoDongJieShao\DlgCountryHuoDongJieShaoSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SeasonStoreItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgZuoQi\DlgZuoQiViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTrialMain\DlgTrialMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanRecord\DlgJiaYuanRecordSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Camera\MJCameraComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonHomeViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetEggChouKaViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgHuoBiSet\Event\DlgHuoBiSetEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSelectReward\Event\DlgSelectRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanTreasureMapStorage\DlgJiaYuanTreasureMapStorageViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\UIEventComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\LayerHelp.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PaiMaiBuyItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_UnionKeJiResearchItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\FlyTip\FlyTipComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSkill\ES_ShieldViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRecharge\DlgRechargeSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_TeamDungeonItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWorldLv\DlgWorldLvSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleQiangHuaItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgAppraisalSelect\DlgAppraisalSelectSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFirstWinReward\DlgFirstWinRewardViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianLevelViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeamDungeon\ES_TeamItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChengJiu\DlgChengJiuSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\PopupTipHelp.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIShouJiTreasureTypeComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgEnterMapHint\DlgEnterMapHintViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanPasture_AViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgItemSellTip\Event\DlgItemSellTipEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCountry\DlgCountrySystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\LockTargetComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UIDropComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEgg\DlgPetEggViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\SettingHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRecharge\DlgRechargeViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPaiMaiBuyTip\Event\DlgPaiMaiBuyTipEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSAnimatorComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleBagSplit\DlgRoleBagSplitViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivitySingleRechargeViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIShouJiItemComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgBattleMain\DlgBattleMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMail\DlgMailViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ActivitySingInItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Map\RankDemonInfo_UpdateRank.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SelectRewardItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_CommonSkillItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Unit\Event\UnitRemove_OnUnitRemove.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMain\Event\DlgMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_MapMiniViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SeasonTowerRankItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UIBehaviour\DlgHelper\DlgHelperViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_LunTanViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeasonTowerReward\Event\DlgSeasonTowerRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWelfare\ES_ActivityLoginViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\ChangeEquip\ChangeEquipComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWatch\ES_WatchEquipViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetMiningTeamItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPaiMaiSellPrice\DlgPaiMaiSellPriceSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTower\DlgTowerViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanWarehouse\Event\DlgJiaYuanWarehouseEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgBattle\ES_BattleEnterViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_BattleShopItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanDaShi\ES_JiaYuanDaShiProViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgProtect\DlgProtectSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWatchPaiMai\DlgWatchPaiMaiViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_TeamApplyItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSolo\Event\DlgSoloEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgZhuaPu\Event\DlgZhuaPuEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanPastureItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSetting\DlgSettingSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWatchMenu\DlgWatchMenuViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTowerFightReward\Event\DlgTowerFightRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ChengJiuRewardItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianInheritViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetSelectItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanWarehouse\DlgJiaYuanWarehouseViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Component\UIPlayerHpComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleZodiac\DlgRoleZodiacSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\UIPathComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetEggChouKaReward\DlgPetEggChouKaRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgUnionKeJi\DlgUnionKeJiSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetHeXinChouKaViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleXiLianExplain\DlgRoleXiLianExplainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgCreateRole\DlgCreateRoleViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivityYueKaViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_UnionKeJiLearnItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleZodiac\DlgRoleZodiacViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SeasonDayTaskItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPet\ES_PetHeChengViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Plugins\EUI\UIComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRunRaceMain\Event\DlgRunRaceMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_FenXiangQQAddSetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRechargeReward\DlgRechargeRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_CommonItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgZuoQi\ES_ZuoQiShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\MoveStop_PlayIdleAnimate.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\GlobalHelp.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleQiangHuaViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgShouJi\DlgShouJiSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTask\DlgTaskViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetSet\DlgPetSetViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCommonReward\DlgCommonRewardSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSetting\ES_SettingGameViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_UnionMystery_BViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanMenu\DlgJiaYuanMenuViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWelfare\DlgWelfareSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\DuiHuaHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetHeXinHeCheng\DlgPetHeXinHeChengSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgOccTwo\DlgOccTwoViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetHeChengExplain\DlgPetHeChengExplainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\MapViewHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillSetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_SkillGridViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLSLogin\Event\AppStartInitFinish_CreateUILSLogin.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_CommonCostItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ZhanQuLevelItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgUnionMystery\DlgUnionMysteryViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWeiJingShop\DlgWeiJingShopSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanPastureItem_AViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgFenXiang\DlgFenXiangSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetMiningChallenge\DlgPetMiningChallengeViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetMiningChallengeItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_CommonItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanRecord\DlgJiaYuanRecordViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeamDungeon\DlgTeamDungeonSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSkill\Event\DlgSkillEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetHeChengPreview\DlgPetHeChengPreviewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgStore\DlgStoreViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanFood\Event\DlgJiaYuanFoodEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_NewYearCollectionWordItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgZhuaPu\DlgZhuaPuViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_HuntTaskItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTrial\DlgTrialViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetHeXinHeCheng\Event\DlgPetHeXinHeChengEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\AfterUnitCreate_CreateUnitView.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\Other\UIPaiMaiShopTypeComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_ModelShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTrialMain\Event\DlgTrialMainEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Scene\SceneChangeStart_AddComponent.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanBag\Event\DlgJiaYuanBagEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SeasonTaskItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_EquipItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgOccTwoShow\Event\DlgOccTwoShowEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_CostItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Fsm\FsmComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgCreateRole\DlgCreateRoleSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgTeamDungeon\ES_TeamDungeonListViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetMiningRecord\DlgPetMiningRecordViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgGemMake\Event\DlgGemMakeEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_CountryTaskViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_PetEggChouKaRewardItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgOccTwo\DlgOccTwoSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRoleXiLianExplain\DlgRoleXiLianExplainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanDaShi\ES_JiaYuanDaShiShowViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillLearnViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonJingHeViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWorldLv\Event\DlgWorldLvEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWatchMenu\DlgWatchMenuSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\FlyTip\Event\ShowFlyTip_Spawn.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningChallenge\DlgPetMiningChallengeSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgEquipDuiBiTips\DlgEquipDuiBiTipsViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgMapBig\DlgMapBigSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeam\DlgTeamSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanPet\DlgJiaYuanPetViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgFenXiang\Event\DlgFenXiangEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgEnterMapHint\DlgEnterMapHintSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetChouKaGet\Event\DlgPetChouKaGetEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Opera\OperaComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRolePetBag\Event\RolePetAdd_Refresh.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\MoveStart_PlayMoveAnimate.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgActivity\DlgActivitySystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetHeXinSuit\DlgPetHeXinSuitSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgWelfare\ES_WelfareDrawViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRunRace\DlgRunRaceSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetMiningRecord\DlgPetMiningRecordSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ChouKaRewardItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_ActivitySingleRechargeItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetEggListItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_DungeonLevelItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgFriend\DlgFriendSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgSeasonLordDetail\DlgSeasonLordDetailSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_UnionMyItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPetFormation\DlgPetFormationSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgArenaMain\DlgArenaMainViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgPopupTip\DlgPopupTipSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChat\DlgChatSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanWarehouse\DlgJiaYuanWarehouseSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeam\Event\DlgTeamEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChouKa\DlgChouKaViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\DlgLobby\Event\DlgLobbyEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJingLingGet\Event\DlgJingLingGetEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\CommonViewHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgMain\ES_MainTeamSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgChat\ES_ChatViewViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgTeamMain\DlgTeamMainSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRecharge\Event\DlgRechargeEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UIBehaviour\DlgLSRoom\DlgLSRoomViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgZhanQu\Event\DlgZhanQuEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UIItemBehaviour\Item_LobbyRoleViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRechargeReward\Event\DlgRechargeRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgProtect\Event\DlgProtectEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgDungeonMapTransfer\Event\DlgDungeonMapTransferEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgRole\ES_EquipSetViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgChouKaReward\Event\DlgChouKaRewardEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgWatchMenu\Event\DlgWatchMenuEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRoleXiLian\DlgRoleXiLianSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_SkillLearnItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgItemTips\DlgItemTipsViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\Help\StringBuilderHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanPasture\Event\DlgJiaYuanPastureEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIItemBehaviour\Item_JiaYuanDaShiShowItemViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanPetWalkViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgZhanQu\ES_ZhanQuCombatViewSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgRank\Event\DlgRankEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanPlanWatch\DlgJiaYuanPlanWatchSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgJiaYuanPlanWatch\DlgJiaYuanPlanWatchViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgJiaYuanPlanWatch\Event\DlgJiaYuanPlanWatchEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgOpenChest\Event\DlgOpenChestEventHandler.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UI\DlgOpenChest\DlgOpenChestSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\MengJing\UIBehaviour\DlgOpenChest\DlgOpenChestViewComponentSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Scripts\HotfixView\Unity.HotfixView.asmdef" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIWidgetsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIWidgetsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.CoreModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.DeviceSimulatorModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.DeviceSimulatorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.DiagnosticsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.DiagnosticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.GraphViewModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.PackageManagerUIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.PackageManagerUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.QuickSearchModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.QuickSearchModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.SceneTemplateModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TextCoreFontEngineModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreFontEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TextCoreTextEngineModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIBuilderModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIBuilderModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsSamplesModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIServiceModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIServiceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UnityConnectModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Bson.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Assets\Plugins\MongoDB\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>Assets\Plugins\MongoDB\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Libmongocrypt.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpCompress">
+      <HintPath>Assets\Plugins\MongoDB\SharpCompress.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LZ4">
+      <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@e5a6952777\Plugins\LZ4.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CommandLine">
+      <HintPath>Assets\Plugins\CommandLine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>Assets\Plugins\NLog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@e5a6952777\Plugins\dnlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DnsClient">
+      <HintPath>Assets\Plugins\MongoDB\DnsClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Driver.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Runtime.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Xml.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Net.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.IO.Compression.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Microsoft.CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Data.DataSetExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.IO.Compression.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Transactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\netstandard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.AppContext.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.Concurrent.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.NonGeneric.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.Specialized.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.Annotations.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.EventBasedAsync.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Console.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Data.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Contracts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Debug.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Process.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Tools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Drawing.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Dynamic.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.Calendars.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.DriveInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.Watcher.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.IsolatedStorage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.MemoryMappedFiles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.Pipes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Expressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Queryable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Rtc">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Http.Rtc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.NameResolution.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.NetworkInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Ping.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Requests.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Sockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebHeaderCollection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebSockets.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebSockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ObjectModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.DispatchProxy">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.DispatchProxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.ILGeneration">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.ILGeneration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.Lightweight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.Reader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.Writer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Handles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Claims.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Csp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Principal.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.SecureString.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Duplex">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Duplex.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.NetTcp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.Encoding.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.RegularExpressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Overlapped.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Thread.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.ThreadPool.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Timer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ValueTuple.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XmlDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XmlSerializer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MemoryPack">
+      <HintPath>Library\ScriptAssemblies\MemoryPack.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="YooAsset">
+      <HintPath>Library\ScriptAssemblies\YooAsset.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.ThirdParty.csproj">
+      <Project>{E15BADD2-3A26-309A-AB0F-DC5B08044350}</Project>
+      <Name>Unity.ThirdParty</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Core.csproj">
+      <Project>{EB9B0E77-13B3-6137-FAA2-76DAF4B34ADA}</Project>
+      <Name>Unity.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Loader.csproj">
+      <Project>{986BB732-F4B8-64F8-D1F9-50CF255042D8}</Project>
+      <Name>Unity.Loader</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Model.csproj">
+      <Project>{B4BF9894-F5D9-41C4-13E3-3F26F7700E29}</Project>
+      <Name>Unity.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Hotfix.csproj">
+      <Project>{1066F652-6A89-D1C4-9881-1A19DF7AB80E}</Project>
+      <Name>Unity.Hotfix</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ModelView.csproj">
+      <Project>{2F8409C1-DA01-D464-DBF2-00C6449E459E}</Project>
+      <Name>Unity.ModelView</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
+      <Project>{d1f2986b-b296-4a2d-8f12-be9f470014c3}</Project>
+      <Name>Analyzer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).dll" DestinationFiles="$(ProjectDir)/Assets/Bundles/Code/$(TargetName).dll.bytes" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).pdb" DestinationFiles="$(ProjectDir)/Assets/Bundles/Code/$(TargetName).pdb.bytes" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).dll" DestinationFiles="$(ProjectDir)/Temp/Bin/Debug/$(TargetName).dll" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).pdb" DestinationFiles="$(ProjectDir)/Temp/Bin/Debug/$(TargetName).pdb" ContinueOnError="false" />
+  </Target>
+
+</Project>

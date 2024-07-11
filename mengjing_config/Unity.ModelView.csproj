@@ -1,0 +1,1667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace>ET</RootNamespace>
+    <ProjectGuid>{2F8409C1-DA01-D464-DBF2-00C6449E459E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Unity.ModelView</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_IG;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITY;ENABLE_VIEW;TapTap1;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169;USG0001</NoWarn>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169;USG0001</NoWarn>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.22</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorStyle>Legacy</UnityProjectGeneratorStyle>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>2021.3.29f1c1</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="F:\soft\vs\ide\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="H:\GitMengJing\Unity\Assets\Plugins\Share.SourceGenerator.dll" />
+    <Analyzer Include="H:\GitMengJing\Unity\Library\PackageCache\com.cysharp.memorypack@286a8caeac\Runtime\MemoryPack.Generator\MemoryPack.Generator.Roslyn3.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanPasture\DlgJiaYuanPasture.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\DlgRoleViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SeasonDayTaskItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ChatItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRunRaceMain\DlgRunRaceMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEggChouKaProbExplain\DlgPetEggChouKaProbExplainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgZhanQu\ES_ZhanQuCombat.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\MonsterActRangeComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_CommonItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgItemSellTip\DlgItemSellTipViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRunRace\DlgRunRaceViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSetting\ES_SettingTitle.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetSet\ES_PetChallenge.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFriend\DlgFriendViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RolePetBagItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFirstWinReward\DlgFirstWinRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPhoneCode\DlgPhoneCode.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgChouKaWarehouse\DlgChouKaWarehouse.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivityMaoXian.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleBagSplit\DlgRoleBagSplitViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ActivitySingleRechargeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianLevelItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_JoystickMove.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgLoading\DlgLoading.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanPurchaseItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\UISkillDragComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIMonsterHpComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgAuctionRecord\DlgAuctionRecord.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRolePetBag\DlgRolePetBagViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_SkillGrid.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_AttackGrid.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanDaShi\ES_JiaYuanDaShiPro.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWeiJingShop\DlgWeiJingShopViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgZhuaPu\DlgZhuaPuViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MainTask.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanRecord\DlgJiaYuanRecordViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanUpLv\DlgJiaYuanUpLvViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RunRaceItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgUnionMystery\DlgUnionMysteryViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIShouJiTreasureItemComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_CostList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRoleZodiac\DlgRoleZodiac.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\LockStep\LSUnitViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSetting\ES_SettingGuaJi.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIJiaYuanPlanComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgHappyMain\DlgHappyMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChouKaWarehouse\DlgChouKaWarehouseViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\JiaYuanData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgDungeon\DlgDungeon.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetEggChouKaProbExplain\DlgPetEggChouKaProbExplain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIShouJiChapterComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWatchMenu\DlgWatchMenuViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJingLingGet\DlgJingLingGet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSeasonMain\DlgSeasonMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianInherit.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetHeXinSuit\DlgPetHeXinSuitViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIShenQiChapterComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetMiningFormation\DlgPetMiningFormation.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UITypeViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgCountryTips\DlgCountryTipsViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanMain\DlgJiaYuanMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UIBehaviour\DlgLSLogin\DlgLSLoginViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgUnionRecords\DlgUnionRecordsViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_PetCangKu.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_ButtonPositionSet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgMJLobby\DlgMJLobby.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UIBehaviour\DlgLogin\DlgLoginViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\Unit\AnimatorComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMJLogin\DlgMJLoginViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRandomOpen\DlgRandomOpenViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTowerOfSeal\DlgTowerOfSeal.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIJiaYuanPastureComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSelectReward\DlgSelectReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChengJiu\ES_PetTuJian.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgAuctionRecord\DlgAuctionRecordViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgBattle\ES_BattleTask.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFriend\ES_FriendBlack.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_UnionMysteryItem_A.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MapBigNpcItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_LobbyRole.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetEggListItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivityYueKa.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RankItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTower\DlgTowerViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RoleXiLianNumRewardItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivityTeHui.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPopupTip\DlgPopupTip.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgShouJi\ES_ShouJiTreasure.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIDropComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgZhanQu\DlgZhanQu.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChat\ES_ChatView.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPet\DlgPet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgZhuaPu\DlgZhuaPu.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPaiMai\ES_PaiMaiBuy.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgZuoQi\DlgZuoQi.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_UnionMyItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\Unit\GameObjectComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanPurchase.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SettingTitleItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTaskGet\DlgTaskGetViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgWarehouse\DlgWarehouse.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetChouKaGet\DlgPetChouKaGet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRank\DlgRankViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Scene\SceneManagerComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgUnionDonation\DlgUnionDonation.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RechargeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWorldLv\DlgWorldLvViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SeasonTowerRankItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_Popularize.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\DlgLSLogin\DlgLSLogin.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLian\DlgRoleXiLianViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeasonLordDetail\DlgSeasonLordDetailViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanMain\DlgJiaYuanMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSeason\DlgSeason.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgFirstWinReward\DlgFirstWinReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RankUnionTaskItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetTuJianItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_MainSkillGrid.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTowerOpen\DlgTowerOpenViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgChat\DlgChat.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTeamApplyList\DlgTeamApplyList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RolePropertyBaseItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\Example\ModelView.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetEggLucklyExplain\DlgPetEggLucklyExplain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillTianFu.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanDaShiShowItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ChengJiuShowItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleBag.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgMakeLearn\DlgMakeLearn.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetHeChengPreview\DlgPetHeChengPreviewViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\LayerNames.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_FriendBlackItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianTransfer.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgHuoBiSet\DlgHuoBiSetViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanPetFeed\DlgJiaYuanPetFeed.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetSet\ES_PetMining.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\UIPathComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\MaskWordHelper.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPet\ES_PetFormationSet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanPasture_A.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanMystery\DlgJiaYuanMystery.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleQiangHuaItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetMiningChallenge\DlgPetMiningChallenge.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetMiningChallenge\DlgPetMiningChallengeViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\WindowId.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeamDungeon\ES_TeamItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\ChengJiuData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWarehouse\DlgWarehouseViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_HuntTaskItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\JiaYuanPlanEffectComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_WelfareInvestItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\AIViewData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgMiJingMain\DlgMiJingMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRank\ES_RankPetReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanMenu\DlgJiaYuanMenuViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_FriendChatItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLianExplain\DlgRoleXiLianExplainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgUnionKeJi\DlgUnionKeJiViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetInfo\DlgPetInfoViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgProtect\ES_ProtectPet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRoleXiLianNumReward\DlgRoleXiLianNumReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetMiningTeam\DlgPetMiningTeam.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPaiMai\DlgPaiMaiViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetMain\DlgPetMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgHappyMain\DlgHappyMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonStore.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFriend\ES_UnionShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetCangKuItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgUnionRecords\DlgUnionRecords.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgChengJiu\DlgChengJiu.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgMystery\DlgMystery.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\UnionData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgZhanQu\DlgZhanQuViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetCangKuDefend.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetMiningRecord\DlgPetMiningRecordViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRecharge\DlgRechargeViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIPetHpComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PaiMaiSellItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTask\DlgTask.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTowerFightReward\DlgTowerFightReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgMapBig\DlgMapBig.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChouKa\ES_ChouKaChapterSelect.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgDungeonHappyMain\DlgDungeonHappyMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFashionExplain\DlgFashionExplainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMapBig\DlgMapBigViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChengJiu\ES_ChengJiuShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgWatchMenu\DlgWatchMenu.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ChengJiuRewardItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonJingHe.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianSkill.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\UIComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRunRace\DlgRunRace.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanChouKa\DlgJiaYuanChouKaViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetSet\DlgPetSetViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPaiMai\ES_PaiMaiSell.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgHuoBiSet\DlgHuoBiSet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\UIBaseWindow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanPetWalkItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetInfo\DlgPetInfo.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RolePropertyTeShuItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDonation\ES_DonationUnion.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFriend\DlgFriendBlack.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanVisitItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MainChatItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeasonTowerReward\DlgSeasonTowerRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ActivityLoginItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgHunt\ES_HuntRanking.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgDungeonLevel\DlgDungeonLevel.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ChengJiuJinglingItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanBag\DlgJiaYuanBag.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillSet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\ABAtlasHelp.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgChouKaProbExplain\DlgChouKaProbExplain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_RoleHead.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MainTeamItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgWatch\DlgWatch.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanPastureItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetFormationItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIChengJiuShowType.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetSet\DlgPetSet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgGemMake\DlgGemMakeViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ChangeEquipComponent\ChangeEquipComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSeasonLordDetail\DlgSeasonLordDetail.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgEnterMapHint\DlgEnterMapHintViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIChengJiuShowChapterItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRole\DlgRole.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWarehouse\ES_WarehouseAccount.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgHunt\ES_HuntTask.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_TeamDungeonItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSelectReward\DlgSelectRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\DlgLSRoom\DlgLSRoom.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSolo\DlgSoloViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanChouKa\DlgJiaYuanChouKa.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDonation\ES_RankUnion.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_UnionMystery_B.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIRoleXiLianTenItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWelfare\ES_WelfareTask.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgShouJiSelect\DlgShouJiSelect.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Effect\Effect.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetFormation\DlgPetFormationViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_BossRefreshSettingItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ZhanQuLevelItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeamDungeon\DlgTeamDungeonViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ActivityTokenItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWelfare\ES_WelfareInvest.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ChengJiuTypeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_FenXiangSet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWelfare\ES_WelfareDraw2.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_EquipTips.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\UIMainBuffItemComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_DungeonLevelItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLianTen\DlgRoleXiLianTenViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEgg\DlgPetEggViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SkillSetItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanCookbook.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Fsm\AFsmHandler.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetHeChengExplain\DlgPetHeChengExplain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetEggChouKaReward\DlgPetEggChouKaReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanFood\DlgJiaYuanFood.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTeamMain\DlgTeamMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgCountryTips\DlgCountryTips.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLianNumReward\DlgRoleXiLianNumRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_MainBuff.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_EquipSet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleQiangHua.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgGemMake\DlgGemMake.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSettingSkill\DlgSettingSkill.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\HeroTransformComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\IPHoneData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFriend\DlgFriendList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSetting\ES_SettingGame.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPet\ES_PetHeCheng.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetSet\ES_PetMiningItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetFubenResult\DlgPetFubenResult.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanMystery_A.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPaiMai\ES_PaiMaiShop.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ActivitySingInItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_CommonCostItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgStore\DlgStore.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_TaskGrowUpItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChouKaReward\DlgChouKaRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTask\ES_TaskType.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_TaskGetItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgWeiJingShop\DlgWeiJingShop.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RankRewardItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPaiMaiBuyTip\DlgPaiMaiBuyTip.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTask\DlgTaskViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgMJLogin\DlgMJLogin.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgArenaMain\DlgArenaMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTask\ES_TaskGrowUp.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgZhanQu\ES_FirstWin.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIJingLingHpComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChat\DlgChatViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\Opera\OperaComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_CreateRoleItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSetting\DlgSetting.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Camera\MJCameraComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgItemTips\DlgItemTips.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgCountry\ES_CountryHuoDong.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanMystery\DlgJiaYuanMysteryViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgWatchPaiMai\DlgWatchPaiMai.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTowerOpen\DlgTowerOpen.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanWarehouse\DlgJiaYuanWarehouse.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgUnionDonation\DlgUnionDonationViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgLoading\DlgLoadingViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTowerOfSeal\DlgTowerOfSealViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTrial\DlgTrial.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_CommonItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_MainSkillFangun.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgCommonReward\DlgCommonRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWarehouse\ES_WarehouseRole.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJingLingGet\DlgJingLingGetViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgActivity\DlgActivityViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ZuoQiShowItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTeam\DlgTeam.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRank\ES_RankPetItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgBuffTips\DlgBuffTipsViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSolo\DlgSolo.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_WeiJingShopItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_MainSkill.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleXiLian\ES_RoleXiLianLevel.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleGem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDungeon\DlgDungeonViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTrial\ES_TrialDungeon.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPaiMaiAuction\DlgPaiMaiAuction.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MailItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRechargeReward\DlgRechargeReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SeasonStoreItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_UnionKeJiResearch.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPopupTip\DlgPopupTipViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetChouKaGet\DlgPetChouKaGetViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRoleXiLian\DlgRoleXiLian.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\LockTargetComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanPasture\DlgJiaYuanPastureViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgHunt\DlgHunt.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTrialReward\DlgTrialReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanPetFeed\DlgJiaYuanPetFeedViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\DlgMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeasonJingHeZhuru\DlgSeasonJingHeZhuruViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSkill\DlgSkillViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRandomOpen\DlgRandomOpen.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgBattle\ES_BattleEnter.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRolePetBag\DlgRolePetBag.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\UIEventComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgCreateRole\DlgCreateRoleViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSettingSkill\DlgSettingSkillViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SkillLearnItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDungeonMapTransfer\DlgDungeonMapTransferViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleHuiShou.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\DlgLSLobby\DlgLSLobby.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_LunTan.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ChouKaRewardItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_BossRefreshTimeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\DlgLobby\DlgLobby.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\GlobalData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTask\ES_TaskDetail.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillLearn.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\LockStep\LSUnitView.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRank\DlgRank.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgOccTwoShow\DlgOccTwoShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTeamDungeon\DlgTeamDungeon.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgCountry\DlgCountryViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTrial\ES_TrialRank.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_FenXiangQQAddSet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillLifeShield.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTrialReward\DlgTrialRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgWorldLv\DlgWorldLv.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgCommonReward\DlgCommonReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWelfare\DlgWelfareViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetSkinIconItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDonation\ES_DonationShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgEquipDuiBiTips\DlgEquipDuiBiTips.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetFubenResult\DlgPetFubenResultViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_CountryTask.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetSelect\DlgPetSelectViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_FriendListItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\Tools\UIFindHelper.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDungeonLevel\DlgDungeonLevelViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_Singing.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgNewYear\ES_NewYearCollectionWord.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgProtect\DlgProtectViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgHunt\DlgHuntViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RoleXiLianSkillItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSeasonTowerReward\DlgSeasonTowerReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetListItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgArenaMain\DlgArenaMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgDungeonMapTransfer\DlgDungeonMapTransfer.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetHeXinHeCheng\DlgPetHeXinHeCheng.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\GameSettingLanguge.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeasonMain\DlgSeasonMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\ItemViewData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgDonation\DlgDonation.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetEggChouKaRewardItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgBattle\ES_BattleShop.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRank\ES_RankReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_MapMini.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\SkillYujingComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgNewYear\DlgNewYearViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetMiningFormation\DlgPetMiningFormationViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPet\ES_PetInfoShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetMiningChallengeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanFood\DlgJiaYuanFoodViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\SkillData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgChouKa\DlgChouKa.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeamMain\DlgTeamMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UIItemBehaviour\Item_test.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTrial\DlgTrialViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSeasonJingHeZhuru\DlgSeasonJingHeZhuru.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEggChouKaReward\DlgPetEggChouKaRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_CommonSkillItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_TrialDungeonItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWarehouse\ES_WarehouseGem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_EquipSetItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetMiningTeamItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMJLobby\DlgMJLobbyViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UIBehaviour\DlgLSLobby\DlgLSLobbyViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPet\ES_PetXiLian.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeamDungeon\ES_TeamDungeonMy.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRunRaceMain\DlgRunRaceMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_OpenBox.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanPetWalk.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetMain\DlgPetMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgCountry\ES_ActivitySingIn.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetHeChengExplain\DlgPetHeChengExplainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgOccTwo\DlgOccTwo.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgShouJi\DlgShouJi.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgZhanQu\ES_ZhanQuLevel.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\SkillIndicatorComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPaiMai\DlgPaiMai.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgNewYear\ES_NewYearMonster.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgCellDungeonRevive\DlgCellDungeonRevive.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSkillTips\DlgSkillTips.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgHongBao\DlgHongBao.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgFriend\DlgFriend.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPaiMaiSellPrice\DlgPaiMaiSellPriceViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetChallengeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_FashionShowItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_FangunSkill.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetShouHuItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_WelfareTaskItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleGemHole.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRoleXiLianExplain\DlgRoleXiLianExplain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UIBehaviour\DlgLSRoom\DlgLSRoomViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgChouKaReward\DlgChouKaReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSkill\ES_Shield.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEggLucklyExplain\DlgPetEggLucklyExplainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\ReddotViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgDemonMain\DlgDemonMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWatchPaiMai\DlgWatchPaiMaiViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeam\DlgTeamViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIPaiMaiShopTypeComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UISceneItemComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSetting\ES_FashionShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTower\DlgTower.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_UnionMystery_A.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanRecord\DlgJiaYuanRecord.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\FallingFontShowComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgShouJi\DlgShouJiViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetMiningReward\DlgPetMiningReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgStore\DlgStoreViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIPlayerHpComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetMiningRewardItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgZuoQi\ES_ZuoQiShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_BattleShopItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSkill\ES_SkillMake.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeamDungeonCreate\DlgTeamDungeonCreateViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgShouJi\ES_ShouJiList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWelfare\ES_WelfareDraw.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PaiMaiBuyItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSettingFrame\DlgSettingFrameViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWatch\ES_WatchPet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanMysteryItem_A.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\DlgHelper\DlgHelper.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPet\ES_PetList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPaiMaiAuction\DlgPaiMaiAuctionViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIShouJiItemComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgBattle\DlgBattle.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Effect\ChainLightningComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UnitGuaJiComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRank\ES_RankShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivityToken.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanBag\DlgJiaYuanBagViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\WindowDataDefine.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTowerFightReward\DlgTowerFightRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_DungeonItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_FriendApplyItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgProtect\ES_ProtectEquip.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_UnionKeJiLearn.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanPet\DlgJiaYuanPet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanCookbookItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgOccTwo\DlgOccTwoViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFenXiang\DlgFenXiangViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\LockStep\Camera\LSCameraComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIShouJiTreasureTypeComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgGM\DlgGMViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_CountryTaskItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSettingFrame\DlgSettingFrame.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChengJiu\DlgChengJiuViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\DlgLogin\DlgLogin.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgZuoQi\DlgZuoQiViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_ItemAppraisalTips.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetHeChengPreview\DlgPetHeChengPreview.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWatch\DlgWatchViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgShouJiSelect\DlgShouJiSelectViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetEggChouKa.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgProtect\DlgProtect.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PaiMaiShopItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgShenQiMake\DlgShenQiMakeViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetMiningReward\DlgPetMiningRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\LockStep\LSOperaComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPaiMai\ES_PaiMaiDuiHuan.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTower\ES_TowerShop.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeamDungeon\ES_TeamDungeonList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgGM\DlgGM.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgMail\DlgMail.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeamApplyList\DlgTeamApplyListViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgHongBao\DlgHongBaoViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgCountryHuoDongJieShao\DlgCountryHuoDongJieShao.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_BattleTaskItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWelfare\ES_ActivityLogin.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanPastureItem_A.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgMain\DlgMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanPet\DlgJiaYuanPetViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonTask.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanTreasureMapStorage\DlgJiaYuanTreasureMapStorage.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetHeXinSuit\DlgPetHeXinSuit.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\EUIModelViewHelper.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UIBehaviour\DlgHelper\DlgHelperViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonTower.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanMenu\DlgJiaYuanMenu.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgBattleMain\DlgBattleMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMystery\DlgMysteryViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetMiningRecord\DlgPetMiningRecord.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRoleXiLianTen\DlgRoleXiLianTen.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\FallingFontComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ZhanQuCombatItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_TeamApplyItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MysteryItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanDaShi\DlgJiaYuanDaShiViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChouKa\DlgChouKaViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgCountry\DlgCountry.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgFashionExplain\DlgFashionExplain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPet\ES_ShouhuInfo.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIXuLieZhenComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanDaShi\DlgJiaYuanDaShi.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_DonationShowItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_PetSelectItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMakeLearn\DlgMakeLearnViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ActivityTeHuiItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRoleZodiac\DlgRoleZodiacViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMail\DlgMailViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Module\Resource\ResourcesLoaderComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgSkill\DlgSkill.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgActivity\DlgActivity.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPaiMaiBuyTip\DlgPaiMaiBuyTipViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFriend\ES_FriendList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgAppraisalSelect\DlgAppraisalSelect.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\TaskData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgUnionMystery\DlgUnionMystery.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UIStallHpComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MakeLearnItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChengJiu\ES_ChengJiuJingling.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTrialMain\DlgTrialMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRank\ES_RankPet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SkillLearnSkillItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgItemSellTip\DlgItemSellTip.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDonation\DlgDonationViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgFenXiang\DlgFenXiang.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_TaskTypeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgBuffTips\DlgBuffTips.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanWarehouse\DlgJiaYuanWarehouseViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTower\ES_TowerDungeon.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetMiningTeam\DlgPetMiningTeamViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SelectRewardItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgCreateRole\DlgCreateRole.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MakeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDungeonHappyMain\DlgDungeonHappyMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgNewYear\DlgNewYear.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SeasonTaskItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeason\DlgSeasonViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanTreasureMapStorage\DlgJiaYuanTreasureMapStorageViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgUnionDonationRecord\DlgUnionDonationRecord.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\FlyTip\FlyTipComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFriend\ES_FriendApply.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_UnionKeJiLearnItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetSelect\DlgPetSelect.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgTeamDungeon\ES_TeamDungeonShop.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_RoleProperty.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgUnionDonationRecord\DlgUnionDonationRecordViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChouKaProbExplain\DlgChouKaProbExplainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanUpLv\DlgJiaYuanUpLv.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetEggList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_MainActivityTip.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\AUIEventAttribute.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFenXiang\ES_Serial.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_ModelShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgBattleMain\DlgBattleMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgAppraisalSelect\DlgAppraisalSelectViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\Tools\RedDot\RedDotComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\Other\UIPaiMaiShopTypeItemComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Plugins\EUI\IAUIEventHandler.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgChengJiu\ES_ChengJiuReward.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UITransferHpComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetHeXinChouKa.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSeason\ES_SeasonHome.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgUnionKeJi\DlgUnionKeJi.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgCountryHuoDongJieShao\DlgCountryHuoDongJieShaoViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SeasonJingHeItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRole\ES_EquipItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgCellDungeonRevive\DlgCellDungeonReviveViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMiJingMain\DlgMiJingMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetEgg\ES_PetEggDuiHuan.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTrialMain\DlgTrialMain.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPhoneCode\DlgPhoneCodeViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgItemTips\DlgItemTipsViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_TaskFubenItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanDaShi\ES_JiaYuanDaShiShow.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_CostItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanCooking.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Component\UINpcHpComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPet\DlgPetViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_SkillTianFuItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Sound\SoundComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_MakeNeedItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPetHeXinHeCheng\DlgPetHeXinHeChengViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPaiMaiSellPrice\DlgPaiMaiSellPrice.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_UnionRecordsItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_RewardList.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgWatch\ES_WatchEquip.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgDemonMain\DlgDemonMainViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Demo\UIBehaviour\DlgLobby\DlgLobbyViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgFriend\ES_UnionMy.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSkillTips\DlgSkillTipsViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_MainTeam.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgPet\ES_PetShouHu.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgShenQiMake\DlgShenQiMake.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgEnterMapHint\DlgEnterMapHint.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_RankShowItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\LockStep\LSAnimatorComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanMystery_B.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\ConfigData\FashionData.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgBattle\DlgBattleViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgActivity\ES_ActivitySingleRecharge.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanMysteryItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_UnionListItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTaskGet\DlgTaskGet.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgMain\ES_MainHpBar.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Fsm\FsmComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgWelfare\DlgWelfare.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_ChengJiuTypeItemItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgEquipDuiBiTips\DlgEquipDuiBiTipsViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRoleBagSplit\DlgRoleBagSplit.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgRechargeReward\DlgRechargeRewardViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\CommonUI\ES_JiaYuanPasture_B.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_JiaYuanDaShiProItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_NewYearCollectionWordItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\Effect\EffectViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_UnionKeJiResearchItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetFormation\DlgPetFormation.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgRecharge\DlgRecharge.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgOccTwoShow\DlgOccTwoShowViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgTeamDungeonCreate\DlgTeamDungeonCreate.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgSetting\DlgSettingViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgPetEgg\DlgPetEgg.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIItemBehaviour\Item_StoreItem.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgJiaYuanPlanWatch\DlgJiaYuanPlanWatchViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgJiaYuanPlanWatch\DlgJiaYuanPlanWatch.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UIBehaviour\DlgOpenChest\DlgOpenChestViewComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\MengJing\UI\DlgOpenChest\DlgOpenChest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Scripts\ModelView\Unity.ModelView.asmdef" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIWidgetsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIWidgetsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.CoreModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.DeviceSimulatorModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.DeviceSimulatorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.DiagnosticsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.DiagnosticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.GraphViewModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.PackageManagerUIModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.PackageManagerUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.QuickSearchModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.QuickSearchModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.SceneTemplateModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TextCoreFontEngineModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreFontEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TextCoreTextEngineModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIBuilderModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIBuilderModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsSamplesModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIServiceModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIServiceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UnityConnectModule">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Bson.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Assets\Plugins\MongoDB\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>Assets\Plugins\MongoDB\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Libmongocrypt.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpCompress">
+      <HintPath>Assets\Plugins\MongoDB\SharpCompress.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LZ4">
+      <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@e5a6952777\Plugins\LZ4.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CommandLine">
+      <HintPath>Assets\Plugins\CommandLine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>Assets\Plugins\NLog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@e5a6952777\Plugins\dnlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DnsClient">
+      <HintPath>Assets\Plugins\MongoDB\DnsClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Driver.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Runtime.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Xml.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Net.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.IO.Compression.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Microsoft.CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Data.DataSetExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.IO.Compression.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Transactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\netstandard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.AppContext.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.Concurrent.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.NonGeneric.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.Specialized.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.Annotations.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.EventBasedAsync.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Console.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Data.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Contracts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Debug.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Process.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Tools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Drawing.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Dynamic.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.Calendars.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.DriveInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.Watcher.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.IsolatedStorage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.MemoryMappedFiles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.Pipes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Expressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Queryable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Rtc">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Http.Rtc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.NameResolution.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.NetworkInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Ping.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Requests.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Sockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebHeaderCollection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebSockets.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebSockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ObjectModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.DispatchProxy">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.DispatchProxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.ILGeneration">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.ILGeneration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.Lightweight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.Reader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.Writer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Handles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Claims.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Csp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Principal.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.SecureString.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Duplex">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Duplex.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.NetTcp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.Encoding.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.RegularExpressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Overlapped.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Thread.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.ThreadPool.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Timer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ValueTuple.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XmlDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XmlSerializer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="YooAsset">
+      <HintPath>Library\ScriptAssemblies\YooAsset.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.ThirdParty.csproj">
+      <Project>{E15BADD2-3A26-309A-AB0F-DC5B08044350}</Project>
+      <Name>Unity.ThirdParty</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Core.csproj">
+      <Project>{EB9B0E77-13B3-6137-FAA2-76DAF4B34ADA}</Project>
+      <Name>Unity.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Loader.csproj">
+      <Project>{986BB732-F4B8-64F8-D1F9-50CF255042D8}</Project>
+      <Name>Unity.Loader</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Model.csproj">
+      <Project>{B4BF9894-F5D9-41C4-13E3-3F26F7700E29}</Project>
+      <Name>Unity.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
+      <Project>{d1f2986b-b296-4a2d-8f12-be9f470014c3}</Project>
+      <Name>Analyzer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).dll" DestinationFiles="$(ProjectDir)/Assets/Bundles/Code/$(TargetName).dll.bytes" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).pdb" DestinationFiles="$(ProjectDir)/Assets/Bundles/Code/$(TargetName).pdb.bytes" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).dll" DestinationFiles="$(ProjectDir)/Temp/Bin/Debug/$(TargetName).dll" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).pdb" DestinationFiles="$(ProjectDir)/Temp/Bin/Debug/$(TargetName).pdb" ContinueOnError="false" />
+  </Target>
+
+</Project>

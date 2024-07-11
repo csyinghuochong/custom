@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace>ET</RootNamespace>
+    <ProjectGuid>{B4BF9894-F5D9-41C4-13E3-3F26F7700E29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Unity.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_IG;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITY;ENABLE_VIEW;TapTap1;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169;USG0001</NoWarn>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169;USG0001</NoWarn>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.22</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorStyle>Legacy</UnityProjectGeneratorStyle>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>2021.3.29f1c1</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="F:\soft\vs\ide\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="H:\GitMengJing\Unity\Assets\Plugins\Share.SourceGenerator.dll" />
+    <Analyzer Include="H:\GitMengJing\Unity\Library\PackageCache\com.cysharp.memorypack@286a8caeac\Runtime\MemoryPack.Generator\MemoryPack.Generator.Roslyn3.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ActivityConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\CampFuLiConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Demo\EventType.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\ConstFiberId.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSUpdater.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\PetEggDuiHuanConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\DungeonSectionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Unit\Unit.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Buff\BuffManagerComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\IRoomMessage.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\OccupationConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Router\RouterConnector.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\FirstWinConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\StoreSellConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionDispatcher.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\HideProListConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\TaskCountryConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\MonsterGroupConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Reddot\ReddotComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\ILSUpdateSystem.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntitySystemSingleton.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ChapterSonConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\LingDiConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\MysteryConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\OneFrameInputs.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericWatcherComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Task\TaskComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\UnionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\ChengJiuConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\DropConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\FirstWinConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Bag\BagComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\ConfigData\StringBuilderData.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\LifeShieldConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Scene\Wait_SceneChangeFinish.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Message\OuterMessage_C_10001.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Component\DropComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ChapterConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\NpcEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\EquipXiLianConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\DungeonConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInput.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Scene\FiberParentComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\MonsterConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Message\LockStepOuter_C_11001.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Friend\FriendComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\RobotConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\ErrorCode.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Pet\PetComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\EquipSuitConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\ActivityConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\LockStep\WaitType.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\UnionKeJiConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Skill\SkillC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSUnit.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Move\Wait_UnitStop.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ShouJiConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\GuideConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\ILSRollbackSystem.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ChapterSectionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Module\Message\ClientSessionErrorComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\SkillBuffConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Component\MapComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\MulLanguageConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\EquipSuitPropertyConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Unit\PlayerComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\ConfigData\ErrorViewData.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Component\HeroDataComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Unit\UnitEventType.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\ObjectWait\ObjectWait.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\PetConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\A2NetClient_Message.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\EquipMakeConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ZuoQiNengLiConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\PaiMaiSellConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\DungeonConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\GlobalValueConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Component\ShoujiComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSUnitComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Console\ConsoleComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\AI\XunLuoPathComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\LockStep\EventType.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\UnionKeJiConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\MineBattleConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\CampLieShouConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandler.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\FuntionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Console\ConsoleHandlerAttribute.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\TaskConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\ShouJiConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\OccupationTwoConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\ConfigData\AIData.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Ping\PingComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\UserDataType.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\CommonEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandlerAttribute.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Skill\SkillHandlerC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\LogMsg.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Move\MoveEventType.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\SkillEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\ChengJiu\ChengJiuComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Recast\PathfindingComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSWorld.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\TakeCardRewardConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Skill\SkillDispatcherComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\TaskEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericWatcherAttribute.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Move\MoveComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\TowerConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\FuntionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\EquipQiangHuaConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\JingLingConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ChengJiuRewardConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\SeasonJingHeConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\PaiMaiSellConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Unit\UnitType.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Component\BattleMessageComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\ChengJiuEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\MonsterPositionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\UserInfo\UserInfoComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\ISessionMessage.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\LingDiRewardConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\NetComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\LockStep\LSClientUpdater.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\FashionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\ChatEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\ConfigData\NumericData.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\HideProListConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\StateTypeEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\FunctionEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\PetXiuLianConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Message\ClientMessage_C_1000.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ChengJiuConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Entry.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ZuoQiConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\SceneConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\FashionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Component\StateComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Skill\SkillSetComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\UnionQiangHuaConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Session\SessionComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Console\ModeContex.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\LockStep\LSReplayUpdater.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Skill\AttackComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\JiaYuanPastureConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\ItemEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Component\TeamComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ExpConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\IMessageSessionHandler.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\SkillWeaponConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\FrameBuffer.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\ConfigData\DropItemData.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ZuoQiShowConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\EntitySerializeRegister.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\TaskPositionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntity.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Unit\UnitComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Skill\SingingComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\Main\ClientSenderCompnent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\SkillBuffConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Plugins\Example\ModelClient.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\ShouJiItemConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSConstValue.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\ItemConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\ConfigData\GMData.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\LifeShieldConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\TimerInvokeType.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\ConfigData\ConfigData.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\TitleConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\INumericWatcher.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\EventTypeClient.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Router\RouterAddressComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\BattleSummonConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Title\TitleComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\SessionIdleCheckerComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\FixedTimeCounter.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\UnionQiangHuaConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInputComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\QuestionBankConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Component\JiaYuanComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\TalentConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Console\IConsoleHandler.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\SeasonLevelConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Console\ConsoleDispatcher.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Buff\BuffDispatcherComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Skill\SkillManagerComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\EquipMakeConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\EffectConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\SkillConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ItemConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Component\NumericComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Scene\CurrentScenesComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Buff\BuffC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericType.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\AIConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\DungeonSectionConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\DungeonTransferConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\ShouJiItemConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\EquipConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\SpiritConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntitySystemAttribute.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\EquipSuitConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\ConfigData\SettingData.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\JiaYuanConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\CampRewardConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\PetFubenRewardConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\GlobalValueConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\ConfigData\HappyData.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Buff\BuffHandlerC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Enum\SceneIdEnum.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\TakeCardConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\TaskCountryConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\Session.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\Replay.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\JiaYuanFarmConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Router\RouterCheckComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\ConfigData\EnemyUnitInfo.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\NpcConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\PetFubenConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Mail\MailComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\HuoYueRewardConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\SkillConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Scene\Wait_CreateMyUnit.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\ConfigData\PaiMaiData.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\LockStep\Room.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\RankRewardConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Plugins\Example\ModelShare.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Activity\ActivityComponentC.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MongoRegister.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\SessionAcceptTimeoutComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\OccupationJueXingConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\ConfigPartial\MonsterConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\PetSkinConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\PublicQiangHuaConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\JiaYuanConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Client\MengJing\Chat\ChatComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Generate\Client\Config\EquipXiLianConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\MengJing\Component\UnitInfoComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Scripts\Model\Unity.Model.asmdef" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Bson.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Assets\Plugins\MongoDB\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>Assets\Plugins\MongoDB\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Libmongocrypt.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpCompress">
+      <HintPath>Assets\Plugins\MongoDB\SharpCompress.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LZ4">
+      <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@e5a6952777\Plugins\LZ4.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CommandLine">
+      <HintPath>Assets\Plugins\CommandLine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>Assets\Plugins\NLog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@e5a6952777\Plugins\dnlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DnsClient">
+      <HintPath>Assets\Plugins\MongoDB\DnsClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>Assets\Plugins\MongoDB\MongoDB.Driver.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Runtime.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Xml.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Net.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.IO.Compression.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Microsoft.CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Data.DataSetExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.IO.Compression.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.Transactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\netstandard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.AppContext.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.Concurrent.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.NonGeneric.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Collections.Specialized.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.Annotations.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.EventBasedAsync.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Console.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Data.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Contracts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Debug.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Process.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.Tools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Drawing.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Dynamic.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.Calendars.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Globalization.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.DriveInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.FileSystem.Watcher.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.IsolatedStorage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.MemoryMappedFiles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.Pipes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Expressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Linq.Queryable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Rtc">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Http.Rtc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.NameResolution.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.NetworkInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Ping.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Requests.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.Sockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebHeaderCollection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebSockets.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Net.WebSockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ObjectModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.DispatchProxy">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.DispatchProxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.ILGeneration">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.ILGeneration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Emit.Lightweight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Reflection.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.Reader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Resources.Writer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Handles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.Serialization.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Claims.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Csp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.Principal.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Security.SecureString.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Duplex">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Duplex.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.NetTcp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ServiceModel.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.Encoding.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Text.RegularExpressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Overlapped.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Tasks.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Thread.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.ThreadPool.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Threading.Timer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.ValueTuple.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XmlDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XmlSerializer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>D:\unityhub\2021.3.29f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MemoryPack">
+      <HintPath>Library\ScriptAssemblies\MemoryPack.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.ThirdParty.csproj">
+      <Project>{E15BADD2-3A26-309A-AB0F-DC5B08044350}</Project>
+      <Name>Unity.ThirdParty</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Core.csproj">
+      <Project>{EB9B0E77-13B3-6137-FAA2-76DAF4B34ADA}</Project>
+      <Name>Unity.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
+      <Project>{d1f2986b-b296-4a2d-8f12-be9f470014c3}</Project>
+      <Name>Analyzer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).dll" DestinationFiles="$(ProjectDir)/Assets/Bundles/Code/$(TargetName).dll.bytes" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).pdb" DestinationFiles="$(ProjectDir)/Assets/Bundles/Code/$(TargetName).pdb.bytes" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).dll" DestinationFiles="$(ProjectDir)/Temp/Bin/Debug/$(TargetName).dll" ContinueOnError="false" />
+    <Copy SourceFiles="$(TargetDir)/$(TargetName).pdb" DestinationFiles="$(ProjectDir)/Temp/Bin/Debug/$(TargetName).pdb" ContinueOnError="false" />
+  </Target>
+
+</Project>
