@@ -1,14 +1,18 @@
 ﻿-Parameters=SampleClass
 
-DllHelper.Admin = "tcg452241";
-DllHelper.CheckItem = true;
-DllHelper.NoTianFuAdd = true;
-DllHelper.BattleCheck = true;
-DllHelper.GuangHuan = true;                       光环
+  DllHelper.Admin = "tcg452241";
+            DllHelper.CheckItem = true;
+            DllHelper.NoTianFuAdd = true;
+            DllHelper.BattleCheck = true;
+            DllHelper.GuangHuan = true;
 
-MongoHelper.WuDiBullet = false;
-MongoHelper.KeepSession = false;
-MongoHelper.NoTimerMonster = false;       定时怪
+            MongoHelper.WuDiBullet = false;
+            MongoHelper.KeepSession = false;
+	    MongoHelper.NoTimerMonster = false; 
+            MongoHelper.NoRecovery = false;
+
+            MonoPool.NoRecovery = false;
+	    ConfigLoader.RemovePlayer = false;
 
 stopserver 0 0 tcg452241 0   //停服        先合区
 stopserver 0 1 tcg452241 0	//开服    先合区
