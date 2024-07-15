@@ -10,6 +10,21 @@ namespace ET
     {
 
 
+        public static void CheckSerials(this AccountCenterComponent self)
+        {
+            Log.Warning("移除第七/八批序列号");
+            DBCenterSerialInfo dBCenterSerialInfo = self.DBCenterSerialInfo;
+            for (int i = dBCenterSerialInfo.SerialList.Count - 1; i >= 0; i--)
+            {
+                if (dBCenterSerialInfo.SerialList[i].KeyId == 7
+                    || dBCenterSerialInfo.SerialList[i].KeyId == 8)
+                {
+                    dBCenterSerialInfo.SerialList.RemoveAt(i);  
+                }
+            }
+            dBCenterSerialInfo.SerialIndex = 5;
+        }
+
         public static void GenerateSerials(this AccountCenterComponent self, int sindex)
         {
             DBCenterSerialInfo dBCenterSerialInfo = self.DBCenterSerialInfo;
@@ -18,11 +33,13 @@ namespace ET
                 if (dBCenterSerialInfo.SerialList[i].KeyId == sindex)
                 {
                     Log.Warning("生成序列号: 重复");
+                    Console.WriteLine("生成序列号: 重复");
                     return;
                 }
             }
 
-            Log.Warning($"生成序列号{sindex}: start");
+            Console.WriteLine($"生成第{sindex}序列号: start");
+            Log.Warning($"生成第{sindex}序列号: start");
             string codelist = string.Empty;
             self.DBCenterSerialInfo.SerialIndex = sindex;
             SerialHelper serialHelper = new SerialHelper();
@@ -34,8 +51,9 @@ namespace ET
                 codelist += code;
                 codelist += "\r\n";
             }
-            Log.Debug(codelist);
-            Log.Warning($"生成序列号{sindex}: end");
+            LogHelper.PaiMaiInfo(codelist);
+            Log.Warning($"生成第{sindex}序列号: end");
+            Console.WriteLine($"生成第{sindex}序列号: end");
         }
 
     }
