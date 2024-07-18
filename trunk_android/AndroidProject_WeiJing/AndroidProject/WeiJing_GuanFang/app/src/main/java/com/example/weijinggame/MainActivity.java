@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.FileProvider;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -19,6 +20,8 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.weijinggame.wxapi.WXPayEntryActivity;
+import com.taptapshare.TapTapShareBuilder;
+import com.taptapshare.TapTapShareCode;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
@@ -29,6 +32,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -252,61 +256,66 @@ public class MainActivity extends UnityPlayerActivity {
         }
     }
 
-    //获取 cpu 信息
-    public  String getCpuInfo() {
-        String[] abis = new String[]{};
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            abis = Build.SUPPORTED_ABIS;
-        } else {
-            abis = new String[]{Build.CPU_ABI, Build.CPU_ABI2};
-        }
-        StringBuilder abiStr = new StringBuilder();
-        for (String abi : abis) {
-            abiStr.append(abi);
-            abiStr.append(',');
-        }
-
-        return abiStr.toString();
-    }
-
-    // 判断是否模拟器
-    public  boolean isEmulator_1() {
-        String abiStr = getCpuInfo();
-        if (abiStr != null && abiStr.length() > 0) {
-            boolean isSupportX86 = false;
-            boolean isSupportArm = false;
-
-            if (abiStr.contains("x86_64") || abiStr.contains("x86")) {
-                isSupportX86 = true;
-            }
-            if (abiStr.contains("armeabi") || abiStr.contains("armeabi-v7a") || abiStr.contains("arm64-v8a")) {
-                isSupportArm = true;
-            }
-            if (isSupportX86 && isSupportArm) {
-                //同时拥有X86和arm的判断为模拟器。
-                return true;
-            }
+    public static boolean isEmulator_1(Context context) {
+        if (Build.FINGERPRINT.startsWith("generic")
+                || Build.FINGERPRINT.startsWith("unknown")
+                || Build.FINGERPRINT.toLowerCase().contains("vbox")
+                || Build.FINGERPRINT.toLowerCase().contains("test-keys")
+            // ...可以添加更多的模拟器识别字符串
+        ) {
+            return true;
         }
         return false;
     }
 
     public  boolean isEmulator_2(Context context)
     {
-        String url = "tel:" + "123456";
-        Intent intent = new Intent();
-        intent.setData(Uri.parse(url));
-        intent.setAction(Intent.ACTION_DIAL);
-        // 是否可以处理跳转到拨号的 Intent
-        boolean canCallPhone = intent.resolveActivity(context.getPackageManager()) != null;
-        return Build.FINGERPRINT.startsWith("generic") || Build.FINGERPRINT.toLowerCase()
-                .contains("vbox") || Build.FINGERPRINT.toLowerCase()
-                .contains("test-keys") || Build.MODEL.contains("google_sdk") || Build.MODEL.contains("Emulator") || Build.MODEL
-                .contains("MuMu") || Build.MODEL.contains("virtual") || Build.SERIAL.equalsIgnoreCase("android") || Build.MANUFACTURER
-                .contains("Genymotion") || (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic")) || "google_sdk"
-                .equals(Build.PRODUCT) || ((TelephonyManager)context
-                .getSystemService(Context.TELEPHONY_SERVICE)).getNetworkOperatorName()
-                .toLowerCase()
-                .equals("android") || !canCallPhone;
+        return  false;
+    }
+
+    /**
+     * 获取文件的共享路径
+     */
+    public static Uri getUriFromFile(Context context, File file) {
+        if (file == null || !file.exists()) {
+            return null;
+        }
+        //判断本机系统版本是否是7.0
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            // 适配Android 7.0
+            Uri uri = FileProvider.getUriForFile(
+                    context,
+                    // 要与`AndroidManifest.xml`里配置的`authorities`一致，
+                    //假设你的`authorities`为`com.demo.sharetaptap.fileprovider`
+                    "com.demo.sharetaptap.fileprovider",
+                    file
+            );
+            return uri;
+        } else {
+            return Uri.fromFile(file);
+        }
+    }
+
+    public int TapTapShare(String str)
+    {
+        ArrayList<Uri> uris = new ArrayList<Uri>();
+        uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/111111.jpg")));
+        uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/222222.gif")));
+
+        int resultCode = new TapTapShareBuilder().addTitle("This is title of sharing.") // 分享标题
+                .addContents("This is contents of sharing.") // 分享内容
+                .addHashtagIds("1,2") // HashTag和活动Id
+                .addAppId("271100") // 游戏Id
+                .addGroupLabelId("350632") // 论坛标签Id
+                .addFooterImageUrls(uris) // 分享的图片
+                .build()
+                .share(this);
+        if (resultCode == TapTapShareCode.Success_Code) {
+            // 分享成功
+            return  0;
+        }
+        // 0 正常分享  -1未安装 -2不支持
+        return resultCode;
     }
 
     //qwertyuioptgbuytr
@@ -325,7 +334,7 @@ public class MainActivity extends UnityPlayerActivity {
             int root_num = ( root1 ? 10000 : 0 ) + ( root2 ? 1000 : 0 ) + ( root3 ? 100 : 0 ) + (root4 ? 10 : 0) + (root5 ? 1 : 0);
             UnityPlayer.UnitySendMessage("Global", "OnRecvRoot",  String.valueOf( root_num ) );
 
-            boolean emulator1 = isEmulator_1();
+            boolean emulator1 = isEmulator_1(this);
             boolean emulator2 = isEmulator_2(this);
             int emulator_num = (emulator1 ? 10 : 0) + (emulator2 ? 1 : 0);
             UnityPlayer.UnitySendMessage("Global", "OnRecvEmulator",  String.valueOf( emulator_num ) );
