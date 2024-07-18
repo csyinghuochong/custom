@@ -9,35 +9,35 @@ namespace ET
     public static class UILoginComponentSystem3
     {
 
-        //ÊµÃûÈÏÖ¤»Øµ÷
-        // code == 500;   // Íæ¼ÒÎ´ÊÜµ½ÏŞÖÆ£¬Õı³£½øÈëÓÎÏ·
-        // code == 1000;  // ÍË³ö·À³ÁÃÔÈÏÖ¤¼°¼ì²é£¬µ±¿ª·¢Õßµ÷ÓÃ Exit ½Ó¿ÚÊ±»òÓÃ»§ÈÏÖ¤ĞÅÏ¢ÎŞĞ§Ê±´¥·¢£¬ÓÎÏ·Ó¦·µ»Øµ½µÇÂ¼Ò³
-        // code == 1001;  // ÓÃ»§µã»÷ÇĞ»»ÕËºÅ£¬ÓÎÏ·Ó¦·µ»Øµ½µÇÂ¼Ò³
-        // code == 1030;  // ÓÃ»§µ±Ç°Ê±¼äÎŞ·¨½øĞĞÓÎÏ·£¬´ËÊ±ÓÃ»§Ö»ÄÜÍË³öÓÎÏ·»òÇĞ»»ÕËºÅ
-        // code == 1050;  // ÓÃ»§ÎŞ¿ÉÍæÊ±³¤£¬´ËÊ±ÓÃ»§Ö»ÄÜÍË³öÓÎÏ·»òÇĞ»»ÕËºÅ
-        // code == 1100;  // µ±Ç°ÓÃ»§Òò´¥·¢Ó¦ÓÃÉèÖÃµÄÄêÁäÏŞÖÆÎŞ·¨½øÈëÓÎÏ·
-        // code == 1200;  // Êı¾İÇëÇóÊ§°Ü£¬ÓÎÏ·Ğè¼ì²éµ±Ç°ÉèÖÃµÄÓ¦ÓÃĞÅÏ¢ÊÇ·ñÕıÈ·¼°ÅĞ¶Ïµ±Ç°ÍøÂçÁ¬½ÓÊÇ·ñÕı³£
-        // code == 9002;  // ÊµÃû¹ı³ÌÖĞµã»÷ÁË¹Ø±ÕÊµÃû´°£¬ÓÎÏ·¿ÉÖØĞÂ¿ªÊ¼·À³ÁÃÔÈÏÖ¤
+        //å®åè®¤è¯å›è°ƒ
+        // code == 500;   // ç©å®¶æœªå—åˆ°é™åˆ¶ï¼Œæ­£å¸¸è¿›å…¥æ¸¸æˆ
+        // code == 1000;  // é€€å‡ºé˜²æ²‰è¿·è®¤è¯åŠæ£€æŸ¥ï¼Œå½“å¼€å‘è€…è°ƒç”¨ Exit æ¥å£æ—¶æˆ–ç”¨æˆ·è®¤è¯ä¿¡æ¯æ— æ•ˆæ—¶è§¦å‘ï¼Œæ¸¸æˆåº”è¿”å›åˆ°ç™»å½•é¡µ
+        // code == 1001;  // ç”¨æˆ·ç‚¹å‡»åˆ‡æ¢è´¦å·ï¼Œæ¸¸æˆåº”è¿”å›åˆ°ç™»å½•é¡µ
+        // code == 1030;  // ç”¨æˆ·å½“å‰æ—¶é—´æ— æ³•è¿›è¡Œæ¸¸æˆï¼Œæ­¤æ—¶ç”¨æˆ·åªèƒ½é€€å‡ºæ¸¸æˆæˆ–åˆ‡æ¢è´¦å·
+        // code == 1050;  // ç”¨æˆ·æ— å¯ç©æ—¶é•¿ï¼Œæ­¤æ—¶ç”¨æˆ·åªèƒ½é€€å‡ºæ¸¸æˆæˆ–åˆ‡æ¢è´¦å·
+        // code == 1100;  // å½“å‰ç”¨æˆ·å› è§¦å‘åº”ç”¨è®¾ç½®çš„å¹´é¾„é™åˆ¶æ— æ³•è¿›å…¥æ¸¸æˆ
+        // code == 1200;  // æ•°æ®è¯·æ±‚å¤±è´¥ï¼Œæ¸¸æˆéœ€æ£€æŸ¥å½“å‰è®¾ç½®çš„åº”ç”¨ä¿¡æ¯æ˜¯å¦æ­£ç¡®åŠåˆ¤æ–­å½“å‰ç½‘ç»œè¿æ¥æ˜¯å¦æ­£å¸¸
+        // code == 9002;  // å®åè¿‡ç¨‹ä¸­ç‚¹å‡»äº†å…³é—­å®åçª—ï¼Œæ¸¸æˆå¯é‡æ–°å¼€å§‹é˜²æ²‰è¿·è®¤è¯
         public static  async ETTask OnAntiAddictionHandler(this UILoginComponent self, int code, string errormsg)
         {
             if (code == 1050)
             {
-                FloatTipManager.Instance.ShowFloatTip("ÓÃ»§ÎŞ¿ÉÍæÊ±³¤£¬´ËÊ±ÓÃ»§Ö»ÄÜÍË³öÓÎÏ·»òÇĞ»»ÕËºÅ");
+                FloatTipManager.Instance.ShowFloatTip("ç”¨æˆ·æ— å¯ç©æ—¶é•¿ï¼Œæ­¤æ—¶ç”¨æˆ·åªèƒ½é€€å‡ºæ¸¸æˆæˆ–åˆ‡æ¢è´¦å·");
                 return;
             }
 
             if (code != 500)
             {
-                FloatTipManager.Instance.ShowFloatTip("ÊµÃûÈÏÖ¤Ê§°Ü");
+                FloatTipManager.Instance.ShowFloatTip("å®åè®¤è¯å¤±è´¥");
                 return;
             }
 
-            //»ñÈ¡ÄêÁä
+            //è·å–å¹´é¾„
             int age =  TapSDKV20Helper.Instance.GetAgeRange();
-            //»ñÈ¡Ê£ÓàÓÎÏ·Ê±³¤
+            //è·å–å‰©ä½™æ¸¸æˆæ—¶é•¿
             int remaintime =  TapSDKV20Helper.Instance.GetRemainingTime();
 
-            Log.ILog.Debug($"tapÈÏÖ¤·µ»Ø£º age:{age}  remingtime:{remaintime}");
+            Log.ILog.Debug($"tapè®¤è¯è¿”å›ï¼š age:{age}  remingtime:{remaintime}");
 
             AccountInfoComponent accountInfoComponent = self.ZoneScene().GetComponent<AccountInfoComponent>();
             accountInfoComponent.Age_Type = age;
@@ -66,7 +66,7 @@ namespace ET
 
             if (instanceid != self.InstanceId)
             {
-                FloatTipManager.Instance.ShowFloatTip("ÊµÃûÈÏÖ¤Ê§°Ü");
+                FloatTipManager.Instance.ShowFloatTip("å®åè®¤è¯å¤±è´¥");
                 return;
             }
 
@@ -74,7 +74,15 @@ namespace ET
         }
     }
 
+    public class TapTap_OnTapTapShare : AEventClass<EventType.TapTapShare>
+    {
+        protected override void Run(object numerice)
+        {
+            EventType.TapTapShare args = numerice as EventType.TapTapShare;
 
+            GlobalHelp.TapTapShare(args.Content);
+        }
+    }
 
 
     public class TapTap_OnTapTapAuther : AEventClass<EventType.TapTapAuther>
