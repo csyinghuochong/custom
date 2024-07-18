@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 1184
+  version: 1185
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -812,6 +812,10 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QiuMove_2.prefab
   - bundle: 9ca5e8d529a237693ad8d2189abf7f70.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QiuMove_3.prefab
+  - bundle: 65281dc1e4e4920820fd45990940ea2f.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QiuMove_4.prefab
+  - bundle: 94a9a3d9ab2518d7ad5aedad52a40802.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QiuMove_5.prefab
   - bundle: c7d0a5b549a1537f2a9b0c434425fbe2.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_QunDu.prefab
   - bundle: 127f654b61bc87575f01542c11a470f9.unity3d
@@ -6688,6 +6692,8 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/Monster/90000134.prefab
   - bundle: b70193c28c8941d4d9bd2ac12220cb9b.unity3d
     path: Assets/Bundles/Unit/Monster/90000141.prefab
+  - bundle: 17b9c2fd040a3d2b46d398e95f2c75b2.unity3d
+    path: Assets/Bundles/Unit/Monster/90000301.prefab
   - bundle: 3189e1f8e73a80254d930fe7b57baf88.unity3d
     path: Assets/Bundles/Unit/Monster/DorrWay_1.prefab
   - bundle: b5b5f0c6acf061837fb8b18ca49b9f24.unity3d
@@ -8763,6 +8769,9 @@ MonoBehaviour:
   - name: b70193c28c8941d4d9bd2ac12220cb9b.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/90000141.prefab
+  - name: 17b9c2fd040a3d2b46d398e95f2c75b2.unity3d
+    assets:
+    - Assets/Bundles/Unit/Monster/90000301.prefab
   - name: 3189e1f8e73a80254d930fe7b57baf88.unity3d
     assets:
     - Assets/Bundles/Unit/Monster/DorrWay_1.prefab
@@ -11583,6 +11592,12 @@ MonoBehaviour:
   - name: 9ca5e8d529a237693ad8d2189abf7f70.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_QiuMove_3.prefab
+  - name: 65281dc1e4e4920820fd45990940ea2f.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_QiuMove_4.prefab
+  - name: 94a9a3d9ab2518d7ad5aedad52a40802.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_QiuMove_5.prefab
   - name: c7d0a5b549a1537f2a9b0c434425fbe2.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_QunDu.prefab
@@ -20445,6 +20460,87 @@ MonoBehaviour:
     assets:
     - Assets/Res/Effect/EffectResSet/Effect2/EScene/XWX-Effect-Dev/MaterialSample/E3D-Distort-Sphere
       13.mat
+  - name: aaa2b82bfcfa200003cae219341d9c61.unity3d
+    assets:
+    - Assets/Res/Effect/SkillBaseAct/ErbGameArt/Sword slash FX/Textures/Smoke24.png
+  - name: 8dad8e9719e980b32bf33a75e68ea001.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResSet/Hovl Studio/Epic toon VFX 3/Textures/Noise28.png
+  - name: aa69ec02095364f77c11c0a95dddce0e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/flare03.png
+  - name: ddaaae2b931c66d319a639ba33232cd5.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/Add_offset06.mat
+  - name: 452f7d477dd15a38b9fd9c6dd7226c5f.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/Add_offset03.mat
+  - name: 761d5907186830ba53f3a71f6a201511.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Models/Sphere01.fbx
+  - name: 692042b6a4913afb5b4e78c781e70ef1.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/ring09.png
+  - name: 92ffc472fef13367c185b99a1ee29271.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/rays01.png
+  - name: 8494c17f011c41932b1280793c61f8d1.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Models/Sphere02.fbx
+  - name: 38af00cfd40a329ee394e746c7db8573.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/spikes05.png
+  - name: 4c77a531096a993b68ee6511d78bc7d9.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/cloud02.png
+  - name: 42f8ef1671d4fb716fd127a2f3518f00.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/t_trail12.png
+  - name: 7f3923fcf78696d86ab27fa0d7d5ce01.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/ring06.png
+  - name: edc719450eeee2b42cf412f56399cc8a.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/Flare07.png
+  - name: 70dd3019df34174a021b854c2c70ebd0.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/circle_soft01.png
+  - name: d687b2de07de2c97e2fad352f089c24a.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/cloud01.png
+  - name: eb9644bbc72d22c90637971f94bd5990.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/round_target04.png
+  - name: 0b3a5374450a528d0b06819e18e4ee0e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/line02.png
+  - name: 2881400931436a0ae949e0c61331db61.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/ring03.png
+  - name: 3572c7602c2e36769b161eeaa7c2c476.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/circle_boke02.png
+  - name: f63c5a70dbd5de1b8e40b3392b3ba54e.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/round_target02.png
+  - name: e74046613ec8a0eba2398cffef3cde57.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/Add_02.mat
+  - name: 0a9cdb5f9ca0aa65890e08c97c17221b.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/t_trail06.png
+  - name: 4f2311dfa96ef1ebd36203b21df15047.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Models/Sphere03.fbx
+  - name: 89057ceb5047ffdcd9cb33e3bbfbcb5a.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/t_trail03.png
+  - name: 4eb1352b9ffd92d149066ba4e15abf6b.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/AB_offset05.mat
+  - name: c97be2a24ac1fb5cb8f5277e6d109c8a.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/Add_03.mat
   - name: 548e50ac3b7276eac91f5ff22216d784.unity3d
     assets:
     - Assets/Res/Effect/EffectResSet/Hovl Studio/Epic toon VFX 2/Materials/TwoSides14.mat
@@ -20918,9 +21014,6 @@ MonoBehaviour:
   - name: 6b0557ab875d9fd46738c01d16bad409.unity3d
     assets:
     - Assets/Res/Effect/SkillBaseAct/ErbGameArt/Sword slash FX/Textures/Flash21.png
-  - name: aaa2b82bfcfa200003cae219341d9c61.unity3d
-    assets:
-    - Assets/Res/Effect/SkillBaseAct/ErbGameArt/Sword slash FX/Textures/Smoke24.png
   - name: 17c4492a8422916b14af4d5bf4b459cb.unity3d
     assets:
     - Assets/Res/Effect/SkillBaseAct/ErbGameArt/Sword slash FX/Textures/Trail62b.png
@@ -20981,6 +21074,9 @@ MonoBehaviour:
   - name: 8d8dde124fc1957c2273dd58bce0c75e.unity3d
     assets:
     - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/circle_boke01.png
+  - name: 620d36cc5f38b586c4fc7e6bde3f447d.unity3d
+    assets:
+    - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Textures/ring02.png
   - name: 0c4c67f4b69e2df3257ce3c22b4c0272.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/Old/Effect_BeiYong/Effects_01/Skill_Sword/Model/Materials/No
