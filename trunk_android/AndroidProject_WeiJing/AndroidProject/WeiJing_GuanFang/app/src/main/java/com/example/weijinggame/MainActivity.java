@@ -296,11 +296,14 @@ public class MainActivity extends UnityPlayerActivity {
         }
     }
 
-    public int TapTapShare(String str)
+    public void TapTapShare(String str)
     {
+        Log.i("TapTapShareaa", "TapTapShareaa:   " + str);
+        Log.i("TapTapShareaa", "TapTapSharebb:   " +getCacheDir().getAbsolutePath());
+        Log.i("TapTapShareaa", "TapTapSharebb:   " +getCacheDir().getPath());
         ArrayList<Uri> uris = new ArrayList<Uri>();
-        uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/111111.jpg")));
-        uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/222222.gif")));
+        //uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/111111.jpg")));
+        //uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/222222.gif")));
 
         int resultCode = new TapTapShareBuilder().addTitle("This is title of sharing.") // 分享标题
                 .addContents("This is contents of sharing.") // 分享内容
@@ -312,10 +315,9 @@ public class MainActivity extends UnityPlayerActivity {
                 .share(this);
         if (resultCode == TapTapShareCode.Success_Code) {
             // 分享成功
-            return  0;
         }
         // 0 正常分享  -1未安装 -2不支持
-        return resultCode;
+        Log.i("TapTapShare", "TapTapSharecc:   " +resultCode + "");
     }
 
     //qwertyuioptgbuytr
