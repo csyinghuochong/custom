@@ -298,6 +298,7 @@ public class MainActivity extends UnityPlayerActivity {
 
     public void TapTapShare(String str)
     {
+        String[] parts = str.split("&");
         Log.i("TapTapShareaa", "TapTapShareaa:   " + str);
         Log.i("TapTapShareaa", "TapTapSharebb:   " +getCacheDir().getAbsolutePath());
         Log.i("TapTapShareaa", "TapTapSharebb:   " +getCacheDir().getPath());
@@ -305,8 +306,8 @@ public class MainActivity extends UnityPlayerActivity {
         //uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/111111.jpg")));
         //uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/222222.gif")));
 
-        int resultCode = new TapTapShareBuilder().addTitle("This is title of sharing.") // 分享标题
-                .addContents("This is contents of sharing.") // 分享内容
+        int resultCode = new TapTapShareBuilder().addTitle(parts[0]) // 分享标题
+                .addContents(parts[1]) // 分享内容
                 .addHashtagIds("1,2") // HashTag和活动Id
                 .addAppId("271100") // 游戏Id
                 .addGroupLabelId("350632") // 论坛标签Id
