@@ -319,6 +319,9 @@ public class MainActivity extends UnityPlayerActivity {
         }
         // 0 正常分享  -1未安装 -2不支持
         Log.i("TapTapShare", "TapTapSharecc:   " +resultCode + "");
+
+
+        UnityPlayer.UnitySendMessage("Global", "OnTapTapShareHandler",  resultCode+"" );
     }
 
     //qwertyuioptgbuytr

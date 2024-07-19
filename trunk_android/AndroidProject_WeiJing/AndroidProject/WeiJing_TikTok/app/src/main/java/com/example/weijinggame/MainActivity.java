@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.FileProvider;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Base64;
@@ -42,6 +43,8 @@ import com.example.weijinggame.wxapi.WXPayEntryActivity;
 import com.quicksdk.Sdk;
 import com.quicksdk.utility.AppConfig;
 import com.ss.android.download.api.clean.IJsonable;
+import com.taptapshare.TapTapShareBuilder;
+import com.taptapshare.TapTapShareCode;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
@@ -485,6 +488,58 @@ public class MainActivity extends UnityPlayerActivity {
             }
         });
     }
+
+    /**
+     * 获取文件的共享路径
+     */
+    public static Uri getUriFromFile(Context context, File file) {
+        if (file == null || !file.exists()) {
+            return null;
+        }
+        //判断本机系统版本是否是7.0
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            // 适配Android 7.0
+            Uri uri = FileProvider.getUriForFile(
+                    context,
+                    // 要与`AndroidManifest.xml`里配置的`authorities`一致，
+                    //假设你的`authorities`为`com.demo.sharetaptap.fileprovider`
+                    "com.demo.sharetaptap.fileprovider",
+                    file
+            );
+            return uri;
+        } else {
+            return Uri.fromFile(file);
+        }
+    }
+
+    public void TapTapShare(String str)
+    {
+        String[] parts = str.split("&");
+        Log.i("TapTapShareaa", "TapTapShareaa:   " + str);
+        Log.i("TapTapShareaa", "TapTapSharebb:   " +getCacheDir().getAbsolutePath());
+        Log.i("TapTapShareaa", "TapTapSharebb:   " +getCacheDir().getPath());
+        ArrayList<Uri> uris = new ArrayList<Uri>();
+        //uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/111111.jpg")));
+        //uris.add(getUriFromFile(this, new File(getCacheDir() + "/share/222222.gif")));
+
+        int resultCode = new TapTapShareBuilder().addTitle(parts[0]) // 分享标题
+                .addContents(parts[1]) // 分享内容
+                .addHashtagIds("1,2") // HashTag和活动Id
+                .addAppId("271100") // 游戏Id
+                .addGroupLabelId("350632") // 论坛标签Id
+                .addFooterImageUrls(uris) // 分享的图片
+                .build()
+                .share(this);
+        if (resultCode == TapTapShareCode.Success_Code) {
+            // 分享成功
+        }
+        // 0 正常分享  -1未安装 -2不支持
+        Log.i("TapTapShare", "TapTapSharecc:   " +resultCode + "");
+
+
+        UnityPlayer.UnitySendMessage("Global", "OnTapTapShareHandler",  resultCode+"" );
+    }
+
 
     //qwertyuioptgbuytr
     //检测root 和 包名
