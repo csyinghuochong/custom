@@ -4,6 +4,7 @@
 using UnityEngine;
 using System;
 using System.IO;
+using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.iOS.Xcode;
@@ -15,6 +16,70 @@ public static class XCodePostProcess
 {
 
 #if UNITY_EDITOR
+
+	public static void SetUrlSchemes(PlistDocument plist)
+	{
+        List<string> urllist = new List<string>()
+            {
+                "taptap",
+			    "sinaweibosso",
+				"weibo",
+				"weibosdk",
+				"weibosdk2.5",
+				"sinaweibo",
+				"sinaweibohd",
+				"weixin",
+				"wechat",
+				"weixinULAPI",
+				"mqq",
+				"mqqapi",
+				"mqqwpa",
+				"mqqbrowser",
+				"mttbrowser",
+				"mqqOpensdkSSoLogin",
+				"mqqopensdkapiV2",
+				"mqqopensdkapiV3",
+				"mqqopensdkapiV4",
+				"wtloginmqq2",
+				"mqzone",
+				"mqzoneopensdk",
+				"mqzoneopensdkapi",
+				"mqzoneopensdkapi19",
+				"mqzoneopensdkapiV2",
+				"mqqapiwallet",
+				"mqqopensdkfriend",
+				"mqqopensdkdataline",
+				"mqqgamebindinggroup",
+				"mqqopensdkgrouptribeshare",
+				"tencentapi.qq.reqContent",
+				"tencentapi.qzone.reqContent",
+				"tim",
+				"timapi",
+				"timopensdkfriend",
+				"timwpa",
+				"timgamebindinggroup",
+				"timapiwallet",
+				"timOpensdkSSoLogin",
+				"wtlogintim",
+				"timopensdkgrouptribeshare",
+				"timopensdkapiV4",
+				"timopensdkdataline",
+				"wtlogintimV1",
+				"timapiV1",
+				"mqqopensdkminiapp",
+				"tapsdk",
+				"tapiosdk",
+			};
+
+        PlistElementArray plistDocument;
+		plistDocument = plist.root.CreateArray("LSApplicationQueriesSchemes");
+
+        foreach (var url in urllist)
+        {
+            plistDocument.AddString(url);
+        }
+	}
+
 	[PostProcessBuild(999)]
 	public static void OnPostProcessBuild( BuildTarget target, string pathToBuiltProject )
 	{
@@ -57,7 +122,11 @@ public static class XCodePostProcess
 		string plistPath = Path.Combine(pathToBuiltProject, "Info.plist");
 		PlistDocument plist = new PlistDocument();
 		plist.ReadFromFile(plistPath);
+
 		plist.root.SetString("NSPhotoLibraryUsageDescription", "保存照片到系统相册");
+
+		SetUrlSchemes(plist);
+
 		plist.WriteToFile(plistPath);
 
 		// Finally save the xcode project
