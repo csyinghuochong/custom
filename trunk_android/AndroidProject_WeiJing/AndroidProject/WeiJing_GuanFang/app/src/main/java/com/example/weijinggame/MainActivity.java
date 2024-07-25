@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.example.weijinggame.wxapi.WXPayEntryActivity;
 import com.taptapshare.TapTapShareBuilder;
 import com.taptapshare.TapTapShareCode;
+import com.taptapshare.TapTapShareUtil;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
@@ -298,6 +299,13 @@ public class MainActivity extends UnityPlayerActivity {
 
     public void TapTapShare(String str)
     {
+        if (!TapTapShareUtil.checkTapTapInstall(this)
+                || !TapTapShareUtil.checkTapTapSupportShare(this)) {
+            // 当前未安装TapTap 或者 不支持分享功能
+            UnityPlayer.UnitySendMessage("Global", "OnTapTapShareHandler",  "-1" );
+            return;
+        }
+
         String[] parts = str.split("&");
         Log.i("TapTapShareaa", "TapTapShareaa:   " + str);
         Log.i("TapTapShareaa", "TapTapSharebb:   " +getCacheDir().getAbsolutePath());
