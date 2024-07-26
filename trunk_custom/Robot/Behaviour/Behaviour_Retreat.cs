@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
+
 
 namespace ET
 {
-    public class Behaviour_Target : BehaviourHandler
+    public class Behaviour_Retreat : BehaviourHandler
     {
-
         public override int BehaviourId()
         {
-            return BehaviourType.Behaviour_Target;
+            return BehaviourType.Behaviour_Retreat;
         }
 
         public override bool Check(BehaviourComponent aiComponent, AIConfig aiConfig)
@@ -21,18 +20,11 @@ namespace ET
         {
             Unit unit = UnitHelper.GetMyUnitFromZoneScene(aiComponent.ZoneScene());
             Vector3 targetPosition = aiComponent.TargetPosition;
-            //Console.WriteLine($"Behaviour_Target: Execute: {targetPosition}");
+            //Console.WriteLine($"Behaviour_Retreat: Execute");
             while (true)
             {
                 if (unit.IsDisposed)
                 {
-                    return;
-                }
-                Unit target = AIHelp.GetNearestEnemy(unit, 10);
-                if (target!=null && aiComponent.HaveHaviour(BehaviourType.Behaviour_ZhuiJi))
-                {
-                    aiComponent.TargetID = target.Id;
-                    aiComponent.ChangeBehaviour(BehaviourType.Behaviour_ZhuiJi);
                     return;
                 }
 
@@ -40,7 +32,12 @@ namespace ET
                 {
                     unit.MoveToAsync2(targetPosition).Coroutine();
                 }
-                
+                else
+                {
+                    aiComponent.TargetID = 0;
+                    aiComponent.ChangeBehaviour(BehaviourType.Behaviour_Target);
+                }
+
                 bool timeRet = await TimerComponent.Instance.WaitAsync(1000, cancellationToken);
                 if (!timeRet)
                 {

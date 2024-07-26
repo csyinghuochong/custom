@@ -187,6 +187,7 @@ namespace ET
                     break;
                 case NoticeType.BattleOpen:
                     Log.Debug($"战场机器人[BattleOpen]: {message.Zone}");
+  
                     using (await CoroutineLockComponent.Instance.Wait(CoroutineLockType.NewRobot, 1))
                     {
                         int robotNumber = 0;

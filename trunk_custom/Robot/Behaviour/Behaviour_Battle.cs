@@ -1,4 +1,6 @@
-﻿namespace ET
+﻿using System;
+
+namespace ET
 {
     //战场
     public class Behaviour_Battle : BehaviourHandler
@@ -17,6 +19,7 @@
         {
             Scene zoneScene = aiComponent.ZoneScene();
             await zoneScene.GetComponent<BagComponent>().CheckEquipList();
+            //Console.WriteLine("Behaviour_Battle");
             while (true)
             {
                 int sceneId = BattleHelper.GetBattFubenId(zoneScene.GetComponent<UserInfoComponent>().UserInfo.Lv);

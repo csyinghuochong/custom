@@ -16,7 +16,7 @@ namespace ET
 		{
 			Unit unit = args.Unit;
 			long InstanceId = unit.InstanceId;
-			if (unit.MainHero && unit.IsRobot())
+			if (unit.MainHero && unit.IsSelfRobot())
 			{
 				Scene zoneScene = unit.ZoneScene();
 				MapComponent mapComponent = zoneScene.GetComponent<MapComponent>();

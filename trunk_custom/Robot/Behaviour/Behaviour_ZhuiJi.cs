@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ET
 {
@@ -19,7 +20,7 @@ namespace ET
         {
             Unit unit = UnitHelper.GetMyUnitFromZoneScene(aiComponent.ZoneScene());
             long instanceId = unit.InstanceId;
-            //Log.Console($"Behaviour_ZhuiJi: Execute");
+            //Console.WriteLine($"Behaviour_ZhuiJi: Execute");
             while (true)
             {
                 if (instanceId != unit.InstanceId)

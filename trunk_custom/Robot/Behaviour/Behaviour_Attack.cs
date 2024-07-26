@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ET
@@ -36,9 +37,10 @@ namespace ET
         {
             Scene zoneScene = aiComponent.ZoneScene();
             Unit unit = UnitHelper.GetMyUnitFromZoneScene(zoneScene);
-            BagComponent bagComponent1 = aiComponent.ZoneScene().GetComponent<BagComponent>();
             long instanceId = unit.InstanceId;
-            //Log.Debug($"Behaviour_Attack: Execute");
+            int sceneType = zoneScene.GetComponent<MapComponent>().SceneTypeEnum;
+
+            //Console.WriteLine($"Behaviour_Attack: Execute");
             while (true)
             {
                 if (instanceId != unit.InstanceId)
@@ -59,7 +61,9 @@ namespace ET
                     {
                         //触发技能
                         SkillPro skillPro = aiComponent.ZoneScene().GetComponent<SkillSetComponent>().GetCanUseSkill();
-                        if (skillPro.SkillSetType == (int)SkillSetEnum.Skill)
+                        //if (skillPro.SkillSetType == (int)SkillSetEnum.Skill)
+
+                        if (SkillConfigCategory.Instance.Contain(skillPro.SkillID) && SkillConfigCategory.Instance.Get(skillPro.SkillID).SkillType == 1)
                         {
                             Vector3 direction = target.Position - unit.Position;
                             float ange = Mathf.Rad2Deg(Mathf.Atan2(direction.x, direction.z));
@@ -85,7 +89,15 @@ namespace ET
                     return;
                 }
 
-                bool timeRet = await TimerComponent.Instance.WaitAsync(zoneScene.GetComponent<AttackComponent>().CDTime + 10, cancellationToken);
+                if (sceneType == SceneTypeEnum.Battle && target.GetComponent<BuffManagerComponent>().GetBuffByConfigId(90106002).Count > 0)
+                {
+                    aiComponent.TargetID = 0;
+                    aiComponent.ChangeBehaviour(BehaviourType.Behaviour_Retreat);
+                }
+
+
+                long cdTime = zoneScene.GetComponent<AttackComponent>().CDTime;
+                bool timeRet = await TimerComponent.Instance.WaitAsync(cdTime + 200, cancellationToken);
                 if (!timeRet)
                 {
                     return;
