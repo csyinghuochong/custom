@@ -70,18 +70,6 @@ math.degrees()                                 弧度转角度
 math.radians(skillcmd.TargetAngle)   角度转弧度
 
 
-NetComponent  注意一下两个组件
-  // 挂上这个组件，5秒就会删除session，所以客户端验证完成要删除这个组件。该组件的作用就是防止外挂一直连接不发消息也不进行权限验证
-session.AddComponent<SessionAcceptTimeoutComponent>();
-// 客户端连接，2秒检查一次recv消息，10秒没有消息则断开
-  session.AddComponent<SessionIdleCheckerComponent>();
-
-登陆流程
-C2R_LoginAccount   -> (Realm) tokenComponent.Add(centerAccountInfo.Account, Token, true);
-C2R_GetRealmKey->    R2G_GetLoginKey->(Gate) scene.GetComponent<GateSessionKeyComponent>().Add(key.GetLongHashCode(), request.Account); ->return key gateadress
-C2G_LoginGameGate ->
-
-
 
 ~    位逻辑非运算  如果某一位等于0，就将其转变为1；如果某一位等于1，就将其转变为0。   
 ^    位逻辑异或运算将两个运算对象按位进行异或运算。异或运算的规则是：1异或1等于0，1异或0等于1，0异或0等于0。即：相同得0，相异得1。  比如：10010001（二进制）^11110000（二进制）等于01100001（二进制）。
@@ -134,3 +122,68 @@ LoopHorizontalScrollRect : LoopScrollRect
 LoopScrollRectMulti : LoopScrollRectBase
 LoopHorizontalScrollRectMulti : LoopScrollRectMulti   （UI/Loop Horizontal Scroll Rect(MultiPrefab)）
 LoopVerticalScrollRectMulti : LoopScrollRectMulti
+
+
+
+服务器流程：  
+NetComponent  注意一下两个组件
+  // 挂上这个组件，5秒就会删除session，所以客户端验证完成要删除这个组件。该组件的作用就是防止外挂一直连接不发消息也不进行权限验证
+session.AddComponent<SessionAcceptTimeoutComponent>();
+// 客户端连接，2秒检查一次recv消息，10秒没有消息则断开
+  session.AddComponent<SessionIdleCheckerComponent>();
+
+登陆流程
+C2R_LoginAccount   -> (Realm) tokenComponent.Add(centerAccountInfo.Account, Token, true);
+C2R_GetRealmKey->    R2G_GetLoginKey->(Gate) scene.GetComponent<GateSessionKeyComponent>().Add(key.GetLongHashCode(), request.Account); ->return key gateadress
+C2G_LoginGameGate ->
+
+
+服务器架构：
+
+
+客户端流程：
+loader.init:   初始化全局word。  然后加载代码codeloader.loaddll
+然后执行ET.Model.Share.Entry.start:{注册Mongo type  创建需要reload的code singleton 和 全局word  加载（single）配置表   }  抛出事件，创建 FiberInit_Main
+FiberInit_Main
+{
+await EventSystem.Instance.PublishAsync(root, new EntryEvent1());     share root.AddComponent<TimerComponent>(); 全局组件
+await EventSystem.Instance.PublishAsync(root, new EntryEvent2());     server
+await EventSystem.Instance.PublishAsync(root, new EntryEvent3());     client
+ 	root.AddComponent<UIComponent>();  <PlayerComponent>();  root.SceneType = demo; 目前还只有一个mainfiber
+  	 await EventSystem.Instance.PublishAsync(root, new AppStartInitFinish());
+}
+
+
+AppStartInitFinish_CreateLoginUI:
+root.GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_MJLogin);
+root.GetComponent<SceneManagerComponent>().ChangeScene(SceneTypeEnum.LoginScene, 0, 0);
+
+
+开始登陆，创建Netclient纤程
+self.fiberId = await FiberManager.Instance.Create(SchedulerType.ThreadPool, 0, SceneType.NetClient, "");
+self.netClientActorId = new ActorId(self.Fiber().Process, self.fiberId); 
+
+Netclient纤程内部：
+Session session = await netComponent.CreateRouterSession(realmAddress, account, password);
+ root.AddComponent<SessionComponent>().Session = session;
+
+ // Netclient纤程  把消息扔到Main纤程队列中
+ int parentFiberId = fiber.Root.GetComponent<FiberParentComponent>().ParentFiberId;
+ fiber.Root.GetComponent<ProcessInnerSender>().Send(new ActorId(fiber.Process, parentFiberId), iActorMessage);
+
+
+//软路由的牛逼之处：
+CreateRouterSession(this NetComponent netComponent, IPEndPoint gateaddress, string account, string password)
+await netComponent.Connect(routerInfo, address, localConn, remoteConn);
+
+using RouterConnector routerConnector = netComponent.AddChildWithId<RouterConnector>(id);
+Array.Copy(addressBytes, 0, sendCache, 13, addressBytes.Length);
+routerConnector.Connect(sendCache, 0, addressBytes.Length + 13, routerAddress);
+直连软路由， 把真实的ip地址也序列化发送给软路由， 再由软路由解析，发送给真正的ip
+
+Session routerSession = netComponent.Create(routerAddress, address, recvLocalConn);
+routerSession.AddComponent<PingComponent>();
+routerSession.AddComponent<RouterCheckComponent>();
+
+发现有ip 被攻击 则session.AService.ChangeAddress(sessionId, routerAddress);
+session.AService.ChangeAddress(sessionId, routerAddress);
