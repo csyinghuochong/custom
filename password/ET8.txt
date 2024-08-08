@@ -124,6 +124,26 @@ LoopHorizontalScrollRectMulti : LoopScrollRectMulti   （UI/Loop Horizontal Scro
 LoopVerticalScrollRectMulti : LoopScrollRectMulti
 
 
+c# using 的用法
+using (var file = File.Open("filePath", FileMode.OpenOrCreate))
+{
+    //do something
+}
+
+FileStream file = File.Open("filePath", FileMode.OpenOrCreate);
+try
+{
+  //do something
+}
+finally
+{
+  if (file!= null)
+  {
+    ((IDisposable)file).Dispose();
+  }
+}
+
+
 
 服务器流程：  
 NetComponent  注意一下两个组件
