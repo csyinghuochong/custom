@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace ET
 {
 
@@ -78,6 +80,21 @@ namespace ET
             GlobalHelp.TapTapShare(args.Content);
         }
     }
+
+    public class TapTap_OnTapTapGetOAID : AEventClass<EventType.TapTapGetOAID>
+    {
+        protected override void Run(object numerice)
+        {
+            EventType.TapTapGetOAID args = numerice as EventType.TapTapGetOAID;
+
+            GameObject.Find("Global").GetComponent<Init>().OnGetDeviceOAIDHandler = (string text) =>
+            {
+                UI ui = UIHelper.GetUI(args.ZoneScene, UIType.UILogin);
+                ui.GetComponent<UILoginComponent>().OnGetDeviceOAID(text);
+            };
+            GameObject.Find("Global").GetComponent<Init>().GetDeviceOAID();
+        }
+    };
 
 
     public class TapTap_OnTapTapAuther : AEventClass<EventType.TapTapAuther>
