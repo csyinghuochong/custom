@@ -144,6 +144,48 @@ finally
 }
 
 
+//ET携程锁
+coroutineLockType=CoroutineLockType.MessageLocationSender = 2     key = 1211454955075324
+public static async ETTask<CoroutineLock> Wait(this CoroutineLockComponent self, int coroutineLockType, long key, int time = 60000) 
+		->root.GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.MessageLocationSender, entityId)
+
+
+//CoroutineLockComponent 每一个携程锁类型对应child   id为携程锁类型  。 十种携程锁类型则CoroutineLockComponent有是个child
+CoroutineLockQueueType coroutineLockQueueType = (CoroutineLockComponent) self.GetChild<CoroutineLockQueueType>(coroutineLockType) ?? self.AddChildWithId<CoroutineLockQueueType>(coroutineLockType);
+
+//key=1211454955075324
+await coroutineLockQueueType.Wait(key, time);
+{
+//每一种类型的携程锁coroutineLockQueueType  为每个key 分配一个child  = CoroutineLockQueue  的id为key   type为携程锁类型 即父对象coroutineLockQueueType的id
+CoroutineLockQueue queue = (coroutineLockQueueType)self.AddChildWithId<CoroutineLockQueue, int>(key, (int)self.Id, true);
+
+ETTask<CoroutineLock> Wait(this CoroutineLockQueue self, int time)
+
+}
+
+//当前携程锁队列为空 直接执行
+self.isStart = true;
+coroutineLock = self.AddChild<CoroutineLock, int, long, int>(self.type, self.Id, 1, true);
+ return coroutineLock;
+
+//当前携程锁队列不为空 ， 则加入队列
+self.queue.Enqueue(waitCoroutineLock);
+
+1 如果死锁了 则最多60秒后往下执行 （waitCoroutineLock.SetException(new Exception("coroutine is timeout!"));）  coroutineLock = await waitCoroutineLock.Wait();  return  coroutineLock    { do something }
+2 没有死锁   using doing->  CoroutineLock.destory ->
+                                           self.Scene<CoroutineLockComponent>().RunNextCoroutine(self.type, self.key, self.level + 1);  ->self.nextFrameRun.Enqueue((coroutineLockType, key, level));  把下一个放入队列
+                  
+
+// 上一个携程锁销毁后  会把下一个加入队列 循环过程中会有对象继续加入队列
+            while (self.nextFrameRun.Count > 0)
+            {
+                (int coroutineLockType, long key, int count) = self.nextFrameRun.Dequeue();
+                self.Notify(coroutineLockType, key, count);
+            }
+
+CoroutineLockQueueType coroutineLockQueueType = self.GetChild<CoroutineLockQueueType>(coroutineLockType);
+CoroutineLockQueue queue = self.Get(key);
+
 
 服务器流程：  
 NetComponent  注意一下两个组件
