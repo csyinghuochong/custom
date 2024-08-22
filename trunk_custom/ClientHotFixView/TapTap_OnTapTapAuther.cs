@@ -92,6 +92,7 @@ namespace ET
                 UI ui = UIHelper.GetUI(args.ZoneScene, UIType.UILogin);
                 ui.GetComponent<UILoginComponent>().OnGetDeviceOAID(text);
             };
+            Log.ILog.Debug($"RequestGetDeviceOAID");
             GameObject.Find("Global").GetComponent<Init>().GetDeviceOAID();
         }
     };
