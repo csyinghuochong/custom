@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 1214
+  version: 1215
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -744,6 +744,10 @@ MonoBehaviour:
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_12.prefab
   - bundle: 9bf44189058f24f74dfa5976858e6de8.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_13.prefab
+  - bundle: b77586ab48ab65839da2484e97cf1722.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_14.prefab
+  - bundle: 99e6a590201632c2656f7abe1001467a.unity3d
+    path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_15.prefab
   - bundle: 28810a1dadc2ff9c73f2084858c7900b.unity3d
     path: Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_2.prefab
   - bundle: 2e48fdd4b88a6580dede654e6a98f9d5.unity3d
@@ -1740,6 +1744,8 @@ MonoBehaviour:
     path: Assets/Bundles/Icon/ItemIcon/10000210.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/10000211.png
+  - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
+    path: Assets/Bundles/Icon/ItemIcon/10000212.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
     path: Assets/Bundles/Icon/ItemIcon/10002.png
   - bundle: dca237d1e15738cb8df597a76e80c134.unity3d
@@ -4735,9 +4741,15 @@ MonoBehaviour:
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/63301001.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/63301005.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/63302001.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/63302004.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/63303001.png
+  - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
+    path: Assets/Bundles/Icon/RoleSkillIcon/63303004.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
     path: Assets/Bundles/Icon/RoleSkillIcon/64011101.png
   - bundle: f7c1b12f45acf29f6071a1185644a6d1.unity3d
@@ -7358,6 +7370,8 @@ MonoBehaviour:
     path: Assets/Bundles/Unit/ZuoQi/10010Show.prefab
   - bundle: bd5e40a6d98d23a4fbb5000d72216ac8.unity3d
     path: Assets/Bundles/Unit/ZuoQi/10011.prefab
+  - bundle: a0199002d782493945b9ded37a5b5281.unity3d
+    path: Assets/Bundles/Unit/ZuoQi/10012.prefab
   - bundle: 95ad2e210435acba112984e5c8f2ca10.unity3d
     path: Assets/Scenes/1000001.unity
   - bundle: b804ff61a9a0c7fdef85cc7501d2c680.unity3d
@@ -9758,6 +9772,9 @@ MonoBehaviour:
   - name: bd5e40a6d98d23a4fbb5000d72216ac8.unity3d
     assets:
     - Assets/Bundles/Unit/ZuoQi/10011.prefab
+  - name: a0199002d782493945b9ded37a5b5281.unity3d
+    assets:
+    - Assets/Bundles/Unit/ZuoQi/10012.prefab
   - name: c0626a2a0659a7ac701da0c3f4834847.unity3d
     assets:
     - Assets/Bundles/Jpg/Back_11.jpg
@@ -11720,6 +11737,12 @@ MonoBehaviour:
   - name: 9bf44189058f24f74dfa5976858e6de8.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_13.prefab
+  - name: b77586ab48ab65839da2484e97cf1722.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_14.prefab
+  - name: 99e6a590201632c2656f7abe1001467a.unity3d
+    assets:
+    - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_15.prefab
   - name: 28810a1dadc2ff9c73f2084858c7900b.unity3d
     assets:
     - Assets/Bundles/Effect/SkillEffect/Eff_Skill_Fireball_2.prefab
@@ -12842,6 +12865,7 @@ MonoBehaviour:
     - Assets/Bundles/Icon/ItemIcon/10000209.png
     - Assets/Bundles/Icon/ItemIcon/10000210.png
     - Assets/Bundles/Icon/ItemIcon/10000211.png
+    - Assets/Bundles/Icon/ItemIcon/10000212.png
     - Assets/Bundles/Icon/ItemIcon/10002.png
     - Assets/Bundles/Icon/ItemIcon/10003.png
     - Assets/Bundles/Icon/ItemIcon/10010001.png
@@ -14359,8 +14383,11 @@ MonoBehaviour:
     - Assets/Bundles/Icon/RoleSkillIcon/63200101.png
     - Assets/Bundles/Icon/RoleSkillIcon/63200201.png
     - Assets/Bundles/Icon/RoleSkillIcon/63301001.png
+    - Assets/Bundles/Icon/RoleSkillIcon/63301005.png
     - Assets/Bundles/Icon/RoleSkillIcon/63302001.png
+    - Assets/Bundles/Icon/RoleSkillIcon/63302004.png
     - Assets/Bundles/Icon/RoleSkillIcon/63303001.png
+    - Assets/Bundles/Icon/RoleSkillIcon/63303004.png
     - Assets/Bundles/Icon/RoleSkillIcon/64011101.png
     - Assets/Bundles/Icon/RoleSkillIcon/64011201.png
     - Assets/Bundles/Icon/RoleSkillIcon/64011301.png
@@ -17506,6 +17533,15 @@ MonoBehaviour:
   - name: cc0f8a7666e7fbf5f0f92f4e3b1e6d5d.unity3d
     assets:
     - Assets/Res/MonsterSet/StylizedWildAnimalsPack/Materials/PC/M_Bear_White.mat
+  - name: 20490332061e49e905e3d3ec063f66c5.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/3DModel_Cute/Cute Pet/Animations_Cute_Animals/TypeB/TypeB.controller
+  - name: 4d6324d8c9ad97b4629faefca8e98620.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/3DModel_Cute/Cute Pet/Animations_Cute_Animals/TypeB/Animal_TypeB@Attack.fbx
+  - name: 7e1f756ea2b1dcf9d27fc10c0bf9b470.unity3d
+    assets:
+    - Assets/Mono/GameDemo/Editor Default Resources/3DModel_Cute/Cute Pet/Animations_Cute_Animals/TypeB/Animal_TypeB@Damage.fbx
   - name: aef281ffcc8f78ab73499eefe549b5ef.unity3d
     assets:
     - Assets/Res/UI/UIRes/Imgage/Img_404.png
@@ -20537,15 +20573,15 @@ MonoBehaviour:
   - name: 776eea7e323129c03f9df876bff14069.unity3d
     assets:
     - Assets/Res/Effect/EffectResList/Lana Studio/Casual RPG VFX/Materials/AB_01.mat
-  - name: 8c04be82bdd58db14825abe02f4171b8.unity3d
-    assets:
-    - Assets/Res/Effect/Skill/Texture/Materials/dust10.mat
   - name: 9ea97a6a41cbb04757aa2bd74003c5b7.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Materials/Trail01_Add.mat
   - name: f6e5118a05e42e169dcf026e1e57d16c.unity3d
     assets:
     - Assets/Mono/GameDemo/Editor Default Resources/Effect/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Textures/Trail01.PNG
+  - name: 8c04be82bdd58db14825abe02f4171b8.unity3d
+    assets:
+    - Assets/Res/Effect/Skill/Texture/Materials/dust10.mat
   - name: bf0d9017e287fc590944271b03c74631.unity3d
     assets:
     - Assets/Res/Effect/Skill/Texture/dust10.tif
