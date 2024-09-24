@@ -76,9 +76,9 @@ public static class XCodePostProcess
 
 		 // 删除Key
 		// 删除NSUserTrackingUsageDescription键
-        if (plist.root.ContainsKey("NSUserTrackingUsageDescription"))
+        if (plist.root.values.ContainsKey("NSUserTrackingUsageDescription"))
         {
-            plist.root.Remove("NSUserTrackingUsageDescription");
+            plist.root.values.Remove("NSUserTrackingUsageDescription");
         }
 
 
