@@ -74,6 +74,14 @@ public static class XCodePostProcess
         PlistElementArray plistDocument;
 		plistDocument = plist.root.CreateArray("LSApplicationQueriesSchemes");
 
+		 // 删除Key
+		// 删除NSUserTrackingUsageDescription键
+        if (plist.root.ContainsKey("NSUserTrackingUsageDescription"))
+        {
+            plist.root.Remove("NSUserTrackingUsageDescription");
+        }
+
+
         foreach (var url in urllist)
         {
             plistDocument.AddString(url);
@@ -91,6 +99,7 @@ public static class XCodePostProcess
 		}
 
 
+		/*
 		 var projectPath = PBXProject.GetPBXProjectPath(path);
         
         // Adds entitlement depending on the Unity version used
@@ -105,7 +114,7 @@ public static class XCodePostProcess
             manager.AddSignInWithAppleWithCompatibility();
             manager.WriteToFile();
 #endif
-
+		*/
 
 		UnityEngine.Debug.Log("PostProcess_1: " + pathToBuiltProject);
 		// Create a new project object from build target
