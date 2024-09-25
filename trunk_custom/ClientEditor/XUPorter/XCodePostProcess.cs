@@ -4,7 +4,10 @@
 using UnityEngine;
 using System;
 using System.IO;
+using AppleAuth.Editor;
 using System.Collections.Generic;
+using PBXProject = UnityEditor.iOS.Xcode.PBXProject;
+
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.iOS.Xcode;
@@ -88,6 +91,18 @@ public static class XCodePostProcess
         }
 	}
 
+	public static class SignInWithApplePostprocessor
+	{
+		[PostProcessBuild(1)]
+		public static void OnPostProcessBuild(BuildTarget target, string path)
+		{
+			if (target != BuildTarget.StandaloneOSX)
+				return;
+
+			AppleAuthMacosPostprocessorHelper.FixManagerBundleIdentifier(target, path);
+		}
+	}
+
 	[PostProcessBuild(999)]
 	public static void OnPostProcessBuild( BuildTarget target, string pathToBuiltProject )
 	{
@@ -99,22 +114,30 @@ public static class XCodePostProcess
 		}
 
 
-		/*
-		 var projectPath = PBXProject.GetPBXProjectPath(path);
+		
+		 var projectPath = PBXProject.GetPBXProjectPath(pathToBuiltProject);
         
         // Adds entitlement depending on the Unity version used
 #if UNITY_2019_3_OR_NEWER
-            var project = new PBXProject();
-            project.ReadFromString(System.IO.File.ReadAllText(projectPath));
-            var manager = new ProjectCapabilityManager(projectPath, "Entitlements.entitlements", null, project.GetUnityMainTargetGuid());
-            manager.AddSignInWithAppleWithCompatibility(project.GetUnityFrameworkTargetGuid());
+            var project_000 = new PBXProject();
+			project_000.ReadFromString(System.IO.File.ReadAllText(projectPath));
+            var manager = new ProjectCapabilityManager(projectPath, "Entitlements.entitlements", null, project_000.GetUnityMainTargetGuid());
+            manager.AddSignInWithAppleWithCompatibility(project_000.GetUnityFrameworkTargetGuid());
+
+			manager.AddInAppPurchase();
+			manager.AddPushNotifications(true);
+
+			string[] domains = new string[] { "applinks:c4ovz.share2dlink.com", "applinks:bj2ks.share2dlink.com", "applinks:ahmn.t4m.cn" };
+
+			manager.AddAssociatedDomains(domains);
+
             manager.WriteToFile();
 #else
             var manager = new ProjectCapabilityManager(projectPath, "Entitlements.entitlements", PBXProject.GetUnityTargetName());
             manager.AddSignInWithAppleWithCompatibility();
             manager.WriteToFile();
 #endif
-		*/
+		
 
 		UnityEngine.Debug.Log("PostProcess_1: " + pathToBuiltProject);
 		// Create a new project object from build target
@@ -132,9 +155,9 @@ public static class XCodePostProcess
 		//TODO disable the bitcode for iOS 9
 		project.overwriteBuildSetting("ENABLE_BITCODE", "NO", "Release");
 		project.overwriteBuildSetting("ENABLE_BITCODE", "NO", "Debug");
-
+		
 		//TODO implement generic settings as a module option
-//		project.overwriteBuildSetting("CODE_SIGN_IDENTITY[sdk=iphoneos*]", "iPhone Distribution", "Release");
+		//		project.overwriteBuildSetting("CODE_SIGN_IDENTITY[sdk=iphoneos*]", "iPhone Distribution", "Release");
 
 		var mainAppPath = Path.Combine(pathToBuiltProject, "MainApp", "main.mm");
 		var mainContent = File.ReadAllText(mainAppPath);

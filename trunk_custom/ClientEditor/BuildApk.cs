@@ -33,7 +33,7 @@ public class MyEditorScript
 {
 	static string[] SCENES = FindEnabledEditorScenes();
 
-	[MenuItem("Custom/Build IOS")]
+	[MenuItem("Custom/Build IOS【Add AppleSignin】")]
 	static void PerformIOSBuild()
 	{
 		//打包之前先设置一下 预定义标签， 我建议大家最好 做一些  91 同步推 快用 PP助手一类的标签。 这样在代码中可以灵活的开启 或者关闭 一些代码。
