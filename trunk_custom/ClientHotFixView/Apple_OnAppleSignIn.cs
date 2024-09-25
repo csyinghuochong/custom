@@ -20,7 +20,7 @@ namespace ET
             }
             else
             {
-                init.SignInWithApple();
+                init.SignInWithApple(args.Account);
             }
         }
     }
