@@ -19,9 +19,9 @@ namespace ET
 
         public static async ETTask<int> OnIOSPayVerify(this ReChargeIOSComponent self, M2R_RechargeRequest request)
         {
-            Log.Warning($"IOS充值回调执行00 " + "id:" + request.UnitId);
+            Log.Warning($"支付订单[IOS]回调执行 " + "id:" + request.UnitId);
             string verifyURL = string.Empty;
-            if (request.UnitId == 1603809198615887872 || request.UnitId == 1636544958309662720)
+            if (request.UnitId == 2025124307608338432 )   //先锋一区 \敖安塔
             {
                 verifyURL = "https://sandbox.itunes.apple.com/verifyReceipt";
             }
@@ -113,8 +113,8 @@ namespace ET
                     self.PayLoadList.RemoveAt(0);
                 }
                 string serverName = ServerHelper.GetGetServerItem(false, request.Zone).ServerName;
-                Log.Warning($"支付成功[IOS]: 区：{serverName}    玩家名字：{request.UnitName}     充值额度：{rechargeNumber}");
-                Log.Console($"支付成功[IOS]: 区：{serverName}    玩家名字：{request.UnitName}     充值额度：{rechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
+                Log.Warning($"支付订单[IOS]支付成功: 区：{serverName}    玩家名字：{request.UnitName}     充值额度：{rechargeNumber}");
+                Log.Console($"支付订单[IOS]支付成功: 区：{serverName}    玩家名字：{request.UnitName}     充值额度：{rechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
                 await RechargeHelp.OnPaySucessToGate(request.Zone, request.UnitId, rechargeNumber, postReturnStr, PayTypeEnum.IOSPay);
             }
 
