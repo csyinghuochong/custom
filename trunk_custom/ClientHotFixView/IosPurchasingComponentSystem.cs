@@ -24,8 +24,11 @@ namespace ET
             if (ZoneScene == null)
             {
                 Log.Error($"OnIosPayFailCallbackError:ZoneScene == null ");
+                FloatTipManager.Instance.ShowFloatTip("ZoneScene == null！");
                 return;
             }
+            FloatTipManager.Instance.ShowFloatTip("IOS支付返回！");
+
             //掉线
             SessionComponent sessionComponent = ZoneScene.GetComponent<SessionComponent>();
             AccountInfoComponent accountInfoComponent = ZoneScene.GetComponent<AccountInfoComponent>();
