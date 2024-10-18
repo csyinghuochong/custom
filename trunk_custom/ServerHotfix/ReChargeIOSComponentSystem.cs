@@ -90,23 +90,36 @@ namespace ET
                     Log.Warning($"IOS充值回调ERROR5 : SG");
                     continue;
                 }
-                if (!product_id.Contains("WJ"))
+
+                int rechargeNumber = 0;
+
+                if (product_id.Equals("testpay1"))
                 {
-                    Log.Warning($"IOS充值回调ERROR6 : !WJ");
-                    continue;
+                    rechargeNumber = 1;
+                }
+                else
+                {
+                    if (!product_id.Contains("WJ"))
+                    {
+                        Log.Warning($"IOS充值回调ERROR6 : !WJ");
+                        continue;
+                    }
+
+                    //testpay1
+                    product_id = product_id.Substring(0, product_id.Length - 2);
+
+                    try
+                    {
+                        rechargeNumber = int.Parse(product_id);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warning(ex.ToString());
+                        continue;
+                    }
                 }
 
-                product_id = product_id.Substring(0, product_id.Length - 2);
-                int rechargeNumber = 0;
-                try
-                {
-                    rechargeNumber = int.Parse(product_id);
-                }
-                catch (Exception ex)
-                {
-                    Log.Warning(ex.ToString());
-                    continue;
-                }
+ 
                 self.PayLoadList.Add(payLoad);
                 if (self.PayLoadList.Count >= 100)
                 {
