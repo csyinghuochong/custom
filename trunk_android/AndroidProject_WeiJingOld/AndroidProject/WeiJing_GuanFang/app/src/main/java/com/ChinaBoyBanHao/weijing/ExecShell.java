@@ -1,4 +1,4 @@
-package com.example.weijinggame;
+package com.ChinaBoyBanHao.weijing;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;

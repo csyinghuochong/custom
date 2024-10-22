@@ -1,4 +1,4 @@
-package com.example.weijinggame;
+package com.ChinaBoyBanHao.weijing;
 
 import android.util.Log;
 

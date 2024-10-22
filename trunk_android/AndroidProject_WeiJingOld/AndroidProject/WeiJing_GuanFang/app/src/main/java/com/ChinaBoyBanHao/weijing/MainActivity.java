@@ -1,4 +1,4 @@
-package com.example.weijinggame;
+package com.ChinaBoyBanHao.weijing;
 
 import android.Manifest;
 import android.app.Activity;
@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +16,7 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.example.weijinggame.wxapi.WXPayEntryActivity;
+import com.ChinaBoyBanHao.weijing.wxapi.WXPayEntryActivity;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
@@ -34,9 +33,6 @@ import android.content.IntentFilter;
 
 import com.quicksdk.Sdk;
 import com.quicksdk.utility.AppConfig;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class MainActivity extends UnityPlayerActivity {
 
@@ -102,7 +98,6 @@ public class MainActivity extends UnityPlayerActivity {
 
     public void SetIsPermissionGranted(String appid) {
         Log.d("SetIsPermissionGranted", appid);
-
     }
 
     //微信登录的接口
@@ -146,7 +141,6 @@ public class MainActivity extends UnityPlayerActivity {
     //获取系统时间戳
     public void ReqSystemTime(String str) {
         long time1 = System.currentTimeMillis();
-        UnityPlayer.UnitySendMessage("Global", "onRecvSysTime", String.valueOf(time1));
     }
 
     //获取电池电量
@@ -158,7 +152,6 @@ public class MainActivity extends UnityPlayerActivity {
         double level = -1;
         if (rawlevel >= 0 && scale > 0)
             level = (rawlevel * 1.0) / scale;
-        UnityPlayer.UnitySendMessage("Global", "onRecvBattery", String.valueOf(level));
     }
 
     public void QuDaoRequestPermissions() {
@@ -181,7 +174,7 @@ public class MainActivity extends UnityPlayerActivity {
             //if (this.mContext.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
             {
                 //Log.i("Permissions", "Permissions WRITE_EXTERNAL_STORAGE 0");
-                //permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
             }
 
             //if (this.mContext.checkSelfPermission(Manifest.permission.REQUEST_INSTALL_PACKAGES) != PackageManager.PERMISSION_GRANTED)
@@ -206,11 +199,11 @@ public class MainActivity extends UnityPlayerActivity {
             }
             else {
                 Log.i("Permissions2", "Permissions 1_1");
-                UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", "1_1");
+                UnityPlayer.UnitySendMessage("Canvas/XieYiText", "onRequestPermissionsResult", "1_1");
             }
         } else {
             Log.i("Permissions1", "Permissions 1_1");
-            UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", "1_1");
+            UnityPlayer.UnitySendMessage("Canvas/XieYiText", "onRequestPermissionsResult", "1_1");
         }
     }
 
@@ -231,11 +224,11 @@ public class MainActivity extends UnityPlayerActivity {
                     for (int result : grantResults) {
                         if (result != PackageManager.PERMISSION_GRANTED) {
                             Toast.makeText(this, "请同意所以请求才能运行程序", Toast.LENGTH_SHORT).show();
-                            UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", permissions[i] + "_0");
+                            UnityPlayer.UnitySendMessage("Canvas/XieYiText", "onRequestPermissionsResult", permissions[i] + "_0");
                             //finish();
                             return;
                         }
-                        UnityPlayer.UnitySendMessage("Global", "onRequestPermissionsResult", permissions[i] + "_1");
+                        UnityPlayer.UnitySendMessage("Canvas/XieYiText", "onRequestPermissionsResult", permissions[i] + "_1");
                         i++;
                     }
                 } else {
@@ -305,7 +298,6 @@ public class MainActivity extends UnityPlayerActivity {
             Log.i("GetPhoneNum_2e", e.toString());
         }
 
-        UnityPlayer.UnitySendMessage("Global", "OnRecvPhoneNum", phoneNum);
     }
 
     public  void GetPhoneNum_3(String zone) {
@@ -347,7 +339,6 @@ public class MainActivity extends UnityPlayerActivity {
             ret = ret.substring(3,14);
             phoneNum =  ret;
         }
-        UnityPlayer.UnitySendMessage("Global", "OnRecvPhoneNum", phoneNum);
     }
 
     //微信文字分享的接口
