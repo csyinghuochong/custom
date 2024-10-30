@@ -188,6 +188,42 @@ CoroutineLockQueue queue = self.Get(key);
 
 
 服务器流程：  
+Entry.init ->
+await World.Instance.AddSingleton<ConfigLoader>().LoadAsync();  //耗时8s
+public class FiberInit_Main: AInvokeHandler<FiberInit, ETTask>
+{
+ await EventSystem.Instance.PublishAsync(root, new EntryEvent1());   //share
+  await EventSystem.Instance.PublishAsync(root, new EntryEvent2()); //server
+ await EventSystem.Instance.PublishAsync(root, new EntryEvent3()); //client
+}
+public class EntryEvent1_InitShare: AEvent<Scene, EntryEvent1>
+{
+root.AddComponent<ProcessInnerSender>();   //每个进程一个， 用来进程内线程之间通信 
+}
+public class EntryEvent2_InitServer : AEvent<Scene, EntryEvent2>
+{
+ StartProcessConfig startProcessConfig = StartProcessConfigCategory.Instance.Get(process);
+                        if (startProcessConfig.InnerPort != 0)
+                        {
+	                //每个进程创建一个SceneType.NetInner, =-2的线程。该线程同样挂载ProcessInnerSender
+                                await FiberManager.Instance.Create(SchedulerType.ThreadPool, ConstFiberId.NetInner, 0, SceneType.NetInner, "NetInner");
+
+		//[Invoke((long)SceneType.NetInner)]   -2
+		root.AddComponent<ProcessOuterSender, IPEndPoint>(startProcessConfig.IPEndPoint);
+           		root.AddComponent<ProcessInnerSender>();
+                        }
+
+                        // 根据配置创建纤程
+                        var processScenes = StartSceneConfigCategory.Instance.GetByProcess(process);
+}
+
+相同进程通信
+await fiber.Root.GetComponent<ProcessInnerSender>().Call(actorId, request, needException: needException);
+
+不同进程通信
+using A2NetInner_Response a2NetInnerResponse = await fiber.Root.GetComponent<ProcessInnerSender>().Call(
+                    new ActorId(fiber.Process, ConstFiberId.NetInner), a2NetInner_Request) as A2NetInner_Response;
+
 NetComponent  注意一下两个组件
   // 挂上这个组件，5秒就会删除session，所以客户端验证完成要删除这个组件。该组件的作用就是防止外挂一直连接不发消息也不进行权限验证
 session.AddComponent<SessionAcceptTimeoutComponent>();
