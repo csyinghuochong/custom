@@ -1,0 +1,17 @@
+D:\unityhub\2021.3.29f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\platform-tools
+
+查看整个系统的内存使用情况：
+adb shell dumpsys meminfo
+
+查看特定应用的内存使用情况
+adb shell dumpsys meminfo com.guangying.mengjing
+adb shell dumpsys meminfo com.example.mengjing
+
+adb -s emulator-5554 logcat
+
+https://www.jb51.net/article/274809.htm
+
+abd 连接雷电模拟器
+
+adb -s emulator-5554 logcat > C:\unitlogcatfile.txt
+adb logcat 

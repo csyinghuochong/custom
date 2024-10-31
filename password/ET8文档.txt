@@ -223,6 +223,23 @@ await fiber.Root.GetComponent<ProcessInnerSender>().Call(actorId, request, needE
 不同进程通信
 using A2NetInner_Response a2NetInnerResponse = await fiber.Root.GetComponent<ProcessInnerSender>().Call(
                     new ActorId(fiber.Process, ConstFiberId.NetInner), a2NetInner_Request) as A2NetInner_Response;
+//ProcessOuterSender  跨进程通信， 目标进程的
+IResponse res = await root.GetComponent<ProcessOuterSender>().Call(request.ActorId, request.MessageObject, false);
+main->netinner - netinner -> main
+
+非locationmessage 简单  MessageSender ->MessageQueue.Instance.Send
+
+locationactormessage -> 
+->root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Chat).Call
+   MessageLocationSender messageLocationSender = self.GetOrCreate(entityId);
+   await root.GetComponent<LocationProxyComponent>().Get((int)self.Id, messageLocationSender.Id);
+   await scene.GetComponent<LocationManagerComoponent>().Get(request.Type).Get(request.Key);
+->await root.GetComponent<MessageSender>().Call
+
+因为现在玩家下线对应的fiber没用清空缓存 所以作以下操作。。。。
+scene.GetComponent<MessageLocationSenderComponent>().Get(LocationType.GateSession).Remove(request.UnitId);
+scene.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Remove(request.UnitId);
+
 
 NetComponent  注意一下两个组件
   // 挂上这个组件，5秒就会删除session，所以客户端验证完成要删除这个组件。该组件的作用就是防止外挂一直连接不发消息也不进行权限验证
