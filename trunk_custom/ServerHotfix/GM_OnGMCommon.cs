@@ -122,6 +122,14 @@ namespace ET
             {
                 ConsoleHelper.RechargeChaXunConsoleHandler(request.Context).Coroutine();        
             }
+            if (infoList[0] == "jinyan")
+            {
+                ConsoleHelper.JinYanConsoleHandler(request.Context).Coroutine();
+            }
+            if (infoList[0] == "clearchat")
+            {
+                ConsoleHelper.ClearChatConsoleHandler(request.Context).Coroutine();
+            }
         }
     }
 }

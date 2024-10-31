@@ -207,6 +207,52 @@ namespace ET
         }
 
 
+        public static async ETTask ClearChatConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  ClearChatConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+           
+            if (chaxunInfo.Length != 2)
+            {
+                Console.WriteLine($"C must have have zone");
+                Log.Warning($"C must have have zone");
+                return;
+            }
+
+            int zone = int.Parse(chaxunInfo[1]);
+            long chatServerId = StartSceneConfigCategory.Instance.GetBySceneName(zone, "Chat").InstanceId;
+            A2A_ServerMessageRResponse g_SendChatRequest = (A2A_ServerMessageRResponse)await ActorMessageSenderComponent.Instance.Call
+                (chatServerId, new A2A_ServerMessageRequest()
+                {
+                    MessageType = NoticeType.ClearChat,
+                    MessageValue = "清空聊天"
+                });
+        }
+
+        public static async ETTask JinYanConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  JinYanConsoleHandler: {content}");
+            await ETTask.CompletedTask;
+            string[] chaxunInfo = content.Split(" ");
+
+            if (chaxunInfo.Length != 3)
+            {
+                Console.WriteLine($"C must have have zone");
+                Log.Warning($"C must have have zone");
+                return;
+            }
+
+            int zone = int.Parse(chaxunInfo[1]);
+            long chatServerId = StartSceneConfigCategory.Instance.GetBySceneName(zone, "Chat").InstanceId;
+            A2A_ServerMessageRResponse g_SendChatRequest = (A2A_ServerMessageRResponse)await ActorMessageSenderComponent.Instance.Call
+                (chatServerId, new A2A_ServerMessageRequest()
+                {
+                    MessageType = NoticeType.JinYan,
+                    MessageValue = content
+                });
+        }
+
         /// <summary>
         /// 查询排名前几的玩家充值   rechargechaXun 0 3  (所有区前三的玩家充值)
         /// </summary>
