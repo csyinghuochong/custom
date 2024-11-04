@@ -4,8 +4,17 @@ D:\unityhub\2021.3.29f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\platform
 adb shell dumpsys meminfo
 
 查看特定应用的内存使用情况
-adb shell dumpsys meminfo com.guangying.mengjing
-adb shell dumpsys meminfo com.example.mengjing
+adb shell dumpsys meminfo com.guangying.mengjing   
+2573854kb  2513mb
+Pss Total : 占用了真实的物理内存的空间
+private dirty : 指私有驻留内存
+Heap Size: 指占用总内存（Heap  堆）
+Heap Alloc : 指在虚拟地址中分配了这么多空间
+Heap Free: 空闲内存
+//Native Heap ：c 中malloc出来的堆空间,扩展:c++申请的内存为native process，java申请的内存：java process
+//camera中一般是算法申请的内存，或者自己写的另外一些 jni的方法
+//Dalvik Heap：指java中new出来的java堆空间,占用的虚拟内存的空间
+
 
 adb -s emulator-5554 logcat
 
