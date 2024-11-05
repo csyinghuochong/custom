@@ -130,6 +130,10 @@ namespace ET
             {
                 ConsoleHelper.ClearChatConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "attribute")
+            {
+                ConsoleHelper.AttributeConsoleHandler(request.Context).Coroutine();
+            }
         }
     }
 }

@@ -206,6 +206,87 @@ namespace ET
 #endif
         }
 
+        //attribute 0 10   //所有区排行榜前10的属性点
+        public static async ETTask AttributeConsoleHandler(string content)
+        {
+            Console.WriteLine($"request.Context:  AttributeConsoleHandler: {content}");
+            string[] chaxunInfo = content.Split(" ");
+
+            if (chaxunInfo.Length != 3)
+            {
+                Console.WriteLine($"C must have have zone");
+                Log.Warning($"C must have have zone");
+                return;
+            }
+
+            int zone = int.Parse(chaxunInfo[1]);
+            int rankNumber = int.Parse(chaxunInfo[2]);
+
+#if SERVER
+            List<int> zonlist = new List<int> { };
+            if (zone == 0)
+            {
+                zonlist = ServerMessageHelper.GetAllZone();
+            }
+            else
+            {
+                zonlist.Add(zone);
+            }
+
+            for (int i = 0; i < zonlist.Count; i++)
+            {
+                int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+
+                List<DBRankInfo> dBRankInfos = await Game.Scene.GetComponent<DBComponent>().Query<DBRankInfo>(pyzone, d => d.Id == pyzone);
+
+                if (dBRankInfos == null || dBRankInfos.Count == 0)
+                {
+                    continue;
+                }
+
+                string levelInfo = $"{pyzone} 区排名前{rankNumber} 玩家属性点：";
+
+                List<RankingInfo> rankingList = dBRankInfos[0].rankingInfos;
+
+
+                for (int rank = 0; rank < rankNumber; rank++)
+                {
+                    if (rank >= rankingList.Count)
+                    {
+                        break;
+                    }
+
+                    long unitid = rankingList[rank].UserId;
+
+                    List<UserInfoComponent> userinfoComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(pyzone, d => d.Id == unitid);
+                    if (userinfoComponentlist.Count == 0)
+                    {
+                        continue;
+                    }
+                    List<NumericComponent> unumericComponentlist = await Game.Scene.GetComponent<DBComponent>().Query<NumericComponent>(pyzone, d => d.Id == unitid);
+                    if (userinfoComponentlist.Count == 0)
+                    {
+                        continue;
+                    }
+                    //public const int PointLiLiang = 3042;
+                    //public const int PointZhiLi = 3043;
+                    //public const int PointTiZhi = 3044;
+                    //public const int PointNaiLi = 3045;
+                    //public const int PointMinJie = 3046;
+
+                    levelInfo += $"\t排名:{rank + 1} \t玩家: {userinfoComponentlist[0].UserName} \t职业: {userinfoComponentlist[0].UserInfo.Occ} " +
+                        $"\t第二职业: {userinfoComponentlist[0].UserInfo.OccTwo} \t力量: {unumericComponentlist[0].GetAsInt(NumericType.PointLiLiang)} " +
+                        $"\t智力: {unumericComponentlist[0].GetAsInt(NumericType.PointZhiLi)} \t体质: {unumericComponentlist[0].GetAsInt(NumericType.PointTiZhi)} " +
+                        $"\t耐力: {unumericComponentlist[0].GetAsInt(NumericType.PointNaiLi)} \t敏捷: {unumericComponentlist[0].GetAsInt(NumericType.PointMinJie)} ";
+                }
+
+                LogHelper.GongZuoShi(levelInfo);
+            }
+#endif
+
+            await ETTask.CompletedTask;
+        }
+
 
         public static async ETTask ClearChatConsoleHandler(string content)
         {
