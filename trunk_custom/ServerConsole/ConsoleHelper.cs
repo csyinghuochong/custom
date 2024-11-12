@@ -10,6 +10,29 @@ namespace ET
     public static class ConsoleHelper
     {
 
+        /// <summary>
+        /// archive 5 2596659505517363200        //18319670288
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static async ETTask ArchiveConsoleHandler(string content)
+        {
+            await ETTask.CompletedTask;
+            Console.WriteLine($"request.Context:  ArchiveConsoleHandler: {content}");
+#if SERVER
+            string[] ss = content.Split(" ");
+            if (ss.Length < 3)
+            {
+                Log.Console($"C must zone");
+                return;
+            }
+
+            //ArchiveHelper
+
+#endif
+        }
+
+
         public static async ETTask OnStopServer(List<int> zoneList)
         {
             await ETTask.CompletedTask;
