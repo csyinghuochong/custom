@@ -289,7 +289,12 @@ namespace ET
             await SaveDBComponent(zone, old_chengJiuComponent);
             await SaveDBComponent(zone, old_dBFriendInfo);
             await SaveDBComponent(zone, old_dBMailInfo);
-            await SaveDBComponent(zone, old_dBPopularizeInfo);
+
+            if (old_dBPopularizeInfo != null)
+            {
+                await SaveDBComponent(zone, old_dBPopularizeInfo);
+            }
+
             await SaveDBComponent(zone, old_dataCollationComponent);
             await SaveDBComponent(zone, old_energyComponent);
             await SaveDBComponent(zone, old_jiaYuanComponent);
