@@ -357,11 +357,8 @@ namespace ET
         }
 
 
-        public static async ETTask InitETmongoExport()
+        public static async ETTask InitETmongoExport(string batchFilePath)
         {
-            string batchFilePath = ComHelp.IsInnerNet() ? @"F:\soft\MongoDB\bin\ETmongoExport_all.bat" : @"C:\Program Files\MongoDB\Server\4.0\bin\ETmongoExport_all.bat";
-
-           
             List<string> KillInfoList = new List<string>();
             long serverTime = TimeHelper.ServerNow();
             List<ServerItem> serverItems = ServerHelper.GetServerList(ComHelp.IsInnerNet());
@@ -391,7 +388,10 @@ namespace ET
         //内网   F:\soft\MongoDB\bin\ETmongoExport.bat
         public static async ETTask ExecuteBatchFile()
         {
-            await  InitETmongoExport();
+            string workingDirectory = ComHelp.IsInnerNet() ? @"F:\soft\MongoDB\bin" : @"C:\Program Files\MongoDB\Server\4.0\bin";
+            string batchFilePath = workingDirectory + @"\ETmongoExport_all.bat";  
+
+            await InitETmongoExport(batchFilePath);
 
             //C:\WJ\1\111
             string filepath = "C:/WJ/{0}/";
@@ -403,9 +403,6 @@ namespace ET
             RenameFolderName(string.Format(filepath, 1), string.Format(filepath, 2));
 
             await TimerComponent.Instance.WaitAsync(TimeHelper.Second * 10);
-
-            string batchFilePath = ComHelp.IsInnerNet() ? @"F:\soft\MongoDB\bin\ETmongoExport_all.bat" : @"C:\Program Files\MongoDB\Server\4.0\bin\ETmongoExport_all.bat";
-            string workingDirectory = ComHelp.IsInnerNet() ? @"F:\soft\MongoDB\bin" : @"C:\Program Files\MongoDB\Server\4.0\bin";
 
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
