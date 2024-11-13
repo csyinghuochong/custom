@@ -134,6 +134,14 @@ namespace ET
             {
                 ConsoleHelper.AttributeConsoleHandler(request.Context).Coroutine();
             }
+            if (infoList[0] == "archive")
+            {
+                ConsoleHelper.ArchiveConsoleHandler(request.Context).Coroutine();
+            }
+            if (infoList[0] == "savedb")
+            {
+                ArchiveHelper.ExecuteBatchFile().Coroutine();
+            }
         }
     }
 }

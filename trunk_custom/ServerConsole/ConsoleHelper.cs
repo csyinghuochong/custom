@@ -11,7 +11,7 @@ namespace ET
     {
 
         /// <summary>
-        /// archive 5 2596659505517363200        //18319670288
+        /// archive 5 2631939174340558848 1       //18319670288
         /// </summary>
         /// <param name="content"></param>
         /// <returns></returns>
@@ -21,14 +21,16 @@ namespace ET
             Console.WriteLine($"request.Context:  ArchiveConsoleHandler: {content}");
 #if SERVER
             string[] ss = content.Split(" ");
-            if (ss.Length < 3)
+            if (ss.Length < 4)
             {
                 Log.Console($"C must zone");
                 return;
             }
 
-            //ArchiveHelper
-
+            int zone = int.Parse(ss[1]);
+            long unitid = long.Parse(ss[2]);
+            int day = int.Parse(ss[3]);
+            ArchiveHelper.OnArchiveHandler(zone, unitid, day).Coroutine();
 #endif
         }
 
@@ -2182,7 +2184,11 @@ namespace ET
                         long unitId = userinfoComponentList[0].Id;
 
                         List<BagComponent> baginfoInfoList = await Game.Scene.GetComponent<DBComponent>().Query<BagComponent>(pyzone, d => d.Id == unitId);
-                        List<BagInfo> bagInfosAll = baginfoInfoList[0].GetAllItems();
+
+                        int occ = userInfoComponent.UserInfo.Occ;
+                        int occTwo = userInfoComponent.UserInfo.OccTwo;
+
+                        List<BagInfo> bagInfosAll = baginfoInfoList[0].GetAllItems(occ, occTwo);
 
                         string infolist = $"{userInfoComponent.UserInfo.Name}:  \n";
                         infolist = infolist + $"金币： {gold} \n";
