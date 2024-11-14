@@ -1084,6 +1084,10 @@ namespace ET
             for (int i = 0; i < zonlist.Count; i++)
             {
                 int pyzone = StartZoneConfigCategory.Instance.Get(zonlist[i]).PhysicZone;
+                if (ComHelp.IsZhuBoZone(pyzone))
+                {
+                    continue;
+                }
 
                 long dbCacheId = DBHelper.GetDbCacheId(pyzone);
                 long gateServerId = DBHelper.GetGateServerId(pyzone);
