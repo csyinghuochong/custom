@@ -182,7 +182,7 @@ namespace ET
             //踢玩家下线并存库。。
             Console.WriteLine($"通知游戏服玩家下线操作！！！");
             //ConsoleHelper.KickOutConsoleHandler($"kickout {zone} {unitid}");
-            await DisconnectHelper.KickOutPlayer(zone, unitid);
+            await DisconnectHelper.ArchiveKickOutPlayer(zone, unitid);
 
 
             await TimerComponent.Instance.WaitAsync(TimeHelper.Second * 10);
