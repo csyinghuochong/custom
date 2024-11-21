@@ -1,0 +1,29 @@
+this.Root().GetComponent<ResourcesLoaderComponent>().LoadAssetSync<GameObject>("Assets/Bundles/UI/Common/ES_JiaYuanMystery_A.prefab");
+
+ResourcePackage.LoadAssetSync
+
+	private AssetSystemImpl _assetSystemImpl;
+	_assetSystemImpl.LoadAssetAsync(AssetInfo assetInfo)
+                
+               AssetSystem:  public AssetOperationHandle LoadAssetAsync(AssetInfo assetInfo)
+               
+               ProviderBase provider = TryGetProvider(providerGUID);
+               provider = new DatabaseAssetProvider(this, providerGUID, assetInfo);
+               ///  provider = new BundledAssetProvider(this, providerGUID, assetInfo);
+              
+	public ProviderBase(AssetSystemImpl impl, string providerGUID, AssetInfo assetInfo)
+	{
+		//protected DependAssetBundles DependBundles { private set; get; }
+		var dependList = impl.CreateDependAssetBundleLoaders(assetInfo);
+		DependBundles = new DependAssetBundles(dependList);
+	}
+
+                return provider.CreateHandle<AssetOperationHandle>();
+	
+		
+	ProviderBase: public T CreateHandle<T>() where T : OperationHandleBase
+	
+	handle = new AssetOperationHandle(this);
+		
+
+

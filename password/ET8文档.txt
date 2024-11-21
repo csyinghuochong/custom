@@ -281,6 +281,7 @@ self.netClientActorId = new ActorId(self.Fiber().Process, self.fiberId);
 Netclient纤程内部：
 Session session = await netComponent.CreateRouterSession(realmAddress, account, password);
  root.AddComponent<SessionComponent>().Session = session;
+gateSession.AddComponent<ClientSessionErrorComponent>();
 
  // Netclient纤程  把消息扔到Main纤程队列中
  int parentFiberId = fiber.Root.GetComponent<FiberParentComponent>().ParentFiberId;
