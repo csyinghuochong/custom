@@ -198,7 +198,7 @@ public class MyEditorScript
 		app_name = app_name + ((VersionMode)version).ToString() + name;
 
 		string target_dir = Application.dataPath + "/TargetAndroid";
-		string target_name = app_name + ".apk";
+		string target_name = app_name + ".APK";
 		BuildTargetGroup targetGroup = BuildTargetGroup.Android;
 		BuildTarget buildTarget = BuildTarget.Android;
 		string applicationPath = Application.dataPath.Replace("/Assets", "");
@@ -206,7 +206,7 @@ public class MyEditorScript
 		if (target == "Android")
 		{
 			target_dir = applicationPath + "/AndroidTarget";
-			target_name = app_name + ".apk";
+			target_name = app_name + ".APK";
 			targetGroup = BuildTargetGroup.Android;
 		}
 		if (target == "IOS")
