@@ -369,7 +369,12 @@ namespace ET
             List<ServerItem> serverItems = ServerHelper.GetServerList(ComHelp.IsInnerNet());
             for (int i = 0; i < serverItems.Count; i++)
             {
-                
+                //数据太多，内存卡爆
+                if (serverItems[i].ServerId < 110)
+                {
+                    continue;
+                }
+
                 if (serverItems[i].Show != 0 && serverItems[i].ServerOpenTime <= serverTime)
                 {
                     //ping - n 10 127.0.0.1 > nul
@@ -417,10 +422,12 @@ namespace ET
                 CreateNoWindow = false // 如果不希望显示命令提示符窗口，可以设置为true
             };
 
-            using (Process process = Process.Start(startInfo))
-            {
-                process.WaitForExit(); // 如果需要等待批处理执行完成可以使用这个方法
-            }
+            //using (Process process = Process.Start(startInfo))
+            //{
+            //    process.WaitForExit(); // 如果需要等待批处理执行完成可以使用这个方法
+            //}
+
+            Process.Start(startInfo);
 
             await TimerComponent.Instance.WaitAsync(TimeHelper.Second * 10);
         }
