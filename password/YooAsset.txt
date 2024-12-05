@@ -1,55 +1,45 @@
 this.Root().GetComponent<ResourcesLoaderComponent>().LoadAssetSync<GameObject>("Assets/Bundles/UI/Common/ES_JiaYuanMystery_A.prefab");
 
+//操作类，上层记录的就是这个， 释放的也是这个。。。。。
+OperationHandleBase  操作类基类    {  internal ProviderBase Provider ；  public float Progress；  internal void ReleaseInternal( Provider.ReleaseHandle ) ;  }
+AllAssetsOperationHandle / AssetOperationHandle / RawFileOperationHandle / SceneOperationHandle / SubAssetsOperationHandle
+ AssetOperationHandle    {  public UnityEngine.Object AssetObject =》 return Provider.AssetObject;  }
+public static void ReleaseHandler(this ResourcesLoaderComponent self, OperationHandleBase handleBase)
+case RawFileOperationHandle handle:
+                    handle.Release();
+                    break;
+                case SceneOperationHandle handle:
+                    if (!handle.IsMainScene())
+                    {
+                        handle.UnloadAsync();
+                    }
+                    break;
 
-//
+
+ProviderBase  	封装加载
+BundleLoaderBase    真正加载 卸载   {  }
+
+//封装加载类
 internal abstract class ProviderBase  {   public string ProviderGUID;  public AssetInfo MainAssetInfo ;  public string RawFilePath ;   public int RefCount;  protected BundleLoaderBase OwnerBundle; protected DependAssetBundles DependBundles;    }
 
 internal sealed class CompletedProvider : ProviderBase   {   }
 
-internal sealed class BundledAssetProvider : ProviderBase {   }
+internal sealed class BundledAssetProvider : ProviderBase {  Update(){ 检测状态！！ } private AssetBundleRequest _cacheRequest；  AssetObject = OwnerBundle.CacheBundle.LoadAsset(MainAssetInfo.AssetPath);  }
 
 
 ResourcesLoaderComponent.LoadAssetSync<T>
 ResourcePackage.LoadAssetSync<TObject>(string location)				 return AssetOperationHandle
 ResourcePackage.LoadAssetInternal(AssetInfo assetInfo, bool waitForAsyncComplete)  	 return AssetOperationHandle
-AssetSystemImpl.LoadAssetAsync(AssetInfo assetInfo)	                                                 return AssetOperationHandle
+OperationHandleBase handler = AssetSystemImpl.LoadAssetAsync(AssetInfo assetInfo)	                                                 return AssetOperationHandle
 {
 	ProviderBase provider = new BundledAssetProvider(this, providerGUID, assetInfo);
 	return provider.CreateHandle<AssetOperationHandle>();
 }
 
+ResourcesLoaderComponent:
+self.Handlers.Add(location, (handler, TimeInfo.Instance.ServerNow() + liveTime));
+return (T)((AssetOperationHandle)handler).AssetObject;
 
 
 
-
-
-
-
-
-ResourcePackage.LoadAssetSync
-
-	private AssetSystemImpl _assetSystemImpl;
-	_assetSystemImpl.LoadAssetAsync(AssetInfo assetInfo)
-                
-               AssetSystem:  public AssetOperationHandle LoadAssetAsync(AssetInfo assetInfo)
-               
-               ProviderBase provider = TryGetProvider(providerGUID);
-               provider = new DatabaseAssetProvider(this, providerGUID, assetInfo);
-               ///  provider = new BundledAssetProvider(this, providerGUID, assetInfo);
-              
-	public ProviderBase(AssetSystemImpl impl, string providerGUID, AssetInfo assetInfo)
-	{
-		//protected DependAssetBundles DependBundles { private set; get; }
-		var dependList = impl.CreateDependAssetBundleLoaders(assetInfo);
-		DependBundles = new DependAssetBundles(dependList);
-	}
-
-                return provider.CreateHandle<AssetOperationHandle>();
-	
-		
-	ProviderBase: public T CreateHandle<T>() where T : OperationHandleBase
-	
-	handle = new AssetOperationHandle(this);
-		
-
-
+//回调：   ProviderBase._taskCompletionSource.TrySetResult(null);         await handler.Task;     --------->>>>>return (T)((AssetOperationHandle)handler).AssetObject;

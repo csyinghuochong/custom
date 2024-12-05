@@ -1,0 +1,5 @@
+git reset --soft HEAD^   
+
+
+1. git reset --soft HEAD~（推荐）
+#将HEAD指针移动到上一个提交，但保留暂存区和工作区的更改。这意味着你可以重新提交这些更改，但不需要重新git add。
