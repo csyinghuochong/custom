@@ -6,6 +6,42 @@ https://github.com/csdjk/LcL-Tools-Unity/tree/main/Editor/ShaderCollection
 查看整个系统的内存使用情况：
 adb shell dumpsys meminfo
 
+10001内存占用一次筛选：
+1  去掉pool之外的所有object。  内存占用3298723k
+2  去掉Butterflies/GodRays/TreeLeaves/Wheat/FX_Fire_02/FX_Fire_02       内存占用3329368k
+3  去掉AN_Branch_2/AN_Branch_1/AN_DeadTree_5/Stone_3/Maul/Sword_1/Poleaxe/Cart_1/                    内存占用3338445k
+4  去掉Box_2/Box_1/Mushrooms_3/Mushroom_3/Mushroom_2/Fence_3/Fence_2/House/Stump_2/AN_Rock_1_Cov/AN_Bush_3   内存占用2039918k
+5  去掉Case_2/Pot_1/Plate_2/Lamp_3/Fence_5/Boiler   内存占用2057172k
+6  去掉building_inn_lv1/Pumpkin/Stone_4/Stone_1/Fire   内存占用2020992k
+7  去掉Bonfire/Bag_3/Barrel/SGS_Cliff      内存占用2031940k
+8  去掉GrassSingle/GrassPatch/GrassPatchDemo/Flower_3/Flower_Chamomile/Broadleaf_1/Shrub    	内存占用1589685k
+9  去掉Terrain/Wind Zone/Mountain_4/ Water/    						内存占用1456955k
+10去掉GrassSet/FlowerSet/ShrubSet                                                                                                         内存占用1456702k
+11去掉ScenceModelSet 								内存占用1090991k
+   每个物件只保留一个。            内存占用3264371k   跟1差不多 
+
+10001内存占用二次筛选：
+1 去掉Butterflies/GodRays/TreeLeaves/Wheat/FX_Fire_02/FX_Fire_02/AN_Branch_2/AN_Branch_1/AN_DeadTree_5/Stone_3/Maul/Sword_1/Poleaxe/Cart_1/
+          Case_2/Pot_1/Plate_2/Lamp_3/Fence_5/Boiler/building_inn_lv1/Pumpkin/Stone_4/Stone_1/Fire/Bonfire/Bag_3/Barrel/SGS_Cliff
+   去掉ScenceModelSet   Terrain/Wind Zone/Mountain_4/ Water/GrassSet/FlowerSet/ShrubSet               	内存占用3222570k
+2 去掉Box_2/Box_1								               	内存占用3199815k    20m
+3 去掉Mushrooms_3/Mushroom_3/Mushroom_2					               	内存占用3193822k
+4 去掉Fence_3/Fence_2                                                                                                                            	内存占用3216203k
+5 去掉House                                                                                                                                            	内存占用3199650k
+6 去掉Stump_2   shader:Raygeas/Suntail Surface                                                                                      	内存占用2215991k     900m
+7 去掉AN_Rock_1_Cov  shader:Raygeas/AZURE Surface				               	内存占用2062971k     150m
+8 去掉AN_Bush_3  shader:Raygeas/AZURE Vegation                                                                                 	内存占用1935905k     127m
+9 去掉GrassSingle/GrassPatch/GrassPatchDemo					              	内存占用1956677k
+10去掉Flower_3  Raygeas/Suntail Foliage							内存占用1854768k     100m
+11去掉Flower_Chamomile								内存占用1858718k
+12去掉Broadleaf_1  shader:Raygeas/Suntail Surface Suntail Foliage				内存占用1434529k      424m
+13去掉Shrub									内存占用1415914k
+
+
+
+20001: 内存占用1157251k
+
+
 查看特定应用的内存使用情况
 adb shell dumpsys meminfo com.guangying.mengjing   
 2573854kb  2513mb
