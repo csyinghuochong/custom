@@ -2223,12 +2223,12 @@ namespace ET
                 });
                 if (reqEnter.Error != ErrorCode.ERR_Success)
                 {
-                    Log.Console("玩家不在线！");
+                    Console.WriteLine("玩家不在线！");
                     return "玩家不在线！";
                 }
                 else
                 {
-                    Log.Console(reqEnter.Message);
+                    Console.WriteLine(reqEnter.Message);
                     return reqEnter.Message;
                 }
             }
