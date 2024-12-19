@@ -8,6 +8,54 @@ GPU resident drawer确实能合dc   动态和批没卵用   但是srp batcher是
 
 
 ////////////////打包
+allCollectAssetInfos		[ 56个主asset ]
+allBuildAssetInfoDic  	[ 全部asset 还有被引用的asset ]
+allBuildAssetInfoDic                  [ 记录每个资源依赖的asset ]
+allBuildAssetInfoDic[0] BuildAssetInfo   计算每一个asset 共享的budlename.   （列如res/image/1 res/image/2==>res/image）
+所有的shade公用unityshaders.bundle 会打到同一个ab包内。。
+
+buildassetinfo : 目前已经统计了每个asset的依赖资源和被引用资源。 以及bundlename...
+
+注意：被引用次数小于1的资源不需要设置资源包名称, 这样就会把打到主asset中。
+设置了bundlename则会被分开打包。。。。。 意思就是公共资源分开打包。。。
+
+BuildMapContext context = new BuildMapContext();
+想通的bundlename 会打打包到一起。。  key为bundle name..
+private readonly Dictionary<string, BuildBundleInfo> _bundleInfoDic = new Dictionary<string, BuildBundleInfo>(10000);
+多少个bundlename 。最终打包出来的就有多少个资源。
+
+
+TaskPrepare 前期准备工作
+TaskGetBuildMap  获取构建列表
+TaskBuilding_SBP {包含21个ibuildtask} 开始执行构建   SwitchToBuildPlatform/RebuildSpriteAtlasCache/BuildPlayerScripts/GenerateBundleCommands
+TaskCopyRawFile 拷贝原生文件
+TaskVerifyBuildResult_SBP 验证构建结果
+TaskEncryption 加密资源文件
+TaskUpdateBundleInfo 更新补丁信息
+TaskCreateManifest 创建清单文件
+TaskCreateReport 创建报告文件
+TaskCreatePackage 制作补丁包
+TaskCopyBuildinFiles 拷贝内置文件
+
+CreateDependAsset:  Assets/Bundles/Unit/Monster/310103.prefab  9
+
+ "Address": "",
+            "AssetPath": "Assets/Bundles/Unit/Monster/310103.prefab",
+            "AssetGUID": "ba3b9e2af38b64949ac65ee9f35b2885",
+            "AssetTags": [],
+            "MainBundleName": "assets_bundles_unit_monster_310103.bundle",                 =>MainBundle
+            "MainBundleSize": 6033,
+            "DependBundles": [                                                                                          ==>DependBundles
+                "share_assets_res_unit_player_hero_1.bundle",
+                "share_assets_res_monsterset_suriyun_monster pack forest 2_animations_porin.bundle",
+                "share_assets_res_unit_monster_animator.bundle",
+                "share_assets_res_animgroup_monster.bundle",
+                "share_assets_res_monsterset_suriyun_monster pack forest 2_fbx.bundle",
+                "share_assets_res_monsterset_suriyun_monster pack forest 2_materials.bundle",
+                "share_assets_res_monsterset_suriyun_monster pack forest 2_textures.bundle",
+                "unityshaders.bundle",
+                "share_assets_res_monsterset_suriyun_monster pack forest 2_prefab.bundle"
+            ],
 
 
 
@@ -124,57 +172,6 @@ private void UnloadUnusedAssetsInternal()
 
 
 
-allCollectAssetInfos		[ 56个主asset ]
-allBuildAssetInfoDic  	[ 全部asset 还有被引用的asset ]
-allBuildAssetInfoDic                  [ 记录每个资源依赖的asset ]
-allBuildAssetInfoDic[0] BuildAssetInfo   计算每一个asset 共享的budlename.   （列如res/image/1 res/image/2==>res/image）
-所有的shade公用unityshaders.bundle 会打到同一个ab包内。。
-
-buildassetinfo : 目前已经统计了每个asset的依赖资源和被引用资源。 以及bundlename...
-
-注意：被引用次数小于1的资源不需要设置资源包名称, 这样就会把打到主asset中。
-设置了bundlename则会被分开打包。。。。。 意思就是公共资源分开打包。。。
-
-BuildMapContext context = new BuildMapContext();
-想通的bundlename 会打打包到一起。。  key为bundle name..
-private readonly Dictionary<string, BuildBundleInfo> _bundleInfoDic = new Dictionary<string, BuildBundleInfo>(10000);
-多少个bundlename 。最终打包出来的就有多少个资源。
-
-
-TaskPrepare 前期准备工作
-TaskGetBuildMap  获取构建列表
-TaskBuilding_SBP {包含21个ibuildtask} 开始执行构建   SwitchToBuildPlatform/RebuildSpriteAtlasCache/BuildPlayerScripts/GenerateBundleCommands
-TaskCopyRawFile 拷贝原生文件
-TaskVerifyBuildResult_SBP 验证构建结果
-TaskEncryption 加密资源文件
-TaskUpdateBundleInfo 更新补丁信息
-TaskCreateManifest 创建清单文件
-TaskCreateReport 创建报告文件
-TaskCreatePackage 制作补丁包
-TaskCopyBuildinFiles 拷贝内置文件
-
-CreateDependAsset:  Assets/Bundles/Unit/Monster/310103.prefab  9
-
- "Address": "",
-            "AssetPath": "Assets/Bundles/Unit/Monster/310103.prefab",
-            "AssetGUID": "ba3b9e2af38b64949ac65ee9f35b2885",
-            "AssetTags": [],
-            "MainBundleName": "assets_bundles_unit_monster_310103.bundle",                 =>MainBundle
-            "MainBundleSize": 6033,
-            "DependBundles": [                                                                                          ==>DependBundles
-                "share_assets_res_unit_player_hero_1.bundle",
-                "share_assets_res_monsterset_suriyun_monster pack forest 2_animations_porin.bundle",
-                "share_assets_res_unit_monster_animator.bundle",
-                "share_assets_res_animgroup_monster.bundle",
-                "share_assets_res_monsterset_suriyun_monster pack forest 2_fbx.bundle",
-                "share_assets_res_monsterset_suriyun_monster pack forest 2_materials.bundle",
-                "share_assets_res_monsterset_suriyun_monster pack forest 2_textures.bundle",
-                "unityshaders.bundle",
-                "share_assets_res_monsterset_suriyun_monster pack forest 2_prefab.bundle"
-            ],
-
-
-
 切场景的流程：  
 M2C_StartSceneChangeHandler：
 SceneChangeHelper.SceneChangeTo
@@ -193,7 +190,7 @@ await root.GetComponent<SceneManagerComponent>().ChangeScene(args.SceneType, arg
 
 	resourcesLoaderComponent.UnLoadAllAsset();	
 
-	//场景加载完毕后才设置为true;;;     最好在ConfigData.LoadSceneFinished之后 再开始 dlgloading 预加载
+	//场景加载完毕后才设置为true;;;     最好在ConfigData.LoadSceneFinished之后 再开始 dlgloading 预加载 okok
  	ConfigData.LoadSceneFinished = sceneTypeEnum!= SceneTypeEnum.LoginScene;
 	//才开始加载unit gameobject;;;;
 
