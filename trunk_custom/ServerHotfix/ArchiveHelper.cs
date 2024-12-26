@@ -339,7 +339,6 @@ namespace ET
             List<ServerItem> serverItems = ServerHelper.GetServerList(ComHelp.IsInnerNet());
             for (int i = 0; i < serverItems.Count; i++)
             {
-
                 if (serverItems[i].Show != 0 && serverItems[i].ServerOpenTime <= serverTime)
                 {
                     await ExecuteBatchAllComponent(serverItems[i].ServerId);
@@ -365,7 +364,7 @@ namespace ET
                 }
 
                 //只记录七天内登陆的玩家
-                if (serverTime - userInfoComponent.LastLoginTime > TimeHelper.OneDay * 7)
+                if (serverTime - userInfoComponent.LastLoginTime > TimeHelper.OneDay * 3)
                 {
                     continue;
                 }
