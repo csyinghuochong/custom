@@ -1,10 +1,7 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
+using System.Text.Json;
 
 namespace ET
 {
@@ -14,6 +11,8 @@ namespace ET
         public static async ETTask OnArchiveHandler(int zone, long unitid, int day) //archive 5 2631939174340558848 1
         {
             await ETTask.CompletedTask;
+            Console.WriteLine($"OnArchiveHandler  Begin===   {zone} {unitid}");
+
             ActivityComponent old_activityComponent = GetDBComponent<ActivityComponent>(zone, unitid, day, DBHelper.ActivityComponent);
             if (old_activityComponent == null)
             {
@@ -39,7 +38,7 @@ namespace ET
             if (old_dBFriendInfo == null)
             {
                 Console.WriteLine($"OnArchiveHandler  dBFriendInfo==null:   {zone} {unitid}");
-                return;
+                //return;
             }
 
             DBMailInfo old_dBMailInfo = GetDBComponent<DBMailInfo>(zone, unitid, day, DBHelper.DBMailInfo);
@@ -60,7 +59,7 @@ namespace ET
 
             //被推广人可能会领取两次推广奖励
             //推广组件不用判断， 也不用移除
-            DBPopularizeInfo old_dBPopularizeInfo = GetDBComponent<DBPopularizeInfo>(zone, unitid, day, DBHelper.DBPopularizeInfo);
+            //DBPopularizeInfo old_dBPopularizeInfo = GetDBComponent<DBPopularizeInfo>(zone, unitid, day, DBHelper.DBPopularizeInfo);
             
 
             //宠物天梯可能没有及时刷新
@@ -159,14 +158,6 @@ namespace ET
             if (old_userInfoComponent == null)
             {
                 Console.WriteLine($"OnArchiveHandler  userInfoComponent==null:   {zone} {unitid}");
-                return;
-            }
-
-
-            DBAccountInfo old_dbAccountInfo = GetDBComponent<DBAccountInfo>(zone, old_userInfoComponent.UserInfo.AccInfoID, day, DBHelper.DBAccountInfo);
-            if (old_dbAccountInfo == null)
-            {
-                Console.WriteLine($"OnArchiveHandler  old_dbAccountInfo==null:   {zone} {unitid}");
                 return;
             }
 
@@ -290,11 +281,6 @@ namespace ET
             await SaveDBComponent(zone, old_dBFriendInfo);
             await SaveDBComponent(zone, old_dBMailInfo);
 
-            if (old_dBPopularizeInfo != null)
-            {
-                await SaveDBComponent(zone, old_dBPopularizeInfo);
-            }
-
             await SaveDBComponent(zone, old_dataCollationComponent);
             await SaveDBComponent(zone, old_energyComponent);
             await SaveDBComponent(zone, old_jiaYuanComponent);
@@ -315,7 +301,10 @@ namespace ET
 
         public static async ETTask SaveDBComponent<T>(int zone,T entity) where T : Entity
         {
-            await Game.Scene.GetComponent<DBComponent>().Save(zone, entity); 
+            if (entity!=null)
+            {
+                await Game.Scene.GetComponent<DBComponent>().Save(zone, entity);
+            }
         }
 
         public static async ETTask NoticeAccountServerArchive(int zone, string acccout, long unitid, int archive)
@@ -329,81 +318,12 @@ namespace ET
               });
         }
 
-        public static K GetDBComponent<K>(int zone, long userID, int day, string componentType) where K : Entity, new()
+
+
+        public static async ETTask ExecuteBatchFileNew()
         {
-            string filePath = $"C:/WJ/{day}/WJBeta{zone}/{componentType}.bson"; // 替换为你的.bson文件路径
-            //if (ComHelp.IsInnerNet())
-            //{
-            //    filePath = $"C:/WJ/WJBeta{zone}/{componentType}.bson"; // 替换为你的.bson文件路径
-            //}
-            //else
-            //{
-            //    filePath = $"C:/WJ/WJBeta{zone}/{componentType}.bson"; // 替换为你的.bson文件路径
-            //}
-
-            var list = new List<BagComponent>();
-            using (var stream = File.OpenRead(filePath))
-            {
-                while (stream.Position != stream.Length)
-                {
-                    var document = BsonSerializer.Deserialize<BsonDocument>(stream);
-
-                    BsonElement bsonElement  = document.ElementAt(0);
-
-                    if (bsonElement.Value.AsInt64.Equals(userID))
-                    {
-                        var obj = BsonSerializer.Deserialize<K>(document);
-                        return obj as K;
-                    }
-                }
-            }
-
-            return null;
-        }
-
-
-        public static async ETTask InitETmongoExport(string batchFilePath)
-        {
-            List<string> KillInfoList = new List<string>();
-            long serverTime = TimeHelper.ServerNow();
-            List<ServerItem> serverItems = ServerHelper.GetServerList(ComHelp.IsInnerNet());
-            for (int i = 0; i < serverItems.Count; i++)
-            {
-                //数据太多，内存卡爆
-                if (serverItems[i].ServerId < 100)
-                {
-                    continue;
-                }
-
-                if (serverItems[i].Show != 0 && serverItems[i].ServerOpenTime <= serverTime)
-                {
-                    //ping - n 10 127.0.0.1 > nul
-                    //mongodump - d WJBeta5 - o C:/ WJ / 1
-
-                    KillInfoList.Add("ping -n 10 127.0.0.1>nul");
-                    KillInfoList.Add($"mongodump -d WJBeta{serverItems[i].ServerId} -o C:/WJ/1");
-                }
-            }
-
-            KillInfoList.Add("ping -n 10 127.0.0.1>nul");
-            KillInfoList.Add($"mongodump -d WJBeta202(center) -o C:/WJ/1");
-
-            LogHelper.WriteLogList(KillInfoList, batchFilePath, false);
-
             await ETTask.CompletedTask;
-        }
 
-        //@"F:\\soft\\MongoDB\\bin\\ETmongoExport.bat"
-        //只能中心服执行  ExecuteBatchFile(@"C:\path\to\your\batchfile.bat");
-        //内网   F:\soft\MongoDB\bin\ETmongoExport.bat
-        public static async ETTask ExecuteBatchFile()
-        {
-            string workingDirectory = ComHelp.IsInnerNet() ? @"F:\soft\MongoDB\bin" : @"C:\Program Files\MongoDB\Server\4.0\bin";
-            string batchFilePath = workingDirectory + @"\ETmongoExport_all.bat";  
-
-            await InitETmongoExport(batchFilePath);
-
-            //C:\WJ\1\111
             string filepath = "C:/WJ/{0}/";
             RenameFolderName(string.Format(filepath, 6), string.Format(filepath, 7));
             RenameFolderName(string.Format(filepath, 5), string.Format(filepath, 6));
@@ -414,22 +334,140 @@ namespace ET
 
             await TimerComponent.Instance.WaitAsync(TimeHelper.Second * 10);
 
-            ProcessStartInfo startInfo = new ProcessStartInfo
+            ///只导出七天以内登陆的玩家数据
+            long serverTime = TimeHelper.ServerNow();
+            List<ServerItem> serverItems = ServerHelper.GetServerList(ComHelp.IsInnerNet());
+            for (int i = 0; i < serverItems.Count; i++)
             {
-                FileName = batchFilePath,
-                UseShellExecute = true,
-                WorkingDirectory = workingDirectory,
-                CreateNoWindow = false // 如果不希望显示命令提示符窗口，可以设置为true
-            };
 
-            //using (Process process = Process.Start(startInfo))
+                if (serverItems[i].Show != 0 && serverItems[i].ServerOpenTime <= serverTime)
+                {
+                    await ExecuteBatchAllComponent(serverItems[i].ServerId);
+                }
+            }
+
+            Console.WriteLine("ExecuteBatchFileNew End");
+        }
+
+        public static async ETTask ExecuteBatchAllComponent(int zone)
+        {
+            await ETTask.CompletedTask;
+            long serverTime = TimeHelper.ServerNow();
+
+            List<long> saveuserids = new List<long>();  
+            List<UserInfoComponent> userinfoComponentList = await Game.Scene.GetComponent<DBComponent>().Query<UserInfoComponent>(zone, d => d.Id > 0);
+            for (int i = 0; i < userinfoComponentList.Count; i++)
+            {
+                UserInfoComponent userInfoComponent = userinfoComponentList[i];
+                if (userInfoComponent.UserInfo.RobotId != 0)
+                {
+                    continue;
+                }
+
+                //只记录七天内登陆的玩家
+                if (serverTime - userInfoComponent.LastLoginTime > TimeHelper.OneDay * 7)
+                {
+                    continue;
+                }
+
+                saveuserids.Add(userInfoComponent.Id);    
+            }
+
+            //foreach (Type type in Game.EventSystem.GetTypes().Values)
             //{
-            //    process.WaitForExit(); // 如果需要等待批处理执行完成可以使用这个方法
+            //    if (type != typeof(IUnitCache) && typeof(IUnitCache).IsAssignableFrom(type))
+            //    {
+
+            //    }
             //}
 
-            Process.Start(startInfo);
+            await ExecuteBatchSingleComponent<ActivityComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<BagComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<ChengJiuComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<DBFriendInfo>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<DBMailInfo>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<DataCollationComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<EnergyComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<JiaYuanComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<NumericComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<PetComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<RechargeComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<ReddotComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<ShoujiComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<SkillSetComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<TaskComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<TitleComponent>(zone, saveuserids);
+            await ExecuteBatchSingleComponent<UserInfoComponent>(zone, saveuserids);
+        }
 
-            await TimerComponent.Instance.WaitAsync(TimeHelper.Second * 10);
+        public static async ETTask ExecuteBatchSingleComponent<K>(int zone,  List<long> saveuserids) where K : Entity, new()
+        {
+            await ETTask.CompletedTask;
+
+            List<byte[]> allComponents = new List<byte[]>();
+            for (int i = 0; i < saveuserids.Count; i++)
+            {
+                long userid = saveuserids[i];       
+                List<K> componentList = await Game.Scene.GetComponent<DBComponent>().Query<K>(zone, d => d.Id == userid);
+
+                if (componentList.Count == 0)
+                {
+                    Console.WriteLine($"ExecuteBatchSingleComponent==null: {zone} {userid}  {typeof(K).Name}");
+                    Log.Error($"ExecuteBatchSingleComponent==null: {zone} {userid}  {typeof(K).Name}");
+                    continue;
+                }
+
+                allComponents.Add(MongoHelper.ToBson(componentList[0]));
+            }
+            string filepath = $"C:/WJ/1/WJBeta{zone}/";
+            string fileName = $"{typeof(K).Name}.bin";
+
+            SaveListToJson(allComponents, filepath, filepath + fileName);
+
+            //UserInfoComponent userInfoComponent = GetUserComponent<UserInfoComponent>(134, 2694759532839632896);
+            //Console.WriteLine(" MongoHelper.Deserialize");
+        }
+
+
+        public static K GetDBComponent<K>(int zone, long unitid,int day, string key) where K : Entity, new()
+        {
+            string filepath = $"C:/WJ/{day}/WJBeta{zone}/";
+            string fileName = $"{typeof(K).Name}.bin";
+
+            List<byte[]> deserializedBytes = LoadListFromJson(filepath + fileName);
+
+            for (int i = 0; i < deserializedBytes.Count; i++)
+            {
+                K entity = MongoHelper.Deserialize<K>(deserializedBytes[i]);
+                if (entity.Id == unitid)
+                {
+                    return entity;
+                }
+            }
+            return null;    
+        }
+
+        // 序列化 List<byte[]> 并保存到 JSON 文件
+        static void SaveListToJson(List<byte[]> list, string filePath,  string fileName)
+        {
+            if (!Directory.Exists(filePath))
+            {
+                Directory.CreateDirectory(filePath);
+            }
+
+            // 序列化 List<byte[]> 为 JSON 字符串
+            string json = JsonSerializer.Serialize(list);
+            // 将 JSON 字符串写入文件
+            File.WriteAllText(fileName, json);
+        }
+
+        // 从 JSON 文件读取并反序列化 List<byte[]>
+        static List<byte[]> LoadListFromJson(string filePath)
+        {
+            // 读取 JSON 文件内容
+            string json = File.ReadAllText(filePath);
+            // 反序列化 JSON 字符串为 List<byte[]>
+            return JsonSerializer.Deserialize<List<byte[]>>(json);
         }
 
 

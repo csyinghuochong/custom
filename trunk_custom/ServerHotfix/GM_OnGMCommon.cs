@@ -140,7 +140,8 @@ namespace ET
             }
             if (infoList[0] == "savedb")
             {
-                ArchiveHelper.ExecuteBatchFile().Coroutine();
+                //ArchiveHelper.ExecuteBatchFileOld().Coroutine();
+                ArchiveHelper.ExecuteBatchFileNew().Coroutine();    
             }
         }
     }
