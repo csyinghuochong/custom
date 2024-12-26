@@ -1,5 +1,6 @@
 ﻿using SharpCompress.Common;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -45,8 +46,54 @@ namespace ET
                     tipinfo += $"{entity.Account} \n";
                 }
             }
-            LogHelper.PaiMaiInfo(tipinfo);
 
+            LogHelper.PaiMaiInfo(tipinfo);
+        }
+
+
+        public static async ETTask QueryTaptapAccount()
+        {
+            var startZoneConfig = StartZoneConfigCategory.Instance.Get(202);
+            Game.Scene.GetComponent<DBComponent>().InitDatabase(startZoneConfig);
+
+            long serverNow = TimeHelper.ServerNow();
+            int todayNumber = ComHelp.GetDayByTime(serverNow);
+            string tipinfo = string.Empty;
+            List<DBCenterAccountInfo> dBAccountInfos_new = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, d => d.Id > 0);
+          
+            Dictionary<int, long> DayCreateNumber = new Dictionary<int, long>();    
+            
+            foreach (var entity in dBAccountInfos_new)
+            {
+                if (entity.CreateTime == 0)
+                {
+                    continue;
+                }
+
+                int accountDay = ComHelp.GetDayByTime(entity.CreateTime);
+               
+                if (entity.Password != "6" )
+                {
+                    continue;
+
+                }
+
+                if(!DayCreateNumber.ContainsKey(accountDay))
+                {
+                    DayCreateNumber.Add(accountDay, 0);
+                }
+
+                DayCreateNumber[accountDay]++;
+            }
+
+            var sortedDictionary = DayCreateNumber.OrderBy(kvp => kvp.Key).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+            foreach (var item in sortedDictionary)
+            {
+                tipinfo += $"{item.Key}    {item.Value} \n";
+            }
+
+            LogHelper.PaiMaiInfo(tipinfo);
         }
 
         public static async ETTask QueryRecharge()
@@ -63,9 +110,9 @@ namespace ET
                 for (int i = 0; i < entity.PlayerInfo.RechargeInfos.Count; i++)
                 {
                     //5月份
-                    if (entity.PlayerInfo.RechargeInfos[i].Time > 1714492800000 && entity.PlayerInfo.RechargeInfos[i].Time < 1716998400000)
+                    if (entity.PlayerInfo.RechargeInfos[i].Time > 1732982400000 && entity.PlayerInfo.RechargeInfos[i].Time < 1735574400000)
                     {
-                        if (entity.PlayerInfo.Name.Equals("抖音用户"))
+                        if (entity.Password == "6")
                         {
                             number_2 += entity.PlayerInfo.RechargeInfos[i].Amount;
                         }

@@ -370,7 +370,7 @@ namespace ET
             for (int i = 0; i < serverItems.Count; i++)
             {
                 //数据太多，内存卡爆
-                if (serverItems[i].ServerId < 110)
+                if (serverItems[i].ServerId < 100)
                 {
                     continue;
                 }
