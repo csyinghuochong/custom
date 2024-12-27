@@ -45,7 +45,7 @@ namespace ET
             if (old_dBMailInfo == null)
             {
                 Console.WriteLine($"OnArchiveHandler  dBMailInfo==null:   {zone} {unitid}");
-                return;
+                //return;
             }
 
             // 会通知拍卖服移除玩家上架的道具。
