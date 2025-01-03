@@ -14,6 +14,20 @@ TransformObjectToHClip：将物体空间中的顶点位置转换到裁剪空间�
 然后通过 TransformWorldToViewDir 将世界空间中的法线转换为视图空间中的方向（视点方向）。
 SAMPLE_TEXTURE2D：用于从纹理中采样颜色。我们根据传递的纹理坐标 input.uv 采样主纹理
 
+o.worldNormal = mul((float3x3)_Object2World,v.normal);//游戏中正常的法向量转换，转换后法向量可能不与原切线垂直，但是不影响游戏显示，而且大部分显示也是差不多的。一般用这个就行了。
+o.worldNormal = mul(v.normal, (float3x3)_World2Object);顶点法向量从模型空间转换到世界空间的精确算法，公式是用_Object2World该矩阵的逆转置矩阵去转换法线。然后通过换算得到该行。
+
+‌float3 WorldSpaceViewDir(float4 v)函数在Unity Shader中的作用是计算从模型空间中的某个点到摄像机的观察方向‌。具体来说，该函数输入一个模型空间中的顶点位置，返回该点到摄像机的观察方向向量。
+这对于实现光照计算、阴影效果以及各种基于视线的特效（如反射、折射等）。
+‌float3 UnityWorldSpaceViewDir(float4 v)函数的作用是获取世界空间中从给定点到摄像机的观察方向。
+float3 ObjSpaceViewDir(float4 v)输入一个模型空间的顶点位置，返回模型空间中从该点到摄像机的观察方向。
+float3 WorldSpaceLightDir(float4 v)仅可用于向前渲染中。输入一个模型空间的顶点位置，返回世界空间中从该点到光源的光照方向。
+
+
+
+                        
+原文链接：https://blog.csdn.net/shijunwei0326/article/details/144006228
+
 向量点乘：
 表征或计算两个向量之间的夹角
 b向量在a向量方向上的投影
@@ -25,6 +39,8 @@ a∙b<0→ 方向基本相反，夹角在90°到180°之间
 概括地说，两个向量的外积，又叫叉乘、叉积向量积，其运算结果是一个向量而不是一个标量。并且两个向量的外积与这两个向量组成的坐标平面垂直。
 在三维几何中，向量a和向量b的外积结果是一个向量，有个更通俗易懂的叫法是法向量，该向量垂直于a和b向量构成的平面。
 在3D图像学中，外积的概念非常有用，可以通过两个向量的外积，生成第三个垂直于a，b的法向量，从而构建X、Y、Z坐标系。
+
+顶点着色器：坐标变换和逐顶点光照，将顶点空间转换到齐次裁剪空间。
 
 GrabPass截屏
 GrabPass {} // 截图通道, 后面使用_GrabTexture访问截屏纹理
