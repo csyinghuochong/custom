@@ -25,7 +25,7 @@ float3 WorldSpaceLightDir(float4 v)仅可用于向前渲染中。输入一个模
 
 
 
-                        
+                        https://blog.51cto.com/u_16213682/10256603
 原文链接：https://blog.csdn.net/shijunwei0326/article/details/144006228
 
 向量点乘：
@@ -69,12 +69,316 @@ smoothstep可以用来生成0到1的平滑过渡值，它也叫平滑阶梯函�
 ‌any函数在Unity Shader中的作用是测试输入值中的任何非零值。‌如果输入值中有任何一个不为0，则返回true；否则返回false。这个函数在处理向量或数组时非常有用，可以快速判断是否存在非零元素‌。
 
 
-
 粒子系统：：：：
 Billboard：粒子始终面向摄像机，无论摄像机的位置如何。常用于烟雾、火焰等效果。
 Stretched Billboard：粒子以拉伸的方式呈现，通常用于尾迹效果，如火箭尾焰、子弹轨迹等。你可以调整拉伸参数使效果更合适。
 Horizontal Billboard：粒子始终与地面平行，适用于地面雾气、水面波纹等效果。
 Vertical Billboard：粒子始终垂直于地面，适用于一些特殊的视觉效果。
 Mesh：粒子呈现为 3D 模型（网格），可以选择自定义的 Mesh（网格）作为粒子外形。
+
+
+叫做模版，使用它叫做模版测试。
+官方解释：模板缓冲区为每个像素在帧缓冲区中。在执行片段之前着色器对于给定的像素，GPU 可以将模板缓冲区中的当前值与给定的参考值进行比较。
+这称为模板测试。如果模板测试通过，GPU 将执行深度测试。如果模板测试失败，GPU 将跳过该像素的其余处理。
+这意味着您可以使用模板缓冲区作为掩码来告诉 GPU 要绘制哪些像素以及要丢弃哪些像素。
+
+所有的工具都是因为需要所以产生的，学到目前为止，我们发现，我们的shader大部分时候只能和自己互动，如果两个shader之间想要互动，几乎没有什么好办法。
+因此，stencil就应运而生，stencil就像一个白纸，允许每一个使用它的shader在上面留下痕迹（当然你也可以选择不留下痕迹），然后再传给下一个渲染的shader，
+让它根据痕迹来选择是否渲染自己，是否再次留下痕迹。
+
+
+Stencil ID    	提前准备一个数，用来比较 你可以选择写0-255之间任何一个数
+
+Stencil Comparison   比较之前的shader留下的数，看是否要渲染自己Shader里的内容
+Never                1                不渲染
+
+Less                  2                Stencil ID小于以前的痕迹就渲染
+
+Equal                3                Stencil ID等于以前的痕迹就渲染
+
+LEqual              4                Stencil ID小于等于以前的痕迹就渲染
+
+Greater             5                Stencil ID大于以前的痕迹就渲染
+
+NotEqual          6                Stencil ID不等于以前的痕迹就渲染
+
+GEqual             7                Stencil ID不等于以前的痕迹就渲染
+
+Always              8                一直渲染
+
+
+Stencil  Operation            是否打算在纸上留下Stencil ID 
+Keep            0       不留痕迹，保留着以前的      
+
+Zero             1       把以前的擦了，留下0      
+
+Replace       2       把以前的擦了，留下Stencil ID的数
+
+IncrSat         3     把以前的擦了，留下数字（以前的Stencil ID+1），若大于255，就留下255
+
+DecrSat        4     把以前的擦了，留下数字（以前的Stencil ID-1），若小于0，就留下0
+
+Invert           5       以前的数所有位取反（这个如果不懂，可以百度，不看也可以，用得少）
+
+IncrWrap      6       以前的数+1，超过255，就变成0
+
+DecrWrap     7       以前的数-1，小于0，就变成255
+
+
+precision  精确度
+inherit      继承
+exposed   显示的
+workflow  工作流
+specular    镜面反射   metallic     金属
+‌Alpha Clipping‌是指在渲染过程中，通过设置一个阈值（Threshold），决定是否渲染像素的透明度值。当像素的Alpha值低于这个阈值时，该像素不会被渲染，从而实现一种镂空效果。
+这种技术常用于创建透明效果，特别是在不透明区域和透明区域之间产生硬边效果。
+
+
+需要为纹理类型的属性声明一个 float4 类型的变量 MainTex_ST 。在 Unity 中，需要使用纹理名_ST 的方式来声明某个纹理的屈性。ST 是缩放 (scale)和平移 (translation)的缩写。
+MainTex_ST 可以让我们得到该纹理的缩放和平移（偏移）值，_MainTex_ST.xy 存储的是缩放值，而 MainTex_ST.zw 存储的是偏移值。
+
+我们在a2f中声明了一个新的变量texcoord, 这样unity就会将模型的第一组纹理坐标存储到该变量中。
+
+
+
+shader中RenderQueue
+–[[
+Background:1000
+Geometry:2000
+AlphaTest:2450
+Transparent:3000
+Overlay:4000
+
+值越大 越先渲染 越靠后显示
+]]
+
+ZWrite （默认是ZWrite On, 看ZTest是否通过 通过了才会更新z值） 只有(On/Off)开关
+ZWrite 深度写入 新的深度值和深度缓存中的值作比较 小的值显示出来 被遮挡的物体深度大于前面的物体 所以深度写入失败 颜色不会输出
+
+深度写入是否刷新根据ZTest是否通过
+ZTest 参数
+Less (当物体的这个像素的Z值小于当前摄像机在这个像素上的Z值，则通过Ztest)
+LEqual(条件变为小于等于)
+Greater(条件变为大于)
+GEqual(条件变为大于等于)
+Equal(条件变为相等)
+NotEqual(条件变为不相等)
+Always(Ztest永远通过)
+Never(Ztest永远不通过)
+Off(等同于 ZTest Always)
+On(等同于ZTest LEqual)
+]]
+obsolete   过时的
+法线一般存储在切线空间。 法线方向是z轴方向，一般是(0,0,1);
+法线纹理存储的法线，是顶点自带的法线，他们是定义在模型空间中地。
+将修改后的模型空间中的表面法线存储在一张纹理中，这种纹理被称为模型空间的法线纹理。
+实际操作中，一般用切线空间来存储法线，每个顶点都有自己的切线。切线空间的原点就是顶点本身。
+z轴是顶点的发线方向， x是顶点的切线方向， Y是由法线和切线叉积而得，是副切线。这种纹理被称为切线空间的法线纹理。
+后续的光照是目的，所以选择了切线空间。模型的切线一般和Uv方式相同。
+把法线方向转到世界空间计算少。 自由度高，可用于其他网格，可进行uv动画。
+光照模型在切线空间计算：只需要把光照方向视角方向转换到切线空间。  在顶点着色器就可以转换
+光照模型在世界空间计算：需要把采样得到的法线方向转换到世界空间。  需要采样 再转换，效率低
+
+ _BumpMap("Normal Map", 2D)= "bump" {}  bump 是unity 内置的法线纹理。对应了模型自带的法线信息。
+
+
+在Unity的Shader编程中，Tags{ "LightMode" = "ForwardBase" }具有特定的意义和作用。以下是对其意义的详细解释：
+
+一、定义与角色
+Tags{ "LightMode" = "ForwardBase" }是Unity Shader中的一个标签（Tag），用于定义该Pass（渲染通道）在Unity渲染流水线中的角色。
+通过设置这个标签，Shader能够获取到Unity内置的一些光照变量，如_LightColor0等，这些变量在Unity的光照计算中扮演着重要角色。
+二、光照模式与渲染路径
+Unity支持多种光照模式和渲染路径，其中Forward（前置渲染）是一种常见的渲染路径。
+在Forward渲染路径中，ForwardBase用于处理环境光、最主要的平行光（也称为方向光）、逐顶点/球谐函数（SH）光源以及光照贴图（Lightmaps）。
+相比之下，ForwardAdd则用于处理额外的逐像素光源，每个光源对应一个Pass。
+三、应用场景与效果
+当Shader的Pass被标记为ForwardBase时，它会被用于渲染场景中的主要光照效果。
+这包括环境光的全局照明效果、平行光的方向性照明效果以及光照贴图提供的静态光照效果。
+通过这种方式，Unity能够高效地渲染出具有真实感的光照效果，同时保持较高的渲染性能。
+在Unity的Shader编程中，"LightMode" 标签用于指定Pass（渲染通道）在Unity渲染流水线中的角色，以及它如何处理光照。根据不同的光照模式和渲染需求，"LightMode" 有多种不同的值，每种值都对应着特定的光照处理方式和渲染效果。以下是一些常见的 "LightMode" 值及其区别：
+
+1. ForwardBase
+描述：用于处理环境光、最主要的平行光（也称为方向光）、逐顶点/球谐函数（SH）光源以及光照贴图（Lightmaps）。
+应用场景：在Forward渲染路径中，这是渲染场景主要光照效果的Pass。
+特点：逐像素处理亮度最亮的一个平行光，以及逐顶点处理其他光照。
+2. ForwardAdd
+描述：用于处理额外的逐像素光源。
+应用场景：当场景中有多个光源需要逐像素处理时，这些光源的渲染会通过ForwardAdd Pass来实现。
+特点：每个逐像素的光照都需要渲染一次，因此会有多个ForwardAdd Pass来处理不同的光源。
+3. Deferred
+描述：用于延迟渲染路径。
+应用场景：当场景光源数目很多，使用前向渲染会造成性能瓶颈时，可以选择延迟渲染。
+特点：延迟渲染把数据渲染到G-Buffer中，通过两个Pass来完成光照计算。第一个Pass不进行光照计算，只进行数据处理并存储到G-Buffer中；第二个Pass使用G-Buffer的数据来进行光照计算。
+4. Vertex
+描述：用于顶点照明渲染（已被淘汰）。
+应用场景：由于顶点照明渲染不支持阴影、法线映射、高精度的高光反射等效果，因此在实际开发中很少使用。
+特点：只使用逐顶点的处理方式，性能较高但效果较差。
+5. 其他特定光照模式
+除了上述常见的 "LightMode" 值外，Unity还支持一些特定的光照模式，如用于屏幕空间阴影投射的 "ShadowCaster"、用于接收阴影的 "ReceiveShadows" 等。这些光照模式通常用于特定的渲染效果或优化。
+
+区别总结
+渲染路径：不同的 "LightMode" 值对应不同的渲染路径和光照处理方式。例如，ForwardBase和ForwardAdd属于前向渲染路径，而Deferred属于延迟渲染路径。
+光源处理：根据 "LightMode" 的值，Pass可以处理不同类型的光源。例如，ForwardBase主要处理环境光和最主要的平行光，而ForwardAdd则处理额外的逐像素光源。
+渲染效果：不同的 "LightMode" 值会影响最终的渲染效果。例如，延迟渲染可以提供更高质量的光照效果，但可能对硬件有一定的要求。
+
+
+“twirl”是一个英语词汇，其基本含义涉及快速转动或旋转的动作。以下是对该词的详细解释：
+在C#中，extern关键字用于声明一个方法是在当前代码文件之外实现的。这通常用于调用非托管代码（如C或C++编写的DLL文件中的函数）。通过使用extern关键字，你可以在C#代码中声明这些外部方法，然后在编译后的程序中链接到这些外部实现。
+
+调一些库里的函数
+ // 声明外部方法
+    [DllImport("example.dll", CallingConvention = CallingConvention.Cdecl)]
+    public static extern void HelloWorld();
+
+
+根据输入 UV 生成 Voronoi 或 Worley 噪声。Voronoi 噪声是通过计算像素和点阵之间的距离生成的。通过使这些点偏移由输入 Angle Offset 控制的伪随机数，可以生成一组单元。
+这些单元的规模以及产生的噪声由输入 Cell Density 控制。输出 Cells 包含原始单元数据。
+
+Quad四边形
+
+法线方向是float3  切线方向是float4.   我们需要tangent.w分量来决定切线空间重的第三个坐标轴-副切线的方向性。
+
+凹凸纹理
+fixed4 frag(v2f i ) : SV_Target
+            {
+                fixed3 tangentLightDir = normalize( i.lightDir );
+                fixed3 tangentViewDir = normalize(i.viewDir);
+
+                fixed4 packedNormal = tex2D( _BumpMap , i.uv.zw );
+                fixed3 tangentNormal;
+
+                tangentNormal = UnpackNormal(packedNormal);
+
+                tangentNormal.xy *= _BumpScale;
+                tangentNormal.z = sqrt( 1.0 - saturate(dot( tangentNormal.xy, tangentNormal.xy )) );
+                fixed3 albedo = tex2D( _MainTex, i.uv ).rgb * _Color.rgb;
+
+                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+
+                fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(tangentNormal, tangentLightDir));
+
+                fixed3 halfDir = normalize(tangentLightDir + tangentViewDir);
+
+                fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow( max( 0, dot( tangentNormal, halfDir ) ), _Gloss );
+                
+                漫反射跟视角无关 高光跟视角有关。
+                return  fixed4(ambient + diffuse + specular,1);
+            }
+
+二、导数的几何意义
+在几何上，导数表示曲线上某点处的切线斜率。对于函数y=f(x)所代表的曲线，其在任意一点(x0, f(x0))处的导数f'(x0)就是该点处切线的斜率。
+当曲线上某点的切线斜率为正时，说明该点处的函数值增加；当切线斜率为负时，说明该点处的函数值减少。
+
+一、向量点积的意义
+定义：
+向量的点积（也称为数量积或内积）是指两个向量对应分量相乘后求和的结果。对于两个三维向量A = (a1, a2, a3)和B = (b1, b2, b3)，它们的点积A·B定义为：A·B = a1·b1 + a2·b2 + a3·b3。
+
+几何意义：
+点积的结果是一个标量（数值），它等于两个向量的模和它们之间夹角的余弦值的乘积，即A·B = |A|·|B|·cosθ，其中θ是向量A和B之间的夹角。
+点积可以用来计算一个向量在另一个向量方向上的投影长度。当两个向量同向时，点积最大；当两个向量反向时，点积最小（为负值）；当两个向量垂直时，点积为零。
+应用：
+在物理学中，点积常用于计算功，即力和位移的点积给出了力对物体做功的大小。
+在信号处理领域，点积用于计算信号之间的相似性。
+在几何学中，点积可用于判断两个向量的相对方向（夹角大小）。
+二、向量叉积的意义
+定义：
+向量的叉积（也称为外积、向量积或叉乘）是指两个向量在三维空间中生成的一个新向量。对于两个三维向量A和B，它们的叉积A×B定义为：A×B = |A|·|B|·sinθ·n，其中θ是向量A和B之间的夹角，n是垂直于A和B所在平面的单位向量。
+
+几何意义：
+叉积的结果是一个向量，它垂直于原两个向量构成的平面。
+叉积的模等于由两个向量构成的平行四边形的面积。
+在三维空间中，叉积的方向由右手定则确定：将第一个向量转向第二个向量时，大拇指所指的方向就是叉积向量的方向。
+应用：
+在物理学中，叉积常用于计算力矩（或转矩），即作用力和力臂的叉积。
+在工程学中，叉积可用于计算两个向量的垂直分量或求解空间问题。
+在计算机图形学中，叉积用于计算三角形或多边形的法向量以及判断点的位置关系（如判断点是否在三角形内部）。
+
+纹理可以存储任何表面属性，一种常见的用法就是使用渐变纹理来控制漫反射光照的结果。
+之前计算漫反射光照，我们都是使用表面法线和光照方向的点积结果与材质的反射率相乘来得到表面的漫反射光照。
+
+ o.uv  = TRANSFORM_TEX(v.texcoord, _RampTex);
+我们使用 TRANSFORM_TEX 计算经过平铺和缩放后的纹理坐标。
+
+在Unity中，UnityWorldSpaceLightDir 是一个在表面着色器（Surface Shaders）中经常使用的内置函数，它用于获取世界空间中的光照方向。这个函数返回一个三维向量，表示从着色点到光源的方向。这个方向向量通常用于计算光照效果，比如兰伯特（Lambert）光照模型或Phong光照模型中的漫反射部分。
+
+然而，需要注意的是，在Unity的表面着色器（Surface Shaders）中，你通常不需要直接调用 UnityWorldSpaceLightDir，因为Unity的表面着色器框架已经为你处理了光照计算的大部分工作。当你使用 surf 函数时，Unity会自动计算光照方向、视角方向等，并将它们传递给光照模型。
+
+但是，如果你正在编写一个更底层的顶点/片段着色器（Vertex/Fragment Shaders），或者你需要在表面着色器中执行一些自定义的光照计算，那么了解如何使用 UnityWorldSpaceLightDir 可能会很有用。
+
+在表面着色器中，如果你确实需要访问光照方向，你可以通过自定义输入结构（Input struct）和 CUSTOM_LIGHT 宏来实现。但是，这种方法通常比较复杂，且不是Unity表面着色器的标准用法。
+
+
+在Unity的内置管线（Built-in Pipeline）中，你可以直接在Shader代码中使用 UNITY_LIGHTMODEL_AMBIENT.xyz 来获取环境光颜色
+
+
+
+渐变纹理
+fixed4 frag(v2f i ) : SV_Target
+{
+                fixed3 worldNormal = normalize(i.worldNormal);
+                fixed3 worldLightDir = normalize( UnityWorldSpaceLightDir(i.worldPos) );
+
+                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
+
+                fixed halfLabert = 0.5 * dot(worldNormal, worldLightDir) + 0.5;
+                fixed3 diffuseColor = tex2D( _RampTex, fixed2( halfLabert, halfLabert )).rgb * _Color.rgb;
+
+                fixed3 diffuse = _LightColor0.rgb * diffuseColor;
+
+                fixed3 viewDir = normalize( UnityWorldSpaceViewDir( i.worldPos ) );
+                fixed3 halfDir = normalize( worldLightDir + viewDir );
+
+                fixed3 specular = _LightColor0 .rgb * _Specular.rgb * pow( max( 0, dot( worldNormal, halfDir ) ), _Gloss );
+                
+                return  fixed4(ambient + diffuse + specular ,1);
+ }
+半兰伯特模型，通过对法线方向和光照方向的点积做一次0.5倍的缩放以及一个0.5大小的偏移-》【0,1】。。、纹理坐标的u, v都使用了 halfLabert。 
+
+遮罩允许我们可以保护某些区域，使他们免于被修改。   希望模型表某些区域的反射强一点某些地方弱一点。可以使用一张遮罩纹理来控制光照。
+当通道的值为0  可以保护表面不受该属性的影响。
+
+在unity中， 我们通常使用两种方式实现透明效果：alphatest 无法得到真正的半透明效果。    alphablending 透明度混合。   
+对于不透明物体，不考虑渲染顺序也能得到正确的排序效果。这是由于强大的深度缓冲。（depth buffer  == z-buffer）
+当渲染一个片元时， 需要把他的深度值和已经存在于深度缓冲的值进行比较。离摄像机远则不会渲染。否则则覆盖颜色缓冲的像素值，并把他的深度更新到深度缓冲。
+使用深度缓冲，不用关心不透明物体的渲染顺序， 因为我们在深度测试会判断出b距离摄像机更远。也就不会写入到颜色缓冲中。
+但要实现透明效果 就不是那么简单了。  因为当使用透明混合时，我们关闭了深度写入。。。
+
+透明度测试不需要关闭深度写入的。可能会根据透明度舍弃一些片元。否则不透明的物体处理。 产生的效果极端，要么完全透明要么看不到。
+透明度混合，使用当前片元的透明度作混合因子与存储在颜色缓冲中的颜色值混合。需要关闭深度写入但不能关闭深度测试。。对应透明度混合来说，深度缓冲是只读的。
+当使用透明度渲染一个片元时，回比较深度值，如果更远则不会混合了。
+透明度物体需要关闭深度写入。如果不关闭。半透明表面背后的表面本来是可以透过它被我们看到的。但由于深度测试判断半透明表面距离摄像机更近，导致后面的会剔除。
+
+AB  A是半透明 B是不透明。  先B后A没问题。  假如先A后B, A直接写入颜色缓冲，由于A关闭了深度写入。不会更新深度缓冲。 再渲染B.法线深度缓冲没人来过，就写入深度缓冲，导致B覆盖了A的颜色。
+所以关闭了深度写入，渲染顺序非常重要。
+
+B1 B2都是半透明 ， 后渲染的看起来在前面， 所以半透明物体之间也要符合一定的渲染顺序。
+首先方案1： 先渲染不透明    并开启深度测试和深度写入 。   2： 半透明的按距离摄像机的远近排序。从后往前渲染，并开启深度测试关闭深度写入。。
+问题来了： 交叉的物体。。。。 一个物体往往占据了一片区域。 网格上每个点深度值都不一样。用哪个都不行。
+
+subshader的queue 决定了我们的模型将归于那个渲染队列。
+Background1000 这个渲染队列会在任何其他队列之前被渲染。 Geometry2000[dʒiˈɒmətri] 默认的渲染队列 不透明。 
+AlphaTest2450 需要透明度测试的物体使用这个队列，在所有不透明度物体渲染后再渲染他们会更加高效。                                                            -》通过透明度测试实现透明效果
+Transparent3000 在geometry 和 alphatest渲染后，再从后往前渲染。任何使用透明度混合 列如关闭了 深度写入的shader 的物体都应该用该队列   -》通过透明度混合实现透明效果  要关闭深度写入zwriteoff
+overlay4000 实现一些叠加效果，任何需要再最后渲染的物体。
+
+透明度测试，只要一个片元的透明度不满足条件 对应的片元被舍弃。。 void clip( float4  x ){  if( any (x < 0) )  discard; }
+因此我们需要把Queue设置为AlphaTest。而RenderType标签可以把这个shader 归入到提前定义的组（TransparentCutout）。指明该shader使用了透明度测试的shader.
+
+
+模型变换：首先，将物体空间的坐标乘以模型矩阵（Model Matrix），这会将顶点从物体空间转换到世界空间（World Space）。
+视图变换：然后，将世界空间的坐标乘以视图矩阵（View Matrix），这会将顶点从世界空间转换到视图空间（View Space）或相机空间（Camera Space）。在视图空间中，相机位于原点，并且看向z轴的负方向。
+投影变换：最后，将视图空间的坐标乘以投影矩阵（Projection Matrix），这会将顶点从视图空间转换到裁剪空间（Clip Space）。投影矩阵定义了如何根据相机的近裁剪面和远裁剪面来裁剪场景，并且确定了如何在屏幕上进行透视投影或正交投影。
+
+o.pos = UnityObjectToClipPos( v.vertex );  转换到裁减空间是保证映射到屏幕。
+
+
+
+
+
+
+
+
+
+
 
 

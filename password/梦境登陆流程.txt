@@ -1,0 +1,43 @@
+WindowID_MJLogin
+
+
+//获取服务器列表
+await LoginHelper.GetServerList(self.Root(), GlobalHelp.GetVersionMode());
+        Main2NetClient_ServerListHand
+        root.RemoveComponent<RouterAddressComponent>();
+        Log.Debug($"start get router info: {url}");
+        await self.Root().GetComponent<TimerComponent>().WaitAsync(5 * 60 * 1000);
+        if (self.IsDisposed)
+        {
+            return;
+        }
+        await self.GetAllRouter();
+        Session session = await netComponent.CreateRouterSession(realmAddress, account, password, SceneTypeEnum.LoginScene);
+        session.AddComponent<PingComponent>().SceneType  =sceneTpe;
+        session.AddComponent<RouterCheckComponent>();
+        C2R_ServerList.Create();
+        
+        C2R_ServerListHandler    //session.RemoveComponent<SessionAcceptTimeoutComponent>();  5秒后自动销毁
+        
+//获取角色列表
+await LoginHelper.Login(self.Root(), self.View.E_AccountInputField.text, self.View.E_PasswordInputField.text, 0, GlobalHelp.GetVersionMode());
+        Session session = await netComponent.CreateRouterSession(realmAddress, account, password, SceneTypeEnum.LoginScene);
+        C2R_LoginAccount c2RLoginAccount = C2R_LoginAccount.Create();  session.RemoveComponent<SessionAcceptTimeoutComponent>();  5秒后不会自动销毁  后面会需要C2R_GetRealmKey
+            
+        response.PlayerInfo = r2CLoginAccount.PlayerInfo;
+        response.RoleLists = r2CLoginAccount.RoleLists;
+            
+//进入游戏
+await LoginHelper.LoginGameAsync(root, 0);
+        C2R_GetRealmKey.Create();  用的之前的session 连接realm
+        C2R_GetRealmKeyHandler     //session.RemoveComponent<SessionAcceptTimeoutComponent>();  5秒后自动销毁   函数执行完立即销毁
+        await clientSenderComponent.LoginGameAsync(playerInfoComponent.Account,
+        Main2NetClient_LoginGame main2NetClientLoginGame = Main2NetClient_LoginGame.Create();
+        C2G_LoginGameGate c2GLoginGameGate = C2G_LoginGameGate.Create();
+        C2G_EnterGame cEnterGame = C2G_EnterGame.Create();
+        
+
+//重连 会额外下发一条协议：  G2C_SecondLog
+
+        
+NetClient2Main_SessionDispose->sesson销毁通知mainscene;   创角界面再返回 登陆界面再重连。
