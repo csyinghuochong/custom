@@ -1000,7 +1000,7 @@ namespace ET
             string fenhaoTip = string.Empty;
             foreach ((string account, List<long> unitids) in accountNumber)
             {
-                if (unitids.Count >= 3)  //三次以上封账号封设备id
+                if (unitids.Count >= 3 && !account.Contains("testcn"))  //三次以上封账号封设备id
                 {
                     fenhaoTip += ($"封号： {account}");
                     List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
@@ -1227,7 +1227,7 @@ namespace ET
             string fenhaoTip = string.Empty;
             foreach ((string account, List<long> unitids) in accountNumber)
             {
-                if (unitids.Count >= 3)  //三次以上封账号封设备id
+                if (unitids.Count >= 3 && !account.Contains("testcn"))  //三次以上封账号封设备id
                 {
                     fenhaoTip += ($"封号： {account}");
                     List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Account == account);
@@ -1419,6 +1419,11 @@ namespace ET
                     Console.WriteLine($"查询为空9:{userid}");
                     continue;
                 }
+                if (accoutResult[0].Account.Contains("testcn"))
+                {
+                    continue;
+                }
+
                 if (accoutResult[0].AccountType == 2 || accoutResult[0].GetTotalRecharge() > 30)
                 {
                     Console.WriteLine($"查询为空10:{userid}");
@@ -1636,6 +1641,10 @@ namespace ET
             List<DBCenterAccountInfo> accoutResult = await Game.Scene.GetComponent<DBComponent>().Query<DBCenterAccountInfo>(202, _account => _account.Id > 0);
             for(int i = 0; i < accoutResult.Count; i++)
             {
+                if (accoutResult[i].Account.Contains("testcn"))
+                {
+                    continue;
+                }
                 if (accoutResult[i].AccountType == 2)
                 {
                     continue;
@@ -1803,7 +1812,10 @@ namespace ET
                 {
                     continue;
                 }
-
+                if (accoutResult[0].Account.Contains("testcn"))
+                {
+                    continue;
+                }
                 if (accoutResult[0].AccountType == 2)
                 {
                     continue;
@@ -2314,6 +2326,10 @@ namespace ET
             {
                 return ErrorCode.ERR_NotFindAccount;
             }
+            if (accoutResult[0].Account.Contains("testcn"))
+            {
+                return ErrorCode.ERR_NotFindAccount;
+            }
 
             string accout = accountInfoList[0].Account;
             List<int> zonlist = ServerMessageHelper.GetAllZone();
@@ -2382,6 +2398,10 @@ namespace ET
             {
                 return ErrorCode.ERR_NotFindAccount;
             }
+            if (accoutResult[0].Account.Contains("testcn"))
+            {
+                return ErrorCode.ERR_NotFindAccount;
+            }
 
             List<int> zonlist = ServerMessageHelper.GetAllZone();
             for (int zoneindex = 0; zoneindex < zonlist.Count; zoneindex++)
@@ -2411,7 +2431,6 @@ namespace ET
                     }
                 }
             }
-
 
             accoutResult[0].AccountType = 2;
             accoutResult[0].BanTime = TimeHelper.ServerNow();
