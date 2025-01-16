@@ -1,6 +1,17 @@
 WindowID_MJLogin
 
 
+ // 挂上这个组件，5秒就会删除session，所以客户端验证完成要删除这个组件。该组件的作用就是防止外挂一直连接不发消息也不进行权限验证
+                session.AddComponent<SessionAcceptTimeoutComponent>();
+                // 客户端连接，2秒检查一次recv消息，10秒没有消息则断开
+                session.AddComponent<SessionIdleCheckerComponent>();
+
+ if (request.ReLink == 0)
+                {
+                    //非重连流程 直接踢下线。  客户端要延迟一帧entergame
+                    await  DisconnectHelper.KickPlayerNoLock(player, 4);
+                }
+
 //获取服务器列表
 await LoginHelper.GetServerList(self.Root(), GlobalHelp.GetVersionMode());
         Main2NetClient_ServerListHand
@@ -24,6 +35,14 @@ await LoginHelper.Login(self.Root(), self.View.E_AccountInputField.text, self.Vi
         Session session = await netComponent.CreateRouterSession(realmAddress, account, password, SceneTypeEnum.LoginScene);
         C2R_LoginAccount c2RLoginAccount = C2R_LoginAccount.Create();  session.RemoveComponent<SessionAcceptTimeoutComponent>();  5秒后不会自动销毁  后面会需要C2R_GetRealmKey
             
+        L2G_DisconnectGateUnit l2GDisconnectGateUnit = L2G_DisconnectGateUnit.Create();
+ if (request.ReLink == 0)
+                {
+                    //非重连流程 直接踢下线。  客户端要延迟一帧entergame
+                    await  DisconnectHelper.KickPlayerNoLock(player, 4);
+                }
+
+
         response.PlayerInfo = r2CLoginAccount.PlayerInfo;
         response.RoleLists = r2CLoginAccount.RoleLists;
             
