@@ -1,12 +1,12 @@
 shader基础：：：：
 光线由光源发射出来后，就会与一些物体相交，通常有两个结果：散射 和 吸收。。
 散射只改变光线的方向，但不改变光线的密度和颜色，   
-           	光线在经过物体表面散射后，一般有两种方向，一种就会散射到物体内部，称为折射或者透射，另一种散射到外部，称为反射。
-                对于不透明物体，折射进入物体内部的光线还会继续与内部的颗粒相交，有一些光线会重新发射出表面，另一些被吸收。那些重新发射出来的光线具有和入射光线不同的方向和颜色。
+光线在经过物体表面散射后，一般有两种方向，一种就会散射到物体内部，称为折射或者透射，另一种散射到外部，称为反射。
+对于不透明物体，折射进入物体内部的光线还会继续与内部的颗粒相交，有一些光线会重新发射出表面，另一些被吸收。那些重新发射出来的光线具有和入射光线不同的方向和颜色。
 
-	为了区分这两种不同的散射方向，高光反射部分是表示物体表面如何反射光线的。 漫反射则表示有多少光线会被折射吸收和散射出表面。
-	标准光照模型只关心直接光照，也就是那些直接从光源反射出来照射到物体表面后，经过物体表面的一次反射直接进入摄像机的光线。
-	四种光线不同的计算方法：自发光（发射多少辐射量） 高光反射(光线在模型表面反射多少辐射量)  漫反射(向每个方向散射多少辐射量)  环境光(所有的间接光照)。
+为了区分这两种不同的散射方向，高光反射部分是表示物体表面如何反射光线的。 漫反射则表示有多少光线会被折射吸收和散射出表面。
+标准光照模型只关心直接光照，也就是那些直接从光源反射出来照射到物体表面后，经过物体表面的一次反射直接进入摄像机的光线。
+四种光线不同的计算方法：自发光（发射多少辐射量） 高光反射(光线在模型表面反射多少辐射量)  漫反射(向每个方向散射多少辐射量)  环境光(所有的间接光照)。
 而吸收只改变光线的密度和颜色，但不改变光线的方向。
 
 TransformObjectToHClip：将物体空间中的顶点位置转换到裁剪空间，结果存储在 output.position 中。
@@ -23,9 +23,7 @@ o.worldNormal = mul(v.normal, (float3x3)_World2Object);顶点法向量从模型�
 float3 ObjSpaceViewDir(float4 v)输入一个模型空间的顶点位置，返回模型空间中从该点到摄像机的观察方向。
 float3 WorldSpaceLightDir(float4 v)仅可用于向前渲染中。输入一个模型空间的顶点位置，返回世界空间中从该点到光源的光照方向。
 
-
-
-                        https://blog.51cto.com/u_16213682/10256603
+https://blog.51cto.com/u_16213682/10256603
 原文链接：https://blog.csdn.net/shijunwei0326/article/details/144006228
 
 向量点乘：
@@ -79,7 +77,7 @@ Mesh：粒子呈现为 3D 模型（网格），可以选择自定义的 Mesh（�
 
 叫做模版，使用它叫做模版测试。
 官方解释：模板缓冲区为每个像素在帧缓冲区中。在执行片段之前着色器对于给定的像素，GPU 可以将模板缓冲区中的当前值与给定的参考值进行比较。
-这称为模板测试。如果模板测试通过，GPU 将执行深度测试。如果模板测试失败，GPU 将跳过该像素的其余处理。
+这称为模板测试。如果模板测试通过，GPU 将执行深度测试。如果模板测试失败，GPU 将跳过该像素 的其余处理。
 这意味着您可以使用模板缓冲区作为掩码来告诉 GPU 要绘制哪些像素以及要丢弃哪些像素。
 
 所有的工具都是因为需要所以产生的，学到目前为止，我们发现，我们的shader大部分时候只能和自己互动，如果两个shader之间想要互动，几乎没有什么好办法。
@@ -222,7 +220,7 @@ Unity支持多种光照模式和渲染路径，其中Forward（前置渲染）�
 渲染效果：不同的 "LightMode" 值会影响最终的渲染效果。例如，延迟渲染可以提供更高质量的光照效果，但可能对硬件有一定的要求。
 
 
-“twirl”是一个英语词汇，其基本含义涉及快速转动或旋转的动作。以下是对该词的详细解释：
+"twirl”是一个英语词汇，其基本含义涉及快速转动或旋转的动作。以下是对该词的详细解释：
 在C#中，extern关键字用于声明一个方法是在当前代码文件之外实现的。这通常用于调用非托管代码（如C或C++编写的DLL文件中的函数）。通过使用extern关键字，你可以在C#代码中声明这些外部方法，然后在编译后的程序中链接到这些外部实现。
 
 调一些库里的函数
@@ -327,9 +325,7 @@ fixed4 frag(v2f i ) : SV_Target
 
                 fixed3 viewDir = normalize( UnityWorldSpaceViewDir( i.worldPos ) );
                 fixed3 halfDir = normalize( worldLightDir + viewDir );
-
                 fixed3 specular = _LightColor0 .rgb * _Specular.rgb * pow( max( 0, dot( worldNormal, halfDir ) ), _Gloss );
-                
                 return  fixed4(ambient + diffuse + specular ,1);
  }
 半兰伯特模型，通过对法线方向和光照方向的点积做一次0.5倍的缩放以及一个0.5大小的偏移-》【0,1】。。、纹理坐标的u, v都使用了 halfLabert。 
@@ -374,33 +370,213 @@ o.pos = UnityObjectToClipPos( v.vertex );  转换到裁减空间是保证映射�
 Metallic  是一个英文单词，主要用作形容词，其基本含义是指具有金属特性的或类似金属的。这个词在多个领域和语境中都有广泛的应用。
 Ambient Occlusion，中文译为环境光遮蔽，简称AO
 
+"Queue" = "AlphaTest"  "RenderType"="TransparentCutout" 
+clip( texColor.a - _CutOff );
 透明度测试实际上和对待普通的不透明物体一样。只是在片元着色器增加了对透明度判断并裁减片元的代码。
 透明度混合使用当前的透明度作为混合因子，与已经存储在颜色缓冲中的颜色值进行混合。透明度混合需要关闭深度写入，但需要深度测试。
 
 blend off 混合关闭
+"Queue" = "Transparent"  "RenderType"="Transparent" 
+ZWrite Off
+Blend SrcAlpha OneMinusSrcAlpha
+return  fixed4(albedo +  ambient + diffuse ,texColor.a * _AlphaScale);
 blend srcfactor dstfactor （原颜色）该片元颜色*srcfactor + （目标颜色）已经存在于颜色缓存的颜色*dstfactor  再存入颜色缓冲
 blend blendoperation 并非是把原颜色和目标颜色相加后混合，而是使用blendoperation对他们进行其他操作。
 开启了混合之后。设置片元的透明通道才有意义
 
+ColorMask 0   
+ColorMask RGB | A | 0 |  其他任何RGBA的组合，   colormask 0 以为该pass不写入任何颜色通道，既不会输出任何颜色。 zwrite on 只需要写入深度缓存即可。。
+//第一个pass开启深度写入，但不输出颜色，他的目的仅仅是把该模型的深度值写入到深度缓冲中。
+//第二个pass进行正常的透明度混合，上一个pass得到了逐像素的正确的深度信息，该pass可以按照像素级别的深度排序结果进行透明度渲染。
+Shader "Custom/NewSurfaceShader_5"
+{
+    Properties
+    {
+        _Color ("Color Tint", Color) = (1,1,1,1)
+        _MainTex ("Main Tex", 2D) = "white" {}
+        _AlphaScale( "Alpha Scale", Range(0, 1) ) = 0.5
+    }
+    
+    SubShader
+    {
+        
+        Tags{ "Queue" = "Transparent" "IgnoreProjector"="True"  "RenderType"="Transparent" }
+        
+        Pass
+        {
+            ZWrite On
+            ColorMask 0
+        }
+        
+        Pass
+        {
+            Tags{ "LightMode" = "ForwardBase" }
+            
+            ZWrite Off
+            Blend SrcAlpha OneMinusSrcAlpha
+            
+            CGPROGRAM
 
+            #pragma vertex vert
+            #pragma fragment frag
 
+            #include  "Lighting.cginc"
 
+            fixed4 _Color;
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+            fixed _AlphaScale;
+            
+            struct a2v
+            {
+                float4 vertex :POSITION;
+                float3 normal : NORMAL;
+                float4 texcoord : TEXCOORD0;
+            };
 
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+                float3 worldNormal : TEXCOORD0;
+                float3 worldPos : TEXCOORD1;
+                float2 uv : TEXCOORD2;
+            };
 
+            v2f vert(a2v v)
+            {
+                v2f o;
 
+                o.pos = UnityObjectToClipPos( v.vertex );
+                o.worldNormal = UnityObjectToWorldNormal(v.normal);
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+                
+                return o;
+            }
 
+            fixed4 frag(v2f i ) : SV_Target
+            {
+                fixed3 worldNormal = normalize(i.worldNormal);
+                fixed3 worldLightDir = normalize( UnityWorldSpaceLightDir(i.worldPos) );
 
+                fixed4 texColor = tex2D( _MainTex, i.uv );
 
+                //clip( texColor.a - _CutOff ); alphatest
 
+                fixed3 albedo = texColor.rgb * _Color.rgb;
 
+                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
 
+                fixed3 diffuse = _LightColor0.rgb * albedo * max(  0, dot( worldNormal, worldLightDir ) );
+                
+                return  fixed4(albedo +  ambient + diffuse ,texColor.a * _AlphaScale);
 
+            }
+            ENDCG
+        }
+        
+    }
+}
 
+已知源颜色s 和 目标颜色d   想要得到输出颜色o.  就必须使用一个等式来计算。需要使用两个混合等式 分别用于rgb 和 a
+当设置混合状态时， 我们实际就是混合等式中的操作和因子。 在默认情况下，混合等式使用的操作都是加操作。我们只需要再设置一下混合因子即可。
+两个等式 * 两个因子 一个4个因子。。。
 
+Blend SrcFactor DstFactor  开启混合，并设置混合因子，源颜色 * SrcFactor +目标颜色 * DstFactor   再存入颜色缓冲中
+Blend SrcFactor DstFactor， SrcFacotrA DstFactorA   同上 只是使用不同的因子来混合透明通道。。
 
+one 1       zero 0 
+scrcolor    因子为源颜色                 
+dstcolor 源颜色值   dsalpha 目标颜色的透明度
+oneminussrccolor 1-源颜色   oneminussrcalpha 1-原颜色的透明度值
+oneminusdstcolor 1-目标颜色 oneminusdstalpha 1-目标颜色的透明度值
+混合操作：
+Add  将混合后的源颜色和目标颜色相加 Orbg = ScrFactor * Srgb + DstFactor * Drgb
+Sub  用混合后的源颜色减去混合后的目标颜色   ScrFactor * Srgb - DstFactor * Drgb
+RevSub 用混合后的目标颜色减去混合后的源颜色 DstFactor * Drgb - ScrFactor * Srgb 
+Min 使用原颜色和目标颜色中较小的值， 逐分量比较的。(min(r)  min(g)  min(b)  min(a))   -》 Max
 
+ Blend SrcAlpha OneMinusSrcAlpha 正常(Normal)即透明底混合
+            Blend OneMinusDstColor One  柔和相加(Soft Additive)
+            Blend DstColor Zero 正片叠底 即相乘
+            Blend DstColor SrcColor 两倍相乘
+            BlendOp Min    Blend One One 变暗
+            BlendOp Max    Blend One One 变亮
+            Blend OneMinusDstColor One 滤色
+            Blend One One  线性减淡
 
+//因为默认情况下渲染引擎剔除了物体背面，相对于摄像机方向 的渲染图元。。。而只渲染了物体的正面，可以通过cull指令来控制那个面的渲染图元。
+cull back  cull front  cull off
+设置为back 背对摄像机的不会渲染。 设置为front 朝向摄像机的不会被渲染。 设置为off， 就会关闭剔除功能 ，一般不会关闭 太消耗了。。
 
+透明度混合的双面渲染：和透明度测试相比 ，想要让透明度混合实现双面渲染更复杂。
+透明度测试没有关闭深度写入， 因此可以利用深度缓冲按逐像素的粒度进行深度排序从而保证渲染的正确
+而透明度混合关闭了深度写入。如果直接关闭剔除功能，无法保证同一个物体的正面和背面渲染图元的顺序。
+因此， 我们把双面渲染的工作分成两个pass  第一个pass只渲染背面，。第二个pass只渲染正面。。又有subshader 会顺序执行每个pass。  可以保证背面总在正面之前被渲染。。。
+
+如果gpu不支持延迟渲染。那么就会使用向前渲染。
+LightMode标签支持的渲染路径设置选项。
+Always 不管使用那种渲染路径，该pass总是会被渲染，但不会计算任何光照。
+ShadowCaster 把物体的深度信息渲染到阴影映射纹理。或者一张深度纹理中。
+对于逐像素光源。  一个物体在多个逐像素光源的影响区域内。 那么改物体就需要执行多个pass.    n个物体， 就是N*m个pass..
+unity的向前渲染， 事实上，一个pass不仅仅可以用来计算逐像素光照，也可以用来计算逐顶点光照。这取决于光照计算所处流水线阶段已经计算时使用的数学模型。
+当我们渲染一个物体时， unity 会计算那些光源照亮了它。 以及这些光源照亮该物体的方式。。
+在unity中， 向前渲染路径有3种处理光照的方式：逐顶点处理 逐像素处理 球谐函数处理。
+而决定一个光源使用那种处理模式取决于它的类型和渲染模式。。
+光源类型是该光源是平行光还是其他类型的光源。  而光源的渲染模式是该光源是否是重要的（important）. important 则会被当成一个逐像素光源。
+在向前渲染中， 当我们渲染一个物体时候，unity 会根据场景中各个光源的设置以及这些光源对物体的影响程度，（距离该物体的远近，光源强度）对这些光源进行一个重要排序。
+其中，一定数目的光源会按逐像素的方式处理，最多四个逐顶点， 剩下的sh 。。
+uniy 使用的规则如下：
+1 场景中最亮的平行光总是按照逐像素处理的。。。。
+2 not important的光源 会按照逐顶点或者sh处理。。
+3 important的光源 会按照逐像素处理。。
+4 如果按以上规则得到的逐像素光源数量小于qualitysetting的pixel light count。  则会有更多的光源以逐像素的方式渲染。
+向前渲染有两种pass  basepass 和 additional pass
+basepass       可实现的光照效果： 光照纹理 环境光 自发光 阴影(平行光的阴影)   tags{ "lightmode"="forwardbase" }   光照计算。一个逐像素的平行光已经所有逐顶点和sh光源
+additionpass 默认不支持阴影 但可以用#pragmamulti_complie_fwdadd_fullshadows编译指令来开启。 tags{ "lightmode"="forwardadd" }   光照计算。其他影响该物体的逐像素光源每个光源执行一次pass
+basspass 和 additional pass 使用 #pragma multi_compile_fwdbase / fwdadd 这样的预编译指令， 才可以在相关的pass中得到一些正确的光照变量。。列如光照衰减值。
+basepass可以访问光照纹理。
+basepass 中渲染的平行光默认是支持阴影的，如果开启了光源的阴影功能。而additional pass 中渲染的光源默认是没有阴影效果的。 即使它的light组件中设置了shadowtype. 
+但可以用#pragm mutil_compile_fwdadd_fullshadows替代#pragm mutil_compile_fwdadd   但这需要unity 在内部使用更多的shader变种
+环境光和自发光也是在basepass中计算的。 对于一个物体来说 ，环境光和自发光我们只希望计算一次即可。而我们在addtionalpass计算这两种光照 就会造成多次叠加环境光和自发光。
+在additionalpass的渲染设置中，我们还开启和设置了混合模式。因为我们希望每个additionalpass可以与上一次的光照结果在帧缓存中进行叠加。从而得到最终的有多个光照的渲染效果。 所以用blend one one
+对于向前渲染来说  一个Unityshader 通常会被定义一个base pass 以及一个 additional pass。  一个basepass仅执行一次，  一个additionalpass则会根据影响该物体的其他逐像素光源的数目多次调用。
+如何使用内置变量进行计算完全取决于开发者的选择。
+根据我们使用的渲染路径。即pass标签中lightmode的值。  unity 会把不同的光照变量传递给shader.
+对于向前渲染，即lightmode为forwardbase或者forwardadd来说。  我们可以在shader中访问到的光照变量。
+_lightColor0  该pass处理的逐像素光源的颜色。
+_worldspacelightpos0   xyz 该pass处理的逐像素光源的位置。  w=0是平行光   1是其他光源
+_lightmatrix0  从世界空间到光源空间的变换矩阵，可以采样cookie和光强衰减纹理
+unity_4LightposX0 仅仅用于basepass。  前4个非常重要的点光源在世界空间的位置。
+unity_4LightAtten0  仅仅用于basepass。前4个非常重要的点光源的衰减因子
+向前渲染可以用使用的内置光照函数
+float3  worldSpaceLightDir  输入一个模型空间的顶点位置，返回世界空间中从该点到光源的光照方向。
+float3 objspacelightdir  输入一个模型空间的顶点位置，返回模型空间从该点到光源的光照方向。
+float3 shader4pontlights  计算4个点光源的光照。通常用这个计算逐顶点光照。
+
+顶点照明渲染路径；对硬件要求最少 运行性能最高 同时效果最差的一种类型。不支持阴影 法线映射 高精度的高光反射。它是向前渲染的一个子集。
+如果选择顶点照明渲染路径。 那么unity会只填充那些逐顶点相关的光源变量。不可以用到一些逐像素光照变量。
+顶点渲染路径通常在一个pass中就可以完成对物体的渲染 在这个pass中 我们会计算我们关心的所有光源对该物体的照明。
+顶点照明渲染可以使用的内置变量
+unity_LightColor  光源颜色
+unity_LightPosition  xyz分量是视角空间中的光源位置，z=0是平行光
+unity_LightAtten  光源衰减因子。如果光源是聚光灯 x分量是cos(spotangle/2)
+float3 shadevertexlights （float4 vertex, float3 normal）  输入模型空间中的顶点位置和法线，计算4个逐顶点光源的光照已经环境光。
+float3 shadevertexlightsfull(float4 vertex, float3 normal, int lightcount, bool spotlight) 输入模型空间中的顶点位置和法线，计算lightcount个光源的光照已经环境光
+  
+延迟渲染路径。  延迟渲染利用额外的缓冲区。 g-buff  
+延迟渲染主要包含两个pass，。第一个pass中不进行任何光照计算。仅仅计算那些片元可见，主要通过深度缓冲技术实现。
+第二个pass 中，  利用g缓冲区的片元信息 表面法线 视角方向 满发射系数 进行真正的光照计算。。
+
+延迟渲染路径， 它适合在场景中光源数目很多，如果使用向前渲染会造成性能瓶颈。而且， 延迟渲染路径中的每个光源都可以逐像素处理。但是也哟一些缺点：
+不支持真正的抗锯齿  不能处理半透明物体 对显卡有一定要求 显卡必须mrt(multiple render targes) shadermode 3.0+
+默认的g缓冲区 ， 包含以下几个渲染纹理： rt0 漫反射 rt1 高光反射  rt2 法线 rt3 自发光+lightmap+反射探针    深度缓冲和模板缓冲
+延迟渲染可以访问的内置变量和函数
+_LightColor 光源颜色
+_LightMatrix0  从世界空间到光源空间的变换矩阵，可以采样cookie和光强衰减纹理。
+
+平行光没有位置  光照强度不改变
+点光源  聚光灯 照亮范围有限 会衰减
 
 
 
