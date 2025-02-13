@@ -174,7 +174,7 @@ public static class XCodePostProcess
 		plist.ReadFromFile(plistPath);
 
 		plist.root.SetString("NSPhotoLibraryUsageDescription", "保存照片到系统相册");
-
+		plist.root.SetBoolean("App Uses Non-Exempt Encryption", false);
 		SetUrlSchemes(plist);
 
 		plist.WriteToFile(plistPath);
