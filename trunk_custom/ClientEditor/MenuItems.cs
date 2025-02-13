@@ -31,6 +31,7 @@ using UnityEditor;
 using UnityEngine;
 using ET;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace libx
 {
@@ -313,6 +314,65 @@ namespace libx
                 }
             }
         }
+
+        [MenuItem("Tools/修改寻路数据为.bytes[客户端]")]
+        static void RenamePathFilesInFolder1()
+        {
+            string folderPath = Application.dataPath + "/Bundles/Recast";
+            if (string.IsNullOrEmpty(folderPath))
+            {
+                UnityEngine.Debug.Log("Folder selection canceled.");
+                return;
+            }
+
+            UnityEngine.Debug.Log("检测开始");
+
+            string[] files = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories)
+                    .Where(file => file.EndsWith(".bin", System.StringComparison.OrdinalIgnoreCase)
+                            && !file.EndsWith(string.Empty))
+                    .ToArray();
+
+            foreach (string file in files)
+            {
+                string newFilePath = Path.Combine(Path.GetDirectoryName(file) ?? string.Empty, Path.GetFileNameWithoutExtension(file));
+                File.Move(file, newFilePath);
+                UnityEngine.Debug.Log($"Renamed: {file} -> {newFilePath}");
+            }
+
+            AssetDatabase.Refresh();
+            UnityEngine.Debug.Log("检测结束");
+        }
+
+        [MenuItem("Tools/修改寻路数据为无后缀[服务器]")]
+        static void RenamePathFilesInFolder2()
+        {
+            string dataPath = Application.dataPath; //"H:/GitWeiJing/Unity/Assets"
+            string folderPath = dataPath.Remove(dataPath.Length - 12, 12) + $"Config/Recast";
+            if (string.IsNullOrEmpty(folderPath))
+            {
+                UnityEngine.Debug.Log("Folder selection canceled.");
+                return;
+            }
+
+            UnityEngine.Debug.Log("检测开始");
+
+            string[] files = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories)
+                    .Where(file => file.EndsWith(".bin", System.StringComparison.OrdinalIgnoreCase)
+                            )
+                    .ToArray();
+
+            foreach (string file in files)
+            {
+                string newFilePath = Path.Combine(Path.GetDirectoryName(file) ?? string.Empty, Path.GetFileNameWithoutExtension(file));
+                File.Move(file, newFilePath);
+                UnityEngine.Debug.Log($"Renamed: {file} -> {newFilePath}");
+            }
+
+            AssetDatabase.Refresh();
+            UnityEngine.Debug.Log("检测结束");
+        }
+
+
 
         #region Tools 
         [MenuItem("XAsset/Tools/View CRC")]
