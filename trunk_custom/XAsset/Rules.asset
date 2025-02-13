@@ -23,7 +23,7 @@ MonoBehaviour:
   searchPatternAtlas: '*.spriteatlas'
   searchPatternSound: '*.mp3'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 1279
+  version: 1282
   scenesInBuild:
   - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
   rules:
@@ -74,6 +74,10 @@ MonoBehaviour:
   - searchPath: Assets/Bundles/Icon
     searchPattern: '*'
     nameBy: 2
+    assetBundleName: 
+  - searchPath: Assets/Bundles/Recast
+    searchPattern: '*'
+    nameBy: 1
     assetBundleName: 
   ruleAssets:
   - bundle: db78ff724b43e61fef1eac3b65451b11.unity3d
@@ -5224,6 +5228,116 @@ MonoBehaviour:
     path: Assets/Bundles/Material/Unit_Outline.mat
   - bundle: 6c51b38a1ebb51aee914d6eec7d0756e.unity3d
     path: Assets/Bundles/Material/Unit_SimpleAlpha.mat
+  - bundle: 0959091aeac79adce34deb9547c51f5a.unity3d
+    path: Assets/Bundles/Recast/1.bytes
+  - bundle: f926ca458cf45ec0002856668da5f9d0.unity3d
+    path: Assets/Bundles/Recast/1000001.bytes
+  - bundle: afc8732ba16e3b92da793b2eccfa0dd1.unity3d
+    path: Assets/Bundles/Recast/1000002.bytes
+  - bundle: 5cd1b5063e117ac5b2df72a9ed6cbd0c.unity3d
+    path: Assets/Bundles/Recast/100001.bytes
+  - bundle: b3fa54f9dc5f70bf0b19215f9e3b99ad.unity3d
+    path: Assets/Bundles/Recast/10001.bytes
+  - bundle: db5942e826253265fa56fa9ecf086dad.unity3d
+    path: Assets/Bundles/Recast/10002.bytes
+  - bundle: 61d7415d4f7289af5022617f6f8ba6de.unity3d
+    path: Assets/Bundles/Recast/10003.bytes
+  - bundle: 74fc251c96e8c2624f7294f3e1cf8d40.unity3d
+    path: Assets/Bundles/Recast/10004.bytes
+  - bundle: aa9e3fad89efb3231fbbb6ea43872356.unity3d
+    path: Assets/Bundles/Recast/10005.bytes
+  - bundle: 4263810ab083a0baafe9f580439d9a06.unity3d
+    path: Assets/Bundles/Recast/10006.bytes
+  - bundle: 23364ec292ddcf6241aeb963eafd5765.unity3d
+    path: Assets/Bundles/Recast/10007.bytes
+  - bundle: 1fa6ce983ddcab8a6137e368a9e3e702.unity3d
+    path: Assets/Bundles/Recast/10008.bytes
+  - bundle: d87a990e45845884d34fddde7a7d1782.unity3d
+    path: Assets/Bundles/Recast/100101.bytes
+  - bundle: 5c2b004c05a2dc4b07bad899de559fbe.unity3d
+    path: Assets/Bundles/Recast/100102.bytes
+  - bundle: b486893a97d01ae9f94c1f33ec6bb76a.unity3d
+    path: Assets/Bundles/Recast/101.bytes
+  - bundle: 61a1587b0dead7c4cf809bcac6cc81d6.unity3d
+    path: Assets/Bundles/Recast/102.bytes
+  - bundle: ece467dfb5b2bc766efcb70467b5be02.unity3d
+    path: Assets/Bundles/Recast/2000001.bytes
+  - bundle: 0cfa1d92642787f3930685038e84750d.unity3d
+    path: Assets/Bundles/Recast/2000002.bytes
+  - bundle: 631ae131f0770bd76089e025ab1639b7.unity3d
+    path: Assets/Bundles/Recast/2000003.bytes
+  - bundle: 00ed012a4607fc35e98bee2b2e8f2781.unity3d
+    path: Assets/Bundles/Recast/2000004.bytes
+  - bundle: b8d88c2f8f94d792a627ba6d9766a638.unity3d
+    path: Assets/Bundles/Recast/2000006.bytes
+  - bundle: 3c72574566902adb968bdde69aa29a49.unity3d
+    path: Assets/Bundles/Recast/2000007.bytes
+  - bundle: 8f033b6f832470141dca08e31aad4795.unity3d
+    path: Assets/Bundles/Recast/2000008.bytes
+  - bundle: 2b3e7aeda847dcbca6bdcea385ecded3.unity3d
+    path: Assets/Bundles/Recast/2000009.bytes
+  - bundle: c59ce5ef1aad2f4b101392dce6e93afe.unity3d
+    path: Assets/Bundles/Recast/2000011.bytes
+  - bundle: 20ce007165c157361aaf16191d62e109.unity3d
+    path: Assets/Bundles/Recast/2000012.bytes
+  - bundle: 1c3dc6d06281686867a9631c6f11e843.unity3d
+    path: Assets/Bundles/Recast/20001.bytes
+  - bundle: 1725fa2f719cc2597bf674701a81dd56.unity3d
+    path: Assets/Bundles/Recast/20002.bytes
+  - bundle: 006298419f3a56f53f199f97a76e2f2f.unity3d
+    path: Assets/Bundles/Recast/20003.bytes
+  - bundle: ab150b440bb0905c4f054e7bdefed884.unity3d
+    path: Assets/Bundles/Recast/20004.bytes
+  - bundle: 3fdb7b90576522e1c834a83c60c4761a.unity3d
+    path: Assets/Bundles/Recast/20005.bytes
+  - bundle: 5b23471c68352917fd60cc6e3091fe0e.unity3d
+    path: Assets/Bundles/Recast/201.bytes
+  - bundle: 350040f80d1b8c387b2dd534eb3aa5e9.unity3d
+    path: Assets/Bundles/Recast/30001.bytes
+  - bundle: 1584fe61ccb59b258dd0b148cfea532f.unity3d
+    path: Assets/Bundles/Recast/30002.bytes
+  - bundle: e00050231e91ee4731dfeb45f5c58acf.unity3d
+    path: Assets/Bundles/Recast/30003.bytes
+  - bundle: 11403b8c17f6f67d8d73610051db6280.unity3d
+    path: Assets/Bundles/Recast/30004.bytes
+  - bundle: 7bc971b3742a2d2484ea143cc0fceecc.unity3d
+    path: Assets/Bundles/Recast/30005.bytes
+  - bundle: 28bf8389598c3359c0916e10fdc61478.unity3d
+    path: Assets/Bundles/Recast/30006.bytes
+  - bundle: 42af72f3bbfb2b716ffa4f8f1b657e01.unity3d
+    path: Assets/Bundles/Recast/40001.bytes
+  - bundle: 4b5491e00313edf75f31fa337ea6d153.unity3d
+    path: Assets/Bundles/Recast/40002.bytes
+  - bundle: e42916c4e01094a9f7f2d7c45d8c17a4.unity3d
+    path: Assets/Bundles/Recast/40003.bytes
+  - bundle: a56de8965b585fe6974ffb0f43bc9bd7.unity3d
+    path: Assets/Bundles/Recast/40004.bytes
+  - bundle: 55d3173c393422292a85df4e20c4902f.unity3d
+    path: Assets/Bundles/Recast/40005.bytes
+  - bundle: 3ebf21f87cf0086f10cc7400bce9f300.unity3d
+    path: Assets/Bundles/Recast/40006.bytes
+  - bundle: 1fd578845c393f50ef1d62f913216763.unity3d
+    path: Assets/Bundles/Recast/40007.bytes
+  - bundle: 5a728344dab71870eb4d66977a7899ba.unity3d
+    path: Assets/Bundles/Recast/50001.bytes
+  - bundle: 1135a0640f9eff20fe98c6c3624a5da4.unity3d
+    path: Assets/Bundles/Recast/50002.bytes
+  - bundle: c6d8be600871fa2d97ffbfe800a6e969.unity3d
+    path: Assets/Bundles/Recast/50003.bytes
+  - bundle: 65c46e1b5d16d11a34a040abc2500f39.unity3d
+    path: Assets/Bundles/Recast/50004.bytes
+  - bundle: 9a3ac550cffffe805bc481fba8e2f7be.unity3d
+    path: Assets/Bundles/Recast/50005.bytes
+  - bundle: baaec22d1057584927cafb0dc6d49cb9.unity3d
+    path: Assets/Bundles/Recast/50006.bytes
+  - bundle: 40ebd63a300bfb21f15d9038a4994786.unity3d
+    path: Assets/Bundles/Recast/50007.bytes
+  - bundle: ce5f9511c84b13408f7a98f4668c0109.unity3d
+    path: Assets/Bundles/Recast/60001.bytes
+  - bundle: e0f82044e730e78a6bded2023015bca3.unity3d
+    path: Assets/Bundles/Recast/60002.bytes
+  - bundle: 3ab9e80bdce0cf445329ecf0125f2531.unity3d
+    path: Assets/Bundles/Recast/60003.bytes
   - bundle: b4f5ec8d5f7e0c00c46d54f021492b13.unity3d
     path: Assets/Bundles/Sound/Boss.prefab
   - bundle: 3c7e3389b467e22a40a30b77654c2cbc.unity3d
@@ -14620,6 +14734,171 @@ MonoBehaviour:
     - Assets/Bundles/Icon/TiTleIcon/UILingDiReward.png
     - Assets/Bundles/Icon/TiTleIcon/UIUnionXiuLian.png
     - Assets/Bundles/Icon/TiTleIcon/UIXiuLian.png
+  - name: 0959091aeac79adce34deb9547c51f5a.unity3d
+    assets:
+    - Assets/Bundles/Recast/1.bytes
+  - name: f926ca458cf45ec0002856668da5f9d0.unity3d
+    assets:
+    - Assets/Bundles/Recast/1000001.bytes
+  - name: afc8732ba16e3b92da793b2eccfa0dd1.unity3d
+    assets:
+    - Assets/Bundles/Recast/1000002.bytes
+  - name: 5cd1b5063e117ac5b2df72a9ed6cbd0c.unity3d
+    assets:
+    - Assets/Bundles/Recast/100001.bytes
+  - name: b3fa54f9dc5f70bf0b19215f9e3b99ad.unity3d
+    assets:
+    - Assets/Bundles/Recast/10001.bytes
+  - name: db5942e826253265fa56fa9ecf086dad.unity3d
+    assets:
+    - Assets/Bundles/Recast/10002.bytes
+  - name: 61d7415d4f7289af5022617f6f8ba6de.unity3d
+    assets:
+    - Assets/Bundles/Recast/10003.bytes
+  - name: 74fc251c96e8c2624f7294f3e1cf8d40.unity3d
+    assets:
+    - Assets/Bundles/Recast/10004.bytes
+  - name: aa9e3fad89efb3231fbbb6ea43872356.unity3d
+    assets:
+    - Assets/Bundles/Recast/10005.bytes
+  - name: 4263810ab083a0baafe9f580439d9a06.unity3d
+    assets:
+    - Assets/Bundles/Recast/10006.bytes
+  - name: 23364ec292ddcf6241aeb963eafd5765.unity3d
+    assets:
+    - Assets/Bundles/Recast/10007.bytes
+  - name: 1fa6ce983ddcab8a6137e368a9e3e702.unity3d
+    assets:
+    - Assets/Bundles/Recast/10008.bytes
+  - name: d87a990e45845884d34fddde7a7d1782.unity3d
+    assets:
+    - Assets/Bundles/Recast/100101.bytes
+  - name: 5c2b004c05a2dc4b07bad899de559fbe.unity3d
+    assets:
+    - Assets/Bundles/Recast/100102.bytes
+  - name: b486893a97d01ae9f94c1f33ec6bb76a.unity3d
+    assets:
+    - Assets/Bundles/Recast/101.bytes
+  - name: 61a1587b0dead7c4cf809bcac6cc81d6.unity3d
+    assets:
+    - Assets/Bundles/Recast/102.bytes
+  - name: ece467dfb5b2bc766efcb70467b5be02.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000001.bytes
+  - name: 0cfa1d92642787f3930685038e84750d.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000002.bytes
+  - name: 631ae131f0770bd76089e025ab1639b7.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000003.bytes
+  - name: 00ed012a4607fc35e98bee2b2e8f2781.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000004.bytes
+  - name: b8d88c2f8f94d792a627ba6d9766a638.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000006.bytes
+  - name: 3c72574566902adb968bdde69aa29a49.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000007.bytes
+  - name: 8f033b6f832470141dca08e31aad4795.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000008.bytes
+  - name: 2b3e7aeda847dcbca6bdcea385ecded3.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000009.bytes
+  - name: c59ce5ef1aad2f4b101392dce6e93afe.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000011.bytes
+  - name: 20ce007165c157361aaf16191d62e109.unity3d
+    assets:
+    - Assets/Bundles/Recast/2000012.bytes
+  - name: 1c3dc6d06281686867a9631c6f11e843.unity3d
+    assets:
+    - Assets/Bundles/Recast/20001.bytes
+  - name: 1725fa2f719cc2597bf674701a81dd56.unity3d
+    assets:
+    - Assets/Bundles/Recast/20002.bytes
+  - name: 006298419f3a56f53f199f97a76e2f2f.unity3d
+    assets:
+    - Assets/Bundles/Recast/20003.bytes
+  - name: ab150b440bb0905c4f054e7bdefed884.unity3d
+    assets:
+    - Assets/Bundles/Recast/20004.bytes
+  - name: 3fdb7b90576522e1c834a83c60c4761a.unity3d
+    assets:
+    - Assets/Bundles/Recast/20005.bytes
+  - name: 5b23471c68352917fd60cc6e3091fe0e.unity3d
+    assets:
+    - Assets/Bundles/Recast/201.bytes
+  - name: 350040f80d1b8c387b2dd534eb3aa5e9.unity3d
+    assets:
+    - Assets/Bundles/Recast/30001.bytes
+  - name: 1584fe61ccb59b258dd0b148cfea532f.unity3d
+    assets:
+    - Assets/Bundles/Recast/30002.bytes
+  - name: e00050231e91ee4731dfeb45f5c58acf.unity3d
+    assets:
+    - Assets/Bundles/Recast/30003.bytes
+  - name: 11403b8c17f6f67d8d73610051db6280.unity3d
+    assets:
+    - Assets/Bundles/Recast/30004.bytes
+  - name: 7bc971b3742a2d2484ea143cc0fceecc.unity3d
+    assets:
+    - Assets/Bundles/Recast/30005.bytes
+  - name: 28bf8389598c3359c0916e10fdc61478.unity3d
+    assets:
+    - Assets/Bundles/Recast/30006.bytes
+  - name: 42af72f3bbfb2b716ffa4f8f1b657e01.unity3d
+    assets:
+    - Assets/Bundles/Recast/40001.bytes
+  - name: 4b5491e00313edf75f31fa337ea6d153.unity3d
+    assets:
+    - Assets/Bundles/Recast/40002.bytes
+  - name: e42916c4e01094a9f7f2d7c45d8c17a4.unity3d
+    assets:
+    - Assets/Bundles/Recast/40003.bytes
+  - name: a56de8965b585fe6974ffb0f43bc9bd7.unity3d
+    assets:
+    - Assets/Bundles/Recast/40004.bytes
+  - name: 55d3173c393422292a85df4e20c4902f.unity3d
+    assets:
+    - Assets/Bundles/Recast/40005.bytes
+  - name: 3ebf21f87cf0086f10cc7400bce9f300.unity3d
+    assets:
+    - Assets/Bundles/Recast/40006.bytes
+  - name: 1fd578845c393f50ef1d62f913216763.unity3d
+    assets:
+    - Assets/Bundles/Recast/40007.bytes
+  - name: 5a728344dab71870eb4d66977a7899ba.unity3d
+    assets:
+    - Assets/Bundles/Recast/50001.bytes
+  - name: 1135a0640f9eff20fe98c6c3624a5da4.unity3d
+    assets:
+    - Assets/Bundles/Recast/50002.bytes
+  - name: c6d8be600871fa2d97ffbfe800a6e969.unity3d
+    assets:
+    - Assets/Bundles/Recast/50003.bytes
+  - name: 65c46e1b5d16d11a34a040abc2500f39.unity3d
+    assets:
+    - Assets/Bundles/Recast/50004.bytes
+  - name: 9a3ac550cffffe805bc481fba8e2f7be.unity3d
+    assets:
+    - Assets/Bundles/Recast/50005.bytes
+  - name: baaec22d1057584927cafb0dc6d49cb9.unity3d
+    assets:
+    - Assets/Bundles/Recast/50006.bytes
+  - name: 40ebd63a300bfb21f15d9038a4994786.unity3d
+    assets:
+    - Assets/Bundles/Recast/50007.bytes
+  - name: ce5f9511c84b13408f7a98f4668c0109.unity3d
+    assets:
+    - Assets/Bundles/Recast/60001.bytes
+  - name: e0f82044e730e78a6bded2023015bca3.unity3d
+    assets:
+    - Assets/Bundles/Recast/60002.bytes
+  - name: 3ab9e80bdce0cf445329ecf0125f2531.unity3d
+    assets:
+    - Assets/Bundles/Recast/60003.bytes
   - name: 1aa355706e1767666124331a716c7890.unity3d
     assets:
     - Assets/Res/Effect/EffectsSharde/ToonShading/Shaders/ToonBasicOutline.shader
