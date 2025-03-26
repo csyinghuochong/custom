@@ -27,7 +27,6 @@ namespace ET
                 FloatTipManager.Instance.ShowFloatTip("ZoneScene == null！");
                 return;
             }
-            FloatTipManager.Instance.ShowFloatTip("IOS支付返回！");
 
             //掉线
             SessionComponent sessionComponent = ZoneScene.GetComponent<SessionComponent>();
