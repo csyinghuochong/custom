@@ -50,16 +50,18 @@ namespace ET
                 return;
             }
 
-            Receipt receipt = JsonHelper.FromJson<Receipt>(info);
-            Log.Debug("payload[内购成功]:" + receipt.Payload);
+            //Receipt receipt = JsonHelper.FromJson<Receipt>(info);
+            //Log.Debug("payload[内购成功]:" + receipt.Payload);
+            //Unit unit = UnitHelper.GetMyUnitFromZoneScene(ZoneScene);
+            //C2R_IOSPayVerifyRequest request = new C2R_IOSPayVerifyRequest() {
+            //    UnitId = unit.Id,
+            //    payMessage = receipt.Payload,
+            //    UnitName = ZoneScene.GetComponent<UserInfoComponent>().UserInfo.Name,   
+            //};
+            //session.Call(request).Coroutine();
 
-            Unit unit = UnitHelper.GetMyUnitFromZoneScene(ZoneScene);
-            C2R_IOSPayVerifyRequest request = new C2R_IOSPayVerifyRequest() {
-                UnitId = unit.Id,
-                payMessage = receipt.Payload,
-                UnitName = ZoneScene.GetComponent<UserInfoComponent>().UserInfo.Name,   
-            };
-            session.Call(request).Coroutine();
+            NetHelper.SendIOSPayVerifyRequest(self.ZoneScene(), info).Coroutine();
+
 
             UI uirecharget = UIHelper.GetUI(ZoneScene, UIType.UIRecharge);
             if (uirecharget != null)
