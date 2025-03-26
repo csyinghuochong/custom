@@ -28,6 +28,8 @@ namespace ET
                 return;
             }
 
+            FloatTipManager.Instance.ShowFloatTipDi("ios支付返回11");
+
             //掉线
             SessionComponent sessionComponent = ZoneScene.GetComponent<SessionComponent>();
             AccountInfoComponent accountInfoComponent = ZoneScene.GetComponent<AccountInfoComponent>();
@@ -36,12 +38,18 @@ namespace ET
                 PlayerPrefsHelp.SetString("IOS_" + accountInfoComponent.CurrentRoleId.ToString(), info);
                 return;
             }
+
+            FloatTipManager.Instance.ShowFloatTipDi("ios支付返回22");
+
             Session session = sessionComponent.Session;
             if (session == null || session.IsDisposed)
             {
                 PlayerPrefsHelp.SetString("IOS_" + accountInfoComponent.CurrentRoleId.ToString(), info);
                 return;
             }
+
+            FloatTipManager.Instance.ShowFloatTipDi("ios支付返回33");
+
             MapComponent mapComponent = ZoneScene.GetComponent<MapComponent>();
             if (mapComponent.SceneTypeEnum < (int)SceneTypeEnum.MainCityScene)
             {
