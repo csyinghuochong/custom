@@ -17,6 +17,28 @@ namespace ET
     public static class ReChargeIOSComponentSystem
     {
 
+        public static  int OnIOSPayVerify_New(this ReChargeIOSComponent self, M2R_RechargeRequest request)
+        {
+            Log.Warning($"支付订单[IOS]回调执行 " + "id:" + request.UnitId);
+            string verifyURL = string.Empty;
+            if (request.UnitId == 2025124307608338432)   //先锋一区 \敖安塔
+            {
+                verifyURL = "https://sandbox.itunes.apple.com/verifyReceipt";
+            }
+            else
+            {
+                verifyURL = "https://buy.itunes.apple.com/verifyReceipt";
+            }
+
+            string payLoad = request.payMessage;
+            if (self.PayLoadList.Contains(payLoad))
+            {
+                return ErrorCode.ERR_IOSVerify;
+            }
+            self.PayLoadList.Add(payLoad);
+            return ErrorCode.ERR_Success;
+        }
+
         public static async ETTask<int> OnIOSPayVerify(this ReChargeIOSComponent self, M2R_RechargeRequest request)
         {
             Log.Warning($"支付订单[IOS]回调执行 " + "id:" + request.UnitId);
@@ -37,7 +59,12 @@ namespace ET
             }
 
             string sendStr = "{\"receipt-data\":\"" + payLoad + "\"}";
+
             string postReturnStr = await HttpHelper.GetIosPayParameter(verifyURL, sendStr);
+
+            //Log.Debug("##request.payMessage:" + request.payMessage);
+            //Log.Debug("#######postReturnStr:" + postReturnStr);
+
             Root rt = null;
             //Log.Warning($"IOS充值回调11 {postReturnStr}");
             try
@@ -119,7 +146,6 @@ namespace ET
                     }
                 }
 
- 
                 self.PayLoadList.Add(payLoad);
                 if (self.PayLoadList.Count >= 100)
                 {
