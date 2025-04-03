@@ -22,7 +22,7 @@ namespace ET
                     Zone = zone,
                     UnitId = request.UnitId,
                     payMessage = request.payMessage,
-                    UnitName = request.UnitId.ToString(),
+                    UnitName = request.UnitName,
                 });
 
                 ////////////////222222
