@@ -60,3 +60,4 @@ await LoginHelper.LoginGameAsync(root, 0);
 
         
 NetClient2Main_SessionDispose->sesson销毁通知mainscene;   创角界面再返回 登陆界面再重连。
+  EventSystem.Instance.Publish(root, new EnterMapFinish());
