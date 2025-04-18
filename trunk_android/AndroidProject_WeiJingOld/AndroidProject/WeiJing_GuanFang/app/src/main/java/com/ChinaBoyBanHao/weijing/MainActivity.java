@@ -34,6 +34,7 @@ import android.content.IntentFilter;
 import com.quicksdk.Sdk;
 import com.quicksdk.utility.AppConfig;
 
+
 public class MainActivity extends UnityPlayerActivity {
 
 
