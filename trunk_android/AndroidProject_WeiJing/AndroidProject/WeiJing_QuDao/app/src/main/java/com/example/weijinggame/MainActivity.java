@@ -24,7 +24,9 @@ import android.Manifest;
         import java.io.InputStreamReader;
         import java.util.ArrayList;
         import java.util.List;
-        import android.content.IntentFilter;
+import java.util.Random;
+
+import android.content.IntentFilter;
         import com.quicksdk.Sdk;
         import com.quicksdk.utility.AppConfig;
 
