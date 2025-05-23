@@ -1,6 +1,7 @@
 package com.example.weijinggame;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 import org.json.JSONException;
@@ -48,7 +49,8 @@ import com.unity3d.player.UnityPlayer;
 
 @SuppressLint("NewApi")
 public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity implements Callback {
-    private static final String TAG = "unity.support";
+
+    private static final String TAG = "quicksdk_unity_support";
 
     private static final int MSG_LOGIN = 101;
     private static final int MSG_LOGOUT = 102;
@@ -61,6 +63,7 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
     private static final int MSG_EXTEND_FUNC_GOODSINFO = 111;
     private static final int MSG_EXTEND_FUNC_GET_DEVICE_ID = 112;
     private static final int MSG_INIT = 120;
+    private static final int MSG_EXTEND_FUNC_WiTH_PARAMS = 901;
 
     private final int REQUEST_RECORD_PERMISSION_SETTING = 999;
 
@@ -94,11 +97,15 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         mActivity = this;
-        Sdk.getInstance().onCreate(this);
-        // 探娱初始化
 
+        Log.d("MainActivity", "QuickUnityPlayerproxyActivity: onCreate"); // 打印Debug级别的日志
+
+        Sdk.getInstance().onCreate(this);
+
+        // 探娱初始化
         doInit();
-//		requestInit();
+        //requestInit();
+
     }
 
     @Override
@@ -119,6 +126,7 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
     protected void onResume() {
         Sdk.getInstance().onResume(this);
         super.onResume();
+
     }
 
     @Override
@@ -159,90 +167,15 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
     }
 
     public void doInit() {
+        Log.d(TAG, "QuickUnityPlayerproxyActivity doInit request: ");
         isLancScape = QuickUnityPlayerproxyActivity.this.getResources()
                 .getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-
-        try {
-
-            // check权限
-            if ((ContextCompat.checkSelfPermission(QuickUnityPlayerproxyActivity.this,
-                    Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
-                    || (ContextCompat.checkSelfPermission(QuickUnityPlayerproxyActivity.this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)) {
-                // 没有 ， 申请权限 权限数组
-                ActivityCompat.requestPermissions(QuickUnityPlayerproxyActivity.this, new String[] {
-                        Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE }, 1);
-            } else {
-                QuickSDK.getInstance().setInitNotifier(initNotify).setLoginNotifier(loginNotify)
-                        .setLogoutNotifier(logoutNotify).setPayNotifier(payNotify).setExitNotifier(exitNotiry)
-                        .setIsLandScape(isLancScape).setSwitchAccountNotifier(switchAccountNotify);
-
-                Sdk.getInstance().init(this, getProductCode(), getProductKey());
-            }
-        } catch (Exception e) {
-            QuickSDK.getInstance().setInitNotifier(initNotify).setLoginNotifier(loginNotify)
-                    .setLogoutNotifier(logoutNotify).setPayNotifier(payNotify).setExitNotifier(exitNotiry)
-                    .setIsLandScape(isLancScape).setSwitchAccountNotifier(switchAccountNotify);
-
-            Sdk.getInstance().init(this, getProductCode(), getProductKey());
-        }
+        QuickSDK.getInstance().setInitNotifier(initNotify).setLoginNotifier(loginNotify).setLogoutNotifier(logoutNotify)
+                .setPayNotifier(payNotify).setExitNotifier(exitNotiry).setIsLandScape(isLancScape)
+                .setSwitchAccountNotifier(switchAccountNotify);
+        Sdk.getInstance().init(this, getProductCode(), getProductKey());
     }
 
-    // 申请权限的回调（结果）
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        Log.d("unitycall22", "onRequestPermissionsResult");
-        if (grantResults != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            // 申请成功
-            QuickSDK.getInstance().setInitNotifier(initNotify).setLoginNotifier(loginNotify)
-                    .setLogoutNotifier(logoutNotify).setPayNotifier(payNotify).setExitNotifier(exitNotiry)
-                    .setIsLandScape(isLancScape).setSwitchAccountNotifier(switchAccountNotify);
-            if (!isInited) {
-                isInited = true;
-                Sdk.getInstance().init(this, getProductCode(), getProductKey());
-            }
-        } else {
-            // 失败 这里逻辑以游戏为准 这里只是模拟申请失败 退出游戏 cp方可改为继续申请 或者其他逻辑
-
-            Log.e("Unity", "onRequestPermissionsResult Fail");
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    && ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.READ_PHONE_STATE)) {
-                Log.d("Unity", "ActivityCompat shouldShowRequestPermissionRationale true");
-            } else {
-                Log.e("Unity", "ActivityCompat shouldShowRequestPermissionRationale false");
-                final AlertDialog.Builder normalDialog = new AlertDialog.Builder(QuickUnityPlayerproxyActivity.this);
-                normalDialog.setTitle("权限设置");
-                normalDialog.setMessage("请在设置中打开权限");
-                normalDialog.setPositiveButton("前往应用设置", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // ...To-do
-                        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                        Uri uri = Uri.fromParts("package", getPackageName(), null);
-                        intent.setData(uri);
-                        startActivityForResult(intent, REQUEST_RECORD_PERMISSION_SETTING);
-                        QuickSDK.getInstance().setInitNotifier(initNotify).setLoginNotifier(loginNotify)
-                                .setLogoutNotifier(logoutNotify).setPayNotifier(payNotify).setExitNotifier(exitNotiry)
-                                .setIsLandScape(isLancScape).setSwitchAccountNotifier(switchAccountNotify);
-                        Sdk.getInstance().init(QuickUnityPlayerproxyActivity.this, getProductCode(), getProductKey());
-                    }
-                });
-                normalDialog.setNegativeButton("关闭", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(QuickUnityPlayerproxyActivity.this, "权限被拒绝", Toast.LENGTH_SHORT).show();
-                        QuickSDK.getInstance().setInitNotifier(initNotify).setLoginNotifier(loginNotify)
-                                .setLogoutNotifier(logoutNotify).setPayNotifier(payNotify).setExitNotifier(exitNotiry)
-                                .setIsLandScape(isLancScape).setSwitchAccountNotifier(switchAccountNotify);
-                        Sdk.getInstance().init(QuickUnityPlayerproxyActivity.this, getProductCode(), getProductKey());
-                    }
-                });
-                // 显示
-                normalDialog.show();
-            }
-        }
-    }
 
     // ------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------unity
@@ -250,6 +183,7 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
     // ------------------------------------------------------------------------------------
 
     public void requestInit() {
+        Log.d(TAG, "QuickUnityPlayerproxyActivity requestInit ");
         mHandler.sendEmptyMessage(MSG_INIT);
     }
 
@@ -260,6 +194,30 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
 
     public void requestLogout() {
         mHandler.sendEmptyMessage(MSG_LOGOUT);
+
+    }
+
+    public void showPrivace() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Log.d(TAG, "showPrivace");
+                Sdk.getInstance().showPrivace(QuickUnityPlayerproxyActivity.this, new BaseCallBack() {
+                    @Override
+                    public void onSuccess(Object... objects) {
+                        Log.d(TAG, "showPrivace onSuccess: ");
+                        callUnityFunc("onPrivaceAgree", "agree");
+                    }
+
+                    @Override
+                    public void onFailed(Object... objects) {
+                        Log.d(TAG, "showPrivace onFailed: ");
+                        callUnityFunc("onPrivaceRefuse", "refuse");
+
+                    }
+                });
+            }
+        });
 
     }
 
@@ -304,6 +262,14 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
         mHandler.sendEmptyMessage(MSG_EXIT);
     }
 
+
+    public void requestExtendFunc(int funcType) {
+        Message msg = mHandler.obtainMessage(MSG_EXTEND_FUNC);
+//        msg.what = MSG_EXTEND_FUNC;
+        msg.arg1 = funcType;
+        msg.sendToTarget();
+    }
+
     public void requestCallSDKShare(String title, String content, String imgPath, String imgUrl, String url,
                                     String type, String shareTo, String extenal) {
         ShareInfo shareInfo = new ShareInfo();
@@ -322,6 +288,8 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
 
     }
 
+
+
     public void requestCallCustomPlugin(final String roleId, final String roleName, final String serverName,
                                         final String vip) {
         QuickUnityPlayerproxyActivity.this.runOnUiThread(new Runnable() {
@@ -332,6 +300,18 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
                         serverName, vip);
             }
         });
+    }
+
+    public void requestExtendCallPlugin(final int functype, final String[] data) {
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Log.d(TAG, "requestExtendCallPlugin: functype == " + functype + "\tdata[0] == " + data[0]);
+                Extend.getInstance().callPlugin(QuickUnityPlayerproxyActivity.this, functype, Arrays.stream(data).toArray());
+            }
+        });
+
     }
 
     public String getUserId() {
@@ -392,23 +372,39 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
 
     }
 
-    public int callFunc(int funcType) {
-        Log.d(TAG, "is called:FuncType:" + funcType + ",isFuncSupport:" + isFuncSupport(funcType));
+    public String callFunc(int funcType) {
+        Log.d(TAG, "is called:FuncType: " + funcType + ",isFuncSupport: " + isFuncSupport(funcType));
         if (isFuncSupport(funcType)) {
-            Message msg = mHandler.obtainMessage(MSG_EXTEND_FUNC);
-            msg.arg1 = funcType;
-            msg.sendToTarget();
-
-            return 1;
+            String resultData = Extend.getInstance().callFunction(this, funcType);
+            Log.d(TAG, "callFunc: resultcode == " + resultData);
+            return resultData;
         } else {
-            return 0;
+            return "0";
         }
     }
 
-    public int callFunc(int funcType, String s) {
-        Log.d("lyy", "is called:" + s);
+    public String callFuncWithResult(int funcType) {
         if (isFuncSupport(funcType)) {
-            Log.d("lyy", "is isFuncSupport:" + isFuncSupport(funcType));
+            String resultCode = Extend.getInstance().callFunction(this, funcType);
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("FunctionType", funcType);
+                jsonObject.put("msg", resultCode);
+                callUnityFunc("onSuccess", jsonObject.toString());
+            } catch (JSONException e) {
+                Log.e(TAG, e.getMessage());
+            }
+            return resultCode;
+        } else {
+            return 0 + "";
+        }
+
+    }
+
+    public int callFunc(int funcType, String s) {
+        Log.d(TAG, "is called:" + s);
+        if (isFuncSupport(funcType)) {
+            Log.d(TAG, "is isFuncSupport:" + isFuncSupport(funcType));
             Message msg = mHandler.obtainMessage(MSG_EXTEND_FUNC_GOODSINFO);
             msg.arg1 = funcType;
             msg.obj = s;
@@ -420,8 +416,29 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
         }
     }
 
+    public int callFunctionWithParams(int funcType, String[] params) {
+        Log.d(TAG, "callFunctionWithParams : functype == " + funcType + "\t params == " + params);
+        if (isFuncSupport(funcType)) {
+            Log.d(TAG, "is isFuncSupport:" + isFuncSupport(funcType));
+            Message msg = mHandler.obtainMessage(MSG_EXTEND_FUNC_WiTH_PARAMS);
+            msg.arg1 = funcType;
+            msg.obj = params;
+            msg.sendToTarget();
+
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public int callTest(Object object) {
+
+        return 1;
+    }
+
+    @SuppressLint("LongLogTag")
     public void showMsg(String s) {
-//		Toast.makeText(getBaseContext(), s, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(getBaseContext(), s, Toast.LENGTH_SHORT).show();
         Log.d(TAG + " fromUnity", s);
     }
 
@@ -431,7 +448,7 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
 
     public void setUnityGameObjectName(String gameObjectName) {
         this.gameObjectName = gameObjectName;
-        Log.d("lyy", "gameObjectName=" + gameObjectName);
+        Log.d(TAG, "gameObjectName=" + gameObjectName);
         switch (initState) {
             case INIT_SUCCESS:
                 callUnityFunc("onInitSuccess", new JSONObject().toString());
@@ -459,6 +476,59 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
         return AppConfig.getInstance().getConfigValue("qu" + "ic" + "ks" + "dk_cha" + "nnel_name");
     }
 
+
+    public void requestCallFunctionWithParamsCallBack(int funcType, String[] data) {
+        Log.d(TAG, "requestCallFunctionWithParamsCallBack: " + funcType + "\t" + data);
+
+
+        Object[] objects = new Object[data.length];
+        System.arraycopy(data, 0, objects, 0, data.length);
+        int param0 = -111;
+        try {
+            param0 = Integer.valueOf(data[0]);
+        }catch (Exception e){
+            Log.e(TAG, "requestCallFunctionWithParamsCallBack: "+e.getMessage() );
+        }
+
+        if (param0 != -111){
+            objects[0] = param0;
+        }
+
+
+        pringData(Arrays.stream(data).toArray());
+        if (Extend.getInstance().isFunctionSupported(funcType)) {
+            Extend.getInstance().callFunctionWithParamsCallBack(QuickUnityPlayerproxyActivity.this, funcType, new BaseCallBack() {
+                @Override
+                public void onSuccess(Object... objects) {
+
+                    callUnityFunc("onBaseCallbackSuccess", objects.length > 0 ? objects[0].toString() : "success");
+                }
+
+                @Override
+                public void onFailed(Object... objects) {
+                    callUnityFunc("onBaseCallbackFaild", objects.length > 0 ? objects[0].toString() : "failded");
+                }
+            }, Arrays.stream(objects).toArray());
+        } else {
+            Log.d(TAG, "requestCallFunctionWithParamsCallBack: The funcType is not supported");
+            callUnityFunc("onBaseCallbackFaild", "The funcType is not supported");
+        }
+
+    }
+
+    private void pringData(Object... objects){
+        for (Object o : objects){
+            Log.d(TAG, "pringData: data == "+(String)o);
+        }
+    }
+
+
+    public String getOaid() {
+        String oaid = AppConfig.getInstance().getConfigValue("channel_oaid");
+        Log.d(TAG, "oaid == " + oaid);
+        return oaid;
+    }
+
     public String getChannelVersion() {
         return AppConfig.getInstance().getChannelSdkVersion();
     }
@@ -479,8 +549,13 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
         return QuickSDK.getInstance().isShowExitDialog();
     }
 
+    public String getParentChannelType() {
+        Log.d(TAG, "getParentChannelType " + Extend.getInstance().getParentChannelType());
+        return Extend.getInstance().getParentChannelType() + "";
+    }
+
     public void exitGame() {
-        Log.d("lyy", "调用了exitGame()");
+        Log.d(TAG, "调用了exitGame()");
         this.finish();
         System.exit(0);
     }
@@ -586,7 +661,7 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
 
         @Override
         public void onSuccess(UserInfo userInfo) {
-            Log.d("lyy", "切换账号成功");
+            Log.d(TAG, "切换账号成功");
             JSONObject json = new JSONObject();
             try {
 
@@ -740,8 +815,8 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
                 break;
             }
             case MSG_EXTEND_FUNC: {
-
                 int funcType = msg.arg1;
+                Log.d(TAG, "handleMessage: MSG_EXTEND_FUNC funcType == "+funcType);
                 if (funcType == MSG_EXTEND_FUNC_GET_DEVICE_ID) {
                     String deviceID = getDeviceID();
                     callUnityFunc("onSuccess", deviceID);
@@ -759,12 +834,10 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
                             } catch (JSONException e) {
                                 Log.e(TAG, e.getMessage());
                             }
-
                         }
 
                         @Override
                         public void onFailed(Object... infos) {
-
                             String msg = (String) infos[0];
                             JSONObject jsonObject = new JSONObject();
                             try {
@@ -790,6 +863,19 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
                     }
 
                 }
+                break;
+            }
+            case MSG_EXTEND_FUNC_WiTH_PARAMS: {
+                try {
+                    Log.d(TAG, "call MSG_EXTEND_FUNC_WiTH_PARAMS");
+                    int funcType = msg.arg1;
+                    String[] info = (String[]) msg.obj;
+                    Extend.getInstance().callFunctionWithParams(this, funcType, Arrays.stream(info).toArray());
+                } catch (Exception e) {
+                    Log.e(TAG, "MSG_EXTEND_FUNC_WiTH_PARAMS ERROR " + e.toString());
+                }
+
+
                 break;
             }
             case MSG_EXTEND_FUNC_SHARE: {

@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-package="com.guangying.weijing2"
-android:versionCode="1"
-android:versionName="1.0" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.weijinggame"
+    android:versionCode="1"
+    android:versionName="1.0" >
 
-<!-- 申请网络访问权限 -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-sdk
+        android:targetSdkVersion="26" />
+
+    <!-- 申请网络访问权限 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- android:allowBackup="true"-->
+    <application
+        android:name="com.example.weijinggame.GameApplication"
 
-<application
-    android:name="com.example.weijinggame.GameApplication"
-    android:allowBackup="true"
     android:label="@string/app_name"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
@@ -27,7 +31,7 @@ android:versionName="1.0" >
     android:networkSecurityConfig="@xml/network_security_config" >
 
     <activity
-        android:name="ccom.example.weijinggame.SplashActivity"
+        android:name="com.example.weijinggame.SplashActivity"
         android:configChanges="mnc|keyboardHidden|screenSize|orientation|keyboard"
         android:screenOrientation="landscape"
         android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
@@ -41,42 +45,36 @@ android:versionName="1.0" >
         android:name="com.example.weijinggame.MainActivity"
         android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
         android:exported="true"
-        android:screenOrientation="landscape"
         android:launchMode="singleTask"
         android:noHistory="false" >
-    </activity>
-
-    <service
-        android:name=".WeChatLogService"
-        android:enabled="true"
-        android:exported="true"
-        android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
         <intent-filter>
-            <action android:name="android.accessibilityservice.AccessibilityService" />
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         <meta-data
-            android:name="android.accessibilityservice"
-            android:resource="@xml/wechat_log"></meta-data>
-    </service>
+            android:name="unityplayer.UnityActivity"
+            android:value="true" />
+    </activity>
+    <activity
+        android:name="com.example.weijinggame.wxapi.WXPayEntryActivity"
+        android:exported="true"
+        android:launchMode="singleTop" />
+    <activity
+        android:name="com.tencent.tauth.AuthActivity"
+        android:launchMode="singleTask"
+        android:noHistory="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="1105893765" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.tencent.connect.common.AssistActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-    <provider
-       android:name="android.support.v4.content.FileProvider"
-       android:authorities="com.guangying.weijing2.fileprovider"
-       android:exported="false"
-       android:grantUriPermissions="true" >
-       <meta-data
-           android:name="android.support.FILE_PROVIDER_PATHS"
-           android:resource="@xml/filepaths" >
-       </meta-data>
-   </provider>
-    <!--  <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />-->
-     <meta-data
-         android:name="unityplayer.ForwardNativeEventsToDalvik"
-         android:value="true" />
-     <meta-data
-         android:name="unityplayer.UnityActivity"
-         android:value="true" />
-
- </application>
-
- </manifest>
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />
+</application>
+</manifest>

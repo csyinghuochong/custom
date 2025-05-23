@@ -1,41 +1,44 @@
 package com.example.weijinggame;
 
 import android.Manifest;
-        import android.app.Activity;
-        import android.content.Context;
-        import android.content.Intent;
-        import android.content.pm.PackageInfo;
-        import android.content.pm.PackageManager;
-        import android.os.Build;
-        import android.os.Bundle;
-        import android.support.annotation.NonNull;
-        import android.text.TextUtils;
-        import android.util.Log;
-        import android.widget.Toast;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+//import android.support.v4.content.FileProvider;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.WindowManager;
+import android.widget.Toast;
 
-        //import com.tencent.mm.sdk.modelpay.PayReq;
-        //import com.tencent.mm.sdk.openapi.IWXAPI;
-        //import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
-        import com.unity3d.player.UnityPlayer;
+import com.unity3d.player.UnityPlayer;
 
-        import java.io.BufferedReader;
-        import java.io.File;
-        import java.io.InputStreamReader;
-        import java.util.ArrayList;
-        import java.util.List;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import android.content.IntentFilter;
-        import com.quicksdk.Sdk;
-        import com.quicksdk.utility.AppConfig;
+
+import com.quicksdk.Sdk;
+import com.quicksdk.utility.AppConfig;
 
 
 public class MainActivity extends QuickUnityPlayerproxyActivity {
 
-
     //Appid final
-    public static  String APP_ID ;
+    public static String APP_ID;
     private static MainActivity instance;
     Context mContext = null;
     public Activity activity;
@@ -43,9 +46,9 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
     //这个对象用于封装支付参数
     //private PayReq req = new PayReq();
     //微信API 用于调起支付接口
-    //private   IWXAPI wxAPI =null; //WXAPIFactory.createWXAPI(this, null);
+    //private IWXAPI wxAPI = null; //WXAPIFactory.createWXAPI(this, null);
     private String CallAliObjName;//CallAliObjName,CallAliFuncName
-    private  String CallAliFuncName;
+    private String CallAliFuncName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +59,13 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         activity = this;
 
         Log.i("MainActivity", "onCreate");
+        Log.d("MainActivity", "MainActivity: onCreate"); // 打印Debug级别的日志
     }
 
     public static MainActivity GetInstance() {
-       return instance;
-     }
+        return instance;
+    }
+
 
     //微信SDK初始化(注册)的接口
     public void WechatInit(String appid){
@@ -98,6 +103,10 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         return true;
     }
 
+    public void SetIsPermissionGranted(String appid) {
+        Log.d("SetIsPermissionGranted", appid);
+    }
+
     //微信登录的接口
     /*
     public  void LoginWechat(String appid,String state,String ObjName,String funName) {
@@ -116,27 +125,24 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
     */
 
     //获取系统时间戳
-    public  void ReqSystemTime( String str )
-    {
+    public void ReqSystemTime(String str) {
         long time1 = System.currentTimeMillis();
-        UnityPlayer.UnitySendMessage("WWW_Set","onRecvSysTime",  String.valueOf(time1));
+        UnityPlayer.UnitySendMessage("Global", "onRecvSysTime", String.valueOf(time1));
     }
 
     //获取电池电量
-    public void getBatteryStatus(  )
-    {
-        Intent intent = registerReceiver(null,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    public void getBatteryStatus() {
+        Intent intent = registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
         int rawlevel = intent.getIntExtra("level", -1);
         int scale = intent.getIntExtra("scale", -1);
         int status = intent.getIntExtra("status", -1);
         double level = -1;
-        if(rawlevel >= 0 && scale > 0)
+        if (rawlevel >= 0 && scale > 0)
             level = (rawlevel * 1.0) / scale;
-        UnityPlayer.UnitySendMessage("WWW_Set","onRecvBattery",  String.valueOf(level));
+        UnityPlayer.UnitySendMessage("Global", "onRecvBattery", String.valueOf(level));
     }
 
-    public  void QuDaoRequestPermissions()
-    {
+    public void QuDaoRequestPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //多个权限同时获取
             List<String> permissionList = new ArrayList<>();
@@ -150,6 +156,29 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
             {
                 Log.i("Permissions", "Permissions ACCESS_NETWORK_STATE 0");
                 permissionList.add(Manifest.permission.ACCESS_NETWORK_STATE);
+            }
+
+            //WRITE_EXTERNAL_STORAGE权限是用于授予应用程序对外部存储(即SD卡)进行读写操作的权限
+            //if (this.mContext.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+            {
+                //Log.i("Permissions", "Permissions WRITE_EXTERNAL_STORAGE 0");
+                //permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            }
+
+            //if (this.mContext.checkSelfPermission(Manifest.permission.REQUEST_INSTALL_PACKAGES) != PackageManager.PERMISSION_GRANTED)
+            {
+                //Log.i("Permissions", "Permissions REQUEST_INSTALL_PACKAGES 0");
+                //permissionList.add(Manifest.permission.REQUEST_INSTALL_PACKAGES);
+            }
+            //if (this.mContext.checkSelfPermission(Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED)
+            //{
+            //    Log.i("Permissions", "Permissions READ_PHONE_NUMBERS 0");
+            //    permissionList.add(Manifest.permission.READ_PHONE_NUMBERS);
+            //}
+            //if (this.mContext.checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
+            {
+                //Log.i("Permissions", "Permissions READ_PHONE_STATE 0");
+                //permissionList.add(Manifest.permission.READ_PHONE_STATE);
             }
 
             if (!permissionList.isEmpty()) {
@@ -166,7 +195,7 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         }
     }
 
-    //多个权限同时获取
+    //多个权限同时获取 this.activity.requestPermissions 的第二个参数为此处返回的requestCode  case100->GetPhoneNum
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -202,10 +231,46 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         }
     }
 
-    public  void doSomething_Ex( String str)
-    {
-        UnityPlayer.UnitySendMessage("Global","onRecvPermissionsResult",  str);
+    public static boolean isEmulator_1(Context context) {
+        if (Build.FINGERPRINT.startsWith("generic")
+                || Build.FINGERPRINT.startsWith("unknown")
+                || Build.FINGERPRINT.toLowerCase().contains("vbox")
+                || Build.FINGERPRINT.toLowerCase().contains("test-keys")
+            // ...可以添加更多的模拟器识别字符串
+        ) {
+            return true;
+        }
+        return false;
     }
+
+    public  boolean isEmulator_2(Context context)
+    {
+        return  false;
+    }
+
+    /**
+     * 获取文件的共享路径
+     */
+//    public static Uri getUriFromFile(Context context, File file) {
+//        if (file == null || !file.exists()) {
+//            return null;
+//        }
+//        //判断本机系统版本是否是7.0
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            // 适配Android 7.0
+//            Uri uri = FileProvider.getUriForFile(
+//                    context,
+//                    // 要与`AndroidManifest.xml`里配置的`authorities`一致，
+//                    //假设你的`authorities`为`com.demo.sharetaptap.fileprovider`
+//                    "com.demo.sharetaptap.fileprovider",
+//                    file
+//            );
+//            return uri;
+//        } else {
+//            return Uri.fromFile(file);
+//        }
+//    }
+
 
     //qwertyuioptgbuytr
     //检测root 和 包名
@@ -214,6 +279,20 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         boolean sucess = str.equals("qwertyuioptgbuytr");
         if(sucess)
         {
+            boolean root1 =  MainActivity.isRooted( );
+            boolean root2 = isDeviceRooted( );
+            String commandToExecute = "su";
+            boolean root3 = executeShellCommand(commandToExecute);
+            boolean root4 = CheckRoot.checkBusybox();
+            boolean root5 = CheckRoot.checkAccessRootData();
+            int root_num = ( root1 ? 10000 : 0 ) + ( root2 ? 1000 : 0 ) + ( root3 ? 100 : 0 ) + (root4 ? 10 : 0) + (root5 ? 1 : 0);
+            UnityPlayer.UnitySendMessage("Global", "OnRecvRoot",  String.valueOf( root_num ) );
+
+            boolean emulator1 = isEmulator_1(this);
+            boolean emulator2 = isEmulator_2(this);
+            int emulator_num = (emulator1 ? 10 : 0) + (emulator2 ? 1 : 0);
+            UnityPlayer.UnitySendMessage("Global", "OnRecvEmulator",  String.valueOf( emulator_num ) );
+
             return;
         }
 
@@ -237,6 +316,102 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         {
             Thread.sleep(500000000);
         }
+    }
+
+    final int REQUEST_CODE_ADDRESS = 100;
+
+    public  void GetPhoneNum(String zone) {
+        Log.i("GetPhoneNum_2a", "111");
+        String phoneNum = "";
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                //&& this.mContext.checkSelfPermission(Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
+                && this.mContext.checkSelfPermission(Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
+                && this.mContext.checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
+        {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            //申请权限，permissions是要申请的权限数组
+            String[] permissions = new  String[]
+                    {
+                            Manifest.permission.READ_PHONE_NUMBERS, Manifest.permission.READ_PHONE_STATE  //. Manifest.permission.READ_SMS,
+                    };
+            ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_ADDRESS);
+            Log.i("GetPhoneNum_2b", "222");
+            return;
+        }
+        Log.i("GetPhoneNum_2c", "333");
+
+        try
+        {
+            TelephonyManager mTelephoneManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+            String ret = mTelephoneManager.getLine1Number() != null ? mTelephoneManager.getLine1Number() : "";
+            if (TextUtils.isEmpty(ret))
+            {
+                phoneNum = ret;
+                Log.i("GetPhoneNum_2d", phoneNum+"");
+            }
+            else
+            {
+                ret = ret.substring(3,14);
+                phoneNum =  ret;
+                Log.i("GetPhoneNum_2", phoneNum+"");
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            Log.i("GetPhoneNum_2e", e.toString());
+        }
+
+        UnityPlayer.UnitySendMessage("Global", "OnRecvPhoneNum", phoneNum);
+    }
+
+    public  void GetPhoneNum_3(String zone) {
+
+    }
+
+    public void GetPhoneNum_2(String zone) {
+        Log.i("GetPhoneNum", "111");
+        String phoneNum = "";
+        //READ_PHONE_STATE唯一标识符、手机号码以及SIM卡状态等信息
+        TelephonyManager mTelephoneManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            //申请权限，permissions是要申请的权限数组
+            String[] permissions = new  String[]
+                    {
+                            Manifest.permission.READ_SMS, Manifest.permission.READ_PHONE_NUMBERS, Manifest.permission.READ_PHONE_STATE
+                    };
+            ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_ADDRESS);
+            Log.i("GetPhoneNum", "222");
+            return;
+        }
+        Log.i("GetPhoneNum", "333");
+        String ret = mTelephoneManager.getLine1Number() != null ? mTelephoneManager.getLine1Number() : "";
+        if (TextUtils.isEmpty(ret))
+        {
+            phoneNum = ret;
+        }
+        else
+        {
+            ret = ret.substring(3,14);
+            phoneNum =  ret;
+        }
+        UnityPlayer.UnitySendMessage("Global", "OnRecvPhoneNum", phoneNum);
     }
 
     //微信文字分享的接口
@@ -401,10 +576,10 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         }
     }
 
-     /**
+    /**
      * 检查手机上是否安装了指定的软件
      * @param context
-     * @param packageName
+     * @param
      * @return
      */
     public static boolean isAvilible(Context context, String packageName) {
