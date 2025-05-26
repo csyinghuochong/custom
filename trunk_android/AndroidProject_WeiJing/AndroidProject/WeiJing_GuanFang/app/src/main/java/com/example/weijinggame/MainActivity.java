@@ -396,46 +396,21 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
     //检测root 和 包名
     public void CallNative(String str) throws InterruptedException {
         //Log.i("CallNative_11", str);
-        boolean sucess = str.equals("qwertyuioptgbuytr");
-        if(sucess)
-        {
-            boolean root1 =  MainActivity.isRooted( );
-            boolean root2 = isDeviceRooted( );
-            String commandToExecute = "su";
-            boolean root3 = executeShellCommand(commandToExecute);
-            boolean root4 = CheckRoot.checkBusybox();
-            boolean root5 = CheckRoot.checkAccessRootData();
-            int root_num = ( root1 ? 10000 : 0 ) + ( root2 ? 1000 : 0 ) + ( root3 ? 100 : 0 ) + (root4 ? 10 : 0) + (root5 ? 1 : 0);
-            UnityPlayer.UnitySendMessage("Global", "OnRecvRoot",  String.valueOf( root_num ) );
+        boolean root1 =  MainActivity.isRooted( );
+        boolean root2 = isDeviceRooted( );
+        String commandToExecute = "su";
+        boolean root3 = executeShellCommand(commandToExecute);
+        boolean root4 = CheckRoot.checkBusybox();
+        boolean root5 = CheckRoot.checkAccessRootData();
+        int root_num = ( root1 ? 10000 : 0 ) + ( root2 ? 1000 : 0 ) + ( root3 ? 100 : 0 ) + (root4 ? 10 : 0) + (root5 ? 1 : 0);
+        UnityPlayer.UnitySendMessage("Global", "OnRecvRoot",  String.valueOf( root_num ) );
 
-            boolean emulator1 = isEmulator_1(this);
-            boolean emulator2 = isEmulator_2(this);
-            int emulator_num = (emulator1 ? 10 : 0) + (emulator2 ? 1 : 0);
-            UnityPlayer.UnitySendMessage("Global", "OnRecvEmulator",  String.valueOf( emulator_num ) );
+        boolean emulator1 = isEmulator_1(this);
+        boolean emulator2 = isEmulator_2(this);
+        int emulator_num = (emulator1 ? 10 : 0) + (emulator2 ? 1 : 0);
+        UnityPlayer.UnitySendMessage("Global", "OnRecvEmulator",  String.valueOf( emulator_num ) );
 
-            return;
-        }
-
-        Random random = new Random();
-        int max = 10; // 生成随机数的最大值
-        int randomNumber = random.nextInt(max);
-
-        if(randomNumber < 2)
-        {
-            System.exit(0);
-            return;
-        }
-        if(randomNumber < 4)
-        {
-            while (true)
-            {
-
-            }
-        }
-        if(randomNumber < 6)
-        {
-            Thread.sleep(500000000);
-        }
+        return;
     }
 
     final int REQUEST_CODE_ADDRESS = 100;
