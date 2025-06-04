@@ -177,7 +177,9 @@ public class MyEditorScript
 			File.Delete(mainfestFile);
 		}
 		string app_name = "危境";
-		if (name == "TikTok5")
+       
+
+        if (name == "TikTok5")
 		{
             CopyLibs("tiktok");
             app_name = "抖音";
@@ -186,7 +188,7 @@ public class MyEditorScript
 		{
 			CopyLibs("qudao");
 			app_name = "危境渠道母包";
-		}
+        }
 		else
 		{
             //TikTokMuBao6 也是用的官方的安卓库
@@ -194,7 +196,7 @@ public class MyEditorScript
 			app_name = "危境";
 		}
 
-		int version = EditorRuntimeInitializeOnLoad.GetVersion();
+        int version = EditorRuntimeInitializeOnLoad.GetVersion();
 		app_name = app_name + ((VersionMode)version).ToString() + name;
 
 		string target_dir = Application.dataPath + "/TargetAndroid";
@@ -230,7 +232,8 @@ public class MyEditorScript
 			Directory.CreateDirectory(target_dir);
 		}
 
-		PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroup, ";" + name);
+        PlayerSettings.Android.targetSdkVersion = name == "QuDao" ? AndroidSdkVersions.AndroidApiLevel26 : AndroidSdkVersions.AndroidApiLevelAuto;
+        PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroup, ";" + name);
 		PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroup, "NET452;DISABLE_ILRUNTIME_DEBUG;" + name);
 
 		string[] scenes = new string[] { SCENES[0] };
