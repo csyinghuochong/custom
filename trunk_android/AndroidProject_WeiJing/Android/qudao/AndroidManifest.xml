@@ -34,7 +34,8 @@
 		<activity
             android:name="com.example.weijinggame.SplashActivity"
             android:configChanges="mnc|keyboardHidden|screenSize|orientation|keyboard"
-            android:screenOrientation="landscape"
+            android:exported="true"
+			android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
