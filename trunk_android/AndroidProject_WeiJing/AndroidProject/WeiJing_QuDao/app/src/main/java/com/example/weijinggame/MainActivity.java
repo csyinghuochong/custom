@@ -78,13 +78,15 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
 
     public String getProductCode() {
 
-        Log.i( "product_code:  ", AppConfig.getInstance().getConfigValue("product_code") );
-        return AppConfig.getInstance().getConfigValue("product_code");
+        //Log.i( "product_code:  ", AppConfig.getInstance().getConfigValue("product_code") );
+        //return AppConfig.getInstance().getConfigValue("product_code");
+        return "84515669224153577888773432148616";
     }
 
     @Override
     public String getProductKey() {
-        return AppConfig.getInstance().getConfigValue("product_key");
+        //return AppConfig.getInstance().getConfigValue("product_key");
+        return  "06853546";
     }
 
     public void onBackPressed() {

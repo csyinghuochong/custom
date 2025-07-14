@@ -168,8 +168,8 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
 
     public void doInit() {
         Log.d(TAG, "QuickUnityPlayerproxyActivity doInit request: ");
-        isLancScape = QuickUnityPlayerproxyActivity.this.getResources()
-                .getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        isLancScape = true;/// QuickUnityPlayerproxyActivity.this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+
         QuickSDK.getInstance().setInitNotifier(initNotify).setLoginNotifier(loginNotify).setLogoutNotifier(logoutNotify)
                 .setPayNotifier(payNotify).setExitNotifier(exitNotiry).setIsLandScape(isLancScape)
                 .setSwitchAccountNotifier(switchAccountNotify);
