@@ -97,9 +97,6 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         mActivity = this;
-
-        Log.d("MainActivity", "QuickUnityPlayerproxyActivity: onCreate"); // 打印Debug级别的日志
-
         Sdk.getInstance().onCreate(this);
 
         // 探娱初始化
@@ -167,13 +164,14 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
     }
 
     public void doInit() {
-        Log.d(TAG, "QuickUnityPlayerproxyActivity doInit request: ");
-        isLancScape = true;/// QuickUnityPlayerproxyActivity.this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-
+        Log.d(TAG, "doInit doInit request: ");
+        isLancScape = QuickUnityPlayerproxyActivity.this.getResources()
+                .getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         QuickSDK.getInstance().setInitNotifier(initNotify).setLoginNotifier(loginNotify).setLogoutNotifier(logoutNotify)
                 .setPayNotifier(payNotify).setExitNotifier(exitNotiry).setIsLandScape(isLancScape)
                 .setSwitchAccountNotifier(switchAccountNotify);
         Sdk.getInstance().init(this, getProductCode(), getProductKey());
+
     }
 
 
@@ -183,7 +181,6 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
     // ------------------------------------------------------------------------------------
 
     public void requestInit() {
-        Log.d(TAG, "QuickUnityPlayerproxyActivity requestInit ");
         mHandler.sendEmptyMessage(MSG_INIT);
     }
 
