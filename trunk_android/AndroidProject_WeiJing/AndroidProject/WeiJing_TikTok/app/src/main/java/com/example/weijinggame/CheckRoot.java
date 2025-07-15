@@ -1,6 +1,5 @@
 package com.example.weijinggame;
 
-
 import android.util.Log;
 
 import java.io.BufferedReader;
