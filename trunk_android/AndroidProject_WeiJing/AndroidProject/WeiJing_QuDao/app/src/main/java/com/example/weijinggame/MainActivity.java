@@ -67,24 +67,7 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
 
     public void GetDeviceOAID(String str){
 
-        long timeb=System.currentTimeMillis();
-        // 方法调用
-        int nres = CallFromReflect(this);
 
-        long timee=System.currentTimeMillis();
-        long offset=timee-timeb;
-        if(nres == ErrorCode.INIT_ERROR_DEVICE_NOSUPPORT){//不支持的设备
-
-        }else if( nres == ErrorCode.INIT_ERROR_LOAD_CONFIGFILE){//加载配置文件出错
-
-        }else if(nres == ErrorCode.INIT_ERROR_MANUFACTURER_NOSUPPORT){//不支持的设备厂商
-
-        }else if(nres == ErrorCode.INIT_ERROR_RESULT_DELAY){//获取接口是异步的，结果会在回调中返回，回调执行的回调可能在工作线程
-
-        }else if(nres == ErrorCode.INIT_HELPER_CALL_ERROR){//反射调用出错
-
-        }
-        Log.d(getClass().getSimpleName(),"return value: "+String.valueOf(nres));
     }
 
     //微信SDK初始化(注册)的接口
