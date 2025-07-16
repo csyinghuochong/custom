@@ -28,6 +28,7 @@
             android:name="com.example.weijinggame.MainActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
             android:exported="true"
+            tools:replace="android:configChanges"
             android:launchMode="singleTask"
             android:noHistory="false" >
             <intent-filter>
