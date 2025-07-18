@@ -28,6 +28,7 @@
             android:name="com.goinggame.weijing.MainActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
             android:exported="true"
+            tools:replace="android:configChanges"
             android:launchMode="singleTask"
             android:noHistory="false" >
             <intent-filter>
@@ -45,7 +46,7 @@
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-			android:exported="true"
+            android:exported="true"
             android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
