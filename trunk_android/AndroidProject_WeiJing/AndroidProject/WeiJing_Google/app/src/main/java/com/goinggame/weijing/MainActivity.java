@@ -43,9 +43,6 @@ import java.util.Random;
 
 import android.content.IntentFilter;
 
-import com.quicksdk.Sdk;
-import com.quicksdk.utility.AppConfig;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -147,14 +144,12 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
     }
 
     public String getProductCode() {
-        Log.i("product_code:  ", AppConfig.getInstance().getConfigValue("product_code"));
-        return AppConfig.getInstance().getConfigValue("product_code");
+        return "84515669224153577888773432148616";
     }
 
     public void onBackPressed() {
         // TODO Auto-generated method stub
         super.onBackPressed();
-        Sdk.getInstance().exit(activity);
     }
 
     //判断是否已经安装微信的接口
