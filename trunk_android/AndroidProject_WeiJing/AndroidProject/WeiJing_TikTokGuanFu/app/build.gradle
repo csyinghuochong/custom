@@ -43,9 +43,46 @@ dependencies {
     //implementation files('libs/oaid_sdk_1.0.25.aar')
     //implementation (name: 'oaid_sdk_1.0.25', ext: 'aar')
     implementation files('libs/oaid_sdk_1.0.25.aar')
+
+    api "com.bytedance.ttgame:gbsdk_common_host:2.4.6.0"
+    // 基础公共依赖
+    api "com.bytedance.ttgame:gbsdk_common_host:2.4.6.0"
+    api "com.bytedance.ttgame:gbsdk_common_plugin:2.4.6.0"
+    api "com.bytedance.ttgame:gbsdk_optional_applog:2.4.6.0"
+
+// 全官服促活分账数据采集能力
+    api "com.bytedance.ttgame:gbsdk_optional_datalink_plugin:2.4.6.0"
+
+// 抖音账号授权与绑定
+    api "com.bytedance.ttgame:gbsdk_optional_aweme:2.4.6.0"
+
+// 云游戏
+    api "com.bytedance.ttgame:gbsdk_optional_cloudgame_plugin:2.4.6.0"
+
+// 分享
+    api "com.bytedance.ttgame:gbsdk_optional_aweme:2.4.6.0"  // 前置依赖 aweme
+    api 'com.bytedance.ttgame:gbsdk_optional_share_plugin:2.4.6.0'
+
+// 录制
+    api 'com.bytedance.ttgame:gbsdk_optional_screenrecord_plugin:2.4.6.0'
+
+// 游戏内开播
+    api "com.bytedance.ttgame:gbsdk_optional_aweme:$version"  // 前置依赖 aweme
+    api 'com.bytedance.ttgame:gbsdk_optional_livebroadcast_plugin:2.4.6.0'
+
+// 开发辅助工具
+    api 'com.bytedance.ttgame:gbsdk_optional_devtools:2.4.6.0'
 }
 
 afterEvaluate {
     generateReleaseBuildConfig.enabled = false
     generateDebugBuildConfig.enabled = false
 }
+
+//apply plugin: 'gbsdk.helper'
+//gbsdk {
+//    appId '554726'     // 抖音游戏厂商合作平台创建应用分配的 appId，格式为6位数字
+//    version '2.4.6.0'  // 抖音游戏双通SDK的版本，如 2.4.6.0
+//    plugin true        // 固定填 true，使用插件版本的SDK组件
+//    optionals (['applog', 'aweme',  'share', 'datalink'] as String[]) // 组件列表，这里以全官服促活分账数据采集为例
+//}

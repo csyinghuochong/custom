@@ -23,6 +23,10 @@ import com.bun.miitmdid.core.ErrorCode;
 import com.bun.miitmdid.core.MdidSdkHelper;
 import com.bun.miitmdid.interfaces.IIdentifierListener;
 import com.bun.miitmdid.interfaces.IdSupplier;
+import com.bytedance.ttgame.tob.common.host.api.callback.InitCallback;
+import com.bytedance.ttgame.tob.optional.aweme.api.IAwemeService;
+import com.bytedance.ttgame.tob.optional.aweme.api.callback.AwemeAuthCallback;
+import com.bytedance.ttgame.tob.optional.aweme.api.responce.AuthResponse;
 import com.example.weijinggame.wxapi.WXPayEntryActivity;
 import com.taptapshare.TapTapShareBuilder;
 import com.taptapshare.TapTapShareCode;
@@ -48,8 +52,10 @@ import com.quicksdk.utility.AppConfig;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import com.bytedance.ttgame.tob.common.host.api.GBCommonSDK;
+import com.bytedance.ttgame.tob.common.host.api.GBApplication;
 
-public class MainActivity extends UnityPlayerActivity  implements IIdentifierListener {
+public class MainActivity extends UnityPlayerActivity  implements IIdentifierListener  {
 
 
     //Appid final
@@ -75,6 +81,10 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Log.i("MainActivity", "onCreateMain");
 
+        // 请对齐游戏的application的onCreate时机，不要延后调用
+        // 确保GBCommonSDK.onCreate(...)调用在GBCommonSDK.init(...) 调用之前
+        GBCommonSDK.onCreate(this);
+        GBCommonSDK.setGameActivity( activity);
     }
 
     public static MainActivity GetInstance() {
@@ -333,6 +343,72 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
     {
         return  false;
     }
+
+
+    public  void TikTokInit(String appid) {
+        Log.i("GBCommonSDK", "GBCommonSDK.CallNative0");
+        //一般游戏也会弹自己的隐私协议及申请必要的权限，建议先完成游戏自己的隐私协议展示及权限申请后再调SDK的初始化(即GBCommonSDK.init)。
+        GBCommonSDK.init(activity, new InitCallback() {
+            @Override
+            public void onSuccess() {
+                Toast.makeText(activity, "初始化成功", Toast.LENGTH_SHORT).show();
+
+                //test
+                //keyValuePairs.Add("app_id", "1234");
+                //keyValuePairs.Add("access_token", "q3fafa33sHFU+V9h32h0v8weVEH/04hgsrHFHOHNNQOBC9fnwejasubw==");
+                //keyValuePairs.Add("ts", "1555912969");
+                //test
+            }
+
+            @Override
+            public void onFailed(int code, String msg) {
+                Toast.makeText(activity, "初始化失败: " + code + ", " + msg, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Log.i("GBCommonSDK", "GBCommonSDK.CallNative1");
+    }
+
+    //获取 auth_code  -拉起抖音sdk获取auth_code
+    //服务器通过auth_code. app_secret. app_id 获取access_token opneid
+    //通过access_token opneid可以和抖音交互获取数据
+    public void TikTokAuthorize(String initkey)
+    {
+        // 游戏在内存中存储 accessToken 及 openId
+         String douYinAccessToken = null;
+         String douYinOpenId = null;
+
+        // 游戏业务需要在名片场景对如下scopes授权（除此之外，可以拼接游戏自己需要的scopes）
+        String scopes = "user_info,user.card.profile,user.card.video";
+
+        // 游戏使用抖音进行三方授权登录 或 需要获取用户的抖音信息时，申请抖音授权
+        // 申请抖音授权，在回调中可获取 auth_code，用于获取 accesss_token、openId，进而获取抖音用户的头像和昵称等信息
+        // open_id 可作为当前抖音账号的唯一用户标识，等价手机号登录等其他登录方式。厂商亦可在授权登录后额外绑定手机号等其他用户标识
+        int code = GBCommonSDK.getService(IAwemeService.class).authorize(activity, "user_info", new AwemeAuthCallback() {
+                    @Override
+                    public void onResponse(AuthResponse authResponse) {
+                        if (authResponse.isSuccess()) {
+                            // 用户同意授权，客户端获取到 auth_code
+                            // 使用 auth_code 前往服务端获取 access_token 与 open_id，需要游戏方进行实现
+                            //authResponse.authCode
+                                UnityPlayer.UnitySendMessage("Global", "OnRecvTikTokAuthorize",  authResponse.authCode );
+                            } else if (authResponse.isCancel()) {
+                                // 用户取消授权
+                                UnityPlayer.UnitySendMessage("Global", "OnRecvTikTokAuthorize",  "" );
+                            } else {
+                                // 授权失败
+                                UnityPlayer.UnitySendMessage("Global", "OnRecvTikTokAuthorize",  "" );
+                            }
+                        }
+                    });
+
+
+         if (code == 1) {
+                        Toast.makeText(activity, "授权功能不可用", Toast.LENGTH_LONG).show();
+          }
+
+    }
+
 
     /**
      * 获取文件的共享路径

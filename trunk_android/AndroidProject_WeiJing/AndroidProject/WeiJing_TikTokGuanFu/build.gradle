@@ -1,5 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    repositories {
+        // Maven 仓库
+        maven {
+            url 'https://artifact.bytedance.com/repository/ttgamesdk/'
+        }
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+
 
     repositories {
         google()
@@ -10,6 +20,9 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        // gbsdk_helper 接入方式支持 gradle 插件（Android gradle plugin） 3.4.3-3.5.4 版本
+        // 其他版本请使用 远程依赖 或者 本地aar包依赖 的方式进行接入
+        classpath 'com.bytedance.ttgame:gbsdk_helper:1.0.11'
     }
 }
 allprojects {
@@ -19,6 +32,15 @@ allprojects {
 
         flatDir{
             dirs 'libs'
+        }
+    }
+
+    repositories {
+        maven {
+            url 'https://artifact.bytedance.com/repository/ttgamesdk/'
+        }
+        maven {
+            url 'https://jitpack.io'
         }
     }
 
@@ -35,3 +57,4 @@ task clean(type: Delete) {
 dependencies {
 
 }
+
