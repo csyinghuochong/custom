@@ -1,0 +1,7 @@
+两种可能，1.进程被死循环吃满，2.用到了系统的提供的不需要await的接口（如：网络读取，硬盘文件读取，Console.Write()接口），有些云服务器不知道什么原因有概率出现异步不回调停在这。
+
+第一种情况直接netstat查看进程占用就能看到
+
+第二种情况，安装dotnet-trace工具，执行dotnet trace collect -p <PID> –format SpeedScope -o output.nettrace命令导出文件放在https://www.speedscope.app 网站上分析就能看到
+
+我两种情况都遇到过，特别是第二种，咋都想不出来，跟操作系统和云服务器有一定关系，感谢ET作者提供的思路，不愧是作者，一眼看出问题所在
