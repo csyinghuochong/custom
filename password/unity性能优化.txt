@@ -1,0 +1,18 @@
+深入了解与选择策略
+🔧 工作原理浅析
+GPU Instancing：CPU收集所有实例的变换、自定义属性等信息，放入一个缓冲区，然后通过一次Draw Call将所有信息发给GPU。GPU根据提供的实例数据，逐实例地渲染网格4。
+
+SRP Batcher：它将材质的属性（如颜色、纹理）等“慢变”数据持久化在GPU显存中。当需要渲染时，CPU只需传递模型的变换矩阵等“快变”数据，并告诉GPU使用显存中已有的哪份材质数据即可，避免了重复的数据传输4。
+
+⚠️ 优先级与注意事项
+在URP等渲染管线中，这几种批处理技术有明确的优先级，理解它至关重要126：
+
+Static Batching（静态合批） > SRP Batcher > GPU Instancing > Dynamic Batching（动态合批）
+
+这意味着：
+
+如果一个物体是Static（静态） 的，它会优先使用静态合批。如果它的材质又兼容SRP Batcher，它会同时享受静态合批和SRP Batcher的优化26。
+
+对于一个非静态的物体，如果它的材质兼容SRP Batcher，就会使用SRP Batcher。
+
+只有当一个物体非静态、其材质不兼容SRP Batcher，但材质启用了GPU Instancing且满足其他条件时，才会启用GPU Instancing6。
