@@ -30,7 +30,7 @@ namespace ET
 
             MongoHelper.WuDiBullet = false;
             MongoHelper.KeepSession = false;
-	    MongoHelper.NoTimerMonster = false; 
+	    MongoHelper.NoTimerMonster = false;     //only
             MongoHelper.NoRecovery = false;
 
             MonoPool.NoRecovery = false;
