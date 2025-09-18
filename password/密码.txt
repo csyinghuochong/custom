@@ -61,12 +61,22 @@ Administrator    //账户
 He7758521  	//密码
 Administrator    //账户
 
+
+阿里云 香港
+47.86.59.101
+He7758521
+Administrator    //账户
+
 //美国 -弗吉尼亚州
 172.31.183.49
 8.221.119.18
 He829475    	//密码
 Administrator    //账户
 
+
+teamviewer
+394266315@qq.com
+tcg19851228...A
 
 FTP
 He829475
@@ -135,3 +145,26 @@ https://3170bd
 quicksdk
 hesongnian123   he7758521
 
+管理员运行
+netsh http add urlacl url=http://*:80/ user=Everyone
+
+netsh http add urlacl url=http://*:80/ user=Everyone
+
+
+
+以管理员CMD命令行执行：
+①先删除可能存在的错误urlacl，这里的*号代指localhost、127.0.0.1、192.168.199.X本地地址和+号等。
+命令：netsh http delete urlacl url=http://*:80/ 
+举例：netsh http delete urlacl url=http://+:80/ 
+
+
+②将上面删除的*号地址重新加进url，user选择所有人
+命令：netsh http add urlacl url=http://*:8080/  user=Everyone
+举例：netsh http add urlacl url=http://+:8080/  user=Everyone
+
+
+③CMD配置防火墙
+netsh advfirewall firewall Add rule name=\"命令行Web访问8080\" dir=in protocol=tcp localport=8080 action=allow
+经过如上设置服务端就可以以httpListener.Prefixes.Add("http://+:8080/");监听地址开启监听。
+
+客户端可以通过访问服务端8080端口。服务端本机也可以在浏览器中以localhost和127.0.0.1访问自身http服务器。
