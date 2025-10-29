@@ -75,8 +75,30 @@ dependencies {
     // OSDK_Douyin_Start，此行注释不能删除，用于自动化标记使用
     implementation "com.bytedance.ttgame:gbsdk_optional_aweme:$version" 
     // OSDK_Douyin_End，此行注释不能删除，用于自动化标记使用
+    // OSDK_DataLink_Start，此行注释不能删除，用于自动化标记使用
+    implementation "com.bytedance.ttgame:gbsdk_optional_datalink_plugin:$version" 
+    // OSDK_DataLink_End，此行注释不能删除，用于自动化标记使用
 **DEPS**}
 
+// Android Resolver Exclusions Start
+android {
+    // OSDK_PackagingOptions Start，此行注释不能删除，用于自动化标记使用
+    // 解决so冲突
+    packagingOptions {
+        pickFirst 'okhttp3/internal/publicsuffix/publicsuffixes.gz'
+        pickFirst '**/libc++_shared.so'
+        pickFirst '**/libweibosdkcore.so'
+    }
+    // OSDK_PackagingOptions End，此行注释不能删除，用于自动化标记使用
+  packagingOptions {
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
 android {
     // OSDK_PackagingOptions Start，此行注释不能删除，用于自动化标记使用
     // 解决so冲突
