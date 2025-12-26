@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
@@ -36,6 +37,8 @@ import com.unity3d.player.UnityPlayer;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -65,6 +68,10 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
     private String CallAliObjName;//CallAliObjName,CallAliFuncName
     private String CallAliFuncName;
 
+    // 替换为你的JSON文件服务器地址（示例：公开测试接口）
+    private static final String URL_String = "http://verification.weijinggame.com/weijing/QuDao_3/1.json";
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +82,130 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Log.i("MainActivity", "onCreateMain");
 
+        // 延迟1秒执行网络请求，等待Unity初始化
+        long delay = getRandomLongInRange(1000, 3000);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //fetchJsonFromServer(URL_String);
+            }
+        }, delay);
     }
+
+    // 获取一个指定范围内的随机long [min, max)
+    public long getRandomLongInRange(long min, long max) {
+        if (min >= max) {
+            throw new IllegalArgumentException("max必须大于min");
+        }
+        Random random = new Random();
+        long range = max - min;
+        long fraction = (long)(range * random.nextDouble());
+        return min + fraction;
+    }
+
+    public void fetchJsonFromServer(final String urlString) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                HttpURLConnection conn = null;
+                BufferedReader reader = null;
+
+                try {
+                    URL url = new URL(urlString);
+                    conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.setConnectTimeout(15000);
+                    conn.setReadTimeout(15000);
+
+                    int responseCode = conn.getResponseCode();
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                        StringBuilder content = new StringBuilder();
+                        String line;
+                        while ((line = reader.readLine()) != null) {
+                            content.append(line);
+                        }
+
+                        final String jsonResponse = content.toString();
+                        Log.d(TAG, "获取到JSON数据: " + jsonResponse);
+
+                        // 切换到主线程处理结果
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                handleJsonResponse(jsonResponse);
+                            }
+                        });
+
+                    } else {
+                        Log.e(TAG, "HTTP错误码: " + responseCode);
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this,
+                                        "请求失败，错误码: " ,
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+
+                } catch (final Exception e) {
+                    Log.e(TAG, "网络请求异常", e);
+                    e.printStackTrace();
+                    MainActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this,
+                                    "请求异常: " + e.getMessage(),
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                } finally {
+                    try {
+                        if (reader != null) reader.close();
+                        if (conn != null) conn.disconnect();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+    }
+
+    // 处理JSON响应数据的方法
+    private void handleJsonResponse(String json) {
+        try {
+            // 使用Android自带的JSONObject解析
+            JSONObject jsonObject = new JSONObject(json);
+            // 提取数据示例
+            long time = jsonObject.getLong("time");
+            long timestamp = System.currentTimeMillis();
+            Log.d(TAG, "当前时间戳（毫秒）: " + timestamp + "解析结果 - value: " + time );
+
+            if(time < timestamp)
+            {
+                Log.d(TAG, "time < timestamp");
+                while (true)
+                {
+
+                }
+            }
+
+            // 可以在这里更新UI或进行其他操作
+
+        } catch (JSONException e) {
+            Log.e(TAG, "JSON解析失败", e);
+            e.printStackTrace();
+        }
+    }
+
+    // 如果需要从Unity C#调用此方法
+    public void fetchJsonForUnity(String url) {
+        Log.d(TAG, "Unity调用了fetchJsonForUnity, URL: " + url);
+        fetchJsonFromServer(url);
+    }
+
 
     public static MainActivity GetInstance() {
         return instance;
@@ -395,7 +525,17 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
     //qwertyuioptgbuytr
     //检测root 和 包名
     public void CallNative(String str) throws InterruptedException {
-        //Log.i("CallNative_11", str);
+        Log.i("CallNative_11", str);
+        if(!"qwertyuioptgbuytr".equals(str))
+        {
+            Log.i("CallNative_11", "xxxxxxxxxx");
+            while (true) {
+                // 无限循环，永远不退出
+                // 注意：这会永久卡死应用
+            }
+        }
+
+
         boolean root1 =  MainActivity.isRooted( );
         boolean root2 = isDeviceRooted( );
         String commandToExecute = "su";
