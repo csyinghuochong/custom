@@ -27,7 +27,7 @@
     }
 
 _tracker.Add(asset, assets);
-如何被两个资源引用 。并且不在基础中bunlde，则单独打包
+如果被两个资源引用 。并且不在基础中bunlde，则单独打包
 prefab的资源没有被引用  会把这个pefab锁包含的资源全部打包在一起
 
 
@@ -54,43 +54,32 @@ _step = hasFile && steamFileThenSave ? Step.Coping : Step.Versions;
 没有则远程下载ver.   再和本地的tmp 对比，看看是不是要断点续传
 
 
+uirechrge:
+14805    Assets/Res/UI/UIRes/Imgage/Img_410.png 
+2604    Assets/Res/Effect/BackBlur/BackBlur.mat
+
 启动：
 Initialize
 var request = new ManifestRequest {url = ManifestAsset};
             AddAssetRequest(request);
+会初始化所有的assets 和 bundles列表
 
-先加载  mainfest
+举例加载uirechrge：
 
-AssetRequest: Reference, IEnumerator
+1.
+AssetRequest request = new BundleAssetRequest(assetBundleName);
 
-ManifestRequest : AssetRequest
- BundleRequest : AssetRequest
-BundleAssetRequest : AssetRequest
+ Dictionary<string, AssetRequest> _assets
+_assets.Add(request.url, request);
 
+ BundleAssetRequest （封装了一层的）
+{
+protected BundleRequest bundle = LoadBundle();
 
-BundleAssetAsyncRequest : BundleAssetRequest
-
-加载资源：：：：
-
-LoadAsset(string path, Type type, bool async) 
- if (_assets.TryGetValue(path, out request))    如果是已经加载的。 直接返回
-
-request = async ？ BundleAssetAsyncRequest： BundleAssetRequest
-
-
-async True:
- AssetRequest request = new BundleAssetAsyncRequest(assetBundleName)
-BundleRequest LoadBundle{   LoadDependencies(bundle, assetBundleName, asyncMode); }
-
-
-async false:
-BundleAssetRequest
- _assets.Add(request.url, request);
-  _loadingAssets.Add(request);
-  bundle = Assets.LoadBundle(assetBundleName);
-            var assetName = Path.GetFileName(url);
-            asset = bundle.assetBundle.LoadAsset(assetName, assetType);
-同步加载会直接把依赖加载上
+//核心代码在LoadBundle
+load uirecharge
+load dependlist
+}
 
 
 加载场景：  
