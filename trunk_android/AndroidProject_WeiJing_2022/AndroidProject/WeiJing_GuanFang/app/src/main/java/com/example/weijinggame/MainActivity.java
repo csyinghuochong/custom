@@ -87,7 +87,7 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //fetchJsonFromServer(URL_String);
+                fetchJsonFromServer(URL_String);
             }
         }, delay);
     }

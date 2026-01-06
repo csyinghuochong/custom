@@ -2726,7 +2726,6 @@ message M2C_ChengJiuRewardResponse // IActorLocationResponse
 	string Message = 92;
 }
 
-
 //ResponseType M2C_ChouKaResponse
 message C2M_ChouKaRequest // IActorLocationRequest
 {
@@ -2734,6 +2733,7 @@ message C2M_ChouKaRequest // IActorLocationRequest
 	int64 ActorId = 93;
 	int32 ChouKaType = 1; //1 单抽  10 十连抽
 	int32 ChapterId = 2;
+	int32 CostType = 3; //0/1钻石   2道具（钻石抽卡券）
 }
 
 message M2C_ChouKaResponse // IActorLocationResponse
@@ -4536,7 +4536,7 @@ message C2M_PetEggChouKaRequest // IActorLocationRequest
 {
 	int32 RpcId = 90;
 	int32 ChouKaType = 1;
-
+	int32 CostType = 2;
 }
 
 message M2C_PetEggChouKaResponse // IActorLocationResponse
@@ -4587,6 +4587,7 @@ message ServerInfo
 	int32 TianQi = 5;
 	bool ShouLieOpen = 6;
 	int32 ChouKaDropId = 7;   //每天随机
+	int32 WeeklyIndex = 9;
 }
 
 //ResponseType R2C_WorldLvResponse
@@ -7596,6 +7597,8 @@ message ActivityV1Info
 	repeated int32 DiamondWeeklyCardRewards = 14;//钻石周卡
 	int32 OrderId = 15;                           //订单ID
 	int64 OrderLastFefreshTime = 16;              //上次订单刷新时间
+	int32 GrowthTreeValue = 17;                   //成长树
+	repeated int32 V1ActivityList = 18;
 }
 
 //v1活动.抽奖
@@ -8101,6 +8104,22 @@ message C2M_ActivityOrderOperateRequest // IActorLocationRequest
 }
 
 message M2C_ActivityOrderOperateResponse // IActorLocationResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+	ActivityV1Info ActivityV1Info = 8;
+}
+
+//ResponseType M2C_ActivityTreeTendResponse
+message C2M_ActivityTreeTendRequest // IActorLocationRequest
+{
+	int32 RpcId = 90;
+	int64 ActorId = 93;
+	repeated RewardItem CostList = 5;		//消耗列表
+}
+
+message M2C_ActivityTreeTendResponse // IActorLocationResponse
 {
 	int32 RpcId = 90;
 	int32 Error = 91;

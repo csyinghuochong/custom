@@ -36,6 +36,8 @@ message R2A_Broadcast // IActorRequest
     int32 LoadType = 3;
     string LoadValue = 4;
 
+	repeated int32 V1ActivityList = 5;
+
 	ServerInfo ServerInfo = 6;
 }
 

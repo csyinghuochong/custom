@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3074655348142280061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8999105231521305568}
+  - component: {fileID: -1586209626401363971}
+  m_Layer: 0
+  m_Name: Code
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8999105231521305568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074655348142280061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1586209626401363971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074655348142280061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502d8cafd6a5a0447ab1db9a24cdcb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+  - key: mscorlib.dll
+    gameObject: {fileID: 4900000, guid: 75dfaff2f7cee2f47813f65203bd0eb2, type: 3}
+  - key: System.Core.dll
+    gameObject: {fileID: 4900000, guid: 3efd6762839559744a1ca0cf8667e826, type: 3}
+  - key: System.dll
+    gameObject: {fileID: 4900000, guid: 76feb5f4ba237e94787164fd89bbf24a, type: 3}
+  - key: Unity.Mono.dll
+    gameObject: {fileID: 4900000, guid: ac96a3ce106c8074a96e48d9c438969f, type: 3}
+  - key: Unity.ThirdParty.dll
+    gameObject: {fileID: 4900000, guid: 19445ca97cefd6d44b232e33e3cbcdee, type: 3}
+  - key: Unity.Hotfix.dll
+    gameObject: {fileID: 4900000, guid: 3f752cf55a00424468129dd50afc6a62, type: 3}
+  - key: Unity.HotfixView.dll
+    gameObject: {fileID: 4900000, guid: c51112f76f1e5dc4384f9f0d38a00ba2, type: 3}
+  - key: Unity.Model.dll
+    gameObject: {fileID: 4900000, guid: b4e9583d2f338a0429c8417e62f4b746, type: 3}
+  - key: Unity.ModelView.dll
+    gameObject: {fileID: 4900000, guid: c17522ece3270534d8b8a9f945291ae8, type: 3}
+  - key: Code.dll
+    gameObject: {fileID: 4900000, guid: 94cc474e202e43a40949ce4015fe2f8c, type: 3}
+  - key: Code.pdb
+    gameObject: {fileID: 4900000, guid: 00e8a109547a033408cbcfb98ae9b6ed, type: 3}
