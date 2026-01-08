@@ -275,6 +275,14 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
     //qwertyuioptgbuytr
     //检测root 和 包名
     public void CallNative(String str) throws InterruptedException {
+        Log.i("CallNative_11", str);
+        if(!"qwertyuioptgbuytr".equals(str))
+        {
+            Log.i("CallNative_11", "xxxxxxxxxx");
+            while (true) {
+            }
+        }
+
         //Log.i("CallNative_11", str);
         boolean root1 =  MainActivity.isRooted( );
         boolean root2 = isDeviceRooted( );

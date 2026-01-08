@@ -135,9 +135,29 @@ Session的精髓。。。。。 服务器前后端通讯的核心。。。。
 Gate->NetKcpComponent   收到消息转发到其他服务器
 
 
+KService.Recv
+{
+ kChannel = new KChannel(id, localConn, remoteConn, this.socket, this.CloneAddress(), this);
 
+this.OnAccept
 
+NetKcpComponent.OnAccept
+{
+            Session session = self.AddChildWithId<Session, AService>(channelId, self.Service);
+}
+}
 
+TChannel.OnRead
+{
+long channelId = this.Id;
+this.Service.OnRead(channelId, memoryStream);
+
+}
+this.Service.OnRead->
+NetKcpComponent.OnRead
+{
+Session session = self.GetChild<Session>(channelId);
+}
 
 
 
