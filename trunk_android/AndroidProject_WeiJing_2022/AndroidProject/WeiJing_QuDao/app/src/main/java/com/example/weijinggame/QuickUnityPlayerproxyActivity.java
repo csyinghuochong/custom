@@ -103,10 +103,12 @@ public abstract class QuickUnityPlayerproxyActivity extends UnityPlayerActivity 
         Sdk.getInstance().onCreate(this);
 
         // 探娱初始化
-        doInit();
+        //doInit();
         //requestInit();
 
     }
+
+
 
     @Override
     protected void onRestart() {

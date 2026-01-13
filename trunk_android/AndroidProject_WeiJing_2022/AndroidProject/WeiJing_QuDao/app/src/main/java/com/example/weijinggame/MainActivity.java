@@ -195,6 +195,17 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         }
     }
 
+
+    //点击同意隐身政策后调用
+    public  void QuickSdkInit(String str)
+    {
+        Log.i("MainActivity", "QuickSdkInit");
+
+        //Sdk.getInstance().init(this, getProductCode(), getProductKey());
+        doInit();
+    }
+
+
     //多个权限同时获取 this.activity.requestPermissions 的第二个参数为此处返回的requestCode  case100->GetPhoneNum
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -275,10 +286,10 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
     //qwertyuioptgbuytr
     //检测root 和 包名
     public void CallNative(String str) throws InterruptedException {
-        Log.i("CallNative_11", str);
+        Log.i("MainActivity", str);
         if(!"qwertyuioptgbuytr".equals(str))
         {
-            Log.i("CallNative_11", "xxxxxxxxxx");
+            Log.i("MainActivity", "xxxxxxxxxx");
             while (true) {
             }
         }
