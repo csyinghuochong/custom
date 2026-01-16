@@ -1,6 +1,7 @@
 package com.example.weijinggame;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -416,11 +417,12 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
             case 1:
+            case 100:
                 for (int result : grantResults) {
-                    Log.i("Permissions111", result + "");
+                    Log.i("Permissions111", result + "  requestCode: " +  requestCode);
                 }
                 for (String result : permissions) {
-                    Log.i("Permissions222", result + "");
+                    Log.i("Permissions222", result + "  requestCode: " +  requestCode);
                 }
 
                 if (grantResults.length > 0) {
@@ -440,10 +442,8 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
                     finish();
                 }
                 break;
-            case 100:
-                //
-                break;
             default:
+                break;
         }
     }
 
@@ -576,7 +576,7 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
                     {
                             Manifest.permission.READ_PHONE_NUMBERS, Manifest.permission.READ_PHONE_STATE  //. Manifest.permission.READ_SMS,
                     };
-            ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_ADDRESS);
+            this.activity.requestPermissions(permissions, REQUEST_CODE_ADDRESS);
             Log.i("GetPhoneNum_2b", "222");
             return;
         }
@@ -611,6 +611,7 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
 
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     public void GetPhoneNum_2(String zone) {
         Log.i("GetPhoneNum", "111");
         String phoneNum = "";
@@ -631,7 +632,7 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
                     {
                             Manifest.permission.READ_SMS, Manifest.permission.READ_PHONE_NUMBERS, Manifest.permission.READ_PHONE_STATE
                     };
-            ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_ADDRESS);
+            this.activity.requestPermissions(permissions, REQUEST_CODE_ADDRESS);
             Log.i("GetPhoneNum", "222");
             return;
         }
