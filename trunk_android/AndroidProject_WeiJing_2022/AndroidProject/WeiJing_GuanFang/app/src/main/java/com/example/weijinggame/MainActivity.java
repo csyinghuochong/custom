@@ -82,15 +82,6 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
         activity = this;
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Log.i("MainActivity", "onCreateMain");
-
-        // 延迟1秒执行网络请求，等待Unity初始化
-        long delay = getRandomLongInRange(1000, 3000);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                fetchJsonFromServer(URL_String);
-            }
-        }, delay);
     }
 
     // 获取一个指定范围内的随机long [min, max)
@@ -102,76 +93,6 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
         long range = max - min;
         long fraction = (long)(range * random.nextDouble());
         return min + fraction;
-    }
-
-    public void fetchJsonFromServer(final String urlString) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                HttpURLConnection conn = null;
-                BufferedReader reader = null;
-
-                try {
-                    URL url = new URL(urlString);
-                    conn = (HttpURLConnection) url.openConnection();
-                    conn.setRequestMethod("GET");
-                    conn.setConnectTimeout(15000);
-                    conn.setReadTimeout(15000);
-
-                    int responseCode = conn.getResponseCode();
-                    if (responseCode == HttpURLConnection.HTTP_OK) {
-                        reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                        StringBuilder content = new StringBuilder();
-                        String line;
-                        while ((line = reader.readLine()) != null) {
-                            content.append(line);
-                        }
-
-                        final String jsonResponse = content.toString();
-                        Log.d(TAG, "获取到JSON数据: " + jsonResponse);
-
-                        // 切换到主线程处理结果
-                        MainActivity.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                handleJsonResponse(jsonResponse);
-                            }
-                        });
-
-                    } else {
-                        Log.e(TAG, "HTTP错误码: " + responseCode);
-                        MainActivity.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(MainActivity.this,
-                                        "请求失败，错误码: " ,
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-
-                } catch (final Exception e) {
-                    Log.e(TAG, "网络请求异常", e);
-                    e.printStackTrace();
-                    MainActivity.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(MainActivity.this,
-                                    "请求异常: " + e.getMessage(),
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
-                } finally {
-                    try {
-                        if (reader != null) reader.close();
-                        if (conn != null) conn.disconnect();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }).start();
     }
 
     // 处理JSON响应数据的方法
@@ -200,13 +121,6 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
             e.printStackTrace();
         }
     }
-
-    // 如果需要从Unity C#调用此方法
-    public void fetchJsonForUnity(String url) {
-        Log.d(TAG, "Unity调用了fetchJsonForUnity, URL: " + url);
-        fetchJsonFromServer(url);
-    }
-
 
     public static MainActivity GetInstance() {
         return instance;
@@ -604,49 +518,6 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
             Log.i("GetPhoneNum_2e", e.toString());
         }
 
-        UnityPlayer.UnitySendMessage("Global", "OnRecvPhoneNum", phoneNum);
-    }
-
-    public  void GetPhoneNum_3(String zone) {
-
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    public void GetPhoneNum_2(String zone) {
-        Log.i("GetPhoneNum", "111");
-        String phoneNum = "";
-        //READ_PHONE_STATE唯一标识符、手机号码以及SIM卡状态等信息
-        TelephonyManager mTelephoneManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            //申请权限，permissions是要申请的权限数组
-            String[] permissions = new  String[]
-                    {
-                            Manifest.permission.READ_SMS, Manifest.permission.READ_PHONE_NUMBERS, Manifest.permission.READ_PHONE_STATE
-                    };
-            this.activity.requestPermissions(permissions, REQUEST_CODE_ADDRESS);
-            Log.i("GetPhoneNum", "222");
-            return;
-        }
-        Log.i("GetPhoneNum", "333");
-        String ret = mTelephoneManager.getLine1Number() != null ? mTelephoneManager.getLine1Number() : "";
-        if (TextUtils.isEmpty(ret))
-        {
-            phoneNum = ret;
-        }
-        else
-        {
-            ret = ret.substring(3,14);
-            phoneNum =  ret;
-        }
         UnityPlayer.UnitySendMessage("Global", "OnRecvPhoneNum", phoneNum);
     }
 

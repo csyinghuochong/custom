@@ -20,6 +20,10 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 
+import com.bun.miitmdid.core.ErrorCode;
+import com.bun.miitmdid.core.MdidSdkHelper;
+import com.bun.miitmdid.interfaces.IIdentifierListener;
+import com.bun.miitmdid.interfaces.IdSupplier;
 import com.unity3d.player.UnityPlayer;
 
 import java.io.BufferedReader;
@@ -36,7 +40,7 @@ import com.quicksdk.Sdk;
 import com.quicksdk.utility.AppConfig;
 
 
-public class MainActivity extends QuickUnityPlayerproxyActivity {
+public class MainActivity extends QuickUnityPlayerproxyActivity implements IIdentifierListener {
 
     //Appid final
     public static String APP_ID;
@@ -124,6 +128,58 @@ public class MainActivity extends QuickUnityPlayerproxyActivity {
         wxAPI.sendReq(req);
     }
     */
+
+    public void GetDeviceOAID(String str){
+
+        long timeb=System.currentTimeMillis();
+        // 方法调用
+        int nres = CallFromReflect(this);
+
+        long timee=System.currentTimeMillis();
+        long offset=timee-timeb;
+        if(nres == ErrorCode.INIT_ERROR_DEVICE_NOSUPPORT){//不支持的设备
+
+        }else if( nres == ErrorCode.INIT_ERROR_LOAD_CONFIGFILE){//加载配置文件出错
+
+        }else if(nres == ErrorCode.INIT_ERROR_MANUFACTURER_NOSUPPORT){//不支持的设备厂商
+
+        }else if(nres == ErrorCode.INIT_ERROR_RESULT_DELAY){//获取接口是异步的，结果会在回调中返回，回调执行的回调可能在工作线程
+
+        }else if(nres == ErrorCode.INIT_HELPER_CALL_ERROR){//反射调用出错
+
+        }
+        Log.d(getClass().getSimpleName(),"return value: "+String.valueOf(nres));
+    }
+
+    /*
+     * 方法调用
+     *
+     * */
+    private int CallFromReflect(Context cxt){
+        return MdidSdkHelper.InitSdk(cxt,true,this);
+    }
+
+    public void OnSupport(boolean isSupport, IdSupplier _supplier) {
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if(_supplier==null) {
+            return;
+        }
+        String oaid=_supplier.getOAID();
+       /* String vaid=_supplier.getVAID();
+        String aaid=_supplier.getAAID();
+        StringBuilder builder=new StringBuilder();
+        builder.append("support: ").append(isSupport?"true":"false").append("\n");
+        builder.append("OAID: ").append(oaid).append("\n");
+        builder.append("VAID: ").append(vaid).append("\n");
+        builder.append("AAID: ").append(aaid).append("\n");*/
+
+        UnityPlayer.UnitySendMessage("Global", "OnGetDeviceOAID",  oaid );
+    }
 
     //获取系统时间戳
     public void ReqSystemTime(String str) {
