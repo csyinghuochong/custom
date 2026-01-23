@@ -228,12 +228,16 @@ namespace ET
         protected override void Run(object a)
         {
             EventType.QuDaoLoginRequest args = a as EventType.QuDaoLoginRequest;
-
             Log.ILog.Debug("QuDaoLoginRequest: EventHandle.onLogin");
-
-
             EventHandle eventHandle = GameObject.Find("Global").GetComponent<EventHandle>();
-            eventHandle.onLoginSuccessAction = args.AccesstokenHandler;
+            eventHandle.onLoginSuccessAction = async (string token, string uid) =>
+            {
+                await TimerComponent.Instance.WaitFrameAsync();
+                UI ui = UIHelper.GetUI(args.ZoneScene, UIType.UILogin);
+                UILoginComponent uILoginComponent = ui.GetComponent<UILoginComponent>();
+                uILoginComponent.OnRecvQuDaoUid(token, uid).Coroutine();
+            };
+
             eventHandle.onLogin();
         }
     }
@@ -262,7 +266,13 @@ namespace ET
 
             Log.ILog.Debug("GetTiktokAccesstoken: ");
 
-            GameObject.Find("Global").GetComponent<Init>().OnTikTokAccesstokenHandler = args.AccesstokenHandler;
+            GameObject.Find("Global").GetComponent<Init>().OnTikTokAccesstokenHandler = async (string text)=>
+            {
+                await TimerComponent.Instance.WaitFrameAsync();
+                UI ui = UIHelper.GetUI(args.ZoneScene, UIType.UILogin);
+                UILoginComponent uILoginComponent = ui.GetComponent<UILoginComponent>();
+                uILoginComponent.OnRecvTikTokAccesstoken(text).Coroutine();
+            };
 
             Init init = GameObject.Find("Global").GetComponent<Init>();
             init.TikTokLogin();

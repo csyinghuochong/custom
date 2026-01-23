@@ -157,7 +157,13 @@ namespace ET
             Log.ILog.Debug("TikTok_TikTokGetAuthorizeCode");
 
             //后端请求
-            GameObject.Find("Global").GetComponent<OSDKDouyin>().OnTikTokAuthorizeHandler = args.TikTokAuthorizeHandler;
+            GameObject.Find("Global").GetComponent<OSDKDouyin>().OnTikTokAuthorizeHandler = async (string text1) =>
+            {
+                await TimerComponent.Instance.WaitFrameAsync();
+                UI ui = UIHelper.GetUI(args.ZoneScene, UIType.UILogin);
+                UILoginComponent uILoginComponent = ui.GetComponent<UILoginComponent>();
+                uILoginComponent.OnTikTokAuthorizeHandler(text1).Coroutine();
+            };
 
             OSDKDouyin init = GameObject.Find("Global").GetComponent<OSDKDouyin>();
             //init.CheckTimeInteval = 3600 * 1000;
