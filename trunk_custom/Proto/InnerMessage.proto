@@ -2148,6 +2148,7 @@ message M2A_ActivityFeedRequest // IActorRequest
 	int32 RpcId = 90;
 	int64 ActorId = 93;
 	int64 UnitID = 1;
+	int32 ItemID = 2;
 }
 
 message A2M_ActivityFeedResponse // IActorResponse
@@ -2236,6 +2237,24 @@ message L2M_WeChatOABindResult // IActorRequest
 }
 
 message M2L_WeChatOABindResult // IActorResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
+//ResponseType Center2M_UpdateDataCacheResponse
+message M2Center_UpdateDataCacheRequest // IActorRequest
+{
+	int32 RpcId = 90;
+	int64 ActorId = 93;
+	string OAID = 1;
+	string Time = 2;
+	int64 AccInfoID = 3;
+	string RemoteAddress = 4;
+}
+
+message Center2M_UpdateDataCacheResponse // IActorResponse
 {
 	int32 RpcId = 90;
 	int32 Error = 91;

@@ -97,6 +97,7 @@ message C2A_CreateRoleData // IRequest
 	int32 CreateOcc = 2;
 	string CreateName = 3; 
 	int64 AccountId = 4;
+	string OAID = 5;
 }
 
 message A2C_CreateRoleData // IResponse
@@ -222,6 +223,8 @@ message C2G_EnterGame // IRequest
     string ByIPRegionCode = 14;
 	string UnityVersion = 15;
 	int32 BigVersion = 16;
+	int32 PlatformTwo = 17;   //二级渠道
+	string OAID = 18;
 }
 
 message G2C_EnterGame // IResponse
@@ -643,6 +646,7 @@ message C2A_LoginAccount // IRequest
 	int32 Simulator = 7;
 	string DeviceID = 11;
 	string OAID = 12;
+	string DeviceName = 13;
 }
 
 message A2C_LoginAccount // IResponse
@@ -825,6 +829,7 @@ message A2C_ServerList // IResponse
 	string AccountCenterIp = 7;
 	string RealAndGate = 8;
 	int SmsVerifyType = 9;  //0 mob  1 aliyun
+	bool ShowNotice = 10;
 }
 
 //ResponseType A2C_SendSmsVerifyCode
@@ -5099,6 +5104,21 @@ message Center2C_DeleteAccountResponse // IResponse
 	string Message = 92;
 }
 
+//ResponseType Center2C_HotUpdatecompleteResponse
+message C2Center_HotUpdatecompleteRequest // IRequest
+{
+	int32 RpcId = 90;
+	string OAID = 1;
+	int64 Time = 2;
+}
+
+message Center2C_HotUpdatecompleteResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
 //ResponseType Center2C_BlackAccountResponse
 message C2Center_BlackAccountRequest // IRequest
 {
@@ -7599,6 +7619,7 @@ message ActivityV1Info
 	int64 OrderLastFefreshTime = 16;              //上次订单刷新时间
 	int32 GrowthTreeValue = 17;                   //成长树
 	repeated int32 V1ActivityList = 18;
+	int32 PointsShuxuReward = 19;
 }
 
 //v1活动.抽奖
