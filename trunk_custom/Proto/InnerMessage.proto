@@ -163,6 +163,7 @@ message Center2A_CheckAccount // IActorResponse
 	bool IsHoliday = 3;
 	bool StopServer = 4;
 	string TaprepRequest = 5;
+	int64 CreateTime = 6;
 	int32 TodayCreateRole = 13;
 }
 
@@ -2252,6 +2253,9 @@ message M2Center_UpdateDataCacheRequest // IActorRequest
 	string Time = 2;
 	int64 AccInfoID = 3;
 	string RemoteAddress = 4;
+	int32 MaxLevel = 5;
+	int32 OnlineTime = 6;
+	int64 UnitID = 8;
 }
 
 message Center2M_UpdateDataCacheResponse // IActorResponse
