@@ -17,7 +17,7 @@ namespace ET
             ConfigData.FunctionOpenIds.Remove(2000);
 
             StartProcessConfig.ProcessList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            Console.WriteLine($"AppStart_Init_Custom.CSkill: {ConfigData.CleanSkill}");
+            Console.WriteLine($"AppStart_Init_Custom.CSkill: {ConfigData.CleanSkill}  {ConfigData.FunctionOpenIds.Count}");
         }
     }
 }
