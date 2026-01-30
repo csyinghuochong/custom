@@ -1,18 +1,17 @@
 ﻿-Parameters=SampleClass
 
-  DllHelper.Admin = "tcg452241";
-            DllHelper.CheckItem = true;
-            DllHelper.NoTianFuAdd = true;
-            DllHelper.BattleCheck = true;
-            DllHelper.GuangHuan = true;
+DllHelper.Admin = "tcg452241";
+DllHelper.CheckItem = true;
+DllHelper.NoTianFuAdd = true;
+DllHelper.BattleCheck = true;
+DllHelper.GuangHuan = true;
 
-            MongoHelper.WuDiBullet = false;
-            MongoHelper.KeepSession = false;
-	    MongoHelper.NoTimerMonster = false; 
-            MongoHelper.NoRecovery = false;
-
-            MonoPool.NoRecovery = false;
-	    ConfigLoader.RemovePlayer = false;
+MongoHelper.WuDiBullet = false;
+MongoHelper.KeepSession = false;
+MongoHelper.NoTimerMonster = false; 
+MongoHelper.NoRecovery = false;
+MonoPool.NoRecovery = false;
+ConfigLoader.RemovePlayer = false;
 
 stopserver 0 0 tcg452241 0   //停服        先合区
 stopserver 0 1 tcg452241 0	//开服    先合区s
@@ -20,19 +19,17 @@ stopserver 0 2 tcg452241 0	//序号
 
 
 GM后台
-
-http://47.94.107.92:20008/robotwjconsolecallback?idfa=asedfstUfe&param1=4  测试一下
-http://127.0.0.1:30301/robotwjconsolecallback?idfa=asedfstUfe&param1=4  测试一下
-
+http://47.94.107.92:20009/robotwjconsolecallback?idfa=asedfstUfe&param1=4
+http://47.94.107.92:20009/robotwjconsolecallback?idfa=asedfstUfe&param1=1  
+http://127.0.0.1:30301/robotwjconsolecallback?idfa=asedfstUfe&param1=4
 http://39.96.194.143:20008/wjtapconsole?idfa=asedfstUfe&console=111
 http://127.0.0.1:30300/wjtapconsole?idfa=asedfstUfe&console=stopserver 0 0 tcg452241 0&org_name=dsdsd
 http://39.96.194.143:20008/wjtapconsole?idfa=asedfstUfe&console=stopserver 0 0 tcg452241 0&org_name=dsdsd
 http://127.0.0.1:30300/wjtapconsole?idfa=asedfstUfe&console=broad 0 我
 
+while
 http://127.0.0.1:30300/wjtapconsoles?idfa=asedfstUfe&consoles=using%20System%3B%0Ausing%20System.Threading%3B%0Apublic%20class%20Program%20%7B%0A%20%20%20%20public%20static%20void%20Main()%20%7B%0A%20%20%20%20%20%20%20%20while(true)%20%7B%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D
-
 http://127.0.0.1:30300/wjtapconsolen?idfa=asedfstUfe&consolen=100.0.0|1111|2222|3333&lognname=WJ_Notice
-
 
 string ebnphone = AESUtilsHelper.AesEncrypt("18319670288", "tcg452241");
 string phone =  AESUtilsHelper.AesDecrypt(ebnphone, "tcg452241");
@@ -48,15 +45,10 @@ mail 0 0 10000164;1@1;300000@10010088;2@10010083;10 1 0 tcg452241
 git reset --soft HEAD^   
 **********************************  
 
-pc设备id:8f18a9cdcfc7252a52d7549571b89f20901115e2
-
-//先统计一下账号总充值
-caclaccountrecharge 202
-
-//2026/01/23 19:00:00 1769166000000 合区 xx - xx   xx/xx
-//2026/01/23 19:00:00 1769166000000 新区 剑啸山河 192
+/2026/01/30 19:00:00 1769770800000 合区 xx - xx   xx/xx
+//2026/01/30 19:00:00 1769770800000 新区 精灵之森 193
 要先同步配置表！！！！！！！！！！！！  perilous realm
-//忘川彼岸 飞鸟  90010910
+
 
 buildcode  buildwolong  buildbundles
 ///////先停服在热更      先停服在热更         先停服在热更       先停服在热更
@@ -79,11 +71,17 @@ buildcode  buildwolong  buildbundles
 11 拷贝所有dll
 12 起服后移除
 
-https://help.aliyun.com/document_detail/40213.html
 
-///////先停服在热更      先停服在热更         先停服在热更       先停服在热更
+
+https://help.aliyun.com/document_detail/40213.html
 https://verification.weijinggame.com/weijing/apk/weijing.apk          
 
+//15521533589 186 忘川彼岸 飞鸟  90010910        3233085357293633536
+//13826478242 5     先锋一区 千依  90010910        3233087192502960128
+
+///////先停服在热更      先停服在热更         先停服在热更       先停服在热更
+用脚本刷新用脚本刷新用脚本刷新用脚本刷新用脚本刷新用脚本刷新用脚本刷新
+//更新谷歌服务器
 http://weijing.weijinggame.com/weijing1/DLCBeta/iOS/
 http://weijinghot.weijinggame.com/weijing1/DLCBeta/iOS/
 http://weijinghot.weijinggame.com/weijing1/DLCBeta/WJ/iOS/
