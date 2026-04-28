@@ -52,7 +52,7 @@ namespace ET
             self.orderDic.Add(dingDanID, model);
             string toClientStr = model.objID + "," + dingDanID;
 
-            Console.WriteLine($"{TimeInfo.Instance.ToDateTime(TimeHelper.ServerNow()).ToString()}    QudaoPay.dingDanID:  {dingDanID}");
+            Console.WriteLine($"{TimeInfo.Instance.ToDateTime(TimeHelper.ServerNow()).ToString()}    QudaoPay.dingDanID:  {dingDanID}  unitid;{request.UnitId}");
             //return toClientStr
             return dingDanID;
         }
@@ -272,7 +272,7 @@ namespace ET
 
                     if (orderinfo != null && self.CheckMd5Sign(pay_notice) && payResults["status"] == "0")
                     {
-                        Console.WriteLine(dingdanid + ":支付成功！");
+                        Console.WriteLine(dingdanid + ":支付成功！" + orderinfo.userId);
 
                         string serverName = ServerHelper.GetGetServerItem(false, orderinfo.zone).ServerName;
                         Log.Warning($"支付成功[渠道]: 区：{serverName}     玩家名字：{orderinfo.UnitName}   充值额度：{orderinfo.amount}  时间:{TimeHelper.DateTimeNow().ToString()}");
