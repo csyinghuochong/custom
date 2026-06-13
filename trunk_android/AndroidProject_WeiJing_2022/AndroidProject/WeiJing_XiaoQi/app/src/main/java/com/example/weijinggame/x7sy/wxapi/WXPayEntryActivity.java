@@ -1,4 +1,4 @@
-package com.example.weijinggame.wxapi;
+package com.example.weijinggame.x7sy.wxapi;
 
 /**
  * Created by Administrator on 2018/10/13.
@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.weijinggame.MainActivity;
+import com.example.weijinggame.x7sy.MainActivity;
 import com.tencent.mm.sdk.modelbase.BaseReq;
 import com.tencent.mm.sdk.modelbase.BaseResp;
 import com.tencent.mm.sdk.openapi.IWXAPI;

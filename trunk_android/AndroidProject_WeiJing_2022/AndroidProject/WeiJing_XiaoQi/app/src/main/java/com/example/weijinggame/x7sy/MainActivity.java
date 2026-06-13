@@ -1,4 +1,4 @@
-package com.example.weijinggame;
+package com.example.weijinggame.x7sy;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -12,9 +12,9 @@ import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.FileProvider;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -25,7 +25,7 @@ import com.bun.miitmdid.core.ErrorCode;
 import com.bun.miitmdid.core.MdidSdkHelper;
 import com.bun.miitmdid.interfaces.IIdentifierListener;
 import com.bun.miitmdid.interfaces.IdSupplier;
-import com.example.weijinggame.wxapi.WXPayEntryActivity;
+import com.example.weijinggame.x7sy.wxapi.WXPayEntryActivity;
 import com.taptapshare.TapTapShareBuilder;
 import com.taptapshare.TapTapShareCode;
 import com.taptapshare.TapTapShareUtil;
@@ -68,6 +68,7 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
     private IWXAPI wxAPI = null; //WXAPIFactory.createWXAPI(this, null);
     private String CallAliObjName;//CallAliObjName,CallAliFuncName
     private String CallAliFuncName;
+    private X7SdkBridge x7SdkBridge;
 
     // 替换为你的JSON文件服务器地址（示例：公开测试接口）
     private static final String URL_String = "http://verification.weijinggame.com/weijing/QuDao_3/1.json";
@@ -81,6 +82,7 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
         mContext = this;
         activity = this;
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        x7SdkBridge = new X7SdkBridge(this);
         Log.i("MainActivity", "onCreateMain");
     }
 
@@ -197,9 +199,48 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
     }
 
     public void onBackPressed() {
-        // TODO Auto-generated method stub
+        if (x7SdkBridge != null) {
+            x7SdkBridge.exitApp();
+            return;
+        }
         super.onBackPressed();
         Sdk.getInstance().exit(activity);
+    }
+
+    public void X7Init() {
+        if (x7SdkBridge != null) {
+            x7SdkBridge.init();
+        }
+    }
+
+    public void X7Login() {
+        if (x7SdkBridge != null) {
+            x7SdkBridge.login();
+        }
+    }
+
+    public void X7Logout() {
+        if (x7SdkBridge != null) {
+            x7SdkBridge.logout();
+        }
+    }
+
+    public void X7Pay(String json) {
+        if (x7SdkBridge != null) {
+            x7SdkBridge.pay(json);
+        }
+    }
+
+    public void X7ReportRole(String json) {
+        if (x7SdkBridge != null) {
+            x7SdkBridge.reportRole(json);
+        }
+    }
+
+    public void X7Exit() {
+        if (x7SdkBridge != null) {
+            x7SdkBridge.exitApp();
+        }
     }
 
     //判断是否已经安装微信的接口

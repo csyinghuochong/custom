@@ -3,6 +3,7 @@ buildscript {
 
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
     dependencies {
@@ -14,11 +15,15 @@ buildscript {
 }
 allprojects {
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
         google()
+        mavenCentral()
         jcenter()
 
         flatDir{
-            dirs 'libs'
+            dirs 'libs', 'app/libs'
         }
     }
 
