@@ -47,9 +47,6 @@ import java.util.Random;
 
 import android.content.IntentFilter;
 
-import com.quicksdk.Sdk;
-import com.quicksdk.utility.AppConfig;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -193,18 +190,12 @@ public class MainActivity extends UnityPlayerActivity  implements IIdentifierLis
         Log.i("WechatInit", appid);
     }
 
-    public String getProductCode() {
-        Log.i("product_code:  ", AppConfig.getInstance().getConfigValue("product_code"));
-        return AppConfig.getInstance().getConfigValue("product_code");
-    }
-
     public void onBackPressed() {
         if (x7SdkBridge != null) {
             x7SdkBridge.exitApp();
             return;
         }
         super.onBackPressed();
-        Sdk.getInstance().exit(activity);
     }
 
     public void X7Init() {
