@@ -248,6 +248,22 @@ namespace ET
         }
     }
 
+    public class XiaoQi_XiaoQiSignIn : AEventClass<EventType.XiaoQiSignIn>
+    {
+        protected override void Run(object cls)
+        {
+            EventType.XiaoQiSignIn args = cls as EventType.XiaoQiSignIn;
+            Init init = GameObject.Find("Global").GetComponent<Init>();
+            init.OnX7LoginSuccessHandler = (string token) => { args.AccesstokenHandler?.Invoke(token); };
+            init.OnX7LoginFailHandler = (string msg) =>
+            {
+                FloatTipManager.Instance.ShowFloatTip(string.IsNullOrEmpty(msg) ? "小7登录失败" : msg);
+            };
+            init.OnX7LoginCancelHandler = () => { };
+            init.X7Login();
+        }
+    }
+
     public class Login_GetSysRegionInfo : AEventClass<EventType.GetSysRegionInfo>
     {
         protected override void Run(object numerice)
