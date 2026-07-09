@@ -255,12 +255,67 @@ namespace ET
             EventType.XiaoQiSignIn args = cls as EventType.XiaoQiSignIn;
             Init init = GameObject.Find("Global").GetComponent<Init>();
             init.OnX7LoginSuccessHandler = (string token) => { args.AccesstokenHandler?.Invoke(token); };
+            init.OnX7LogoutSuccessHandler = ( ) => {
+                Log.ILog.Debug($"init.OnX7LogoutSuccessHandler");
+            };
             init.OnX7LoginFailHandler = (string msg) =>
             {
                 FloatTipManager.Instance.ShowFloatTip(string.IsNullOrEmpty(msg) ? "小7登录失败" : msg);
             };
             init.OnX7LoginCancelHandler = () => { };
             init.X7Login();
+        }
+    }
+
+    public class XiaoQi_XiaoQiOnPay : AEventClass<EventType.XiaoQiOnPay>
+    {
+        protected override void Run(object cls)
+        {
+            EventType.XiaoQiOnPay args = cls as EventType.XiaoQiOnPay;
+            AccountInfoComponent accountInfoComponent = args.ZoneScene.GetComponent<AccountInfoComponent>();
+            UserInfoComponent userInfoComponent = args.ZoneScene.GetComponent<UserInfoComponent>();
+            string payJson = X7PayHelper.BuildPayJson(
+                args.GameOrderId,
+                args.RechargeNumber,
+                accountInfoComponent.Account,
+                accountInfoComponent.CurrentRoleId,
+                userInfoComponent.UserInfo.Lv,
+                userInfoComponent.UserInfo.Name,
+                accountInfoComponent.ServerId,
+                args.RechargeType);
+
+            Log.ILog.Debug($"XiaoQiOnPay: {payJson}");
+            Init init = GameObject.Find("Global").GetComponent<Init>();
+            init.OnX7PaySuccessHandler = (string orderId) =>
+            {
+                Log.ILog.Debug($"XiaoQiOnPay success: {orderId}");
+            };
+            init.OnX7PayFailHandler = (string msg) =>
+            {
+                FloatTipManager.Instance.ShowFloatTip(string.IsNullOrEmpty(msg) ? "小7支付失败" : msg);
+            };
+            init.OnX7PayCancelHandler = (string orderId) =>
+            {
+                Log.ILog.Debug($"XiaoQiOnPay cancel: {orderId}");
+            };
+            GlobalHelp.X7Pay(payJson);
+        }
+    }
+
+    public class XiaoQi_XiaoQiReportRole : AEventClass<EventType.XiaoQiReportRole>
+    {
+        protected override void Run(object cls)
+        {
+            EventType.XiaoQiReportRole args = cls as EventType.XiaoQiReportRole;
+            string roleJson = X7PayHelper.BuildRoleReportJson(
+                args.ReportType,
+                args.GameGuid,
+                args.RoleId,
+                args.RoleLevel,
+                args.RoleName,
+                args.ServerId);
+            Log.ILog.Debug($"XiaoQiReportRole: {roleJson}");
+            GlobalHelp.X7ReportRole(roleJson);
         }
     }
 
