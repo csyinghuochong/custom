@@ -38,6 +38,7 @@ namespace ET
                     response.Message = scene.GetComponent<ReChargeTikTokComponent>().TikTokPay(request);
                     break;
                 case PayTypeEnum.XiaoQi:
+                    Console.WriteLine($"M2R_RechargeRequest PayTypeEnum.XiaoQi");
                     response.Message = scene.GetComponent<ReChargeXQComponent>().XiaoQiPay(request);
                     break;
             }
