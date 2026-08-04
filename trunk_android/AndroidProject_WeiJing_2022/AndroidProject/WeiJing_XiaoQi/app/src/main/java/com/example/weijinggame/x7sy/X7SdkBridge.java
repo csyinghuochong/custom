@@ -21,6 +21,10 @@ public class X7SdkBridge {
     private static final String TAG = "X7SdkBridge";
     private static final String UNITY_OBJECT = "Global";
     private static final String APP_KEY = "8e4a4fc224dc249ff012e2623f670b83";
+    /** 支付接入签名版本，新游戏按文档传 2507 */
+    private static final String GAME_ACCESS_VERSION = "2507";
+    /** 角色上报无法取值时按文档传 -1 */
+    private static final String ROLE_DEFAULT = "-1";
 
     private final Activity activity;
 
@@ -76,8 +80,10 @@ public class X7SdkBridge {
 
                     @Override
                     public void onLogoutSuccess(boolean switchAccount) {
+                        // 文档：注销/切换小号都走登录监听里的 onLogoutSuccess(boolean isSwitch)
+                        // isSwitch=true：切换小号；false：普通登出
                         if (switchAccount) {
-                            sendUnity("OnX7SwitchAccountResult", "1");
+                            sendUnity("OnX7SwitchAccountResult", "success");
                         } else {
                             sendUnity("OnX7LogoutResult", "success");
                         }
@@ -111,7 +117,8 @@ public class X7SdkBridge {
                     payInfo.game_level = obj.optString("game_level");
                     payInfo.game_sign = obj.optString("game_sign");
                     payInfo.game_guid = obj.optString("game_guid");
-                    payInfo.game_access_version = obj.optString("game_access_version");
+                    // 固定使用最新接入签名版本 2507（Unity 侧签名也需同步为 2507）
+                    payInfo.game_access_version = GAME_ACCESS_VERSION;
                     payInfo.game_currency = obj.optString("game_currency", "CNY");
                     payInfo.notify_id = obj.optString("notify_id");
                     payInfo.subject = obj.optString("subject");
@@ -154,9 +161,12 @@ public class X7SdkBridge {
                     roleInfo.game_area_id = obj.optString("game_area_id");
                     roleInfo.game_guid = obj.optString("game_guid");
                     roleInfo.roleLevel = obj.optString("roleLevel");
-                    roleInfo.roleCE = obj.optString("roleCE");
-                    roleInfo.roleStage = obj.optString("roleStage");
-                    roleInfo.roleRechargeAmount = obj.optString("roleRechargeAmount");
+                    // 不能正常传递时传 -1
+                    roleInfo.roleCE = optOrDefault(obj, "roleCE", ROLE_DEFAULT);
+                    roleInfo.roleStage = optOrDefault(obj, "roleStage", ROLE_DEFAULT);
+                    roleInfo.roleRechargeAmount = optOrDefault(obj, "roleRechargeAmount", ROLE_DEFAULT);
+                    roleInfo.roleGuildId = optOrDefault(obj, "roleGuildId", ROLE_DEFAULT);
+                    roleInfo.roleGuild = optOrDefault(obj, "roleGuild", ROLE_DEFAULT);
 
                     SMPlatformManager.getInstance().smAfterChooseRoleSendInfo(activity, roleInfo);
                     sendUnity("OnX7ReportRoleResult", "success");
@@ -203,5 +213,14 @@ public class X7SdkBridge {
 
     private static String safe(String value) {
         return TextUtils.isEmpty(value) ? "" : value;
+    }
+
+    /** 空串 / 缺省 / "0" 时回退为 defaultValue（-1） */
+    private static String optOrDefault(JSONObject obj, String key, String defaultValue) {
+        String value = obj.optString(key, "");
+        if (TextUtils.isEmpty(value) || "0".equals(value)) {
+            return defaultValue;
+        }
+        return value;
     }
 }
