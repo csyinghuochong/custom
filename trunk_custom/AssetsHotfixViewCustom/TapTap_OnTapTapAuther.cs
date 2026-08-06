@@ -255,15 +255,59 @@ namespace ET
             EventType.XiaoQiSignIn args = cls as EventType.XiaoQiSignIn;
             Init init = GameObject.Find("Global").GetComponent<Init>();
             init.OnX7LoginSuccessHandler = (string token) => { args.AccesstokenHandler?.Invoke(token); };
-            init.OnX7LogoutSuccessHandler = ( ) => {
-                Log.ILog.Debug($"init.OnX7LogoutSuccessHandler");
-            };
+            // 悬浮窗注销/切换小号：按文档在登出回调里清角色并回登录/选服，再拉起 SDK 登录拿新账号
+            init.OnX7SwitchAccountHandler = () => { HandleX7LogoutOrSwitch(args.ZoneScene); };
+            init.OnX7LogoutSuccessHandler = () => { HandleX7LogoutOrSwitch(args.ZoneScene); };
             init.OnX7LoginFailHandler = (string msg) =>
             {
                 FloatTipManager.Instance.ShowFloatTip(string.IsNullOrEmpty(msg) ? "小7登录失败" : msg);
             };
             init.OnX7LoginCancelHandler = () => { };
             init.X7Login();
+        }
+
+        private static void HandleX7LogoutOrSwitch(Scene zoneScene)
+        {
+            X7LoginHelper.PendingRelogin = true;
+            if (zoneScene == null || zoneScene.IsDisposed)
+            {
+                zoneScene = Game.GetZoneScene(1);
+            }
+            if (zoneScene == null)
+            {
+                Log.ILog.Debug("HandleX7LogoutOrSwitch: zoneScene == null");
+                return;
+            }
+
+            MapComponent mapComponent = zoneScene.GetComponent<MapComponent>();
+            if (mapComponent != null && mapComponent.SceneTypeEnum == (int)SceneTypeEnum.LoginScene)
+            {
+                UI ui = UIHelper.GetUI(zoneScene, UIType.UILogin);
+                if (ui != null)
+                {
+                    UILoginComponent loginComponent = ui.GetComponent<UILoginComponent>();
+                    loginComponent?.TryX7ReloginAfterSwitch();
+                }
+                return;
+            }
+
+            EventType.ReturnLogin.Instance.ZoneScene = zoneScene;
+            EventType.ReturnLogin.Instance.ErrorCode = 0;
+            Game.EventSystem.PublishClass(EventType.ReturnLogin.Instance);
+        }
+    }
+
+    /// <summary>
+    /// 进游戏后重新挂小7切换小号回调到 Init（UIMain 只抛事件，避免热更直接碰 Init 新字段）
+    /// </summary>
+    public class XiaoQi_XiaoQiSwichAccount : AEventClass<EventType.XiaoQiSwichAccount>
+    {
+        protected override void Run(object cls)
+        {
+            EventType.XiaoQiSwichAccount args = cls as EventType.XiaoQiSwichAccount;
+            Init init = GameObject.Find("Global").GetComponent<Init>();
+            init.OnX7SwitchAccountHandler = () => { args.XiaoQiSwichAccountHandler?.Invoke(); };
+            init.OnX7LogoutSuccessHandler = () => { args.XiaoQiSwichAccountHandler?.Invoke(); };
         }
     }
 
