@@ -2,6 +2,7 @@ package com.example.weijinggame.x7sy;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,6 +16,8 @@ public class SplashActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // 固定横屏（Manifest 已声明，代码再兜一层）
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_LANDSCAPE);
         super.onCreate(savedInstanceState);
         // 使用小7 SDK 的闪屏布局
         setContentView(R.layout.x7_act_splash);

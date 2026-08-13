@@ -28,6 +28,15 @@
     <uses-permission android:name="android.permission.REORDER_TASKS" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
 
+    <!-- 游戏不需要联系人；强制剔除，防止其它 SDK Manifest 合并进来 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" tools:node="remove" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" tools:node="remove" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" tools:node="remove" />
+    <uses-permission android:name="android.permission.READ_SMS" tools:node="remove" />
+    <uses-permission android:name="android.permission.SEND_SMS" tools:node="remove" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" tools:node="remove" />
+    <uses-permission android:name="android.permission.WRITE_SMS" tools:node="remove" />
+
     <application
         android:allowBackup="false"
         android:label="@string/app_name"
@@ -35,10 +44,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
-        <!-- 小7闪屏入口 -->
+        <!-- 小7闪屏入口：固定横屏，避免竖屏自动旋转 -->
         <activity
             android:name="com.example.weijinggame.x7sy.SplashActivity"
             android:exported="true"
+            android:screenOrientation="userLandscape"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,6 +60,7 @@
             android:name="com.example.weijinggame.x7sy.MainActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
             android:exported="true"
+            android:screenOrientation="userLandscape"
             android:launchMode="singleTask"
             android:noHistory="false" >
             <meta-data

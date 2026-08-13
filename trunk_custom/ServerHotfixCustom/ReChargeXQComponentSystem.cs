@@ -108,7 +108,17 @@ namespace ET
                 }
 
                 Dictionary<string, string> payResult = self.StringToDictionary(payNotice);
-                if (payResult == null || !payResult.TryGetValue("encryp_data", out string encrypData) || string.IsNullOrEmpty(encrypData))
+                if (payResult == null)
+                {
+                    Log.Warning($"小7支付回调参数解析失败: {payNotice}");
+                    self.ResponseXiaoQi(context, "fail");
+                    return;
+                }
+
+                // UrlDecode 会把 Base64 里的 '+' 变成空格，验签/解密前必须还原
+                NormalizeBase64Fields(payResult, "encryp_data", "sign_data", "game_sign");
+
+                if (!payResult.TryGetValue("encryp_data", out string encrypData) || string.IsNullOrEmpty(encrypData))
                 {
                     Log.Warning($"小7支付回调缺少encryp_data: {payNotice}");
                     Console.WriteLine($"小7支付回调缺少encryp_data: {payNotice}");
@@ -116,7 +126,8 @@ namespace ET
                     return;
                 }
 
-                if (!payResult.TryGetValue("game_sign", out string gameSign) || !self.CheckGameSign(encrypData, gameSign))
+                // 文档：对 sign_data 做 SHA1withRSA 验签（不是 MD5(game_sign)）
+                if (!self.CheckSignData(payResult))
                 {
                     Log.Warning($"小7支付回调验签失败: {payNotice}");
                     Console.WriteLine($"小7支付回调验签失败: {payNotice}");
@@ -202,23 +213,107 @@ namespace ET
             return string.Empty;
         }
 
-        public static bool CheckGameSign(this ReChargeXQComponent self, string encrypData, string gameSign)
+        /// <summary>
+        /// 小7支付回调验签（官方文档）：
+        /// 1) sign_data base64_decode
+        /// 2) 除 sign_data 外参数按字典序拼成 key=value&key=value（无需 urlencode）
+        /// 3) SHA1withRSA + 小7RSA公钥 verify
+        /// </summary>
+        public static bool CheckSignData(this ReChargeXQComponent self, Dictionary<string, string> payResult)
         {
-            if (string.IsNullOrEmpty(gameSign))
+            if (payResult == null || !payResult.TryGetValue("sign_data", out string signData) || string.IsNullOrEmpty(signData))
             {
+                // 兼容极旧回调：game_sign = MD5(appKey + encryp_data)
+                if (payResult != null
+                    && payResult.TryGetValue("game_sign", out string gameSign)
+                    && payResult.TryGetValue("encryp_data", out string encrypData)
+                    && !string.IsNullOrEmpty(gameSign)
+                    && !string.IsNullOrEmpty(encrypData))
+                {
+                    string localSign = MD5Helper.StringMD5_2(self.appKey + encrypData);
+                    return gameSign.Equals(localSign, StringComparison.OrdinalIgnoreCase);
+                }
+
                 return false;
             }
 
-            string localSign = MD5Helper.StringMD5_2(self.appKey + encrypData);
-            return gameSign.Equals(localSign, StringComparison.OrdinalIgnoreCase);
+            try
+            {
+                string sourceStr = BuildSignSourceString(payResult);
+                byte[] signature = Convert.FromBase64String(signData.Replace(" ", "+"));
+                using RSA rsa = CreateX7PublicRsa(self.x7PublicKey);
+                return rsa.VerifyData(Encoding.UTF8.GetBytes(sourceStr), signature, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+            }
+            catch (Exception e)
+            {
+                Log.Error($"小7支付验签异常: {e}");
+                return false;
+            }
+        }
+
+        private static string BuildSignSourceString(Dictionary<string, string> payResult)
+        {
+            List<string> keys = new List<string>(payResult.Count);
+            foreach (KeyValuePair<string, string> kv in payResult)
+            {
+                if (kv.Key == "sign_data")
+                {
+                    continue;
+                }
+
+                keys.Add(kv.Key);
+            }
+
+            keys.Sort(StringComparer.Ordinal);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < keys.Count; i++)
+            {
+                if (i > 0)
+                {
+                    sb.Append('&');
+                }
+
+                sb.Append(keys[i]);
+                sb.Append('=');
+                sb.Append(payResult[keys[i]] ?? string.Empty);
+            }
+
+            return sb.ToString();
+        }
+
+        private static void NormalizeBase64Fields(Dictionary<string, string> payResult, params string[] keys)
+        {
+            foreach (string key in keys)
+            {
+                if (payResult.TryGetValue(key, out string value) && !string.IsNullOrEmpty(value) && value.IndexOf(' ') >= 0)
+                {
+                    payResult[key] = value.Replace(" ", "+");
+                }
+            }
+        }
+
+        private static RSA CreateX7PublicRsa(string publicKeyBase64)
+        {
+            RSA rsa = RSA.Create();
+            byte[] keyBytes = Convert.FromBase64String(publicKeyBase64);
+            try
+            {
+                rsa.ImportSubjectPublicKeyInfo(keyBytes, out _);
+            }
+            catch
+            {
+                // 部分环境公钥是 PKCS#1，兜底转成 SPKI 再导入
+                rsa.ImportRSAPublicKey(keyBytes, out _);
+            }
+
+            return rsa;
         }
 
         public static string DecryptEncrypData(this ReChargeXQComponent self, string encrypData)
         {
             try
             {
-                using RSA rsa = RSA.Create();
-                rsa.ImportSubjectPublicKeyInfo(Convert.FromBase64String(self.x7PublicKey), out _);
+                using RSA rsa = CreateX7PublicRsa(self.x7PublicKey);
 
                 byte[] cipherBytes = Convert.FromBase64String(encrypData.Replace(" ", "+"));
                 int keySize = rsa.KeySize / 8;
