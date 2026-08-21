@@ -107,6 +107,15 @@ namespace ET
                     return;
                 }
 
+                // 20006 端口可能被扫描器/其它服务误连（如 VMware SOAP），不是小7回调则静默忽略
+                if (!IsLikelyXiaoQiPayNotice(payNotice))
+                {
+                    string preview = payNotice.Length > 120 ? payNotice.Substring(0, 120) + "..." : payNotice;
+                    Log.Debug($"忽略非小7支付回调请求: {preview}");
+                    self.ResponseXiaoQi(context, "fail");
+                    return;
+                }
+
                 Dictionary<string, string> payResult = self.StringToDictionary(payNotice);
                 if (payResult == null)
                 {
@@ -377,6 +386,26 @@ namespace ET
             byte[] data = new byte[plainBytes.Length - separatorIndex - 1];
             Buffer.BlockCopy(plainBytes, separatorIndex + 1, data, 0, data.Length);
             return data;
+        }
+
+        /// <summary>
+        /// 小7回调为 urlencoded 的 key=value&...，至少含 encryp_data 或 xiao7_goid
+        /// </summary>
+        private static bool IsLikelyXiaoQiPayNotice(string body)
+        {
+            if (string.IsNullOrWhiteSpace(body))
+            {
+                return false;
+            }
+
+            string trimmed = body.TrimStart();
+            // XML/SOAP/JSON 等扫描探测，不是支付回调
+            if (trimmed.StartsWith("<") || trimmed.StartsWith("{") || trimmed.StartsWith("["))
+            {
+                return false;
+            }
+
+            return body.Contains("encryp_data=") || body.Contains("xiao7_goid=");
         }
 
         public static Dictionary<string, string> StringToDictionary(this ReChargeXQComponent self, string value)
