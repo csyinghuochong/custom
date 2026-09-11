@@ -124,26 +124,30 @@ namespace ET
                 {
                     rechargeNumber = 1;
                 }
+                else if (product_id.EndsWith("GoldCard"))
+                {
+                    // 30WJGoldCard / 98WJGoldCard，只解析金额，类型仍用 request.RechargeType
+                    string numberPart = product_id.Replace("WJGoldCard", "");
+                    if (!int.TryParse(numberPart, out rechargeNumber) || rechargeNumber <= 0)
+                    {
+                        Log.Warning($"IOS充值回调ERROR6 : GoldCard {product_id}");
+                        continue;
+                    }
+                }
+                else if (product_id.EndsWith("WJ"))
+                {
+                    // 6WJ / 30WJ / 648WJ
+                    string numberPart = product_id.Substring(0, product_id.Length - 2);
+                    if (!int.TryParse(numberPart, out rechargeNumber) || rechargeNumber <= 0)
+                    {
+                        Log.Warning($"IOS充值回调ERROR6 : WJ {product_id}");
+                        continue;
+                    }
+                }
                 else
                 {
-                    if (!product_id.Contains("WJ"))
-                    {
-                        Log.Warning($"IOS充值回调ERROR6 : !WJ");
-                        continue;
-                    }
-
-                    //testpay1
-                    product_id = product_id.Substring(0, product_id.Length - 2);
-
-                    try
-                    {
-                        rechargeNumber = int.Parse(product_id);
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Warning(ex.ToString());
-                        continue;
-                    }
+                    Log.Warning($"IOS充值回调ERROR6 : !WJ {product_id}");
+                    continue;
                 }
 
                 self.PayLoadList.Add(payLoad);
@@ -152,8 +156,8 @@ namespace ET
                     self.PayLoadList.RemoveAt(0);
                 }
                 string serverName = ServerHelper.GetGetServerItem(false, request.Zone).ServerName;
-                Log.Warning($"支付订单[IOS]支付成功: 区：{serverName}    玩家名字：{request.UnitName}     充值额度：{rechargeNumber}");
-                Log.Console($"支付订单[IOS]支付成功: 区：{serverName}    玩家名字：{request.UnitName}     充值额度：{rechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
+                Log.Warning($"支付订单[IOS]支付成功: 区：{serverName}    玩家名字：{request.UnitName}     商品：{product_id}     充值额度：{rechargeNumber}  类型：{request.RechargeType}");
+                Log.Console($"支付订单[IOS]支付成功: 区：{serverName}    玩家名字：{request.UnitName}     商品：{product_id}     充值额度：{rechargeNumber}  类型：{request.RechargeType}  时间:{TimeHelper.DateTimeNow().ToString()}");
                 await RechargeHelp.OnPaySucessToGate(request.Zone, request.UnitId, rechargeNumber, postReturnStr, PayTypeEnum.IOSPay, request.RechargeType);
             }
 
