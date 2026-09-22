@@ -266,8 +266,16 @@ namespace ET
             init.X7Login();
         }
 
-        private static void HandleX7LogoutOrSwitch(Scene zoneScene)
+        public static void HandleX7LogoutOrSwitch(Scene zoneScene)
         {
+            long now = TimeHelper.ClientNow();
+            if (now - lastSwitchHandleMs < 1000)
+            {
+                Log.ILog.Debug("HandleX7LogoutOrSwitch ignore duplicate");
+                return;
+            }
+            lastSwitchHandleMs = now;
+
             X7LoginHelper.PendingRelogin = true;
             if (zoneScene == null || zoneScene.IsDisposed)
             {
@@ -295,6 +303,8 @@ namespace ET
             EventType.ReturnLogin.Instance.ErrorCode = 0;
             Game.EventSystem.PublishClass(EventType.ReturnLogin.Instance);
         }
+
+        private static long lastSwitchHandleMs;
     }
 
     /// <summary>
@@ -306,8 +316,9 @@ namespace ET
         {
             EventType.XiaoQiSwichAccount args = cls as EventType.XiaoQiSwichAccount;
             Init init = GameObject.Find("Global").GetComponent<Init>();
-            init.OnX7SwitchAccountHandler = () => { args.XiaoQiSwichAccountHandler?.Invoke(); };
-            init.OnX7LogoutSuccessHandler = () => { args.XiaoQiSwichAccountHandler?.Invoke(); };
+            // 进游戏后仍走同一套清角色/回登录逻辑，避免只挂 UIMain 空回调导致不回登录
+            init.OnX7SwitchAccountHandler = () => { XiaoQi_XiaoQiSignIn.HandleX7LogoutOrSwitch(args.ZoneScene); };
+            init.OnX7LogoutSuccessHandler = () => { XiaoQi_XiaoQiSignIn.HandleX7LogoutOrSwitch(args.ZoneScene); };
         }
     }
 
